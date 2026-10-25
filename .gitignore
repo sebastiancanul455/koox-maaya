@@ -1,0 +1,30 @@
+# Dependencias
+node_modules/
+
+# Salidas de las pruebas
+test/shots/
+test/shots-web/
+test/qa/
+test/.fontcache/
+test/sample-build.html
+*.preview.html
+
+# Salidas locales: el sitio se publica desde la raíz (node build-web.mjs --out .);
+# site/ es lo que escribe build-web.mjs sin --out, para probar sin tocar la raíz.
+/site/
+# Destino local de build.mjs (opcional; ver build.mjs)
+build.local.json
+
+# Material de trabajo local (no se publica)
+/backup-*
+/verif*
+/work/
+/ref/
+/release/
+
+# Respuestas de los revisores: pueden traer datos personales
+revision/respuestas/
+
+# Sistema
+.DS_Store
+Thumbs.db

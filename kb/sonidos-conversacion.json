@@ -1,0 +1,3958 @@
+{
+  "domain": "sonidos-conversacion",
+  "entries": [
+    {
+      "m": "a",
+      "es": "vocal a corta (simple)",
+      "cat": "letra",
+      "pr": "a",
+      "notes": "Vocal breve, como la a del español. En maya cada una de las cinco vocales (a, e, i, o, u) tiene cinco formas: corta (a), larga de tono bajo (aa), larga de tono alto (áa), glotalizada (a') y rearticulada (a'a).",
+      "variants": [],
+      "ex": {
+        "m": "sak",
+        "es": "blanco"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://aprendiendomaya.com/escritura/vocales/las-vocales-y-sus-reglas-de-uso",
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://www.mayas.uady.mx/diccionario/s_maya.html"
+      ],
+      "evidence": "Aprendiendo Maya: vocales cortas a, e, i, o, u; ejemplos sak (blanco), chak (rojo), bat (granizo). INEA: lista a aa áa a' a'a … y ejemplo «a · Atan · esposa». UADY: «SAK: Blanco»."
+    },
+    {
+      "m": "e",
+      "es": "vocal e corta (simple)",
+      "cat": "letra",
+      "pr": "e",
+      "notes": "Breve, como la e del español.",
+      "variants": [],
+      "ex": {
+        "m": "bej",
+        "es": "camino"
+      },
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://www.mayas.uady.mx/diccionario/b_maya.html"
+      ],
+      "evidence": "INEA da «Bej (camino)» como ejemplo de la b; UADY: «BEJ: Camino, sendero»."
+    },
+    {
+      "m": "i",
+      "es": "vocal i corta (simple)",
+      "cat": "letra",
+      "pr": "i",
+      "notes": "Breve, como la i del español. Comparar chich (duro, vocal corta) con chiich (abuela, vocal larga).",
+      "variants": [],
+      "ex": {
+        "m": "chich",
+        "es": "duro"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0185-25742013000100006",
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Sobrino (2013) mide la vocal de chich 'duro' en 105 ms frente a 255 ms en chiich 'abuela'. Aprendiendo Maya: «chich (duro)»."
+    },
+    {
+      "m": "o",
+      "es": "vocal o corta (simple)",
+      "cat": "letra",
+      "pr": "o",
+      "notes": "Breve, como la o del español.",
+      "variants": [],
+      "ex": {
+        "m": "otoch",
+        "es": "casa (de alguien)"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/o_maya.html",
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "UADY: «OTOCH: Casa». INEA: «Polok (gordo/a)», «Okol (entrar)»."
+    },
+    {
+      "m": "u",
+      "es": "vocal u corta (simple)",
+      "cat": "letra",
+      "pr": "u",
+      "notes": "Breve, como la u del español. Sola, u es también el posesivo «su».",
+      "variants": [],
+      "ex": {
+        "m": "uk'",
+        "es": "piojo; beber"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/u_maya.html"
+      ],
+      "evidence": "UADY: «U: vocal en su forma sencilla; pronombre posesivo de tercera persona: su»; «UK': piojo» y «UK': beber, tomar»."
+    },
+    {
+      "m": "aa",
+      "es": "vocal larga de tono bajo (aa, ee, ii, oo, uu)",
+      "cat": "letra",
+      "pr": "aa (sostenida, el doble de larga)",
+      "notes": "Se escribe doblando la vocal. Dura más que la corta y se mantiene en tono bajo y parejo. La norma de 2014 no le pone acento; algunos diccionarios antiguos (Bricker y otros) la marcaban con acento grave: àa.",
+      "variants": [
+        "àa"
+      ],
+      "ex": {
+        "m": "miis",
+        "es": "gato"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://aprendiendomaya.com/escritura/vocales/las-vocales-y-sus-reglas-de-uso",
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://en.wikipedia.org/wiki/Yucatec_Maya_language",
+        "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0185-25742013000100006"
+      ],
+      "evidence": "Aprendiendo Maya: «Largas con tono bajo: aa, ee, ii, oo, uu». INEA: «ii · Miis · gato», «aa · Aak' · bejuco, liana, lengua». Wikipedia: tono bajo a veces con acento grave, «though the 2014 INALI orthography uses no accent»."
+    },
+    {
+      "m": "áa",
+      "es": "vocal larga de tono alto (áa, ée, íi, óo, úu)",
+      "cat": "letra",
+      "pr": "áa (larga, empieza aguda)",
+      "notes": "Acento agudo sobre la PRIMERA de las dos vocales. La voz empieza alta y suele bajar. Solo las vocales largas llevan tono.",
+      "variants": [],
+      "ex": {
+        "m": "míis",
+        "es": "escoba; barrer"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://aprendiendomaya.com/escritura/vocales/las-vocales-y-sus-reglas-de-uso",
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://en.wikipedia.org/wiki/Yucatec_Maya_language",
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0185-25742013000100006"
+      ],
+      "evidence": "Aprendiendo Maya: «Largas con tono alto: áa, ée, íi, óo, úu». INEA: «íi · Míis · escoba», «áa · Cháak · lluvia». Wikipedia: tono alto «indicated in writing by an acute accent (íi ée áa óo úu)»; ejemplo míis 'broom; to sweep'. Sobrino: el tono alto tiene realizaciones nivelada, descendente y compleja."
+    },
+    {
+      "m": "a'",
+      "es": "vocal glotalizada (a', e', i', o', u')",
+      "cat": "letra",
+      "pr": "a- (la voz se corta de golpe)",
+      "notes": "La vocal termina con un cierre de la glotis, como el corte de «¡oh-oh!». Según las Normas de 2014 la vocal glotalizada solo aparece al final de palabra; dentro de la palabra se escribe rearticulada (a'a).",
+      "variants": [],
+      "ex": {
+        "m": "sa'",
+        "es": "atole"
+      },
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://www.mayas.uady.mx/diccionario/s_maya.html",
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.redalyc.org/journal/5259/525957259008/html/"
+      ],
+      "evidence": "INEA: «a' · Sa' · atole». UADY: «SA': Atole». Normas (copia no autorizada): la vocal glotalizada aparece solo al final; ante consonante se repite la vocal, como en ka'ap'éel. Lehmann (2018): las Normas distinguen <e'> frente a <e'e>."
+    },
+    {
+      "m": "a'a",
+      "es": "vocal rearticulada (a'a, e'e, i'i, o'o, u'u)",
+      "cat": "letra",
+      "pr": "a-a (vocal, corte y la misma vocal otra vez)",
+      "notes": "Se pronuncia la vocal, se corta la voz y se repite la misma vocal: a'al suena «a-al». Aparece al inicio o en medio de palabra. Lehmann (2018) propone simplificar esta grafía, pero es la que usa la norma vigente.",
+      "variants": [],
+      "ex": {
+        "m": "a'al",
+        "es": "decir"
+      },
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://www.mayas.uady.mx/curso_maya/lecc01_1.html",
+        "https://aprendiendomaya.com/escritura/vocales/las-vocales-y-sus-reglas-de-uso",
+        "https://www.redalyc.org/journal/5259/525957259008/html/",
+        "https://www.mayas.uady.mx/diccionario/e_maya.html"
+      ],
+      "evidence": "INEA: «a'a · A'al · decir» y «Ja'as · plátano». Curso UADY lección 1: a'al (decir), ba'al (cosa), tu'ux (dónde), ba'ax (qué). Aprendiendo Maya: «Rearticuladas: a'a, e'e, i'i, o'o, u'u». UADY: «E'E: forma gráfica que indica que la E se repite después de un corte hecho por las cuerdas vocales»."
+    },
+    {
+      "m": "b",
+      "es": "consonante b",
+      "cat": "letra",
+      "pr": "b",
+      "notes": "Parecida a la b del español, pero en la descripción fonética es implosiva (se produce «hacia adentro»). Hoy ya no se escribe b'.",
+      "variants": [],
+      "ex": {
+        "m": "báalam",
+        "es": "jaguar"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Yucatec_Maya_language",
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya",
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "Wikipedia: «The Mayan b is also glottalized, an implosive /ɓ/, and is sometimes written bʼ, but that is becoming less common». Aprendiendo Maya: báalam (jaguar), bak' (carne), baak (hueso). INEA: Bej (camino), Abal (ciruela)."
+    },
+    {
+      "m": "ch",
+      "es": "consonante ch",
+      "cat": "letra",
+      "pr": "ch",
+      "notes": "Igual que la ch del español.",
+      "variants": [],
+      "ex": {
+        "m": "chak",
+        "es": "rojo"
+      },
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://www.mayas.uady.mx/diccionario/ch_maya.html",
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "INEA: «Chak (rojo)». UADY: «CHAK: Rojo, colorado». Aprendiendo Maya: chokoj (caliente), chich (duro), cheem (canoa)."
+    },
+    {
+      "m": "ch'",
+      "es": "consonante ch glotalizada",
+      "cat": "letra",
+      "pr": "ch' (ch con golpe)",
+      "notes": "Consonante glotalizada (eyectiva): se cierra la garganta y se suelta la ch con un pequeño «golpe».",
+      "variants": [],
+      "ex": {
+        "m": "ch'íich'",
+        "es": "pájaro"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/ch_glotal_maya.html",
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya",
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "UADY: CH' es «consonante africada palatal sorda glotalizada»; «CH'ÍICH': Pájaro». Normas: ejemplos ch'íich', ch'óoy, ch'eel, ch'ujuk, ch'amak. INEA: «Ch'ujuk (dulce)», «Juuch' (masa)»."
+    },
+    {
+      "m": "j",
+      "es": "consonante j (aspirada suave)",
+      "cat": "letra",
+      "pr": "j suave, como una h aspirada",
+      "notes": "Más suave que la j del centro de México: un soplo, como la h del inglés «hello».",
+      "variants": [],
+      "ex": {
+        "m": "ja'",
+        "es": "agua"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://naatikmexico.org/blog/yucatec-maya-phrases",
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya",
+        "https://www.mayas.uady.mx/diccionario/j_maya.html",
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "Na'atik: «the 'j' is pronounced like the English 'h'». Aprendiendo Maya: sonido fricativo, glotal y sordo; je' (huevo), naj (casa). UADY: «JA': Agua». INEA: «Janal (comida)»."
+    },
+    {
+      "m": "k",
+      "es": "consonante k",
+      "cat": "letra",
+      "pr": "k (como la c de «casa»)",
+      "notes": "En la escritura normativa siempre es k; no se usan c ni q.",
+      "variants": [],
+      "ex": {
+        "m": "kan",
+        "es": "cuatro"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya",
+        "https://www.mayas.uady.mx/diccionario/k_maya.html",
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "Aprendiendo Maya: k oclusiva velar sorda; kultal (sentarse), kaab (miel), kib (vela). UADY: «KAN: Cuatro». INEA: «Kitam (jabalí)»."
+    },
+    {
+      "m": "k'",
+      "es": "consonante k glotalizada",
+      "cat": "letra",
+      "pr": "k' (k con golpe)",
+      "notes": "Glotalizada: una k seca, con golpe de garganta.",
+      "variants": [],
+      "ex": {
+        "m": "k'áak'",
+        "es": "fuego"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html",
+        {
+          "title": "Diccionario introductorio español-maya, maya-español",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya",
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "UADY: K' «oclusiva velar sorda glotalizada»; «K'ÁAK': Fuego, lumbre». Diccionario introductorio: «K'ÁAK'.- sus. Fuego, lumbre». INEA: «K'ab (mano)»."
+    },
+    {
+      "m": "l",
+      "es": "consonante l",
+      "cat": "letra",
+      "pr": "l",
+      "notes": "Igual que en español.",
+      "variants": [],
+      "ex": {
+        "m": "lu'um",
+        "es": "tierra"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/l_maya.html",
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya",
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "UADY: «LU'UM: Tierra, suelo, terreno». Aprendiendo Maya: luuch (jícara), paal (niño). INEA: «Lool (flor)»."
+    },
+    {
+      "m": "m",
+      "es": "consonante m",
+      "cat": "letra",
+      "pr": "m",
+      "notes": "Igual que en español.",
+      "variants": [],
+      "ex": {
+        "m": "máak",
+        "es": "persona"
+      },
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "INEA: «Máak (persona)», «Ch'oom (zopilote)». Aprendiendo Maya: miis (gato), maan (comprar)."
+    },
+    {
+      "m": "n",
+      "es": "consonante n",
+      "cat": "letra",
+      "pr": "n",
+      "notes": "Igual que en español. Ante p o b se escribe m (jump'éel, no junp'éel).",
+      "variants": [],
+      "ex": {
+        "m": "naj",
+        "es": "casa"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/n_maya.html",
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        {
+          "title": "Numerales y clasificadores en maya",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "UADY: «NAJ: Casa». INEA: «Nal (elote)», «Oon (aguacate)». Material sobre numerales: kanp'éel debe escribirse kamp'éel."
+    },
+    {
+      "m": "p",
+      "es": "consonante p",
+      "cat": "letra",
+      "pr": "p",
+      "notes": "Igual que en español.",
+      "variants": [],
+      "ex": {
+        "m": "peek'",
+        "es": "perro"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya",
+        "https://www.mayas.uady.mx/diccionario/p_esp.html"
+      ],
+      "evidence": "Aprendiendo Maya: peek' (perro), píix (rodilla). UADY (español-maya): «PERRO: Peek'»."
+    },
+    {
+      "m": "p'",
+      "es": "consonante p glotalizada",
+      "cat": "letra",
+      "pr": "p' (p con golpe)",
+      "notes": "Glotalizada: p seca con golpe de garganta.",
+      "variants": [],
+      "ex": {
+        "m": "p'aak",
+        "es": "tomate"
+      },
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya",
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "INEA: «P'aak (tomate)», «Oop' (tostada)». Normas: p'aak, p'óok, p'iich, p'eel, p'u'uk. Guía gramatical: p'aak 'tomate'."
+    },
+    {
+      "m": "r",
+      "es": "consonante r",
+      "cat": "letra",
+      "pr": "r (suave, como en «pera»)",
+      "notes": "Poco frecuente. En voces mayas aparece solo en medio de palabra; también se usa en préstamos del español. El curso de la UADY la trata como letra prestada junto con d, f, g y rr.",
+      "variants": [],
+      "ex": {
+        "m": "turix",
+        "es": "libélula"
+      },
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://www.mayas.uady.mx/curso_maya/lecc01_1.html",
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "INEA: «r · Turix (libélula)», la letra solo aparece en posición intermedia. UADY lección 1: d, f, g, r y rr se prestan del español para palabras introducidas al maya. Normas: incluye r en el inventario."
+    },
+    {
+      "m": "s",
+      "es": "consonante s",
+      "cat": "letra",
+      "pr": "s",
+      "notes": "Igual que en español.",
+      "variants": [],
+      "ex": {
+        "m": "sak",
+        "es": "blanco"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/s_maya.html",
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "UADY: «SAK: Blanco». Aprendiendo Maya: sak (blanco), su' (tupido), máaskab (machete)."
+    },
+    {
+      "m": "t",
+      "es": "consonante t",
+      "cat": "letra",
+      "pr": "t",
+      "notes": "Igual que en español.",
+      "variants": [],
+      "ex": {
+        "m": "tuunich",
+        "es": "piedra"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/p_esp.html",
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya",
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "UADY: «PIEDRA: Tuunich». Aprendiendo Maya: tuunich (piedra), teech (tú). INEA: «Ta'ab (sal)»."
+    },
+    {
+      "m": "t'",
+      "es": "consonante t glotalizada",
+      "cat": "letra",
+      "pr": "t' (t con golpe)",
+      "notes": "Glotalizada. Distingue palabras: t'aan (palabra, hablar) frente a táan (frente).",
+      "variants": [],
+      "ex": {
+        "m": "t'aan",
+        "es": "palabra, lengua; hablar"
+      },
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://www.mayas.uady.mx/diccionario/p_esp.html",
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://en.wikipedia.org/wiki/Yucatec_Maya_language"
+      ],
+      "evidence": "INEA: «T'aan (hablar, llamar)». UADY: «PALABRA: T'aan, t'aanil». Normas: t'aan, t'u'ul, t'ooroch, t'eel, t'iin. Wikipedia: t'àan 'speech' frente a táan 'forehead'."
+    },
+    {
+      "m": "ts",
+      "es": "consonante ts",
+      "cat": "letra",
+      "pr": "ts (como la tz de «quetzal»)",
+      "notes": "Un solo sonido, t y s juntas.",
+      "variants": [],
+      "ex": {
+        "m": "tsíimin",
+        "es": "caballo"
+      },
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://www.mayas.uady.mx/diccionario/ts_maya.html",
+        "https://site.inali.gob.mx/pdf/norma_maya.pdf"
+      ],
+      "evidence": "INEA: «Tsíimin (caballo)». UADY: «TSÍIMIN: Caballo». Norma del INALI: ejemplos tsíik, ootsil."
+    },
+    {
+      "m": "ts'",
+      "es": "consonante ts glotalizada",
+      "cat": "letra",
+      "pr": "ts' (ts con golpe)",
+      "notes": "Glotalizada.",
+      "variants": [],
+      "ex": {
+        "m": "ts'ono'ot",
+        "es": "cenote"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/ts_glotal_maya.html",
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "UADY: «TS'ONO'OT: Cenote»; TS' africada dental sorda glotalizada. Normas: ts'ono'ot como ejemplo. INEA: «Ts'aak (medicina)»."
+    },
+    {
+      "m": "w",
+      "es": "consonante w",
+      "cat": "letra",
+      "pr": "w (como la u de «huevo»)",
+      "notes": "Semiconsonante. También aparece como letra de unión: in + óol = in wóol.",
+      "variants": [],
+      "ex": {
+        "m": "waaj",
+        "es": "tortilla; pan"
+      },
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://www.mayas.uady.mx/diccionario/w_maya.html",
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "INEA: «Waaj (tortilla, pan)». UADY: «WAAJ: Tortilla de maíz; pan en general». Guía gramatical: ante vocal inicial se inserta w con in y a, y y con u."
+    },
+    {
+      "m": "x",
+      "es": "consonante x (sh)",
+      "cat": "letra",
+      "pr": "sh (como en inglés «she»)",
+      "notes": "Nunca suena como la x de «taxi» ni como j: siempre sh. xikin se dice «shikin».",
+      "variants": [],
+      "ex": {
+        "m": "xikin",
+        "es": "oreja"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/x_maya.html",
+        "https://site.inali.gob.mx/pdf/norma_maya.pdf",
+        "https://naatikmexico.org/blog/yucatec-maya-phrases",
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "UADY: «XIKIN: Oreja, oído». Norma del INALI: ejemplos xikin, k'oxol. Na'atik: «the 'x' is pronounced /sh/». Aprendiendo Maya: xikin (oreja), xaak (canasta)."
+    },
+    {
+      "m": "y",
+      "es": "consonante y",
+      "cat": "letra",
+      "pr": "y",
+      "notes": "Como la y de «yo». También es letra de unión con u: u + otoch = u yotoch.",
+      "variants": [],
+      "ex": {
+        "m": "ya'",
+        "es": "zapote"
+      },
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "INEA: «Ya' (zapote)». Aprendiendo Maya: ya' (zapote), yéey (escoger), yóok'ol (encima)."
+    },
+    {
+      "m": "'",
+      "es": "saltillo o cierre glotal (apóstrofo)",
+      "cat": "letra",
+      "pr": "- (corte de voz)",
+      "notes": "Se escribe con apóstrofo recto. Tras vocal marca un corte de la voz (ja', ba'ax). Pegado a k, t, p, ch, ts forma las consonantes glotalizadas (k', t', p', ch', ts'). La UADY lo cuenta como un signo aparte de las 24 letras.",
+      "variants": [],
+      "ex": {
+        "m": "ba'ax",
+        "es": "¿qué?"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/curso_maya/lecc01_1.html",
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://en.wikipedia.org/wiki/Yucatec_Maya_language"
+      ],
+      "evidence": "UADY lección 1: «El alfabeto maya consta de 24 letras y un signo (') denominado glotal». Normas: el apóstrofo marca la oclusión glotal, como en ba'ax (¿qué?), ja'as (plátano). Wikipedia: /ʔ/ escrito ⟨ʼ⟩."
+    },
+    {
+      "m": "kan",
+      "es": "cuatro",
+      "cat": "par mínimo",
+      "pr": "kan",
+      "notes": "Vocal corta. Comparar con kaan (serpiente), ka'an (cielo) y k'an (amarillo): solo cambia la vocal o la k.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/k_maya.html"
+      ],
+      "evidence": "UADY: «KAN: Cuatro»."
+    },
+    {
+      "m": "kaan",
+      "es": "serpiente, víbora",
+      "cat": "par mínimo",
+      "pr": "kaan",
+      "notes": "Vocal larga de tono bajo. Montgomery la glosa también como gusano.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya",
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Aprendiendo Maya: kaan (víbora) como ejemplo de n final. Montgomery: «kaan (kaahn) n. snake; worm; culebra; gusano»."
+    },
+    {
+      "m": "ka'an",
+      "es": "cielo",
+      "cat": "par mínimo",
+      "pr": "ka-an",
+      "notes": "Vocal rearticulada: «ka-an». No confundir con kaan (serpiente).",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/k_maya.html"
+      ],
+      "evidence": "UADY: «KA'AN: Cielo, firmamento, atmósfera»."
+    },
+    {
+      "m": "k'an",
+      "es": "amarillo; maduro",
+      "cat": "par mínimo",
+      "pr": "k'an (k con golpe)",
+      "notes": "La k glotalizada la distingue de kan (cuatro). Las fuentes no coinciden en la longitud: el diccionario de la UADY escribe K'AAN para «amarillo, fruta madura»; Montgomery escribe k'an. Confirmar con un hablante.",
+      "variants": [
+        "k'aan"
+      ],
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+      ],
+      "evidence": "Montgomery: «k'an (k'ahn); amarillo» y «tak'an; maduro». UADY: «K'AAN: Amarillo, cosa amarilla» y «Fruta madura o sazonada»."
+    },
+    {
+      "m": "k'aan",
+      "es": "mecate, cuerda; medida de terreno de 20 × 20 m",
+      "cat": "par mínimo",
+      "pr": "k'aan",
+      "notes": "En Yucatán «mecate» es a la vez la cuerda y la medida agraria. El mismo encabezado de la UADY incluye el sentido «amarillo» (ver k'an).",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+      ],
+      "evidence": "UADY: «K'AAN: Mecate; medida lineal de superficie que tiene una longitud de 20 x 20 mts.»."
+    },
+    {
+      "m": "k'áan",
+      "es": "hamaca",
+      "cat": "par mínimo",
+      "pr": "k'áan",
+      "notes": "Tono alto. Forma con k'aan (mecate) un par que solo se distingue por el tono.",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Material de curso «Idioma Maya Yucateco» (copia no autorizada): lista de palabras con tono alto que incluye «K'áan Hamaca»."
+    },
+    {
+      "m": "iik",
+      "es": "chile",
+      "cat": "par mínimo",
+      "pr": "iik",
+      "notes": "Sin glotalización final. Comparar con iik' (viento). Chak iik es el chile habanero.",
+      "variants": [],
+      "ex": {
+        "m": "chak iik",
+        "es": "chile habanero"
+      },
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.mayas.uady.mx/literatura/adiv1.html"
+      ],
+      "evidence": "Normas: ejemplos de i: iik (chile), iim (seno), iis (camote). UADY (adivinanzas): «Chak iik» glosado como chile habanero."
+    },
+    {
+      "m": "iik'",
+      "es": "viento, aire; aliento",
+      "cat": "par mínimo",
+      "pr": "iik' (con golpe final)",
+      "notes": "La k' final la distingue de iik (chile). Chak iik' es viento fuerte o huracán.",
+      "variants": [],
+      "ex": {
+        "m": "chak iik'",
+        "es": "viento fuerte, huracán"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/a_esp.html",
+        "https://filosofiamaya.com/2020/10/08/el-huracan-segun-las-lenguas-mayas/",
+        "https://www.mayas.uady.mx/diccionario/ch_glotal_maya.html"
+      ],
+      "evidence": "UADY (español-maya): aire = iik'. Filosofía Maya: «chak iik', que puede significar 'viento fuerte', 'tempestad' o 'huracán'». UADY: «CH'A' IIK'» = respirar."
+    },
+    {
+      "m": "t'aan",
+      "es": "palabra, lengua, idioma; hablar",
+      "cat": "par mínimo",
+      "pr": "t'aan",
+      "notes": "t' glotalizada y vocal larga de tono bajo. Maaya t'aan = lengua maya.",
+      "variants": [
+        "t'àan"
+      ],
+      "ex": {
+        "m": "maaya t'aan",
+        "es": "lengua maya"
+      },
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://www.mayas.uady.mx/diccionario/p_esp.html",
+        "https://en.wikipedia.org/wiki/Yucatec_Maya_language"
+      ],
+      "evidence": "INEA: «T'aan: hablar, llamar». UADY: «PALABRA: T'aan, t'aanil»; «PLATICAR: Tsikbal, t'aan». Wikipedia: t'àan 'speech'."
+    },
+    {
+      "m": "táan",
+      "es": "frente (de la cara); delante",
+      "cat": "par mínimo",
+      "pr": "táan",
+      "notes": "t simple y tono alto: se opone a t'aan. De aquí táanil (adelante).",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Yucatec_Maya_language",
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Wikipedia: «t'àan 'speech' versus táan 'forehead'». Aprendiendo Maya: táanil (adelante)."
+    },
+    {
+      "m": "miis",
+      "es": "gato",
+      "cat": "par mínimo",
+      "pr": "miis",
+      "notes": "Vocal larga de tono bajo. Par mínimo de tono con míis (escoba).",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://en.wikipedia.org/wiki/Yucatec_Maya_language",
+        "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0185-25742013000100006",
+        {
+          "title": "Diccionario básico maya-español",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "INEA: «ii · Miis · gato». Wikipedia: miis 'cat' frente a míis 'broom'. Sobrino (2013): figura «Contraste tonal entre las palabras 'gato' y 'escoba'». Diccionario básico: «MIIS gato doméstico»."
+    },
+    {
+      "m": "míis",
+      "es": "escoba; barrer",
+      "cat": "par mínimo",
+      "pr": "míis",
+      "notes": "Tono alto: la voz empieza aguda. Compárala con miis (gato).",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://en.wikipedia.org/wiki/Yucatec_Maya_language",
+        "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0185-25742013000100006",
+        {
+          "title": "Diccionario básico maya-español",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "INEA: «íi · Míis · escoba». Wikipedia: míis 'broom; to sweep'. Diccionario básico: «MÍIS escoba»."
+    },
+    {
+      "m": "eek'",
+      "es": "estrella",
+      "cat": "par mínimo",
+      "pr": "eek'",
+      "notes": "Tono bajo. Con tono alto, éek' es «sucio». El diccionario de la UADY reúne bajo EEK' los sentidos estrella y negro/oscuro.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://www.mayas.uady.mx/diccionario/e_maya.html"
+      ],
+      "evidence": "INEA: «ee · Eek' · estrella». UADY: «EEK': Estrella, lucero, astro» y «EEK': Negro, obscuro, sucio»."
+    },
+    {
+      "m": "éek'",
+      "es": "sucio",
+      "cat": "par mínimo",
+      "pr": "éek'",
+      "notes": "Tono alto; par mínimo con eek' (estrella).",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://www.mayas.uady.mx/diccionario/e_maya.html"
+      ],
+      "evidence": "INEA: «ée · Éek' · sucio». UADY: «EEK': Negro, obscuro, sucio»; compuesto «ÉEK' PÍIP»."
+    },
+    {
+      "m": "chaak",
+      "es": "salcochar, sancochar (cocer en agua)",
+      "cat": "par mínimo",
+      "pr": "chaak",
+      "notes": "Tono bajo. Con tono alto, cháak es «lluvia».",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "INEA: «aa · Chaak · salcochar, sancochar»."
+    },
+    {
+      "m": "cháak",
+      "es": "lluvia",
+      "cat": "par mínimo",
+      "pr": "cháak",
+      "notes": "Tono alto. También es el nombre del dios de la lluvia (Ch'a' cháak, ceremonia para pedir lluvia).",
+      "variants": [],
+      "ex": {
+        "m": "Ch'a' cháak",
+        "es": "ceremonia de petición de lluvia"
+      },
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://www.mayas.uady.mx/exposiciones/exp_05foto1.html"
+      ],
+      "evidence": "INEA: «áa · Cháak · lluvia». UADY: exposición fotográfica «Ch'a' Cháak, Ceremonia de la lluvia»."
+    },
+    {
+      "m": "chak",
+      "es": "rojo",
+      "cat": "par mínimo",
+      "pr": "chak",
+      "notes": "Vocal corta: chak (rojo) frente a cháak (lluvia).",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://www.mayas.uady.mx/diccionario/ch_maya.html"
+      ],
+      "evidence": "INEA: «Chak (rojo)». UADY: «CHAK: Rojo, colorado»."
+    },
+    {
+      "m": "chiich",
+      "es": "abuela",
+      "cat": "par mínimo",
+      "pr": "chiich",
+      "notes": "Vocal larga: dura más del doble que en chich (duro).",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0185-25742013000100006"
+      ],
+      "evidence": "Sobrino (2013): chiich ('abuela') frente a chich ('duro'); 255 ms frente a 105 ms."
+    },
+    {
+      "m": "chich",
+      "es": "duro",
+      "cat": "par mínimo",
+      "pr": "chich",
+      "notes": "Vocal corta.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0185-25742013000100006",
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Sobrino (2013): chich 'duro'. Aprendiendo Maya: «chich (duro)»."
+    },
+    {
+      "m": "báat",
+      "es": "hacha",
+      "cat": "par mínimo",
+      "pr": "báat",
+      "notes": "Vocal larga de tono alto; compárala con bat (granizo).",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0185-25742013000100006"
+      ],
+      "evidence": "Sobrino (2013): báat ('hacha') frente a bat ('granizo'); 303 ms frente a 125 ms."
+    },
+    {
+      "m": "bat",
+      "es": "granizo",
+      "cat": "par mínimo",
+      "pr": "bat",
+      "notes": "Vocal corta.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0185-25742013000100006",
+        "https://aprendiendomaya.com/escritura/vocales/las-vocales-y-sus-reglas-de-uso"
+      ],
+      "evidence": "Sobrino (2013): bat 'granizo'. Aprendiendo Maya: bat (granizo) como ejemplo de a corta."
+    },
+    {
+      "m": "ya'ax",
+      "es": "verde (y azul-verde)",
+      "cat": "par mínimo",
+      "pr": "ya-ash",
+      "notes": "Vocal rearticulada. Con tono alto, yáax significa «primero». La UADY lo glosa solo como «verde»; tradicionalmente nombra también el azul-verde.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/y_maya.html"
+      ],
+      "evidence": "UADY: «YA'AX: Verde»; distinto de «YÁAX: Cosa primera, primero»."
+    },
+    {
+      "m": "yáax",
+      "es": "primero",
+      "cat": "par mínimo",
+      "pr": "yáash",
+      "notes": "Tono alto; par con ya'ax (verde).",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/y_maya.html",
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "UADY: «YÁAX: Cosa primera, primero». Guía gramatical: «para el primero, se usa yáax»."
+    },
+    {
+      "m": "aak'",
+      "es": "bejuco, liana; lengua (órgano)",
+      "cat": "par mínimo",
+      "pr": "aak'",
+      "notes": "Tono bajo y k' final. Compárala con áak (tortuga): cambian el tono y la k.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://aprendiendomaya.com/escritura/vocales/las-vocales-y-sus-reglas-de-uso"
+      ],
+      "evidence": "INEA: «aa · Aak' · bejuco, liana, lengua». Aprendiendo Maya: aak' (lengua)."
+    },
+    {
+      "m": "áak",
+      "es": "tortuga",
+      "cat": "par mínimo",
+      "pr": "áak",
+      "notes": "Tono alto, k simple.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "INEA: «áa · Áak · tortuga»."
+    },
+    {
+      "m": "ja'",
+      "es": "agua",
+      "cat": "palabra",
+      "pr": "ja-",
+      "notes": "j aspirada y saltillo final. La UADY registra un segundo sentido: afilar herramientas.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/j_maya.html"
+      ],
+      "evidence": "UADY: «JA': Agua» (segunda acepción: afilar o frotar metal)."
+    },
+    {
+      "m": "ja'ab",
+      "es": "año",
+      "cat": "palabra",
+      "pr": "ja-ab",
+      "notes": "Rearticulada.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/j_maya.html"
+      ],
+      "evidence": "UADY: «JA'AB: Año»."
+    },
+    {
+      "m": "k'áak'",
+      "es": "fuego, lumbre",
+      "cat": "palabra",
+      "pr": "k'áak'",
+      "notes": "Dos k' y vocal larga de tono alto: buen ejercicio de glotalizadas. K'áak'náab es «mar».",
+      "variants": [],
+      "ex": {
+        "m": "k'áak'náab",
+        "es": "mar"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html",
+        {
+          "title": "Diccionario introductorio español-maya, maya-español",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Bevington, Maya for Travelers and Students (University of Texas Press)",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "UADY: «K'ÁAK': Fuego, lumbre, fogón, hoguera»; «K'ÁAK'NÁAB: Mar, océano». Diccionario introductorio: «K'ÁAK'.- Fuego». Bevington: ch'iich' 'bird', k'aak' 'fire'."
+    },
+    {
+      "m": "k'iin",
+      "es": "sol; día; tiempo",
+      "cat": "palabra",
+      "pr": "k'iin",
+      "notes": "Aparece en Ma'alob k'iin (buenos días).",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+      ],
+      "evidence": "UADY: «K'IIN: Día, sol, tiempo, época»."
+    },
+    {
+      "m": "lu'um",
+      "es": "tierra, suelo",
+      "cat": "palabra",
+      "pr": "lu-um",
+      "notes": "Rearticulada u'u.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/l_maya.html",
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "UADY: «LU'UM: Tierra, suelo, terreno, planeta». Aprendiendo Maya: lu'um (tierra)."
+    },
+    {
+      "m": "che'",
+      "es": "árbol; madera, palo",
+      "cat": "palabra",
+      "pr": "che-",
+      "notes": "Glotalizada final e'.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/ch_maya.html"
+      ],
+      "evidence": "UADY: «CHE': Árbol, madera, palo»."
+    },
+    {
+      "m": "tuunich",
+      "es": "piedra",
+      "cat": "palabra",
+      "pr": "tuunich",
+      "notes": "Vocal larga uu.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/p_esp.html",
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "UADY: «PIEDRA: Tuunich». Aprendiendo Maya: tuunich (piedra)."
+    },
+    {
+      "m": "xiib",
+      "es": "hombre, varón",
+      "cat": "palabra",
+      "pr": "shiib",
+      "notes": "x = sh.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/x_maya.html",
+        {
+          "title": "Diccionario introductorio español-maya, maya-español",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "UADY: «XIIB: Hombre varón, macho masculino». Diccionario introductorio: máak, wíinik, xiib asociados a «hombre»."
+    },
+    {
+      "m": "ch'íich'",
+      "es": "pájaro, ave pequeña",
+      "cat": "palabra",
+      "pr": "ch'íich'",
+      "notes": "Dos ch' y tono alto.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/ch_glotal_maya.html",
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "UADY: «CH'ÍICH': Pájaro ave pequeña». Normas: ch'íich' como ejemplo de ch'. Guía gramatical: plural ch'íich'o'ob."
+    },
+    {
+      "m": "ch'o'",
+      "es": "ratón, rata",
+      "cat": "palabra",
+      "pr": "ch'o-",
+      "notes": "ch' inicial y glotalizada final.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/ch_glotal_maya.html"
+      ],
+      "evidence": "UADY: «CH'O': Ratón, rata, animal roedor»."
+    },
+    {
+      "m": "ts'íib",
+      "es": "escritura; escribir",
+      "cat": "palabra",
+      "pr": "ts'íib",
+      "notes": "De aquí el título de las Normas: U nu'ukbesajil u ts'íibta'al maayat'aan.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/ts_glotal_maya.html",
+        "https://site.inali.gob.mx/pdf/norma_maya.pdf"
+      ],
+      "evidence": "UADY: «TS'ÍIB: Escritura; escribir, redactar»."
+    },
+    {
+      "m": "p'óok",
+      "es": "sombrero",
+      "cat": "palabra",
+      "pr": "p'óok",
+      "notes": "p' y tono alto.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Normas: p'óok en la serie de p'. Aprendiendo Maya: p'óok (sombrero)."
+    },
+    {
+      "m": "wíinik",
+      "es": "persona, ser humano; hombre",
+      "cat": "palabra",
+      "pr": "wíinik",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/w_maya.html",
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "UADY: «WÍINIK: Hombre, humano, individuo». Guía gramatical: wíinik 'hombre'."
+    },
+    {
+      "m": "tsíimin",
+      "es": "caballo",
+      "cat": "palabra",
+      "pr": "tsíimin",
+      "notes": "Literalmente «tapir»: fue la palabra maya adoptada para nombrar al caballo.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/ts_maya.html",
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "UADY: «TSÍIMIN: Caballo»; artículo UADY: «Literalmente quiere decir 'tapir'». INEA: «Tsíimin (caballo)»."
+    },
+    {
+      "m": "ts'ono'ot",
+      "es": "cenote",
+      "cat": "palabra",
+      "pr": "ts'ono-ot",
+      "notes": "ts' y rearticulada o'o.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/ts_glotal_maya.html",
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "UADY: «TS'ONO'OT: Cenote»."
+    },
+    {
+      "m": "teen",
+      "es": "yo",
+      "cat": "pronombre",
+      "pr": "teen",
+      "notes": "Con la terminación -e' se acorta: tene' (en cuanto a mí).",
+      "variants": [
+        "tene'"
+      ],
+      "ex": {
+        "m": "Tene' tin na'atik",
+        "es": "Yo sí entiendo"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/t_maya.html",
+        "https://aprendiendomaya.com/escritura/pronombres-personales-maya/pronombres-personales-en-lengua-maya"
+      ],
+      "evidence": "UADY: «TEEN: Yo, a mí». Aprendiendo Maya: teen y teech se acortan al agregar -e'."
+    },
+    {
+      "m": "teech",
+      "es": "tú; usted",
+      "cat": "pronombre",
+      "pr": "teech",
+      "notes": "En maya no hay distinción entre tú y usted: teech sirve para ambos. Algunas fuentes escriben tech.",
+      "variants": [
+        "tech"
+      ],
+      "ex": {
+        "m": "Kux teech?",
+        "es": "¿Y tú?"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/t_maya.html",
+        "https://aprendiendomaya.com/frases/saludos-lengua-maya",
+        "https://aprendiendomaya.com/escritura/pronombres-personales-maya/pronombres-personales-en-lengua-maya"
+      ],
+      "evidence": "UADY: «TEECH: Tu, te, a ti». Aprendiendo Maya: «En maya no existe la distinción entre Tú y Usted, Teech es el pronombre para la segunda persona en singular»."
+    },
+    {
+      "m": "to'on",
+      "es": "nosotros",
+      "cat": "pronombre",
+      "pr": "to-on",
+      "notes": "Rearticulada o'o.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://aprendiendomaya.com/escritura/pronombres-personales-maya/pronombres-personales-en-lengua-maya",
+        "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0185-25742022000200187"
+      ],
+      "evidence": "Aprendiendo Maya: to'on, to'onex, te'ex, leti'ob. Artículo sobre grafía colonial: rearticuladas toon /to'on."
+    },
+    {
+      "m": "te'ex",
+      "es": "ustedes",
+      "cat": "pronombre",
+      "pr": "te-esh",
+      "notes": "Rearticulada e'e; x = sh.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://aprendiendomaya.com/escritura/pronombres-personales-maya/pronombres-personales-en-lengua-maya",
+        "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0185-25742022000200187"
+      ],
+      "evidence": "Aprendiendo Maya: te'ex. Artículo sobre grafía colonial: teex/te'ex."
+    },
+    {
+      "m": "leti'ob",
+      "es": "ellos, ellas",
+      "cat": "pronombre",
+      "pr": "leti-ob",
+      "notes": "Con -e' de tema: leti'obe' (en cuanto a ellos).",
+      "variants": [
+        "letio'ob"
+      ],
+      "ex": {
+        "m": "Leti'obe' toj yóolo'ob xan",
+        "es": "Ellos también están bien"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://aprendiendomaya.com/escritura/pronombres-personales-maya/pronombres-personales-en-lengua-maya",
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Aprendiendo Maya: lista de pronombres con leti'ob. Curso «Idioma Maya Yucateco»: «Letio'obe' tòoh yóolo'ob xan»."
+    },
+    {
+      "m": "ba'ax",
+      "es": "¿qué?",
+      "cat": "pregunta",
+      "pr": "ba-ash",
+      "notes": "Rearticulada y x = sh.",
+      "variants": [
+        "ba'x"
+      ],
+      "ex": {
+        "m": "Ba'ax ka wa'alik?",
+        "es": "¿Qué dices? / ¿Qué tal?"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/b_maya.html",
+        "https://www.mayas.uady.mx/curso_maya/lecc01_1.html"
+      ],
+      "evidence": "UADY: «BA'AX: ¿Qué? ¿Qué cosa?». Curso UADY lección 1: ba'ax (qué)."
+    },
+    {
+      "m": "bix",
+      "es": "¿cómo?",
+      "cat": "pregunta",
+      "pr": "bish",
+      "notes": "Abre el saludo más común: Bix a beel?",
+      "variants": [],
+      "ex": {
+        "m": "Bix a k'aaba'?",
+        "es": "¿Cómo te llamas?"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      ],
+      "evidence": "Gramática de Andrade: «baax, 'what'; max, 'who'; bix, 'how'; tuux, 'where'». Junp'iit Maaya: «Bix a beel?» = How are you?"
+    },
+    {
+      "m": "tu'ux",
+      "es": "¿dónde?; ¿a dónde?",
+      "cat": "pregunta",
+      "pr": "tu-ush",
+      "notes": "",
+      "variants": [],
+      "ex": {
+        "m": "Tu'ux ka bin?",
+        "es": "¿A dónde vas?"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/curso_maya/lecc01_1.html",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html",
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf"
+      ],
+      "evidence": "Curso UADY: tu'ux (dónde). Junp'iit Maaya: «Tu'ux yaan junp'el restaurant? Where is a restaurant?». Ayuntamiento de Mérida: «¿A dónde vas? Tu'ux ka bin»."
+    },
+    {
+      "m": "máax",
+      "es": "¿quién?",
+      "cat": "pregunta",
+      "pr": "máash",
+      "notes": "",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php",
+        "https://www.yucatanliving.com/culture/mayan-language-for-beginners-2"
+      ],
+      "evidence": "Andrade: «max, 'who'» (ortografía antigua). Yucatan Living: «Ma'ax a k'aaba'?» (forma cortés de preguntar el nombre). Tono no confirmado en fuente normativa."
+    },
+    {
+      "m": "ba'axten",
+      "es": "¿por qué?",
+      "cat": "pregunta",
+      "pr": "ba-ashten",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/b_maya.html"
+      ],
+      "evidence": "UADY: «BA'AXTEN: ¿Por qué?»."
+    },
+    {
+      "m": "kux",
+      "es": "¿y …? (devuelve la pregunta o cambia de tema)",
+      "cat": "pregunta",
+      "pr": "kush",
+      "notes": "Partícula que convierte la frase en pregunta sobre otra persona o cosa: Kux teech? = ¿y tú?",
+      "variants": [],
+      "ex": {
+        "m": "Kux teech?",
+        "es": "¿Y tú?"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S2007-736X2018000100388",
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "AnderBois (2018): masima'/maasa' y kux indican que la oración es una pregunta. Diccionario de Montgomery (según resumen de búsqueda): kux «serves to ask the same question a second time but about a different person or object». Curso «Idioma Maya Yucateco»: ¿Kux tèech?"
+    },
+    {
+      "m": "bej",
+      "es": "camino, sendero",
+      "cat": "palabra",
+      "pr": "bej",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/b_maya.html",
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "UADY: «BEJ: Camino, sendero». INEA: «Bej (camino)»."
+    },
+    {
+      "m": "beel",
+      "es": "camino (forma de bej en «Bix a beel?»)",
+      "cat": "palabra",
+      "pr": "beel",
+      "notes": "Bix a beel? pregunta literalmente por «tu camino».",
+      "variants": [
+        "bèel"
+      ],
+      "ex": {
+        "m": "Bix a beel?",
+        "es": "¿Cómo estás? (lit. ¿cómo va tu camino?)"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/b_maya.html",
+        "https://yucatantoday.com/en/blog/say-it-in-maya"
+      ],
+      "evidence": "UADY: «BEEL: Camino». Yucatán Today: «beel» tiene su origen en «bej», camino."
+    },
+    {
+      "m": "k'aaba'",
+      "es": "nombre",
+      "cat": "palabra",
+      "pr": "k'aaba-",
+      "notes": "",
+      "variants": [],
+      "ex": {
+        "m": "In k'aaba'e' …",
+        "es": "Me llamo …"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf",
+        "https://www.mayas.uady.mx/literatura/poem25.html"
+      ],
+      "evidence": "INALI: «In k'aaba'e'… Mi nombre es…». Ayuntamiento de Mérida: «Bix a k'aaba'». UADY: poema de Briceida Cuevas Cob «Mi nombre In k'aaba'»."
+    },
+    {
+      "m": "kaaj",
+      "es": "pueblo, poblado",
+      "cat": "palabra",
+      "pr": "kaaj",
+      "notes": "De aquí kaajal (lugar donde uno vive o de donde es): Tu'ux a kaajal?",
+      "variants": [
+        "kaajal"
+      ],
+      "ex": {
+        "m": "Tu'ux a kaajal?",
+        "es": "¿De dónde eres?"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya",
+        {
+          "title": "Diccionario bilingüe español-maya",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://aztli.wordpress.com/wp-content/uploads/2013/10/diccionario-yucateco-actual.pdf"
+      ],
+      "evidence": "Aprendiendo Maya: kaaj (pueblo). Diccionario bilingüe: «Kaaj, kaajal» = poblado. Diccionario de verbos: «kaaj s.» pueblo."
+    },
+    {
+      "m": "óol",
+      "es": "ánimo, voluntad, estado de ánimo",
+      "cat": "palabra",
+      "pr": "óol",
+      "notes": "Con posesivo: in wóol (mi ánimo), u yóol (su ánimo). Base de muchas frases de sentimiento.",
+      "variants": [],
+      "ex": {
+        "m": "Ki'imak in wóol",
+        "es": "Estoy contento"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/o_maya.html"
+      ],
+      "evidence": "UADY: «ÓOL: voluntad, estado de ánimo, intención, ganas, intento, energía moral»."
+    },
+    {
+      "m": "jach",
+      "es": "muy; de veras",
+      "cat": "palabra",
+      "pr": "jach",
+      "notes": "Intensificador.",
+      "variants": [],
+      "ex": {
+        "m": "Jach ma'alob",
+        "es": "Muy bien"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf",
+        "https://www.babbel.com/en/magazine/mayan-language"
+      ],
+      "evidence": "Ayuntamiento de Mérida: «Jach ma'alob» muy bien; «Jach níib óolal» muchas gracias. Babbel: «Jach ki'imak in wóol in wilikech»."
+    },
+    {
+      "m": "uts",
+      "es": "bueno",
+      "cat": "palabra",
+      "pr": "uts",
+      "notes": "Pfeiler y Hofling (2006) encontraron que uts se usa sobre todo en el oriente de la península; en las demás regiones se prefiere ma'alob.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S1870-57662006000100002",
+        "https://www.mayas.uady.mx/diccionario/b_esp.html"
+      ],
+      "evidence": "Pfeiler y Hofling (2006): «uts» se identifica en el oriente de la península, mientras que en las demás regiones estudiadas se emplea ma'alob. Diccionario: «Uts, ma'alob» para «buen, o, a»."
+    },
+    {
+      "m": "utsil",
+      "es": "bien, bondad",
+      "cat": "palabra",
+      "pr": "utsil",
+      "notes": "Sustantivo derivado de uts. Aparece en Ka xi'ik teech utsil.",
+      "variants": [],
+      "ex": {
+        "m": "Ka xi'ik teech utsil",
+        "es": "Que te vaya bien"
+      },
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.mayas.uady.mx/diccionario/b_esp.html"
+      ],
+      "evidence": "Diccionarios: «Utsil». Gramática: utsil «bondad» como par de uts «bueno»."
+    },
+    {
+      "m": "jats'uts",
+      "es": "bonito, bello",
+      "cat": "palabra",
+      "pr": "jats'uts",
+      "notes": "",
+      "variants": [],
+      "ex": {
+        "m": "Ka xi'ik teech jats'uts",
+        "es": "Que te vaya bien"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/b_esp.html",
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+      ],
+      "evidence": "Diccionario: «Jats'uts». INALI: «Ka xi'ik tech jats'uts / ¡Que te vaya bien! (buen camino)»."
+    },
+    {
+      "m": "waye'",
+      "es": "aquí, acá",
+      "cat": "palabra",
+      "pr": "waye-",
+      "notes": "",
+      "variants": [],
+      "ex": {
+        "m": "Máanen waye'",
+        "es": "Pase usted"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/w_maya.html",
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+      ],
+      "evidence": "UADY: «WAYE': Acá, por aquí». INALI: «Máanen waye'»."
+    },
+    {
+      "m": "sáamal",
+      "es": "mañana (el día siguiente)",
+      "cat": "palabra",
+      "pr": "sáamal",
+      "notes": "",
+      "variants": [
+        "saamal"
+      ],
+      "ex": {
+        "m": "Tak sáamal",
+        "es": "Hasta mañana"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/s_maya.html",
+        {
+          "title": "Bevington, Maya for Travelers and Students (University of Texas Press)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Montgomery, Yucatec Mayan Dictionary and Phrasebook",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "UADY: «SÁAMAL: Mañana». Bevington: «saamal 'tomorrow'». Montgomery: «Tak sáamal … Hasta mañana»."
+    },
+    {
+      "m": "áak'ab",
+      "es": "noche",
+      "cat": "palabra",
+      "pr": "áak'ab",
+      "notes": "",
+      "variants": [],
+      "ex": {
+        "m": "Ma'alob áak'ab",
+        "es": "Buenas noches"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/a_esp.html",
+        "https://www.poresto.com/yucatan/2024/1/6/como-se-dice-buenos-dias-tardes-noches-en-maya.html"
+      ],
+      "evidence": "UADY (español-maya): «anoche: Áak'abjil»; «anochecer: Áak'abtal». PorEsto: «Ma'alob áak'ab» = buenas noches."
+    },
+    {
+      "m": "yéetel",
+      "es": "y; con",
+      "cat": "palabra",
+      "pr": "yéetel",
+      "notes": "Une sustantivos («y») o un verbo con un sustantivo («con»).",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://es.wiktionary.org/wiki/y%C3%A9etel",
+        "https://www.mayas.uady.mx/curso_maya/lec10.html"
+      ],
+      "evidence": "Wikcionario: conjunción «1: Y. 2: Con». Curso UADY: «Yéetel se traduce como (y) cuando une dos sustantivos… puede significar 'con' cuando une un verbo con un sustantivo»."
+    },
+    {
+      "m": "xan",
+      "es": "también",
+      "cat": "palabra",
+      "pr": "shan",
+      "notes": "Aparece en beyxan (así también) y al final de frase.",
+      "variants": [],
+      "ex": {
+        "m": "Beyxan teen",
+        "es": "Yo también"
+      },
+      "conf": "media",
+      "sources": [
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html",
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Junp'iit Maaya: «Beyxan teen … Me, too». Curso «Idioma Maya Yucateco»: «Letio'obe' tòoh yóolo'ob xan» (ellos también están bien). Significado deducido de los ejemplos."
+    },
+    {
+      "m": "maaya t'aan",
+      "es": "lengua maya",
+      "cat": "palabra",
+      "pr": "maaya t'aan",
+      "notes": "El INALI lo escribe junto: Maayat'aan. Sus hablantes la llaman así.",
+      "variants": [
+        "maayat'aan",
+        "màaya t'àan"
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.inali.gob.mx/detalle/lengua-del-mes-maayataan-maya",
+        "https://yucatan.heraldodemexico.com.mx/tendencias/2025/8/27/koox-kanik-maaya-taan-asi-seran-los-cursos-para-preservar-la-lengua-maya-en-yucatan-1949.html",
+        "https://epinvestiga.com/dominical/la-lengua-que-perdimos/"
+      ],
+      "evidence": "INALI: «Lengua del mes Maayat'aan (maya)». Programa del Gobierno de Yucatán «Ko'ox kanik maaya t'aan». Epinvestiga: «maya yucateco, maaya t'aan»."
+    },
+    {
+      "m": "tsikbal",
+      "es": "platicar; conversación",
+      "cat": "palabra",
+      "pr": "tsikbal",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/ts_maya.html",
+        "https://www.mayas.uady.mx/diccionario/p_esp.html"
+      ],
+      "evidence": "UADY: «TSIKBAL: Conversación, plática; conversar, charlar, platicar»; «PLATICAR: Tsikbal, t'aan»."
+    },
+    {
+      "m": "na'at",
+      "es": "entender, comprender (raíz)",
+      "cat": "aprendiz",
+      "pr": "na-at",
+      "notes": "Raíz de Ma' tin na'atik (no entiendo). Comparte raíz con el nombre del instituto Na'atik.",
+      "variants": [],
+      "ex": {
+        "m": "Ma' tin na'atik",
+        "es": "No entiendo"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/c_esp.html"
+      ],
+      "evidence": "UADY (español-maya): «COMPRENDER v: Na'at»; «CONOCIMIENTO: Na'at, ojel, tuukul»."
+    },
+    {
+      "m": "chaambéel",
+      "es": "despacio, lento, con calma",
+      "cat": "aprendiz",
+      "pr": "chaambéel",
+      "notes": "Útil para pedir que te hablen más despacio. Variantes ortográficas: chaanbéel, chambéel.",
+      "variants": [
+        "chaanbéel",
+        "chambéel",
+        "chambel"
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/ch_maya.html",
+        "https://aulex.org/es-myn/index.php?busca=chaanb%C3%A9el",
+        "https://topyucatan.com/notas/the-yucatan-culture/frases-basicas-en-maya-y-espanol"
+      ],
+      "evidence": "UADY: «CHAAMBÉEL: Despacio, lento, calmoso». AULEX: chaanbéel = despacio, lento. Top Yucatán: «Chaambéel» = despacio."
+    },
+    {
+      "m": "tu ka'atéen",
+      "es": "otra vez, de nuevo",
+      "cat": "aprendiz",
+      "pr": "tu ka-atéen",
+      "notes": "Para pedir que repitan. Ka' es la raíz de «dos» y de «segunda vez».",
+      "variants": [
+        "ka'atéen",
+        "ka'teen"
+      ],
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Diccionario Maya Popular",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.mayas.uady.mx/diccionario/k_maya.html"
+      ],
+      "evidence": "Diccionario Maya Popular: «tu ka'atéen» = otra vez; «nuevamente: tu ka'atéen». UADY: raíz KA' = dos, segundo, segunda vez, otra vez."
+    },
+    {
+      "m": "jump'íit",
+      "es": "un poco, un poquito",
+      "cat": "aprendiz",
+      "pr": "jump'íit",
+      "notes": "La n de jun se escribe m ante p (jump'éel, kamp'éel). El curso de la Universidad Duke se llama «Junp'iit Maaya: A little bit of Maya».",
+      "variants": [
+        "junp'íit",
+        "junp'iit",
+        "jumpit"
+      ],
+      "ex": {
+        "m": "Chéen jump'íit",
+        "es": "Solo un poco"
+      },
+      "conf": "media",
+      "sources": [
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html",
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas",
+        {
+          "title": "Numerales y clasificadores en maya",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://losocelotesproyectotemasdelinguistica.wordpress.com/2021/06/09/la-cuantificacion-actual-en-el-maya-yucateco/"
+      ],
+      "evidence": "Junp'iit Maaya (Mújica, 1995): título traducido «A little bit of Maya». La Lengua Maya de Yucatán: «Chéen junp'íit maaya kin t'anik». Material de numerales: kanp'éel se escribe kamp'éel; serie jump'éel, ka'ap'éel."
+    },
+    {
+      "m": "kanik",
+      "es": "aprender(lo) (forma del verbo kan-)",
+      "cat": "aprendiz",
+      "pr": "kanik",
+      "notes": "Aparece en Ko'ox kanik maaya t'aan (vamos a aprender maya) y Táan in kanik maaya (estoy aprendiendo maya).",
+      "variants": [],
+      "ex": {
+        "m": "Ko'ox kanik maaya t'aan",
+        "es": "Vamos a aprender lengua maya"
+      },
+      "conf": "media",
+      "sources": [
+        "https://yucatan.heraldodemexico.com.mx/tendencias/2025/8/27/koox-kanik-maaya-taan-asi-seran-los-cursos-para-preservar-la-lengua-maya-en-yucatan-1949.html",
+        "https://www.posta.com.mx/yucatan/impulsan-la-preservacion-de-la-lengua-maya-en-yucatan-con-el-programa-koox-kanik-maaya-taan/vl2087271",
+        "https://epinvestiga.com/dominical/la-lengua-que-perdimos/"
+      ],
+      "evidence": "Gobierno de Yucatán: programa «Ko'ox kanik maaya t'aan» = «Vamos a aprender lengua maya». Epinvestiga: «Táan in kanik maaya»."
+    },
+    {
+      "m": "Bix a beel?",
+      "es": "¿Cómo estás? / ¿Qué tal?",
+      "cat": "saludo",
+      "pr": "bish a beel",
+      "notes": "El saludo más común. Literalmente «¿cómo va tu camino?». El prontuario del INALI lo pone como equivalente de «buenos días», porque en maya no hay saludos por hora del día.",
+      "variants": [
+        "Biix a beel?",
+        "Bix a bel?",
+        "¿Bix a bèel?"
+      ],
+      "ex": {
+        "m": "Ola, bix a beel?",
+        "es": "Hola, ¿cómo estás?"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf",
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Bevington, Maya for Travelers and Students (University of Texas Press)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html",
+        "https://yucatantoday.com/en/blog/say-it-in-maya"
+      ],
+      "evidence": "INALI: «Bix a beel / Buenos días». Ayuntamiento de Mérida: «¿Cómo estás? Bix a beel». Montgomery: «Bix a beel(e'ex)? ¿Qué tal?». Bevington: «Biix a beel 'How are things with you?'». Junp'iit: «Ola, bix a beel?»."
+    },
+    {
+      "m": "Bix a beele'ex?",
+      "es": "¿Cómo están (ustedes)?",
+      "cat": "saludo",
+      "pr": "bish a beele-esh",
+      "notes": "Plural con -e'ex (ustedes).",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://site.inali.gob.mx/Micrositios/contigo_a_la_distancia/pdf/instructivo.pdf"
+      ],
+      "evidence": "Montgomery: «Bix a beel(e'ex)?». INALI, instructivo «Contigo a la distancia»: comienza «Bix a beele'ex?»."
+    },
+    {
+      "m": "Ba'ax ka wa'alik?",
+      "es": "¿Qué tal? (lit. ¿qué dices?)",
+      "cat": "saludo",
+      "pr": "ba-ash ka wa-alik",
+      "notes": "Saludo informal muy usado. El INALI lo propone para «buenas noches» y PorEsto como «hola». Respuesta típica: Mix ba'al (nada).",
+      "variants": [
+        "Ba'x ka wa'alik?",
+        "Bax ka'wali?"
+      ],
+      "ex": {
+        "m": "Ba'ax ka wa'alik? — Chéen mixba'al.",
+        "es": "¿Qué tal? — Nada, aquí nomás."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Bevington, Maya for Travelers and Students (University of Texas Press)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html",
+        "https://www.poresto.com/yucatan/2024/1/8/como-saludar-despedir-en-maya.html"
+      ],
+      "evidence": "INALI: «Ba'ax ka wa'alik» en la sección de saludos (buenas noches). Montgomery: «Literally, 'What do you say?' Ba'ax ka wa'alik? ¿Qué tal?». Bevington: «Ba'ax ka wa'alik 'What do you say?'». Blair y Vermont-Salas, lección 1: «ba'x ka wa'alik» = what do you say?"
+    },
+    {
+      "m": "Bix yanikech?",
+      "es": "¿Cómo estás? / ¿Cómo está usted?",
+      "cat": "saludo",
+      "pr": "bish yanikech",
+      "notes": "Pregunta por el estado de la persona (de yaan, haber, estar). Respuesta: Ma'alob yaniken (estoy bien).",
+      "variants": [
+        "Bix anikech?"
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://aprendiendomaya.com/frases/saludos-lengua-maya",
+        "https://www.omniglot.com/language/phrases/yucatec-maya.php",
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf",
+        "https://www.poresto.com/yucatan/2024/1/8/como-saludar-despedir-en-maya.html"
+      ],
+      "evidence": "Aprendiendo Maya: «Bix anikech» y «bix yanikech» significan «Cómo estás» y también «Cómo está usted». Omniglot: «Bix yanikech?». Mérida: «Bix anikech». PorEsto: «¿Bix yanikech?»."
+    },
+    {
+      "m": "Ma'alob.",
+      "es": "Bien. / Está bien.",
+      "cat": "saludo",
+      "pr": "ma-alob",
+      "notes": "Respuesta habitual a Bix a beel? También significa «bueno» y «de acuerdo». En el habla rápida el saltillo casi desaparece (ma'lob).",
+      "variants": [
+        "Ma'aloob",
+        "Ma'lob",
+        "Ma'alo'ob"
+      ],
+      "ex": {
+        "m": "Bix a beel? — Ma'alob.",
+        "es": "¿Cómo estás? — Bien."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/m_maya.html",
+        {
+          "title": "Bevington, Maya for Travelers and Students (University of Texas Press)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.yucatanliving.com/culture/mayan-language-for-beginners-2",
+        "https://yucatanliving.com/daily-life/mayan-language-for-beginners"
+      ],
+      "evidence": "UADY: «MA'ALOB: bien, muy bien, bueno». Bevington: «The formulaic response to the first is ma'aloob 'o.k., fine'». Montgomery: «Ma'alob. Bien». Yucatan Living: el saltillo puede casi desaparecer en el habla diaria."
+    },
+    {
+      "m": "Kux teech?",
+      "es": "¿Y tú?",
+      "cat": "saludo",
+      "pr": "kush teech",
+      "notes": "Para devolver la pregunta.",
+      "variants": [
+        "Kux tech?",
+        "Kux tun tech?"
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html",
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S2007-736X2018000100388"
+      ],
+      "evidence": "Junp'iit Maaya: «kux teech?» = and you? Curso «Idioma Maya Yucateco»: «¿Kux tèech?». AnderBois: kux marca pregunta."
+    },
+    {
+      "m": "Jach ma'alob.",
+      "es": "Muy bien.",
+      "cat": "saludo",
+      "pr": "jach ma-alob",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf"
+      ],
+      "evidence": "Ayuntamiento de Mérida, sección de afirmaciones: «Jach ma'alob» = muy bien."
+    },
+    {
+      "m": "Ma'alob yaniken.",
+      "es": "Estoy bien.",
+      "cat": "saludo",
+      "pr": "ma-alob yaniken",
+      "notes": "Respuesta a Bix yanikech? La fuente la da como «Ma'alob yaniken, nib óolal» (estoy bien, gracias).",
+      "variants": [],
+      "ex": {
+        "m": "Ma'alob yaniken, níib óolal.",
+        "es": "Estoy bien, gracias."
+      },
+      "conf": "media",
+      "sources": [
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+      ],
+      "evidence": "La Lengua Maya de Yucatán: «Ma'alob yaniken, nib óolal» = «Estoy bien, gracias»."
+    },
+    {
+      "m": "Toj in wóol.",
+      "es": "Estoy bien (me siento bien).",
+      "cat": "saludo",
+      "pr": "toj in wóol",
+      "notes": "Literalmente «mi ánimo está derecho/sano». Las fuentes no coinciden en la longitud de la vocal (toj, tooj, tòoh).",
+      "variants": [
+        "Tooj in wóol",
+        "Tòoh in wóol",
+        "tooj in wol"
+      ],
+      "conf": "media",
+      "sources": [
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html",
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.academia.edu/43248572/YAAX_JAATSIL_MAYA_TAAN"
+      ],
+      "evidence": "Junp'iit: «Chen beya'// chan ma'alob// tooj in wol. So-so// okay// I'm feeling good». Curso «Idioma Maya Yucateco»: «Tòoh in wóol» = estoy bien. Yaax Jaatsil Maya Taan: «Toj in wóol»."
+    },
+    {
+      "m": "Chéen beya'.",
+      "es": "Así nomás. / Regular.",
+      "cat": "saludo",
+      "pr": "chéen beya-",
+      "notes": "Respuesta modesta a Bix a beel? Beya' = así, de esta manera. Junp'iit lo escribe sin tono (chen).",
+      "variants": [
+        "Chen beya'"
+      ],
+      "ex": {
+        "m": "Chéen beya', kux teech?",
+        "es": "Así nomás, ¿y tú?"
+      },
+      "conf": "media",
+      "sources": [
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      ],
+      "evidence": "Junp'iit: «Chen beya', kux teech? So so, and you?». Andrade: «beya', 'in this manner', 'like this'»."
+    },
+    {
+      "m": "Beyxan teen.",
+      "es": "Yo también. / Igualmente.",
+      "cat": "saludo",
+      "pr": "beyshan teen",
+      "notes": "",
+      "variants": [
+        "Bey xan teen"
+      ],
+      "conf": "media",
+      "sources": [
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      ],
+      "evidence": "Junp'iit Maaya: «Beyxan teen. … Me, too»."
+    },
+    {
+      "m": "Ola",
+      "es": "Hola (préstamo del español)",
+      "cat": "saludo",
+      "pr": "ola",
+      "notes": "No existe un «hola» nativo; en la conversación se usa el préstamo, seguido de Bix a beel?",
+      "variants": [],
+      "ex": {
+        "m": "Ola, bix a beel?",
+        "es": "Hola, ¿cómo estás?"
+      },
+      "conf": "media",
+      "sources": [
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html",
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Junp'iit: «Ola, bix a beel?» = Hello, how are you? Montgomery: «'Hello,' 'how are you?,' 'please,' 'thank you,' and even the simple affirmation of 'yes' all lack counterparts in Maya»."
+    },
+    {
+      "m": "Ma'alob k'iin.",
+      "es": "Buenos días.",
+      "cat": "saludo",
+      "pr": "ma-alob k'iin",
+      "notes": "Calco del español: los saludos por hora del día no son tradicionales en maya.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.poresto.com/yucatan/2024/1/6/como-se-dice-buenos-dias-tardes-noches-en-maya.html",
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas",
+        "https://yucatantoday.com/hubfs/Revista/No433/No433%20-%20Yucat%C3%A1n%20est%C3%A1%20de%20fiesta.pdf?area-of-interest=cultura",
+        "https://yucatantoday.com/en/blog/say-it-in-maya"
+      ],
+      "evidence": "PorEsto: «Ma'alob k'iin». La Lengua Maya de Yucatán: «Ma'alob k'iin» = buenos días. Yucatán Today (revista 433): «Ma'alob k'iin». Yucatán Today: no hay saludos como «buenos días, tardes o noches», se traducen del español."
+    },
+    {
+      "m": "Ma'alob chíinil k'iin.",
+      "es": "Buenas tardes.",
+      "cat": "saludo",
+      "pr": "ma-alob chíinil k'iin",
+      "notes": "Calco del español. Otra fuente da Ma'alob óok'iin.",
+      "variants": [
+        "Ma'lob chi'inil k'iin",
+        "Ma'alob óok'iin"
+      ],
+      "conf": "media",
+      "sources": [
+        "https://www.poresto.com/yucatan/2024/1/6/como-se-dice-buenos-dias-tardes-noches-en-maya.html",
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+      ],
+      "evidence": "PorEsto: «Ma'alob chíinil k'iin» (buenas tardes). La Lengua Maya de Yucatán: «Ma'alob óok'iin» para la tarde."
+    },
+    {
+      "m": "Ma'alob áak'ab.",
+      "es": "Buenas noches.",
+      "cat": "saludo",
+      "pr": "ma-alob áak'ab",
+      "notes": "Calco del español.",
+      "variants": [
+        "Ma'lob ak'ab"
+      ],
+      "conf": "media",
+      "sources": [
+        "https://www.poresto.com/yucatan/2024/1/6/como-se-dice-buenos-dias-tardes-noches-en-maya.html"
+      ],
+      "evidence": "PorEsto: «Ma'alob áak'ab» (buenas noches)."
+    },
+    {
+      "m": "Ki'imak óolal.",
+      "es": "Bienvenido(a).",
+      "cat": "cortesía",
+      "pr": "ki-imak óolal",
+      "notes": "Ki'imak óol es alegría. Para un grupo el INALI usa la frase completa Ki'imak k óol taale'ex waye'.",
+      "variants": [
+        "Kíimak óolal",
+        "Kíimak 'oolal"
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://naatikmexico.org/blog/yucatec-maya-phrases",
+        "https://www.omniglot.com/language/phrases/yucatec-maya.php",
+        "https://www.poresto.com/yucatan/2024/1/8/como-saludar-despedir-en-maya.html",
+        "https://es.wiktionary.org/wiki/ki%CA%BCimak_%C3%B3ol"
+      ],
+      "evidence": "Na'atik y Omniglot: «Kíimak óolal / Kíimak 'oolal» = welcome. PorEsto: «Bienvenido: Kíimak 'oolal». Wikcionario: entrada ki'imak óol."
+    },
+    {
+      "m": "Ki'imak k óol taale'ex waye'.",
+      "es": "Bienvenidos (nos alegra que vinieran aquí).",
+      "cat": "cortesía",
+      "pr": "ki-imak k óol taale-esh waye-",
+      "notes": "Fórmula del prontuario oficial del INALI.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        "https://arqueologiamexicana.mx/lenguas-indigenas/mayas-yucatecos"
+      ],
+      "evidence": "INALI: «Ki'imak k óol taale'ex waye' / Bienvenidos». Arqueología Mexicana reproduce la misma frase."
+    },
+    {
+      "m": "Máanen waye'.",
+      "es": "Pase usted.",
+      "cat": "cortesía",
+      "pr": "máanen waye-",
+      "notes": "Lit. «pasa por aquí».",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+      ],
+      "evidence": "INALI: «Máanen waye' / Pase usted»."
+    },
+    {
+      "m": "Pa'atik in jáan máan.",
+      "es": "Con permiso.",
+      "cat": "cortesía",
+      "pr": "pa-atik in jáan máan",
+      "notes": "Solo la vi en un resumen del prontuario del INALI; falta verificar la grafía en el PDF original.",
+      "variants": [],
+      "conf": "baja",
+      "sources": [
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+      ],
+      "evidence": "Resumen de búsqueda del prontuario del INALI: «Pa'atik in jáan máan» (con permiso). Una segunda búsqueda no lo volvió a encontrar."
+    },
+    {
+      "m": "Ki'imak in wóol.",
+      "es": "Estoy contento(a); me da gusto.",
+      "cat": "cortesía",
+      "pr": "ki-imak in wóol",
+      "notes": "Lit. «mi ánimo está alegre». Base de Mucho gusto.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://es.babbel.com/es/magazine/la-lengua-maya",
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas",
+        "https://es.wiktionary.org/wiki/ki%CA%BCimak_%C3%B3ol"
+      ],
+      "evidence": "Babbel (español): «Ki'imak in wóol» para decir «Estoy feliz». Wikcionario: ki'imak óol. La Lengua Maya de Yucatán la usa en «Jach ki'imak in wóol in k'ajóoltikech»."
+    },
+    {
+      "m": "Jach ki'imak in wóol in k'ajóoltikech.",
+      "es": "Mucho gusto en conocerte.",
+      "cat": "presentación",
+      "pr": "jach ki-imak in wóol in k'ajóoltikech",
+      "notes": "Lit. «me alegra mucho conocerte». K'ajóol = conocer.",
+      "variants": [
+        "Ki'imak in wóol tin k'ajóoltikech"
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://es.babbel.com/es/magazine/la-lengua-maya",
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas",
+        "https://www.mayas.uady.mx/diccionario/c_esp.html"
+      ],
+      "evidence": "Babbel y La Lengua Maya de Yucatán: «Jach ki'imak in wóol in k'ajóoltikech» = encantado de conocerle / mucho gusto. UADY: «CONOCER v: K'aj óol, ojéelt»."
+    },
+    {
+      "m": "Jach ki'imak in wóol in wilikech.",
+      "es": "Me da mucho gusto verte. / Encantado.",
+      "cat": "presentación",
+      "pr": "jach ki-imak in wóol in wilikech",
+      "notes": "Lit. «me alegra mucho verte».",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.babbel.com/en/magazine/mayan-language",
+        "https://www.poresto.com/yucatan/2024/1/8/como-saludar-despedir-en-maya.html"
+      ],
+      "evidence": "Babbel: «Jach ki'imak in wóol in wilikech · Nice to meet you». PorEsto: «Encantado de conocerte: Jach ki'imak in wóol in wilikech»."
+    },
+    {
+      "m": "Dios bo'otik.",
+      "es": "Gracias.",
+      "cat": "cortesía",
+      "pr": "dios bo-otik",
+      "notes": "Lit. «Dios (te) lo pague». Es la forma más difundida.",
+      "variants": [
+        "Dyos bo'otik"
+      ],
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Bevington, Maya for Travelers and Students (University of Texas Press)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.omniglot.com/language/phrases/yucatec-maya.php",
+        "https://www.poresto.com/yucatan/2024/1/8/como-saludar-despedir-en-maya.html"
+      ],
+      "evidence": "Montgomery: «dios bo'otik ('God pays it') for 'thank you'». Bevington: «dyos bo'otik (literally, 'God pays it')», respuesta «mixba'al». Omniglot: «Thank you | Dios bo'otik». PorEsto: gracias = Dios bo'otik."
+    },
+    {
+      "m": "Yuum bo'otik.",
+      "es": "Muchas gracias.",
+      "cat": "cortesía",
+      "pr": "yuum bo-otik",
+      "notes": "Yuum = señor, padre (también usado para Dios).",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        "https://www.poresto.com/yucatan/2023/8/17/como-se-dice-por-favor-gracias-en-maya.html",
+        "https://www.mayas.uady.mx/diccionario/y_maya.html"
+      ],
+      "evidence": "INALI: «Yuum bo'otik / Muchas gracias». PorEsto: «Muchas gracias: Yuum bo'otik». UADY: «YUUM: Padre, señor, amo»."
+    },
+    {
+      "m": "Yuum bo'otik taalech a xíimbal to'on.",
+      "es": "Gracias por su visita.",
+      "cat": "cortesía",
+      "pr": "yuum bo-otik taalech a shíimbal to-on",
+      "notes": "Lit. «gracias por venir a visitarnos».",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/pdf/p_maya.pdf"
+      ],
+      "evidence": "INALI: «Yuum bo'otik taalech a xíimbal to'on» con la glosa «por su visita»."
+    },
+    {
+      "m": "Níib óolal.",
+      "es": "Gracias.",
+      "cat": "cortesía",
+      "pr": "níib óolal",
+      "notes": "Forma tradicional de agradecer, alternativa a Dios bo'otik.",
+      "variants": [
+        "Nib óolal",
+        "Ni'bo'olal"
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://en.wikivoyage.org/wiki/Yucatec_Maya_phrasebook",
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas",
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf",
+        "https://www.yucatanliving.com/culture/mayan-language-for-beginners-2"
+      ],
+      "evidence": "Wikivoyage: «Thank you: Nib óolal». La Lengua Maya de Yucatán: «Nib óolal Gracias». Mérida: «Jach níib óolal» (muchas gracias). Yucatan Living: «Ni'bo'olal Thank you»."
+    },
+    {
+      "m": "Jach níib óolal.",
+      "es": "Muchas gracias.",
+      "cat": "cortesía",
+      "pr": "jach níib óolal",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf"
+      ],
+      "evidence": "Ayuntamiento de Mérida: «Muchas gracias | Jach níib óolal»."
+    },
+    {
+      "m": "Mixba'al.",
+      "es": "De nada. / Nada.",
+      "cat": "cortesía",
+      "pr": "mishba-al",
+      "notes": "Respuesta a las gracias y también a Ba'ax ka wa'alik? (¿qué tal? — nada).",
+      "variants": [
+        "Mix ba'al",
+        "Mixba'aj"
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf",
+        "https://www.omniglot.com/language/phrases/yucatec-maya.php",
+        {
+          "title": "Bevington, Maya for Travelers and Students (University of Texas Press)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.mayas.uady.mx/diccionario/m_maya.html"
+      ],
+      "evidence": "Mérida: «De nada | Mixba'al». Omniglot: «Reply to thank you | Mixba'al». Bevington: «the standard response is mixba'al '(it is) nothing'». UADY: «MIXBA'AL: nada, ninguno»."
+    },
+    {
+      "m": "Chéen mixba'al.",
+      "es": "Nada, nada. (Aquí nomás.)",
+      "cat": "saludo",
+      "pr": "chéen mishba-al",
+      "notes": "Respuesta a Ba'ax ka wa'alik? en el curso clásico de Blair y Vermont-Salas.",
+      "variants": [
+        "Chen mix ba'al",
+        "chen mix ba'l"
+      ],
+      "conf": "media",
+      "sources": [
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+      ],
+      "evidence": "Blair y Vermont-Salas, lección 1 (BVS_01.01.02): respuesta «chen · mix · ba'l» traducida «Nothing at all!»."
+    },
+    {
+      "m": "Meent uts.",
+      "es": "Por favor (lit. haz el favor, haz el bien).",
+      "cat": "cortesía",
+      "pr": "meent uts",
+      "notes": "No hay un «por favor» nativo exacto (Montgomery); estas fórmulas aparecen en guías modernas. En la práctica la cortesía se marca con el tono y con frases completas.",
+      "variants": [
+        "Beet uts",
+        "Bet uts",
+        "Meent' uts"
+      ],
+      "conf": "media",
+      "sources": [
+        "https://www.poresto.com/yucatan/2024/1/8/como-saludar-despedir-en-maya.html",
+        "https://www.poresto.com/yucatan/2023/8/17/como-se-dice-por-favor-gracias-en-maya.html",
+        "https://www.omniglot.com/language/phrases/yucatec-maya.php",
+        "https://naatikmexico.org/blog/yucatec-maya-phrases",
+        "https://www.clozemaster.com/travel-phrases/yucatec-maya",
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "PorEsto 2024: «Meent 'uts»; PorEsto 2023: «Bet uts». Omniglot y Na'atik: «Meent' uts». Clozemaster/Wikivoyage: frases que terminan en «beet uts». Montgomery: «please» no tiene equivalente en maya."
+    },
+    {
+      "m": "Tak sáamal.",
+      "es": "Hasta mañana.",
+      "cat": "despedida",
+      "pr": "tak sáamal",
+      "notes": "",
+      "variants": [
+        "Taak sáamal",
+        "Asta saamal"
+      ],
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "Montgomery, Yucatec Mayan Dictionary and Phrasebook",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf",
+        {
+          "title": "Bevington, Maya for Travelers and Students (University of Texas Press)",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Montgomery: «Tak sáamal (tahk SÁAHM-ahl) Hasta mañana». Mérida: «Hasta mañana | Tak sáamal». Bevington: «asta saamal 'until tomorrow'»."
+    },
+    {
+      "m": "Tak ti' uláak' k'iin.",
+      "es": "Hasta otro día. / Hasta luego.",
+      "cat": "despedida",
+      "pr": "tak ti- uláak' k'iin",
+      "notes": "Lit. «hasta otro día». Junp'iit lo da contraído: Tak tu lak' k'iin.",
+      "variants": [
+        "Taak ulak k'iin",
+        "Tak tu lak' k'iin"
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/pdf/p_maya.pdf",
+        "https://www.omniglot.com/language/phrases/yucatec-maya.php",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      ],
+      "evidence": "INALI: «Tak ti' uláak' k'iin / adiós (nos vemos)». Omniglot: «Taak ulak k'iin» (see you later). Junp'iit: «Tak tu lak' k'iin» (until another day)."
+    },
+    {
+      "m": "Ka xi'ik teech utsil.",
+      "es": "Que te vaya bien. / Buena suerte.",
+      "cat": "despedida",
+      "pr": "ka shi-ik teech utsil",
+      "notes": "Xi'ik = que vaya. Para varias personas: xi'ik te'ex.",
+      "variants": [
+        "Xi'ik tech utsil",
+        "Ka xi'iktech utsil",
+        "Ma'alob xi teech yeetel utsil"
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.omniglot.com/language/phrases/yucatec-maya.php",
+        "https://topyucatan.com/notas/the-yucatan-culture/frases-basicas-en-maya-y-espanol",
+        "https://www.frommers.com/destinations/yucatan-peninsula/in-depth/language/",
+        {
+          "title": "Bevington, Maya for Travelers and Students (University of Texas Press)",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Omniglot: «Ka xi'ik teech utsil» (good luck). Top Yucatán: «Que te vaya bien - Ka xi'iktech utsil». Frommer's: «Xi'ik tech utsil». Bevington: despedidas basadas en «xi'ik tech (plural xi'ik te'ex) 'may it go to you'»."
+    },
+    {
+      "m": "Ka xi'ik teech jats'uts.",
+      "es": "¡Que te vaya bien! (buen camino)",
+      "cat": "despedida",
+      "pr": "ka shi-ik teech jats'uts",
+      "notes": "Forma del prontuario del INALI (escrita allí con tech).",
+      "variants": [
+        "Ka xi'ik tech jats'uts"
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+      ],
+      "evidence": "INALI: «Ka xi'ik tech jats'uts / ¡Que te vaya bien! (buen camino)»."
+    },
+    {
+      "m": "Ka suunakech a xíimbal to'on.",
+      "es": "Vuelva pronto (vuelve a visitarnos).",
+      "cat": "despedida",
+      "pr": "ka suunakech a shíimbal to-on",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+      ],
+      "evidence": "INALI: «Ka suunakech a xíimbal to'on / Vuelva pronto»."
+    },
+    {
+      "m": "Ka yanak teech jump'éel ma'alob k'iin.",
+      "es": "Que tengas un buen día.",
+      "cat": "despedida",
+      "pr": "ka yanak teech jump'éel ma-alob k'iin",
+      "notes": "Frase de un hablante divulgador (Santos Tuz) citada por PorEsto.",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.poresto.com/yucatan/2024/1/8/como-saludar-despedir-en-maya.html"
+      ],
+      "evidence": "PorEsto, citando al tiktoker Santos Tuz: «Ka yanak teech jump'éel ma'alob k'iin» = que tengas un buen día."
+    },
+    {
+      "m": "K'a'abéet in bin.",
+      "es": "Tengo que irme.",
+      "cat": "despedida",
+      "pr": "k'a-abéet in bin",
+      "notes": "K'a'abéet = es necesario; bin = ir.",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+      ],
+      "evidence": "La Lengua Maya de Yucatán: «K'a'abéet in bin. tengo que irme»."
+    },
+    {
+      "m": "Bix a k'aaba'?",
+      "es": "¿Cómo te llamas? (lit. ¿cómo es tu nombre?)",
+      "cat": "presentación",
+      "pr": "bish a k'aaba-",
+      "notes": "",
+      "variants": [
+        "Bix a K'aaba'"
+      ],
+      "ex": {
+        "m": "Bix a k'aaba'? — In k'aaba'e' Ana.",
+        "es": "¿Cómo te llamas? — Me llamo Ana."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf",
+        {
+          "title": "Montgomery, Yucatec Mayan Dictionary and Phrasebook",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html",
+        "https://www.yucatanliving.com/culture/mayan-language-for-beginners-2"
+      ],
+      "evidence": "Mérida: «¿Cómo te llamas? | Bix a k'aaba'». Montgomery: «Ba'ax a k'aaba'? / Bix a k'aaba'?». Junp'iit: «Bix a k'aaba'?». Yucatan Living: forma informal."
+    },
+    {
+      "m": "Ba'ax a k'aaba'?",
+      "es": "¿Cuál es tu nombre? (lit. ¿qué es tu nombre?)",
+      "cat": "presentación",
+      "pr": "ba-ash a k'aaba-",
+      "notes": "",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Montgomery, Yucatec Mayan Dictionary and Phrasebook",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Montgomery (copia no autorizada): «Ba'ax a k'aaba'?» y «Bix a k'aaba'?» para «What is your name?»."
+    },
+    {
+      "m": "Máax a k'aaba'?",
+      "es": "¿Cómo se llama usted? (forma cortés)",
+      "cat": "presentación",
+      "pr": "máash a k'aaba-",
+      "notes": "Yucatan Living la da como forma formal; no la vi en fuentes académicas.",
+      "variants": [
+        "Ma'ax a k'aaba'"
+      ],
+      "conf": "media",
+      "sources": [
+        "https://www.yucatanliving.com/culture/mayan-language-for-beginners-2"
+      ],
+      "evidence": "Yucatan Living: «Ma'ax a k' aaba' · Formal: What's your name?»."
+    },
+    {
+      "m": "In k'aaba'e' …",
+      "es": "Me llamo … (mi nombre es …)",
+      "cat": "presentación",
+      "pr": "in k'aaba-e- …",
+      "notes": "La terminación -e' presenta el tema: «en cuanto a mi nombre, es …».",
+      "variants": [
+        "In k'aaba'e …"
+      ],
+      "ex": {
+        "m": "In k'aaba'e' Ana.",
+        "es": "Me llamo Ana."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf",
+        "https://www.yucatanliving.com/culture/mayan-language-for-beginners-2"
+      ],
+      "evidence": "INALI: «In k'aaba'e'… Mi nombre es…». Mérida: «Me llamo | In k'aaba'e'». Yucatan Living: «Reply: In k'aaba'e… (your name)»."
+    },
+    {
+      "m": "Tene' … in k'aaba'.",
+      "es": "Yo me llamo … (en cuanto a mí, mi nombre es …)",
+      "cat": "presentación",
+      "pr": "tene- … in k'aaba-",
+      "notes": "Otra forma de presentarse: el nombre va antes de in k'aaba'.",
+      "variants": [
+        "Teene' … in k'aaba'"
+      ],
+      "ex": {
+        "m": "Tene' Refugio in k'aaba', kux teech?",
+        "es": "Yo me llamo Refugio, ¿y tú?"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html",
+        {
+          "title": "Montgomery, Yucatec Mayan Dictionary and Phrasebook",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://aprendiendomaya.com/escritura/pronombres-personales-maya/pronombres-personales-en-lengua-maya"
+      ],
+      "evidence": "Junp'iit: «Tene' Refugio in k'aaba', kux teech?» = As for me, my name is Refugio, and you? Montgomery: «Hwaan in k'aaba'» (John is my name). Aprendiendo Maya: teen se acorta con -e'."
+    },
+    {
+      "m": "Bix u k'aaba'?",
+      "es": "¿Cómo se llama (él, ella)?",
+      "cat": "presentación",
+      "pr": "bish u k'aaba-",
+      "notes": "Con u (su). Ej. del curso: Bix u k'aaba' a na'? (¿cómo se llama tu mamá?).",
+      "variants": [
+        "Bix u k'àaba'?"
+      ],
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Curso «Idioma Maya Yucateco»: «¿Kux a watàan, bix u k'àaba'?» y «¿Bix u k'àaba' a na'? = ¿Cómo se llama tu mamá?»."
+    },
+    {
+      "m": "Tu'ux a kaajal?",
+      "es": "¿De dónde eres? (lit. ¿dónde es tu pueblo?)",
+      "cat": "presentación",
+      "pr": "tu-ush a kaajal",
+      "notes": "",
+      "variants": [
+        "Tu'ux a kajal?",
+        "Tux a kaajal?"
+      ],
+      "ex": {
+        "m": "Tu'ux a kaajal? — In kaajale' Jo'.",
+        "es": "¿De dónde eres? — Soy de Mérida."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://yucatantoday.com/hubfs/Revista/No434/No434-YucatanHistoriaViva.pdf?area-of-interest=undefined",
+        "https://www.omniglot.com/language/phrases/yucatec-maya.php"
+      ],
+      "evidence": "Yucatán Today (Historia Viva 434): «Tu'ux a kaajal» = ¿De dónde eres?; respuesta «In kaajale' T'hó» = Soy de Mérida. Omniglot: «Tu'ux a kajal?» = Where are you from?"
+    },
+    {
+      "m": "In kaajale' …",
+      "es": "Soy de … (mi pueblo es …)",
+      "cat": "presentación",
+      "pr": "in kaajale- …",
+      "notes": "Se completa con el lugar. Mérida es Jo' (las fuentes también escriben T'Hó).",
+      "variants": [
+        "In kajalé …"
+      ],
+      "ex": {
+        "m": "In kaajale' Jo'.",
+        "es": "Soy de Mérida."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://yucatantoday.com/hubfs/Revista/No434/No434-YucatanHistoriaViva.pdf?area-of-interest=undefined",
+        "https://www.omniglot.com/language/phrases/yucatec-maya.php",
+        "https://es.wikipedia.org/wiki/M%C3%A9rida_(M%C3%A9xico)"
+      ],
+      "evidence": "Yucatán Today: «In kaajale' …» (Soy de ...), ejemplo «In kaajale' T'hó». Omniglot: «In kajalé ...» = I am from. Wikipedia: «Jo'» nombre maya de Mérida."
+    },
+    {
+      "m": "Tu'ux ka bin?",
+      "es": "¿A dónde vas?",
+      "cat": "saludo",
+      "pr": "tu-ush ka bin",
+      "notes": "Pregunta frecuente al encontrarse en el camino.",
+      "variants": [
+        "Tu´ux ka bin"
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf"
+      ],
+      "evidence": "Ayuntamiento de Mérida: «¿A dónde vas? | Tu´ux ka bin»."
+    },
+    {
+      "m": "Ma'",
+      "es": "No",
+      "cat": "sí/no",
+      "pr": "ma-",
+      "notes": "También es la negación de las oraciones: Ma' tin na'atik (no entiendo).",
+      "variants": [
+        "Má"
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://en.wikivoyage.org/wiki/Yucatec_Maya_phrasebook",
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf",
+        "https://topyucatan.com/notas/the-yucatan-culture/frases-basicas-en-maya-y-espanol",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      ],
+      "evidence": "Wikivoyage: «No: Ma'». Mérida: «no» = «Ma'». Top Yucatán: «No - Ma'». Junp'iit: ma' = no."
+    },
+    {
+      "m": "Beey.",
+      "es": "Sí; así es (lit. así).",
+      "cat": "sí/no",
+      "pr": "beey",
+      "notes": "No hay un «sí» único: se responde con beey (así), jaaj (es verdad) o repitiendo el verbo.",
+      "variants": [
+        "Bey"
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf",
+        "https://topyucatan.com/notas/the-yucatan-culture/frases-basicas-en-maya-y-espanol",
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Mérida: «sí» = «Beey». Top Yucatán: «Sí - Beey». Montgomery: «the simple affirmation of 'yes'» no tiene equivalente directo."
+    },
+    {
+      "m": "Jaaj.",
+      "es": "Es verdad; cierto (sirve como «sí»).",
+      "cat": "sí/no",
+      "pr": "jaaj",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/j_maya.html",
+        "https://en.wikivoyage.org/wiki/Yucatec_Maya_phrasebook"
+      ],
+      "evidence": "UADY: «JAAJ: Verdad, cierto, verdadero; ciertamente». Wikivoyage: «Yes: Jaaj»."
+    },
+    {
+      "m": "Ma' in woojel.",
+      "es": "No sé.",
+      "cat": "sí/no",
+      "pr": "ma- in woojel",
+      "notes": "Las fuentes varían entre woojel y wojel.",
+      "variants": [
+        "Ma' in wojel",
+        "Má in woojel"
+      ],
+      "ex": {
+        "m": "Ma' in jach ojeli'",
+        "es": "No lo sé bien"
+      },
+      "conf": "media",
+      "sources": [
+        "https://www.omniglot.com/language/phrases/yucatec-maya.php",
+        "https://rutatrenmaya.com/writing-standards-for-the-maya-language/",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      ],
+      "evidence": "Omniglot: «Má in woojel» (I don't know). Ruta Tren Maya (normas de escritura): «Ma' in woojel». Junp'iit: «Ma' in jach ojeli'» = I don't really know."
+    },
+    {
+      "m": "Ma' tin na'atik.",
+      "es": "No entiendo.",
+      "cat": "aprendiz",
+      "pr": "ma- tin na-atik",
+      "notes": "Negación: ma' + tin (yo, completivo) + na'atik (entenderlo). Ver Lehmann: ku na'atik / ma' tu na'atik.",
+      "variants": [
+        "Má tin naátik",
+        "Min na'atik"
+      ],
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "Montgomery, Yucatec Mayan Dictionary and Phrasebook",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.omniglot.com/language/phrases/yucatec-maya.php",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/gramatica/semas/oracion/or_autonoma/oracion_negativa.html"
+      ],
+      "evidence": "Montgomery: «I don't understand» = «Ma' tin na'atik». Omniglot: «Má tin naátik». Lehmann: «ku na'tik lo entiende – ma' tu natik no lo entiende»."
+    },
+    {
+      "m": "Tene' tin na'atik.",
+      "es": "Yo sí entiendo. / Entiendo.",
+      "cat": "aprendiz",
+      "pr": "tene- tin na-atik",
+      "notes": "La Lengua Maya de Yucatán da también Kin na'atik (comprendo).",
+      "variants": [
+        "Tene tin na'atik"
+      ],
+      "conf": "media",
+      "sources": [
+        "https://naatikmexico.org/blog/yucatec-maya-phrases",
+        "https://www.omniglot.com/language/phrases/yucatec-maya.php",
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+      ],
+      "evidence": "Na'atik y Omniglot: «Tene tin na'atik» = I understand. La Lengua Maya de Yucatán: «Kin na'atik» (comprendo)."
+    },
+    {
+      "m": "Bix u ya'alal … ich maaya t'aan?",
+      "es": "¿Cómo se dice … en maya?",
+      "cat": "aprendiz",
+      "pr": "bish u ya-alal … ich maaya t'aan",
+      "notes": "Normalizado de la grafía de Omniglot («Bix u yaálal ich maaya táan»). En textos formales la forma pasiva aparece como u ya'ala'al.",
+      "variants": [
+        "Bix u yaálal ich maaya táan",
+        "Bix u ya'ala'al … ich maaya?"
+      ],
+      "conf": "media",
+      "sources": [
+        "https://www.omniglot.com/language/phrases/yucatec-maya.php",
+        "https://hotelcasablanca.mx/news/palabras-y-frases-mayas-que-debes-aprender",
+        "https://www.ohchr.org/en/human-rights/universal-declaration/translations/mayan-yucateco"
+      ],
+      "evidence": "Omniglot: «How do you say ... in Yucatec Maya? Bix u yaálal ich maaya táan». Hotel Casa Blanca: «¿Bix u yaálal i maaya táan?». Declaración Universal (OHCHR) en maya usa «u ya'ala'al»."
+    },
+    {
+      "m": "Ka t'aan wáaj ich maaya?",
+      "es": "¿Hablas maya?",
+      "cat": "aprendiz",
+      "pr": "ka t'aan wáaj ich maaya",
+      "notes": "Wáaj marca la pregunta de sí o no.",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas",
+        "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S2007-736X2018000100388"
+      ],
+      "evidence": "La Lengua Maya de Yucatán: «Ka t'aan wáaj ich maaya» = ¿Habla usted maya? AnderBois: el clítico waaj marca preguntas de sí o no."
+    },
+    {
+      "m": "Chéen jump'íit maaya kin t'aanik.",
+      "es": "Solo hablo un poquito de maya.",
+      "cat": "aprendiz",
+      "pr": "chéen jump'íit maaya kin t'aanik",
+      "notes": "Normalizado de «Chéen junp'íit maaya kin t'anik».",
+      "variants": [
+        "Chéen junp'íit maaya kin t'anik"
+      ],
+      "conf": "media",
+      "sources": [
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+      ],
+      "evidence": "La Lengua Maya de Yucatán: «Chéen junp'íit maaya kin t'anik» = solo hablo un poquito de maya."
+    },
+    {
+      "m": "Ma' jach ya'ab maaya kin t'aaniki'.",
+      "es": "No hablo mucho maya.",
+      "cat": "aprendiz",
+      "pr": "ma- jach ya-ab maaya kin t'aaniki-",
+      "notes": "Con negación el verbo toma -i' al final.",
+      "variants": [
+        "Ma' jach ya'ab maaya kin t'aniki'"
+      ],
+      "conf": "media",
+      "sources": [
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+      ],
+      "evidence": "La Lengua Maya de Yucatán: «Ma' jach ya'ab maaya kin t'aniki'» = no hablo mucha maya."
+    },
+    {
+      "m": "Táan in kanik maaya.",
+      "es": "Estoy aprendiendo maya.",
+      "cat": "aprendiz",
+      "pr": "táan in kanik maaya",
+      "notes": "Táan in … = estoy …-ndo (progresivo).",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://epinvestiga.com/dominical/la-lengua-que-perdimos/"
+      ],
+      "evidence": "Epinvestiga: «Táan in kanik maaya» junto a «Estoy aprendiendo maya yucateco, maaya t'aan»."
+    },
+    {
+      "m": "Ko'ox kanik maaya t'aan.",
+      "es": "Vamos a aprender lengua maya.",
+      "cat": "aprendiz",
+      "pr": "ko-osh kanik maaya t'aan",
+      "notes": "Nombre de un programa del Gobierno de Yucatán.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://yucatan.heraldodemexico.com.mx/tendencias/2025/8/27/koox-kanik-maaya-taan-asi-seran-los-cursos-para-preservar-la-lengua-maya-en-yucatan-1949.html",
+        "https://www.posta.com.mx/yucatan/impulsan-la-preservacion-de-la-lengua-maya-en-yucatan-con-el-programa-koox-kanik-maaya-taan/vl2087271"
+      ],
+      "evidence": "Heraldo de México y Posta: programa «Ko'ox kanik maaya t'aan», «Vamos a aprender lengua maya»."
+    }
+  ],
+  "grammar": [
+    {
+      "topic": "El alfabeto normativo",
+      "explanation": "La escritura actual se basa en el alfabeto acordado en 1984 y en las Normas de escritura para la lengua maya (INALI, 2014). Vocales: a, e, i, o, u, cada una en cinco formas (corta, larga de tono bajo, larga de tono alto, glotalizada y rearticulada). Consonantes simples: b, ch, j, k, l, m, n, p, r, s, t, ts, w, x, y. Consonantes glotalizadas: ch', k', p', t', ts'. Además, el apóstrofo (') marca el saltillo. No se usan c, q, v, z; d, f, g y rr solo aparecen en préstamos.",
+      "examples": [
+        {
+          "m": "ch'íich'",
+          "es": "pájaro"
+        },
+        {
+          "m": "xikin",
+          "es": "oreja"
+        },
+        {
+          "m": "tsíimin",
+          "es": "caballo"
+        },
+        {
+          "m": "turix",
+          "es": "libélula"
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://www.mayas.uady.mx/curso_maya/lecc01_1.html",
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://site.inali.gob.mx/pdf/norma_maya.pdf"
+      ]
+    },
+    {
+      "topic": "Vocales cortas y largas",
+      "explanation": "La duración de la vocal cambia el significado. La vocal larga se escribe doble (aa, ee, ii, oo, uu) y dura aproximadamente el doble que la corta. Sobrino (2013) midió 255 ms en chiich (abuela) frente a 105 ms en chich (duro).",
+      "examples": [
+        {
+          "m": "chiich / chich",
+          "es": "abuela / duro"
+        },
+        {
+          "m": "báat / bat",
+          "es": "hacha / granizo"
+        },
+        {
+          "m": "kaan / kan",
+          "es": "serpiente / cuatro"
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0185-25742013000100006",
+        "https://aprendiendomaya.com/escritura/vocales/las-vocales-y-sus-reglas-de-uso",
+        "https://www.mayas.uady.mx/diccionario/k_maya.html"
+      ]
+    },
+    {
+      "topic": "Tono alto y tono bajo",
+      "explanation": "Solo las vocales largas llevan tono. El tono alto se marca con acento agudo en la primera vocal (áa, ée, íi, óo, úu); el tono bajo no se marca en la norma de 2014 (diccionarios antiguos usan acento grave: àa). El tono alto empieza agudo y suele descender. El maya yucateco es la única lengua de su familia cercana con tono, y algunos estudios encuentran variación dialectal en su realización.",
+      "examples": [
+        {
+          "m": "miis / míis",
+          "es": "gato / escoba"
+        },
+        {
+          "m": "eek' / éek'",
+          "es": "estrella / sucio"
+        },
+        {
+          "m": "chaak / cháak",
+          "es": "salcochar / lluvia"
+        },
+        {
+          "m": "k'aan / k'áan",
+          "es": "mecate / hamaca"
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Yucatec_Maya_language",
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0185-25742013000100006",
+        "https://www.christianlehmann.eu/publ/ASSidUE10.pdf",
+        {
+          "title": "A Historical Grammar of the Maya Language of Yucatan 1557–2000",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.proquest.com/docview/250030802/abstract/78BA52D4D9464DAFPQ/1"
+      ]
+    },
+    {
+      "topic": "Vocal glotalizada y vocal rearticulada",
+      "explanation": "La vocal glotalizada (a') termina con un corte de voz y, según las Normas, solo aparece al final de palabra: ja' (agua), che' (árbol). Dentro de la palabra el corte va seguido de la misma vocal: es la rearticulada (a'a), como en ka'an (cielo) o lu'um (tierra). Por eso ka'a (dos) se escribe ka'ap'éel ante consonante. Lehmann (2018) critica esta distinción, pero es la norma vigente.",
+      "examples": [
+        {
+          "m": "sa'",
+          "es": "atole"
+        },
+        {
+          "m": "a'al",
+          "es": "decir"
+        },
+        {
+          "m": "ka'an",
+          "es": "cielo"
+        },
+        {
+          "m": "ka'ap'éel",
+          "es": "dos (cosas)"
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.redalyc.org/journal/5259/525957259008/html/",
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://www.mayas.uady.mx/curso_maya/lecc01_1.html"
+      ]
+    },
+    {
+      "topic": "Consonantes glotalizadas (eyectivas)",
+      "explanation": "k', t', p', ch' y ts' se pronuncian cerrando la garganta y soltando la consonante con un pequeño golpe seco. No existen en español y distinguen palabras: kan (cuatro) / k'an (amarillo), iik (chile) / iik' (viento), t'aan (palabra) / táan (frente). Consejo: di la consonante aguantando la respiración.",
+      "examples": [
+        {
+          "m": "k'áak'",
+          "es": "fuego"
+        },
+        {
+          "m": "p'aak",
+          "es": "tomate"
+        },
+        {
+          "m": "t'aan",
+          "es": "palabra"
+        },
+        {
+          "m": "ts'ono'ot",
+          "es": "cenote"
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Yucatec_Maya_language",
+        "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html",
+        "https://www.mayas.uady.mx/diccionario/ch_glotal_maya.html",
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ]
+    },
+    {
+      "topic": "Sonidos distintos al español",
+      "explanation": "x suena sh (xiib = «shiib»); j es una aspiración suave como la h inglesa; ts suena como la tz de quetzal; k se usa siempre en lugar de c y q; w suena como la u de «huevo»; la b es implosiva. La r es rara y va en medio de palabra o en préstamos.",
+      "examples": [
+        {
+          "m": "xiib",
+          "es": "hombre, varón"
+        },
+        {
+          "m": "ja'",
+          "es": "agua"
+        },
+        {
+          "m": "tsíimin",
+          "es": "caballo"
+        },
+        {
+          "m": "waaj",
+          "es": "tortilla"
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://naatikmexico.org/blog/yucatec-maya-phrases",
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya",
+        "https://en.wikipedia.org/wiki/Yucatec_Maya_language",
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ]
+    },
+    {
+      "topic": "Pares mínimos para entrenar el oído",
+      "explanation": "Un solo rasgo (longitud, tono, saltillo o glotalización) cambia la palabra. Practica leyendo en voz alta cada par.",
+      "examples": [
+        {
+          "m": "kan / kaan / ka'an / k'an",
+          "es": "cuatro / serpiente / cielo / amarillo"
+        },
+        {
+          "m": "iik / iik'",
+          "es": "chile / viento"
+        },
+        {
+          "m": "ya'ax / yáax",
+          "es": "verde / primero"
+        },
+        {
+          "m": "chak / cháak",
+          "es": "rojo / lluvia"
+        },
+        {
+          "m": "aak' / áak",
+          "es": "bejuco, lengua / tortuga"
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/k_maya.html",
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya",
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://filosofiamaya.com/2020/10/08/el-huracan-segun-las-lenguas-mayas/",
+        "https://www.mayas.uady.mx/diccionario/y_maya.html",
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ]
+    },
+    {
+      "topic": "La n se escribe m ante p y b",
+      "explanation": "Cuando jun (uno) o kan (cuatro) quedan antes de p o b, la n se escribe m: jump'éel, kamp'éel, jump'íit.",
+      "examples": [
+        {
+          "m": "jump'éel",
+          "es": "uno (cosa)"
+        },
+        {
+          "m": "kamp'éel",
+          "es": "cuatro (cosas)"
+        },
+        {
+          "m": "jump'íit",
+          "es": "un poco"
+        }
+      ],
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Numerales y clasificadores en maya",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://losocelotesproyectotemasdelinguistica.wordpress.com/2021/06/09/la-cuantificacion-actual-en-el-maya-yucateco/"
+      ]
+    },
+    {
+      "topic": "Saludar: preguntar por el camino",
+      "explanation": "No hay un «hola» nativo ni saludos por hora del día tradicionales. Se saluda preguntando Bix a beel? (¿cómo va tu camino?) o Ba'ax ka wa'alik? (¿qué dices?). Se responde Ma'alob (bien), Toj in wóol (estoy bien) o Chéen mixba'al (nada), y se devuelve con Kux teech? (¿y tú?). Las fórmulas Ma'alob k'iin, etc., son calcos del español.",
+      "examples": [
+        {
+          "m": "Bix a beel? — Ma'alob, kux teech?",
+          "es": "¿Cómo estás? — Bien, ¿y tú?"
+        },
+        {
+          "m": "Ba'ax ka wa'alik? — Chéen mixba'al.",
+          "es": "¿Qué tal? — Nada, aquí nomás."
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://yucatantoday.com/en/blog/say-it-in-maya",
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Bevington, Maya for Travelers and Students (University of Texas Press)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+      ]
+    },
+    {
+      "topic": "Posesivos in, a, u, k y la letra de unión",
+      "explanation": "Los posesivos van antes del sustantivo: in (mi), a (tu), u (su), k (nuestro). Si el sustantivo empieza con vocal se intercala w después de in y a, e y después de u: óol (ánimo) da in wóol, a wóol, u yóol. Por eso se dice Ki'imak in wóol.",
+      "examples": [
+        {
+          "m": "in k'aaba'",
+          "es": "mi nombre"
+        },
+        {
+          "m": "a k'aaba'",
+          "es": "tu nombre"
+        },
+        {
+          "m": "u k'aaba'",
+          "es": "su nombre"
+        },
+        {
+          "m": "in wotoch / u yotoch",
+          "es": "mi casa / su casa"
+        },
+        {
+          "m": "Ki'imak k óol",
+          "es": "estamos contentos (nuestro ánimo está alegre)"
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://aztli.wordpress.com/wp-content/uploads/2013/10/diccionario-yucateco-actual.pdf",
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+      ]
+    },
+    {
+      "topic": "La terminación -e' para presentar el tema",
+      "explanation": "-e' marca de qué se va a hablar («en cuanto a…»). Por eso las presentaciones llevan -e': In k'aaba'e' … (mi nombre es…), In kaajale' … (soy de…), Tene' … (en cuanto a mí). Teen se acorta al recibirla: tene'.",
+      "examples": [
+        {
+          "m": "In k'aaba'e' Ana.",
+          "es": "Me llamo Ana."
+        },
+        {
+          "m": "Tene' Refugio in k'aaba'.",
+          "es": "Yo me llamo Refugio."
+        },
+        {
+          "m": "Leti'obe' toj yóolo'ob xan.",
+          "es": "Ellos también están bien."
+        }
+      ],
+      "conf": "media",
+      "sources": [
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html",
+        "https://aprendiendomaya.com/escritura/pronombres-personales-maya/pronombres-personales-en-lengua-maya",
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ]
+    },
+    {
+      "topic": "Pronombres independientes",
+      "explanation": "teen (yo), teech (tú/usted), to'on (nosotros), te'ex (ustedes), leti'ob (ellos). No existe la distinción tú/usted: teech sirve para ambos.",
+      "examples": [
+        {
+          "m": "Kux teech?",
+          "es": "¿Y tú?"
+        },
+        {
+          "m": "Beyxan teen.",
+          "es": "Yo también."
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://aprendiendomaya.com/escritura/pronombres-personales-maya/pronombres-personales-en-lengua-maya",
+        "https://aprendiendomaya.com/frases/saludos-lengua-maya",
+        "https://www.mayas.uady.mx/diccionario/t_maya.html"
+      ]
+    },
+    {
+      "topic": "Palabras para preguntar",
+      "explanation": "Van al inicio de la frase: ba'ax (qué), bix (cómo), tu'ux (dónde), máax (quién), ba'axten (por qué). Kux introduce «¿y…?» sobre otra persona. Para preguntas de sí o no se usa la entonación o la partícula wáaj.",
+      "examples": [
+        {
+          "m": "Tu'ux ka bin?",
+          "es": "¿A dónde vas?"
+        },
+        {
+          "m": "Bix a k'aaba'?",
+          "es": "¿Cómo te llamas?"
+        },
+        {
+          "m": "Ka t'aan wáaj ich maaya?",
+          "es": "¿Hablas maya?"
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/b_maya.html",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php",
+        "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S2007-736X2018000100388",
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf",
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+      ]
+    },
+    {
+      "topic": "Decir sí y no",
+      "explanation": "Ma' es «no» y también niega oraciones (Ma' tin na'atik). Para «sí» no hay una palabra única: se usa beey (así es), jaaj (es verdad) o se repite el verbo de la pregunta.",
+      "examples": [
+        {
+          "m": "Ma' tin na'atik.",
+          "es": "No entiendo."
+        },
+        {
+          "m": "Tene' tin na'atik.",
+          "es": "Yo sí entiendo."
+        },
+        {
+          "m": "Jaaj.",
+          "es": "Es verdad."
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf",
+        "https://www.mayas.uady.mx/diccionario/j_maya.html",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/gramatica/semas/oracion/or_autonoma/oracion_negativa.html"
+      ]
+    },
+    {
+      "topic": "Fórmulas de cortesía",
+      "explanation": "Gracias: Dios bo'otik (que Dios te lo pague), Yuum bo'otik o Níib óolal; respuesta: Mixba'al (de nada). Para recibir: Ki'imak óolal (bienvenido), Máanen waye' (pase usted). Un «por favor» exacto no existe; las guías modernas proponen Meent uts / Beet uts.",
+      "examples": [
+        {
+          "m": "Dios bo'otik. — Mixba'al.",
+          "es": "Gracias. — De nada."
+        },
+        {
+          "m": "Yuum bo'otik taalech a xíimbal to'on.",
+          "es": "Gracias por su visita."
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Bevington, Maya for Travelers and Students (University of Texas Press)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf",
+        "https://www.poresto.com/yucatan/2024/1/8/como-saludar-despedir-en-maya.html"
+      ]
+    },
+    {
+      "topic": "Diálogo 1: saludo y nombres (basado en Junp'iit Maaya)",
+      "explanation": "Intercambio tomado del material de Sharon Mújica (Duke-UNC, 1995) publicado por Christian Lehmann, con grafía normalizada. El nombre de la última línea es un espacio para el tuyo.",
+      "examples": [
+        {
+          "m": "A: Ola, bix a beel?",
+          "es": "A: Hola, ¿cómo estás?"
+        },
+        {
+          "m": "B: Chéen beya', kux teech?",
+          "es": "B: Así nomás, ¿y tú?"
+        },
+        {
+          "m": "A: Toj in wóol. Bix a k'aaba'?",
+          "es": "A: Estoy bien. ¿Cómo te llamas?"
+        },
+        {
+          "m": "B: Tene' Refugio in k'aaba', kux teech?",
+          "es": "B: Yo me llamo Refugio, ¿y tú?"
+        },
+        {
+          "m": "A: Tene' … in k'aaba'.",
+          "es": "A: Yo me llamo …"
+        },
+        {
+          "m": "B: Tak ti' uláak' k'iin.",
+          "es": "B: Hasta otro día."
+        }
+      ],
+      "conf": "media",
+      "sources": [
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html",
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+      ]
+    },
+    {
+      "topic": "Diálogo 2: visita entre conocidos (basado en el curso «Idioma Maya Yucateco»)",
+      "explanation": "Pedro visita a José. Líneas del material de curso, pasadas de la grafía con acentos graves (tòoh, tàatah) a la de 2014; «taata» se deja como la escriben la mayoría de las fuentes.",
+      "examples": [
+        {
+          "m": "José: Bix a beel?",
+          "es": "José: ¿Cómo estás?"
+        },
+        {
+          "m": "Pedro: Toj in wóol. Kux teech?",
+          "es": "Pedro: Estoy bien. ¿Y tú?"
+        },
+        {
+          "m": "José: Ma'alob. Kux a taata yéetel a na', bix u beelo'ob?",
+          "es": "José: Bien. ¿Y tu papá y tu mamá, cómo están?"
+        },
+        {
+          "m": "Pedro: Leti'obe' toj yóolo'ob xan.",
+          "es": "Pedro: Ellos también están bien."
+        }
+      ],
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ]
+    },
+    {
+      "topic": "Diálogo 3: presentación entre desconocidos (construido con formas verificadas)",
+      "explanation": "Diálogo armado solo con fórmulas atestiguadas en las fuentes (INALI, Ayuntamiento de Mérida, Yucatán Today, Junp'iit, Blair y Vermont-Salas). No es una transcripción real.",
+      "examples": [
+        {
+          "m": "A: Ba'ax ka wa'alik?",
+          "es": "A: ¿Qué tal?"
+        },
+        {
+          "m": "B: Chéen mixba'al. Kux teech?",
+          "es": "B: Nada, aquí nomás. ¿Y tú?"
+        },
+        {
+          "m": "A: Ma'alob. Bix a k'aaba'?",
+          "es": "A: Bien. ¿Cómo te llamas?"
+        },
+        {
+          "m": "B: In k'aaba'e' Ana. Tu'ux a kaajal?",
+          "es": "B: Me llamo Ana. ¿De dónde eres?"
+        },
+        {
+          "m": "A: In kaajale' Jo'.",
+          "es": "A: Soy de Mérida."
+        },
+        {
+          "m": "B: Jach ki'imak in wóol in k'ajóoltikech.",
+          "es": "B: Mucho gusto en conocerte."
+        },
+        {
+          "m": "A: Beyxan teen. Tak sáamal!",
+          "es": "A: Igualmente. ¡Hasta mañana!"
+        },
+        {
+          "m": "B: Ka xi'ik teech utsil.",
+          "es": "B: Que te vaya bien."
+        }
+      ],
+      "conf": "media",
+      "sources": [
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf",
+        "https://yucatantoday.com/hubfs/Revista/No434/No434-YucatanHistoriaViva.pdf?area-of-interest=undefined",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html",
+        "https://es.babbel.com/es/magazine/la-lengua-maya",
+        "https://www.omniglot.com/language/phrases/yucatec-maya.php"
+      ]
+    }
+  ],
+  "culture": [
+    {
+      "title": "Maayat'aan hoy",
+      "text": "El maya yucateco tiene 774,755 hablantes según el censo 2020 del INEGI, citado por el INALI. Se habla en Campeche, Quintana Roo y Yucatán, y también en el norte de Belice. Es la segunda lengua indígena más hablada de México. El INALI lo clasifica en riesgo mediano de desaparición.",
+      "sources": [
+        "https://www.inali.gob.mx/detalle/lengua-del-mes-maayataan-maya",
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+      ]
+    },
+    {
+      "title": "De 1984 a 2014: cómo se fijó la escritura",
+      "text": "En agosto de 1984 se acordó en Mérida el alfabeto que todavía es la base de la escritura. En 2014 el INALI publicó las Normas de escritura para la lengua maya (U nu'ukbesajil u ts'íibta'al maayat'aan), editadas por Fidencio Briceño Chel y Gerónimo Can Tec, con participación de las academias de lengua maya de Campeche, Yucatán y Quintana Roo. Estas normas marcan el tono alto con acento y distinguen vocales glotalizadas y rearticuladas. El lingüista Christian Lehmann las considera la única propuesta seria hasta la fecha y propone simplificarlas. Desde 1984, los nombres de personas y lugares conservan su grafía tradicional: por eso siguen escribiéndose con «dz» o «c» nombres como Dzul o Hocabá.",
+      "sources": [
+        "https://ailla-legacy.lib.utexas.edu/sites/default/files/documents/MBrody_MayaYucateco.pdf",
+        "https://site.inali.gob.mx/pdf/norma_maya.pdf",
+        "https://www.redalyc.org/journal/5259/525957259008/html/",
+        "https://cuadernoslinguistica.colmex.mx/index.php/cl/en/article/view/102",
+        "https://yucatantoday.com/en/blog/the-maya-language-lives-on"
+      ]
+    },
+    {
+      "title": "¿Cómo va tu camino?",
+      "text": "El saludo más común, Bix a beel?, pregunta literalmente por el camino de la otra persona: beel viene de bej, camino. Montgomery explica que el maya no tiene equivalentes exactos de «hola», «por favor», «gracias» ni de un «sí» simple. En su lugar usa fórmulas como esta.",
+      "sources": [
+        "https://yucatantoday.com/en/blog/say-it-in-maya",
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.mayas.uady.mx/diccionario/b_maya.html"
+      ]
+    },
+    {
+      "title": "Gracias: «que Dios te lo pague»",
+      "text": "Dios bo'otik significa literalmente «Dios lo paga» y es la forma más difundida de agradecer. El prontuario del INALI prefiere Yuum bo'otik (yuum = señor, padre). Níib óolal es otra forma tradicional. La respuesta habitual es Mixba'al, «no es nada».",
+      "sources": [
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Bevington, Maya for Travelers and Students (University of Texas Press)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        "https://www.mayas.uady.mx/diccionario/y_maya.html",
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf"
+      ]
+    },
+    {
+      "title": "Buenos días: un calco reciente",
+      "text": "En maya no hay saludos tradicionales por hora del día. Ma'alob k'iin, Ma'alob chíinil k'iin y Ma'alob áak'ab son traducciones del español. El INALI asigna Bix a beel a «buenos días» y Ba'ax ka wa'alik a «buenas noches», porque son los saludos que de verdad se usan.",
+      "sources": [
+        "https://yucatantoday.com/en/blog/say-it-in-maya",
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        "https://www.poresto.com/yucatan/2024/1/6/como-se-dice-buenos-dias-tardes-noches-en-maya.html"
+      ]
+    },
+    {
+      "title": "Una lengua con variantes",
+      "text": "Cada pueblo tiene sus propias formas: si un saludo no funciona, prueba el otro. Pfeiler y Hofling (2006) identificaron una variedad del oriente de la península; por ejemplo, ahí se dice uts donde en otras regiones se dice ma'alob. En el habla rápida el saltillo casi desaparece (ma'lob), y la realización del tono también varía entre regiones.",
+      "sources": [
+        "https://www.yucatanliving.com/culture/mayan-language-for-beginners-2",
+        "https://yucatanliving.com/daily-life/mayan-language-for-beginners",
+        "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S1870-57662006000100002",
+        "https://www.proquest.com/docview/250030802/abstract/78BA52D4D9464DAFPQ/1",
+        "https://naatikmexico.org/blog/yucatec-maya-phrases"
+      ]
+    },
+    {
+      "title": "La leyenda del nombre Yucatán",
+      "text": "Según una historia muy repetida, cuando los españoles preguntaron el nombre de la tierra, los mayas respondieron algo como «no entiendo tu habla», y de ahí saldría «Yucatán». Es una leyenda y el origen real del nombre no está resuelto. Sirve para recordar una frase útil: Ma' tin na'atik, «no entiendo».",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Yucat%C3%A1n",
+        "https://filosofiamaya.com/2020/10/08/el-huracan-segun-las-lenguas-mayas/"
+      ]
+    },
+    {
+      "title": "Jo', el nombre maya de Mérida",
+      "text": "En maya, Mérida se llama Jo'. La ciudad se fundó sobre la antigua población maya de Ichkaansihó, también llamada T'Hó. Por eso para decir que eres de Mérida dices In kaajale' Jo'.",
+      "sources": [
+        "https://es.wikipedia.org/wiki/M%C3%A9rida_(M%C3%A9xico)",
+        "https://yucatantoday.com/hubfs/Revista/No434/No434-YucatanHistoriaViva.pdf?area-of-interest=undefined"
+      ]
+    },
+    {
+      "title": "Literatura en maya: «In k'aaba'»",
+      "text": "La poeta Briceida Cuevas Cob tiene un poema titulado «In k'aaba'» («Mi nombre»), publicado en el sitio de cultura maya de la UADY. Es la misma frase con que uno se presenta.",
+      "sources": [
+        "https://www.mayas.uady.mx/literatura/poem25.html"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "INALI – Prontuario de frases de cortesía Maayat'aan (página)",
+      "url": "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+    },
+    {
+      "title": "INALI – Prontuario maya (PDF)",
+      "url": "https://site.inali.gob.mx/Micrositios/Prontuarios/pdf/p_maya.pdf"
+    },
+    {
+      "title": "INALI – U nu'ukbesajil u ts'íibta'al maayat'aan. Normas de escritura para la lengua maya (PDF)",
+      "url": "https://site.inali.gob.mx/pdf/norma_maya.pdf"
+    },
+    {
+      "title": "Normas de escritura para la lengua maya",
+      "note": "copia no autorizada: se cita solo el título"
+    },
+    {
+      "title": "INALI – Lengua del mes Maayat'aan",
+      "url": "https://www.inali.gob.mx/detalle/lengua-del-mes-maayataan-maya"
+    },
+    {
+      "title": "INALI – Instructivo «Contigo a la distancia» (Bix a beele'ex?)",
+      "url": "https://site.inali.gob.mx/Micrositios/contigo_a_la_distancia/pdf/instructivo.pdf"
+    },
+    {
+      "title": "INEA / MEVyT – Lengua maya (Yucatán): vocales y consonantes",
+      "url": "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+    },
+    {
+      "title": "UADY – Curso de maya, lección 1 (alfabeto y tonos)",
+      "url": "https://www.mayas.uady.mx/curso_maya/lecc01_1.html"
+    },
+    {
+      "title": "UADY – Curso de maya, lección 10 (yéetel)",
+      "url": "https://www.mayas.uady.mx/curso_maya/lec10.html"
+    },
+    {
+      "title": "UADY – Diccionario maya-español (índice)",
+      "url": "https://www.mayas.uady.mx/diccionario/index.html"
+    },
+    {
+      "title": "UADY – Diccionario, letra K",
+      "url": "https://www.mayas.uady.mx/diccionario/k_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario, letra K'",
+      "url": "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario, letra CH",
+      "url": "https://www.mayas.uady.mx/diccionario/ch_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario, letra CH'",
+      "url": "https://www.mayas.uady.mx/diccionario/ch_glotal_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario, letra J",
+      "url": "https://www.mayas.uady.mx/diccionario/j_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario, letra X",
+      "url": "https://www.mayas.uady.mx/diccionario/x_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario, letra L",
+      "url": "https://www.mayas.uady.mx/diccionario/l_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario, letra B",
+      "url": "https://www.mayas.uady.mx/diccionario/b_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario, letra N",
+      "url": "https://www.mayas.uady.mx/diccionario/n_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario, letra W",
+      "url": "https://www.mayas.uady.mx/diccionario/w_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario, letra Y",
+      "url": "https://www.mayas.uady.mx/diccionario/y_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario, letra E",
+      "url": "https://www.mayas.uady.mx/diccionario/e_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario, letra U",
+      "url": "https://www.mayas.uady.mx/diccionario/u_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario, letra O",
+      "url": "https://www.mayas.uady.mx/diccionario/o_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario, letra M",
+      "url": "https://www.mayas.uady.mx/diccionario/m_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario, letra S",
+      "url": "https://www.mayas.uady.mx/diccionario/s_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario, letra T",
+      "url": "https://www.mayas.uady.mx/diccionario/t_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario, letra TS",
+      "url": "https://www.mayas.uady.mx/diccionario/ts_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario, letra TS'",
+      "url": "https://www.mayas.uady.mx/diccionario/ts_glotal_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario español-maya, letra A",
+      "url": "https://www.mayas.uady.mx/diccionario/a_esp.html"
+    },
+    {
+      "title": "UADY – Diccionario español-maya, letra B",
+      "url": "https://www.mayas.uady.mx/diccionario/b_esp.html"
+    },
+    {
+      "title": "UADY – Diccionario español-maya, letra C",
+      "url": "https://www.mayas.uady.mx/diccionario/c_esp.html"
+    },
+    {
+      "title": "UADY – Diccionario español-maya, letra P",
+      "url": "https://www.mayas.uady.mx/diccionario/p_esp.html"
+    },
+    {
+      "title": "UADY – Adivinanzas (chak iik)",
+      "url": "https://www.mayas.uady.mx/literatura/adiv1.html"
+    },
+    {
+      "title": "UADY – Briceida Cuevas Cob, «In k'aaba'»",
+      "url": "https://www.mayas.uady.mx/literatura/poem25.html"
+    },
+    {
+      "title": "UADY – Ch'a' Cháak, ceremonia de la lluvia",
+      "url": "https://www.mayas.uady.mx/exposiciones/exp_05foto1.html"
+    },
+    {
+      "title": "Ayuntamiento de Mérida – Frases básicas español-maya (PDF)",
+      "url": "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf"
+    },
+    {
+      "title": "Sobrino Gómez (2013), Descripción fonética de los tonos del maya yucateco, Estudios de Cultura Maya 41",
+      "url": "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0185-25742013000100006"
+    },
+    {
+      "title": "La representación alfabética de las voces mayas yucatecas durante la Colonia (Estudios de Cultura Maya, 2022)",
+      "url": "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0185-25742022000200187"
+    },
+    {
+      "title": "Lehmann (2018), Variación y normalización de la lengua maya",
+      "url": "https://www.redalyc.org/journal/5259/525957259008/html/"
+    },
+    {
+      "title": "Lehmann (2018), Variation and standardization of Yucatec Maya (Cuadernos de Lingüística, Colmex)",
+      "url": "https://cuadernoslinguistica.colmex.mx/index.php/cl/en/article/view/102"
+    },
+    {
+      "title": "AnderBois (2018), U chíikulil k'áatchi': la forma, función y estandarización de la puntuación",
+      "url": "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S2007-736X2018000100388"
+    },
+    {
+      "title": "Pfeiler y Hofling (2006), Apuntes sobre la variación dialectal en el maya yucateco",
+      "url": "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S1870-57662006000100002"
+    },
+    {
+      "title": "Mújica (1995), Junp'iit Maaya – A little bit of Maya (sitio de Christian Lehmann)",
+      "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+    },
+    {
+      "title": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (sitio de Christian Lehmann)",
+      "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+    },
+    {
+      "title": "Lehmann, Possession in Yucatec Maya",
+      "url": "https://www.christianlehmann.eu/publ/ASSidUE10.pdf"
+    },
+    {
+      "title": "Lehmann, Gramática maya: oración negativa",
+      "url": "https://www.christianlehmann.eu/ling/sprachen/maya/gramatica/semas/oracion/or_autonoma/oracion_negativa.html"
+    },
+    {
+      "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+      "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+    },
+    {
+      "title": "Wikipedia – Yucatec Maya language",
+      "url": "https://en.wikipedia.org/wiki/Yucatec_Maya_language"
+    },
+    {
+      "title": "Wikipedia – Mérida (México)",
+      "url": "https://es.wikipedia.org/wiki/M%C3%A9rida_(M%C3%A9xico)"
+    },
+    {
+      "title": "Wikipedia – Yucatán",
+      "url": "https://en.wikipedia.org/wiki/Yucat%C3%A1n"
+    },
+    {
+      "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+      "note": "copia no autorizada: se cita solo el título"
+    },
+    {
+      "title": "Montgomery, Yucatec Mayan Dictionary and Phrasebook",
+      "note": "copia no autorizada: se cita solo el título"
+    },
+    {
+      "title": "Bevington, Maya for Travelers and Students (University of Texas Press)",
+      "note": "copia no autorizada: se cita solo el título"
+    },
+    {
+      "title": "Idioma Maya Yucateco, material de curso",
+      "note": "copia no autorizada: se cita solo el título"
+    },
+    {
+      "title": "Idioma Maya Yucateco, material de curso",
+      "note": "copia no autorizada: se cita solo el título"
+    },
+    {
+      "title": "Guía gramatical de la lengua maya yucateca para hispanohablantes",
+      "note": "copia no autorizada: se cita solo el título"
+    },
+    {
+      "title": "Diccionario introductorio español-maya, maya-español",
+      "note": "copia no autorizada: se cita solo el título"
+    },
+    {
+      "title": "Diccionario Maya Popular",
+      "note": "copia no autorizada: se cita solo el título"
+    },
+    {
+      "title": "A Historical Grammar of the Maya Language of Yucatan 1557–2000",
+      "note": "copia no autorizada: se cita solo el título"
+    },
+    {
+      "title": "Aprendiendo Maya – Las vocales y sus reglas de uso",
+      "url": "https://aprendiendomaya.com/escritura/vocales/las-vocales-y-sus-reglas-de-uso"
+    },
+    {
+      "title": "Aprendiendo Maya – Consonantes",
+      "url": "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+    },
+    {
+      "title": "Aprendiendo Maya – Saludos en maya",
+      "url": "https://aprendiendomaya.com/frases/saludos-lengua-maya"
+    },
+    {
+      "title": "Aprendiendo Maya – Pronombres personales",
+      "url": "https://aprendiendomaya.com/escritura/pronombres-personales-maya/pronombres-personales-en-lengua-maya"
+    },
+    {
+      "title": "La Lengua Maya de Yucatán – Frases básicas",
+      "url": "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+    },
+    {
+      "title": "Omniglot – Useful phrases in Yucatec Maya",
+      "url": "https://www.omniglot.com/language/phrases/yucatec-maya.php"
+    },
+    {
+      "title": "Na'atik Language & Culture Institute – Yucatec Maya Phrases",
+      "url": "https://naatikmexico.org/blog/yucatec-maya-phrases"
+    },
+    {
+      "title": "Babbel – Mayan language",
+      "url": "https://www.babbel.com/en/magazine/mayan-language"
+    },
+    {
+      "title": "Babbel – La lengua maya",
+      "url": "https://es.babbel.com/es/magazine/la-lengua-maya"
+    },
+    {
+      "title": "Wikivoyage – Yucatec Maya phrasebook",
+      "url": "https://en.wikivoyage.org/wiki/Yucatec_Maya_phrasebook"
+    },
+    {
+      "title": "Yucatán Today – Say it in Maya",
+      "url": "https://yucatantoday.com/en/blog/say-it-in-maya"
+    },
+    {
+      "title": "Yucatán Today – Revista 434, Yucatán Historia Viva (Tu'ux a kaajal)",
+      "url": "https://yucatantoday.com/hubfs/Revista/No434/No434-YucatanHistoriaViva.pdf?area-of-interest=undefined"
+    },
+    {
+      "title": "Yucatán Today – Revista 433 (Ma'alob k'iin)",
+      "url": "https://yucatantoday.com/hubfs/Revista/No433/No433%20-%20Yucat%C3%A1n%20est%C3%A1%20de%20fiesta.pdf?area-of-interest=cultura"
+    },
+    {
+      "title": "Yucatán Today – The Maya language lives on",
+      "url": "https://yucatantoday.com/en/blog/the-maya-language-lives-on"
+    },
+    {
+      "title": "Frommer's – Yucatán: language",
+      "url": "https://www.frommers.com/destinations/yucatan-peninsula/in-depth/language/"
+    },
+    {
+      "title": "Yucatan Living – Mayan Language for Beginners",
+      "url": "https://www.yucatanliving.com/culture/mayan-language-for-beginners-2"
+    },
+    {
+      "title": "Yucatan Living – Mayan for Ts'ulo'ob",
+      "url": "https://yucatanliving.com/daily-life/mayan-language-for-beginners"
+    },
+    {
+      "title": "PorEsto – ¿Cómo saludar y despedir en maya?",
+      "url": "https://www.poresto.com/yucatan/2024/1/8/como-saludar-despedir-en-maya.html"
+    },
+    {
+      "title": "PorEsto – ¿Cómo se dice por favor y gracias en maya?",
+      "url": "https://www.poresto.com/yucatan/2023/8/17/como-se-dice-por-favor-gracias-en-maya.html"
+    },
+    {
+      "title": "PorEsto – ¿Cómo se dice buenos días, tardes y noches en maya?",
+      "url": "https://www.poresto.com/yucatan/2024/1/6/como-se-dice-buenos-dias-tardes-noches-en-maya.html"
+    },
+    {
+      "title": "PorEsto – ¿Cómo se dice hola y adiós en maya?",
+      "url": "https://www.poresto.com/yucatan/2024/1/20/como-se-dice-hola-adios-en-maya.html"
+    },
+    {
+      "title": "Wikcionario – yéetel",
+      "url": "https://es.wiktionary.org/wiki/y%C3%A9etel"
+    },
+    {
+      "title": "Wikcionario – ki'imak óol",
+      "url": "https://es.wiktionary.org/wiki/ki%CA%BCimak_%C3%B3ol"
+    },
+    {
+      "title": "Filosofía Maya – El huracán según las lenguas mayas",
+      "url": "https://filosofiamaya.com/2020/10/08/el-huracan-segun-las-lenguas-mayas/"
+    },
+    {
+      "title": "Yaax Jaatsil Maya Taan (academia.edu)",
+      "url": "https://www.academia.edu/43248572/YAAX_JAATSIL_MAYA_TAAN"
+    },
+    {
+      "title": "Top Yucatán – Frases básicas en maya y español",
+      "url": "https://topyucatan.com/notas/the-yucatan-culture/frases-basicas-en-maya-y-espanol"
+    },
+    {
+      "title": "Hotel Casa Blanca – Palabras y frases mayas",
+      "url": "https://hotelcasablanca.mx/news/palabras-y-frases-mayas-que-debes-aprender"
+    },
+    {
+      "title": "Visit Sisal – Frases básicas en maya yucateco",
+      "url": "https://visitsisal.mx/blog/guia/frases-basicas-maya-yucateco-turista-sisal-merida-pronunciacion/"
+    },
+    {
+      "title": "Epinvestiga – La lengua que perdimos",
+      "url": "https://epinvestiga.com/dominical/la-lengua-que-perdimos/"
+    },
+    {
+      "title": "Heraldo de México – Ko'ox kanik maaya t'aan",
+      "url": "https://yucatan.heraldodemexico.com.mx/tendencias/2025/8/27/koox-kanik-maaya-taan-asi-seran-los-cursos-para-preservar-la-lengua-maya-en-yucatan-1949.html"
+    },
+    {
+      "title": "Posta – Programa Ko'ox kanik maaya t'aan",
+      "url": "https://www.posta.com.mx/yucatan/impulsan-la-preservacion-de-la-lengua-maya-en-yucatan-con-el-programa-koox-kanik-maaya-taan/vl2087271"
+    },
+    {
+      "title": "La cuantificación actual en el maya yucateco (blog Los Ocelotes)",
+      "url": "https://losocelotesproyectotemasdelinguistica.wordpress.com/2021/06/09/la-cuantificacion-actual-en-el-maya-yucateco/"
+    },
+    {
+      "title": "Numerales y clasificadores en maya",
+      "note": "copia no autorizada: se cita solo el título"
+    },
+    {
+      "title": "AULEX – Diccionario español-maya (chaanbéel)",
+      "url": "https://aulex.org/es-myn/index.php?busca=chaanb%C3%A9el"
+    },
+    {
+      "title": "Clozemaster – Yucatec Maya travel phrases",
+      "url": "https://www.clozemaster.com/travel-phrases/yucatec-maya"
+    },
+    {
+      "title": "Brody (2003), sobre el alfabeto maya de 1984 (AILLA)",
+      "url": "https://ailla-legacy.lib.utexas.edu/sites/default/files/documents/MBrody_MayaYucateco.pdf"
+    },
+    {
+      "title": "Tesis sobre variación dialectal del tono (ProQuest, resumen)",
+      "url": "https://www.proquest.com/docview/250030802/abstract/78BA52D4D9464DAFPQ/1"
+    },
+    {
+      "title": "Diccionario básico maya-español",
+      "note": "copia no autorizada: se cita solo el título"
+    },
+    {
+      "title": "Diccionario bilingüe español-maya",
+      "note": "copia no autorizada: se cita solo el título"
+    },
+    {
+      "title": "Diccionario de la conjugación de verbos en el maya yucateco actual",
+      "url": "https://aztli.wordpress.com/wp-content/uploads/2013/10/diccionario-yucateco-actual.pdf"
+    },
+    {
+      "title": "OHCHR – Declaración Universal de Derechos Humanos en maya yucateco",
+      "url": "https://www.ohchr.org/en/human-rights/universal-declaration/translations/mayan-yucateco"
+    },
+    {
+      "title": "Arqueología Mexicana – Maya yucateco",
+      "url": "https://arqueologiamexicana.mx/lenguas-indigenas/mayas-yucatecos"
+    },
+    {
+      "title": "Ruta Tren Maya – Writing standards for the Maya language",
+      "url": "https://rutatrenmaya.com/writing-standards-for-the-maya-language/"
+    }
+  ]
+}

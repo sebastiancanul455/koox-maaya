@@ -1,0 +1,975 @@
+{
+  "group": "conversacion-gramatica",
+  "searchesUsed": 40,
+  "date": "2026-10-25",
+  "method": "40 llamadas a WebSearch (tope estricto alcanzado). WebFetch falló (ENOTFOUND) en ncbi.nlm.nih.gov y frontiersin.org, así que no se insistió. Toda la evidencia es lo que mostraban los resúmenes y extractos del buscador, no las páginas abiertas. El buscador rinde muy poco con frases mayas entre comillas: muchas consultas de conversación (toj/tooj, woojel, ya'ala'al, máax a k'aaba', palabras de tiempo) no devolvieron ninguna fuente pertinente. Las gramáticas académicas (Lehmann, Bolles, AnderBois, Uth y Gutiérrez Bravo, Butler, diapositivas HPSG basadas en Armstrong 2009) sí aparecieron. «verificado» solo cuando en ESTA pasada vi forma y significado en una fuente académica o institucional, o en dos independientes; una frase armada por regla queda verificada solo si la regla y cada pieza están atestiguadas. Lo que solo tiene la evidencia de la primera pasada, sin volver a verlo, queda como «probable» aunque esa evidencia fuera buena. Normalización a 2014 solo con reglas seguras: h → j, apóstrofo recto, tech → teech (la base ya tiene verificada la grafía de 2014), acento grave antiguo = tono bajo (se quita). Las copias de sitios de documentos compartidos se citan sin url. Jayp'éel ya lo había re-verificado el grupo numeros-mercado: no gasté búsquedas en él y cito ese resultado.",
+  "items": [
+    {
+      "m": "Tooj in wóol.",
+      "es": "Estoy bien (de ánimo).",
+      "status": "dudoso",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "Toj in wóol.",
+        "tooj in wol (Junp'iit)",
+        "Tòoh in wóol (curso «Idioma Maya Yucateco»)"
+      ],
+      "correction": "Sin resolver. Tres búsquedas (en español y en inglés) no dieron ninguna fuente que escriba la frase ni que fije la longitud de toj/tooj. La única pista nueva es una página FAQ de baja calidad que da «Toj» = recto, verdadero, en «Toj óolal», y no resuelve la longitud. Se mantiene lo que dijo la base: 2 de las 3 fuentes previas apuntan a tooj (Junp'iit «tooj in wol»; «Tòoh» → tooj), y solo Yaax Jaatsil escribe toj. No enseñarla. Para responder a Bix a beel? enseñar Ma'alob (verificado).",
+      "pr": "tooj in wóol (j suave como la jota; oo larga; óo con tono alto)",
+      "sources": [
+        {
+          "title": "Junp'iit Maaya (Mújica 1995), sitio de Christian Lehmann (registro de la base, no re-visto)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        },
+        {
+          "title": "Página FAQ «¿Cómo se dice raíz en maya?» (baja calidad)",
+          "url": "https://www.clubmitsubishiasx.com/faq/como-se-dice-raiz-en-maya"
+        },
+        {
+          "title": "Omniglot, Useful phrases in Yucatec Maya",
+          "url": "https://omniglot.com/language/phrases/yucatec-maya.php"
+        }
+      ],
+      "evidence": "Búsquedas 1 y 3: ninguna fuente contiene «Toj in wóol» ni «Tooj in wóol». FAQ: «Toj» = recto o verdadero, en «Toj ets'tal» y «Toj óolal» (calma, equilibrio), sin marcar la longitud. Omniglot y Yucatán Today dan Ma'alob como respuesta a «¿cómo estás?». Búsqueda 23 (toj óolal salud, diccionario): nada pertinente."
+    },
+    {
+      "m": "Ma'alob chíinil k'iin.",
+      "es": "Buenas tardes.",
+      "status": "probable",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "Ma'lob chi'inil k'iin (Omniglot)",
+        "Ma'lob Chinil Kiin"
+      ],
+      "correction": "Sube a probable. La frase aparece con la misma forma en varias fuentes independientes, todas no académicas: una reproducción de entradas tipo diccionario, un material de clase y Omniglot. El tono de chíinil (frente a chi'inil, con vocal rearticulada, de Omniglot) no lo confirma ningún diccionario. Es un calco moderno de «buenas tardes»: presentarlo así. Según el material de clase, se usa de 4 a 6 de la tarde.",
+      "pr": "ma'-a-lob chíi-nil k'iin",
+      "sources": [
+        {
+          "title": "Página FAQ «¿Qué palabras hay en maya?» (reproducción no oficial, baja calidad)",
+          "url": "https://www.clubmitsubishiasx.com/faq/que-palabras-hay-en-maya"
+        },
+        {
+          "title": "Material de clase de maya (documento subido por un usuario; sin url)"
+        },
+        {
+          "title": "Omniglot, Useful phrases in Yucatec Maya",
+          "url": "https://omniglot.com/language/phrases/yucatec-maya.php"
+        },
+        {
+          "title": "PorEsto, «Cómo se dice buenos días, tardes, noches en maya» (registro de la base)",
+          "url": "https://www.poresto.com/yucatan/2024/1/6/como-se-dice-buenos-dias-tardes-noches-en-maya.html"
+        }
+      ],
+      "evidence": "FAQ: «Buenas tardes – Ma'alob chíinil k'iin»; otra fuente escribe «Ma'lob Chinil Kiin». Material de clase (un sitio de documentos compartidos): se usa cuando se oculta el sol, de 4 a 6 de la tarde, y lo distingue de «ma'alob sáastal k'iin» (madrugada) y «ma'alob chúumuk k'iin» (mediodía). Omniglot: «Ma'lob chi'inil K'iin» = good afternoon. Ninguna fuente académica."
+    },
+    {
+      "m": "Ma'alob óok'iin.",
+      "es": "Buenas tardes (variante).",
+      "status": "dudoso",
+      "kbStatusBefore": "dudoso (variante de Ma'alob chíinil k'iin)",
+      "variants": [],
+      "correction": "No apareció en ninguna búsqueda; la única fuente sigue siendo La Lengua Maya de Yucatán (Google Sites), de la primera pasada. No enseñarla; usar Ma'alob chíinil k'iin.",
+      "pr": "ma'-a-lob óo-k'iin",
+      "sources": [
+        {
+          "title": "La Lengua Maya de Yucatán, Frases básicas (registro de la base, no re-visto)",
+          "url": "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+        }
+      ],
+      "evidence": "Búsqueda 6: la consulta con «óok'iin» y «ok'iin» no dio ningún resultado con esas formas; el resumen dice expresamente que no aparecen."
+    },
+    {
+      "m": "Ma' in woojeli'.",
+      "es": "No sé.",
+      "status": "probable",
+      "kbStatusBefore": "dudoso (sonidos-conversacion: «Ma' in woojel.»); probable (gramática: «Ma' in woojeli'»)",
+      "variants": [
+        "Ma' in woojel. (sin -i'; Omniglot «Má in woojel», Ruta Tren Maya)",
+        "Ma' in wojeli' (vocabulario.com.mx)"
+      ],
+      "correction": "Unificar con la gramática: «Ma' in woojeli'.», que aplica la regla de -i' con predicados de estado (Lehmann; para Bolles, -i' es opcional), y «Ma' in woojel.» como variante sin -i'. Tres búsquedas no encontraron ninguna fuente nueva; un material de clase de un sitio de documentos compartidos da «Ma in wooje'» = «no lo entiendo», que no es fiable. La longitud oo frente a o sigue pendiente: woojel en Omniglot, Ruta Tren Maya y la Guía de Yoshida (según las notas); wojel en vocabulario.com.mx.",
+      "pr": "ma' in woo-je-li'",
+      "sources": [
+        {
+          "title": "Omniglot, Useful phrases in Yucatec Maya (registro de la base)",
+          "url": "https://www.omniglot.com/language/phrases/yucatec-maya.php"
+        },
+        {
+          "title": "Ruta Tren Maya, Writing standards for the Maya language (registro de la base)",
+          "url": "https://rutatrenmaya.com/writing-standards-for-the-maya-language/"
+        },
+        {
+          "title": "Christian Lehmann, negación en maya yucateco (registro de la base)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/gramatica/onomas/negacion.html"
+        },
+        {
+          "title": "Material de clase de maya (sin url)"
+        }
+      ],
+      "evidence": "Búsquedas 2, 4 y 37 sin resultados pertinentes, salvo un sitio de documentos compartidos: «Ma in wooje'» = no lo entiendo (glosa dudosa). El significado y la construcción sin k- vienen de la primera pasada (Yoshida: ojel no lleva k-)."
+    },
+    {
+      "m": "Bix u ya'alal … ich maaya?",
+      "es": "¿Cómo se dice … en maya?",
+      "status": "dudoso",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "Bix u yaálal ich maaya táan (Omniglot, grafía no normativa)",
+        "Bix u ya'ala'al … ich maaya t'aan? (candidata de la primera pasada, no atestiguada)"
+      ],
+      "correction": "La única forma atestiguada para «¿cómo se dice … en maya?» sigue siendo la de Omniglot, «Bix u yaálal ich maaya táan», vista de nuevo en esta pasada. No encontré «ya'ala'al» ni «ya'alal» en ninguna otra fuente. La normalización de «yaálal» no es segura: puede ser ya'alal o la pasiva ya'ala'al. Tampoco se sabe si lleva k- (bix ku …). No enseñarla como fórmula fija; si se usa, avisar que la grafía no está confirmada.",
+      "pr": "bish u ya'-a-lal … ich maa-ya",
+      "sources": [
+        {
+          "title": "Omniglot, Useful phrases in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/phrases/yucatec-maya.php"
+        }
+      ],
+      "evidence": "Búsqueda 39: Omniglot, «How do you say ... in Yucatec Maya? → Bix u yaálal ich maaya táan». Búsquedas 8 y 9 («Bix u ya'ala'al», «ya'ala'al»): ningún resultado con esas formas."
+    },
+    {
+      "m": "Máax a k'aaba'?",
+      "es": "¿Cómo te llamas? (lit. ¿quién es tu nombre?)",
+      "status": "dudoso",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "Ma'ax a k' aaba' (Yucatan Living)"
+      ],
+      "correction": "No se encontró en ninguna búsqueda (2 intentos). Si se conserva, la glosa debe ser «¿cómo te llamas?», no «forma cortés / usted», porque el maya no distingue tú de usted. Lo más seguro es enseñar Bix a k'aaba'? (verificado en la base).",
+      "pr": "máash a k'aa-ba'",
+      "sources": [
+        {
+          "title": "Yucatan Living, Mayan language for beginners (registro de la base, no re-visto)",
+          "url": "https://www.yucatanliving.com/culture/mayan-language-for-beginners-2"
+        }
+      ],
+      "evidence": "Búsqueda 40, con las tres grafías entre comillas: solo resultados ajenos (el sitio Maax Na, el pintor Kayum Ma'ax). Búsqueda 11: nada."
+    },
+    {
+      "m": "Pa'atik in jáan máan.",
+      "es": "Con permiso. / Disculpe usted.",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "Sin cambio de forma. Pasa de dudoso a verificado: el prontuario del INALI da la frase con esta grafía exacta y con la glosa «con permiso (disculpe usted)», junto a una entrada para «pase usted». Puede volver a la app. Literalmente es «espérame, que paso rápido» (pa'atik 'espéralo'; jáan 'rápido, un momento'; máan 'pasar'): esta segmentación es mía y no se vio glosada.",
+      "pr": "pa'-a-tik in jáan máan",
+      "sources": [
+        {
+          "title": "INALI, Prontuario maya-español (2009), PDF alojado por Arqueología Mexicana",
+          "url": "https://arqueologiamexicana.mx/sites/default/files/banco_imagenes/prontuario_maya.pdf"
+        }
+      ],
+      "evidence": "Búsqueda 13: en la sección de cortesía del prontuario del INALI, «Pa'atik in jáan máan — con permiso (disculpe usted)», con la grafía «in jáan máan» y tono alto en las dos palabras. El catálogo lo fecha en 2009 y lo acredita al INALI y a un traductor."
+    },
+    {
+      "m": "Ko'ox!",
+      "es": "¡Vamos! / ¡Vámonos! (invitación colectiva)",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [
+        "Ko'ox + verbo: Ko'ox kanik maaya t'aan (Vamos a aprender lengua maya)"
+      ],
+      "correction": "Sin cambio de forma; pasa a verificado (dos fuentes independientes, más el programa oficial del Gobierno de Yucatán que ya estaba en la base). La forma para un grupo («ko'one'ex») no apareció en ninguna fuente: no enseñarla.",
+      "pr": "ko'-osh",
+      "sources": [
+        {
+          "title": "PorEsto (2025), «¿Kox o Ko'ox? Conoce la forma correcta en maya de decir el nombre del nuevo transporte de Campeche»",
+          "url": "https://www.poresto.com/campeche/2025/12/5/kox-o-koox-conoce-la-forma-correcta-en-maya-de-decir-el-nombre-del-nuevo-transporte-de-campeche.html"
+        },
+        {
+          "title": "Todos los hechos, «¿Qué significa Co ox en maya?»",
+          "url": "https://todosloshechos.es/que-significa-co-ox-en-maya"
+        },
+        {
+          "title": "Heraldo de México: programa del Gobierno de Yucatán «Ko'ox kanik maaya t'aan» (registro de la base)",
+          "url": "https://yucatan.heraldodemexico.com.mx/tendencias/2025/8/27/koox-kanik-maaya-taan-asi-seran-los-cursos-para-preservar-la-lengua-maya-en-yucatan-1949.html"
+        }
+      ],
+      "evidence": "PorEsto: Ko'ox se usa como invitación colectiva, equivalente a «vamos» o «vayamos». Todos los hechos: «Ko'ox significa “vamos” en maya». Búsqueda 17, en las gramáticas académicas: nada sobre ko'ox (Lehmann dice que el modo no está estudiado en su trabajo sobre gramaticalización)."
+    },
+    {
+      "m": "Ka xi'ik teech utsil.",
+      "es": "Que te vaya bien.",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [
+        "Ka xi'ik te'ex utsil. (plural, curso de la UNC)",
+        "Ka xi'ik tech utsil",
+        "Ka xi'iktech utsil"
+      ],
+      "correction": "Pasa a verificado: tanto el molde como cada pieza están atestiguados. El INALI da el molde «Ka xi'ik tech + adverbio» con la glosa «¡que te vaya bien!»; un curso universitario usa la misma fórmula con utsil, en plural; utsil 'bien' ya estaba verificado. La forma singular exacta con utsil no la vi en esta pasada, solo en Omniglot en la primera, y se arma cambiando te'ex por teech (pronombres verificados). Normalización: tech (INALI 2009) → teech (2014). Plural para un grupo: Ka xi'ik te'ex utsil.",
+      "pr": "ka shi'-ik teech ut-sil",
+      "sources": [
+        {
+          "title": "INALI, Prontuario maya-español, PDF alojado por Arqueología Mexicana",
+          "url": "https://arqueologiamexicana.mx/sites/default/files/banco_imagenes/prontuario_maya.pdf"
+        },
+        {
+          "title": "David Mora-Marín (UNC Chapel Hill), «Maya T'aan Summer 2017», blog del curso de maya yucateco",
+          "url": "https://davidmm.web.unc.edu/2017/06/22/maya-taan-summer-2017/"
+        },
+        {
+          "title": "Omniglot, Useful phrases in Yucatec Maya (registro de la base)",
+          "url": "https://www.omniglot.com/language/phrases/yucatec-maya.php"
+        }
+      ],
+      "evidence": "Búsqueda 14 (INALI): «Ka xi'ik tech jats'uts — ¡Que te vaya bien! (buen camino)». Búsqueda 15: el blog del curso de maya yucateco (nivel 1) de la UNC escribe «Ka xi'ik te'ex utsil!» como despedida del grupo que viajaba a Saki' (el extracto no daba la traducción). En la primera pasada, Omniglot daba «Ka xi'ik teech utsil» = good luck."
+    },
+    {
+      "m": "Ka xi'ik teech jats'uts.",
+      "es": "¡Que te vaya bien! (buen camino)",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [
+        "Ka xi'ik tech jats'uts (grafía del INALI)"
+      ],
+      "correction": "Pasa a verificado (INALI). Solo cambia tech → teech (grafía de 2014).",
+      "pr": "ka shi'-ik teech jats'-uts",
+      "sources": [
+        {
+          "title": "INALI, Prontuario maya-español, PDF alojado por Arqueología Mexicana",
+          "url": "https://arqueologiamexicana.mx/sites/default/files/banco_imagenes/prontuario_maya.pdf"
+        }
+      ],
+      "evidence": "Búsqueda 14: en la sección de despedidas, «Ka xi'ik tech jats'uts — ¡Que te vaya bien! (buen camino)»."
+    },
+    {
+      "m": "Tak ti' uláak' k'iin.",
+      "es": "Hasta luego. / Adiós (lit. hasta otro día).",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [
+        "Taak ulak k'iin (Omniglot)",
+        "Tak tu lak' k'iin (Junp'iit)"
+      ],
+      "correction": "Sin cambio de forma. Pasa a verificado: el prontuario del INALI la da con esta grafía exacta y la glosa «Adiós (hasta luego)».",
+      "pr": "tak ti' u-láak' k'iin",
+      "sources": [
+        {
+          "title": "INALI, Prontuario maya-español, PDF alojado por Arqueología Mexicana",
+          "url": "https://arqueologiamexicana.mx/sites/default/files/banco_imagenes/prontuario_maya.pdf"
+        }
+      ],
+      "evidence": "Búsqueda 14: «Tak ti' uláak' k'iin — Adiós (hasta luego)», despedida informal. En la misma sección: «Yuum bo'otik taalech a xíimbal to'on — Muchas gracias por su visita» y «Ka suunakech a xíimbal to'on — vuelva pronto»."
+    },
+    {
+      "m": "uláak'",
+      "es": "otro, otra",
+      "status": "probable",
+      "kbStatusBefore": "probable",
+      "variants": [],
+      "correction": "Sin cambio. Solo la vi dentro de «Tak ti' uláak' k'iin» (INALI), donde la glosa «hasta otro día» es transparente, pero ninguna fuente la glosa aislada. No gasté una búsqueda propia en ella.",
+      "pr": "u-láak'",
+      "sources": [
+        {
+          "title": "INALI, Prontuario maya-español, PDF alojado por Arqueología Mexicana",
+          "url": "https://arqueologiamexicana.mx/sites/default/files/banco_imagenes/prontuario_maya.pdf"
+        }
+      ],
+      "evidence": "Solo dentro de la frase «Tak ti' uláak' k'iin». El grupo cuerpo-familia registra que la UADY da láak' 'otro' con otra vocal: hay que confirmar la relación entre uláak' y láak'."
+    },
+    {
+      "m": "ki'imak óolal",
+      "es": "alegría, felicidad",
+      "status": "verificado",
+      "kbStatusBefore": "no estaba como entrada aparte (dentro de «Ki'imak óolal.» = Bienvenido, probable)",
+      "variants": [
+        "ki'imak óol (feliz, contento)"
+      ],
+      "correction": "Entrada nueva: el significado básico de la expresión es 'alegría, felicidad'. Así lo dan la entrada del diccionario de la UADY (en una reproducción) y un artículo académico sobre las emociones en maya.",
+      "pr": "ki'-i-mak óo-lal",
+      "sources": [
+        {
+          "title": "Diccionario de la UADY, entrada reproducida en la página FAQ «¿Cómo se dice en maya feliz cumpleaños?» (reproducción no oficial)",
+          "url": "https://www.clubmitsubishiasx.com/faq/como-se-dice-en-maya-feliz-cumpleanos"
+        },
+        {
+          "title": "Artículo académico sobre las emociones en maya yucateco (resultado de la búsqueda 16; el resumen no daba ni el título exacto ni la url)"
+        }
+      ],
+      "evidence": "Búsqueda 16: «FELICIDAD f: Ki'imak óolal» (con formato UADY) y el adjetivo «feliz» = Ki'imak óol. El artículo académico define ki'imak óolal como alegría y felicidad. Una página de baja calidad da «Ki'imak óolal tu k'iinil a k'aaba'» para felicitar en un cumpleaños (no comprobado)."
+    },
+    {
+      "m": "Ki'imak óolal!",
+      "es": "¡Bienvenido(a)! (lit. ¡alegría!)",
+      "status": "probable",
+      "kbStatusBefore": "probable",
+      "variants": [
+        "Kíimak 'oolal (Omniglot)",
+        "Kíimak óolal (Na'atik, PorEsto)"
+      ],
+      "correction": "Sin cambio de estado. El sentido de 'bienvenido' solo lo dan fuentes divulgativas (Omniglot, visto de nuevo; Na'atik y PorEsto en la base), y la búsqueda en español no encontró ninguna fuente que la traduzca como «bienvenido». Normalizar Kíimak → ki'imak es coherente con ki'imak óol (UADY, Wikcionario). Si se enseña, glosarla «¡bienvenido! (lit. alegría)». Para dar la bienvenida a un grupo, el INALI tiene «Ki'imak k óol taale'ex waye'» (probable en la base; no re-buscada).",
+      "pr": "ki'-i-mak óo-lal",
+      "sources": [
+        {
+          "title": "Omniglot, Useful phrases in Yucatec Maya",
+          "url": "https://omniglot.com/language/phrases/yucatec-maya.php"
+        },
+        {
+          "title": "Na'atik, Yucatec Maya phrases (registro de la base)",
+          "url": "https://naatikmexico.org/blog/yucatec-maya-phrases"
+        }
+      ],
+      "evidence": "Búsqueda 5: Omniglot, «Welcome → Kíimak 'oolal». Búsqueda 16: ninguna fuente traduce ki'imak óolal como «bienvenido»; las fuentes lexicográficas la dan como 'felicidad'."
+    },
+    {
+      "m": "bejla'e'",
+      "es": "hoy; ahora",
+      "status": "probable",
+      "kbStatusBefore": "probable",
+      "variants": [
+        "bejla'e",
+        "bejla'"
+      ],
+      "correction": "Sin cambio. No la volví a ver glosada en esta pasada. La evidencia previa es buena (diccionario de la UADY «BEJLA'E': Hoy, ahora», Gran Museo del Mundo Maya, Top Yucatán), pero no la re-confirmé. Es la candidata más fuerte para subir con otra búsqueda.",
+      "pr": "bej-la'-e'",
+      "sources": [
+        {
+          "title": "Diccionario maya en línea de la UADY (registro de la base)",
+          "url": "https://www.mayas.uady.mx/diccionario/b_maya.html"
+        },
+        {
+          "title": "Gran Museo del Mundo Maya, Palabras mayas (registro de la base)",
+          "url": "https://www.granmuseodelmundomaya.com.mx/aprende/palabras-mayas"
+        }
+      ],
+      "evidence": "Búsqueda 19: bejla'e' aparece sin glosa en la letra del Himno de Yucatán en maya (yucatan.gob.mx), en un titular de La Jornada Maya y en un PDF de la UADY. Búsquedas 21 y 38: ninguna glosa. El artículo de Le Guen y Pool Balam (2012) sobre el tiempo deíctico en yucateco seguramente tiene estas palabras, pero no pude abrirlo (ENOTFOUND)."
+    },
+    {
+      "m": "sáamal",
+      "es": "mañana (el día siguiente)",
+      "status": "verificado",
+      "kbStatusBefore": "probable (gramática); verificado (sonidos-conversacion)",
+      "variants": [
+        "saamal"
+      ],
+      "correction": "Se mantiene verificado como en sonidos-conversacion (UADY, Montgomery, Ayuntamiento de Mérida «Tak sáamal»). En esta pasada solo vi fuentes débiles que lo confirman («tak saamal» = hasta mañana).",
+      "pr": "sáa-mal",
+      "sources": [
+        {
+          "title": "Diccionario maya en línea de la UADY (registro de la base)",
+          "url": "https://www.mayas.uady.mx/diccionario/s_maya.html"
+        },
+        {
+          "title": "Ayuntamiento de Mérida, Frases español-maya (registro de la base)",
+          "url": "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf"
+        }
+      ],
+      "evidence": "Búsquedas 5 y 38: «tak saamal» = «see you tomorrow» / «nos vemos mañana», en copias de vocabulario de baja calidad. La verificación se apoya en la evidencia institucional ya registrada."
+    },
+    {
+      "m": "jo'oljeak",
+      "es": "ayer",
+      "status": "probable",
+      "kbStatusBefore": "probable",
+      "variants": [
+        "jo'oljej",
+        "jo'oljeake'"
+      ],
+      "correction": "Sin cambio. Dos búsquedas no la encontraron: el resumen del buscador llegó a decir que no la reconocía, lo cual no prueba nada. La evidencia previa sigue en pie (UADY «JO'OLJEAK: Ayer», diccionario bilingüe, Top Yucatán), pero no la re-confirmé.",
+      "pr": "jo'-ol-je-ak",
+      "sources": [
+        {
+          "title": "Diccionario maya en línea de la UADY (registro de la base)",
+          "url": "https://www.mayas.uady.mx/diccionario/j_maya.html"
+        },
+        {
+          "title": "Top Yucatán, Frases básicas en maya y español (registro de la base)",
+          "url": "https://topyucatan.com/notas/the-yucatan-culture/frases-basicas-en-maya-y-espanol"
+        }
+      ],
+      "evidence": "Búsquedas 19, 20, 21 y 38: ningún resultado con la palabra. Una fuente da «ak'be'» como 'anoche', sin verificar."
+    },
+    {
+      "m": "ka'abej",
+      "es": "pasado mañana",
+      "status": "probable",
+      "kbStatusBefore": "probable",
+      "variants": [],
+      "correction": "Sin cambio. Sigue teniendo una sola fuente, institucional pero no académica: el Gran Museo del Mundo Maya. No apareció en esta pasada.",
+      "pr": "ka'-a-bej",
+      "sources": [
+        {
+          "title": "Gran Museo del Mundo Maya, Palabras mayas, sección Tiempos (registro de la base)",
+          "url": "https://www.granmuseodelmundomaya.com.mx/aprende/palabras-mayas"
+        }
+      ],
+      "evidence": "Búsquedas 19, 21 y 22: nada. Le Guen y Pool Balam (2012, Frontiers in Psychology) estudian los deícticos de tiempo del yucateco, pero el extracto no mostraba la lista y la página no se pudo abrir."
+    },
+    {
+      "m": "Ba'ax k'iin …?",
+      "es": "¿Qué día …? (¿cuándo?)",
+      "status": "dudoso",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "No se encontró como pregunta de «cuándo». La única pregunta de tiempo atestiguada en una gramática es la de Bolles, «Baax ora hani?» = When did he eat?, que usa el préstamo ora (hora): ver la entrada siguiente. ba'ax k'iin como «¿qué día?» es una composición transparente (ba'ax + k'iin, ambos verificados), pero no se vio usada.",
+      "pr": "ba'-ash k'iin",
+      "sources": [
+        {
+          "title": "David y Alejandra Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI)",
+          "url": "https://www.famsi.org/reports/96072/grammar/index.html"
+        }
+      ],
+      "evidence": "Búsqueda 34: ningún resultado con «ba'ax k'iin», «ba'ax ora» ni «ba'ax súutuk». Búsqueda 10 (Bolles, preguntas): «Baax ora hani?» = When did he eat?"
+    },
+    {
+      "m": "Ba'ax ora …?",
+      "es": "¿A qué hora …?; ¿cuándo …?",
+      "status": "probable",
+      "kbStatusBefore": "no estaba en la base",
+      "variants": [
+        "Baax ora (Bolles)",
+        "Ba'ax óora (grafía moderna posible, NO confirmada)"
+      ],
+      "correction": "Entrada nueva, posible sustituta de ba'ax k'iin para «¿cuándo?». Normalización: Baax → ba'ax es segura (ba'ax está verificado). Cómo se escribe hoy el préstamo ora (¿ora, óora?) no está documentado: hay que verificarlo antes de enseñarlo. Una sola fuente, de gramática, en grafía antigua.",
+      "pr": "ba'-ash o-ra",
+      "sources": [
+        {
+          "title": "David y Alejandra Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), sección de preguntas",
+          "url": "https://www.famsi.org/reports/96072/grammar/section06.htm"
+        }
+      ],
+      "evidence": "Búsqueda 10: Bolles da el patrón (interrogativo) + (verbo), con los ejemplos «Maax cimzabi?» = Who was killed?, «Baax elabi?» = What was burnt?, «Baax ora hani?» = When did he eat? y «Tuux elabi?» = Where was he burnt?"
+    },
+    {
+      "m": "k- + juego A: kin, ka, ku, k (presente habitual / incompletivo)",
+      "es": "yo/tú/él … (hago, haces, hace habitualmente)",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [
+        "k- imperfectivo (Lehmann)",
+        "kin w- / ka w- / ku y- ante vocal"
+      ],
+      "correction": "Pasa a verificado para kin, ka y ku. La 1.ª del plural (k + k → k, p. ej. k bin) no la vi en esta pasada: queda en probable.",
+      "pr": "kin, ka, ku",
+      "sources": [
+        {
+          "title": "Christian Lehmann, Genesis of auxiliaries in Yucatec Maya",
+          "url": "https://www.christianlehmann.eu/publ/Genesis_of_auxiliaries_in_Yucatec_Maya.pdf"
+        },
+        {
+          "title": "Diapositivas «A Yucatec fragment» (HPSG; basadas en Armstrong 2009)",
+          "url": "https://hpsg.uky.edu/sites/default/files/abstracts/yucatec-fragment-slides.pdf"
+        },
+        {
+          "title": "Uth, Gutiérrez-Bravo y Fliessbach (2024), Frontiers in Language Sciences",
+          "url": "https://www.frontiersin.org/journals/language-sciences/articles/10.3389/flang.2023.1286520/pdf"
+        },
+        {
+          "title": "INALI, Prontuario maya-español (Ba'ax ka wa'alik)",
+          "url": "https://arqueologiamexicana.mx/sites/default/files/banco_imagenes/prontuario_maya.pdf"
+        }
+      ],
+      "evidence": "Lehmann: k- es el auxiliar imperfectivo (no completivo) y debe unirse a la sílaba siguiente; selecciona la forma incompletiva del verbo (glosa TR.INCPL, con -ik en los transitivos). HPSG: cada oración lleva un marcador de aspecto o modo a la izquierda, y en el incompletivo el juego A va inmediatamente después. Uth et al.: «the imperfective/habitual morpheme k» (citan a Lehmann 2017, p. 203). INALI: «Ba'ax ka wa'alik» (k-a w-a'al-ik)."
+    },
+    {
+      "m": "Completivo intransitivo: raíz + juego B (binen, taalen)",
+      "es": "fui, vine (pasado de los intransitivos)",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [
+        "jbinen / j binen",
+        "jtaalen / j taalen",
+        "3.ª sg al final de la frase: binij, taalij"
+      ],
+      "correction": "Pasa a verificado, porque la regla y las piezas están atestiguadas. Lehmann pone un auxiliar de pasado propio de los intransitivos, h- (j- en la grafía actual), distinto del t- de los transitivos; esto respalda la grafía jbinen / jtaalen que dan otras fuentes de la base. No sé qué recomiendan las Normas de 2014 sobre esa j-: enseñar binen ~ jbinen como equivalentes, como ya propone la gramática 20.",
+      "pr": "bi-nen, taa-len",
+      "sources": [
+        {
+          "title": "Christian Lehmann, Genesis of auxiliaries in Yucatec Maya",
+          "url": "https://www.christianlehmann.eu/publ/Genesis_of_auxiliaries_in_Yucatec_Maya.pdf"
+        },
+        {
+          "title": "Christian Lehmann, Valency in Yucatec Maya",
+          "url": "https://www.christianlehmann.eu/publ/valency_in_ym.pdf"
+        },
+        {
+          "title": "INALI, Prontuario maya-español (taalech)",
+          "url": "https://arqueologiamexicana.mx/sites/default/files/banco_imagenes/prontuario_maya.pdf"
+        }
+      ],
+      "evidence": "Lehmann (Genesis): pasado con el auxiliar h (intransitivo) frente a t- (transitivo). Lehmann (Valency): los sufijos absolutivos marcan el sujeto del intransitivo en estatus completivo y subjuntivo. INALI: «Yuum bo'otik taalech a xíimbal to'on» (taal-ech 'viniste'). Diapositivas HPSG: -en = 1.ª sg del juego B. Las formas binen y taalen no las vi literalmente: son regulares."
+    },
+    {
+      "m": "Completivo transitivo: t- + juego A + raíz + -aj (tin …-aj)",
+      "es": "yo lo …-é (pasado de los transitivos)",
+      "status": "probable",
+      "kbStatusBefore": "probable",
+      "variants": [
+        "tin … -ah (grafía antigua)"
+      ],
+      "correction": "Sin cambio. El auxiliar t- de los transitivos (Lehmann) y el juego A están verificados; el sufijo -aj del completivo transitivo no apareció en ningún extracto de esta pasada. En la base está documentado (Lehmann, «tin na'tah»; UADY, lección 4.9; diapositivas HPSG), pero no lo re-vi.",
+      "pr": "tin na'-a-taj",
+      "sources": [
+        {
+          "title": "Christian Lehmann, Genesis of auxiliaries in Yucatec Maya",
+          "url": "https://www.christianlehmann.eu/publ/Genesis_of_auxiliaries_in_Yucatec_Maya.pdf"
+        },
+        {
+          "title": "UADY, Curso de maya, lección 4.9 (registro de la base)",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec4_9.html"
+        }
+      ],
+      "evidence": "Búsqueda 24: la tabla de Lehmann da h (intransitivo) frente a t- (transitivo) para el pasado; el extracto no mostraba -ah/-aj. Búsqueda 25 («tin wilaj», «tin beetaj»): nada."
+    },
+    {
+      "m": "táan + juego A + verbo (progresivo)",
+      "es": "estar …-ando (acción en curso)",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [
+        "tin (táan in), ta (táan a), tu (táan u): contracciones"
+      ],
+      "correction": "Pasa a verificado. Las contracciones tin/ta/tu no las vi en esta pasada (quedan como en la base, probables).",
+      "pr": "táan in …",
+      "sources": [
+        {
+          "title": "Christian Lehmann, Genesis of auxiliaries in Yucatec Maya",
+          "url": "https://www.christianlehmann.eu/publ/Genesis_of_auxiliaries_in_Yucatec_Maya.pdf"
+        },
+        {
+          "title": "Uth, Gutiérrez-Bravo y Fliessbach (2024), Frontiers in Language Sciences",
+          "url": "https://www.frontiersin.org/journals/language-sciences/articles/10.3389/flang.2023.1286520/pdf"
+        },
+        {
+          "title": "Uth y Gutiérrez Bravo (2018), Redalyc",
+          "url": "https://www.redalyc.org/journal/5259/525957259005/525957259005.pdf"
+        }
+      ],
+      "evidence": "Lehmann: el paradigma de auxiliares incluye el progresivo táan. Uth et al. (2024): táan tiende a sustituirse por el imperfectivo k cuando se antepone un objeto con foco contrastivo. Uth y Gutiérrez Bravo (2018): «Ka'a-túul xibpal(-o'ob) táan u bàaxal(-o'ob)» = «Dos niños están jugando» (bàaxal en grafía con tono grave = baaxal)."
+    },
+    {
+      "m": "ts'o'ok + juego A + verbo (perfecto / terminativo)",
+      "es": "ya … (acción terminada)",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [
+        "ts'o'k (transcripción de Lehmann)",
+        "ts'in (contracción de ts'o'ok in)"
+      ],
+      "correction": "Pasa a verificado. Lehmann escribe ts'o'k; la base usa ts'o'ok (Yoshida, Parry), que es la grafía habitual con vocal rearticulada. Lehmann añade que ts'o'ok puede usarse solo como respuesta a una pregunta de sí o no («ya»). La contracción ts'in no la vi en esta pasada.",
+      "pr": "ts'o'-ok in …",
+      "sources": [
+        {
+          "title": "Christian Lehmann, Genesis of auxiliaries in Yucatec Maya",
+          "url": "https://www.christianlehmann.eu/publ/Genesis_of_auxiliaries_in_Yucatec_Maya.pdf"
+        },
+        {
+          "title": "Christian Lehmann, Grammaticalization of TAM marking in Yucatec Maya (Language Science Press)",
+          "url": "https://langsci-press.org/catalog/view/152/1016/886-1"
+        }
+      ],
+      "evidence": "Búsqueda 29: terminativo «ts'o'k», que expresa un perfecto de resultado («ha visto»); el terminativo y el futuro definido pueden aparecer solos, por ejemplo como respuesta a una pregunta de sí o no."
+    },
+    {
+      "m": "bíin + juego A + verbo en subjuntivo (futuro de predicción)",
+      "es": "va a …; ha de … (predicción)",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [
+        "bín- (transcripción de Lehmann)"
+      ],
+      "correction": "Pasa a verificado. Confirma lo que ya dice la gramática 22 de la base: bíin pide el verbo en subjuntivo, no en incompletivo. Para los planes inmediatos, Lehmann también registra un futuro definido (he'l en su transcripción), que la app no enseña.",
+      "pr": "bíin in …",
+      "sources": [
+        {
+          "title": "Christian Lehmann, Genesis of auxiliaries in Yucatec Maya",
+          "url": "https://www.christianlehmann.eu/publ/Genesis_of_auxiliaries_in_Yucatec_Maya.pdf"
+        },
+        {
+          "title": "Valentina Vapnarsky (2016), capítulo sobre el futuro en maya yucateco, en Z. Guentchéva (ed.), Studies in Language Companion Series 172 (Benjamins)",
+          "url": "https://benjamins.com/catalog/slcs.172.21vap"
+        }
+      ],
+      "evidence": "Lehmann (búsquedas 26 y 29): «simple future bín- + subjuntivo»; el paradigma también tiene el futuro definido, el pasado remoto úuch y el imperfectivo k-. Vapnarsky: bíin es un marcador de futuro para eventos predeterminados, fuera del control humano."
+    },
+    {
+      "m": "ma'",
+      "es": "no (negación; va antes de lo negado)",
+      "status": "verificado",
+      "kbStatusBefore": "probable (gramática); verificado (sonidos-conversacion)",
+      "variants": [
+        "ma (Bolles)"
+      ],
+      "correction": "Se confirma.",
+      "pr": "ma'",
+      "sources": [
+        {
+          "title": "David y Alejandra Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI)",
+          "url": "https://www.famsi.org/reports/96072/grammar/section15.htm"
+        },
+        {
+          "title": "Pye, Pfeiler y Mateo (2017), estudio sobre la adquisición de la negación en yucateco y q'anjob'al (resultado de la búsqueda 27)"
+        }
+      ],
+      "evidence": "Bolles: la negación de los tiempos pasados se hace en general anteponiendo ma. Pye et al.: la negación del yucateco distingue contextos discursivos, oracionales y existenciales, e interactúa con el aspecto y el modo."
+    },
+    {
+      "m": "-i' (cierre de la negación: ma' … -i')",
+      "es": "cierre de la negación al final de la frase negada",
+      "status": "probable",
+      "kbStatusBefore": "probable",
+      "variants": [
+        "sin -i' (habla del noroeste según Bolles)"
+      ],
+      "correction": "Sin cambio. Ningún extracto de esta pasada mostró -i'; la regla viene de la base (Lehmann: con estados, sustantivos, pasado, perfecto y progresivo, pero no en el habitual, con mina'an ni en subjuntivo; Bolles: a menudo opcional).",
+      "pr": "-i' (i corta con corte glotal)",
+      "sources": [
+        {
+          "title": "Christian Lehmann, negación en maya yucateco (registro de la base)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/gramatica/onomas/negacion.html"
+        }
+      ],
+      "evidence": "Búsqueda 27: ningún extracto trató el -i'."
+    },
+    {
+      "m": "Ma' tin na'atik. (negación del presente con t-, no con k-)",
+      "es": "No entiendo.",
+      "status": "verificado",
+      "kbStatusBefore": "verificado (sonidos-conversacion); probable (gramática 29)",
+      "variants": [
+        "Ma' tin na'atiki' (con -i', en otras zonas)"
+      ],
+      "correction": "Se confirma la regla: con ma', el presente no usa k- (kin/ka/ku) sino tin/ta/tu. Bolles da el habitual negado como «Ma tu …». Por eso «Ma' … kin …» es incorrecto, como ya registró la base (frase «Ma' jach ya'ab maaya kin t'aaniki'» retirada).",
+      "pr": "ma' tin na'-a-tik",
+      "sources": [
+        {
+          "title": "David y Alejandra Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI)",
+          "url": "https://www.famsi.org/reports/96072/grammar/section15.htm"
+        },
+        {
+          "title": "Montgomery, Maya-English Dictionary and Phrasebook (registro de la base; copia no autorizada, sin url)"
+        }
+      ],
+      "evidence": "Búsqueda 27 (Bolles): entre las excepciones de la negación, un habitual negado con otra forma: el extracto muestra «Ma tu» ante el verbo. Base: Montgomery y Omniglot, «Ma' tin na'atik»; Yoshida dice que en la negativa no se usa k-."
+    },
+    {
+      "m": "Juego B: -en, -ech, Ø, -o'on, -e'ex, -o'ob",
+      "es": "yo, tú, él/ella, nosotros, ustedes, ellos (sufijos: sujeto de intransitivos y estados, objeto de transitivos)",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [],
+      "correction": "Pasa a verificado.",
+      "pr": "-en, -ech, -o'-on, -e'-esh, -o'-ob",
+      "sources": [
+        {
+          "title": "Diapositivas «A Yucatec fragment» (HPSG; basadas en Armstrong 2009)",
+          "url": "https://hpsg.uky.edu/sites/default/files/abstracts/yucatec-fragment-slides.pdf"
+        },
+        {
+          "title": "Christian Lehmann, Valency in Yucatec Maya",
+          "url": "https://www.christianlehmann.eu/publ/valency_in_ym.pdf"
+        },
+        {
+          "title": "INALI, Prontuario maya-español (taalech)",
+          "url": "https://arqueologiamexicana.mx/sites/default/files/banco_imagenes/prontuario_maya.pdf"
+        }
+      ],
+      "evidence": "HPSG: juego B en singular -en (1sg), -ech (2sg), -Ø (3sg), y en plural -o'on, -e'ex, -o'ob; marca el sujeto de varios predicados y el objeto de los verbos, y va sufijado. Lehmann: los sufijos absolutivos marcan el sujeto intransitivo en completivo y subjuntivo. INALI: taal-ech 'viniste'."
+    },
+    {
+      "m": "Juego A (posesivos y sujeto del verbo): in w-, a w-, u y-, k",
+      "es": "mi, tu, su, nuestro (w- y y- ante vocal)",
+      "status": "verificado",
+      "kbStatusBefore": "probable (gramática); verificado (sonidos-conversacion, G10)",
+      "variants": [
+        "in wóol, a wóol, u yóol, k óol",
+        "plural: a … -e'ex, u … -o'ob"
+      ],
+      "correction": "Se confirman in(w)-, a(w)- y u(y)-. En el extracto de las diapositivas HPSG se perdió la k de la 1.ª del plural (sale «in(w)-»); k sin consonante de unión (k óol) viene de la base (INALI, Bolles) y no la re-vi.",
+      "pr": "in w-, a w-, u y-, k",
+      "sources": [
+        {
+          "title": "Diapositivas «A Yucatec fragment» (HPSG; basadas en Armstrong 2009)",
+          "url": "https://hpsg.uky.edu/sites/default/files/abstracts/yucatec-fragment-slides.pdf"
+        },
+        {
+          "title": "INALI, Prontuario maya-español (Ba'ax ka wa'alik)",
+          "url": "https://arqueologiamexicana.mx/sites/default/files/banco_imagenes/prontuario_maya.pdf"
+        },
+        {
+          "title": "David y Alejandra Bolles, A Grammar of the Yucatecan Mayan Language, sección 5 (FAMSI)",
+          "url": "https://www.famsi.org/reports/96072/grammar/section05.htm"
+        }
+      ],
+      "evidence": "HPSG: juego A 1sg in(w)-, 2sg a(w)-, 3sg u(y)-; los paréntesis marcan las formas ante vocal; los plurales añaden -o'on, -e'ex y -o'ob; el juego A marca el sujeto de los transitivos e intransitivos (incompletivos) y la posesión, y va prefijado. INALI: «ka wa'alik» (a + w- + a'alik)."
+    },
+    {
+      "m": "teen",
+      "es": "yo",
+      "status": "verificado",
+      "kbStatusBefore": "probable (gramática); verificado (sonidos-conversacion)",
+      "variants": [
+        "ten (Bolles)",
+        "tèen (grafía antigua de la UADY)",
+        "tene' (como tema)"
+      ],
+      "correction": "Pasa a verificado en gramática.",
+      "pr": "teen",
+      "sources": [
+        {
+          "title": "UADY, Curso de maya yucateco, lección 3",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec3intro.html"
+        },
+        {
+          "title": "Wiktionary, letiʼ (tabla de pronombres personales)",
+          "url": "https://en.wiktionary.org/wiki/leti%CA%BC"
+        },
+        {
+          "title": "David y Alejandra Bolles, A Grammar of the Yucatecan Mayan Language, sección 5 (FAMSI)",
+          "url": "https://www.famsi.org/reports/96072/grammar/section05.htm"
+        }
+      ],
+      "evidence": "Búsqueda 35. UADY, lección 3: teen (yo), teech, leti', to'on, te'ex, letio'ob, y las formas de tema tene' y teche'. Wiktionary: teen, teech, leti', to'on, te'ex, leti'ob. Bolles: ten, tech, leti/ti, toon, teex, letiob, que derivan de la serie B."
+    },
+    {
+      "m": "teech",
+      "es": "tú; usted",
+      "status": "verificado",
+      "kbStatusBefore": "probable (gramática); verificado (sonidos-conversacion)",
+      "variants": [
+        "tech (Bolles, INALI 2009)",
+        "teche' (como tema)"
+      ],
+      "correction": "Pasa a verificado en gramática.",
+      "pr": "teech",
+      "sources": [
+        {
+          "title": "UADY, Curso de maya yucateco, lección 3",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec3intro.html"
+        },
+        {
+          "title": "Wiktionary, letiʼ (tabla de pronombres personales)",
+          "url": "https://en.wiktionary.org/wiki/leti%CA%BC"
+        }
+      ],
+      "evidence": "UADY: teech (tú). Wiktionary: teech. Bolles: tech. INALI: «Ka xi'ik tech jats'uts»."
+    },
+    {
+      "m": "leti'",
+      "es": "él; ella; eso",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [
+        "leti (Bolles)",
+        "ti (forma breve, Bolles)"
+      ],
+      "correction": "Pasa a verificado. No distingue género (Bolles).",
+      "pr": "le-ti'",
+      "sources": [
+        {
+          "title": "Wiktionary, letiʼ",
+          "url": "https://en.wiktionary.org/wiki/leti%CA%BC"
+        },
+        {
+          "title": "UADY, Curso de maya yucateco, lección 3",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec3intro.html"
+        },
+        {
+          "title": "David y Alejandra Bolles, A Grammar of the Yucatecan Mayan Language, sección 5 (FAMSI)",
+          "url": "https://www.famsi.org/reports/96072/grammar/section05.htm"
+        }
+      ],
+      "evidence": "Wiktionary: pronunciación [leˈtiʔ], pronombre de 3.ª persona singular 'he, she, it', plural letiʼob. Bolles: los pronombres de 3.ª persona no distinguen género."
+    },
+    {
+      "m": "to'on",
+      "es": "nosotros; nosotras",
+      "status": "verificado",
+      "kbStatusBefore": "probable (gramática); verificado (sonidos-conversacion)",
+      "variants": [
+        "toon (Bolles)"
+      ],
+      "correction": "Pasa a verificado en gramática.",
+      "pr": "to'-on",
+      "sources": [
+        {
+          "title": "UADY, Curso de maya yucateco, lección 3",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec3intro.html"
+        },
+        {
+          "title": "Wiktionary, letiʼ (tabla de pronombres personales)",
+          "url": "https://en.wiktionary.org/wiki/leti%CA%BC"
+        }
+      ],
+      "evidence": "UADY y Wiktionary: to'on. Bolles: toon. INALI: «… a xíimbal to'on»."
+    },
+    {
+      "m": "te'ex",
+      "es": "ustedes",
+      "status": "verificado",
+      "kbStatusBefore": "probable (gramática); verificado (sonidos-conversacion)",
+      "variants": [
+        "teex (Bolles)"
+      ],
+      "correction": "Pasa a verificado en gramática.",
+      "pr": "te'-esh",
+      "sources": [
+        {
+          "title": "UADY, Curso de maya yucateco, lección 3",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec3intro.html"
+        },
+        {
+          "title": "Wiktionary, letiʼ (tabla de pronombres personales)",
+          "url": "https://en.wiktionary.org/wiki/leti%CA%BC"
+        }
+      ],
+      "evidence": "UADY y Wiktionary: te'ex. Bolles: teex. Curso de la UNC: «Ka xi'ik te'ex utsil!»."
+    },
+    {
+      "m": "leti'ob",
+      "es": "ellos; ellas",
+      "status": "verificado",
+      "kbStatusBefore": "probable (gramática); verificado (sonidos-conversacion)",
+      "variants": [
+        "letio'ob (UADY)",
+        "letiob, tiob (Bolles)"
+      ],
+      "correction": "Pasa a verificado. Hay dos grafías actuales: leti'ob (Wiktionary, la base) y letio'ob (UADY). No vi cuál recomiendan las Normas de 2014; mantener leti'ob y mostrar letio'ob como variante.",
+      "pr": "le-ti'-ob",
+      "sources": [
+        {
+          "title": "Wiktionary, letiʼ (plural letiʼob)",
+          "url": "https://en.wiktionary.org/wiki/leti%CA%BC"
+        },
+        {
+          "title": "UADY, Curso de maya yucateco, lección 3",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec3intro.html"
+        }
+      ],
+      "evidence": "Wiktionary: plural letiʼob. UADY: letio'ob. Bolles: letiob / tiob."
+    },
+    {
+      "m": "-o'ob (plural de los sustantivos)",
+      "es": "plural (opcional)",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [
+        "paalal (plural irregular de paal, Bolles)"
+      ],
+      "correction": "Pasa a verificado. Se confirma que es opcional: puede omitirse sin cambiar el sentido.",
+      "pr": "-o'-ob",
+      "sources": [
+        {
+          "title": "Uth y Gutiérrez Bravo (2018), plural en préstamos y sustantivos nativos del maya yucateco, Redalyc",
+          "url": "https://www.redalyc.org/journal/5259/525957259005/525957259005.pdf"
+        },
+        {
+          "title": "Lindsay Butler (2023), Frontiers in Psychology",
+          "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2023.1135474/full"
+        },
+        {
+          "title": "David y Alejandra Bolles, A Grammar of the Yucatecan Mayan Language, sección 4 (FAMSI)",
+          "url": "https://www.famsi.org/reports/96072/grammar/section04.htm"
+        }
+      ],
+      "evidence": "Uth y Gutiérrez Bravo (2018): «Ka'a-túul xibpal(-o'ob) táan u bàaxal(-o'ob)» = Dos niños están jugando, con el sufijo omisible. Butler (2023): la marca de plural y la concordancia de número son opcionales en yucateco. Bolles: plurales alternativos (pal → palal o palaloob) y sustantivos sin plural (buul 'frijol')."
+    },
+    {
+      "m": "ya'ab",
+      "es": "mucho; muchos",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [],
+      "correction": "Pasa a verificado: dos fuentes independientes en esta pasada, más dos de la base (La Lengua Maya de Yucatán; Parry, «yanchaj ya'ab máak»). Ninguna es un diccionario: la confirmación académica es indirecta. Nota cultural: la etimología popular de Mayab como «ma' ya'ab» ('no muchos') es falsa según el artículo lingüístico; no enseñarla.",
+      "pr": "ya'-ab",
+      "sources": [
+        {
+          "title": "Chilango, «Breve diccionario yucateco-chilango»",
+          "url": "https://www.chilango.com/general/breve-diccionario-yucateco-chilango/"
+        },
+        {
+          "title": "Artículo lingüístico en Project MUSE sobre la etimología de Mayab",
+          "url": "https://muse.jhu.edu/article/19090/pdf"
+        }
+      ],
+      "evidence": "Chilango: Ma'ya'ab de ma (no) + ya'ab (muchos). Project MUSE: llama a esa etimología «popular, pero falsa», de origen New Age. Lo que discute es la etimología, no el significado de ya'ab."
+    },
+    {
+      "m": "máax",
+      "es": "¿quién?",
+      "status": "probable",
+      "kbStatusBefore": "probable",
+      "variants": [
+        "maax (Bolles)",
+        "ma'ax (Yucatan Living)"
+      ],
+      "correction": "Sin cambio. Bolles confirma el significado y la vocal larga (Maax = ¿quién?), pero no marca el tono; el tono alto de máax sigue sin verse en una fuente normativa. Probablemente es correcto, pero no se vio.",
+      "pr": "máash",
+      "sources": [
+        {
+          "title": "David y Alejandra Bolles, A Grammar of the Yucatecan Mayan Language, sección de preguntas (FAMSI)",
+          "url": "https://www.famsi.org/reports/96072/grammar/section06.htm"
+        }
+      ],
+      "evidence": "Búsqueda 10: «Maax cimzabi?» = Who was killed? Búsquedas 11, 12 y 40: ninguna fuente con «máax» y su tono."
+    },
+    {
+      "m": "wáaj",
+      "es": "partícula de pregunta de sí o no",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [
+        "wáa (AnderBois: wáa(j))"
+      ],
+      "correction": "Pasa a verificado, con tono alto, según una fuente académica. AnderBois la sitúa preferentemente en segunda posición, después del primer elemento: Ka t'aan wáaj ich maaya? Añade que las partículas de pregunta de sí o no suelen estar emparentadas con la conjunción «o».",
+      "pr": "wáaj",
+      "sources": [
+        {
+          "title": "Scott AnderBois, Mayan discourse particles (Glottothèque, Universidad de Gotinga)",
+          "url": "https://spw.uni-goettingen.de/projects/maya/units/anderbois.pdf"
+        },
+        {
+          "title": "Scott AnderBois (2012), Focus and uninformativity in Yucatec Maya questions, Natural Language Semantics 20",
+          "url": "https://projects.illc.uva.nl/inquisitivesemantics/assets/files/papers/AnderBois2012_NatLangSem.pdf"
+        }
+      ],
+      "evidence": "Glottothèque: «wáa(j)» es una partícula PolarQ cuya posición preferida es la segunda de la oración. AnderBois (2012): las partículas de pregunta de sí o no suelen tener un vínculo diacrónico con los coordinadores disyuntivos."
+    },
+    {
+      "m": "jóok'ol",
+      "es": "salir; salida",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "hóok'ol (grafía antigua)"
+      ],
+      "correction": "Pasa de dudoso a verificado: una fuente académica escrita por un hablante da la forma y el significado. No confundir con ookol 'entrar' (Wiktionary okʼol/ookol, que cita a Gómez Navarrete 2009, p. 158; esta glosa no se vio) ni con yóok'ol 'sobre, encima'.",
+      "pr": "jóo-k'ol",
+      "sources": [
+        {
+          "title": "Hilario Chi Canul (2012), «U jóok'ol t'aan» («La salida del habla»), artículo en Redalyc",
+          "url": "https://www.redalyc.org/pdf/2813/281323561007.pdf"
+        }
+      ],
+      "evidence": "Búsqueda 33: el artículo de Chi Canul se titula «U jóok'ol t'aan», que el propio artículo traduce como «LA SALIDA DEL HABLA». Búsqueda 32: Wiktionary tiene okʼol/ookol (intransitivo), pero el extracto no mostraba la glosa."
+    },
+    {
+      "m": "Jayp'éel?",
+      "es": "¿Cuántos? (cosas)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "Hayppel (Bolles)",
+        "Jayp'el (Junp'iit)"
+      ],
+      "correction": "Ya lo verificó el grupo numeros-mercado (recheck-numeros-mercado.json). No gasté búsquedas en él. En esta pasada, el temario de Maya 3 de la UNAM incluye jay entre las partículas interrogativas (con bix, tu'ux, makalmáak, bajux, kux y ba'ax).",
+      "pr": "jay-p'éel",
+      "sources": [
+        {
+          "title": "David y Alejandra Bolles, A Grammar of the Yucatecan Mayan Language, sección 11 (FAMSI)",
+          "url": "https://www.famsi.org/research/bolles/grammar/section11.htm"
+        },
+        {
+          "title": "Junp'iit Maaya, sitio de Christian Lehmann",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        },
+        {
+          "title": "UNAM, FFyL, temario de Maya 3 (Mtro. Elí Casanova)",
+          "url": "https://servicios-galileo.filos.unam.mx/uploads/temarios/20251131145020021/Maya_3,_Mtro._Elí_Casanova_.pdf"
+        }
+      ],
+      "evidence": "Según el grupo numeros-mercado: Bolles, «Hayppel» con cosas (pp = p' en grafía colonial); Junp'iit, «Jayp'el ja'ab yaan tech?». Búsqueda 10: el temario de la UNAM lista jay como partícula interrogativa."
+    }
+  ]
+}

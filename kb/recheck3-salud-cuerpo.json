@@ -1,0 +1,1006 @@
+{
+  "group": "salud-cuerpo",
+  "pass": "tercera verificación con búsquedas web",
+  "searchesUsed": 46,
+  "date": "2026-10-25",
+  "method": "46 llamadas a WebSearch (tope: 50). La mayoría se restringió a mayas.uady.mx con la entrada en mayúsculas (p. ej., «FIEBRE f: calentura»): el buscador devolvió glosas literales del diccionario en línea de la UADY (Bastarrachea, Briceño y Yah, Diccionario básico español-maya-español). También se consultaron christianlehmann.eu (Lehmann, Andrade, Blair y Vermont-Salas), famsi.org (Bolles), site.inali.gob.mx, medicina.uady.mx, yucatan.gob.mx, Wikcionario y Glosbe. WebFetch falló (ENOTFOUND) en medicina.uady.mx y yucatan.gob.mx: toda la evidencia es lo que mostraban los fragmentos del buscador. Las frases armadas por regla no pasan de «probable» si no se vieron literalmente. Las copias no autorizadas se citan sin url.",
+  "newReferences": [
+    {
+      "title": "UADY, Facultad de Medicina – Programa «Lengua Maya para Profesionales de la Salud. Nivel Inicial»",
+      "url": "https://www.medicina.uady.mx/principal/docs/nut/2021/Lengua_Maya_Profesionales_Salud_Nivel_Inicial.pdf",
+      "note": "Programa de una asignatura optativa de la Facultad de Medicina de la UADY: maya para la atención en salud (frases con k'oja'anen, sufijos -en/-ech, interrogativas con wáaj). No se pudo abrir el PDF."
+    },
+    {
+      "title": "UADY, Identidad y Cultura Maya – artículo sobre la concepción maya del dolor y la enfermedad (vocabulario del dolor)",
+      "url": "https://www.mayas.uady.mx/articulos/concepcion.html",
+      "note": "Vocabulario del dolor: raíces yaj, chi'ibal y k'i'inam; chi'ibal pool, chi'ibal koj."
+    },
+    {
+      "title": "Gobierno del Estado de Yucatán, Sala de prensa – «Presentan manual de frases médicas en lengua maya»",
+      "url": "https://www.yucatan.gob.mx/saladeprensa/ver_nota.php?id=10514",
+      "note": "URL institucional del Manual de frases médicas (Indemaya y Conalep)."
+    }
+  ],
+  "items": [
+    {
+      "m": "yaj",
+      "es": "dolor; daño (también dolor moral)",
+      "status": "verificado",
+      "contentId": "u7-yaj",
+      "statusBefore": "probable (recheck-cuerpo-familia; conf media en u7)",
+      "correction": "Sin cambio de forma; sube a verificado. La vocal es corta: el diccionario de la UADY escribe YAJ y distingue la longitud de las vocales. La forma «yaaj» de Glosbe queda descartada (ver su entrada). Conviene matizar la glosa del curso: la UADY da «daño, dolor, llaga, cosa grave»; «doloroso» como adjetivo no apareció.",
+      "variants": [
+        "yaaj (Glosbe; descartada)"
+      ],
+      "sources": [
+        {
+          "title": "UADY – Diccionario maya-español, letra Y (YAJ)",
+          "url": "https://www.mayas.uady.mx/diccionario/y_maya.html"
+        },
+        {
+          "title": "UADY, Identidad y Cultura Maya – «Partería y medicina alopática en Yucatán: hacia un modelo intercultural»",
+          "url": "https://www.mayas.uady.mx/articulos/pdf/parteria.pdf"
+        },
+        {
+          "title": "UADY, Identidad y Cultura Maya – artículo sobre la concepción maya del dolor y la enfermedad (vocabulario del dolor)",
+          "url": "https://www.mayas.uady.mx/articulos/concepcion.html"
+        },
+        {
+          "title": "Wikcionario (es), «yaj»",
+          "url": "https://es.wiktionary.org/wiki/yaj"
+        }
+      ],
+      "evidence": "UADY, letra Y: «YAJ: daño, dolor, llaga, cosa grave» (también cosa difícil y, en otra acepción, amor o aprecio). El artículo de la UADY sobre partería dice que yaj es el término genérico del dolor, y usa «jach yaj u k'i'inam» (dolor intenso del parto), «yaj óol» (aflicción) y «yaj u yóol» (dolor en todo el cuerpo). Otro artículo de la UADY dice que las categorías básicas del dolor físico se forman con las raíces yaj, chi'ibal y k'i'inam, y que yaj es la genérica. Wikcionario: yaj 'daño, dolor'. Tres fuentes; dos son académicas."
+    },
+    {
+      "m": "yaaj",
+      "es": "dolor (grafía de Glosbe)",
+      "status": "incorrecto",
+      "contentId": "",
+      "statusBefore": "variante citada en recheck-cuerpo-familia (Glosbe)",
+      "correction": "No usar. La UADY y Wikcionario escriben yaj, con vocal corta. Forma normativa: yaj.",
+      "variants": [
+        "yaj (forma correcta)"
+      ],
+      "sources": [
+        {
+          "title": "Glosbe español-yucateco, «dolor»",
+          "url": "https://es.glosbe.com/es/yua/dolor"
+        },
+        {
+          "title": "UADY – Diccionario maya-español, letra Y (YAJ)",
+          "url": "https://www.mayas.uady.mx/diccionario/y_maya.html"
+        }
+      ],
+      "evidence": "Glosbe da «yaaj» entre las traducciones de 'dolor'. La UADY la contradice con «YAJ: daño, dolor…»."
+    },
+    {
+      "m": "k'i'inam",
+      "es": "dolor físico o moral; dolor continuo, punzante o pulsátil",
+      "status": "verificado",
+      "contentId": "",
+      "statusBefore": "probable como «k'iinam» (recheck-cuerpo-familia); dudoso como «k'i'inam» (vocabulario-cultura)",
+      "correction": "Hay que corregir la forma de la pasada anterior: se escribe k'i'inam, con vocal rearticulada, no k'iinam. Así la escriben el diccionario de la UADY y dos artículos de la UADY. No está en el contenido. Si se agrega, glosarla como dolor continuo o punzante; para el dolor en general, usar yaj.",
+      "variants": [
+        "k'iinam (Wikcionario, Glosbe; descartada)",
+        "k'i'inan (errata en un artículo de la UADY)",
+        "k'inam (grafía antigua, sin marcar la vocal, en un poema que reproduce la UNAM)"
+      ],
+      "sources": [
+        {
+          "title": "UADY – Diccionario maya-español, letra K' (K'I'INAM)",
+          "url": "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+        },
+        {
+          "title": "UADY, Identidad y Cultura Maya – «Partería y medicina alopática en Yucatán: hacia un modelo intercultural»",
+          "url": "https://www.mayas.uady.mx/articulos/pdf/parteria.pdf"
+        },
+        {
+          "title": "UADY, Identidad y Cultura Maya – artículo sobre la concepción maya del dolor y la enfermedad (vocabulario del dolor)",
+          "url": "https://www.mayas.uady.mx/articulos/concepcion.html"
+        }
+      ],
+      "evidence": "UADY, letra K': «K'I'INAM: Dolor físico o moral, dolor continuo». En el artículo sobre partería, k'i'inam es el dolor que «late», y aparece «jach yaj u k'i'inam». Otro artículo de la UADY la describe como un dolor que pulsa y duele de forma continua e intensa. Una búsqueda literal en la web abierta no dio ninguna otra atestiguación."
+    },
+    {
+      "m": "k'iinam",
+      "es": "dolor (forma de Wikcionario)",
+      "status": "incorrecto",
+      "contentId": "",
+      "statusBefore": "probable (recheck-cuerpo-familia)",
+      "correction": "Queda reemplazada por k'i'inam. La UADY, que es académica y distingue las vocales rearticuladas, contradice la vocal larga simple de Wikcionario y Glosbe (que probablemente copia a Wikcionario).",
+      "variants": [
+        "k'i'inam (forma correcta)"
+      ],
+      "sources": [
+        {
+          "title": "Wikcionario (es), «dolor» (traducciones al maya yucateco)",
+          "url": "https://es.wiktionary.org/wiki/dolor"
+        },
+        {
+          "title": "Glosbe español-yucateco, «dolor»",
+          "url": "https://es.glosbe.com/es/yua/dolor"
+        },
+        {
+          "title": "UADY – Diccionario maya-español, letra K' (K'I'INAM)",
+          "url": "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+        }
+      ],
+      "evidence": "Wikcionario «dolor»: «kʼiinam; yaj». Glosbe: «kʼiinam, k’iinam, yaaj». UADY: «K'I'INAM»."
+    },
+    {
+      "m": "chi'ibal",
+      "es": "dolor (ardoroso o mordiente, como el de una herida o el de cabeza); también 'morder', 'ladrar'",
+      "status": "verificado",
+      "contentId": "",
+      "statusBefore": "no estaba en la base",
+      "correction": "Palabra nueva, útil para la unidad de salud. Es la raíz que los hablantes usan para el dolor de cabeza y el de muelas.",
+      "variants": [
+        "chi'ibil (variante gráfica en un artículo de la UADY)"
+      ],
+      "sources": [
+        {
+          "title": "UADY – Diccionario maya-español, letra CH (CHOKWIL, CHI'IBAL)",
+          "url": "https://www.mayas.uady.mx/diccionario/ch_maya.html"
+        },
+        {
+          "title": "UADY, Identidad y Cultura Maya – artículo sobre la concepción maya del dolor y la enfermedad (vocabulario del dolor)",
+          "url": "https://www.mayas.uady.mx/articulos/concepcion.html"
+        },
+        {
+          "title": "UADY, Identidad y Cultura Maya – «Partería y medicina alopática en Yucatán: hacia un modelo intercultural»",
+          "url": "https://www.mayas.uady.mx/articulos/pdf/parteria.pdf"
+        }
+      ],
+      "evidence": "UADY, letra CH: «CHI'IBAL: Dolor. CHI'IBAL: Ladrar. CHI'IBAL: Morder». El artículo de la UADY la cuenta entre las tres raíces básicas del dolor (yaj, chi'ibal, k'i'inam) y la asocia al dolor ardoroso o mordiente."
+    },
+    {
+      "m": "chi'ibal pool",
+      "es": "dolor de cabeza, jaqueca",
+      "status": "verificado",
+      "contentId": "",
+      "statusBefore": "no estaba en la base",
+      "correction": "Expresión nueva, atestiguada literalmente en dos artículos académicos de la UADY. Es la forma de decir 'dolor de cabeza' que dan las fuentes; «Yaj in pool» solo aparece en una fuente no académica. Se puede proponer para el curso junto a «Yaj in pool».",
+      "variants": [
+        "chi'ibal jo'ol",
+        "k'ux jo'ol (grafía sin confirmar)"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Identidad y Cultura Maya – «Partería y medicina alopática en Yucatán: hacia un modelo intercultural»",
+          "url": "https://www.mayas.uady.mx/articulos/pdf/parteria.pdf"
+        },
+        {
+          "title": "UADY, Identidad y Cultura Maya – artículo sobre la concepción maya del dolor y la enfermedad (vocabulario del dolor)",
+          "url": "https://www.mayas.uady.mx/articulos/concepcion.html"
+        },
+        {
+          "title": "UADY – Diccionario maya-español, letra CH (CHOKWIL, CHI'IBAL)",
+          "url": "https://www.mayas.uady.mx/diccionario/ch_maya.html"
+        }
+      ],
+      "evidence": "Partería (UADY): entre los malestares del embarazo, «el dolor de cabeza (chi'ibal pool), de estómago (ch'otnak')». Artículo sobre el dolor (UADY): «chi'ibal pool (chi'ibal jo'ol): dolor de cabeza, jaqueca»; menciona también k'ux jo'ol."
+    },
+    {
+      "m": "chi'ibal koj",
+      "es": "dolor de muelas",
+      "status": "verificado",
+      "contentId": "",
+      "statusBefore": "no estaba en la base",
+      "correction": "Expresión nueva, en una sola fuente académica (UADY). Es una alternativa atestiguada a «Yaj in koj», que está armada por regla.",
+      "variants": [
+        "k'ux koj (grafía sin confirmar)"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Identidad y Cultura Maya – artículo sobre la concepción maya del dolor y la enfermedad (vocabulario del dolor)",
+          "url": "https://www.mayas.uady.mx/articulos/concepcion.html"
+        }
+      ],
+      "evidence": "Artículo sobre el dolor (UADY): «chi'ibal koj: dolor de muelas»; también da k'ux koj. El mismo artículo dice que, al hablar, muchos usan «yaan dóolor» (préstamo del español) en lugar de un verbo."
+    },
+    {
+      "m": "Yaj in pool.",
+      "es": "Me duele la cabeza.",
+      "status": "probable",
+      "contentId": "u7-yaj-in-pool",
+      "statusBefore": "probable",
+      "correction": "Sin cambio. La frase literal no apareció en tres búsquedas nuevas (web abierta, sitios de la UADY, el INALI y la SEP, Glosbe y Wikcionario): sigue apoyada solo en el material de un sitio de documentos compartidos. La construcción yaj + posesivo + sustantivo sí está atestiguada en una fuente académica («yaj u yóol», UADY), así que la regla es firme. Sugerencia: enseñar también chi'ibal pool (verificado) como la forma de diccionario de 'dolor de cabeza'.",
+      "variants": [
+        "chi'ibal pool (sustantivo: dolor de cabeza)"
+      ],
+      "sources": [
+        {
+          "title": "Material didáctico de maya yucateco, titulado «Material» (sin url)"
+        },
+        {
+          "title": "UADY, Identidad y Cultura Maya – «Partería y medicina alopática en Yucatán: hacia un modelo intercultural»",
+          "url": "https://www.mayas.uady.mx/articulos/pdf/parteria.pdf"
+        },
+        {
+          "title": "UADY – Diccionario maya-español, letra Y (YAJ)",
+          "url": "https://www.mayas.uady.mx/diccionario/y_maya.html"
+        },
+        {
+          "title": "UADY – Diccionario español-maya, letra C (CABELLO, CABEZA)",
+          "url": "https://www.mayas.uady.mx/diccionario/c_esp.html"
+        }
+      ],
+      "evidence": "Un sitio de documentos compartidos: «yaj in pool (me duele la cabeza)», literal. UADY (partería): «yaj u yóol», con el mismo esquema yaj + juego A + sustantivo. UADY: YAJ 'dolor' y CABEZA 'pool, jo'ol'."
+    },
+    {
+      "m": "Yaj in nak'.",
+      "es": "Me duele el estómago.",
+      "status": "probable",
+      "contentId": "u7-yaj-in-nak",
+      "statusBefore": "probable",
+      "correction": "Sin cambio. Solo está atestiguada en el material de un sitio de documentos compartidos; la regla tiene apoyo académico («yaj u yóol»). En las fuentes de la UADY, el dolor de estómago se nombra ch'otnak' (retortijones, dolor de vientre); falta verificarlo en el diccionario antes de enseñarlo.",
+      "variants": [
+        "ch'otnak' (sustantivo: dolor de estómago; sin verificar en el diccionario)"
+      ],
+      "sources": [
+        {
+          "title": "Material didáctico de maya yucateco, titulado «Material» (sin url)"
+        },
+        {
+          "title": "UADY, Identidad y Cultura Maya – «Partería y medicina alopática en Yucatán: hacia un modelo intercultural»",
+          "url": "https://www.mayas.uady.mx/articulos/pdf/parteria.pdf"
+        }
+      ],
+      "evidence": "Un sitio de documentos compartidos: «yaj in nak' (me duele el estómago)». UADY (partería): «dolor … de estómago (ch'otnak')», y nak' = vientre, estómago."
+    },
+    {
+      "m": "Yaj wáaj a pool?",
+      "es": "¿Te duele la cabeza? / ¿Le duele la cabeza?",
+      "status": "probable",
+      "contentId": "u7-yaj-waaj-a-pool",
+      "statusBefore": "probable (conf media; armada por regla)",
+      "correction": "Sin cambio. Está armada por regla y no se atestiguó literalmente. Las piezas sí están confirmadas: yaj (UADY), wáaj tras el primer elemento (base), a 'tu' y pool (UADY). El programa de maya para profesionales de la salud de la Facultad de Medicina de la UADY incluye wáaj entre sus formas interrogativas.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "UADY – Diccionario maya-español, letra Y (YAJ)",
+          "url": "https://www.mayas.uady.mx/diccionario/y_maya.html"
+        },
+        {
+          "title": "UADY, Facultad de Medicina – Programa «Lengua Maya para Profesionales de la Salud. Nivel Inicial»",
+          "url": "https://www.medicina.uady.mx/principal/docs/nut/2021/Lengua_Maya_Profesionales_Salud_Nivel_Inicial.pdf"
+        },
+        {
+          "title": "Registros previos de la base (gramatica.verified.json, recheck-cuerpo-familia.json): UADY (yaan, k'oja'an, mina'an), INEA (ts'aak), AnderBois 2018 (wáaj), Lehmann y Bolles (ma' … -i'), Yoshida (ts'o'ok + forma incompletiva)"
+        }
+      ],
+      "evidence": "No hubo búsqueda literal de la frase completa, para ahorrar presupuesto; la de «Yaj in pool» tampoco dio resultados."
+    },
+    {
+      "m": "Yaj in koj.",
+      "es": "Me duele el diente / la muela.",
+      "status": "probable",
+      "contentId": "u7-yaj-in-koj",
+      "statusBefore": "probable (conf media; armada por regla)",
+      "correction": "Sin cambio. Sugerencia: añadir chi'ibal koj, 'dolor de muelas', que sí está atestiguada (UADY).",
+      "variants": [
+        "chi'ibal koj"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Identidad y Cultura Maya – artículo sobre la concepción maya del dolor y la enfermedad (vocabulario del dolor)",
+          "url": "https://www.mayas.uady.mx/articulos/concepcion.html"
+        },
+        {
+          "title": "UADY, Identidad y Cultura Maya – «Partería y medicina alopática en Yucatán: hacia un modelo intercultural»",
+          "url": "https://www.mayas.uady.mx/articulos/pdf/parteria.pdf"
+        }
+      ],
+      "evidence": "Regla: yaj + juego A + sustantivo («yaj u yóol», UADY). El artículo de la UADY da chi'ibal koj para 'dolor de muelas'."
+    },
+    {
+      "m": "Yaj in paach.",
+      "es": "Me duele la espalda.",
+      "status": "probable",
+      "contentId": "u7-yaj-in-paach",
+      "statusBefore": "probable (conf media; armada por regla)",
+      "correction": "Sin cambio. paach ya está verificado (UADY); la frase está armada por regla y no se vio literalmente.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "UADY – Diccionario maya-español, letra P (PAACH, PÍIX)",
+          "url": "https://www.mayas.uady.mx/diccionario/p_maya.html"
+        },
+        {
+          "title": "UADY, Identidad y Cultura Maya – «Partería y medicina alopática en Yucatán: hacia un modelo intercultural»",
+          "url": "https://www.mayas.uady.mx/articulos/pdf/parteria.pdf"
+        }
+      ],
+      "evidence": "UADY: PAACH = espalda. Regla con atestiguación académica: «yaj u yóol»."
+    },
+    {
+      "m": "Yaj in wook.",
+      "es": "Me duele el pie.",
+      "status": "probable",
+      "contentId": "u7-yaj-in-wook",
+      "statusBefore": "probable (conf media; armada por regla)",
+      "correction": "Sin cambio. Las piezas están confirmadas: ook (UADY) e «in wook» (Wikcionario, literal). La frase completa no se vio.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "UADY – Diccionario maya-español, letra O (OOK)",
+          "url": "https://www.mayas.uady.mx/diccionario/o_maya.html"
+        },
+        {
+          "title": "Wikcionario (es), «wook»",
+          "url": "https://es.wiktionary.org/wiki/wook"
+        },
+        {
+          "title": "UADY, Identidad y Cultura Maya – «Partería y medicina alopática en Yucatán: hacia un modelo intercultural»",
+          "url": "https://www.mayas.uady.mx/articulos/pdf/parteria.pdf"
+        }
+      ],
+      "evidence": "Wikcionario «wook»: «in wook» 'mi pie', «a wook» 'tu pie'. UADY: OOK = pie. Regla: «yaj u yóol» (UADY)."
+    },
+    {
+      "m": "ts'ak yaj",
+      "es": "médico; curandero",
+      "status": "verificado",
+      "contentId": "u7-tsak-yaj",
+      "statusBefore": "probable (solo Wikcionario)",
+      "correction": "Sin cambio de forma; sube a verificado. La UADY la escribe igual, con vocal corta en ts'ak (en el compuesto). En la sección español-maya, MÉDICO lleva además «ts'ak máak». La nota del curso se puede actualizar: ya no es «una sola fuente».",
+      "variants": [
+        "ts'ak máak (UADY, «médico»)"
+      ],
+      "sources": [
+        {
+          "title": "UADY – Diccionario maya-español, letra TS' (TS'AAK, TS'AK YAJ)",
+          "url": "https://www.mayas.uady.mx/diccionario/ts_glotal_maya.html"
+        },
+        {
+          "title": "UADY – Diccionario español-maya, letra M (MÉDICO, A)",
+          "url": "https://www.mayas.uady.mx/diccionario/m_esp.html"
+        },
+        {
+          "title": "Wikcionario (es), «tsʼak yaj»",
+          "url": "https://es.wiktionary.org/wiki/ts%CA%BCak_yaj"
+        }
+      ],
+      "evidence": "UADY, letra TS': «TS'AK YAJ: Médico, curandero». UADY español-maya: «MÉDICO, A: Ts'ak máak, ts'ak yaj». Wikcionario: tsʼak yaj = tsʼak 'curar' + yaj 'dolor'."
+    },
+    {
+      "m": "ts'aak yaaj",
+      "es": "médico (forma propuesta)",
+      "status": "incorrecto",
+      "contentId": "",
+      "statusBefore": "no estaba en la base (variante por revisar)",
+      "correction": "No usar. La UADY da ts'ak yaj, con dos vocales cortas. La vocal larga de yaaj y la de ts'aak dentro del compuesto no tienen fuente.",
+      "variants": [
+        "ts'ak yaj (forma correcta)"
+      ],
+      "sources": [
+        {
+          "title": "UADY – Diccionario maya-español, letra TS' (TS'AAK, TS'AK YAJ)",
+          "url": "https://www.mayas.uady.mx/diccionario/ts_glotal_maya.html"
+        },
+        {
+          "title": "UADY – Diccionario español-maya, letra M (MÉDICO, A)",
+          "url": "https://www.mayas.uady.mx/diccionario/m_esp.html"
+        }
+      ],
+      "evidence": "La UADY solo registra «TS'AK YAJ: Médico, curandero». En la UADY, «TS'AAK» (vocal larga) es el verbo curar o medicar y el sustantivo medicina."
+    },
+    {
+      "m": "j-ts'aak",
+      "es": "médico, curandero (forma propuesta, con el prefijo masculino j-)",
+      "status": "dudoso",
+      "contentId": "",
+      "statusBefore": "no estaba en la base",
+      "correction": "No enseñar. No apareció en ninguna búsqueda (jts'aak, j-ts'aak, j ts'aak). Para 'médico' o 'curandero' usar ts'ak yaj (verificado) o jmeen (curandero tradicional, ya verificado).",
+      "variants": [
+        "jts'aak",
+        "j ts'aak"
+      ],
+      "sources": [],
+      "evidence": "La búsqueda literal solo devolvió páginas generales sobre medicina tradicional maya. Una publicación del gobierno de Quintana Roo menciona a los «Jme'eno'ob» (plural de jmeen), no j-ts'aak."
+    },
+    {
+      "m": "ts'aak",
+      "es": "medicina, remedio; curar, medicar",
+      "status": "verificado",
+      "contentId": "u7-tsaak",
+      "statusBefore": "verificado",
+      "correction": "Sin cambio. La UADY lo confirma literalmente y añade la acepción verbal (curar, medicar) y la de 'veneno'. No confundir con ts'áak (tono alto), 'mecate'.",
+      "variants": [
+        "dzac (grafía antigua)"
+      ],
+      "sources": [
+        {
+          "title": "UADY – Diccionario maya-español, letra TS' (TS'AAK, TS'AK YAJ)",
+          "url": "https://www.mayas.uady.mx/diccionario/ts_glotal_maya.html"
+        },
+        {
+          "title": "Gobierno del Estado de Yucatán, Sala de prensa – «Presentan manual de frases médicas en lengua maya»",
+          "url": "https://www.yucatan.gob.mx/saladeprensa/ver_nota.php?id=10514"
+        },
+        {
+          "title": "Posta, «Presentan manual de frases médicas en lengua maya»",
+          "url": "https://www.posta.com.mx/yucatan/presentan-manual-de-frases-medicas-en-lengua-maya/vl2163920"
+        }
+      ],
+      "evidence": "UADY, letra TS': «TS'AAK: Curar, medicar. TS'AAK: Medicina, veneno». Aparte: «TS'ÁAK: Mecate». Aparece en el título del manual del Indemaya, «U áanalte'il u tsikbalil ts'aak»."
+    },
+    {
+      "m": "U áanalte'il u tsikbalil ts'aak",
+      "es": "«Manual de frases médicas» (Felipe de Jesús Castillo Tzec; Indemaya y Conalep Yucatán)",
+      "status": "verificado",
+      "contentId": "",
+      "statusBefore": "verificado (solo con la nota de Posta)",
+      "correction": "Ya hay una URL institucional verificable: la nota de la Sala de prensa del Gobierno del Estado de Yucatán. No apareció ninguna versión descargable del manual, ni en el Indemaya ni en el Conalep. El resumen del buscador fechó la nota en febrero de 2026, pero no pude abrir la página para confirmarlo (WebFetch: ENOTFOUND).",
+      "variants": [],
+      "sources": [
+        {
+          "title": "Gobierno del Estado de Yucatán, Sala de prensa – «Presentan manual de frases médicas en lengua maya»",
+          "url": "https://www.yucatan.gob.mx/saladeprensa/ver_nota.php?id=10514"
+        },
+        {
+          "title": "Posta, «Presentan manual de frases médicas en lengua maya»",
+          "url": "https://www.posta.com.mx/yucatan/presentan-manual-de-frases-medicas-en-lengua-maya/vl2163920"
+        }
+      ],
+      "evidence": "Gobierno de Yucatán (yucatan.gob.mx, nota 10514): presentación del libro «U áanalte'il u tsikbalil ts'aak – Manual de frases médicas», promovido por el Indemaya y el Conalep, para la comunicación entre el personal de salud y los pacientes mayahablantes en medicina general, enfermería, odontología, psicología y trabajo social. Posta repite los mismos datos y nombra al autor, Felipe de Jesús Castillo Tzec, de Dzan."
+    },
+    {
+      "m": "chokwil",
+      "es": "fiebre, calentura",
+      "status": "verificado",
+      "contentId": "",
+      "statusBefore": "dudoso",
+      "correction": "Sin cambio de forma; pasa de dudoso a verificado. Está relacionada con chokoj, 'caliente'. Ya se puede enseñar en la Unidad 7.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "UADY – Diccionario maya-español, letra CH (CHOKWIL, CHI'IBAL)",
+          "url": "https://www.mayas.uady.mx/diccionario/ch_maya.html"
+        }
+      ],
+      "evidence": "UADY, letra CH: «CHOKWIL: Calentura, fiebre». En la misma página: «CHOKOJ: Caliente»."
+    },
+    {
+      "m": "se'en",
+      "es": "tos; toser",
+      "status": "verificado",
+      "contentId": "",
+      "statusBefore": "dudoso",
+      "correction": "Sin cambio de forma; pasa de dudoso a verificado. Sirve como sustantivo y como verbo. Para 'toser', la UADY da además «sasa' kaal».",
+      "variants": [
+        "sasa' kaal (toser, UADY)"
+      ],
+      "sources": [
+        {
+          "title": "UADY – Diccionario español-maya, letra T (TOS, TOSER)",
+          "url": "https://www.mayas.uady.mx/diccionario/t_esp.html"
+        }
+      ],
+      "evidence": "UADY español-maya: «TOS f: Se'en» y «TOSER v: Se'en, sasa' kaal»."
+    },
+    {
+      "m": "xeej",
+      "es": "vómito; vomitar",
+      "status": "verificado",
+      "contentId": "",
+      "statusBefore": "dudoso (como «xej»)",
+      "correction": "Cambio de forma: xej → xeej (vocal larga), como en la UADY. La UADY no marca tono alto en esta entrada, aunque sí lo marca en otras (PÍIX, TS'ÁAK), así que se escribe sin acento. El término colonial xekik, 'vómito de sangre', apunta a la misma raíz xe-.",
+      "variants": [
+        "xej (forma anterior de la base; descartada)",
+        "xekik (término colonial: fiebre amarilla, 'vómito de sangre')"
+      ],
+      "sources": [
+        {
+          "title": "UADY – Diccionario maya-español, letra X (XEEJ)",
+          "url": "https://www.mayas.uady.mx/diccionario/x_maya.html"
+        }
+      ],
+      "evidence": "UADY, letra X: «XEEJ: Vómito; vomitar». La búsqueda abierta de xeej, xe'ej y xeʼej no encontró otras entradas; solo salió de nuevo xekik, en fuentes históricas."
+    },
+    {
+      "m": "toj óolal",
+      "es": "salud",
+      "status": "probable",
+      "contentId": "",
+      "statusBefore": "dudoso",
+      "correction": "Sube de dudoso a probable. La UADY confirma forma y significado, pero queda pendiente la longitud de la vocal de toj: la UADY escribe toj, mientras que otras fuentes de «Toj in wóol» (Junp'iit Maaya de Lehmann, un curso con tòoh) escriben tooj. El tono de óolal es una normalización segura, porque la misma UADY escribe «toj óol» para 'sano' y óol 'ánimo' lleva tono alto. Se puede enseñar con conf media y una nota sobre la variante tooj.",
+      "variants": [
+        "toj oolal (UADY, sin tono)",
+        "tooj óolal (por analogía con «tooj in wóol»; sin atestiguar)",
+        "toj óol / ki' óol (UADY: «sano»)"
+      ],
+      "sources": [
+        {
+          "title": "UADY – Diccionario español-maya, letra S (SALUD, SANO)",
+          "url": "https://www.mayas.uady.mx/diccionario/s_esp.html"
+        },
+        {
+          "title": "Christian Lehmann, «Junp'iit Maaya – A little bit of Maya»",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        }
+      ],
+      "evidence": "UADY español-maya: «SALUD f: Toj oolal» y «SANO: Ki' óol, toj óol». La búsqueda literal de «toj óolal», «tooj óolal» y «toj oolal» en la web abierta no dio más resultados. En la base (sonidos-conversacion): Junp'iit «tooj in wol», un curso «Tòoh in wóol», Yaax Jaatsil «Toj in wóol»."
+    },
+    {
+      "m": "tseem",
+      "es": "pecho (tórax)",
+      "status": "verificado",
+      "contentId": "",
+      "statusBefore": "dudoso (como «tséem»)",
+      "correction": "Cambio de forma: tséem → tseem, sin tono alto. La UADY lo escribe Tseem, y sí marca el tono alto en otras entradas (PÍIX, TS'ÁAK). El ejemplo de Lehmann en Junp'iit Maaya («u tseem») confirma la vocal larga; la grafía «tsem» de su página de partes del cuerpo es más antigua y no marca la longitud. Ya se puede enseñar «pecho» como tseem. Para el seno o la mama se usa iim.",
+      "variants": [
+        "tsem (Lehmann, partes del cuerpo)",
+        "tzem (grafía antigua, en un poema reproducido por la UNAM; contexto no glosado)",
+        "tséem (forma anterior; tono sin fuente)",
+        "tseemil (forma poseída/relacional: tseemil ch'íich', 'pechuga')"
+      ],
+      "sources": [
+        {
+          "title": "UADY – Diccionario español-maya, letra P (PECHO, PECHUGA)",
+          "url": "https://www.mayas.uady.mx/diccionario/p_esp.html"
+        },
+        {
+          "title": "Christian Lehmann, «Junp'iit Maaya – A little bit of Maya»",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        },
+        {
+          "title": "Christian Lehmann, «Partes del cuerpo» (gramática del maya yucateco)",
+          "url": "https://christianlehmann.eu/ling/sprachen/maya/gramatica/onomas/posesion/partes_cuerpo.html"
+        },
+        {
+          "title": "Revista Archipiélago (UNAM), artículo que reproduce el poema maya «U ok'om k'ay maya'»",
+          "url": "https://journals.unam.mx/index.php/archipielago/article/download/55602/49318/159159"
+        }
+      ],
+      "evidence": "UADY español-maya: «PECHO m: Tseem». «PECHUGA: Tseemil ch'íich', sak bak', tseem». Lehmann, Junp'iit Maaya (trabalenguas): «J xik ts'onta'ab u sak bak'el u tseem ch'oom yok'l u igleesiail Dzan» = 'al zopilote le dispararon en el pecho sobre la iglesia de Dzan'. Lehmann, «Partes del cuerpo»: «tsem · pecho · chest» (clase de posesión neutral). Dos fuentes académicas con forma y significado."
+    },
+    {
+      "m": "iim",
+      "es": "seno, mama (pecho en el sentido de mama)",
+      "status": "verificado",
+      "contentId": "u7-iim",
+      "statusBefore": "verificado",
+      "correction": "Sin cambio; no hubo búsqueda nueva. Wikcionario y Glosbe traducen 'pecho' por iim en el sentido de mama. Para el tórax, usar tseem.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "INALI (2014), «U nuuktakil u ts'íibta'al maayat'aan / Normas de escritura para la lengua maya» (se cita solo el título)"
+        },
+        {
+          "title": "Wikcionario (es), «pecho»",
+          "url": "https://es.wiktionary.org/wiki/pecho"
+        },
+        {
+          "title": "Glosbe español-yucateco, «pecho»",
+          "url": "https://es.glosbe.com/es/yua/pecho"
+        }
+      ],
+      "evidence": "Normas de 2014 (registro previo): ejemplos de la vocal i, «iik (chile), iim (seno), iis (camote)». Wikcionario y Glosbe (recheck-cuerpo-familia): iim para 'pecho' o 'seno'."
+    },
+    {
+      "m": "tso'otsel",
+      "es": "pelo, cabello (tso'otsel pool / tso'otsel jo'ol: pelo de la cabeza)",
+      "status": "verificado",
+      "contentId": "",
+      "statusBefore": "probable (forma deducida, no vista literalmente)",
+      "correction": "Sin cambio de forma; sube a verificado. Ahora sí se vio escrita literalmente con vocal rearticulada, en la UADY. Matiz: la UADY da 'cabello' como tso'otsel pool o tso'otsel jo'ol; tso'otsel solo parece ser 'pelo' o 'vello' en general.",
+      "variants": [
+        "tso'tsel (Lehmann)",
+        "tso'otsel pool",
+        "tso'otsel jo'ol"
+      ],
+      "sources": [
+        {
+          "title": "UADY – Diccionario español-maya, letra C (CABELLO, CABEZA)",
+          "url": "https://www.mayas.uady.mx/diccionario/c_esp.html"
+        },
+        {
+          "title": "Christian Lehmann, «Partes del cuerpo» (gramática del maya yucateco)",
+          "url": "https://christianlehmann.eu/ling/sprachen/maya/gramatica/onomas/posesion/partes_cuerpo.html"
+        }
+      ],
+      "evidence": "UADY español-maya: «CABELLO: tso'otsel pool, tso'otsel jo'ol» y «CABEZA: pool, jo'ol». Lehmann: «in tso'tsel» 'mi pelo' (grafía antigua: o' = o'o, como en ho'l = jo'ol)."
+    },
+    {
+      "m": "in tso'otsel",
+      "es": "mi cabello, mi pelo",
+      "status": "verificado",
+      "contentId": "u7-in-tsootsel",
+      "statusBefore": "probable (conf media)",
+      "correction": "Sube a verificado. Lehmann atestigua la frase poseída literalmente, en grafía antigua (in tso'tsel), y la UADY confirma la grafía moderna tso'otsel. La nota del curso («la grafía con o'o es deducida») se puede cambiar: la grafía o'o está en la UADY.",
+      "variants": [
+        "in tso'tsel (Lehmann)"
+      ],
+      "sources": [
+        {
+          "title": "Christian Lehmann, «Partes del cuerpo» (gramática del maya yucateco)",
+          "url": "https://christianlehmann.eu/ling/sprachen/maya/gramatica/onomas/posesion/partes_cuerpo.html"
+        },
+        {
+          "title": "UADY – Diccionario español-maya, letra C (CABELLO, CABEZA)",
+          "url": "https://www.mayas.uady.mx/diccionario/c_esp.html"
+        }
+      ],
+      "evidence": "Lehmann: «in tso'tsel» 'mi pelo'. UADY: «tso'otsel pool, tso'otsel jo'ol» (cabello)."
+    },
+    {
+      "m": "kuxtal",
+      "es": "vida, existencia",
+      "status": "verificado",
+      "contentId": "u9-kuxtal",
+      "statusBefore": "probable",
+      "correction": "Sin cambio de forma; sube a verificado con la glosa 'vida, existencia'. En u9 se glosa «vida; vivir»: la acepción verbal 'vivir' no apareció en la UADY en esta búsqueda, así que conviene dejar la glosa como «vida» o marcar «vivir» como probable.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "UADY – Diccionario maya-español, letra K (KUXTAL)",
+          "url": "https://www.mayas.uady.mx/diccionario/k_maya.html"
+        }
+      ],
+      "evidence": "UADY, letra K: «KUXTAL: Vida, existencia». La búsqueda no devolvió la entrada español-maya de VIVIR."
+    },
+    {
+      "m": "in wich",
+      "es": "mi ojo; mi cara",
+      "status": "verificado",
+      "contentId": "u7-ich",
+      "statusBefore": "regla (la nota de u7-ich dice «forma armada por regla»)",
+      "correction": "Pasa a verificado: Lehmann lo atestigua literalmente. Se puede quitar «forma armada por regla» de la nota de u7-ich.",
+      "variants": [
+        "in w-ich (glosa morfémica)",
+        "t-in w-ich (Blair y Vermont-Salas)"
+      ],
+      "sources": [
+        {
+          "title": "Christian Lehmann, «Possession in Yucatec Maya» (ASSidUE 10, 2.ª ed. 2002)",
+          "url": "https://www.christianlehmann.eu/publ/ASSidUE10.pdf"
+        },
+        {
+          "title": "Blair y Vermont-Salas, «Spoken Yucatec Maya» (transcripción glosada en el sitio de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+        }
+      ],
+      "evidence": "Lista de Lehmann: «ich · eye or face» e «in wich · my eye or my face». Blair y Vermont-Salas: «t-in w-ich», glosado LOC-POSS.1.SG ojo."
+    },
+    {
+      "m": "u yich",
+      "es": "su ojo; su cara",
+      "status": "verificado",
+      "contentId": "u7-ich",
+      "statusBefore": "regla (no estaba en la base)",
+      "correction": "Pasa a verificado: Andrade y Lehmann lo atestiguan literalmente. Confirma la regla de la y- en tercera persona ante una vocal.",
+      "variants": [
+        "u y-ich (glosa morfémica)"
+      ],
+      "sources": [
+        {
+          "title": "Manuel Andrade, «A grammar of modern Yucatec Maya» (edición en el sitio de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        },
+        {
+          "title": "Christian Lehmann, «Valency classes in Yucatec Maya»",
+          "url": "https://www.christianlehmann.eu/publ/valency_in_ym.pdf"
+        }
+      ],
+      "evidence": "Andrade: «u y-ich» 'his eye or face'. Lehmann (Valency classes): «u y-ich» con POSS.3, en un ejemplo que significa 'me saludó abriendo los ojos'. Además aparece «u yich» en un cuento maya del sitio de la UADY (literatura/cuent7)."
+    },
+    {
+      "m": "in wook",
+      "es": "mi pie",
+      "status": "probable",
+      "contentId": "u7-ook",
+      "statusBefore": "regla (nota de u7-ook)",
+      "correction": "Sin cambio de forma. Es probable alto: Wikcionario lo trae literalmente y la regla (w- tras in/a, y- tras u ante vocal) está verificada con fuentes académicas (in wich, u y-ich). Falta una atestiguación académica literal de «in wook».",
+      "variants": [
+        "a wook (tu pie; Wikcionario, Glosbe)"
+      ],
+      "sources": [
+        {
+          "title": "Wikcionario (es), «wook»",
+          "url": "https://es.wiktionary.org/wiki/wook"
+        },
+        {
+          "title": "Wikcionario (es), «ook»",
+          "url": "https://es.wiktionary.org/wiki/ook"
+        },
+        {
+          "title": "Glosbe español-yucateco, «pie»",
+          "url": "https://es.glosbe.com/es/yua/pie"
+        },
+        {
+          "title": "UADY – Diccionario maya-español, letra O (OOK)",
+          "url": "https://www.mayas.uady.mx/diccionario/o_maya.html"
+        }
+      ],
+      "evidence": "Wikcionario «wook»: forma flexiva de ook que se usa con algunos posesivos; ejemplos «in wook» 'mi pie' y «a wook» 'tu pie'. Wikcionario «ook»: variantes wook, yook; plural ooko'ob. Glosbe «pie»: «u yaal a wook» ('el dedo de tu pie'). UADY: «OOK: pie, pata, base, cabo, mango»."
+    },
+    {
+      "m": "u yook",
+      "es": "su pie",
+      "status": "probable",
+      "contentId": "u7-ook",
+      "statusBefore": "regla (nota de u7-ook)",
+      "correction": "Sin cambio. Wikcionario registra yook como variante flexiva y la regla está verificada (u y-ich), pero no se vio «u yook» literalmente en una fuente académica.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "Wikcionario (es), «ook»",
+          "url": "https://es.wiktionary.org/wiki/ook"
+        },
+        {
+          "title": "Manuel Andrade, «A grammar of modern Yucatec Maya» (edición en el sitio de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        }
+      ],
+      "evidence": "Wikcionario «ook»: variante yook. La regla de y- tras u está atestiguada por Andrade («u y-ich»)."
+    },
+    {
+      "m": "paach",
+      "es": "espalda (de persona o de animal)",
+      "status": "verificado",
+      "contentId": "u7-paach",
+      "statusBefore": "probable (solo Aprendiendo Maya)",
+      "correction": "Sin cambio de forma; sube a verificado. Puede subir a conf alta.",
+      "variants": [
+        "pu'uch (espalda, lomo; sinónimo en la UADY)"
+      ],
+      "sources": [
+        {
+          "title": "UADY – Diccionario maya-español, letra P (PAACH, PÍIX)",
+          "url": "https://www.mayas.uady.mx/diccionario/p_maya.html"
+        },
+        {
+          "title": "Wiktionary (en), «paach» (cita el diccionario de Montgomery)",
+          "url": "https://en.wiktionary.org/wiki/paach"
+        },
+        {
+          "title": "Aprendiendo Maya – Las vocales y sus reglas de uso",
+          "url": "https://aprendiendomaya.com/escritura/vocales/las-vocales-y-sus-reglas-de-uso"
+        }
+      ],
+      "evidence": "UADY, letra P: PAACH, espalda de la persona o de cualquier animal; la misma página trae PU'UCH, espalda o lomo. Wiktionary (en): paach 'back (of the body)', según Montgomery. Aprendiendo Maya: «paach (espalda)». En el artículo de la UADY sobre la sobada: «jaats' paach»."
+    },
+    {
+      "m": "píix",
+      "es": "rodilla",
+      "status": "verificado",
+      "contentId": "u7-piix",
+      "statusBefore": "probable (solo Aprendiendo Maya)",
+      "correction": "Sin cambio de forma; sube a verificado. La UADY confirma el tono alto y lo distingue de piix (sin tono), 'vaina, funda'. Puede subir a conf alta.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "UADY – Diccionario maya-español, letra P (PAACH, PÍIX)",
+          "url": "https://www.mayas.uady.mx/diccionario/p_maya.html"
+        },
+        {
+          "title": "Aprendiendo Maya – Alfabeto maya",
+          "url": "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+        }
+      ],
+      "evidence": "UADY, letra P: «PÍIX: rodilla». PIIX (sin tono): vaina, cubierta, funda. Aprendiendo Maya: «píix (rodilla)»."
+    },
+    {
+      "m": "baak",
+      "es": "hueso",
+      "status": "verificado",
+      "contentId": "u7-baak",
+      "statusBefore": "probable (solo Aprendiendo Maya)",
+      "correction": "Sin cambio de forma; sube a verificado. Se confirma el contraste con bak' 'carne' y con baak' 'asir, abrazar; enredar, alrededor'. Puede subir a conf alta.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "UADY – Diccionario maya-español, letra B (BAAK, BAK')",
+          "url": "https://www.mayas.uady.mx/diccionario/b_maya.html"
+        },
+        {
+          "title": "UADY, Identidad y Cultura Maya – «Partería y medicina alopática en Yucatán: hacia un modelo intercultural»",
+          "url": "https://www.mayas.uady.mx/articulos/pdf/parteria.pdf"
+        },
+        {
+          "title": "Aprendiendo Maya – Alfabeto maya",
+          "url": "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+        }
+      ],
+      "evidence": "UADY, letra B: BAAK 'hueso', BAK' 'carne', BAAK' 'asir, abrazar; enredar, alrededor'. Partería (UADY): el cuerpo se compone de bak' (carne), baak (hueso) y óol (energía moral). Aprendiendo Maya: «baak (hueso)»."
+    },
+    {
+      "m": "K'oja'anech wáaj?",
+      "es": "¿Estás enfermo / enferma?",
+      "status": "probable",
+      "contentId": "u7-kojaanech-waaj",
+      "statusBefore": "probable",
+      "correction": "Sin cambio. La búsqueda literal volvió a no dar nada. Nuevo apoyo institucional para la regla: el programa de la Facultad de Medicina de la UADY enseña los sufijos de persona -en y -ech en frases de salud («k'oja'anen», «jach ts'oya'anech») y wáaj entre las formas interrogativas.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "UADY, Facultad de Medicina – Programa «Lengua Maya para Profesionales de la Salud. Nivel Inicial»",
+          "url": "https://www.medicina.uady.mx/principal/docs/nut/2021/Lengua_Maya_Profesionales_Salud_Nivel_Inicial.pdf"
+        },
+        {
+          "title": "Registros previos de la base (gramatica.verified.json, recheck-cuerpo-familia.json): UADY (yaan, k'oja'an, mina'an), INEA (ts'aak), AnderBois 2018 (wáaj), Lehmann y Bolles (ma' … -i'), Yoshida (ts'o'ok + forma incompletiva)"
+        }
+      ],
+      "evidence": "Programa de la UADY «Lengua Maya para Profesionales de la Salud»: «Pronombres sufijados en singular, en, ech… en frases como k'oja'anen, binen, jaanen, jach poloken, jach ts'oya'anech» y «Formas interrogativas … bix, máax, … jay, wáaj». La búsqueda de «k'oja'anech» solo devolvió una entrada itzá de k'oja'an ('estar enfermo')."
+    },
+    {
+      "m": "Ma' k'oja'aneni'.",
+      "es": "No estoy enfermo / enferma.",
+      "status": "probable",
+      "contentId": "u7-ma-kojaaneni",
+      "statusBefore": "probable",
+      "correction": "Sin cambio; no se encontró literalmente (se buscó junto con K'oja'anech). La regla ma' … -i' tiene un paralelo atestiguado: «Ma' wi'ijeni'».",
+      "variants": [
+        "Ma' k'oja'anen. (sin -i', según Bolles en el habla del noroeste)"
+      ],
+      "sources": [
+        {
+          "title": "Registros previos de la base (gramatica.verified.json, recheck-cuerpo-familia.json): UADY (yaan, k'oja'an, mina'an), INEA (ts'aak), AnderBois 2018 (wáaj), Lehmann y Bolles (ma' … -i'), Yoshida (ts'o'ok + forma incompletiva)"
+        },
+        {
+          "title": "UADY, Facultad de Medicina – Programa «Lengua Maya para Profesionales de la Salud. Nivel Inicial»",
+          "url": "https://www.medicina.uady.mx/principal/docs/nut/2021/Lengua_Maya_Profesionales_Salud_Nivel_Inicial.pdf"
+        }
+      ],
+      "evidence": "La búsqueda con comillas de «ma' k'oja'aneni'» no dio resultados."
+    },
+    {
+      "m": "K'oja'an in na'.",
+      "es": "Mi mamá está enferma.",
+      "status": "probable",
+      "contentId": "u7-kojaan-in-na",
+      "statusBefore": "probable (conf media; armada por regla)",
+      "correction": "Sin cambio. La búsqueda de «k'oja'an in», «k'oja'an u» y «k'oja'an le» no encontró ejemplos de oración. Las piezas están confirmadas: k'oja'an (UADY), tercera persona sin sufijo, in na' 'mi mamá'.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "Registros previos de la base (gramatica.verified.json, recheck-cuerpo-familia.json): UADY (yaan, k'oja'an, mina'an), INEA (ts'aak), AnderBois 2018 (wáaj), Lehmann y Bolles (ma' … -i'), Yoshida (ts'o'ok + forma incompletiva)"
+        }
+      ],
+      "evidence": "Sin atestiguación literal. Solo apareció la entrada itzá de k'oja'an ('estar enfermo', verbo intransitivo)."
+    },
+    {
+      "m": "Ts'o'ok a janal?",
+      "es": "¿Ya comiste? / ¿Ya comió?",
+      "status": "probable",
+      "contentId": "u7-tsook-a-janal",
+      "statusBefore": "probable",
+      "correction": "Sin cambio. Segunda búsqueda literal sin resultados («ts'o'ok a janal», «ts'o'ok wáaj a janal», «ts'o'ok a janal wáaj»). Sigue sin confirmarse si la pregunta se hace solo con la entonación.",
+      "variants": [
+        "Ts'o'ok wáaj a janal? (sin atestiguar)"
+      ],
+      "sources": [
+        {
+          "title": "Registros previos de la base (gramatica.verified.json, recheck-cuerpo-familia.json): UADY (yaan, k'oja'an, mina'an), INEA (ts'aak), AnderBois 2018 (wáaj), Lehmann y Bolles (ma' … -i'), Yoshida (ts'o'ok + forma incompletiva)"
+        }
+      ],
+      "evidence": "Solo salieron resultados sobre Janal Pixán y cocina."
+    },
+    {
+      "m": "Yaan wáaj ts'aak?",
+      "es": "¿Hay medicina?",
+      "status": "probable",
+      "contentId": "u7-yaan-waaj-tsaak",
+      "statusBefore": "probable",
+      "correction": "Sin cambio; no se buscó literalmente, para ahorrar presupuesto. Ahora ts'aak 'medicina' está confirmado literalmente en la UADY.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "UADY – Diccionario maya-español, letra TS' (TS'AAK, TS'AK YAJ)",
+          "url": "https://www.mayas.uady.mx/diccionario/ts_glotal_maya.html"
+        },
+        {
+          "title": "Registros previos de la base (gramatica.verified.json, recheck-cuerpo-familia.json): UADY (yaan, k'oja'an, mina'an), INEA (ts'aak), AnderBois 2018 (wáaj), Lehmann y Bolles (ma' … -i'), Yoshida (ts'o'ok + forma incompletiva)"
+        }
+      ],
+      "evidence": "Armada por regla: yaan (UADY) + wáaj + ts'aak (UADY: «TS'AAK: Medicina, veneno»)."
+    },
+    {
+      "m": "Mina'an ts'aak.",
+      "es": "No hay medicina.",
+      "status": "probable",
+      "contentId": "u7-minaan-tsaak",
+      "statusBefore": "probable (conf media; armada por regla)",
+      "correction": "Sin cambio. Sigue el esquema de «Mina'an taak'in» ('no hay dinero'); mina'an está verificado en la base y ts'aak, en la UADY.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "UADY – Diccionario maya-español, letra TS' (TS'AAK, TS'AK YAJ)",
+          "url": "https://www.mayas.uady.mx/diccionario/ts_glotal_maya.html"
+        },
+        {
+          "title": "Registros previos de la base (gramatica.verified.json, recheck-cuerpo-familia.json): UADY (yaan, k'oja'an, mina'an), INEA (ts'aak), AnderBois 2018 (wáaj), Lehmann y Bolles (ma' … -i'), Yoshida (ts'o'ok + forma incompletiva)"
+        }
+      ],
+      "evidence": "Armada por regla; no se buscó literalmente."
+    },
+    {
+      "m": "Máanen waye'.",
+      "es": "Pase usted. (lit. pasa por aquí)",
+      "status": "verificado",
+      "contentId": "u7-maanen-waye",
+      "statusBefore": "probable",
+      "correction": "Sin cambio de forma; sube a verificado. El prontuario del INALI (institucional) trae la frase literal con su traducción, y Wikcionario confirma por separado que máanen es el imperativo de máan. Puede subir a conf alta.",
+      "variants": [
+        "máanene'ex (plural, Wikcionario)"
+      ],
+      "sources": [
+        {
+          "title": "INALI – Prontuario de frases de cortesía en maya",
+          "url": "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+        },
+        {
+          "title": "INALI – Prontuario en maya (PDF)",
+          "url": "https://site.inali.gob.mx/Micrositios/Prontuarios/pdf/p_maya.pdf"
+        },
+        {
+          "title": "Wikcionario (es), «máan» (conjugación: imperativo máanen)",
+          "url": "https://es.wiktionary.org/wiki/m%C3%A1an"
+        }
+      ],
+      "evidence": "INALI, prontuario de maya, frases de bienvenida: «Máanen waye'» = «Pase usted». Wikcionario «máan»: imperativo 2.ª sg. máanen, 2.ª pl. máaneneʼex."
+    },
+    {
+      "m": "Kulen.",
+      "es": "Siéntate. / Siéntese.",
+      "status": "verificado",
+      "contentId": "u7-kulen",
+      "statusBefore": "probable (solo Wiktionary)",
+      "correction": "Sin cambio de forma; sube a verificado. Hay un corpus académico con la forma y el significado. Puede subir a conf alta. Plural: kulene'ex. La nota del curso («Orden del verbo kutal») es correcta: kutal es la forma incompletiva de kul-.",
+      "variants": [
+        "kulene'ex (plural, Wiktionary)",
+        "kul-en (glosa morfémica)"
+      ],
+      "sources": [
+        {
+          "title": "Blair y Vermont-Salas, «Spoken Yucatec Maya» (transcripción glosada en el sitio de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+        },
+        {
+          "title": "Wiktionary (en), «kutal» (conjugación: imperativo kulen)",
+          "url": "https://en.wiktionary.org/wiki/kutal"
+        },
+        {
+          "title": "Christian Lehmann, «Reduplication» (maya yucateco: kul 'sentarse')",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/gramatica/semas/morfologia/reduplication.html"
+        }
+      ],
+      "evidence": "Blair y Vermont-Salas (sitio de Lehmann): «ma'loob · kul-en · bix · yaan-il-ech», con kul-en glosado sit-IMP: '¡Bien! ¡Siéntate! ¿Cómo estás?'. Wiktionary «kutal»: imperativo kulen, plural kuleneʼex. Lehmann: kul (intransitivo) 'sentarse; posarse'."
+    },
+    {
+      "m": "Ko'oten.",
+      "es": "Ven. / Venga.",
+      "status": "verificado",
+      "contentId": "u7-kooten",
+      "statusBefore": "probable (la base no tenía evidencia registrada)",
+      "correction": "Sin cambio de forma; sube a verificado. Es el imperativo supletivo de taal, 'venir' (raíz kot-). Plural normativo: ko'otene'ex (Blair y Vermont-Salas escriben ko'tene'x). Puede subir a conf alta.",
+      "variants": [
+        "ko'ten (Blair y Vermont-Salas)",
+        "koten, kotene'x (Andrade)",
+        "coten (grafía colonial, Bolles)",
+        "ko'otene'ex (plural)"
+      ],
+      "sources": [
+        {
+          "title": "Christian Lehmann, «Junp'iit Maaya – A little bit of Maya»",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        },
+        {
+          "title": "Blair y Vermont-Salas, «Spoken Yucatec Maya» (transcripción glosada en el sitio de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+        },
+        {
+          "title": "Manuel Andrade, «A grammar of modern Yucatec Maya» (edición en el sitio de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        },
+        {
+          "title": "David Bolles, gramática del maya yucateco (FAMSI), sección 22: oraciones imperativas",
+          "url": "https://www.famsi.org/research/bolles/grammar/section22.htm"
+        }
+      ],
+      "evidence": "Lehmann, Junp'iit Maaya: «ko'oten» = 'come'. Blair y Vermont-Salas: «ko'ten», glosado come:IMP, y «ko'ten-e'x ook-a'n k'iin samal» '¡Vengan mañana por la tarde!'. Andrade: tal y bin no tienen imperativo; para 'ven' se usan koten (sg.) y kotene'x (pl.). Bolles: xen ('ve') y coten ('ven') forman imperativos complejos."
+    }
+  ]
+}

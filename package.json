@@ -1,0 +1,19 @@
+{
+  "name": "koox-maaya",
+  "private": true,
+  "description": "App web para aprender maya yucateco desde el español",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "validate": "node test/validate.cjs",
+    "build": "node build.mjs",
+    "build:web": "node build-web.mjs --out .",
+    "export": "node export-data.mjs",
+    "test": "node test/validate.cjs && node build.mjs && node test/smoke.cjs dist/koox-maaya-artifact.html",
+    "test:pwa": "node test/pwa.cjs ."
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}

@@ -1,0 +1,1103 @@
+{
+  "group": "numeros-mercado",
+  "searchesUsed": 40,
+  "date": "2026-10-25",
+  "method": "40 llamadas a WebSearch (tope estricto). WebFetch falló (ENOTFOUND) en omniglot.com y mayas.uady.mx, así que toda la evidencia viene de los extractos que devolvía el buscador, no de las páginas abiertas. Se citan los extractos tal como aparecían. Normalización a 2014 solo con reglas seguras: h → j; pp → p' (convención colonial de Bolles); acento grave del curso de la UADY = tono bajo (convención ya documentada en la base: k'àaba' → k'aaba', tèen → teen, xòok → xook), así que se quita el acento. Las formas armadas por regla se dan por verificadas solo si cada pieza y la regla están atestiguadas; si no, quedan en probable. Aviso cultural de varias fuentes (Andrade, Junp'iit Maaya, Omniglot, Briceño Chel 1994): hoy muchos hablantes cuentan en español a partir del 4 o del 5. Los números mayores existen y están documentados, pero son poco cotidianos.",
+  "items": [
+    {
+      "m": "jun",
+      "es": "uno (1)",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [
+        "hun (grafía antigua)"
+      ],
+      "correction": "",
+      "pr": "jun (u corta, sin tono)",
+      "sources": [
+        {
+          "title": "Omniglot, Numbers in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/numbers/yucatecmaya.htm"
+        },
+        {
+          "title": "Junp'iit Maaya (Mújica 1995), edición en el sitio de Christian Lehmann",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        },
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        },
+        {
+          "title": "UADY, Curso de maya yucateco, lección 5.6",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec5_6.html"
+        }
+      ],
+      "evidence": "Omniglot: «jun» para 1. Junp'iit Maaya: «jun» = one. Andrade: «hun» = one (h → j). UADY curso: «hunp'éel» = una cosa. Todas con vocal corta simple y sin acento: la longitud y el tono quedan resueltos (corta, sin tono)."
+    },
+    {
+      "m": "jo'",
+      "es": "cinco (5)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "jo'o (Omniglot)",
+        "jo'o' (Junp'iit Maaya)",
+        "ho' (Andrade, grafía antigua)"
+      ],
+      "correction": "Ninguna en la forma. Nota de uso: Andrade dice que ho' «es conocido por muchos», pero no es vocabulario de todos los días.",
+      "pr": "jo' (o corta con cierre glotal)",
+      "sources": [
+        {
+          "title": "UADY, Curso de maya yucateco, lección 5.6",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec5_6.html"
+        },
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        },
+        {
+          "title": "Junp'iit Maaya, sitio de Christian Lehmann",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        },
+        {
+          "title": "Omniglot, Numbers in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/numbers/yucatecmaya.htm"
+        }
+      ],
+      "evidence": "UADY curso: «ho'p'éel» = cinco (cosas). Andrade: «ho', 'five', is known to many, but it cannot be said to be a word of their ordinary vocabulary». Junp'iit Maaya: «jo'o'» = cinco. Omniglot: «jo'o» = 5 y «jo'ok'aal» = 100. La raíz jo' con cierre glotal es la misma en las cuatro fuentes; para la forma suelta, la norma pone la glotalizada al final (jo'), igual que ka' en la base. Las variantes con -o se explican por la rearticulación ante sufijo."
+    },
+    {
+      "m": "wak",
+      "es": "seis (6)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "waak (Omniglot)"
+      ],
+      "correction": "",
+      "pr": "wak",
+      "sources": [
+        {
+          "title": "UADY, Curso de maya yucateco, lección 5.6",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec5_6.html"
+        },
+        {
+          "title": "Junp'iit Maaya, sitio de Christian Lehmann",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        },
+        {
+          "title": "Omniglot, Numbers in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/numbers/yucatecmaya.htm"
+        }
+      ],
+      "evidence": "UADY curso: «wakp'éel» = seis (cosas). Junp'iit Maaya: «wak» = seis. Omniglot: «6 | waak [waːk], wak». Dos fuentes, una institucional, coinciden en la vocal corta."
+    },
+    {
+      "m": "uk",
+      "es": "siete (7)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "u'uk (Omniglot)"
+      ],
+      "correction": "Ninguna, pero hay conflicto menor: Omniglot da «u'uk [uʔuk]» con rearticulada. Las fuentes más fiables (UADY, que sí marca la rearticulación en ka'ap'éel, y Junp'iit) dan uk.",
+      "pr": "uk",
+      "sources": [
+        {
+          "title": "UADY, Curso de maya yucateco, lección 5.6",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec5_6.html"
+        },
+        {
+          "title": "Junp'iit Maaya, sitio de Christian Lehmann",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        },
+        {
+          "title": "Omniglot, Numbers in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/numbers/yucatecmaya.htm"
+        }
+      ],
+      "evidence": "UADY curso: «ukp'éel» = siete (cosas). Junp'iit Maaya: «uk» = siete. Omniglot: «7 | u'uk [uʔuk]» (en conflicto). Mayoría y fuente institucional a favor de uk."
+    },
+    {
+      "m": "waxak",
+      "es": "ocho (8)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "",
+      "pr": "washak",
+      "sources": [
+        {
+          "title": "UADY, Curso de maya yucateco, lección 5.6",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec5_6.html"
+        },
+        {
+          "title": "Junp'iit Maaya, sitio de Christian Lehmann",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        },
+        {
+          "title": "Omniglot, Numbers in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/numbers/yucatecmaya.htm"
+        }
+      ],
+      "evidence": "UADY curso: «waxakp'éel» = ocho (cosas). Junp'iit Maaya: «waxak» = ocho. Omniglot: «8 | waxak [waˈʃak]»."
+    },
+    {
+      "m": "bolon",
+      "es": "nueve (9)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "bolom (Omniglot)"
+      ],
+      "correction": "",
+      "pr": "bolon",
+      "sources": [
+        {
+          "title": "UADY, Curso de maya yucateco, lección 5.6",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec5_6.html"
+        },
+        {
+          "title": "Junp'iit Maaya, sitio de Christian Lehmann",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        },
+        {
+          "title": "Omniglot, Numbers in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/numbers/yucatecmaya.htm"
+        }
+      ],
+      "evidence": "UADY curso: «bolonp'éel» = nueve (cosas). Junp'iit Maaya: «bolon» = nueve. Omniglot: «9 | bolon [ɓoˈlon], bolom»."
+    },
+    {
+      "m": "lajun",
+      "es": "diez (10)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "lahun (grafía antigua y colonial)"
+      ],
+      "correction": "",
+      "pr": "lajun",
+      "sources": [
+        {
+          "title": "UADY, Curso de maya yucateco, lección 5.6",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec5_6.html"
+        },
+        {
+          "title": "Junp'iit Maaya, sitio de Christian Lehmann",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        },
+        {
+          "title": "Omniglot, Numbers in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/numbers/yucatecmaya.htm"
+        },
+        {
+          "title": "Wiktionary, lahun (Yucatec Maya)",
+          "url": "https://en.wiktionary.org/wiki/lahun"
+        }
+      ],
+      "evidence": "UADY curso: «lahunp'éel» = diez (cosas), h → j. Junp'iit Maaya: «lajun» = diez. Omniglot: «10 | lajun, lahun [laˈhun]». Wiktionary: «lahun», numeral yucateco, con cita de Beltrán de Santa Rosa (1746): «Diez»."
+    },
+    {
+      "m": "buluk",
+      "es": "once (11)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "",
+      "pr": "buluk",
+      "sources": [
+        {
+          "title": "UADY, Curso de maya yucateco, lección 5.6",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec5_6.html"
+        },
+        {
+          "title": "Junp'iit Maaya, sitio de Christian Lehmann",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        },
+        {
+          "title": "Omniglot, Numbers in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/numbers/yucatecmaya.htm"
+        },
+        {
+          "title": "Wiktionary, buluk (Yucatec Maya)",
+          "url": "https://en.wiktionary.org/wiki/buluk"
+        }
+      ],
+      "evidence": "UADY curso: «bulukp'éel» = once (cosas). Junp'iit Maaya: «buluk» = once. Omniglot: «11 | buluk». Wiktionary: buluk, del protomaya *bʼeleng 'nueve' + *kaaʼbʼ 'dos'."
+    },
+    {
+      "m": "ka'alajun",
+      "es": "doce (12)",
+      "status": "verificado",
+      "kbStatusBefore": "no estaba en la base (la base tenía lajka', dudoso)",
+      "variants": [
+        "ka'alahun (UADY, grafía antigua)",
+        "lajka'a (ver entrada aparte)"
+      ],
+      "correction": "Forma nueva recomendada para enseñar el 12: es la que más fuentes coinciden en dar y sigue el mismo patrón que 13–19 (unidad + lajun, con la rearticulación ka' → ka'a de las Normas).",
+      "pr": "ka-alajun",
+      "sources": [
+        {
+          "title": "Junp'iit Maaya (lista de vocabulario), sitio de Christian Lehmann",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        },
+        {
+          "title": "Omniglot, Numbers in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/numbers/yucatecmaya.htm"
+        },
+        {
+          "title": "UADY, Curso de maya yucateco, lección 5.6",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec5_6.html"
+        }
+      ],
+      "evidence": "Lista de vocabulario en el sitio de Lehmann: «ka'alajun» = twelve. Omniglot: «12 | lajka'a, ka'alajun». UADY curso: «ka'alahunp'éel» = doce (cosas), junto a «lahkah»."
+    },
+    {
+      "m": "lajka'a",
+      "es": "doce (12), forma tradicional",
+      "status": "dudoso",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "lajka' (forma de la base)",
+        "lahkah (UADY curso, según el extracto)"
+      ],
+      "correction": "La forma de la base, lajka', no aparece así en ninguna fuente: Omniglot da lajka'a y el extracto de la UADY da lahkah (h → j daría lajkaj, sin cierre glotal). El final queda sin resolver: no enseñar esta forma y usar ka'alajun para el 12.",
+      "pr": "lajka-a",
+      "sources": [
+        {
+          "title": "Omniglot, Numbers in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/numbers/yucatecmaya.htm"
+        },
+        {
+          "title": "UADY, Curso de maya yucateco, lección 5.6",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec5_6.html"
+        }
+      ],
+      "evidence": "Omniglot: «12 | lajka'a, ka'alajun». UADY curso (extracto del buscador): «lahkah / ka'alahunp'éel». Las dos fuentes no coinciden en el final de la palabra."
+    },
+    {
+      "m": "óoxlajun",
+      "es": "trece (13)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "oxlajun (Junp'iit, sin marcar la longitud)"
+      ],
+      "correction": "",
+      "pr": "óoshlajun",
+      "sources": [
+        {
+          "title": "Omniglot, Numbers in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/numbers/yucatecmaya.htm"
+        },
+        {
+          "title": "Junp'iit Maaya, sitio de Christian Lehmann",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        }
+      ],
+      "evidence": "Omniglot: «óoxlajun (13)». Junp'iit Maaya: «oxlajun» = trece. Junp'iit no marca bien la longitud (escribe p'el por p'éel), y óox 'tres' con tono alto ya está verificado en la base (UADY, INEA)."
+    },
+    {
+      "m": "kanlajun",
+      "es": "catorce (14)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "",
+      "pr": "kanlajun",
+      "sources": [
+        {
+          "title": "Omniglot, Numbers in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/numbers/yucatecmaya.htm"
+        }
+      ],
+      "evidence": "Omniglot: «kanlajun (14)». Formada por regla: kan (4, verificado: UADY) + lajun (10, verificado). La regla «unidad + lajun» está atestiguada en dos fuentes independientes: ka'alajun (Lehmann, Omniglot, UADY) y oxlajun/óoxlajun (Junp'iit, Omniglot)."
+    },
+    {
+      "m": "jo'olajun",
+      "es": "quince (15)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "kbForm": "jo'lajun",
+      "variants": [
+        "jo'lajun (forma de la base, no atestiguada)"
+      ],
+      "correction": "Cambiar jo'lajun por jo'olajun. Es la forma que da Omniglot y la que pide la regla de las Normas: la glotalizada solo va a final de palabra y ante otro elemento se rearticula, como ka' → ka'alajun y jo' → jo'ok'aal.",
+      "pr": "jo-olajun",
+      "sources": [
+        {
+          "title": "Omniglot, Numbers in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/numbers/yucatecmaya.htm"
+        }
+      ],
+      "evidence": "Omniglot: «jo'olajun (15)». La regla de rearticulación (Normas 2014: ka'ap'éel) ya está verificada en la base, y la misma fuente la aplica en ka'alajun y jo'ok'aal."
+    },
+    {
+      "m": "waklajun",
+      "es": "dieciséis (16)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "waaklajun (Omniglot)"
+      ],
+      "correction": "",
+      "pr": "waklajun",
+      "sources": [
+        {
+          "title": "Omniglot, Numbers in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/numbers/yucatecmaya.htm"
+        }
+      ],
+      "evidence": "Omniglot: «waaklajun or waklajun (16)». Por regla: wak (6, verificado) + lajun."
+    },
+    {
+      "m": "uklajun",
+      "es": "diecisiete (17)",
+      "status": "probable",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "u'uklajun (Omniglot)",
+        "wuklajun (Omniglot)"
+      ],
+      "correction": "No se vio literalmente. La única fuente que da el 17 (Omniglot) escribe u'uklajun o wuklajun, coherente con su u'uk para el 7. Por regla, con uk (UADY, Junp'iit), sale uklajun.",
+      "pr": "uklajun",
+      "sources": [
+        {
+          "title": "Omniglot, Numbers in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/numbers/yucatecmaya.htm"
+        }
+      ],
+      "evidence": "Omniglot: «u'uklajun or wuklajun (17)». uk 'siete': UADY curso «ukp'éel» y Junp'iit «uk»."
+    },
+    {
+      "m": "waxaklajun",
+      "es": "dieciocho (18)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "",
+      "pr": "washaklajun",
+      "sources": [
+        {
+          "title": "Omniglot, Numbers in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/numbers/yucatecmaya.htm"
+        }
+      ],
+      "evidence": "Omniglot: «waxaklajun (18)». Por regla: waxak (verificado) + lajun."
+    },
+    {
+      "m": "bolonlajun",
+      "es": "diecinueve (19)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "",
+      "pr": "bolonlajun",
+      "sources": [
+        {
+          "title": "Omniglot, Numbers in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/numbers/yucatecmaya.htm"
+        }
+      ],
+      "evidence": "Omniglot: «bolonlajun (19)». Por regla: bolon (verificado) + lajun."
+    },
+    {
+      "m": "k'aal",
+      "es": "veinte; una veintena (20)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "kbForm": "k'áal",
+      "variants": [
+        "k'àal (UADY curso, acento grave = tono bajo)"
+      ],
+      "correction": "TONO: k'aal, con vocal larga de tono bajo y sin acento, no k'áal. Ninguna fuente da tono alto: Omniglot (que sí marca el tono alto, por ejemplo en óox) escribe k'aal; el curso de la UADY escribe k'àal, y su acento grave equivale a tono bajo (convención ya documentada en la base). Homógrafo: K'AAL 'abrochar, cerrar, encerrar' (diccionario UADY).",
+      "pr": "k'aal (k glotalizada, a larga y pareja)",
+      "sources": [
+        {
+          "title": "Omniglot, Numbers in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/numbers/yucatecmaya.htm"
+        },
+        {
+          "title": "UADY, Curso de maya yucateco, lección 5.6",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec5_6.html"
+        },
+        {
+          "title": "Junp'iit Maaya (lista de vocabulario), sitio de Christian Lehmann",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        },
+        {
+          "title": "UADY, Diccionario maya-español, letra K'",
+          "url": "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+        }
+      ],
+      "evidence": "Omniglot: «junk'aal» (20), «ka'ak'aal» (40), «óoxk'aal» (60), «kank'aal» (80), «jo'ok'aal» (100), «jun tu ka'ak'aal» (21). UADY curso (extracto): «k'àal» = 20. Lista del sitio de Lehmann: «k'aal» = twenty. Diccionario UADY: «K'AAL: Abrochar, trabar, cerrar, encerrar…» (otra palabra, misma forma)."
+    },
+    {
+      "m": "junk'aal",
+      "es": "veinte (lit. una veintena)",
+      "status": "probable",
+      "kbStatusBefore": "dudoso (como «jun k'áal»)",
+      "kbForm": "jun k'áal",
+      "variants": [
+        "jun k'aal"
+      ],
+      "correction": "Quitar el tono alto (k'aal). Omniglot lo escribe en una sola palabra (junk'aal); no pude confirmar si las Normas 2014 lo escriben junto o separado. k'aal solo también vale 20 (UADY).",
+      "pr": "junk'aal",
+      "sources": [
+        {
+          "title": "Omniglot, Numbers in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/numbers/yucatecmaya.htm"
+        }
+      ],
+      "evidence": "Omniglot: «20 | junk'aal», en una sola palabra. Las piezas jun y k'aal están verificadas; la combinación numeral + k'aal solo aparece en Omniglot."
+    },
+    {
+      "m": "ka'ak'aal",
+      "es": "cuarenta (40; lit. dos veintenas)",
+      "status": "probable",
+      "kbStatusBefore": "dudoso (en notas como «ka' k'áal»)",
+      "kbForm": "ka' k'áal",
+      "variants": [],
+      "correction": "Cambiar «ka' k'áal» por ka'ak'aal: rearticulada ka'a ante k'aal (como en ka'ap'éel), una sola palabra y tono bajo.",
+      "pr": "ka-ak'aal",
+      "sources": [
+        {
+          "title": "Omniglot, Numbers in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/numbers/yucatecmaya.htm"
+        }
+      ],
+      "evidence": "Omniglot: «40 | ka'ak'aal» y «jun tu ka'ak'aal» = 21 (lit. uno hacia la segunda veintena). Una sola fuente no académica, coherente con la regla de rearticulación de las Normas."
+    },
+    {
+      "m": "-p'éel",
+      "es": "clasificador para cosas (objetos inanimados); también clasificador general «unidad»",
+      "status": "verificado",
+      "kbStatusBefore": "verificado",
+      "variants": [
+        "p'el (Andrade, Junp'iit)",
+        "-ppel (Bolles, grafía colonial)"
+      ],
+      "correction": "Se puede añadir que p'éel está desplazando a los clasificadores específicos en el habla actual (jun-p'éel k'éeken en lugar de jun-túul k'éeken, 'un cerdo').",
+      "pr": "p'éel",
+      "sources": [
+        {
+          "title": "Blaha Pfeiler y Skopeteas (2024), Numeral classifiers in Yucatec Maya, Journal of Historical Syntax",
+          "url": "https://historicalsyntax.org/hs/index.php/hs/article/view/219"
+        },
+        {
+          "title": "Omniglot, Numbers in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/numbers/yucatecmaya.htm"
+        },
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        },
+        {
+          "title": "UADY, Curso de maya yucateco, lección 5.6",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec5_6.html"
+        }
+      ],
+      "evidence": "Blaha Pfeiler y Skopeteas: «hun-p'éel tunich» = una piedra; p'éel es el clasificador general ('UNIT') y desplaza a los sortales («jun-p'éel k'éeken» en lugar de «jun-túul k'éeken»). Omniglot: «with inanimate objects you use p'éel». Andrade: los numerales en uso siempre llevan clasificador; los más comunes son «tul» (animados) y «p'el» (inanimados). UADY curso: serie con -p'éel."
+    },
+    {
+      "m": "junp'éel",
+      "es": "uno, una (cosa); un, una",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "kbForm": "jump'éel",
+      "variants": [
+        "jump'éel (PorEsto, material de un sitio de documentos compartidos)",
+        "hunp'éel (UADY curso, grafía antigua)",
+        "junp'el (Junp'iit)"
+      ],
+      "correction": "La base escribe jump'éel (n → m ante p). Las fuentes institucionales y académicas escriben n: el diccionario de la UADY (grafía moderna con tonos) usa junp'éel en sus ejemplos, el curso de la UADY hunp'éel, Blaha Pfeiler y Skopeteas jun-p'éel y Junp'iit junp'el. jump'éel solo aparece en PorEsto y en un material de un sitio de documentos compartidos. No pude confirmar qué dicen las Normas 2014 sobre la asimilación. Recomendación: enseñar junp'éel como forma principal y mencionar jump'éel como variante. La misma decisión afecta a kanp'éel/kamp'éel y junp'íit/jump'íit.",
+      "pr": "junp'éel (en el habla suele sonar «jump'éel»)",
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra A (ejemplos de «acta» y «apadrinar»)",
+          "url": "https://www.mayas.uady.mx/diccionario/a_esp.html"
+        },
+        {
+          "title": "UADY, Curso de maya yucateco, lección 5.6",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec5_6.html"
+        },
+        {
+          "title": "Blaha Pfeiler y Skopeteas (2024), Numeral classifiers in Yucatec Maya, Journal of Historical Syntax",
+          "url": "https://historicalsyntax.org/hs/index.php/hs/article/view/219"
+        },
+        {
+          "title": "PorEsto, Cómo saludar y despedirse en maya (2024)",
+          "url": "https://www.poresto.com/yucatan/2024/1/8/como-saludar-despedir-en-maya.html"
+        }
+      ],
+      "evidence": "Diccionario UADY (extracto): la entrada «acta» usa «junp'éel» en una oración de ejemplo. UADY curso: «hunp'éel» = una cosa. Blaha Pfeiler y Skopeteas: «hun-p'éel tunich», «jun-p'éel k'éeken». PorEsto (registrado en la base): «jump'éel ma'alob k'iin»."
+    },
+    {
+      "m": "ka'ap'éel",
+      "es": "dos (cosas)",
+      "status": "verificado",
+      "kbStatusBefore": "verificado",
+      "variants": [],
+      "correction": "",
+      "pr": "ka-ap'éel",
+      "sources": [
+        {
+          "title": "UADY, Curso de maya yucateco, lección 5.6",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec5_6.html"
+        },
+        {
+          "title": "INALI (2014), U nu'ukbesajil u ts'íibta'al maayat'aan / Normas de escritura para la lengua maya (citado por título)"
+        }
+      ],
+      "evidence": "UADY curso: «ka'ap'éel» = dos (cosas). Normas 2014 (registrado en la base): «ka'ap'éel», ejemplo de glotalizada que se rearticula."
+    },
+    {
+      "m": "óoxp'éel",
+      "es": "tres (cosas)",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [],
+      "correction": "",
+      "pr": "óoshp'éel",
+      "sources": [
+        {
+          "title": "UADY, Curso de maya yucateco, lección 5.6",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec5_6.html"
+        }
+      ],
+      "evidence": "UADY curso: «óoxp'éel» = tres (cosas), tal cual, en la tabla de 1 a 6 con -p'éel. Ahora está atestiguada literalmente, no solo deducida."
+    },
+    {
+      "m": "kanp'éel",
+      "es": "cuatro (cosas)",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "kbForm": "kamp'éel",
+      "variants": [
+        "kamp'éel (material de un sitio de documentos compartidos, blog Los Ocelotes)"
+      ],
+      "correction": "Igual que junp'éel: la fuente institucional (UADY) escribe kanp'éel; kamp'éel solo aparece en fuentes secundarias que aplican n → m. Unificar con la decisión que se tome para junp'éel.",
+      "pr": "kanp'éel (suele sonar «kamp'éel»)",
+      "sources": [
+        {
+          "title": "UADY, Curso de maya yucateco, lección 5.6",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec5_6.html"
+        },
+        {
+          "title": "Numerales y clasificadores",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "UADY curso: «kanp'éel» = cuatro (cosas). Material de un sitio de documentos compartidos (registrado en la base): propone escribir «kamp'éel»."
+    },
+    {
+      "m": "jo'op'éel",
+      "es": "cinco (cosas)",
+      "status": "probable",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "jo'p'éel (UADY curso «ho'p'éel», grafía anterior a 2014)"
+      ],
+      "correction": "No se vio literalmente. La UADY (antes de 2014) escribe ho'p'éel, sin rearticular. La regla de las Normas (ka' → ka'ap'éel) da jo'op'éel, y Omniglot rearticula jo' ante otro elemento (jo'ok'aal, jo'olajun). Hasta encontrarla escrita en un texto de 2014, queda en probable.",
+      "pr": "jo-op'éel",
+      "sources": [
+        {
+          "title": "UADY, Curso de maya yucateco, lección 5.6",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec5_6.html"
+        },
+        {
+          "title": "Omniglot, Numbers in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/numbers/yucatecmaya.htm"
+        }
+      ],
+      "evidence": "UADY curso: «ho'p'éel» = cinco (cosas). Omniglot: «jo'o» (5), «jo'ok'aal» (100), «jo'olajun» (15)."
+    },
+    {
+      "m": "-túul",
+      "es": "clasificador para seres vivos (personas y animales)",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [
+        "tul (Andrade)",
+        "-tul (Bolles)"
+      ],
+      "correction": "",
+      "pr": "túul",
+      "sources": [
+        {
+          "title": "Blaha Pfeiler y Skopeteas (2024), Numeral classifiers in Yucatec Maya, Journal of Historical Syntax",
+          "url": "https://historicalsyntax.org/hs/index.php/hs/article/view/219"
+        },
+        {
+          "title": "Omniglot, Numbers in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/numbers/yucatecmaya.htm"
+        },
+        {
+          "title": "Estudios de Lingüística Aplicada (UNAM), artículo sobre la cuantificación en maya yucateco",
+          "url": "https://ela.enallt.unam.mx/index.php/ela/article/download/201/187"
+        },
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        }
+      ],
+      "evidence": "Blaha Pfeiler y Skopeteas: túul para animados (ejemplo: un cerdo). Omniglot: «with people and animals you use túul». Artículo UNAM: túul para contar seres animados, «ka'a-túul peek'» = dos perros. Andrade: «tul, for animate referents»."
+    },
+    {
+      "m": "juntúul",
+      "es": "uno, una (persona o animal)",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [],
+      "correction": "",
+      "pr": "juntúul",
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra A (ejemplo de «apadrinar»)",
+          "url": "https://www.mayas.uady.mx/diccionario/a_esp.html"
+        },
+        {
+          "title": "Blaha Pfeiler y Skopeteas (2024), Numeral classifiers in Yucatec Maya, Journal of Historical Syntax",
+          "url": "https://historicalsyntax.org/hs/index.php/hs/article/view/219"
+        },
+        {
+          "title": "Diccionario de uso del maya yucateco (citado por título)"
+        }
+      ],
+      "evidence": "Diccionario UADY (extracto): la entrada «apadrinar» usa «juntúul» referido a una persona. Blaha Pfeiler y Skopeteas: «jun-túul k'éeken» = un cerdo (animal). Diccionario de uso (registrado en la base): «juntúul palitsil» = un esclavo o sirviente."
+    },
+    {
+      "m": "ka'atúul",
+      "es": "dos (personas o animales)",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [],
+      "correction": "",
+      "pr": "ka-atúul",
+      "sources": [
+        {
+          "title": "Estudios de Lingüística Aplicada (UNAM), artículo sobre la cuantificación en maya yucateco",
+          "url": "https://ela.enallt.unam.mx/index.php/ela/article/download/201/187"
+        }
+      ],
+      "evidence": "Artículo UNAM: «ka'a-túul peek'» = dos perros (fuente académica, forma y significado). Coincide con la rearticulación ka' → ka'a de las Normas."
+    },
+    {
+      "m": "óoxtúul",
+      "es": "tres (personas o animales)",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [],
+      "correction": "",
+      "pr": "óoshtúul",
+      "sources": [
+        {
+          "title": "UADY, Curso de maya yucateco, lección 5.6 (óoxp'éel)",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec5_6.html"
+        },
+        {
+          "title": "Blaha Pfeiler y Skopeteas (2024), Numeral classifiers in Yucatec Maya, Journal of Historical Syntax",
+          "url": "https://historicalsyntax.org/hs/index.php/hs/article/view/219"
+        }
+      ],
+      "evidence": "Verificada por regla, sin verla literalmente: óox (UADY, INEA) + -túul (verificado), unidos como en juntúul y ka'atúul. Al unirse no hay cambio de sonido (óox ya funciona igual en óoxp'éel, UADY)."
+    },
+    {
+      "m": "-kúul",
+      "es": "clasificador para plantas y árboles (sembrados)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "-cul (Bolles, grafía colonial)"
+      ],
+      "correction": "",
+      "pr": "kúul",
+      "sources": [
+        {
+          "title": "Blaha Pfeiler y Skopeteas (2024), Numeral classifiers in Yucatec Maya, Journal of Historical Syntax",
+          "url": "https://historicalsyntax.org/hs/index.php/hs/article/view/219"
+        },
+        {
+          "title": "Christian Lehmann, Numeral classifiers (num_class.pdf)",
+          "url": "https://www.christianlehmann.eu/publ/num_class.pdf"
+        },
+        {
+          "title": "Omniglot, Numbers in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/numbers/yucatecmaya.htm"
+        }
+      ],
+      "evidence": "Blaha Pfeiler y Skopeteas: kúul para plantas (ejemplo: un árbol de huaya). Lehmann (con los ejemplos de Lucy sobre el plátano): kúul = la planta sembrada o el árbol. Omniglot: «with plants and trees you use kúul»."
+    },
+    {
+      "m": "-wáal",
+      "es": "clasificador para cosas planas o bidimensionales (hojas)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "Ajustar la glosa: la fuente dice «hoja» y «bidimensional». «Papel» es una extensión razonable, pero no la vi.",
+      "pr": "wáal",
+      "sources": [
+        {
+          "title": "Christian Lehmann, Numeral classifiers (num_class.pdf)",
+          "url": "https://www.christianlehmann.eu/publ/num_class.pdf"
+        }
+      ],
+      "evidence": "Lehmann, sobre los ejemplos de Lucy con el plátano: «ts'íit» es el fruto (unidimensional), «wáal» la hoja (bidimensional), «kúul» la planta sembrada, «kúuch» una carga y «p'íit» un trozo del fruto. Es una sola fuente, pero académica. Bolles y Omniglot no lo incluyen en sus listas."
+    },
+    {
+      "m": "-ts'íit",
+      "es": "clasificador para cosas largas y delgadas (velas, palos, plátanos)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "",
+      "pr": "ts'íit",
+      "sources": [
+        {
+          "title": "Blaha Pfeiler y Skopeteas (2024), Numeral classifiers in Yucatec Maya, Journal of Historical Syntax",
+          "url": "https://historicalsyntax.org/hs/index.php/hs/article/view/219"
+        },
+        {
+          "title": "Christian Lehmann, Numeral classifiers (num_class.pdf)",
+          "url": "https://www.christianlehmann.eu/publ/num_class.pdf"
+        }
+      ],
+      "evidence": "Blaha Pfeiler y Skopeteas: ts'íit para objetos alargados (ejemplo: una vela). Lehmann: ts'íit = el fruto del plátano, objeto unidimensional."
+    },
+    {
+      "m": "-téen",
+      "es": "clasificador de veces (cuenta repeticiones)",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [
+        "ten (Andrade, Blair y Vermont-Salas)",
+        "-ten (Bolles)"
+      ],
+      "correction": "",
+      "pr": "téen",
+      "sources": [
+        {
+          "title": "David y Alejandra Bolles, A Grammar of the Yucatecan Mayan Language, sección 11 (FAMSI)",
+          "url": "https://www.famsi.org/research/bolles/grammar/section11.htm"
+        },
+        {
+          "title": "Blair y Vermont-Salas, Spoken Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+        },
+        {
+          "title": "Diccionario Maya Popular, Academia de la Lengua Maya de Yucatán (citado por título)"
+        }
+      ],
+      "evidence": "Bolles: «-ten for times an action is done» y «Hayten» = ¿cuántas veces? Blair y Vermont-Salas, en la glosa: «ten» = times. Diccionario Maya Popular (registrado en la base): «ka'atéen». El tono alto (téen) viene solo del Diccionario Maya Popular: las otras fuentes no marcan tono."
+    },
+    {
+      "m": "ka'atéen",
+      "es": "por segunda vez; dos veces",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [
+        "kaa ten (Andrade)",
+        "ka' ten (Blair y Vermont-Salas)",
+        "ka'-ten (Lehmann)"
+      ],
+      "correction": "",
+      "pr": "ka-atéen",
+      "sources": [
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        },
+        {
+          "title": "Blair y Vermont-Salas, Spoken Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+        },
+        {
+          "title": "Diccionario Maya Popular, Academia de la Lengua Maya de Yucatán (citado por título)"
+        }
+      ],
+      "evidence": "Andrade: «t-u kaa ten» = 'for the second time'; «kaa» = 'two'. Blair y Vermont-Salas: «ka'» = two, «ten» = times. Un texto glosado por Lehmann: «ka'-ten» = 'two-time'. Diccionario Maya Popular (registrado en la base): «ka'atéen» = por segunda vez."
+    },
+    {
+      "m": "tu ka'atéen",
+      "es": "otra vez, de nuevo (lit. por segunda vez)",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [
+        "t-u kaa ten (Andrade)",
+        "t-u ka' ten (Blair y Vermont-Salas)"
+      ],
+      "correction": "",
+      "pr": "tu ka-atéen",
+      "sources": [
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        },
+        {
+          "title": "Blair y Vermont-Salas, Spoken Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+        },
+        {
+          "title": "Diccionario Maya Popular, Academia de la Lengua Maya de Yucatán (citado por título)"
+        }
+      ],
+      "evidence": "Andrade: «t-u kaa ten» = 'for the second time', con un ejemplo condicional traducido «If you do it again, I will leave you forever». Blair y Vermont-Salas: «ka · ho'p' · in · bin · eskweelah · t-u · ka' · ten» = «and I began to go to school again». Diccionario Maya Popular: «tu ka'atéen» = otra vez."
+    },
+    {
+      "m": "Jaytúul?",
+      "es": "¿Cuántos? (personas o animales)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "Haytul (Bolles)"
+      ],
+      "correction": "Normalizado desde Bolles: h → j, y tul → túul con la forma moderna ya verificada del clasificador. La grafía colonial de Bolles no marca la longitud de «hay»; la vocal corta coincide con «Jayp'el» de Junp'iit.",
+      "pr": "jaytúul",
+      "sources": [
+        {
+          "title": "David y Alejandra Bolles, A Grammar of the Yucatecan Mayan Language, sección 11 (FAMSI)",
+          "url": "https://www.famsi.org/research/bolles/grammar/section11.htm"
+        },
+        {
+          "title": "Christian Lehmann, Grammaticalization in Yucatec Maya",
+          "url": "https://www.christianlehmann.eu/publ/lehmann_grammaticalization_maya.pdf"
+        }
+      ],
+      "evidence": "Bolles: el interrogativo «hay» (¿cuántos?) no existe solo, siempre lleva clasificador: «Hayppel» con cosas, «Haytul» con personas, «Hayten» para veces. Lehmann: en yucateco el clasificador numeral también se combina con el pronombre interrogativo «cuántos»."
+    },
+    {
+      "m": "Jayp'éel?",
+      "es": "¿Cuántos? (cosas)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "Hayppel (Bolles)",
+        "Jayp'el (Junp'iit)"
+      ],
+      "correction": "",
+      "pr": "jayp'éel",
+      "sources": [
+        {
+          "title": "David y Alejandra Bolles, A Grammar of the Yucatecan Mayan Language, sección 11 (FAMSI)",
+          "url": "https://www.famsi.org/research/bolles/grammar/section11.htm"
+        },
+        {
+          "title": "Junp'iit Maaya, sitio de Christian Lehmann",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        }
+      ],
+      "evidence": "Bolles: «Hayppel» con sustantivos inanimados (pp = p' en grafía colonial). Junp'iit Maaya: «Jayp'el ja'ab yaan tech? · How old are you?», que contiene jayp'el. Dos fuentes independientes; el tono de -p'éel viene de la forma moderna verificada."
+    },
+    {
+      "m": "Jayp'éel a ja'abil?",
+      "es": "¿Cuántos años tienes? (forma de la base)",
+      "status": "dudoso",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "No encontré esta frase en ninguna fuente (búsquedas en español, inglés y en el sitio de Lehmann). La fuente que da la pregunta de edad usa otra construcción: «Jayp'el ja'ab yaan tech?» (ver la entrada siguiente). Sustituir.",
+      "pr": "jayp'éel a ja-abil",
+      "sources": [],
+      "evidence": "Sin atestiguar. ja'ab 'año' sí está verificado en la base; no vi la forma posesiva ja'abil ni que la edad se pregunte así."
+    },
+    {
+      "m": "Jayp'éel ja'ab yaan teech?",
+      "es": "¿Cuántos años tienes? (lit. ¿cuántos años hay contigo?)",
+      "status": "probable",
+      "kbStatusBefore": "no estaba en la base",
+      "variants": [
+        "Jayp'el ja'ab yaan tech? (Junp'iit, sin marcar la longitud)"
+      ],
+      "correction": "Forma propuesta para reemplazar «Jayp'éel a ja'abil?». Normalizada desde Junp'iit: p'el → p'éel y tech → teech, con las formas que la base ya tiene verificadas. Atestiguada literalmente en una sola fuente (un manual), pero todas sus piezas están verificadas: jayp'éel, ja'ab, yaan y teech.",
+      "pr": "jayp'éel ja-ab yaan teech",
+      "sources": [
+        {
+          "title": "Junp'iit Maaya (Mújica 1995), sitio de Christian Lehmann",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        }
+      ],
+      "evidence": "Junp'iit Maaya, en su lista de expresiones útiles: «Jayp'el ja'ab yaan tech? · How old are you?»."
+    },
+    {
+      "m": "Bajux?",
+      "es": "¿Cuánto? (sobre todo precio)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "bajun (UADY, mismo significado)",
+        "Bahúux? (Omniglot, en conflicto en la longitud)"
+      ],
+      "correction": "Ninguna. Omniglot escribe «Bahúux?» con vocal larga de tono alto, pero el diccionario de la UADY, que sí marca la longitud y el tono (KO'OJ, K'ÍIWIK), escribe BAJUX con vocal corta. Me quedo con bajux.",
+      "pr": "bajush",
+      "sources": [
+        {
+          "title": "UADY, Diccionario maya-español, letra B",
+          "url": "https://www.mayas.uady.mx/diccionario/b_maya.html"
+        },
+        {
+          "title": "Sitio de Christian Lehmann (ejemplo de manual)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        },
+        {
+          "title": "Blair y Vermont-Salas, Spoken Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+        },
+        {
+          "title": "Omniglot, Useful phrases in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/phrases/yucatec-maya.php"
+        }
+      ],
+      "evidence": "Diccionario UADY: «BAJUX: ¿Cuánto?» y «BAJUN» con el mismo significado. Sitio de Lehmann: «Bajux le ja'aso'? · How much is that banana?». Blair y Vermont-Salas: diálogo de compra con bajux y tohol, y la respuesta de que cuesta siete pesos. Omniglot: «Bahúux? Bahúux leti'?» = How much is this?"
+    },
+    {
+      "m": "Bajux u tojol?",
+      "es": "¿Cuánto cuesta? (lit. ¿cuánto es su precio?)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "bahux u tohol (grafía antigua)"
+      ],
+      "correction": "",
+      "pr": "bajush u tojol",
+      "sources": [
+        {
+          "title": "UADY, Diccionario maya-español, letra B",
+          "url": "https://www.mayas.uady.mx/diccionario/b_maya.html"
+        },
+        {
+          "title": "UADY, Diccionario español-maya, letra P",
+          "url": "https://www.mayas.uady.mx/diccionario/p_esp.html"
+        },
+        {
+          "title": "Blair y Vermont-Salas, Spoken Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+        }
+      ],
+      "evidence": "Verificada por regla: bajux (UADY: ¿cuánto?) + u (posesivo de 3.ª persona) + tojol (UADY: precio). El diálogo de Blair y Vermont-Salas junta bajux y tohol en una pregunta de precio, aunque el extracto no daba la frase literal."
+    },
+    {
+      "m": "tojol",
+      "es": "precio",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "tohol / toh-ol (grafía antigua)"
+      ],
+      "correction": "",
+      "pr": "tojol",
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra P",
+          "url": "https://www.mayas.uady.mx/diccionario/p_esp.html"
+        },
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        }
+      ],
+      "evidence": "Diccionario UADY: «PRECIO m: Tojol.». Andrade: «toh-ol, 'price'», y con el formativo -t significa 'costar'."
+    },
+    {
+      "m": "maan",
+      "es": "comprar (sin objeto expreso: «ir a comprar», «hacer compras»)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "màan (UADY curso, acento grave = tono bajo)"
+      ],
+      "correction": "Resuelve el conflicto man/maan de la base: no son dos grafías de una misma palabra. maan (vocal larga, tono bajo) es la forma sin objeto; man- es la raíz transitiva (manik, tin manaj; ver la entrada siguiente). Es el mismo patrón que xook / xokik.",
+      "pr": "maan",
+      "sources": [
+        {
+          "title": "UADY, Curso de maya yucateco, lección 6.5",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec6_5.html"
+        },
+        {
+          "title": "Aprendiendo Maya, Alfabeto maya",
+          "url": "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+        }
+      ],
+      "evidence": "UADY curso, ejercicio: «tene' táan in bin màan» (≈ yo voy a comprar) y, en pasado transitivo, «tin manah». La glosa la deduce el buscador del contexto. Aprendiendo Maya (registrado en la base): «maan (comprar)»."
+    },
+    {
+      "m": "manik",
+      "es": "comprar(lo), comprar algo (transitivo)",
+      "status": "verificado",
+      "kbStatusBefore": "probable (en el dominio gramática)",
+      "variants": [
+        "tin manaj = lo compré (UADY: tin manah)",
+        "in man (subjuntivo, Diccionario de uso)"
+      ],
+      "correction": "Mantener en gramática como transitivo y explicar su relación con maan en vocabulario.",
+      "pr": "manik",
+      "sources": [
+        {
+          "title": "UADY, Curso de maya yucateco, lección 6.5",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec6_5.html"
+        },
+        {
+          "title": "Diccionario de uso del maya yucateco (citado por título)"
+        }
+      ],
+      "evidence": "UADY curso: formas sobre man y manik, y «tin manah» (h → j: tin manaj). Diccionario de uso (registrado en la base): «Bin in ka'aj in man junp'iis ta'ab…» = voy a comprar una carga de sal. La forma manik sale de la regla transitiva -ik, ya documentada en la base."
+    },
+    {
+      "m": "ko'oj",
+      "es": "caro; de precio elevado",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "Ojo: no confundir con KOOJ 'pisonar, golpear' (sin cierre glotal), que está en la misma página del diccionario.",
+      "pr": "ko-oj",
+      "sources": [
+        {
+          "title": "UADY, Diccionario maya-español, letra K",
+          "url": "https://www.mayas.uady.mx/diccionario/k_maya.html"
+        },
+        {
+          "title": "Lista de vocabulario en el sitio de Christian Lehmann",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        }
+      ],
+      "evidence": "Diccionario UADY: «KO'OJ: Cosa cara; precio o costo elevado.» y, aparte, «KOOJ: Pisonar, golpear, abatanar.». Lista del sitio de Lehmann: «ko'oj» = expensive."
+    },
+    {
+      "m": "k'íiwik",
+      "es": "plaza (centro del pueblo)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "chúumuk kaaj (sinónimo dado por la UADY: centro del pueblo)"
+      ],
+      "correction": "Ajustar la glosa: la fuente da «plaza». No vi la acepción «mercado»; quitarla o presentarla como «la plaza, donde suele estar el mercado» sin decir que la palabra significa mercado.",
+      "pr": "k'íiwik",
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra P",
+          "url": "https://www.mayas.uady.mx/diccionario/p_esp.html"
+        }
+      ],
+      "evidence": "Diccionario UADY: «PLAZA f: K'íiwik, chúumuk kaaj», con una segunda entrada de «plaza» como plaza del pueblo."
+    },
+    {
+      "m": "taak'in",
+      "es": "dinero",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [],
+      "correction": "Quitar «oro» de la glosa: no apareció en la evidencia. El diccionario de la UADY solo da «Dinero».",
+      "pr": "taak'in",
+      "sources": [
+        {
+          "title": "UADY, Diccionario maya-español, letra T",
+          "url": "https://www.mayas.uady.mx/diccionario/t_maya.html"
+        },
+        {
+          "title": "UADY, cuento maya bilingüe (literatura)",
+          "url": "https://www.mayas.uady.mx/literatura/cuent3.html"
+        }
+      ],
+      "evidence": "Diccionario UADY: «TAAK'IN: Dinero.». Cuento bilingüe de la UADY (sobre un carbonero pobre): usa taak'in con el sentido de dinero. Top Yucatán (registrado en la base): «Mina'an taak'in» = no hay dinero."
+    }
+  ]
+}

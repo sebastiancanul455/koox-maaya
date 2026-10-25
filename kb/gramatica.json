@@ -1,0 +1,4202 @@
+{
+  "domain": "gramatica",
+  "entries": [
+    {
+      "m": "teen",
+      "es": "yo",
+      "cat": "pronombre",
+      "pr": "teen",
+      "notes": "Pronombre independiente de 1.ª persona singular. Se usa para dar énfasis o para contestar, porque el verbo ya lleva la persona (kin bin = yo voy). Con la terminación de tema -e' se acorta: tene'. Diccionarios antiguos lo escriben tèen (acento grave = tono bajo).",
+      "variants": [
+        "ten",
+        "tèen"
+      ],
+      "ex": {
+        "m": "Beyxan teen.",
+        "es": "Yo también."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/curso_maya/lec3intro.html",
+        "https://www.famsi.org/reports/96072/grammar/section05.htm",
+        "https://www.mayas.uady.mx/diccionario/t_maya.html",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      ],
+      "evidence": "Curso UADY, lección 3: tabla de pronombres tèen, tèech, leti', to'on, te'ex, letio'ob. Bolles: «ten, tech, teex, leti, letiob». UADY diccionario: «TEEN: Yo, a mí». Junp'iit Maaya: «Beyxan teen» = me too."
+    },
+    {
+      "m": "teech",
+      "es": "tú; usted",
+      "cat": "pronombre",
+      "pr": "teech",
+      "notes": "Pronombre independiente de 2.ª persona singular. No hay distinción entre tú y usted. Con -e' se acorta: teche'.",
+      "variants": [
+        "tech",
+        "tèech"
+      ],
+      "ex": {
+        "m": "Kux teech?",
+        "es": "¿Y tú?"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/curso_maya/lec3intro.html",
+        "https://www.famsi.org/reports/96072/grammar/section05.htm",
+        "https://www.mayas.uady.mx/diccionario/t_maya.html",
+        "https://aprendiendomaya.com/escritura/pronombres-personales-maya/pronombres-personales-en-lengua-maya"
+      ],
+      "evidence": "UADY lección 3: tèech. Bolles: tech. UADY diccionario: «TEECH: Tu, te, a ti». Aprendiendo Maya: no existe distinción tú/usted; teech sirve para ambos."
+    },
+    {
+      "m": "leti'",
+      "es": "él; ella; eso",
+      "cat": "pronombre",
+      "pr": "leti-",
+      "notes": "Pronombre independiente de 3.ª persona singular, sin género: sirve para él, ella y cosas. Con -e': leti'e'.",
+      "variants": [
+        "leti"
+      ],
+      "ex": {
+        "m": "Kux leti'?",
+        "es": "¿Y él? / ¿Y ella?"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://en.wiktionary.org/wiki/leti%CA%BC",
+        "https://www.mayas.uady.mx/curso_maya/lec3intro.html",
+        "https://www.famsi.org/reports/96072/grammar/section05.htm"
+      ],
+      "evidence": "Wiktionary: leti' «he, she, it (third-person singular pronoun)», con tabla de formas independientes. UADY lección 3 y Bolles (leti). El ejemplo se construyó con el patrón atestiguado Kux teech?"
+    },
+    {
+      "m": "to'on",
+      "es": "nosotros; nosotras",
+      "cat": "pronombre",
+      "pr": "to-on",
+      "notes": "Pronombre independiente de 1.ª persona plural. También aparece después del verbo con el sentido de «a nosotros».",
+      "variants": [
+        "toon"
+      ],
+      "ex": {
+        "m": "Yuum bo'otik taalech a xíimbal to'on.",
+        "es": "Gracias por venir a visitarnos."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/curso_maya/lec3intro.html",
+        "https://aprendiendomaya.com/escritura/pronombres-personales-maya/pronombres-personales-en-lengua-maya",
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        "https://parryc.com/language/yucatec-maya"
+      ],
+      "evidence": "UADY lección 3: to'on. Aprendiendo Maya: to'on. Parry: tabla de independientes con to'on 'nosotros'. INALI: «Yuum bo'otik taalech a xíimbal to'on» = gracias por su visita."
+    },
+    {
+      "m": "te'ex",
+      "es": "ustedes",
+      "cat": "pronombre",
+      "pr": "te-esh",
+      "notes": "Pronombre independiente de 2.ª persona plural (ustedes, sin distinción de cortesía).",
+      "variants": [
+        "teex"
+      ],
+      "ex": {
+        "m": "Xi'ik te'ex.",
+        "es": "Que les vaya bien (a ustedes)."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/curso_maya/lec3intro.html",
+        "https://www.famsi.org/reports/96072/grammar/section05.htm",
+        "https://aprendiendomaya.com/escritura/pronombres-personales-maya/pronombres-personales-en-lengua-maya",
+        {
+          "title": "Bevington, Maya for Travelers and Students (University of Texas Press)",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "UADY lección 3: te'ex. Bolles: teex. Bevington: despedida «xi'ik tech / xi'ik te'ex» 'may it go to you'."
+    },
+    {
+      "m": "leti'ob",
+      "es": "ellos; ellas",
+      "cat": "pronombre",
+      "pr": "leti-ob",
+      "notes": "Pronombre independiente de 3.ª persona plural: leti' + plural -o'ob. Con -e': leti'obe'.",
+      "variants": [
+        "letio'ob",
+        "letiob"
+      ],
+      "ex": {
+        "m": "Leti'obe' toj yóolo'ob xan.",
+        "es": "Ellos también están bien."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/curso_maya/lec3intro.html",
+        "https://www.famsi.org/reports/96072/grammar/section05.htm",
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://parryc.com/language/yucatec-maya"
+      ],
+      "evidence": "UADY lección 3: letio'ob. Bolles: letiob. Parry: leti'ob 'ellos/ellas'. Curso «Idioma Maya Yucateco»: «Letio'obe' tòoh yóolo'ob xan» (normalizado a la grafía de 2014)."
+    },
+    {
+      "m": "tene'",
+      "es": "yo (como tema: «en cuanto a mí»)",
+      "cat": "pronombre",
+      "pr": "tene-",
+      "notes": "Forma de teen con la terminación de tema -e'. Va al inicio de la frase para presentar de quién se habla; el verbo sigue llevando su propia marca de persona.",
+      "variants": [
+        "tene"
+      ],
+      "ex": {
+        "m": "Tene' tin na'atik.",
+        "es": "Yo sí entiendo."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/curso_maya/lec3intro.html",
+        "https://naatikmexico.org/blog/yucatec-maya-phrases",
+        "https://site.inali.gob.mx/publicaciones/narraciones_mayas_campeche.pdf"
+      ],
+      "evidence": "UADY lección 3 da tene' y teche' como formas de tópico. Na'atik: «Tene tin na'atik» = I understand. INALI (narraciones de Campeche): «Tene' wi'ijen, uk'ajen»."
+    },
+    {
+      "m": "teche'",
+      "es": "tú (como tema: «en cuanto a ti»)",
+      "cat": "pronombre",
+      "pr": "teche-",
+      "notes": "Forma de teech con la terminación de tema -e'.",
+      "variants": [
+        "teche"
+      ],
+      "ex": {
+        "m": "Teche' táan a xook.",
+        "es": "Tú estás leyendo."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/curso_maya/lec3intro.html",
+        "https://www.mayas.uady.mx/curso_maya/respuestas1.html"
+      ],
+      "evidence": "UADY lección 3: tene', teche'. UADY, clave de la lección 1: «tene' táan in xòok … teche' táan a xòok» (presente actual de xòok, leer)."
+    },
+    {
+      "m": "in",
+      "es": "mi; yo (marca de persona antes del verbo)",
+      "cat": "juego A",
+      "pr": "in",
+      "notes": "Juego A, 1.ª persona singular. Antes de un sustantivo es posesivo (in k'aaba', mi nombre). Antes de un verbo indica quién hace la acción (táan in janal, estoy comiendo; con k- forma kin). Ante vocal se agrega w: in wóol, in wilik.",
+      "variants": [],
+      "ex": {
+        "m": "Táan in kanik maaya.",
+        "es": "Estoy aprendiendo maya."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.famsi.org/reports/96072/grammar/section05.htm",
+        "https://langsci-press.org/catalog/view/152/1016/886-1",
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://epinvestiga.com/dominical/la-lengua-que-perdimos/"
+      ],
+      "evidence": "Bolles: juego A in, a, u, c' (= k); también se usa como posesivo y como sujeto del verbo. Lehmann (2017): juego A in (w-), a (w-). Montgomery: ante raíz con vocal se inserta w- después de in y a; u pasa a y. Epinvestiga: «Táan in kanik maaya»."
+    },
+    {
+      "m": "a",
+      "es": "tu; tú (marca de persona antes del verbo)",
+      "cat": "juego A",
+      "pr": "a",
+      "notes": "Juego A, 2.ª persona singular. Ante vocal: a w- (a wóol). En plural se combina con el sufijo -e'ex: a beele'ex (su camino de ustedes).",
+      "variants": [],
+      "ex": {
+        "m": "Bix a k'aaba'?",
+        "es": "¿Cómo te llamas?"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.famsi.org/reports/96072/grammar/section05.htm",
+        "https://langsci-press.org/catalog/view/152/1016/886-1",
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf"
+      ],
+      "evidence": "Bolles: juego A a. Lehmann (2017): a (w-). Ayuntamiento de Mérida: «¿Cómo te llamas? Bix a k'aaba'»."
+    },
+    {
+      "m": "u",
+      "es": "su (de él, de ella); él / ella (marca de persona antes del verbo)",
+      "cat": "juego A",
+      "pr": "u",
+      "notes": "Juego A, 3.ª persona singular. Ante vocal se escribe u y-: u yóol, u yojel. Para decir «el X de Pedro» se pone u + cosa poseída + poseedor: u p'óok Pedro. En plural se combina con -o'ob: u beelo'ob.",
+      "variants": [],
+      "ex": {
+        "m": "u p'óok Pedro",
+        "es": "el sombrero de Pedro"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.famsi.org/reports/96072/grammar/section05.htm",
+        "https://www.researchgate.net/publication/272789937_Early_acquisition_of_the_verbal_complex_in_Yucatec_Maya",
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Bolles: el posesivo u se coloca delante del sustantivo poseído, seguido del poseedor: «u ppoc Pedro» 'Peter's hat' (grafía colonial; normalizado a u p'óok Pedro). Pfeiler: 3.ª sg del juego A u(y)/y."
+    },
+    {
+      "m": "k",
+      "es": "nuestro; nosotros (marca de persona antes del verbo)",
+      "cat": "juego A",
+      "pr": "k",
+      "notes": "Juego A, 1.ª persona plural. Ante vocal no se agrega w ni y: k óol. Puede llevar -o'on para reforzar el plural. Regionalismo: en el oriente y sur de Yucatán y en Quintana Roo se oye ak, ek o ik; Andrade y Hofling registran k … -e'ex en el oriente de la península.",
+      "variants": [
+        "ak",
+        "ek",
+        "ik"
+      ],
+      "ex": {
+        "m": "Ki'imak k óol taale'ex waye'.",
+        "es": "Bienvenidos (nos alegra que hayan venido)."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.famsi.org/reports/96072/grammar/section05.htm",
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Bolles: 1.ª plural c' (= k). INALI: «Ki'imak k óol taale'ex waye'» = Bienvenidos (k + óol sin consonante de unión). Guía gramatical (según resumen): en el oriente y sur de Yucatán y en Quintana Roo se usa ak, ek o ik en lugar de k, y puede agregarse -o'on."
+    },
+    {
+      "m": "-en",
+      "es": "yo (sufijo: «soy», «estoy»; sujeto de verbos intransitivos en pasado)",
+      "cat": "juego B",
+      "pr": "-en",
+      "notes": "Juego B, 1.ª persona singular. Se pega al final de adjetivos, sustantivos y verbos: wi'ijen (tengo hambre), k'oja'anen (estoy enfermo), binen (fui), koolnáalen (soy campesino).",
+      "variants": [],
+      "ex": {
+        "m": "Wi'ijen.",
+        "es": "Tengo hambre."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://langsci-press.org/catalog/view/152/1016/886-1",
+        "https://parryc.com/language/yucatec-maya",
+        "https://hpsg.uky.edu/sites/default/files/abstracts/yucatec-fragment-slides.pdf",
+        "https://www.omniglot.com/language/phrases/yucatec-maya.php"
+      ],
+      "evidence": "Lehmann (2017): juego B -en, -ech. Parry: sufijos -en, -ech, Ø, -o'on, -e'ex, -o'ob. Diapositivas HPSG: «Koolnáal-en» = soy campesino. Omniglot: «Wi'ijen» = I am hungry."
+    },
+    {
+      "m": "-ech",
+      "es": "tú (sufijo: «eres», «estás»; también «te» como objeto)",
+      "cat": "juego B",
+      "pr": "-ech",
+      "notes": "Juego B, 2.ª persona singular. Marca al sujeto de estados y de intransitivos en pasado (taalech, viniste) y al objeto de un verbo transitivo (in wilikech, te veo).",
+      "variants": [],
+      "ex": {
+        "m": "Jach ki'imak in wóol in wilikech.",
+        "es": "Me da mucho gusto verte."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://langsci-press.org/catalog/view/152/1016/886-1",
+        "https://www.christianlehmann.eu/publ/valency_in_ym.pdf",
+        "https://www.babbel.com/en/magazine/mayan-language",
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+      ],
+      "evidence": "Lehmann: los sufijos absolutivos marcan el objeto directo del transitivo y el sujeto del intransitivo en completivo y subjuntivo. Babbel: «Jach ki'imak in wóol in wilikech». INALI: «taalech a xíimbal to'on»."
+    },
+    {
+      "m": "-o'on",
+      "es": "nosotros (sufijo: «somos», «estamos»)",
+      "cat": "juego B",
+      "pr": "-o-on",
+      "notes": "Juego B, 1.ª persona plural. También refuerza el plural de k- (juego A).",
+      "variants": [],
+      "ex": {
+        "m": "Wíiniko'on.",
+        "es": "Somos hombres (personas)."
+      },
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://parryc.com/language/yucatec-maya",
+        "https://hpsg.uky.edu/sites/default/files/abstracts/yucatec-fragment-slides.pdf"
+      ],
+      "evidence": "Guía gramatical de Yoshida: «wíinik-o'on» = somos hombres; lista -o'on entre los pronombres sufijos. Parry y diapositivas HPSG: 1.ª plural -o'on."
+    },
+    {
+      "m": "-e'ex",
+      "es": "ustedes (sufijo; también forma el plural de a)",
+      "cat": "juego B",
+      "pr": "-e-esh",
+      "notes": "Juego B, 2.ª persona plural. Se usa sola (taale'ex, ustedes vinieron) o junto con a del juego A para «su … de ustedes» o «ustedes + verbo»: a beele'ex, ka bine'ex.",
+      "variants": [],
+      "ex": {
+        "m": "Bix a beele'ex?",
+        "es": "¿Cómo están ustedes?"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.famsi.org/reports/96072/grammar/section05.htm",
+        "https://parryc.com/language/yucatec-maya",
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Bolles: plurales con los sufijos eex y oob. INALI: «taale'ex waye'». Montgomery: «Bix a beel(e'ex)?»."
+    },
+    {
+      "m": "-o'ob",
+      "es": "ellos (sufijo; también forma el plural de u y de los sustantivos)",
+      "cat": "juego B",
+      "pr": "-o-ob",
+      "notes": "Juego B, 3.ª persona plural. Con u (juego A) da «su … de ellos» o «ellos + verbo»: u beelo'ob, ku bino'ob. El mismo sufijo hace el plural de sustantivos, que es opcional: ch'íich'o'ob (pájaros), pero ya'ab máak (mucha gente).",
+      "variants": [],
+      "ex": {
+        "m": "Kux a taata yéetel a na', bix u beelo'ob?",
+        "es": "¿Y tu papá y tu mamá, cómo están?"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.famsi.org/reports/96072/grammar/section05.htm",
+        "https://parryc.com/language/yucatec-maya",
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10480837/"
+      ],
+      "evidence": "Bolles: sufijo oob en el plural. Guía gramatical: ch'íich'o'ob. Estudio en PMC: el plural es opcional. Curso «Idioma Maya Yucateco»: «Kux a tàatah yéetel a na', ¿bix u bèelo'ob?» (normalizado)."
+    },
+    {
+      "m": "k-",
+      "es": "marca de presente habitual (lo que se hace normalmente)",
+      "cat": "aspecto",
+      "pr": "k",
+      "notes": "Se une al juego A: kin, ka, ku, k, ka…-e'ex, ku…-o'ob. Indica costumbre o acción general, no necesariamente en este momento. No se usa en oraciones negativas (allí va ma' tin…). Unos pocos verbos, como ojel (saber) y k'ajóol (conocer), no la llevan.",
+      "variants": [],
+      "ex": {
+        "m": "Kin xook bul k'iin.",
+        "es": "Leo (estudio) todos los días."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/curso_maya/lec3intro.html",
+        "https://www.mayas.uady.mx/curso_maya/respuestas1.html",
+        "https://www.christianlehmann.eu/publ/Genesis_of_auxiliaries_in_Yucatec_Maya.pdf",
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.frontiersin.org/journals/language-sciences/articles/10.3389/flang.2023.1286520/full"
+      ],
+      "evidence": "UADY lección 3: el presente habitual se marca con k en lugar de la t de tin; indica acción habitual. UADY clave lección 1: «kin xòok bul k'ìin». Lehmann: k- imperfectivo. Yoshida: «La partícula k da sentido de que la acción es habitual o actual»; ojel y k'ajóol no la toman."
+    },
+    {
+      "m": "kin",
+      "es": "yo (presente habitual: «yo hago…»)",
+      "cat": "aspecto",
+      "pr": "kin",
+      "notes": "k- + in. Ante verbo que empieza con vocal: kin w- (kin wok'ol, lloro; kin wilik, lo veo).",
+      "variants": [],
+      "ex": {
+        "m": "Kin na'atik.",
+        "es": "Entiendo."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas",
+        "https://www.mayas.uady.mx/curso_maya/respuestas1.html",
+        "https://en.wiktionary.org/wiki/ok%CA%BCol"
+      ],
+      "evidence": "La Lengua Maya de Yucatán: «Kin na'atik» = comprendo. UADY: «kin xòok». Wiktionary (ok'ol): imperfectivo 1.ª sg «kin wok'ol»."
+    },
+    {
+      "m": "ka",
+      "es": "tú (presente habitual: «tú haces…»)",
+      "cat": "aspecto",
+      "pr": "ka",
+      "notes": "k- + a. Ante vocal: ka w- (ka wa'alik, dices). No confundir con ka «que…» del subjuntivo (Ka xi'ik teech utsil).",
+      "variants": [],
+      "ex": {
+        "m": "Ba'ax ka wa'alik?",
+        "es": "¿Qué tal? (lit. ¿qué dices?)"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf",
+        "https://en.wiktionary.org/wiki/taal"
+      ],
+      "evidence": "INALI: «Ba'ax ka wa'alik». Ayuntamiento de Mérida: «Tu'ux ka bin» = ¿A dónde vas? Wiktionary (taal): ka taal."
+    },
+    {
+      "m": "ku",
+      "es": "él / ella (presente habitual: «él/ella hace…»)",
+      "cat": "aspecto",
+      "pr": "ku",
+      "notes": "k- + u. Ante vocal: ku y- (ku yok'ol, llora). Con plural: ku …-o'ob (ku bino'ob, ellos van).",
+      "variants": [],
+      "ex": {
+        "m": "Ku taal.",
+        "es": "Viene (suele venir)."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://en.wiktionary.org/wiki/taal",
+        "https://wiki.neonvagabond.xyz/content/wiktionary_en_all_nopic_2024-05/A/kutal",
+        "https://www.famsi.org/reports/96072/grammar/index.html"
+      ],
+      "evidence": "Wiktionary (taal, kutal): imperfectivo 3.ª sg ku taal, ku kutal. Bolles: «… cu binoob yetel …» (ellas van con…)."
+    },
+    {
+      "m": "táan",
+      "es": "estar + -ando (acción en curso, progresivo)",
+      "cat": "aspecto",
+      "pr": "táan",
+      "notes": "Se usa con el juego A y el verbo en su forma de presente: táan in janal (estoy comiendo), táan u janal (está comiendo). Se contrae a menudo: tin = táan in, ta = táan a, tu = táan u. No confundir con t'aan (palabra, hablar).",
+      "variants": [
+        "tan"
+      ],
+      "ex": {
+        "m": "Táan in kanik maaya.",
+        "es": "Estoy aprendiendo maya."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/curso_maya/lec3intro.html",
+        "https://www.christianlehmann.eu/publ/Genesis_of_auxiliaries_in_Yucatec_Maya.pdf",
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.frontiersin.org/journals/language-sciences/articles/10.3389/flang.2023.1286520/full",
+        "https://epinvestiga.com/dominical/la-lengua-que-perdimos/"
+      ],
+      "evidence": "UADY lección 3: presente actual = pronombre + táan + pronombre dependiente + verbo. Lehmann: táan progresivo. Yoshida: táan señala la modalidad progresiva o durativa; se contrae en tin, ta, tu. Uth et al.: táan progresivo frente a k habitual."
+    },
+    {
+      "m": "tin",
+      "es": "estoy … (contracción de táan in); también «yo» en el pasado de verbos transitivos",
+      "cat": "aspecto",
+      "pr": "tin",
+      "notes": "Doble uso: (1) tin = táan in, progresivo: tin janal (estoy comiendo), tin míis (estoy barriendo); (2) t- completivo + in en transitivos: tin xokaj (lo leí). Se distinguen por la terminación del verbo: -ik o sin sufijo = ahora; -aj = pasado. Igual con ta (táan a / t-a) y tu (táan u / t-u).",
+      "variants": [],
+      "ex": {
+        "m": "Tin janal.",
+        "es": "Estoy comiendo."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/curso_maya/lec3intro.html",
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://parryc.com/language/yucatec-maya",
+        "https://en.wiktionary.org/wiki/xok"
+      ],
+      "evidence": "UADY lección 3: «tin p'o', tin míis, tin hanal = estoy lavando, estoy barriendo, estoy comiendo». Yoshida: táan se contracta con los pronombres: tin (táan in), ta (táan a), tu (táan u). Wiktionary (xok): perfectivo «tin xokaj»."
+    },
+    {
+      "m": "ts'o'ok",
+      "es": "ya (acción terminada; perfecto)",
+      "cat": "aspecto",
+      "pr": "ts'o-ok",
+      "notes": "Va con el juego A y el verbo en forma de presente: ts'o'ok in janal (ya comí). Se contrae: ts'in = ts'o'ok in. Como verbo significa «terminar». Para «todavía no» no se usa ma' ts'o'ok.",
+      "variants": [
+        "ts'ok",
+        "ts'in (= ts'o'ok in)"
+      ],
+      "ex": {
+        "m": "Ts'o'ok in janal.",
+        "es": "Ya comí."
+      },
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.christianlehmann.eu/publ/Genesis_of_auxiliaries_in_Yucatec_Maya.pdf",
+        "https://langsci-press.org/catalog/view/152/1016/886-1",
+        "https://parryc.com/language/yucatec-maya",
+        "https://mossyrune.com/grammar/walkthrough/yucatec-maya"
+      ],
+      "evidence": "Yoshida: ts'o'ok, modalidad terminativa, indica que la acción ya terminó, siempre con el verbo en la forma IKAL; se contrae ts'in (= ts'o'ok in). Lehmann: ts'o'k terminativo; significa 'terminar'. Parry: «Ts'in janal» = I (already) ate. Mossy Rune: ma' ts'o'ok es agramatical."
+    },
+    {
+      "m": "t-",
+      "es": "marca de pasado (completivo) en verbos transitivos",
+      "cat": "aspecto",
+      "pr": "t",
+      "notes": "t- + juego A + raíz + -aj: tin xokaj (lo leí), tin wa'alaj (lo dije), tin na'ataj (lo entendí; Lehmann escribe tin na'tah). Los intransitivos en pasado no llevan t-: usan el juego B (binen, fui).",
+      "variants": [],
+      "ex": {
+        "m": "Tin wa'alaj ti' sáamal in bin in wilej.",
+        "es": "Le dije que mañana voy a ir a verlo."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://hpsg.uky.edu/sites/default/files/abstracts/yucatec-fragment-slides.pdf",
+        "https://en.wiktionary.org/wiki/xok",
+        "https://lucy.lib.uchicago.edu/?uuid=a71f2951-2927-41d3-b642-0f1c8889e75c&section=5",
+        "https://www.mayas.uady.mx/curso_maya/lec4_9.html",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/gramatica/onomas/negacion.html"
+      ],
+      "evidence": "Diapositivas HPSG: «t-in … -aj» = I read (perfectivo t- + juego A + completivo -aj). Wiktionary (xok): «tin xokaj». Spoken Yucatec Maya, lección 13: «Tin wa'alaj ti' sáamal in bin in wilej». UADY: pretérito transitivo = pronombre + dependiente + raíz + -ah. Lehmann: «tin na'tah» 'lo entendí'."
+    },
+    {
+      "m": "bíin",
+      "es": "futuro de predicción («va a», «ha de»)",
+      "cat": "aspecto",
+      "pr": "bíin",
+      "notes": "Futuro lejano o predicho. Va con el verbo en forma de subjuntivo: bíin in jaantej (me lo he de comer). Según Vapnarsky y el artículo de Trace, se usa poco en el habla diaria; es frecuente en profecías y textos. En la conversación es más común yaan u … (tiene que / va a).",
+      "variants": [],
+      "ex": {
+        "m": "Bíin in jaantej.",
+        "es": "Me lo he de comer. / Me lo comeré."
+      },
+      "conf": "media",
+      "sources": [
+        "https://www.mayas.uady.mx/curso_maya/lec4_1.html",
+        "https://www.christianlehmann.eu/publ/Genesis_of_auxiliaries_in_Yucatec_Maya.pdf",
+        "https://trace.org.mx/index.php/trace/article/download/1186/1124/4114",
+        "https://benjamins.com/catalog/slcs.172.21vap",
+        "https://servicios-galileo.filos.unam.mx/uploads/temarios/20252131146100021/Maya4EliCasanova20252.pdf"
+      ],
+      "evidence": "UADY lección 4-I: el futuro se forma con bíin antepuesto a los pronombres dependientes, la raíz transitiva y el sufijo eh: «bíin in hàanteh» (normalizado a bíin in jaantej). Lehmann: bín- futuro simple con subjuntivo. Trace: bíin rara vez se usa en el habla cotidiana; ken lo parafrasea. Temario UNAM: «futuro profético (bíin)»."
+    },
+    {
+      "m": "yaan in",
+      "es": "tengo que …; he de … (obligación y futuro)",
+      "cat": "aspecto",
+      "pr": "yaan in",
+      "notes": "yaan + juego A + verbo: yaan in bin (tengo que ir), yaan u taal (tiene que venir). Es el futuro de obligación, muy usado. No confundir con yaan «hay».",
+      "variants": [
+        "yan in",
+        "yàan in"
+      ],
+      "ex": {
+        "m": "Yaan in bin.",
+        "es": "Tengo que ir."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://trace.org.mx/index.php/trace/article/download/1186/1124/4114",
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://hpsg.uky.edu/sites/default/files/abstracts/yucatec-fragment-slides.pdf",
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Trace (futuro en maya yucateco): futuro obligativo yan-; ejemplo «yan u-táal» 'tiene que venir (el vendedor de ropa)'. «Idioma Maya Yucateco»: patrón «Yaan in bin». HPSG: yaan obligativo con verbo incompletivo. Yoshida: yaan obligativo, participio de (y)antal."
+    },
+    {
+      "m": "k'a'abéet",
+      "es": "es necesario; necesitar",
+      "cat": "aspecto",
+      "pr": "k'a-abéet",
+      "notes": "k'a'abéet + juego A + verbo = «tengo que / necesito»: k'a'abéet in bin (tengo que irme). También sirve para necesitar cosas.",
+      "variants": [
+        "k'a'abet",
+        "kabet"
+      ],
+      "ex": {
+        "m": "K'a'abéet in bin.",
+        "es": "Tengo que irme."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas",
+        "https://parryc.com/language/yucatec-maya",
+        "https://grambank.clld.org/parameters/GB253"
+      ],
+      "evidence": "La Lengua Maya de Yucatán: «K'a'abéet in bin» = tengo que irme. Parry: «K'a'abet in janal» = I must eat. Grambank (Bolles): kabet 'to need' también expresa posesión."
+    },
+    {
+      "m": "ken",
+      "es": "cuando (con acción futura); que (deber, propósito)",
+      "cat": "aspecto",
+      "pr": "ken",
+      "notes": "Introduce acciones futuras en oraciones con «cuando» o «el día que»; con u se contrae en kun. Yoshida señala que ken también añade obligación, consejo u orden. Úsalo primero en frases hechas.",
+      "variants": [
+        "kun (= ken u)"
+      ],
+      "ex": {
+        "m": "Le k'iin kun náakal a wóol a siie', yaan u yokolta'al tech.",
+        "es": "El día que te hartes de regalarlos, te los robarán."
+      },
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.academia.edu/142986420/Diccionario_de_uso_del_maya_yucateco",
+        "https://trace.org.mx/index.php/trace/article/download/1186/1124/4114",
+        "https://servicios-galileo.filos.unam.mx/uploads/temarios/20252131146100021/Maya4EliCasanova20252.pdf"
+      ],
+      "evidence": "Yoshida: kAn marca acción próxima con la forma IKAL; puede cambiarse por ken, que añade obligación, consejo u orden; ken también funciona como conjunción. Diccionario de uso: «Le k'iin kun náakal a wóol a siie', yaan u yokolta'al tech» = El día que te hartes de regalarlos, te los robarán. Temario UNAM: marcadores de modo ka, bik y ken."
+    },
+    {
+      "m": "táant",
+      "es": "acabar de (pasado inmediato)",
+      "cat": "aspecto",
+      "pr": "táant",
+      "notes": "táant + juego A + verbo, para algo que acaba de pasar: táant in janal (acabo de comer).",
+      "variants": [],
+      "ex": {
+        "m": "Tene' táant in janale'.",
+        "es": "Yo acabo de comer."
+      },
+      "conf": "media",
+      "sources": [
+        "https://www.mayas.uady.mx/curso_maya/lec7_3.html"
+      ],
+      "evidence": "UADY lección 7: el pretérito inmediato se forma con la partícula táant (o táan) antes de la oración: «tene' táant in hanale'» (normalizado a janale'). Solo una fuente."
+    },
+    {
+      "m": "ko'ox",
+      "es": "¡vamos!; vámonos",
+      "cat": "aspecto",
+      "pr": "ko-osh",
+      "notes": "Invitación colectiva. Sola significa «vámonos»; seguida de un verbo, «vamos a…»: ko'ox kanik (vamos a aprender). Es el nombre del programa del Gobierno de Yucatán «Ko'ox kanik maaya t'aan».",
+      "variants": [
+        "koox"
+      ],
+      "ex": {
+        "m": "Ko'ox kanik maaya t'aan.",
+        "es": "Vamos a aprender lengua maya."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.poresto.com/campeche/2025/12/5/kox-o-koox-conoce-la-forma-correcta-en-maya-de-decir-el-nombre-del-nuevo-transporte-de-campeche.html",
+        "https://yucatan.heraldodemexico.com.mx/tendencias/2025/8/27/koox-kanik-maaya-taan-asi-seran-los-cursos-para-preservar-la-lengua-maya-en-yucatan-1949.html"
+      ],
+      "evidence": "PorEsto (2025): Ko'ox significa «vamos», se usa como invitación colectiva y se pronuncia con corte entre sílabas. Heraldo de México: programa «Ko'ox kanik maaya t'aan» = Vamos a aprender lengua maya."
+    },
+    {
+      "m": "xi'ik",
+      "es": "que vaya (subjuntivo de bin)",
+      "cat": "aspecto",
+      "pr": "shi-ik",
+      "notes": "Forma irregular de bin (ir) en subjuntivo. Aparece en despedidas: ka xi'ik teech utsil (que te vaya bien).",
+      "variants": [],
+      "ex": {
+        "m": "Ka xi'ik teech jats'uts.",
+        "es": "¡Que te vaya bien!"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        {
+          "title": "Bevington, Maya for Travelers and Students (University of Texas Press)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "INALI: «Ka xi'ik tech jats'uts» = que te vaya bien. Bevington: «xi'ik tech / xi'ik te'ex» 'may it go to you'. Montgomery: xi'ik = vaya."
+    },
+    {
+      "m": "ma'atech",
+      "es": "nunca; no se acostumbra",
+      "cat": "negación",
+      "pr": "ma-atech",
+      "notes": "Negación del presente habitual: en lugar de ma' + k-, se usa ma'atech para decir que algo no se hace nunca o no se acostumbra.",
+      "variants": [
+        "ma'ach"
+      ],
+      "ex": null,
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.academia.edu/7014710/Guia_gramatical_de_la_lengua_maya_yucateca_para_hispanohablantes_3ra_versi%C3%B3n_"
+      ],
+      "evidence": "Yoshida: «Para formular oraciones negativas de modalidad habitual, se usa la partícula ma'atech (o ma'ach) 'nunca, o no se acostumbra a'». No se encontró un ejemplo completo."
+    },
+    {
+      "m": "ma'",
+      "es": "no",
+      "cat": "negación",
+      "pr": "ma-",
+      "notes": "Va al inicio, antes de lo que se niega. Con verbos en presente no se usa k-: se dice ma' tin… (de ma' táan in). En muchos casos la frase cierra con -i'.",
+      "variants": [
+        "má"
+      ],
+      "ex": {
+        "m": "Ma' tin na'atik.",
+        "es": "No entiendo."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.christianlehmann.eu/ling/sprachen/maya/gramatica/onomas/negacion.html",
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf",
+        "https://www.omniglot.com/language/phrases/yucatec-maya.php"
+      ],
+      "evidence": "Lehmann: el negativo tiene dos alomorfos, ma' y ma' … -i'. Yoshida: en las negativas no se usa k; la k se suple por táan (tin, ta, tu). Mérida: «No: Ma'». Omniglot: «Má tin naátik» = I don't understand."
+    },
+    {
+      "m": "-i'",
+      "es": "cierre de la negación (va al final de la frase negada)",
+      "cat": "negación",
+      "pr": "-i-",
+      "notes": "Enclítico que acompaña a ma' al final de la frase: ma' in woojeli' (no sé), ma' wi'ijeni' (no tengo hambre). Según Lehmann aparece en oraciones nominales y de estado, en perfectivo, terminativo y progresivo; no en existenciales, habitual ni subjuntivo. Si la última palabra ya lleva otra terminación (-a', -o', -e'), no se agrega: ma' tin meyaj te' súutukila'. En el noroeste suele omitirse en ma' tin na'atik.",
+      "variants": [],
+      "ex": {
+        "m": "Ma' in woojeli'.",
+        "es": "No (lo) sé."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.christianlehmann.eu/ling/sprachen/maya/gramatica/onomas/negacion.html",
+        "https://www.famsi.org/reports/96072/grammar/index.html",
+        "https://parryc.com/language/yucatec-maya",
+        "https://www.vocabulario.com.mx/blog/diccionario-maya-espanol-verbo-saber/"
+      ],
+      "evidence": "Lehmann: forma discontinua ma' … -i', con -i' enclítico al final de la oración. Bolles: negation bracketing con -i, en muchos casos opcional; «Ma tin naatic» sin -i en el noroeste. Parry (Andrade): «Ma' wi'ijeni' ts'o'ok in janal». Vocabulario.com.mx: «Ma' in wojeli'» = No sé."
+    },
+    {
+      "m": "mixba'al",
+      "es": "nada",
+      "cat": "negación",
+      "pr": "mishba-al",
+      "notes": "mix (ni) + ba'al (cosa). También es la respuesta a «gracias» (de nada) y a «¿qué dices?» (nada, aquí nomás).",
+      "variants": [
+        "mix ba'al"
+      ],
+      "ex": {
+        "m": "Chéen mixba'al.",
+        "es": "Nada, aquí nomás."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/m_maya.html",
+        {
+          "title": "Bevington, Maya for Travelers and Students (University of Texas Press)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+      ],
+      "evidence": "UADY: «MIXBA'AL: nada». Bevington: mixba'al '(it is) nothing'. La Lengua Maya de Yucatán: «Mixba'al» = de nada."
+    },
+    {
+      "m": "mixmáak",
+      "es": "nadie",
+      "cat": "negación",
+      "pr": "mishmáak",
+      "notes": "mix (ni) + máak (persona).",
+      "variants": [
+        "mix máak"
+      ],
+      "ex": null,
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/m_maya.html"
+      ],
+      "evidence": "UADY diccionario, letra M: «MIXMÁAK: nadie»."
+    },
+    {
+      "m": "mixtu'ux",
+      "es": "a ningún lado; en ninguna parte",
+      "cat": "negación",
+      "pr": "mishtu-ush",
+      "notes": "mix (ni) + tu'ux (dónde). Va con ma'.",
+      "variants": [
+        "mix tu'ux"
+      ],
+      "ex": {
+        "m": "Ma' tin bin mixtu'ux.",
+        "es": "No voy a ningún lado."
+      },
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Material «Idioma Maya Yucateco» (según resumen): «Ma' tin bin mixtu'ux» = No iré a ningún lugar."
+    },
+    {
+      "m": "mix",
+      "es": "ni; tampoco",
+      "cat": "negación",
+      "pr": "mish",
+      "notes": "Partícula negativa que forma mixba'al, mixmáak, mixtu'ux.",
+      "variants": [],
+      "ex": null,
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/m_maya.html"
+      ],
+      "evidence": "UADY diccionario, letra M: «MIX: Ni, tampoco»."
+    },
+    {
+      "m": "mina'an",
+      "es": "no hay; falta",
+      "cat": "existencial",
+      "pr": "mina-an",
+      "notes": "Negativo de yaan (hay). No lleva -i'. También sirve para «no tengo»: mina'an + cosa.",
+      "variants": [],
+      "ex": {
+        "m": "Mina'an taak'in.",
+        "es": "No hay dinero."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/m_maya.html",
+        "https://topyucatan.com/notas/the-yucatan-culture/frases-basicas-en-maya-y-espanol"
+      ],
+      "evidence": "UADY diccionario, letra M: «MINA'AN: No hay, falta». Top Yucatán: «No hay dinero – Mina'an taak'in»."
+    },
+    {
+      "m": "yaan",
+      "es": "hay; existe; haber, tener",
+      "cat": "existencial",
+      "pr": "yaan",
+      "notes": "Verbo de existencia. Sirve para «hay» (yaan … ), para «estar en un lugar» y, con teen/teech…, para «tener». Su negativo es mina'an. Con juego A y verbo forma la obligación (yaan in bin, tengo que ir). En pasado: yanchaj (hubo).",
+      "variants": [
+        "yan",
+        "yàan"
+      ],
+      "ex": {
+        "m": "Tu'ux yaan jump'éel restaurant?",
+        "es": "¿Dónde hay un restaurante?"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/y_maya.html",
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html",
+        "https://parryc.com/language/yucatec-maya"
+      ],
+      "evidence": "UADY diccionario (registro del dominio sonidos): «YAAN haber, tener, existir». Yoshida: yaan es la forma del verbo 'haber o existir'; el maya no distingue haber y estar para la existencia. Junp'iit Maaya: «Tu'ux yaan junp'el restaurant?» = Where is a restaurant? Parry: «yanchaj ya'ab máak» = hubo mucha gente."
+    },
+    {
+      "m": "yaan teen",
+      "es": "tengo (lit. «hay para mí»)",
+      "cat": "existencial",
+      "pr": "yaan teen",
+      "notes": "Una manera de decir «tener»: yaan + pronombre independiente + cosa. Se niega con mina'an. También se usa yaan + posesivo (yaan in …), pero esa forma no se confirmó con un ejemplo en esta búsqueda.",
+      "variants": [
+        "yan ten"
+      ],
+      "ex": {
+        "m": "Yaan teen waaj.",
+        "es": "Tengo tortillas."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://grambank.clld.org/parameters/GB253",
+        "https://www.famsi.org/reports/96072/grammar/index.html"
+      ],
+      "evidence": "Grambank GB253, citando a Bolles y Bolles (2014): «yan ten uah» = 'I have tortillas'; el poseedor va en dativo (ten = a mí); yan 'existir' y kabet 'necesitar' expresan posesión. Normalizado a yaan teen waaj."
+    },
+    {
+      "m": "le",
+      "es": "el, la; este, ese (artículo; la frase se cierra con -a', -o' o -e')",
+      "cat": "deíctico",
+      "pr": "le",
+      "notes": "Artículo definido y demostrativo. Va antes del sustantivo y se cierra con una terminación: -a' (cerca: este), -o' (lejos o ya mencionado: ese, aquel), -e' (tema o cierre de cláusula).",
+      "variants": [],
+      "ex": {
+        "m": "le naja'",
+        "es": "esta casa"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://hpsg.uky.edu/sites/default/files/abstracts/yucatec-fragment-slides.pdf",
+        "https://www.journals.uchicago.edu/doi/10.1086/696197",
+        "https://ediss.sub.uni-hamburg.de/handle/ediss/3167",
+        "https://ela.enallt.unam.mx/index.php/ela/article/download/299/278"
+      ],
+      "evidence": "Diapositivas HPSG: le (DEF) con -o' (D2); ejemplo de frase nominal «le naja'». University of Chicago Press: «The definite article in Yucatec Maya: the case of le … o'». Espinosa Ochoa: le es el demostrativo para entidades. Briceño Chel: los determinantes de la frase nominal."
+    },
+    {
+      "m": "-a'",
+      "es": "este, esta; aquí (cerca de quien habla)",
+      "cat": "deíctico",
+      "pr": "-a-",
+      "notes": "Terminación deíctica de cercanía. Va al final de la frase que abre le: le naja' (esta casa). También en te' súutukila' (en este momento) y chéen beya' (así nomás).",
+      "variants": [],
+      "ex": {
+        "m": "le naja'",
+        "es": "esta casa"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://hpsg.uky.edu/sites/default/files/abstracts/yucatec-fragment-slides.pdf",
+        "https://resolve.cambridge.org/core/journals/journal-of-child-language/article/germination-early-development-and-creativity-in-the-acquisition-of-the-yucatec-maya-deictic-system/9A25220796689BF3363DC1C25D80ECA5"
+      ],
+      "evidence": "Diapositivas HPSG: a' para lo accesible al hablante, o' para lo no accesible; se unen al final de la cláusula. Espinosa Ochoa: formas -ela', -elo' en la adquisición."
+    },
+    {
+      "m": "-o'",
+      "es": "ese, esa, aquel; ahí (lejos o ya mencionado)",
+      "cat": "deíctico",
+      "pr": "-o-",
+      "notes": "Terminación deíctica de lejanía o de algo conocido. Con le es el artículo definido más común: le najo' (esa casa, la casa).",
+      "variants": [],
+      "ex": {
+        "m": "le najo'",
+        "es": "esa casa; la casa"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://hpsg.uky.edu/sites/default/files/abstracts/yucatec-fragment-slides.pdf",
+        "https://www.journals.uchicago.edu/doi/10.1086/696197"
+      ],
+      "evidence": "Diapositivas HPSG: o' para lo no accesible al hablante; le … -o' en «newspaper». University of Chicago Press: el artículo definido le … o'. El ejemplo le najo' se construyó con naj (casa) y el patrón le naja'."
+    },
+    {
+      "m": "-e'",
+      "es": "terminación de tema («en cuanto a…») y de cierre de cláusula",
+      "cat": "deíctico",
+      "pr": "-e-",
+      "notes": "Marca de qué se va a hablar: in k'aaba'e' (mi nombre es…), tene' (en cuanto a mí). También cierra una cláusula que empieza con le: le k'iin … -e' (el día que…).",
+      "variants": [],
+      "ex": {
+        "m": "In k'aaba'e' …",
+        "es": "Mi nombre es … / Me llamo …"
+      },
+      "conf": "media",
+      "sources": [
+        "https://hpsg.uky.edu/sites/default/files/abstracts/yucatec-fragment-slides.pdf",
+        "https://www.mayas.uady.mx/curso_maya/lec3intro.html",
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        "https://www.academia.edu/142986420/Diccionario_de_uso_del_maya_yucateco"
+      ],
+      "evidence": "Diapositivas HPSG: clíticos a', o', e', i' al final de cláusula. UADY lección 3: «Pronombres personales tópico é» (tene', teche'). INALI: «In k'aaba'e' …» = Mi nombre es. Diccionario de uso: «Le k'iin kun náakal a wóol a siie' …»."
+    },
+    {
+      "m": "waye'",
+      "es": "aquí, acá",
+      "cat": "deíctico",
+      "pr": "waye-",
+      "notes": "Adverbio de lugar cercano.",
+      "variants": [
+        "way"
+      ],
+      "ex": {
+        "m": "Máanen waye'.",
+        "es": "Pase usted (aquí)."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/w_maya.html",
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+      ],
+      "evidence": "UADY (registro del dominio sonidos): «WAYE': Acá, por aquí». INALI: «Máanen waye'» = Pase usted."
+    },
+    {
+      "m": "te' súutukila'",
+      "es": "en este momento; ahorita",
+      "cat": "tiempo",
+      "pr": "te- súutukila-",
+      "notes": "Expresión fija de tiempo; termina en -a' (cercanía: «este»).",
+      "variants": [],
+      "ex": {
+        "m": "Ma' tin meyaj te' súutukila'.",
+        "es": "No estoy trabajando en este momento."
+      },
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Yoshida, Guía gramatical: «Ma' tin meyaj te' súutukila'» = No estoy trabajando en este momento."
+    },
+    {
+      "m": "ba'ax",
+      "es": "¿qué?",
+      "cat": "pregunta",
+      "pr": "ba-ash",
+      "notes": "Va al inicio de la pregunta. ba'ax + ten = ba'axten (por qué).",
+      "variants": [],
+      "ex": {
+        "m": "Ba'ax ka wa'alik?",
+        "es": "¿Qué tal? (lit. ¿qué dices?)"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/b_maya.html",
+        "https://www.mayas.uady.mx/curso_maya/lecc01_1.html",
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+      ],
+      "evidence": "UADY diccionario: «BA'AX: ¿Qué? ¿Qué cosa?». Curso UADY lección 1: ba'ax (qué). INALI: «Ba'ax ka wa'alik»."
+    },
+    {
+      "m": "bix",
+      "es": "¿cómo?",
+      "cat": "pregunta",
+      "pr": "bish",
+      "notes": "Va al inicio de la pregunta.",
+      "variants": [],
+      "ex": {
+        "m": "Bix a k'aaba'?",
+        "es": "¿Cómo te llamas?"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html",
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf"
+      ],
+      "evidence": "Andrade: «bix, 'how'». Junp'iit Maaya: «Bix a beel?». Mérida: «Bix a k'aaba'»."
+    },
+    {
+      "m": "tu'ux",
+      "es": "¿dónde?; ¿a dónde?",
+      "cat": "pregunta",
+      "pr": "tu-ush",
+      "notes": "Va al inicio. Con yaan pregunta dónde hay algo; con bin, a dónde va alguien.",
+      "variants": [],
+      "ex": {
+        "m": "Tu'ux ka bin?",
+        "es": "¿A dónde vas?"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/curso_maya/lecc01_1.html",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html",
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf"
+      ],
+      "evidence": "Curso UADY: tu'ux (dónde). Junp'iit: «Tu'ux yaan junp'el restaurant?». Mérida: «¿A dónde vas? Tu'ux ka bin»."
+    },
+    {
+      "m": "máax",
+      "es": "¿quién?",
+      "cat": "pregunta",
+      "pr": "máash",
+      "notes": "Va al inicio. Máax a k'aaba'? es una forma cortés de preguntar el nombre.",
+      "variants": [
+        "ma'ax"
+      ],
+      "ex": {
+        "m": "Máax a k'aaba'?",
+        "es": "¿Cómo se llama usted?"
+      },
+      "conf": "media",
+      "sources": [
+        "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php",
+        "https://www.yucatanliving.com/culture/mayan-language-for-beginners-2"
+      ],
+      "evidence": "Andrade: «max, 'who'» (grafía antigua). Yucatan Living: «Ma'ax a k'aaba'?» (forma cortés). El tono alto no se confirmó en una fuente normativa (registro del dominio sonidos)."
+    },
+    {
+      "m": "ba'axten",
+      "es": "¿por qué?",
+      "cat": "pregunta",
+      "pr": "ba-ashten",
+      "notes": "Va al inicio de la pregunta.",
+      "variants": [
+        "ba'ax ten"
+      ],
+      "ex": null,
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/b_maya.html"
+      ],
+      "evidence": "UADY diccionario: «BA'AXTEN: ¿Por qué?»."
+    },
+    {
+      "m": "kux",
+      "es": "¿y …? (devuelve la pregunta o cambia de tema)",
+      "cat": "pregunta",
+      "pr": "kush",
+      "notes": "Pregunta lo mismo sobre otra persona o cosa: kux teech? (¿y tú?).",
+      "variants": [],
+      "ex": {
+        "m": "Kux teech?",
+        "es": "¿Y tú?"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S2007-736X2018000100388",
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "AnderBois (2018): kux marca que la oración es una pregunta. «Idioma Maya Yucateco»: «¿Kux tèech?». Montgomery: kux pregunta lo mismo sobre otra persona."
+    },
+    {
+      "m": "wáaj",
+      "es": "partícula de pregunta de sí o no",
+      "cat": "pregunta",
+      "pr": "wáaj",
+      "notes": "Se coloca después del verbo o de la palabra preguntada; equivale a los signos ¿? de una pregunta de sí o no.",
+      "variants": [
+        "waaj",
+        "wa"
+      ],
+      "ex": {
+        "m": "Ka t'aan wáaj ich maaya?",
+        "es": "¿Hablas maya?"
+      },
+      "conf": "media",
+      "sources": [
+        "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S2007-736X2018000100388",
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+      ],
+      "evidence": "AnderBois (2018): el clítico waaj marca preguntas de sí o no. La Lengua Maya de Yucatán: «Ka t'aan wáaj ich maaya?» = ¿Habla usted maya? Tono no confirmado en fuente normativa."
+    },
+    {
+      "m": "jayp'éel",
+      "es": "¿cuántos? (cosas)",
+      "cat": "pregunta",
+      "pr": "jayp'éel",
+      "notes": "jay- (cuánto) + clasificador: -p'éel para cosas, -túul para seres vivos (jaytúul). Forma común en materiales de enseñanza, pero en esta búsqueda no se encontró una fuente que la confirme.",
+      "variants": [
+        "jaytúul (seres vivos)"
+      ],
+      "ex": null,
+      "conf": "baja",
+      "sources": [],
+      "evidence": "Sin confirmar: no apareció en los resultados de búsqueda de este dominio."
+    },
+    {
+      "m": "ba'ax k'iin",
+      "es": "¿qué día?; ¿cuándo?",
+      "cat": "pregunta",
+      "pr": "ba-ash k'iin",
+      "notes": "Combinación de ba'ax (qué) y k'iin (día). Las dos palabras están confirmadas; su uso como «¿cuándo?» no se confirmó en esta búsqueda.",
+      "variants": [],
+      "ex": null,
+      "conf": "baja",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/b_maya.html",
+        "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+      ],
+      "evidence": "UADY: BA'AX ¿qué?; K'IIN día, sol, tiempo. No se encontró la expresión completa en una fuente."
+    },
+    {
+      "m": "bejla'e'",
+      "es": "hoy; ahora",
+      "cat": "tiempo",
+      "pr": "bejla-e-",
+      "notes": "Palabra de tiempo; suele ir al inicio o al final de la frase.",
+      "variants": [
+        "bejla'e",
+        "bejla'"
+      ],
+      "ex": null,
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/b_maya.html",
+        "https://www.granmuseodelmundomaya.com.mx/aprende/palabras-mayas",
+        "https://topyucatan.com/notas/the-yucatan-culture/frases-basicas-en-maya-y-espanol"
+      ],
+      "evidence": "UADY diccionario: «BEJLA'E': Hoy, ahora». Gran Museo del Mundo Maya: «HOY: Bejla'e». Top Yucatán: «Hoy – Bejla'e'»."
+    },
+    {
+      "m": "sáamal",
+      "es": "mañana (el día siguiente)",
+      "cat": "tiempo",
+      "pr": "sáamal",
+      "notes": "Palabra de tiempo. En el curso de la Universidad de Chicago aparece al inicio y el verbo sin k-: sáamal in bin (mañana voy).",
+      "variants": [
+        "saamal"
+      ],
+      "ex": {
+        "m": "Sáamal in bin.",
+        "es": "Mañana voy. / Mañana me voy."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/s_maya.html",
+        "https://www.granmuseodelmundomaya.com.mx/aprende/palabras-mayas",
+        {
+          "title": "Diccionario bilingüe español-maya",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://lucy.lib.uchicago.edu/?section=4&uuid=770214c7-0111-4081-a7bf-c2fa91a835ab"
+      ],
+      "evidence": "UADY: «SÁAMAL: Mañana». Gran Museo: «MAÑANA: Sáamal». Diccionario bilingüe: «SÁAMAL.- adv. de t. Mañana». Spoken Yucatec Maya: «Sáamal in bin»."
+    },
+    {
+      "m": "jo'oljeak",
+      "es": "ayer",
+      "cat": "tiempo",
+      "pr": "jo-oljeak",
+      "notes": "Palabra de tiempo para el pasado; con ella el verbo va en completivo (binen, fui).",
+      "variants": [
+        "jo'oljej",
+        "jo'oljeake'"
+      ],
+      "ex": {
+        "m": "Jo'oljej j binen.",
+        "es": "Ayer fui."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/j_maya.html",
+        {
+          "title": "Diccionario bilingüe español-maya",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://topyucatan.com/notas/the-yucatan-culture/frases-basicas-en-maya-y-espanol",
+        "https://lucy.lib.uchicago.edu/?section=4&uuid=770214c7-0111-4081-a7bf-c2fa91a835ab"
+      ],
+      "evidence": "UADY: «JO'OLJEAK: Ayer». Diccionario bilingüe: «AYER.- adv. de t. Jo'oljeak, jo'oljej, jo'oljeake'». Top Yucatán: «Ayer – Jo'oljeak». Spoken Yucatec Maya: marco «Jo'oljej j ___en» con bin/binen (traducción del ejemplo deducida)."
+    },
+    {
+      "m": "ka'abej",
+      "es": "pasado mañana",
+      "cat": "tiempo",
+      "pr": "ka-abej",
+      "notes": "Palabra de tiempo.",
+      "variants": [],
+      "ex": null,
+      "conf": "alta",
+      "sources": [
+        "https://www.granmuseodelmundomaya.com.mx/aprende/palabras-mayas"
+      ],
+      "evidence": "Gran Museo del Mundo Maya, sección Tiempos: «PASADO MAÑANA: Ka'abej». Solo una fuente (institucional)."
+    },
+    {
+      "m": "k'iin",
+      "es": "día; sol; tiempo",
+      "cat": "tiempo",
+      "pr": "k'iin",
+      "notes": "Sustantivo muy frecuente en expresiones de tiempo: bul k'iin (todos los días), uláak' k'iin (otro día).",
+      "variants": [],
+      "ex": {
+        "m": "Tak ti' uláak' k'iin.",
+        "es": "Hasta otro día."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html",
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+      ],
+      "evidence": "UADY: «K'IIN: Día, sol, tiempo, época» (registro del dominio sonidos). INALI: «Tak ti' uláak' k'iin» = adiós, hasta luego."
+    },
+    {
+      "m": "ja'ab",
+      "es": "año",
+      "cat": "tiempo",
+      "pr": "ja-ab",
+      "notes": "No confundir con ja' (agua).",
+      "variants": [],
+      "ex": null,
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/j_maya.html",
+        "https://www.granmuseodelmundomaya.com.mx/aprende/palabras-mayas"
+      ],
+      "evidence": "UADY: «JA'AB: Año». Gran Museo: «AÑO: Ja'ab»."
+    },
+    {
+      "m": "p'iis k'iin",
+      "es": "semana",
+      "cat": "tiempo",
+      "pr": "p'iis k'iin",
+      "notes": "La grafía (separada o junta) no se pudo contrastar con una segunda fuente.",
+      "variants": [],
+      "ex": null,
+      "conf": "media",
+      "sources": [
+        "https://www.granmuseodelmundomaya.com.mx/aprende/palabras-mayas"
+      ],
+      "evidence": "Gran Museo del Mundo Maya: «SEMANA: P'iis K'iin». Solo una fuente."
+    },
+    {
+      "m": "bul k'iin",
+      "es": "todos los días; diario",
+      "cat": "tiempo",
+      "pr": "bul k'iin",
+      "notes": "Acompaña al presente habitual (k-).",
+      "variants": [],
+      "ex": {
+        "m": "Kin xook bul k'iin.",
+        "es": "Leo todos los días."
+      },
+      "conf": "media",
+      "sources": [
+        "https://www.mayas.uady.mx/curso_maya/respuestas1.html"
+      ],
+      "evidence": "UADY, clave de la lección 1: «Presente habitual: kin xòok bul k'ìin». El significado «todos los días» se deduce del contexto del ejercicio."
+    },
+    {
+      "m": "ti'",
+      "es": "a, para, en, de (preposición general)",
+      "cat": "preposición",
+      "pr": "ti-",
+      "notes": "Preposición de uso amplio: tak ti' uláak' k'iin (hasta otro día), tin wa'alaj ti' (le dije).",
+      "variants": [],
+      "ex": {
+        "m": "Tak ti' uláak' k'iin.",
+        "es": "Hasta otro día."
+      },
+      "conf": "media",
+      "sources": [
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        "https://lucy.lib.uchicago.edu/?uuid=a71f2951-2927-41d3-b642-0f1c8889e75c&section=5"
+      ],
+      "evidence": "INALI: «Tak ti' uláak' k'iin». Spoken Yucatec Maya: «Tin wa'alaj ti' …». El significado general se deduce de los ejemplos."
+    },
+    {
+      "m": "ich",
+      "es": "en; dentro de",
+      "cat": "preposición",
+      "pr": "ich",
+      "notes": "Se usa para lenguas: ich maaya (en maya).",
+      "variants": [],
+      "ex": {
+        "m": "Ka t'aan wáaj ich maaya?",
+        "es": "¿Hablas maya? (lit. ¿hablas en maya?)"
+      },
+      "conf": "media",
+      "sources": [
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas",
+        "https://www.omniglot.com/language/phrases/yucatec-maya.php"
+      ],
+      "evidence": "La Lengua Maya de Yucatán: «Ka t'aan wáaj ich maaya?». Omniglot: «Bix u yaálal ich maaya…». Significado deducido de los ejemplos."
+    },
+    {
+      "m": "yéetel",
+      "es": "y; con",
+      "cat": "preposición",
+      "pr": "yéetel",
+      "notes": "Une dos sustantivos (y) o un verbo con un sustantivo (con).",
+      "variants": [],
+      "ex": {
+        "m": "a taata yéetel a na'",
+        "es": "tu papá y tu mamá"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/curso_maya/lec10.html",
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Curso UADY lección 10: yéetel se traduce como «y» cuando une dos sustantivos y puede significar «con» cuando une un verbo con un sustantivo (registro del dominio sonidos). «Idioma Maya Yucateco»: «a tàatah yéetel a na'»."
+    },
+    {
+      "m": "utia'al",
+      "es": "para (propósito)",
+      "cat": "preposición",
+      "pr": "utia-al",
+      "notes": "Introduce el propósito: utia'al in … (para que yo …).",
+      "variants": [],
+      "ex": {
+        "m": "utia'al in muxej",
+        "es": "para molerla"
+      },
+      "conf": "media",
+      "sources": [
+        "https://www.academia.edu/142986420/Diccionario_de_uso_del_maya_yucateco"
+      ],
+      "evidence": "Diccionario de uso: «Bin in ka'aj in man junp'iis ta'ab utia'al in muxej» = Voy a comprar una carga de sal para moler."
+    },
+    {
+      "m": "tak",
+      "es": "hasta",
+      "cat": "preposición",
+      "pr": "tak",
+      "notes": "Se usa en despedidas: tak sáamal (hasta mañana).",
+      "variants": [
+        "ták"
+      ],
+      "ex": {
+        "m": "Tak sáamal.",
+        "es": "Hasta mañana."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf",
+        "https://topyucatan.com/notas/the-yucatan-culture/frases-basicas-en-maya-y-espanol",
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Mérida: «Hasta mañana Tak sáamal». Top Yucatán: «Hasta Mañana – Ták Sáamal». Montgomery: «Tak sáamal»."
+    },
+    {
+      "m": "xan",
+      "es": "también",
+      "cat": "partícula",
+      "pr": "shan",
+      "notes": "Va al final de la frase o después de la palabra que refuerza.",
+      "variants": [],
+      "ex": {
+        "m": "Leti'obe' toj yóolo'ob xan.",
+        "es": "Ellos también están bien."
+      },
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      ],
+      "evidence": "«Idioma Maya Yucateco»: «Letio'obe' tòoh yóolo'ob xan». Junp'iit: «Beyxan teen» = me too. Significado deducido de los ejemplos."
+    },
+    {
+      "m": "jach",
+      "es": "muy; de veras",
+      "cat": "partícula",
+      "pr": "jach",
+      "notes": "Va antes del adjetivo o del verbo: jach ma'alob (muy bien). Con ma': ma' jach (no mucho).",
+      "variants": [],
+      "ex": {
+        "m": "Jach ma'alob.",
+        "es": "Muy bien."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf",
+        "https://www.babbel.com/en/magazine/mayan-language"
+      ],
+      "evidence": "Mérida: «Jach ma'alob» muy bien; «Jach níib óolal» muchas gracias. Babbel: «Jach ki'imak in wóol in wilikech»."
+    },
+    {
+      "m": "chéen",
+      "es": "solo, nada más",
+      "cat": "partícula",
+      "pr": "chéen",
+      "notes": "Limita lo que sigue: chéen jump'íit (solo un poquito).",
+      "variants": [
+        "chen"
+      ],
+      "ex": {
+        "m": "Chéen jump'íit maaya kin t'aanik.",
+        "es": "Solo hablo un poquito de maya."
+      },
+      "conf": "media",
+      "sources": [
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      ],
+      "evidence": "La Lengua Maya de Yucatán: «Chéen junp'íit maaya kin t'anik» = solo hablo un poquito de maya. Junp'iit: «Chen beya'» = so so."
+    },
+    {
+      "m": "ya'ab",
+      "es": "mucho; muchos",
+      "cat": "partícula",
+      "pr": "ya-ab",
+      "notes": "Va antes del sustantivo: ya'ab máak (mucha gente).",
+      "variants": [],
+      "ex": {
+        "m": "Ma' jach ya'ab maaya kin t'aaniki'.",
+        "es": "No hablo mucho maya."
+      },
+      "conf": "media",
+      "sources": [
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas",
+        "https://parryc.com/language/yucatec-maya"
+      ],
+      "evidence": "La Lengua Maya de Yucatán: «Ma' jach ya'ab maaya kin t'aniki'» = no hablo mucho maya. Parry: «yanchaj ya'ab máak» = había mucha gente."
+    },
+    {
+      "m": "uláak'",
+      "es": "otro, otra",
+      "cat": "partícula",
+      "pr": "uláak'",
+      "notes": "Va antes del sustantivo: uláak' k'iin (otro día).",
+      "variants": [],
+      "ex": {
+        "m": "Tak ti' uláak' k'iin.",
+        "es": "Hasta otro día."
+      },
+      "conf": "media",
+      "sources": [
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+      ],
+      "evidence": "INALI: «Tak ti' uláak' k'iin» = Adiós (hasta otro día). Significado deducido del ejemplo."
+    },
+    {
+      "m": "beyxan",
+      "es": "también; igualmente",
+      "cat": "partícula",
+      "pr": "beyshan",
+      "notes": "bey (así) + xan (también). Respuesta para devolver un buen deseo o decir «yo también».",
+      "variants": [],
+      "ex": {
+        "m": "Beyxan teech.",
+        "es": "Igualmente (a ti también)."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      ],
+      "evidence": "Junp'iit Maaya (sitio de Lehmann): «Beyxan teen» = me too; «Beyxan teech»."
+    },
+    {
+      "m": "jump'éel",
+      "es": "un, una (para cosas)",
+      "cat": "partícula",
+      "pr": "jump'éel",
+      "notes": "Número uno con el clasificador -p'éel de cosas. La n de jun se escribe m ante p.",
+      "variants": [
+        "junp'éel",
+        "junp'el"
+      ],
+      "ex": {
+        "m": "Tu'ux yaan jump'éel restaurant?",
+        "es": "¿Dónde hay un restaurante?"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html",
+        "https://www.poresto.com/yucatan/2024/1/8/como-saludar-despedir-en-maya.html"
+      ],
+      "evidence": "Junp'iit: «Tu'ux yaan junp'el restaurant?». PorEsto: «Ka yanak teech jump'éel ma'alob k'iin» = que tengas un buen día."
+    },
+    {
+      "m": "juntúul",
+      "es": "un, una (para personas y animales)",
+      "cat": "partícula",
+      "pr": "juntúul",
+      "notes": "Número uno con el clasificador -túul de seres vivos.",
+      "variants": [],
+      "ex": {
+        "m": "juntúul palitsil",
+        "es": "un esclavo / un sirviente"
+      },
+      "conf": "media",
+      "sources": [
+        "https://www.academia.edu/142986420/Diccionario_de_uso_del_maya_yucateco"
+      ],
+      "evidence": "Diccionario de uso: «… juntúul palitsile' …» = un esclavo."
+    },
+    {
+      "m": "wi'ijen",
+      "es": "tengo hambre",
+      "cat": "estado",
+      "pr": "wi-ijen",
+      "notes": "wi'ij (hambriento) + -en (yo). Por el patrón del juego B: wi'ijech (tienes hambre), wi'ij (tiene hambre), wi'ijo'on, wi'ije'ex, wi'ijo'ob. Negativo: ma' wi'ijeni'. Tabla conj (yo, tú, él/ella, nosotros, ustedes, ellos) armada con el patrón del juego B.",
+      "variants": [],
+      "ex": {
+        "m": "Tene' wi'ijen, uk'ajen.",
+        "es": "Yo tengo hambre, tengo sed."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.omniglot.com/language/phrases/yucatec-maya.php",
+        "https://topyucatan.com/notas/the-yucatan-culture/frases-basicas-en-maya-y-espanol",
+        "https://site.inali.gob.mx/publicaciones/narraciones_mayas_campeche.pdf",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      ],
+      "evidence": "Omniglot: «Wi'ijen» = I am hungry. Top Yucatán: «Tengo hambre – Wi'ijen». INALI (narraciones de Campeche): «Tene' wi'ijen, uk'ajen». Junp'iit: wi'ijen 'tengo hambre'.",
+      "conj": [
+        "wi'ijen",
+        "wi'ijech",
+        "wi'ij",
+        "wi'ijo'on",
+        "wi'ije'ex",
+        "wi'ijo'ob"
+      ],
+      "conj_atestiguada": [
+        "wi'ijen"
+      ]
+    },
+    {
+      "m": "uk'ajen",
+      "es": "tengo sed",
+      "cat": "estado",
+      "pr": "uk'ajen",
+      "notes": "uk'aj (sediento) + -en. Por el patrón: uk'ajech, uk'aj, uk'ajo'on, uk'aje'ex, uk'ajo'ob. Tabla conj (yo, tú, él/ella, nosotros, ustedes, ellos) armada con el patrón del juego B.",
+      "variants": [],
+      "ex": {
+        "m": "Tene' wi'ijen, uk'ajen.",
+        "es": "Yo tengo hambre, tengo sed."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://topyucatan.com/notas/the-yucatan-culture/frases-basicas-en-maya-y-espanol",
+        "https://site.inali.gob.mx/publicaciones/narraciones_mayas_campeche.pdf",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      ],
+      "evidence": "Top Yucatán: «Tengo sed – Uk'ajen»; un diccionario da Uk'aj 'tener sed'. INALI (Campeche): «Tene' wi'ijen, uk'ajen». Junp'iit: uk'ajen 'tengo sed'.",
+      "conj": [
+        "uk'ajen",
+        "uk'ajech",
+        "uk'aj",
+        "uk'ajo'on",
+        "uk'aje'ex",
+        "uk'ajo'ob"
+      ],
+      "conj_atestiguada": [
+        "uk'ajen"
+      ]
+    },
+    {
+      "m": "k'oja'anen",
+      "es": "estoy enfermo / enferma",
+      "cat": "estado",
+      "pr": "k'oja-anen",
+      "notes": "k'oja'an (enfermo) + -en. Respuesta a Bix a wanil? (¿cómo estás de salud?). Enfermedad: k'oja'anil. Tabla conj (yo, tú, él/ella, nosotros, ustedes, ellos) armada con el patrón del juego B.",
+      "variants": [
+        "k'oha'anen"
+      ],
+      "ex": {
+        "m": "K'oja'anen.",
+        "es": "Estoy enfermo."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/e_esp.html",
+        "https://yucatan.heraldodemexico.com.mx/tendencias/2025/12/17/como-saludar-en-lengua-maya-expresiones-para-iniciar-una-conversacion-en-yucatan-3439.html",
+        "https://yucatantoday.com/en/blog/say-it-in-maya"
+      ],
+      "evidence": "UADY español-maya: «K'OJA'AN: Enfermo, falto de salud»; «ENFERMEDAD: K'oja'anil». Heraldo de México: «K'oja'anen: enfermo/enferma». Yucatán Today: a «Bix a wanil» se contesta «K'oja'anen» si estás enfermo.",
+      "conj": [
+        "k'oja'anen",
+        "k'oja'anech",
+        "k'oja'an",
+        "k'oja'ano'on",
+        "k'oja'ane'ex",
+        "k'oja'ano'ob"
+      ],
+      "conj_atestiguada": [
+        "k'oja'anen"
+      ]
+    },
+    {
+      "m": "ma'alob",
+      "es": "bien; bueno",
+      "cat": "estado",
+      "pr": "ma-alob",
+      "notes": "Adjetivo y respuesta habitual a Bix a beel? Va antes del sustantivo: ma'alob k'iin (buen día).",
+      "variants": [],
+      "ex": {
+        "m": "Ma'alob yaniken.",
+        "es": "Estoy bien."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/m_maya.html",
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas",
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf"
+      ],
+      "evidence": "UADY: «MA'ALOB: bien, bueno» (registro del dominio sonidos). La Lengua Maya de Yucatán: «Ma'alob yaniken, nib óolal» = estoy bien, gracias. Mérida: «Jach ma'alob»."
+    },
+    {
+      "m": "bin",
+      "es": "ir",
+      "cat": "verbo intransitivo",
+      "pr": "bin",
+      "notes": "Presente habitual regular (ver conj). Progresivo: táan in bin. Pasado: binen (fui); algunas fuentes escriben jbinen. Subjuntivo irregular: xi'ik (ka xi'ik teech utsil). Imperativo irregular: xeen (¡ve!). Futuro de obligación: yaan in bin (tengo que ir). Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; atestiguadas tal cual: ka bin, ku bino'ob.",
+      "variants": [],
+      "ex": {
+        "m": "Tu'ux ka bin?",
+        "es": "¿A dónde vas?"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf",
+        "https://lucy.lib.uchicago.edu/?section=4&uuid=770214c7-0111-4081-a7bf-c2fa91a835ab",
+        "https://parryc.com/language/yucatec-maya",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php",
+        "https://www.famsi.org/reports/96072/grammar/index.html"
+      ],
+      "evidence": "Mérida: «Tu'ux ka bin». Spoken Yucatec Maya: pares bin/binen en «Sáamal in bin» / «Jo'oljej j binen». Parry: j-bin-en = fui; imperativo con raíz xe (xeen). Andrade: bin es irregular. Bolles: «cu binoob» (van).",
+      "conj": [
+        "kin bin",
+        "ka bin",
+        "ku bin",
+        "k bin",
+        "ka bine'ex",
+        "ku bino'ob"
+      ],
+      "conj_atestiguada": [
+        "ka bin",
+        "ku bino'ob"
+      ]
+    },
+    {
+      "m": "taal",
+      "es": "venir",
+      "cat": "verbo intransitivo",
+      "pr": "taal",
+      "notes": "Pasado: taalen (vine), taalech (viniste), taale'ex (vinieron ustedes); Wiktionary escribe jtaalen. Imperativo irregular: ko'oten (¡ven!), ko'otene'ex (¡vengan!). Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; atestiguadas tal cual: kin taal, ka taal, ku taal.",
+      "variants": [
+        "táal"
+      ],
+      "ex": {
+        "m": "Yuum bo'otik taalech a xíimbal to'on.",
+        "es": "Gracias por venir a visitarnos."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://en.wiktionary.org/wiki/taal",
+        "https://lucy.lib.uchicago.edu/?section=4&uuid=770214c7-0111-4081-a7bf-c2fa91a835ab",
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+      ],
+      "evidence": "Wiktionary: imperfectivo kin taal, ka taal, ku taal; perfectivo jtaalen; imperativo ko'oten, ko'otene'ex. Spoken Yucatec Maya: taal/taalen; alternante ko'ot- en el imperativo. INALI: «taalech a xíimbal to'on», «taale'ex waye'».",
+      "conj": [
+        "kin taal",
+        "ka taal",
+        "ku taal",
+        "k taal",
+        "ka taale'ex",
+        "ku taalo'ob"
+      ],
+      "conj_atestiguada": [
+        "kin taal",
+        "ka taal",
+        "ku taal"
+      ]
+    },
+    {
+      "m": "janal",
+      "es": "comer (en general, sin decir qué)",
+      "cat": "verbo intransitivo",
+      "pr": "janal",
+      "notes": "Intransitivo. Pasado: janen (comí), janij (comió); Wiktionary escribe jjanen. Ya comí: ts'o'ok in janal (ts'in janal). Para comer algo concreto se usa jaantik. Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; atestiguadas tal cual: kin janal.",
+      "variants": [
+        "hanal"
+      ],
+      "ex": {
+        "m": "Ts'o'ok in janal.",
+        "es": "Ya comí."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://en.wiktionary.org/wiki/janal",
+        "https://www.mayas.uady.mx/curso_maya/lec4_9.html",
+        "https://www.mayas.uady.mx/curso_maya/lec3intro.html",
+        "https://parryc.com/language/yucatec-maya"
+      ],
+      "evidence": "Wiktionary: janal 'to eat', imperfectivo kin janal, perfectivo jjanen, jjanech, jjanij. UADY lección 4: «Kin hanal / tene' tin hanal / hanen hanech hano'on hane'ex hano'ob». UADY lección 3: «tin hanal = estoy comiendo». Parry: «Kin janal» = I eat; «Ts'in janal» = I (already) ate.",
+      "conj": [
+        "kin janal",
+        "ka janal",
+        "ku janal",
+        "k janal",
+        "ka janale'ex",
+        "ku janalo'ob"
+      ],
+      "conj_atestiguada": [
+        "kin janal"
+      ]
+    },
+    {
+      "m": "jaantik",
+      "es": "comer (algo)",
+      "cat": "verbo transitivo",
+      "pr": "jaantik",
+      "notes": "Transitivo, con -ik en presente. Progresivo: tin jaantik (lo estoy comiendo). Futuro: bíin in jaantej (me lo he de comer). Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; el curso de la UADY da las seis personas del progresivo (tin, ta, tu, t, ta…-e'ex, tu…-o'ob jaantik).",
+      "variants": [
+        "hantik",
+        "jaant"
+      ],
+      "ex": {
+        "m": "Tin jaantik.",
+        "es": "Me lo estoy comiendo."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/curso_maya/lec4_1.html",
+        "https://www.mayas.uady.mx/curso_maya/lec4_9.html"
+      ],
+      "evidence": "UADY lección 4-I: presente actual de verbos transitivos «tin hantik, ta hantik, tu hantik, t hantik, ta hantike'ex, tu hantiko'ob»; futuro «bíin in hàanteh» (grafía antigua, normalizada).",
+      "conj": [
+        "kin jaantik",
+        "ka jaantik",
+        "ku jaantik",
+        "k jaantik",
+        "ka jaantike'ex",
+        "ku jaantiko'ob"
+      ],
+      "conj_atestiguada": []
+    },
+    {
+      "m": "uk'ul",
+      "es": "beber, tomar; desayunar",
+      "cat": "verbo intransitivo",
+      "pr": "uk'ul",
+      "notes": "Intransitivo que empieza con vocal: lleva w/y después del juego A (kin wuk'ul, ku yuk'ul). La conjugación sigue la regla general y no se vio escrita completa en una fuente. Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; ninguna forma se vio escrita tal cual.",
+      "variants": [],
+      "ex": null,
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://www.mayas.uady.mx/diccionario/u_maya.html",
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "INEA: «Uk'ul · desayuno / beber». UADY: «UK': … beber» (registro del dominio sonidos). Montgomery: regla de w/y ante vocal.",
+      "conj": [
+        "kin wuk'ul",
+        "ka wuk'ul",
+        "ku yuk'ul",
+        "k uk'ul",
+        "ka wuk'ule'ex",
+        "ku yuk'ulo'ob"
+      ],
+      "conj_atestiguada": []
+    },
+    {
+      "m": "wenel",
+      "es": "dormir",
+      "cat": "verbo intransitivo",
+      "pr": "wenel",
+      "notes": "Progresivo: táan u wenel (está durmiendo), contraído tun wenel. El pasado no se confirmó en esta búsqueda. Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; ninguna forma se vio escrita tal cual.",
+      "variants": [],
+      "ex": {
+        "m": "Juan táan u wenel.",
+        "es": "Juan está durmiendo."
+      },
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://langsci-press.org/catalog/view/152/1016/886-1"
+      ],
+      "evidence": "Montgomery: «wenel … sleep; dormir» y «Juan tun wenel = John is sleeping» (tun = táan u). Lehmann: wen-el 'sueño', u wenel 'su sueño'. Un sitio que cita el diccionario de la UADY da «WENEL: Dormir; descuidarse».",
+      "conj": [
+        "kin wenel",
+        "ka wenel",
+        "ku wenel",
+        "k wenel",
+        "ka wenele'ex",
+        "ku wenelo'ob"
+      ],
+      "conj_atestiguada": []
+    },
+    {
+      "m": "meyaj",
+      "es": "trabajar",
+      "cat": "verbo intransitivo",
+      "pr": "meyaj",
+      "notes": "Pasado: meyajnajen (trabajé). Subjuntivo: ka meyajnaken. Negativo actual: ma' tin meyaj. Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; atestiguadas tal cual: kin meyaj.",
+      "variants": [
+        "meyah"
+      ],
+      "ex": {
+        "m": "Ma' tin meyaj te' súutukila'.",
+        "es": "No estoy trabajando en este momento."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://en.wiktionary.org/wiki/meyaj",
+        "https://www.mayas.uady.mx/curso_maya/lec3intro.html",
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Wiktionary: meyaj 'to work'; kin meyaj; meyajnajen; ka meyajnaken. UADY lección 3: conjugar meyah en presente actual y habitual. Yoshida: «Ma' tin meyaj te' súutukila'».",
+      "conj": [
+        "kin meyaj",
+        "ka meyaj",
+        "ku meyaj",
+        "k meyaj",
+        "ka meyaje'ex",
+        "ku meyajo'ob"
+      ],
+      "conj_atestiguada": [
+        "kin meyaj"
+      ]
+    },
+    {
+      "m": "xíimbal",
+      "es": "caminar; pasear; visitar",
+      "cat": "verbo intransitivo",
+      "pr": "shíimbal",
+      "notes": "a xíimbal + to'on = visitarnos (lit. pasearte con nosotros). También es sustantivo: paseo, visita. Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; ninguna forma se vio escrita tal cual.",
+      "variants": [
+        "ximbal"
+      ],
+      "ex": {
+        "m": "Ka suunakech a xíimbal to'on.",
+        "es": "Vuelve a visitarnos."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        "https://www.famsi.org/reports/96072/grammar/section12.htm"
+      ],
+      "evidence": "INALI: «Yuum bo'otik taalech a xíimbal to'on» = gracias por su visita; «Ka suunakech a xíimbal to'on» = vuelva pronto. Bolles: «ximbal (to walk) / ximbal (walk)», verbo intransitivo que también es sustantivo.",
+      "conj": [
+        "kin xíimbal",
+        "ka xíimbal",
+        "ku xíimbal",
+        "k xíimbal",
+        "ka xíimbale'ex",
+        "ku xíimbalo'ob"
+      ],
+      "conj_atestiguada": []
+    },
+    {
+      "m": "tsikbal",
+      "es": "platicar, conversar; plática",
+      "cat": "verbo intransitivo",
+      "pr": "tsikbal",
+      "notes": "También es sustantivo (conversación). Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; ninguna forma se vio escrita tal cual.",
+      "variants": [],
+      "ex": null,
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/ts_maya.html"
+      ],
+      "evidence": "UADY: «TSIKBAL: Conversación, plática; conversar, charlar, platicar» (registro del dominio sonidos).",
+      "conj": [
+        "kin tsikbal",
+        "ka tsikbal",
+        "ku tsikbal",
+        "k tsikbal",
+        "ka tsikbale'ex",
+        "ku tsikbalo'ob"
+      ],
+      "conj_atestiguada": []
+    },
+    {
+      "m": "t'aan",
+      "es": "hablar; palabra, lengua",
+      "cat": "verbo intransitivo",
+      "pr": "t'aan",
+      "notes": "Intransitivo: kin t'aan (hablo). Con objeto (una lengua) se usa t'aanik: maaya kin t'aanik. No confundir con táan (progresivo). Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; atestiguadas tal cual: ka t'aan.",
+      "variants": [],
+      "ex": {
+        "m": "Chéen jump'íit maaya kin t'aanik.",
+        "es": "Solo hablo un poquito de maya."
+      },
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+      ],
+      "evidence": "INEA: «T'aan · hablar, llamar». La Lengua Maya de Yucatán: «Ka t'aan wáaj ich maaya?»; «Chéen junp'íit maaya kin t'anik».",
+      "conj": [
+        "kin t'aan",
+        "ka t'aan",
+        "ku t'aan",
+        "k t'aan",
+        "ka t'aane'ex",
+        "ku t'aano'ob"
+      ],
+      "conj_atestiguada": [
+        "ka t'aan"
+      ]
+    },
+    {
+      "m": "ts'íib",
+      "es": "escribir; escritura",
+      "cat": "verbo intransitivo",
+      "pr": "ts'iib",
+      "notes": "Intransitivo y sustantivo. La conjugación sigue la regla general. Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; ninguna forma se vio escrita tal cual.",
+      "variants": [],
+      "ex": null,
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/ts_glotal_maya.html",
+        "https://site.inali.gob.mx/pdf/norma_maya.pdf"
+      ],
+      "evidence": "UADY: «TS'ÍIB: Escritura; escribir, redactar» (registro del dominio sonidos).",
+      "conj": [
+        "kin ts'íib",
+        "ka ts'íib",
+        "ku ts'íib",
+        "k ts'íib",
+        "ka ts'íibe'ex",
+        "ku ts'íibo'ob"
+      ],
+      "conj_atestiguada": []
+    },
+    {
+      "m": "xook",
+      "es": "leer; estudiar",
+      "cat": "verbo intransitivo",
+      "pr": "shook",
+      "notes": "Intransitivo. Pasado: xooknajen (leí, estudié). Para leer algo concreto: xokik (kin xokik, lo leo; tin xokaj, lo leí). Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; atestiguadas tal cual: kin xook.",
+      "variants": [
+        "xòok"
+      ],
+      "ex": {
+        "m": "Kin xook bul k'iin.",
+        "es": "Leo todos los días."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://en.wiktionary.org/wiki/xook",
+        "https://en.wiktionary.org/wiki/xok",
+        "https://www.mayas.uady.mx/curso_maya/respuestas1.html"
+      ],
+      "evidence": "Wiktionary: xook intransitivo 'to read'; kin xook; xooknajen. Wiktionary (xok, cita a Yoshida 2009): kin xokik, tin xokaj. UADY: «Xòok (leer) … kin xòok bul k'ìin».",
+      "conj": [
+        "kin xook",
+        "ka xook",
+        "ku xook",
+        "k xook",
+        "ka xooke'ex",
+        "ku xooko'ob"
+      ],
+      "conj_atestiguada": [
+        "kin xook"
+      ]
+    },
+    {
+      "m": "k'aay",
+      "es": "cantar; canto",
+      "cat": "verbo intransitivo",
+      "pr": "k'aay",
+      "notes": "Pasado: k'aaynajen (canté). Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; atestiguadas tal cual: kin k'aay.",
+      "variants": [],
+      "ex": null,
+      "conf": "alta",
+      "sources": [
+        "https://wiki.neonvagabond.xyz/content/wiktionary_en_all_nopic_2024-05/A/k'aay",
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Wiktionary: k'aay; kin k'aay; k'aaynajen. Aprendiendo Maya: «k'aay cantar» (registro del dominio sonidos).",
+      "conj": [
+        "kin k'aay",
+        "ka k'aay",
+        "ku k'aay",
+        "k k'aay",
+        "ka k'aaye'ex",
+        "ku k'aayo'ob"
+      ],
+      "conj_atestiguada": [
+        "kin k'aay"
+      ]
+    },
+    {
+      "m": "ok'ol",
+      "es": "llorar",
+      "cat": "verbo intransitivo",
+      "pr": "ok'ol",
+      "notes": "Empieza con vocal: kin wok'ol, ku yok'ol. Pasado: ok'olnajen. Subjuntivo: ka ok'olnaken. Imperativo: ok'olnen. Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; atestiguadas tal cual: kin wok'ol.",
+      "variants": [],
+      "ex": null,
+      "conf": "alta",
+      "sources": [
+        "https://en.wiktionary.org/wiki/ok%CA%BCol"
+      ],
+      "evidence": "Wiktionary (cita a Gómez Navarrete 2009, p. 158): imperfectivo kin wok'ol; perfectivo ok'olnajen; subjuntivo ka ok'olnaken; imperativo ok'olnen.",
+      "conj": [
+        "kin wok'ol",
+        "ka wok'ol",
+        "ku yok'ol",
+        "k ok'ol",
+        "ka wok'ole'ex",
+        "ku yok'olo'ob"
+      ],
+      "conj_atestiguada": [
+        "kin wok'ol"
+      ]
+    },
+    {
+      "m": "kutal",
+      "es": "sentarse",
+      "cat": "verbo intransitivo",
+      "pr": "kutal",
+      "notes": "Pasado: kulajen (me senté), kulajij (se sentó). Subjuntivo: ka kulaken. Imperativo: kulen (¡siéntate!). Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; atestiguadas tal cual: kin kutal, ka kutal, ku kutal.",
+      "variants": [
+        "kultal"
+      ],
+      "ex": {
+        "m": "Kulen.",
+        "es": "Siéntate."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://wiki.neonvagabond.xyz/content/wiktionary_en_all_nopic_2024-05/A/kutal",
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Wiktionary (cita a Gómez Navarrete 2009, p. 142): kin kutal, ka kutal, ku kutal; kulajen, kulajech, kulajij; ka kulaken; imperativo kulen. Aprendiendo Maya: «kultal sentarse» (variante).",
+      "conj": [
+        "kin kutal",
+        "ka kutal",
+        "ku kutal",
+        "k kutal",
+        "ka kutale'ex",
+        "ku kutalo'ob"
+      ],
+      "conj_atestiguada": [
+        "kin kutal",
+        "ka kutal",
+        "ku kutal"
+      ]
+    },
+    {
+      "m": "k'uchul",
+      "es": "llegar",
+      "cat": "verbo intransitivo",
+      "pr": "k'uchul",
+      "notes": "Pasado: k'uchen (llegué). Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; ninguna forma se vio escrita tal cual.",
+      "variants": [],
+      "ex": null,
+      "conf": "media",
+      "sources": [
+        "https://lucy.lib.uchicago.edu/?section=4&uuid=770214c7-0111-4081-a7bf-c2fa91a835ab"
+      ],
+      "evidence": "Spoken Yucatec Maya: par k'uchul / k'uchen entre los verbos intransitivos; la glosa «llegar» viene del resumen de búsqueda, no de una definición leída.",
+      "conj": [
+        "kin k'uchul",
+        "ka k'uchul",
+        "ku k'uchul",
+        "k k'uchul",
+        "ka k'uchule'ex",
+        "ku k'uchulo'ob"
+      ],
+      "conj_atestiguada": []
+    },
+    {
+      "m": "lúubul",
+      "es": "caer",
+      "cat": "verbo intransitivo",
+      "pr": "lúubul",
+      "notes": "Intransitivo de proceso. La conjugación sigue la regla general. Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; ninguna forma se vio escrita tal cual.",
+      "variants": [],
+      "ex": null,
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "INEA: «Lúubul · caer» como ejemplo de úu.",
+      "conj": [
+        "kin lúubul",
+        "ka lúubul",
+        "ku lúubul",
+        "k lúubul",
+        "ka lúubule'ex",
+        "ku lúubulo'ob"
+      ],
+      "conj_atestiguada": []
+    },
+    {
+      "m": "míis",
+      "es": "barrer; escoba",
+      "cat": "verbo intransitivo",
+      "pr": "míis",
+      "notes": "Con tono alto; miis (tono bajo) es gato. Progresivo contraído: tin míis (estoy barriendo). Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; atestiguadas tal cual: kin míis.",
+      "variants": [],
+      "ex": {
+        "m": "Tin míis.",
+        "es": "Estoy barriendo."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/curso_maya/lec3intro.html",
+        "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0185-25742013000100006",
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "UADY lección 3: «tin míis = estoy barriendo»; contraste kin míis / tin míis. Sobrino (2013): míis 'broom; to sweep' frente a miis 'cat'. INEA: «Míis · escoba».",
+      "conj": [
+        "kin míis",
+        "ka míis",
+        "ku míis",
+        "k míis",
+        "ka míise'ex",
+        "ku míiso'ob"
+      ],
+      "conj_atestiguada": [
+        "kin míis"
+      ]
+    },
+    {
+      "m": "p'o'",
+      "es": "lavar",
+      "cat": "verbo intransitivo",
+      "pr": "p'o-",
+      "notes": "Progresivo contraído: tin p'o' (estoy lavando).",
+      "variants": [],
+      "ex": {
+        "m": "Tin p'o'.",
+        "es": "Estoy lavando."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/curso_maya/lec3intro.html"
+      ],
+      "evidence": "UADY lección 3: «tin p'o', tin míis, tin hanal = estoy lavando, estoy barriendo, estoy comiendo». No se da tabla de plurales: la escritura de p'o' + -e'ex / -o'ob no se pudo confirmar."
+    },
+    {
+      "m": "máan",
+      "es": "pasar",
+      "cat": "verbo intransitivo",
+      "pr": "máan",
+      "notes": "Imperativo: máanen (pase usted). También en pa'atik in jáan máan (con permiso, lit. déjame pasar rápido). Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; ninguna forma se vio escrita tal cual.",
+      "variants": [],
+      "ex": {
+        "m": "Máanen waye'.",
+        "es": "Pase usted."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      ],
+      "evidence": "INALI: «Máanen waye'» = Pase usted; «Pa'atik in jáan máan» = con permiso. Andrade: el tema man 'pass' se conjuga regularmente salvo en ciertas formas.",
+      "conj": [
+        "kin máan",
+        "ka máan",
+        "ku máan",
+        "k máan",
+        "ka máane'ex",
+        "ku máano'ob"
+      ],
+      "conj_atestiguada": []
+    },
+    {
+      "m": "kanik",
+      "es": "aprender (algo)",
+      "cat": "verbo transitivo",
+      "pr": "kanik",
+      "notes": "Transitivo: kin kanik (lo aprendo), táan in kanik (lo estoy aprendiendo). Con ko'ox: ko'ox kanik (vamos a aprender). Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; ninguna forma se vio escrita tal cual.",
+      "variants": [
+        "kan"
+      ],
+      "ex": {
+        "m": "Táan in kanik maaya.",
+        "es": "Estoy aprendiendo maya."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://epinvestiga.com/dominical/la-lengua-que-perdimos/",
+        "https://yucatan.heraldodemexico.com.mx/tendencias/2025/8/27/koox-kanik-maaya-taan-asi-seran-los-cursos-para-preservar-la-lengua-maya-en-yucatan-1949.html",
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Epinvestiga: «Táan in kanik maaya». Heraldo de México: programa «Ko'ox kanik maaya t'aan». Yoshida usa el verbo kan- (tu kanaj) en sus ejemplos de juegos A y B.",
+      "conj": [
+        "kin kanik",
+        "ka kanik",
+        "ku kanik",
+        "k kanik",
+        "ka kanike'ex",
+        "ku kaniko'ob"
+      ],
+      "conj_atestiguada": []
+    },
+    {
+      "m": "a'alik",
+      "es": "decir (algo)",
+      "cat": "verbo transitivo",
+      "pr": "a-alik",
+      "notes": "Empieza con vocal: kin wa'alik, ka wa'alik, ku ya'alik. Pasado: tin wa'alaj (lo dije). Pasiva en Bix u ya'alal …? (¿cómo se dice …?). Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; atestiguadas tal cual: ka wa'alik.",
+      "variants": [
+        "a'al"
+      ],
+      "ex": {
+        "m": "Ba'ax ka wa'alik?",
+        "es": "¿Qué tal? (lit. ¿qué dices?)"
+      },
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        "https://lucy.lib.uchicago.edu/?uuid=a71f2951-2927-41d3-b642-0f1c8889e75c&section=5"
+      ],
+      "evidence": "INEA: «A'al · decir». INALI: «Ba'ax ka wa'alik». Spoken Yucatec Maya, lección 13: «Tin wa'alaj ti' …».",
+      "conj": [
+        "kin wa'alik",
+        "ka wa'alik",
+        "ku ya'alik",
+        "k a'alik",
+        "ka wa'alike'ex",
+        "ku ya'aliko'ob"
+      ],
+      "conj_atestiguada": [
+        "ka wa'alik"
+      ]
+    },
+    {
+      "m": "ilik",
+      "es": "ver (algo, a alguien)",
+      "cat": "verbo transitivo",
+      "pr": "ilik",
+      "notes": "Empieza con vocal: kin wilik, ku yilik. Con objeto: in wilikech (verte). Subjuntivo: in wilej (verlo). Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; ninguna forma se vio escrita tal cual.",
+      "variants": [
+        "il"
+      ],
+      "ex": {
+        "m": "Jach ki'imak in wóol in wilikech.",
+        "es": "Me da mucho gusto verte."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.babbel.com/en/magazine/mayan-language",
+        "https://www.poresto.com/yucatan/2024/1/8/como-saludar-despedir-en-maya.html",
+        "https://lucy.lib.uchicago.edu/?uuid=a71f2951-2927-41d3-b642-0f1c8889e75c&section=5"
+      ],
+      "evidence": "Babbel y PorEsto: «Jach ki'imak in wóol in wilikech». Spoken Yucatec Maya, lección 13: «… sáamal in bin in wilej».",
+      "conj": [
+        "kin wilik",
+        "ka wilik",
+        "ku yilik",
+        "k ilik",
+        "ka wilike'ex",
+        "ku yiliko'ob"
+      ],
+      "conj_atestiguada": []
+    },
+    {
+      "m": "na'atik",
+      "es": "entender (algo)",
+      "cat": "verbo transitivo",
+      "pr": "na-atik",
+      "notes": "kin na'atik (entiendo), ma' tin na'atik (no entiendo; la forma negativa usa tin, no kin). Pasado: tin na'ataj (lo entendí; Lehmann escribe tin na'tah). Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; atestiguadas tal cual: kin na'atik.",
+      "variants": [
+        "na'at"
+      ],
+      "ex": {
+        "m": "Ma' tin na'atik.",
+        "es": "No entiendo."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas",
+        "https://www.mayas.uady.mx/diccionario/c_esp.html",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/gramatica/onomas/negacion.html",
+        "https://www.omniglot.com/language/phrases/yucatec-maya.php"
+      ],
+      "evidence": "La Lengua Maya de Yucatán: «Kin na'atik» comprendo. UADY: «COMPRENDER v: Na'at». Lehmann: «tin na'tah lo entendí». Omniglot: «Má tin naátik» = I don't understand.",
+      "conj": [
+        "kin na'atik",
+        "ka na'atik",
+        "ku na'atik",
+        "k na'atik",
+        "ka na'atike'ex",
+        "ku na'atiko'ob"
+      ],
+      "conj_atestiguada": [
+        "kin na'atik"
+      ]
+    },
+    {
+      "m": "in woojel",
+      "es": "sé (verbo saber: ojel)",
+      "cat": "verbo transitivo",
+      "pr": "in woojel",
+      "notes": "Verbo sin k- en presente: in woojel (sé), a woojel (sabes), u yoojel (sabe). Negativo: ma' in woojeli' (no sé). Algunas fuentes escriben in wojel; Yoshida cita el verbo como ojel. Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; atestiguadas tal cual: in woojel.",
+      "variants": [
+        "in wojel",
+        "ojel"
+      ],
+      "ex": {
+        "m": "Ma' in woojeli'.",
+        "es": "No (lo) sé."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.omniglot.com/language/phrases/yucatec-maya.php",
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas",
+        "https://www.vocabulario.com.mx/blog/diccionario-maya-espanol-verbo-saber/",
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      ],
+      "evidence": "Omniglot: «Má in woojel» = I don't know. La Lengua Maya de Yucatán: «Ma' in woojel …». Vocabulario.com.mx: «In wojel» sé, «A wojel» sabes, «U yojel» sabe, «Ma' in wojeli'» no sé. Yoshida: ojel 'saber' no toma k en el presente habitual. Junp'iit: «Ma' in jach ojeli'» = I don't really know.",
+      "conj": [
+        "in woojel",
+        "a woojel",
+        "u yoojel",
+        "k oojel",
+        "a woojele'ex",
+        "u yoojelo'ob"
+      ],
+      "conj_atestiguada": [
+        "in woojel"
+      ]
+    },
+    {
+      "m": "k'ajóol",
+      "es": "conocer (a alguien, algo)",
+      "cat": "verbo transitivo",
+      "pr": "k'ajóol",
+      "notes": "Como ojel, no lleva k- en el presente: in k'ajóol (conozco). La forma -tik aparece en jach ki'imak in wóol in k'ajóoltikech (mucho gusto en conocerte). Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; ninguna forma se vio escrita tal cual.",
+      "variants": [
+        "k'aj óol",
+        "k'ajóoltik"
+      ],
+      "ex": {
+        "m": "Jach ki'imak in wóol in k'ajóoltikech.",
+        "es": "Mucho gusto en conocerte."
+      },
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.mayas.uady.mx/diccionario/c_esp.html",
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+      ],
+      "evidence": "Yoshida: verbos que no toman k en el presente habitual, como k'ajóol 'conocer' y ojel 'saber'. UADY: «CONOCER k'aj óol, ojéelt». La Lengua Maya de Yucatán: «Jach ki'imak in wóol in k'ajóoltikech». La tabla de personas es deducida.",
+      "conj": [
+        "in k'ajóol",
+        "a k'ajóol",
+        "u k'ajóol",
+        "k k'ajóol",
+        "a k'ajóole'ex",
+        "u k'ajóolo'ob"
+      ],
+      "conj_atestiguada": []
+    },
+    {
+      "m": "in k'áat",
+      "es": "quiero (verbo querer: k'áat)",
+      "cat": "verbo transitivo",
+      "pr": "in k'áat",
+      "notes": "Se usa sin k-: in k'áat (quiero), a k'áat (quieres), u k'áat (quiere); seguido de otro verbo con juego A: u k'áat u beet (quiere hacer). Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; ninguna forma se vio escrita tal cual.",
+      "variants": [
+        "k'áat"
+      ],
+      "ex": {
+        "m": "bíin u k'áat u beet",
+        "es": "lo que quiera hacer"
+      },
+      "conf": "media",
+      "sources": [
+        "https://www.academia.edu/142986420/Diccionario_de_uso_del_maya_yucateco"
+      ],
+      "evidence": "Diccionario de uso: «Je'el ba'alak bíin u k'áat u beet juntúul palitsile' …» = Lo que un esclavo quiera hacer … La conjugación sin k- no se vio descrita explícitamente.",
+      "conj": [
+        "in k'áat",
+        "a k'áat",
+        "u k'áat",
+        "k k'áat",
+        "a k'áate'ex",
+        "u k'áato'ob"
+      ],
+      "conj_atestiguada": []
+    },
+    {
+      "m": "beetik",
+      "es": "hacer (algo)",
+      "cat": "verbo transitivo",
+      "pr": "beetik",
+      "notes": "Transitivo: kin beetik (lo hago). Raíz beet. Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; ninguna forma se vio escrita tal cual.",
+      "variants": [
+        "beet"
+      ],
+      "ex": {
+        "m": "u k'áat u beet",
+        "es": "quiere hacer"
+      },
+      "conf": "media",
+      "sources": [
+        "https://www.academia.edu/142986420/Diccionario_de_uso_del_maya_yucateco"
+      ],
+      "evidence": "Diccionario de uso: «… bíin u k'áat u beet …» (quiera hacer). La forma kin beetik sigue la regla de los transitivos; no se vio escrita.",
+      "conj": [
+        "kin beetik",
+        "ka beetik",
+        "ku beetik",
+        "k beetik",
+        "ka beetike'ex",
+        "ku beetiko'ob"
+      ],
+      "conj_atestiguada": []
+    },
+    {
+      "m": "manik",
+      "es": "comprar (algo)",
+      "cat": "verbo transitivo",
+      "pr": "manik",
+      "notes": "Transitivo: kin manik (lo compro). En «Bin in ka'aj in man …» = voy a comprar. Aprendiendo Maya escribe maan. Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; ninguna forma se vio escrita tal cual.",
+      "variants": [
+        "maan",
+        "man"
+      ],
+      "ex": {
+        "m": "Bin in ka'aj in man jump'iis ta'ab.",
+        "es": "Voy a comprar una carga de sal."
+      },
+      "conf": "media",
+      "sources": [
+        "https://www.academia.edu/142986420/Diccionario_de_uso_del_maya_yucateco",
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Diccionario de uso: «Bin in ka'aj in man junp'iis ta'ab utia'al in muxej» = Voy a comprar una carga de sal para moler. Aprendiendo Maya: «maan comprar» (registro del dominio sonidos). Vocal (man / maan) sin confirmar.",
+      "conj": [
+        "kin manik",
+        "ka manik",
+        "ku manik",
+        "k manik",
+        "ka manike'ex",
+        "ku maniko'ob"
+      ],
+      "conj_atestiguada": []
+    },
+    {
+      "m": "bo'otik",
+      "es": "pagar (algo)",
+      "cat": "verbo transitivo",
+      "pr": "bo-otik",
+      "notes": "Transitivo. Base de Dios bo'otik (gracias, lit. que Dios lo pague) y Yuum bo'otik (muchas gracias). Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; ninguna forma se vio escrita tal cual.",
+      "variants": [
+        "bo'ot"
+      ],
+      "ex": {
+        "m": "Dios bo'otik.",
+        "es": "Gracias (que Dios te lo pague)."
+      },
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "Bevington, Maya for Travelers and Students (University of Texas Press)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Bevington: «dyos bo'otik 'God pays it'». INALI: «Yuum bo'otik» = muchas gracias. Montgomery: «dios bo'otik» 'God pays it'.",
+      "conj": [
+        "kin bo'otik",
+        "ka bo'otik",
+        "ku bo'otik",
+        "k bo'otik",
+        "ka bo'otike'ex",
+        "ku bo'otiko'ob"
+      ],
+      "conj_atestiguada": []
+    },
+    {
+      "m": "xokik",
+      "es": "leer (algo); contar",
+      "cat": "verbo transitivo",
+      "pr": "shokik",
+      "notes": "Forma transitiva de xook: kin xokik (lo leo), tin xokaj (lo leí). Tabla conj (presente habitual, en orden yo, tú, él/ella, nosotros, ustedes, ellos): armada con el patrón regular k- + juego A, plural con -e'ex / -o'ob; atestiguadas tal cual: kin xokik.",
+      "variants": [
+        "xok"
+      ],
+      "ex": null,
+      "conf": "alta",
+      "sources": [
+        "https://en.wiktionary.org/wiki/xok"
+      ],
+      "evidence": "Wiktionary (cita a Yoshida 2009, Diccionario de la conjugación de verbos en el maya yucateco actual): imperfectivo kin xokik; perfectivo tin xokaj.",
+      "conj": [
+        "kin xokik",
+        "ka xokik",
+        "ku xokik",
+        "k xokik",
+        "ka xokike'ex",
+        "ku xokiko'ob"
+      ],
+      "conj_atestiguada": [
+        "kin xokik"
+      ]
+    },
+    {
+      "m": "jóok'ol",
+      "es": "salir",
+      "cat": "verbo intransitivo",
+      "pr": "jóok'ol",
+      "notes": "Aparece entre los verbos intransitivos del curso de la Universidad de Chicago, pero el significado no se pudo confirmar en una fuente leída.",
+      "variants": [],
+      "ex": null,
+      "conf": "baja",
+      "sources": [
+        "https://lucy.lib.uchicago.edu/?section=4&uuid=770214c7-0111-4081-a7bf-c2fa91a835ab"
+      ],
+      "evidence": "Spoken Yucatec Maya lista jóok'ol entre los intransitivos; el resumen de búsqueda lo glosó mal («enter»). Sin confirmar."
+    }
+  ],
+  "grammar": [
+    {
+      "topic": "Pronombres independientes",
+      "explanation": "teen (yo), teech (tú o usted), leti' (él, ella), to'on (nosotros), te'ex (ustedes), leti'ob (ellos). Como el verbo ya dice quién hace la acción, estos pronombres se usan para dar énfasis, para contestar (Beyxan teen, yo también) o después de kux (Kux teech?, ¿y tú?). No hay distinción entre tú y usted. En textos antiguos verás ten, tech, tèen, tèech o letio'ob.",
+      "examples": [
+        {
+          "m": "Kux teech?",
+          "es": "¿Y tú?"
+        },
+        {
+          "m": "Beyxan teen.",
+          "es": "Yo también."
+        },
+        {
+          "m": "Leti'obe' toj yóolo'ob xan.",
+          "es": "Ellos también están bien."
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/curso_maya/lec3intro.html",
+        "https://www.famsi.org/reports/96072/grammar/section05.htm",
+        "https://en.wiktionary.org/wiki/leti%CA%BC",
+        "https://aprendiendomaya.com/escritura/pronombres-personales-maya/pronombres-personales-en-lengua-maya",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      ]
+    },
+    {
+      "topic": "Pronombres como tema: tene', teche'…",
+      "explanation": "Para poner a la persona al inicio («en cuanto a mí…») el pronombre toma -e' y se acorta: tene', teche', leti'e', to'one', te'exe', leti'obe'. Después viene la frase completa, con su propia marca de persona.",
+      "examples": [
+        {
+          "m": "Tene' tin na'atik.",
+          "es": "Yo sí entiendo."
+        },
+        {
+          "m": "Teche' táan a xook.",
+          "es": "Tú estás leyendo."
+        },
+        {
+          "m": "Tene' wi'ijen, uk'ajen.",
+          "es": "Yo tengo hambre, tengo sed."
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/curso_maya/lec3intro.html",
+        "https://www.mayas.uady.mx/curso_maya/respuestas1.html",
+        "https://site.inali.gob.mx/publicaciones/narraciones_mayas_campeche.pdf",
+        "https://naatikmexico.org/blog/yucatec-maya-phrases"
+      ]
+    },
+    {
+      "topic": "Dos juegos de marcas de persona: A y B",
+      "explanation": "El maya marca la persona con dos juegos. El juego A va ANTES de la palabra (in, a, u, k): indica al poseedor de un sustantivo y a quien hace la acción de un verbo. El juego B va DESPUÉS, como sufijo (-en, -ech, Ø, -o'on, -e'ex, -o'ob): indica al sujeto de estados y de intransitivos en pasado, y al objeto de los transitivos. Ojo: Andrade llamó «A» y «B» al revés; las fuentes modernas usan los nombres de esta lección.",
+      "examples": [
+        {
+          "m": "in k'aaba'",
+          "es": "mi nombre (juego A)"
+        },
+        {
+          "m": "wi'ijen",
+          "es": "tengo hambre (juego B)"
+        },
+        {
+          "m": "in wilikech",
+          "es": "te veo (A = yo, B = a ti)"
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.famsi.org/reports/96072/grammar/section05.htm",
+        "http://www.acsu.buffalo.edu/~jb77/Bohnemeyer_et_al_2016.pdf",
+        "https://www.christianlehmann.eu/publ/valency_in_ym.pdf",
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://langsci-press.org/catalog/view/152/1016/886-1"
+      ]
+    },
+    {
+      "topic": "Juego A: in, a, u, k (posesivos y sujeto del verbo)",
+      "explanation": "Singular: in (mi / yo), a (tu / tú), u (su / él, ella). Plural: k (nuestro / nosotros), a … -e'ex (su de ustedes / ustedes), u … -o'ob (su de ellos / ellos). Con sustantivos son posesivos: in k'aaba' (mi nombre), a beele'ex (su camino de ustedes). Con verbos indican quién hace la acción: táan in janal (estoy comiendo).",
+      "examples": [
+        {
+          "m": "Bix a k'aaba'?",
+          "es": "¿Cómo te llamas?"
+        },
+        {
+          "m": "Bix a beele'ex?",
+          "es": "¿Cómo están ustedes?"
+        },
+        {
+          "m": "Kux a taata yéetel a na', bix u beelo'ob?",
+          "es": "¿Y tu papá y tu mamá, cómo están?"
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.famsi.org/reports/96072/grammar/section05.htm",
+        "https://langsci-press.org/catalog/view/152/1016/886-1",
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf"
+      ]
+    },
+    {
+      "topic": "Juego A ante vocal: in w-, a w-, u y-",
+      "explanation": "Si la palabra empieza con vocal, se agrega una consonante de unión: in w- y a w- (in wóol, a wóol), u y- (u yóol). Con k no se agrega nada: k óol. Lo mismo pasa con los verbos: kin wilik (lo veo), ku yilik (lo ve), ka wa'alik (dices). Si otra palabra se mete en medio, la consonante desaparece: ma' in jach ojeli' (no sé bien).",
+      "examples": [
+        {
+          "m": "Toj in wóol.",
+          "es": "Estoy bien (de ánimo)."
+        },
+        {
+          "m": "Ki'imak k óol taale'ex waye'.",
+          "es": "Bienvenidos."
+        },
+        {
+          "m": "Ba'ax ka wa'alik?",
+          "es": "¿Qué tal? (lit. ¿qué dices?)"
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.researchgate.net/publication/272789937_Early_acquisition_of_the_verbal_complex_in_Yucatec_Maya",
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html",
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ]
+    },
+    {
+      "topic": "Posesión con el nombre del dueño: u + cosa + dueño",
+      "explanation": "Para «el sombrero de Pedro» se dice u p'óok Pedro: primero u (su), luego lo poseído y al final el poseedor. Literalmente: «su sombrero, Pedro».",
+      "examples": [
+        {
+          "m": "u p'óok Pedro",
+          "es": "el sombrero de Pedro"
+        },
+        {
+          "m": "u k'aaba'",
+          "es": "su nombre"
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.famsi.org/reports/96072/grammar/section05.htm",
+        "https://www.famsi.org/reports/96072/grammar/index.html"
+      ]
+    },
+    {
+      "topic": "Juego B: -en, -ech, Ø, -o'on, -e'ex, -o'ob",
+      "explanation": "Sufijos de persona: -en (yo), -ech (tú), nada (él, ella; en algunos pasados aparece -ij al final de la frase), -o'on (nosotros), -e'ex (ustedes), -o'ob (ellos). Se pegan a adjetivos, sustantivos y verbos.",
+      "examples": [
+        {
+          "m": "Wi'ijen.",
+          "es": "Tengo hambre."
+        },
+        {
+          "m": "taalech",
+          "es": "viniste"
+        },
+        {
+          "m": "Wíiniko'on.",
+          "es": "Somos hombres (personas)."
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://langsci-press.org/catalog/view/152/1016/886-1",
+        "https://www.researchgate.net/publication/272789937_Early_acquisition_of_the_verbal_complex_in_Yucatec_Maya",
+        "https://parryc.com/language/yucatec-maya",
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+      ]
+    },
+    {
+      "topic": "Estados con juego B: wi'ijen, uk'ajen, k'oja'anen",
+      "explanation": "En maya «tengo hambre» o «estoy enfermo» se dice con el adjetivo más el sufijo de persona, sin verbo «estar» ni «tener»: wi'ij-en (hambriento-yo). La tercera persona no lleva sufijo: wi'ij (tiene hambre). Se niega con ma' … -i': ma' wi'ijeni' (no tengo hambre).",
+      "examples": [
+        {
+          "m": "Tene' wi'ijen, uk'ajen.",
+          "es": "Yo tengo hambre, tengo sed."
+        },
+        {
+          "m": "K'oja'anen.",
+          "es": "Estoy enfermo."
+        },
+        {
+          "m": "Ma' wi'ijeni', ts'o'ok in janal.",
+          "es": "No tengo hambre, ya comí."
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.omniglot.com/language/phrases/yucatec-maya.php",
+        "https://topyucatan.com/notas/the-yucatan-culture/frases-basicas-en-maya-y-espanol",
+        "https://site.inali.gob.mx/publicaciones/narraciones_mayas_campeche.pdf",
+        "https://www.mayas.uady.mx/diccionario/e_esp.html",
+        "https://yucatan.heraldodemexico.com.mx/tendencias/2025/12/17/como-saludar-en-lengua-maya-expresiones-para-iniciar-una-conversacion-en-yucatan-3439.html",
+        "https://parryc.com/language/yucatec-maya",
+        "https://cuadernoslinguistica.colmex.mx/index.php/cl/article/download/73/pdf/138"
+      ]
+    },
+    {
+      "topic": "Sustantivos como predicado: «soy campesino»",
+      "explanation": "Un sustantivo también puede llevar el sufijo de persona y funcionar como «ser»: koolnáal-en (soy campesino), wíinik-o'on (somos hombres / personas). No hay verbo «ser».",
+      "examples": [
+        {
+          "m": "Koolnáalen.",
+          "es": "Soy campesino."
+        },
+        {
+          "m": "Wíiniko'on.",
+          "es": "Somos hombres (personas)."
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://hpsg.uky.edu/sites/default/files/abstracts/yucatec-fragment-slides.pdf",
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://cuadernoslinguistica.colmex.mx/index.php/cl/article/download/73/pdf/138"
+      ]
+    },
+    {
+      "topic": "¿Qué juego lleva el sujeto? (ergatividad escindida)",
+      "explanation": "El sujeto de un verbo transitivo siempre usa el juego A. El de un intransitivo cambia según el aspecto: juego A en presente, habitual y progresivo (kin bin, voy; táan in bin, estoy yendo) y juego B en pasado y subjuntivo (binen, fui; ka meyajnaken, que yo trabaje). Por eso «yo» se dice in en kin bin y -en en binen.",
+      "examples": [
+        {
+          "m": "Kin bin.",
+          "es": "Voy (habitualmente)."
+        },
+        {
+          "m": "Jo'oljej j binen.",
+          "es": "Ayer fui."
+        },
+        {
+          "m": "Ka meyajnaken.",
+          "es": "Que yo trabaje."
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.scielo.org.mx/pdf/clcm/v10/2007-736X-clcm-10-e278.pdf",
+        "https://www.christianlehmann.eu/publ/valency_in_ym.pdf",
+        {
+          "title": "A Historical Grammar of the Maya Language of Yucatan 1557–2000",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://en.wiktionary.org/wiki/meyaj",
+        "https://lucy.lib.uchicago.edu/?section=4&uuid=770214c7-0111-4081-a7bf-c2fa91a835ab"
+      ]
+    },
+    {
+      "topic": "Verbos intransitivos y transitivos",
+      "explanation": "Los intransitivos no tienen objeto (janal, comer; xook, leer) y en presente no llevan sufijo: kin janal. Los transitivos tienen objeto y en presente o progresivo llevan -ik (kin jaantik, lo como; kin xokik, lo leo); en pasado llevan -aj (tin xokaj, lo leí). Muchos verbos tienen las dos formas.",
+      "examples": [
+        {
+          "m": "Kin janal.",
+          "es": "Como."
+        },
+        {
+          "m": "Kin jaantik.",
+          "es": "Lo como."
+        },
+        {
+          "m": "Tin xokaj.",
+          "es": "Lo leí."
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://en.wiktionary.org/wiki/xook",
+        "https://en.wiktionary.org/wiki/xok",
+        "https://www.mayas.uady.mx/curso_maya/lec4_1.html",
+        "https://hpsg.uky.edu/sites/default/files/abstracts/yucatec-fragment-slides.pdf",
+        "https://parryc.com/language/yucatec-maya"
+      ]
+    },
+    {
+      "topic": "Presente habitual con k-: kin, ka, ku",
+      "explanation": "Para lo que se hace normalmente: k- + juego A + verbo. Intransitivo: kin janal, ka janal, ku janal, k janal, ka janale'ex, ku janalo'ob. Transitivo: kin jaantik, ka jaantik, ku jaantik, k jaantik, ka jaantike'ex, ku jaantiko'ob. No dice si pasa justo ahora; para eso está táan.",
+      "examples": [
+        {
+          "m": "Kin xook bul k'iin.",
+          "es": "Leo todos los días."
+        },
+        {
+          "m": "Kin na'atik.",
+          "es": "Entiendo."
+        },
+        {
+          "m": "Tu'ux ka bin?",
+          "es": "¿A dónde vas?"
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/curso_maya/lec3intro.html",
+        "https://www.mayas.uady.mx/curso_maya/respuestas1.html",
+        "https://en.wiktionary.org/wiki/taal",
+        "https://wiki.neonvagabond.xyz/content/wiktionary_en_all_nopic_2024-05/A/kutal",
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas",
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf"
+      ]
+    },
+    {
+      "topic": "Habitual de verbos que empiezan con vocal",
+      "explanation": "Con k- se aplica la regla de w/y: kin w-, ka w-, ku y-, k sin cambio. Ok'ol (llorar): kin wok'ol, ka wok'ol, ku yok'ol. Ilik (ver): kin wilik, ku yilik. A'alik (decir): ka wa'alik, ku ya'alik.",
+      "examples": [
+        {
+          "m": "Kin wok'ol.",
+          "es": "Lloro."
+        },
+        {
+          "m": "Ba'ax ka wa'alik?",
+          "es": "¿Qué dices?"
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://en.wiktionary.org/wiki/ok%CA%BCol",
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+      ]
+    },
+    {
+      "topic": "Verbos que no llevan k-: saber, conocer, querer",
+      "explanation": "Algunos verbos de estado se usan directamente con el juego A, sin k-: in woojel (sé), in k'ajóol (conozco), in k'áat (quiero). Se niegan con ma' … -i': ma' in woojeli' (no sé).",
+      "examples": [
+        {
+          "m": "Ma' in woojeli'.",
+          "es": "No (lo) sé."
+        },
+        {
+          "m": "In woojel.",
+          "es": "Lo sé."
+        }
+      ],
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.vocabulario.com.mx/blog/diccionario-maya-espanol-verbo-saber/",
+        "https://www.omniglot.com/language/phrases/yucatec-maya.php",
+        "https://www.academia.edu/142986420/Diccionario_de_uso_del_maya_yucateco"
+      ]
+    },
+    {
+      "topic": "Progresivo con táan: «estoy …-ando»",
+      "explanation": "táan + juego A + verbo en forma de presente, para lo que está pasando ahora: táan in janal (estoy comiendo), táan u janal (está comiendo). Las contracciones son muy comunes: tin janal (táan in), ta janal (táan a), tu janal (táan u).",
+      "examples": [
+        {
+          "m": "Táan in kanik maaya.",
+          "es": "Estoy aprendiendo maya."
+        },
+        {
+          "m": "Tin míis.",
+          "es": "Estoy barriendo."
+        },
+        {
+          "m": "Teche' táan a xook.",
+          "es": "Tú estás leyendo."
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/curso_maya/lec3intro.html",
+        "https://www.mayas.uady.mx/curso_maya/respuestas1.html",
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.christianlehmann.eu/publ/Genesis_of_auxiliaries_in_Yucatec_Maya.pdf",
+        "https://www.frontiersin.org/journals/language-sciences/articles/10.3389/flang.2023.1286520/full",
+        "https://epinvestiga.com/dominical/la-lengua-que-perdimos/"
+      ]
+    },
+    {
+      "topic": "Perfecto con ts'o'ok: «ya …»",
+      "explanation": "ts'o'ok + juego A + verbo en forma de presente indica que algo ya terminó y su resultado importa ahora: ts'o'ok in janal (ya comí). Se contrae: ts'in janal. Para «todavía no» no se usa ma' ts'o'ok.",
+      "examples": [
+        {
+          "m": "Ts'o'ok in janal.",
+          "es": "Ya comí."
+        },
+        {
+          "m": "Ma' wi'ijeni', ts'o'ok in janal.",
+          "es": "No tengo hambre, ya comí."
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.christianlehmann.eu/publ/Genesis_of_auxiliaries_in_Yucatec_Maya.pdf",
+        "https://langsci-press.org/catalog/view/152/1016/886-1",
+        "https://parryc.com/language/yucatec-maya",
+        "https://mossyrune.com/grammar/walkthrough/yucatec-maya"
+      ]
+    },
+    {
+      "topic": "Pasado de los transitivos: t- + juego A + -aj",
+      "explanation": "tin + raíz + -aj = «yo lo …-é»: tin xokaj (lo leí), tin wa'alaj (lo dije), tin na'ataj (lo entendí). Para otras personas: ta (tú), tu (él/ella), t (nosotros), ta … -e'ex, tu … -o'ob. Ojo: tin también es la contracción de táan in; la terminación -aj indica pasado.",
+      "examples": [
+        {
+          "m": "Tin wa'alaj ti' sáamal in bin in wilej.",
+          "es": "Le dije que mañana voy a ir a verlo."
+        },
+        {
+          "m": "Tin xokaj.",
+          "es": "Lo leí."
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://hpsg.uky.edu/sites/default/files/abstracts/yucatec-fragment-slides.pdf",
+        "https://en.wiktionary.org/wiki/xok",
+        "https://lucy.lib.uchicago.edu/?uuid=a71f2951-2927-41d3-b642-0f1c8889e75c&section=5",
+        "https://www.mayas.uady.mx/curso_maya/lec4_9.html",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/gramatica/onomas/negacion.html"
+      ]
+    },
+    {
+      "topic": "Pasado de los intransitivos: raíz + juego B",
+      "explanation": "Los intransitivos no usan t-: la raíz lleva directamente el juego B. Verbos simples: binen (fui), taalen (vine), k'uchen (llegué), janen (comí). En 3.ª persona, al final de la frase aparece -ij: janij (comió), kulajij (se sentó). Ojo: t- es solo de los transitivos.",
+      "examples": [
+        {
+          "m": "Jo'oljej j binen.",
+          "es": "Ayer fui."
+        },
+        {
+          "m": "Yuum bo'otik taalech a xíimbal to'on.",
+          "es": "Gracias por venir a visitarnos."
+        },
+        {
+          "m": "Ki'imak k óol taale'ex waye'.",
+          "es": "Bienvenidos (nos alegra que vinieran)."
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://lucy.lib.uchicago.edu/?section=4&uuid=770214c7-0111-4081-a7bf-c2fa91a835ab",
+        "https://en.wiktionary.org/wiki/janal",
+        "https://en.wiktionary.org/wiki/taal",
+        "https://wiki.neonvagabond.xyz/content/wiktionary_en_all_nopic_2024-05/A/kutal",
+        "https://www.mayas.uady.mx/curso_maya/lec4_9.html",
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        "https://www.researchgate.net/publication/272789937_Early_acquisition_of_the_verbal_complex_in_Yucatec_Maya"
+      ]
+    },
+    {
+      "topic": "Pasado de intransitivos de actividad: -naj + juego B",
+      "explanation": "Los verbos de actividad (trabajar, leer, cantar, llorar) agregan -naj antes del sufijo de persona: meyajnajen (trabajé), xooknajen (leí, estudié), k'aaynajen (canté), ok'olnajen (lloré). Algunos verbos de posición cambian la raíz: kutal → kulajen (me senté).",
+      "examples": [
+        {
+          "m": "meyajnajen",
+          "es": "trabajé"
+        },
+        {
+          "m": "xooknajen",
+          "es": "leí; estudié"
+        },
+        {
+          "m": "kulajen",
+          "es": "me senté"
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://en.wiktionary.org/wiki/meyaj",
+        "https://en.wiktionary.org/wiki/xook",
+        "https://wiki.neonvagabond.xyz/content/wiktionary_en_all_nopic_2024-05/A/k'aay",
+        "https://en.wiktionary.org/wiki/ok%CA%BCol",
+        "https://wiki.neonvagabond.xyz/content/wiktionary_en_all_nopic_2024-05/A/kutal",
+        "https://mossyrune.com/grammar/walkthrough/yucatec-maya"
+      ]
+    },
+    {
+      "topic": "El prefijo j- del pasado intransitivo",
+      "explanation": "Algunas fuentes escriben una j- delante del pasado intransitivo: jbinen, jtaalen, jjanen (Wiktionary, curso de Chicago, Parry). El curso de la UADY escribe hanen sin prefijo. En el habla esta j- es débil; la app puede enseñar las dos grafías como equivalentes.",
+      "examples": [
+        {
+          "m": "jtaalen / taalen",
+          "es": "vine"
+        },
+        {
+          "m": "jjanen / janen",
+          "es": "comí"
+        }
+      ],
+      "conf": "media",
+      "sources": [
+        "https://en.wiktionary.org/wiki/taal",
+        "https://en.wiktionary.org/wiki/janal",
+        "https://lucy.lib.uchicago.edu/?section=4&uuid=770214c7-0111-4081-a7bf-c2fa91a835ab",
+        "https://parryc.com/language/yucatec-maya",
+        "https://www.mayas.uady.mx/curso_maya/lec4_9.html"
+      ]
+    },
+    {
+      "topic": "Pasado inmediato con táant: «acabo de …»",
+      "explanation": "táant + juego A + verbo, para algo que acaba de ocurrir.",
+      "examples": [
+        {
+          "m": "Tene' táant in janale'.",
+          "es": "Yo acabo de comer."
+        }
+      ],
+      "conf": "media",
+      "sources": [
+        "https://www.mayas.uady.mx/curso_maya/lec7_3.html"
+      ]
+    },
+    {
+      "topic": "Futuro de predicción con bíin",
+      "explanation": "bíin + juego A + verbo en subjuntivo (en transitivos termina en -ej): bíin in jaantej (me lo he de comer). Indica algo que va a pasar sin fecha precisa, como una predicción. Hoy se usa poco en la conversación; es más común yaan u … (tiene que / va a).",
+      "examples": [
+        {
+          "m": "Bíin in jaantej.",
+          "es": "Me lo he de comer."
+        }
+      ],
+      "conf": "media",
+      "sources": [
+        "https://www.mayas.uady.mx/curso_maya/lec4_1.html",
+        "https://www.christianlehmann.eu/publ/Genesis_of_auxiliaries_in_Yucatec_Maya.pdf",
+        "https://trace.org.mx/index.php/trace/article/download/1186/1124/4114",
+        "https://benjamins.com/catalog/slcs.172.21vap",
+        "https://servicios-galileo.filos.unam.mx/uploads/temarios/20252131146100021/Maya4EliCasanova20252.pdf"
+      ]
+    },
+    {
+      "topic": "Obligación y futuro con yaan: «tengo que …»",
+      "explanation": "yaan + juego A + verbo = «tengo que …» o «he de …»: yaan in bin (tengo que ir), yaan u taal (tiene que venir). Es la forma de futuro más útil en la conversación. Otra opción para la necesidad: k'a'abéet in bin (tengo que irme).",
+      "examples": [
+        {
+          "m": "Yaan in bin.",
+          "es": "Tengo que ir."
+        },
+        {
+          "m": "K'a'abéet in bin.",
+          "es": "Tengo que irme."
+        },
+        {
+          "m": "K'a'abéet in janal.",
+          "es": "Necesito comer."
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://trace.org.mx/index.php/trace/article/download/1186/1124/4114",
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://hpsg.uky.edu/sites/default/files/abstracts/yucatec-fragment-slides.pdf",
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas",
+        "https://parryc.com/language/yucatec-maya"
+      ]
+    },
+    {
+      "topic": "ken / kun: acciones futuras en oraciones con «cuando»",
+      "explanation": "ken marca una acción futura dentro de una oración subordinada (cuando…, el día que…); con u se contrae en kun. Yoshida añade que ken también expresa obligación, consejo u orden. Es un tema avanzado: aprende primero las frases hechas.",
+      "examples": [
+        {
+          "m": "Le k'iin kun náakal a wóol a siie', yaan u yokolta'al tech.",
+          "es": "El día que te hartes de regalarlos, te los robarán."
+        }
+      ],
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.academia.edu/142986420/Diccionario_de_uso_del_maya_yucateco",
+        "https://trace.org.mx/index.php/trace/article/download/1186/1124/4114",
+        "https://servicios-galileo.filos.unam.mx/uploads/temarios/20252131146100021/Maya4EliCasanova20252.pdf"
+      ]
+    },
+    {
+      "topic": "Subjuntivo: ka + verbo en -ak + juego B (deseos)",
+      "explanation": "Para deseos y propósitos se usa ka + subjuntivo. Los intransitivos terminan en -ak + juego B: ka meyajnaken (que yo trabaje), ka suunakech (que vuelvas), ka yanak teech (que tengas). El de bin es irregular: xi'ik (que vaya). Se oye mucho en despedidas.",
+      "examples": [
+        {
+          "m": "Ka xi'ik teech jats'uts.",
+          "es": "¡Que te vaya bien!"
+        },
+        {
+          "m": "Ka suunakech a xíimbal to'on.",
+          "es": "Vuelve a visitarnos."
+        },
+        {
+          "m": "Ka yanak teech jump'éel ma'alob k'iin.",
+          "es": "Que tengas un buen día."
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        "https://en.wiktionary.org/wiki/meyaj",
+        "https://en.wiktionary.org/wiki/ok%CA%BCol",
+        "https://wiki.neonvagabond.xyz/content/wiktionary_en_all_nopic_2024-05/A/kutal",
+        "https://www.poresto.com/yucatan/2024/1/8/como-saludar-despedir-en-maya.html",
+        "https://www.christianlehmann.eu/publ/Genesis_of_auxiliaries_in_Yucatec_Maya.pdf"
+      ]
+    },
+    {
+      "topic": "Imperativo: -en",
+      "explanation": "Las órdenes de intransitivos terminan en -en (o -nen, -len según el verbo): máanen (pasa), kulen (siéntate), ok'olnen (llora). Algunos son irregulares: ko'oten (¡ven!, de taal) y xeen (¡ve!, de bin). En plural se agrega -e'ex: ko'otene'ex (¡vengan!).",
+      "examples": [
+        {
+          "m": "Máanen waye'.",
+          "es": "Pase usted."
+        },
+        {
+          "m": "Ko'oten.",
+          "es": "Ven."
+        },
+        {
+          "m": "Kulen.",
+          "es": "Siéntate."
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        "https://en.wiktionary.org/wiki/taal",
+        "https://wiki.neonvagabond.xyz/content/wiktionary_en_all_nopic_2024-05/A/kutal",
+        "https://en.wiktionary.org/wiki/ok%CA%BCol",
+        "https://servicios-galileo.filos.unam.mx/uploads/temarios/20252131146100021/Maya4EliCasanova20252.pdf",
+        "https://parryc.com/language/yucatec-maya"
+      ]
+    },
+    {
+      "topic": "Ko'ox: «vamos a …»",
+      "explanation": "Ko'ox sola es «¡vámonos!»; seguida de un verbo invita a hacer algo juntos: ko'ox kanik (vamos a aprender).",
+      "examples": [
+        {
+          "m": "Ko'ox kanik maaya t'aan.",
+          "es": "Vamos a aprender lengua maya."
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.poresto.com/campeche/2025/12/5/kox-o-koox-conoce-la-forma-correcta-en-maya-de-decir-el-nombre-del-nuevo-transporte-de-campeche.html",
+        "https://yucatan.heraldodemexico.com.mx/tendencias/2025/8/27/koox-kanik-maaya-taan-asi-seran-los-cursos-para-preservar-la-lengua-maya-en-yucatan-1949.html"
+      ]
+    },
+    {
+      "topic": "Contracciones que oirás",
+      "explanation": "En el habla rápida se juntan las partículas con el juego A: tin, ta, tu (táan in, táan a, táan u); tun wenel (táan u wenel, está durmiendo); ts'in (ts'o'ok in); kun (ken u). Al leer, vuelve a la forma completa para entenderlas.",
+      "examples": [
+        {
+          "m": "Tin janal.",
+          "es": "Estoy comiendo."
+        },
+        {
+          "m": "Ts'in janal.",
+          "es": "Ya comí."
+        },
+        {
+          "m": "Juan tun wenel.",
+          "es": "Juan está durmiendo."
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://parryc.com/language/yucatec-maya",
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.mayas.uady.mx/curso_maya/lec3intro.html"
+      ]
+    },
+    {
+      "topic": "Negación básica con ma'",
+      "explanation": "ma' va antes de lo que se niega. Con verbos en presente no se usa k-: se dice ma' tin … (de ma' táan in), que vale para «no …» en general: ma' tin na'atik (no entiendo), ma' tin meyaj (no trabajo, no estoy trabajando). Para negar una costumbre («nunca», «no se acostumbra») Yoshida da ma'atech o ma'ach.",
+      "examples": [
+        {
+          "m": "Ma' tin na'atik.",
+          "es": "No entiendo."
+        },
+        {
+          "m": "Ma' tin meyaj te' súutukila'.",
+          "es": "No estoy trabajando en este momento."
+        },
+        {
+          "m": "Tene' ma' tin bin xook.",
+          "es": "Yo no voy a la escuela."
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.academia.edu/7014710/Guia_gramatical_de_la_lengua_maya_yucateca_para_hispanohablantes_3ra_versi%C3%B3n_",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/gramatica/onomas/negacion.html",
+        "https://www.omniglot.com/language/phrases/yucatec-maya.php",
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ]
+    },
+    {
+      "topic": "La negación ma' … -i'",
+      "explanation": "Con frecuencia la negación se cierra con -i' al final de la frase: ma' in woojeli' (no sé), ma' wi'ijeni' (no tengo hambre). Según Lehmann, -i' aparece con estados y sustantivos, en pasado, perfecto y progresivo; no aparece con mina'an, ni en el habitual, ni en el subjuntivo. Si la frase ya termina en otra terminación (-a', -o', -e'), no se agrega -i'. En el noroeste de Yucatán se dice ma' tin na'atik sin -i'; en otras zonas se agrega.",
+      "examples": [
+        {
+          "m": "Ma' in woojeli'.",
+          "es": "No (lo) sé."
+        },
+        {
+          "m": "Ma' wi'ijeni'.",
+          "es": "No tengo hambre."
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.christianlehmann.eu/ling/sprachen/maya/gramatica/onomas/negacion.html",
+        "https://www.famsi.org/reports/96072/grammar/index.html",
+        "https://parryc.com/language/yucatec-maya",
+        "https://www.vocabulario.com.mx/blog/diccionario-maya-espanol-verbo-saber/"
+      ]
+    },
+    {
+      "topic": "Negar una parte de la frase",
+      "explanation": "ma' puede ir delante de una sola parte para negarla; el verbo conserva su forma con kin y la frase cierra con -i': ma' jach ya'ab maaya kin t'aaniki' (no es mucho el maya que hablo).",
+      "examples": [
+        {
+          "m": "Ma' jach ya'ab maaya kin t'aaniki'.",
+          "es": "No hablo mucho maya."
+        }
+      ],
+      "conf": "media",
+      "sources": [
+        "https://www.christianlehmann.eu/ling/sprachen/maya/gramatica/onomas/negacion.html",
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+      ]
+    },
+    {
+      "topic": "Palabras negativas con mix-",
+      "explanation": "mix (ni) forma mixba'al (nada), mixmáak (nadie) y mixtu'ux (a ningún lado). Con verbo van junto con ma'.",
+      "examples": [
+        {
+          "m": "Ma' tin bin mixtu'ux.",
+          "es": "No voy a ningún lado."
+        },
+        {
+          "m": "Chéen mixba'al.",
+          "es": "Nada, aquí nomás."
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/m_maya.html",
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Bevington, Maya for Travelers and Students (University of Texas Press)",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ]
+    },
+    {
+      "topic": "Hay / no hay: yaan y mina'an",
+      "explanation": "yaan es «hay, existe» y también «estar en un lugar»; mina'an es «no hay, falta». mina'an no lleva -i'. En pasado: yanchaj (hubo).",
+      "examples": [
+        {
+          "m": "Tu'ux yaan jump'éel restaurant?",
+          "es": "¿Dónde hay un restaurante?"
+        },
+        {
+          "m": "Mina'an taak'in.",
+          "es": "No hay dinero."
+        },
+        {
+          "m": "Yanchaj ya'ab máak.",
+          "es": "Hubo mucha gente."
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/y_maya.html",
+        "https://www.mayas.uady.mx/diccionario/m_maya.html",
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html",
+        "https://topyucatan.com/notas/the-yucatan-culture/frases-basicas-en-maya-y-espanol",
+        "https://parryc.com/language/yucatec-maya"
+      ]
+    },
+    {
+      "topic": "Cómo decir «tener»",
+      "explanation": "El maya no tiene un verbo «tener». Se dice «hay para mí»: yaan teen waaj (tengo tortillas); en negativo, mina'an. También se usa yaan + posesivo (yaan in …), pero en esta búsqueda no se encontró un ejemplo atestiguado de esa forma. No confundir con yaan in + verbo, que es «tengo que …».",
+      "examples": [
+        {
+          "m": "Yaan teen waaj.",
+          "es": "Tengo tortillas."
+        },
+        {
+          "m": "Mina'an taak'in.",
+          "es": "No hay dinero."
+        }
+      ],
+      "conf": "media",
+      "sources": [
+        "https://grambank.clld.org/parameters/GB253",
+        "https://www.famsi.org/reports/96072/grammar/index.html",
+        "https://www.mayas.uady.mx/diccionario/y_maya.html",
+        "https://topyucatan.com/notas/the-yucatan-culture/frases-basicas-en-maya-y-espanol"
+      ]
+    },
+    {
+      "topic": "Plural con -o'ob",
+      "explanation": "El plural de los sustantivos se forma con -o'ob: ch'íich'o'ob (pájaros). Es opcional: si el contexto ya indica plural (con ya'ab, con números) muchas veces no se pone: ya'ab máak (mucha gente). El mismo sufijo marca «ellos» en verbos y posesivos.",
+      "examples": [
+        {
+          "m": "ch'íich'o'ob",
+          "es": "pájaros"
+        },
+        {
+          "m": "ya'ab máak",
+          "es": "mucha gente"
+        },
+        {
+          "m": "bix u beelo'ob?",
+          "es": "¿cómo están ellos?"
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10480837/",
+        "https://parryc.com/language/yucatec-maya",
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ]
+    },
+    {
+      "topic": "El artículo le y las terminaciones -a', -o', -e'",
+      "explanation": "le va antes del sustantivo y la frase se cierra con una terminación de lugar: -a' cerca de quien habla (le naja', esta casa), -o' lejos o ya conocido (le najo', esa casa / la casa), -e' para el tema o el cierre de una cláusula. La terminación se pone al final de toda la frase, aunque haya más palabras después del sustantivo.",
+      "examples": [
+        {
+          "m": "le naja'",
+          "es": "esta casa"
+        },
+        {
+          "m": "le najo'",
+          "es": "esa casa; la casa"
+        },
+        {
+          "m": "In k'aaba'e' …",
+          "es": "Mi nombre es …"
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://hpsg.uky.edu/sites/default/files/abstracts/yucatec-fragment-slides.pdf",
+        "https://www.journals.uchicago.edu/doi/10.1086/696197",
+        "https://ediss.sub.uni-hamburg.de/handle/ediss/3167",
+        "https://resolve.cambridge.org/core/journals/journal-of-child-language/article/germination-early-development-and-creativity-in-the-acquisition-of-the-yucatec-maya-deictic-system/9A25220796689BF3363DC1C25D80ECA5",
+        "https://ela.enallt.unam.mx/index.php/ela/article/download/299/278"
+      ]
+    },
+    {
+      "topic": "Aquí y ahora: waye', te' súutukila', bejla'e'",
+      "explanation": "waye' (aquí), te' súutukila' (en este momento) y bejla'e' (hoy, ahora). Observa que terminan en -e' o -a', igual que las frases con le.",
+      "examples": [
+        {
+          "m": "Máanen waye'.",
+          "es": "Pase usted."
+        },
+        {
+          "m": "Ma' tin meyaj te' súutukila'.",
+          "es": "No estoy trabajando en este momento."
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/w_maya.html",
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.mayas.uady.mx/diccionario/b_maya.html"
+      ]
+    },
+    {
+      "topic": "Orden de las palabras",
+      "explanation": "En la oración neutra el verbo suele ir antes del sujeto: táan u janal le xiibo' (el hombre está comiendo; Parry lo cita como «táan u janal le xiib», aquí se cierra con -o' como pide el artículo le). Pero es muy común adelantar el tema con -e' (Tene' …, In k'aaba'e' …) y poner al inicio lo que se pregunta o se resalta (Tu'ux ka bin?). Cuando un objeto se adelanta para contrastarlo, el progresivo táan se cambia por k-.",
+      "examples": [
+        {
+          "m": "Táan u janal le xiibo'.",
+          "es": "El hombre está comiendo."
+        },
+        {
+          "m": "Tene' tin na'atik.",
+          "es": "Yo sí entiendo."
+        },
+        {
+          "m": "Tu'ux ka bin?",
+          "es": "¿A dónde vas?"
+        }
+      ],
+      "conf": "media",
+      "sources": [
+        "https://parryc.com/language/yucatec-maya",
+        "https://www.frontiersin.org/journals/language-sciences/articles/10.3389/flang.2023.1286520/full",
+        "https://www.mayas.uady.mx/curso_maya/lec3intro.html",
+        "https://hpsg.uky.edu/sites/default/files/abstracts/yucatec-fragment-slides.pdf"
+      ]
+    },
+    {
+      "topic": "El adjetivo va antes del sustantivo",
+      "explanation": "Como en «buen día», el adjetivo y los cuantificadores se ponen antes del sustantivo: ma'alob k'iin (buen día), chak iik (chile rojo, habanero), ya'ab máak (mucha gente), jump'éel ma'alob k'iin (un buen día).",
+      "examples": [
+        {
+          "m": "Ma'alob k'iin.",
+          "es": "Buenos días (buen día)."
+        },
+        {
+          "m": "chak iik",
+          "es": "chile habanero (lit. chile rojo)"
+        },
+        {
+          "m": "Ka yanak teech jump'éel ma'alob k'iin.",
+          "es": "Que tengas un buen día."
+        }
+      ],
+      "conf": "media",
+      "sources": [
+        "https://www.poresto.com/yucatan/2024/1/8/como-saludar-despedir-en-maya.html",
+        "https://www.mayas.uady.mx/literatura/adiv1.html",
+        "https://parryc.com/language/yucatec-maya",
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+      ]
+    },
+    {
+      "topic": "Palabras para preguntar",
+      "explanation": "Van al inicio: ba'ax (qué), bix (cómo), tu'ux (dónde, a dónde), máax (quién), ba'axten (por qué). kux pregunta «¿y …?». Después viene la frase normal: Tu'ux ka bin? (¿dónde vas?). Las preguntas de cantidad usan jay- + clasificador (jayp'éel, jaytúul), forma que no se confirmó en esta búsqueda.",
+      "examples": [
+        {
+          "m": "Ba'ax ka wa'alik?",
+          "es": "¿Qué tal? (lit. ¿qué dices?)"
+        },
+        {
+          "m": "Bix a k'aaba'?",
+          "es": "¿Cómo te llamas?"
+        },
+        {
+          "m": "Tu'ux yaan jump'éel restaurant?",
+          "es": "¿Dónde hay un restaurante?"
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/b_maya.html",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html",
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf",
+        "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S2007-736X2018000100388"
+      ]
+    },
+    {
+      "topic": "Preguntas de sí o no",
+      "explanation": "Se hacen con la entonación o agregando wáaj después del verbo o de la palabra preguntada. Para contestar «sí» se suele repetir el verbo o decir beey (así es).",
+      "examples": [
+        {
+          "m": "Ka t'aan wáaj ich maaya?",
+          "es": "¿Hablas maya?"
+        },
+        {
+          "m": "Chéen jump'íit maaya kin t'aanik.",
+          "es": "Solo hablo un poquito de maya."
+        }
+      ],
+      "conf": "media",
+      "sources": [
+        "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S2007-736X2018000100388",
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas",
+        "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf"
+      ]
+    },
+    {
+      "topic": "Palabras de tiempo: hoy, mañana, ayer",
+      "explanation": "bejla'e' (hoy, ahora), sáamal (mañana), ka'abej (pasado mañana), jo'oljeak (ayer). Suelen ir al inicio. Como el maya no marca tiempo sino aspecto, la palabra de tiempo ayuda a ubicar la acción: con jo'oljeak el verbo va en pasado (binen) y con sáamal en forma de presente o futuro (sáamal in bin).",
+      "examples": [
+        {
+          "m": "Sáamal in bin.",
+          "es": "Mañana voy."
+        },
+        {
+          "m": "Jo'oljej j binen.",
+          "es": "Ayer fui."
+        },
+        {
+          "m": "Kin xook bul k'iin.",
+          "es": "Leo todos los días."
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/b_maya.html",
+        "https://www.mayas.uady.mx/diccionario/j_maya.html",
+        "https://www.mayas.uady.mx/diccionario/s_maya.html",
+        "https://www.granmuseodelmundomaya.com.mx/aprende/palabras-mayas",
+        {
+          "title": "Diccionario bilingüe español-maya",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://lucy.lib.uchicago.edu/?section=4&uuid=770214c7-0111-4081-a7bf-c2fa91a835ab",
+        "https://www.mayas.uady.mx/curso_maya/respuestas1.html"
+      ]
+    },
+    {
+      "topic": "Preposiciones y enlaces frecuentes",
+      "explanation": "ti' (a, para, en), ich (en, dentro; ich maaya, en maya), yéetel (y, con), utia'al (para), tak (hasta). Son pocas y muy usadas.",
+      "examples": [
+        {
+          "m": "Tak ti' uláak' k'iin.",
+          "es": "Hasta otro día."
+        },
+        {
+          "m": "a taata yéetel a na'",
+          "es": "tu papá y tu mamá"
+        },
+        {
+          "m": "Ka t'aan wáaj ich maaya?",
+          "es": "¿Hablas maya?"
+        }
+      ],
+      "conf": "media",
+      "sources": [
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html",
+        "https://www.mayas.uady.mx/curso_maya/lec10.html",
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas",
+        "https://www.academia.edu/142986420/Diccionario_de_uso_del_maya_yucateco"
+      ]
+    },
+    {
+      "topic": "Contar cosas y seres: -p'éel y -túul",
+      "explanation": "Los números llevan un clasificador: -p'éel para cosas (jump'éel, una cosa) y -túul para personas y animales (juntúul, una persona). La n de jun se escribe m ante p.",
+      "examples": [
+        {
+          "m": "Tu'ux yaan jump'éel restaurant?",
+          "es": "¿Dónde hay un restaurante?"
+        },
+        {
+          "m": "juntúul palitsil",
+          "es": "un sirviente"
+        }
+      ],
+      "conf": "media",
+      "sources": [
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html",
+        "https://www.academia.edu/142986420/Diccionario_de_uso_del_maya_yucateco",
+        "https://www.poresto.com/yucatan/2024/1/8/como-saludar-despedir-en-maya.html"
+      ]
+    },
+    {
+      "topic": "Verbos comunes en presente habitual (tabla)",
+      "explanation": "Patrón de 6 personas (yo, tú, él/ella, nosotros, ustedes, ellos). Intransitivo bin: kin bin, ka bin, ku bin, k bin, ka bine'ex, ku bino'ob. Transitivo kanik: kin kanik, ka kanik, ku kanik, k kanik, ka kanike'ex, ku kaniko'ob. Con vocal (ok'ol): kin wok'ol, ka wok'ol, ku yok'ol, k ok'ol, ka wok'ole'ex, ku yok'olo'ob. Las tablas de cada verbo están en el campo conj de las entradas.",
+      "examples": [
+        {
+          "m": "Kin bin.",
+          "es": "Voy."
+        },
+        {
+          "m": "Ku bino'ob.",
+          "es": "Ellos van."
+        },
+        {
+          "m": "Ka kanike'ex.",
+          "es": "Ustedes lo aprenden."
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/curso_maya/lec4_1.html",
+        "https://www.mayas.uady.mx/curso_maya/lec4_9.html",
+        "https://www.famsi.org/reports/96072/grammar/index.html",
+        "https://en.wiktionary.org/wiki/taal",
+        "https://en.wiktionary.org/wiki/ok%CA%BCol"
+      ]
+    }
+  ],
+  "culture": [
+    {
+      "title": "Janal Pixan: el verbo «comer» en una fiesta",
+      "text": "En Yucatán, los días de muertos se llaman Janal Pixan, «comida de las ánimas». Janal es el mismo verbo de esta unidad (kin janal, como). Se escribe con J y no con H por la normalización del alfabeto maya: en textos viejos verás Hanal Pixan, igual que el curso de la UADY escribe hanal.",
+      "sources": [
+        "https://yucatantoday.com/en/blog/janal-pixan-in-yucatan",
+        "https://www.mayas.uady.mx/curso_maya/lec3intro.html"
+      ]
+    },
+    {
+      "title": "Ko'ox: una palabra que está en la calle",
+      "text": "Ko'ox (vamos) es una invitación colectiva. Se usa en nombres públicos: el programa del Gobierno de Yucatán para aprender maya se llama «Ko'ox kanik maaya t'aan» y en Campeche se discutió si el nuevo transporte debía escribirse Kox o Ko'ox; la forma correcta lleva el apóstrofo del corte glotal.",
+      "sources": [
+        "https://www.poresto.com/campeche/2025/12/5/kox-o-koox-conoce-la-forma-correcta-en-maya-de-decir-el-nombre-del-nuevo-transporte-de-campeche.html",
+        "https://yucatan.heraldodemexico.com.mx/tendencias/2025/8/27/koox-kanik-maaya-taan-asi-seran-los-cursos-para-preservar-la-lengua-maya-en-yucatan-1949.html"
+      ]
+    },
+    {
+      "title": "Grafías viejas y nuevas en los cursos",
+      "text": "Muchos materiales de estudio son anteriores a las normas de 2014. El curso en línea de la UADY escribe hanal, meyah, tèen o xòok, con h y acentos graves; en la grafía actual son janal, meyaj, teen y xook. Si encuentras una palabra con h al final o con acento grave, prueba cambiar h por j y quitar el acento grave.",
+      "sources": [
+        "https://www.mayas.uady.mx/curso_maya/lec3intro.html",
+        "https://www.mayas.uady.mx/curso_maya/lec4_9.html",
+        "https://www.mayas.uady.mx/curso_maya/respuestas1.html",
+        "https://site.inali.gob.mx/pdf/norma_maya.pdf"
+      ]
+    },
+    {
+      "title": "La lengua cambia por regiones",
+      "text": "La gramática no es idéntica en toda la península. En el oriente y sur de Yucatán y en Quintana Roo se oye ak, ek o ik en lugar de k (nosotros), y Andrade y Hofling registran k … -e'ex en el oriente. Bolles observa que en el noroeste se dice ma' tin na'atik sin -i', mientras que entre los cruzoob (mayas de Quintana Roo) se agrega. Ninguna forma es «incorrecta»: son variantes.",
+      "sources": [
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.famsi.org/reports/96072/grammar/index.html"
+      ]
+    },
+    {
+      "title": "El futuro de las profecías",
+      "text": "El futuro con bíin se asocia con lo que está predeterminado y fuera del control humano, por eso aparece en las profecías y en textos antiguos. En la conversación diaria se prefiere yaan u … (tiene que …) o frases con ken.",
+      "sources": [
+        "https://benjamins.com/catalog/slcs.172.21vap",
+        "https://trace.org.mx/index.php/trace/article/download/1186/1124/4114"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "UADY – Curso de maya, lección 3 (pronombres y presente)",
+      "url": "https://www.mayas.uady.mx/curso_maya/lec3intro.html"
+    },
+    {
+      "title": "UADY – Curso de maya, respuestas de la lección 1 (xook: presente habitual y actual)",
+      "url": "https://www.mayas.uady.mx/curso_maya/respuestas1.html"
+    },
+    {
+      "title": "UADY – Curso de maya, lección 4-I (verbos transitivos, futuro con bíin)",
+      "url": "https://www.mayas.uady.mx/curso_maya/lec4_1.html"
+    },
+    {
+      "title": "UADY – Curso de maya, lección 4 (ejercicios: habitual, actual y pretérito)",
+      "url": "https://www.mayas.uady.mx/curso_maya/lec4_9.html"
+    },
+    {
+      "title": "UADY – Curso de maya, lección 7 (pretérito inmediato táant)",
+      "url": "https://www.mayas.uady.mx/curso_maya/lec7_3.html"
+    },
+    {
+      "title": "UADY – Curso de maya, lección 10 (yéetel)",
+      "url": "https://www.mayas.uady.mx/curso_maya/lec10.html"
+    },
+    {
+      "title": "UADY – Curso de maya, lección 1 (alfabeto)",
+      "url": "https://www.mayas.uady.mx/curso_maya/lecc01_1.html"
+    },
+    {
+      "title": "UADY – Diccionario maya-español, letra B",
+      "url": "https://www.mayas.uady.mx/diccionario/b_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario maya-español, letra J",
+      "url": "https://www.mayas.uady.mx/diccionario/j_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario maya-español, letra M",
+      "url": "https://www.mayas.uady.mx/diccionario/m_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario maya-español, letra S",
+      "url": "https://www.mayas.uady.mx/diccionario/s_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario maya-español, letra T",
+      "url": "https://www.mayas.uady.mx/diccionario/t_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario maya-español, letra TS",
+      "url": "https://www.mayas.uady.mx/diccionario/ts_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario maya-español, letra TS'",
+      "url": "https://www.mayas.uady.mx/diccionario/ts_glotal_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario maya-español, letra K'",
+      "url": "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario maya-español, letra W",
+      "url": "https://www.mayas.uady.mx/diccionario/w_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario maya-español, letra Y",
+      "url": "https://www.mayas.uady.mx/diccionario/y_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario maya-español, letra U",
+      "url": "https://www.mayas.uady.mx/diccionario/u_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario español-maya, letra C",
+      "url": "https://www.mayas.uady.mx/diccionario/c_esp.html"
+    },
+    {
+      "title": "UADY – Diccionario español-maya, letra E",
+      "url": "https://www.mayas.uady.mx/diccionario/e_esp.html"
+    },
+    {
+      "title": "UADY – Adivinanzas (chak iik)",
+      "url": "https://www.mayas.uady.mx/literatura/adiv1.html"
+    },
+    {
+      "title": "INALI – Prontuario de frases de cortesía Maayat'aan",
+      "url": "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+    },
+    {
+      "title": "INALI – Maayáaj tsikbalilo'ob Kaampech. Narraciones mayas de Campeche (PDF)",
+      "url": "https://site.inali.gob.mx/publicaciones/narraciones_mayas_campeche.pdf"
+    },
+    {
+      "title": "INALI – Normas de escritura para la lengua maya (2014, PDF)",
+      "url": "https://site.inali.gob.mx/pdf/norma_maya.pdf"
+    },
+    {
+      "title": "INEA / MEVyT – Lengua maya (Yucatán): vocales y consonantes",
+      "url": "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+    },
+    {
+      "title": "Ayuntamiento de Mérida – Frases básicas español-maya (PDF)",
+      "url": "https://www.merida.gob.mx/municipio/sitiosphp/merida/descargas/frases_espano_maya.pdf"
+    },
+    {
+      "title": "Gran Museo del Mundo Maya de Mérida – Palabras mayas (vocabulario)",
+      "url": "https://www.granmuseodelmundomaya.com.mx/aprende/palabras-mayas"
+    },
+    {
+      "title": "UNAM FFyL – Temario Maya IV (Elí Casanova)",
+      "url": "https://servicios-galileo.filos.unam.mx/uploads/temarios/20252131146100021/Maya4EliCasanova20252.pdf"
+    },
+    {
+      "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+      "note": "copia no autorizada: se cita solo el título"
+    },
+    {
+      "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes, 3.ª versión (Academia.edu)",
+      "url": "https://www.academia.edu/7014710/Guia_gramatical_de_la_lengua_maya_yucateca_para_hispanohablantes_3ra_versi%C3%B3n_"
+    },
+    {
+      "title": "Bolles y Bolles, A Grammar and Anthology of the Yucatecan Mayan Language (FAMSI)",
+      "url": "https://www.famsi.org/reports/96072/grammar/index.html"
+    },
+    {
+      "title": "Bolles y Bolles, A Grammar of the Yucatecan Mayan Language – pronombres (FAMSI, sección 5)",
+      "url": "https://www.famsi.org/reports/96072/grammar/section05.htm"
+    },
+    {
+      "title": "Bolles y Bolles, A Grammar of the Yucatecan Mayan Language – verbos intransitivos (FAMSI, sección 12)",
+      "url": "https://www.famsi.org/reports/96072/grammar/section12.htm"
+    },
+    {
+      "title": "Lehmann (2017), Grammaticalization of tense/aspect/mood marking in Yucatec Maya (Language Science Press)",
+      "url": "https://langsci-press.org/catalog/view/152/1016/886-1"
+    },
+    {
+      "title": "Lehmann, Genesis of auxiliaries in Yucatec Maya (PDF)",
+      "url": "https://www.christianlehmann.eu/publ/Genesis_of_auxiliaries_in_Yucatec_Maya.pdf"
+    },
+    {
+      "title": "Lehmann, Valency in Yucatec Maya (PDF)",
+      "url": "https://www.christianlehmann.eu/publ/valency_in_ym.pdf"
+    },
+    {
+      "title": "Lehmann, Gramática maya: oración negativa",
+      "url": "https://www.christianlehmann.eu/ling/sprachen/maya/gramatica/onomas/negacion.html"
+    },
+    {
+      "title": "Mújica (1995), Junp'iit Maaya – A little bit of Maya (sitio de Christian Lehmann)",
+      "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+    },
+    {
+      "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+      "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+    },
+    {
+      "title": "Diapositivas «Yucatec fragment» (HPSG, Universidad de Kentucky; datos de Bohnemeyer)",
+      "url": "https://hpsg.uky.edu/sites/default/files/abstracts/yucatec-fragment-slides.pdf"
+    },
+    {
+      "title": "Uth, Gutiérrez-Bravo y Fliessbach (2023), progresivo táan y habitual k (Frontiers in Language Sciences)",
+      "url": "https://www.frontiersin.org/journals/language-sciences/articles/10.3389/flang.2023.1286520/full"
+    },
+    {
+      "title": "Pfeiler, Early acquisition of the verbal complex in Yucatec Maya (ResearchGate)",
+      "url": "https://www.researchgate.net/publication/272789937_Early_acquisition_of_the_verbal_complex_in_Yucatec_Maya"
+    },
+    {
+      "title": "Bohnemeyer et al. (2016), Head-marking and agreement: evidence from Yucatec Maya (PDF)",
+      "url": "http://www.acsu.buffalo.edu/~jb77/Bohnemeyer_et_al_2016.pdf"
+    },
+    {
+      "title": "A Historical Grammar of the Maya Language of Yucatan 1557–2000",
+      "note": "copia no autorizada: se cita solo el título"
+    },
+    {
+      "title": "Artículo sobre juegos A y B y ergatividad escindida en maya yucateco (Cuadernos de Lingüística de El Colegio de México, SciELO)",
+      "url": "https://www.scielo.org.mx/pdf/clcm/v10/2007-736X-clcm-10-e278.pdf"
+    },
+    {
+      "title": "Armstrong, La sintaxis de la predicación no verbal en maya yucateco (Cuadernos de Lingüística, Colmex)",
+      "url": "https://cuadernoslinguistica.colmex.mx/index.php/cl/article/download/73/pdf/138"
+    },
+    {
+      "title": "Las voces de las profecías: expresiones y visiones del futuro en maya yucateco (Trace)",
+      "url": "https://trace.org.mx/index.php/trace/article/download/1186/1124/4114"
+    },
+    {
+      "title": "Vapnarsky (2016), No escape from the future (John Benjamins)",
+      "url": "https://benjamins.com/catalog/slcs.172.21vap"
+    },
+    {
+      "title": "Diccionario de uso del maya yucateco (Academia.edu)",
+      "url": "https://www.academia.edu/142986420/Diccionario_de_uso_del_maya_yucateco"
+    },
+    {
+      "title": "Grambank GB253 – posesión predicativa con poseedor en dativo (cita a Bolles y Bolles 2014)",
+      "url": "https://grambank.clld.org/parameters/GB253"
+    },
+    {
+      "title": "The Definite Article in Yucatec Maya: The Case of le … o' (University of Chicago Press)",
+      "url": "https://www.journals.uchicago.edu/doi/10.1086/696197"
+    },
+    {
+      "title": "Espinosa Ochoa, Los deícticos locativos en la adquisición temprana del maya yucateco (Universidad de Hamburgo)",
+      "url": "https://ediss.sub.uni-hamburg.de/handle/ediss/3167"
+    },
+    {
+      "title": "Espinosa Ochoa, Germination, early development and creativity in the acquisition of the Yucatec Maya deictic system (Journal of Child Language)",
+      "url": "https://resolve.cambridge.org/core/journals/journal-of-child-language/article/germination-early-development-and-creativity-in-the-acquisition-of-the-yucatec-maya-deictic-system/9A25220796689BF3363DC1C25D80ECA5"
+    },
+    {
+      "title": "Briceño Chel, La frase nominal en el maya yucateco (Estudios de Lingüística Aplicada, UNAM)",
+      "url": "https://ela.enallt.unam.mx/index.php/ela/article/download/299/278"
+    },
+    {
+      "title": "Comprensión de oraciones con plural opcional en maya yucateco (PMC)",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10480837/"
+    },
+    {
+      "title": "AnderBois (2018), U chíikulil k'áatchi': la puntuación de las preguntas (SciELO)",
+      "url": "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S2007-736X2018000100388"
+    },
+    {
+      "title": "Spoken Yucatec Maya (Universidad de Chicago) – Intransitive Forms",
+      "url": "https://lucy.lib.uchicago.edu/?section=4&uuid=770214c7-0111-4081-a7bf-c2fa91a835ab"
+    },
+    {
+      "title": "Spoken Yucatec Maya (Universidad de Chicago) – Lesson 13: Listening In",
+      "url": "https://lucy.lib.uchicago.edu/?uuid=a71f2951-2927-41d3-b642-0f1c8889e75c&section=5"
+    },
+    {
+      "title": "Idioma Maya Yucateco, material de curso",
+      "note": "copia no autorizada: se cita solo el título"
+    },
+    {
+      "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+      "note": "copia no autorizada: se cita solo el título"
+    },
+    {
+      "title": "Bevington, Maya for Travelers and Students (University of Texas Press)",
+      "note": "copia no autorizada: se cita solo el título"
+    },
+    {
+      "title": "Diccionario bilingüe español-maya",
+      "note": "copia no autorizada: se cita solo el título"
+    },
+    {
+      "title": "Wiktionary – leti' (maya yucateco)",
+      "url": "https://en.wiktionary.org/wiki/leti%CA%BC"
+    },
+    {
+      "title": "Wiktionary – xook (maya yucateco)",
+      "url": "https://en.wiktionary.org/wiki/xook"
+    },
+    {
+      "title": "Wiktionary – xok (maya yucateco; cita a Yoshida 2009)",
+      "url": "https://en.wiktionary.org/wiki/xok"
+    },
+    {
+      "title": "Wiktionary – ok'ol (maya yucateco; cita a Gómez Navarrete 2009)",
+      "url": "https://en.wiktionary.org/wiki/ok%CA%BCol"
+    },
+    {
+      "title": "Wiktionary – meyaj (maya yucateco)",
+      "url": "https://en.wiktionary.org/wiki/meyaj"
+    },
+    {
+      "title": "Wiktionary – kutal (copia; cita a Gómez Navarrete 2009)",
+      "url": "https://wiki.neonvagabond.xyz/content/wiktionary_en_all_nopic_2024-05/A/kutal"
+    },
+    {
+      "title": "Wiktionary – k'aay (copia)",
+      "url": "https://wiki.neonvagabond.xyz/content/wiktionary_en_all_nopic_2024-05/A/k'aay"
+    },
+    {
+      "title": "Wiktionary – taal (maya yucateco)",
+      "url": "https://en.wiktionary.org/wiki/taal"
+    },
+    {
+      "title": "Wiktionary – janal (maya yucateco)",
+      "url": "https://en.wiktionary.org/wiki/janal"
+    },
+    {
+      "title": "parryc – Yucatec Maya (notas gramaticales basadas en Andrade y otros)",
+      "url": "https://parryc.com/language/yucatec-maya"
+    },
+    {
+      "title": "Mossy Rune – Yucatec Maya Grammar, Step by Step",
+      "url": "https://mossyrune.com/grammar/walkthrough/yucatec-maya"
+    },
+    {
+      "title": "Omniglot – Useful phrases in Yucatec Maya",
+      "url": "https://www.omniglot.com/language/phrases/yucatec-maya.php"
+    },
+    {
+      "title": "Top Yucatán – Frases básicas en maya y español",
+      "url": "https://topyucatan.com/notas/the-yucatan-culture/frases-basicas-en-maya-y-espanol"
+    },
+    {
+      "title": "Vocabulario.com.mx – Diccionario maya-español: verbo saber",
+      "url": "https://www.vocabulario.com.mx/blog/diccionario-maya-espanol-verbo-saber/"
+    },
+    {
+      "title": "Heraldo de México (Yucatán) – ¿Cómo saludar en lengua maya? (2025)",
+      "url": "https://yucatan.heraldodemexico.com.mx/tendencias/2025/12/17/como-saludar-en-lengua-maya-expresiones-para-iniciar-una-conversacion-en-yucatan-3439.html"
+    },
+    {
+      "title": "Heraldo de México – Ko'ox kanik maaya t'aan, cursos para preservar la lengua maya (2025)",
+      "url": "https://yucatan.heraldodemexico.com.mx/tendencias/2025/8/27/koox-kanik-maaya-taan-asi-seran-los-cursos-para-preservar-la-lengua-maya-en-yucatan-1949.html"
+    },
+    {
+      "title": "Yucatán Today – Say it in Maya",
+      "url": "https://yucatantoday.com/en/blog/say-it-in-maya"
+    },
+    {
+      "title": "Yucatán Today – Janal Pixan in Yucatán",
+      "url": "https://yucatantoday.com/en/blog/janal-pixan-in-yucatan"
+    },
+    {
+      "title": "PorEsto – Kox o Ko'ox: la forma correcta en maya del nombre del transporte de Campeche (2025)",
+      "url": "https://www.poresto.com/campeche/2025/12/5/kox-o-koox-conoce-la-forma-correcta-en-maya-de-decir-el-nombre-del-nuevo-transporte-de-campeche.html"
+    },
+    {
+      "title": "PorEsto – ¿Cómo saludar y despedir en maya? (2024)",
+      "url": "https://www.poresto.com/yucatan/2024/1/8/como-saludar-despedir-en-maya.html"
+    },
+    {
+      "title": "La Lengua Maya de Yucatán – Frases básicas",
+      "url": "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+    },
+    {
+      "title": "Epinvestiga – La lengua que perdimos",
+      "url": "https://epinvestiga.com/dominical/la-lengua-que-perdimos/"
+    },
+    {
+      "title": "Babbel – Mayan language",
+      "url": "https://www.babbel.com/en/magazine/mayan-language"
+    },
+    {
+      "title": "Aprendiendo Maya – Consonantes del alfabeto maya",
+      "url": "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+    },
+    {
+      "title": "Aprendiendo Maya – Pronombres personales en lengua maya",
+      "url": "https://aprendiendomaya.com/escritura/pronombres-personales-maya/pronombres-personales-en-lengua-maya"
+    },
+    {
+      "title": "Yucatan Living – Mayan Language for Beginners",
+      "url": "https://www.yucatanliving.com/culture/mayan-language-for-beginners-2"
+    },
+    {
+      "title": "Na'atik Language & Culture Institute – Yucatec Maya Phrases",
+      "url": "https://naatikmexico.org/blog/yucatec-maya-phrases"
+    },
+    {
+      "title": "Sobrino Gómez (2013), Descripción fonética de los tonos del maya yucateco (Estudios de Cultura Maya 41)",
+      "url": "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0185-25742013000100006"
+    }
+  ]
+}

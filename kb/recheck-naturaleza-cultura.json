@@ -1,0 +1,1128 @@
+{
+  "group": "naturaleza-cultura",
+  "searchesUsed": 40,
+  "date": "2026-10-25",
+  "method": "40 llamadas a WebSearch (tope alcanzado). No usé WebFetch. El buscador devuelve un resumen de fragmentos, no páginas completas: toda la evidencia es lo que mostraban esos resúmenes, con las citas literales que incluían. La técnica que mejor funcionó fue limitar la búsqueda al dominio mayas.uady.mx (allowed_domains), que devuelve entradas literales del diccionario maya-español y español-maya de la UADY (institucional). Cuando la UADY es la única fuente, cuenta como verificado según el criterio (fuente institucional), pero lo digo en cada caso. Las páginas de preguntas frecuentes (todosloshechos.es, clubmitsubishiasx.com) se citan como fuentes débiles y nunca bastan solas. Las copias no autorizadas de libros (Normas de 2014, Montgomery) se citan por su título, sin url. No normalicé grafías dudosas: se dice en cada caso.",
+  "items": [
+    {
+      "m": "ixi'im",
+      "es": "maíz (el grano; la planta)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "ixim (grafía colonial)"
+      ],
+      "correction": "Sin cambio de forma; pasa a verificado. No enseñar la etimología popular ixi + im ('seno') que da PorEsto: es la explicación de un maestro, no algo documentado. Para el elote está nal (registrado por el dominio sonidos).",
+      "pr": "i-shi-im (corte glotal entre las dos i)",
+      "sources": [
+        {
+          "title": "PorEsto (Quintana Roo), «Nueva generación de milperos en José María Morelos ignora costumbres mayas» (2023)",
+          "url": "https://www.poresto.com/quintana-roo/2023/7/10/nueva-generacion-de-milperos-en-jose-maria-morelos-ignora-costumbres-mayas.amp.html"
+        },
+        {
+          "title": "Riviera Maya News, nota sobre el restaurante Ixi'im de Chocholá (estrella verde Michelin)",
+          "url": "https://www.rivieramayanews.mx/yucatan-town-chochola-gets-michelin-green-star-restaurant-ixiim/"
+        },
+        {
+          "title": "Diego de Landa, Yucatan before and after the Conquest (trad. y notas de William Gates, 1937), en sacred-texts.com",
+          "url": "https://sacred-texts.com/nam/maya/ybac/ybac67.htm"
+        },
+        {
+          "title": "Wiktionary (inglés), entrada ixim (espejo Kiwix 2023; etimología protomaya)",
+          "url": "https://kaweah.freedombox.rocks/kiwix/wiktionary_en_all_maxi_2023-04/ixim"
+        }
+      ],
+      "evidence": "PorEsto 2023: un maestro de lengua maya de José María Morelos explica ixi'im 'maíz' («Ixi» + «im» 'seno' = 'nuestra madre alimento'). Riviera Maya News: el restaurante Ixi'im de Chocholá, cuyo nombre «se traduce como 'maíz' en la lengua maya». Landa (ed. Gates): «ixim: maize; Zea mays». Wiktionary: de protomaya *ixi'm (cognados en chuj, kaqchikel, tsotsil). Hay dos fuentes modernas independientes con la forma exacta, pero no vi una entrada de diccionario moderno (UADY no la devolvió)."
+    },
+    {
+      "m": "bu'ul",
+      "es": "frijol",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "buul (grafía colonial)"
+      ],
+      "correction": "Sin cambio; pasa a verificado. La UADY registra también un homónimo bu'ul 'glándula; agalla de pez'.",
+      "pr": "bu-ul (corte glotal entre las dos u)",
+      "sources": [
+        {
+          "title": "Diccionario maya-español de la UADY, letra B",
+          "url": "https://www.mayas.uady.mx/diccionario/b_maya.html"
+        },
+        {
+          "title": "Secretaría de Cultura, Culturas Populares e Indígenas: «Recetario maya de Quintana Roo» (2024, pdf)",
+          "url": "https://culturaspopulareseindigenas.gob.mx/pdf/2024/libros/recetarios/03%20Recetario%20maya%20de%20Quintana%20Roo%20-%20peque%C3%B1o.pdf"
+        },
+        {
+          "title": "Mexico in my Kitchen, «Yucatán fried beans» (2017)",
+          "url": "https://www.mexicoinmykitchen.com/2017/10/yucatan-fried-beans.html"
+        },
+        {
+          "title": "Diego de Landa, Yucatan before and after the Conquest (trad. y notas de William Gates, 1937), en sacred-texts.com",
+          "url": "https://sacred-texts.com/nam/maya/ybac/ybac67.htm"
+        }
+      ],
+      "evidence": "UADY (B): «BU'UL: Frijol» (y otra entrada «BU'UL: Glándula, agalla de pez»). Recetario maya de Quintana Roo (Secretaría de Cultura): platillos «K'abax bu'ul», «Bu'uw waj» (el texto del pdf está deformado). Mexico in my Kitchen: «the Mayan word for beans is Bu'ul» (tsaaj bi bu'ul, frijol colado frito). Landa/Gates: «buul: Phaseolus vulgaris»."
+    },
+    {
+      "m": "kakaw",
+      "es": "cacao",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "Sin cambio; pasa a verificado (una fuente institucional).",
+      "pr": "ka-kau",
+      "sources": [
+        {
+          "title": "Diccionario maya-español de la UADY (mayas.uady.mx), letra K",
+          "url": "https://www.mayas.uady.mx/diccionario/k_maya.html"
+        }
+      ],
+      "evidence": "UADY (K): «KAKAW: Cacao»."
+    },
+    {
+      "m": "ki'",
+      "es": "sabroso, rico; agradable",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "Sin cambio; pasa a verificado. La glosa de la UADY es más amplia que 'sabroso': también 'agradable, deleitable'.",
+      "pr": "ki' (i corta y corte glotal al final)",
+      "sources": [
+        {
+          "title": "Diccionario maya-español de la UADY (mayas.uady.mx), letra K",
+          "url": "https://www.mayas.uady.mx/diccionario/k_maya.html"
+        }
+      ],
+      "evidence": "UADY (K): «KI': Cosa rica, sabrosa, deleitable, gustosa, agradable»."
+    },
+    {
+      "m": "wakax",
+      "es": "res, vaca, toro (ganado vacuno)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "Sin cambio; pasa a verificado. Es un préstamo antiguo del español «vacas», y conviene decirlo en el curso.",
+      "pr": "wa-kash",
+      "sources": [
+        {
+          "title": "Diccionario maya-español de la UADY, letra W",
+          "url": "https://www.mayas.uady.mx/diccionario/w_maya.html"
+        },
+        {
+          "title": "Wiktionary (inglés), entrada wakash (etimología que cita el yucateco wakax)",
+          "url": "https://en.wiktionary.org/wiki/wakash"
+        },
+        {
+          "title": "Tlalocan (UNAM), «El wakax kan y otros textos acatecos» (acateco, no yucateco)",
+          "url": "https://revistas-filologicas.unam.mx/tlalocan/index.php/tl/article/view/130"
+        }
+      ],
+      "evidence": "UADY (W): «WAKAX: Ganado vacuno, toro, vaca, res». Wiktionary (entrada wakash): cita el yucateco wakax, igual que el tseltal, el chol y el ch'orti', como préstamo del español «vacas». Tlalocan documenta wakax 'vaca' en acateco (otra lengua maya; solo confirma el préstamo)."
+    },
+    {
+      "m": "k'éek'en",
+      "es": "cerdo, puerco, cochino",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "keken (grafía antigua, en «bul keken»)"
+      ],
+      "correction": "Sin cambio; pasa a verificado. El pecarí de monte es kitam (UADY), por si se quiere contrastar.",
+      "pr": "k'ée-k'en (dos k glotalizadas, ée larga con tono alto)",
+      "sources": [
+        {
+          "title": "Diccionario maya-español de la UADY, letra K'",
+          "url": "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+        },
+        {
+          "title": "todosloshechos.es, «¿Cómo se dice puerco en Yucatán?» (reproduce entradas con formato UADY; fuente débil)",
+          "url": "https://todosloshechos.es/como-se-dice-puerco-en-yucatan"
+        }
+      ],
+      "evidence": "UADY (K'): «K'ÉEK'EN: Cerdo, puerco, cochino, marrano». todosloshechos.es repite la misma entrada. El platillo «bul keken» (frijol con puerco) aparece en una página comercial (Camellia), en grafía antigua."
+    },
+    {
+      "m": "kaax",
+      "es": "gallina",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "x-kaax (UADY escribe «(x)kaax», con el prefijo femenino x-)"
+      ],
+      "correction": "Sin cambio; pasa a verificado. No confundir con k'áax 'monte' ni con k'aax 'amarrar'. El gallinero es so'oy (UADY).",
+      "pr": "kaash (a larga, tono bajo)",
+      "sources": [
+        {
+          "title": "Diccionario español-maya de la UADY, letra G",
+          "url": "https://www.mayas.uady.mx/diccionario/g_esp.html"
+        },
+        {
+          "title": "todosloshechos.es, «¿Cómo se dice gallina en lengua maya?» (fuente débil)",
+          "url": "https://todosloshechos.es/como-se-dice-gallina-en-lengua-maya"
+        }
+      ],
+      "evidence": "UADY (español-maya, G): «GALLINA f, zool: Kaax, (x)kaax»; «GALLINERO m: So'oy». todosloshechos.es: «in wo'och kaax» (mi gallina para comer) e «in walak' kaax» (mi gallina doméstica)."
+    },
+    {
+      "m": "kay",
+      "es": "pez, pescado",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "Sin cambio; pasa a verificado. Vocal corta; no confundir con k'aay 'canto, cantar'.",
+      "pr": "kai",
+      "sources": [
+        {
+          "title": "Diccionario maya-español de la UADY (mayas.uady.mx), letra K",
+          "url": "https://www.mayas.uady.mx/diccionario/k_maya.html"
+        }
+      ],
+      "evidence": "UADY (K): «KAY: Pez, pescado»."
+    },
+    {
+      "m": "baats'",
+      "es": "saraguato, mono aullador",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "ba'ats' (forma de la base: no la vi en ninguna fuente)"
+      ],
+      "correction": "CAMBIA la forma: ba'ats' → baats'. Las dos fuentes que encontré escriben vocal larga simple, sin corte glotal intermedio. Si alguna obra de referencia (p. ej., Bricker et al. 1998) diera ba'ats', habría que revisarlo; con lo visto, enseñar baats'.",
+      "pr": "baats' (a larga, tono bajo, ts' glotalizada al final)",
+      "sources": [
+        {
+          "title": "Diccionario maya-español de la UADY, letra B",
+          "url": "https://www.mayas.uady.mx/diccionario/b_maya.html"
+        },
+        {
+          "title": "Estudios Mesoamericanos (UNAM, 2000), artículo sobre primates en el área maya (pdf)",
+          "url": "https://revistas-filologicas.unam.mx/estudios-mesoamericanos/index.php/em/article/download/111/108"
+        }
+      ],
+      "evidence": "UADY (B): «BAATS': Saraguato, mono aullador». Estudios Mesoamericanos (UNAM, 2000): el género Alouatta (A. pigra) «se llama baats' en maya yucateco» y se le conoce como aullador o saraguato (pdf escaneado)."
+    },
+    {
+      "m": "síinik",
+      "es": "hormiga",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "sinik (forma de la base; así se escribe en itzá)"
+      ],
+      "correction": "CAMBIA la forma: sinik → síinik (i larga con tono alto), como da la UADY. En itzá, lengua hermana, es sinik con vocal corta; para el yucateco seguimos a la UADY.",
+      "pr": "síi-nik (íi larga con tono alto)",
+      "sources": [
+        {
+          "title": "Diccionario maya-español de la UADY, letra S",
+          "url": "https://www.mayas.uady.mx/diccionario/s_maya.html"
+        },
+        {
+          "title": "Living Dictionaries, diccionario itzá: entrada sinik «hormiga» (lengua yucatecana hermana)",
+          "url": "https://livingdictionaries.app/itza/entry/oyhYjmrEuiGF5XUQA0eQ"
+        }
+      ],
+      "evidence": "UADY (S): «SÍINIK: Hormiga». Living Dictionaries (itzá): «Sinik [si.'nikʰ] ant / hormiga» (cognado; el resultado solo mostró itzá, poqomchi', poqomam, kaqchikel y akateko)."
+    },
+    {
+      "m": "tunkuluchu'",
+      "es": "tecolote, búho (ave de mal agüero en la tradición yucateca)",
+      "status": "probable",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "tunkuluchú (forma españolizada)",
+        "tunkuruchu (Glosbe, citado por todosloshechos.es)"
+      ],
+      "correction": "Sube a probable por el significado, pero la grafía con corte glotal final (tunkuluchu') no la vi en ninguna fuente. Para el curso, enseñar xooch' (verificado) como 'búho' y mencionar tunkuluchú como el nombre que se usa en el español de Yucatán.",
+      "pr": "tun-ku-lu-chú",
+      "sources": [
+        {
+          "title": "EcuRed, «Tunkuluchú»",
+          "url": "https://www.ecured.cu/Tunkuluch%C3%BA"
+        },
+        {
+          "title": "Diario de Yucatán, «Leyenda en Yucatán: el misterioso canto del tunkuluchú» (2022)",
+          "url": "https://www.yucatan.com.mx/central-9/2022/8/12/leyenda-en-yucatan-el-misterioso-canto-del-tunkuluchu-339338.html"
+        },
+        {
+          "title": "Yucatán Today, «Maya Legends about Animals»",
+          "url": "https://yucatantoday.com/en/blog/maya-legends-about-animals/"
+        }
+      ],
+      "evidence": "EcuRed: «tecolote o tunkuluchú», nombre común de varios búhos (Strigidae); su canto anuncia la muerte. Diario de Yucatán 2022: leyenda del canto del tunkuluchú. Yucatán Today (citando a Violeta Cantarell): la leyenda de la fiesta y la venganza. Todas escriben tunkuluchú, sin glotal final. Ninguna es un diccionario."
+    },
+    {
+      "m": "xooch'",
+      "es": "búho (ave nocturna de mal agüero)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "Sin cambio de forma; CAMBIA la glosa: 'lechuza' → 'búho, ave nocturna de mal agüero', que es lo que dice la UADY. Para 'lechuza' una página débil da iikim (no verificado).",
+      "pr": "shooch' (o larga, tono bajo, ch' glotalizada)",
+      "sources": [
+        {
+          "title": "Diccionario maya-español de la UADY, letra X",
+          "url": "https://www.mayas.uady.mx/diccionario/x_maya.html"
+        },
+        {
+          "title": "UADY, literatura: Briceida Cuevas Cob, «El Búho / Xooch'»",
+          "url": "https://www.mayas.uady.mx/literatura/poem20.html"
+        },
+        {
+          "title": "clubmitsubishiasx.com, «¿Cómo se dice en maya búho?» (reproducción no oficial con formato UADY; fuente débil)",
+          "url": "https://www.clubmitsubishiasx.com/faq/como-se-dice-en-maya-buho"
+        }
+      ],
+      "evidence": "UADY (X): «XOOCH': búho, ave nocturna de mal agüero». UADY (literatura): poema «El Búho / Xooch'» de Briceida Cuevas Cob. clubmitsubishiasx.com: xooch' = búho (y iikim = lechuza, sin fuente)."
+    },
+    {
+      "m": "báalam",
+      "es": "jaguar; guardián protector (mitológico)",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [
+        "balam (grafía antigua, en nombres como Ek' Balam o Pool Balam)"
+      ],
+      "correction": "Sin cambio de forma; pasa a verificado. La UADY da la grafía con tono alto (BÁALAM) y el sentido 'guardián'; el sentido 'jaguar' lo confirman el artículo de la UADY sobre Ek' Balam ('jaguar negro u oscuro') y Redalyc (Pool Balam, 'cabeza de jaguar').",
+      "pr": "báa-lam (áa larga con tono alto)",
+      "sources": [
+        {
+          "title": "Diccionario maya-español de la UADY, letra B",
+          "url": "https://www.mayas.uady.mx/diccionario/b_maya.html"
+        },
+        {
+          "title": "UADY, artículo sobre la zona arqueológica de Ek' Balam",
+          "url": "https://www.mayas.uady.mx/articulos/ekbalam.html"
+        },
+        {
+          "title": "Redalyc, artículo sobre el rescate arqueológico de la cueva Pool Balam (registrado por recheck-cuerpo-familia)",
+          "url": "https://www.redalyc.org/pdf/745/74516316005.pdf"
+        },
+        {
+          "title": "Aprendiendo Maya, «Alfabeto maya» (registro previo de la base)",
+          "url": "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+        }
+      ],
+      "evidence": "UADY (B): «BÁALAM: Guardián protector mitológico»; «BÁALAM KAAN: pequeña serpiente venenosa semejante al coralillo». UADY (Ek' Balam): el nombre se traduce literalmente como «jaguar oscuro o negro», y los hablantes de la región lo leen «lucero-jaguar». Redalyc (registrado por recheck-cuerpo-familia): Pool Balam = 'cabeza de jaguar'. Aprendiendo Maya (base): «báalam (jaguar)»."
+    },
+    {
+      "m": "kool",
+      "es": "milpa",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [],
+      "correction": "Sin cambio; pasa a verificado. La UADY la define también como 'tierra labrada o rozada'.",
+      "pr": "kool (o larga, tono bajo)",
+      "sources": [
+        {
+          "title": "Diccionario maya-español de la UADY (mayas.uady.mx), letra K",
+          "url": "https://www.mayas.uady.mx/diccionario/k_maya.html"
+        },
+        {
+          "title": "UADY, «La milpa maya como agricultura migratoria»",
+          "url": "https://www.mayas.uady.mx/articulos/milpa.html"
+        },
+        {
+          "title": "UADY, multimedia: «U meeyjil ich kool / El trabajo de la milpa»",
+          "url": "https://www.mayas.uady.mx/multimedia/trabajo.html"
+        }
+      ],
+      "evidence": "UADY (K): «KOOL: Milpa; tierra labrada o rozada». UADY, «La milpa maya como agricultura migratoria»: «este sistema toma el nombre de 'milpa', o 'kool' en lengua maya». UADY multimedia: «U meeyjil ich kool / El trabajo de la milpa»."
+    },
+    {
+      "m": "k'áax",
+      "es": "monte, selva, bosque",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "Sin cambio; pasa a verificado. Avisar en el curso: con tono bajo, k'aax es 'amarrar' (UADY), y kaax (sin glotal) es 'gallina'.",
+      "pr": "k'áash (áa larga con tono alto)",
+      "sources": [
+        {
+          "title": "Diccionario maya-español de la UADY, letra K'",
+          "url": "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+        }
+      ],
+      "evidence": "UADY (K'): «K'ÁAX: Bosque, montaña, selva, campo, monte de árboles» y, aparte, «K'AAX: Amarrar, atar, liar, fajar, vendar herida»."
+    },
+    {
+      "m": "ya'axche'",
+      "es": "ceiba (árbol sagrado)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "Sin cambio; pasa a verificado.",
+      "pr": "ya-ash-che' (a rearticulada; e corta con glotal final)",
+      "sources": [
+        {
+          "title": "UADY, Yucatán: Identidad y Cultura Maya, artículo sobre el Hanal Pixan y la cosmología maya (articulos/pixan.html)",
+          "url": "https://www.mayas.uady.mx/articulos/pixan.html"
+        },
+        {
+          "title": "UADY, «¿Qué es la sobada? Elementos para conocer y entender una práctica…» (pdf)",
+          "url": "https://www.mayas.uady.mx/articulos/pdf/sobada.pdf"
+        }
+      ],
+      "evidence": "UADY (artículo de cosmología): «En el centro había una ceiba (Ceiba pentandra), el Ya'axche', sagrado y primigenio árbol verde de la vida, que atravesaba todos los espacios, uniéndolos entre sí». UADY (sobada): «la ceiba o ya'axche', árbol sagrado que rige el universo». Dos textos distintos de la UADY."
+    },
+    {
+      "m": "uj",
+      "es": "luna",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "Se queda solo con 'luna': quitar 'mes', que no vi en ninguna fuente (un estudio del INAH asocia 'luna' y 'mes' con otra raíz protomaya, *'iik').",
+      "pr": "uj (j suave, como una h aspirada)",
+      "sources": [
+        {
+          "title": "UADY, literatura: poema «La luna y la noche / Uj yetel ak'ab»",
+          "url": "https://www.mayas.uady.mx/literatura/poem13.html"
+        },
+        {
+          "title": "clubmitsubishiasx.com, «¿Cómo se dice maya Luna?» (cita el diccionario de mayas.uady.mx; fuente débil)",
+          "url": "https://www.clubmitsubishiasx.com/faq/como-se-dice-maya-luna"
+        }
+      ],
+      "evidence": "UADY (literatura): el poema «La luna y la noche» se titula en maya «Uj yetel ak'ab». clubmitsubishiasx.com, que cita el diccionario de la UADY: luna = uj; noche = áak'ab. La glosa 'mes' no apareció."
+    },
+    {
+      "m": "eek'",
+      "es": "estrella",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "Sin búsqueda nueva. Se queda solo con 'estrella', como pedía el verificador. 'Negro' va bajo éek' (tono alto), que ahora está verificado aparte.",
+      "pr": "eek' (e larga, tono bajo)",
+      "sources": [
+        {
+          "title": "INEA, curso de lengua maya (registro previo de la base)",
+          "url": "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+        },
+        {
+          "title": "Diccionario maya-español de la UADY, letra E (registro previo de la base)",
+          "url": "https://www.mayas.uady.mx/diccionario/e_maya.html"
+        }
+      ],
+      "evidence": "Base previa: INEA «Eek' · estrella»; UADY «EEK': Estrella, lucero, astro». No lo volví a buscar."
+    },
+    {
+      "m": "nikte'",
+      "es": "flor de mayo (Plumeria)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "nicte (grafía antigua)",
+        "sak nikte' (flor de mayo blanca)",
+        "chak nikte' (flor de mayo roja)"
+      ],
+      "correction": "Sin cambio de forma; se precisa la glosa: es la flor de mayo o plumeria. La palabra general para 'flor' es lool (ya verificada); en textos rituales nikte' aparece también como 'flores' de ofrenda.",
+      "pr": "nik-te' (glotal final)",
+      "sources": [
+        {
+          "title": "Flora de Kaxil Kiuic (University of Richmond), ficha Plumeria rubra",
+          "url": "https://chalk.richmond.edu/flora-kaxil-kiuic/p/plumeria_rubra.html"
+        },
+        {
+          "title": "CICY, Desde el Herbario: Castillo-Acal, «Las flores del huerto maya» (2017, pdf)",
+          "url": "https://cicy.repositorioinstitucional.mx/jspui/bitstream/1003/2446/1/2017-04-27-Castillo-Acal-Las-flores-del-huerto-maya.pdf"
+        },
+        {
+          "title": "FLAAR Mesoamerica, informe sobre flores sagradas (Plumeria rubra, Plumeria alba)",
+          "url": "https://www.maya-archaeology.org/mayan-anthropology-ethnography-archaeology-art-history-iconography-epigraphy/ethnobotany-belize-mexico-guatemala-honduras-sacred-flowers-plumeria-rubia-plumeria-alba.php"
+        },
+        {
+          "title": "Yucatán Today, «Juul nikte': May flowers for Our Lady of Tetiz»",
+          "url": "https://yucatantoday.com/en/blog/juul-nikte-may-flowers-for-our-lady-of-tetiz"
+        },
+        {
+          "title": "UADY, «El hanal pixan» (articulos/pixan2.html)",
+          "url": "https://www.mayas.uady.mx/articulos/pixan2.html"
+        }
+      ],
+      "evidence": "Flora de Kaxil Kiuic (U. of Richmond): Plumeria rubra, nombre común «nikte', flor de mayo, frangipani». CICY (Castillo-Acal 2017): P. obtusa, llamada «flor de mayo», con nombres mayas aak'its y nikté ch'oom. FLAAR: zac nicte (P. alba) y chac nicte (P. rubra), citando un diccionario. Yucatán Today: «Juul nikte'», las flores de mayo que se ofrecen a la Virgen en Tetiz. UADY («El hanal pixan»): nikte' en una frase sobre llevar flores a las ánimas."
+    },
+    {
+      "m": "múuyal",
+      "es": "nube",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "múunyal"
+      ],
+      "correction": "Sin cambio; pasa a verificado. La UADY da también la variante múunyal.",
+      "pr": "múu-yal (úu larga con tono alto)",
+      "sources": [
+        {
+          "title": "Diccionario español-maya de la UADY, letra N",
+          "url": "https://www.mayas.uady.mx/diccionario/n_esp.html"
+        }
+      ],
+      "evidence": "UADY (español-maya, N): «NUBE f: Múuyal, múunyal»."
+    },
+    {
+      "m": "áaktun",
+      "es": "cueva, gruta, caverna",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "sajkab (la UADY lo da como sinónimo bajo CUEVA y CAVERNA)"
+      ],
+      "correction": "Sin cambio; pasa a verificado.",
+      "pr": "áak-tun (áa larga con tono alto)",
+      "sources": [
+        {
+          "title": "Diccionario español-maya de la UADY, letra C",
+          "url": "https://www.mayas.uady.mx/diccionario/c_esp.html"
+        }
+      ],
+      "evidence": "UADY (español-maya, C): «CUEVA f: Áaktun, sajkab» y lo mismo bajo CAVERNA."
+    },
+    {
+      "m": "pu'uk",
+      "es": "cerro, loma; serranía de cerros bajos",
+      "status": "verificado",
+      "kbStatusBefore": "no estaba en la base",
+      "variants": [
+        "puuc (grafía antigua, como en la región Puuc)"
+      ],
+      "correction": "Palabra nueva. Es la que conviene enseñar para 'cerro' en Yucatán, en lugar de witz o wits.",
+      "pr": "pu-uk (u rearticulada)",
+      "sources": [
+        {
+          "title": "Diccionario maya-español de la UADY, letra P",
+          "url": "https://www.mayas.uady.mx/diccionario/p_maya.html"
+        },
+        {
+          "title": "Diccionario español-maya de la UADY, letra C",
+          "url": "https://www.mayas.uady.mx/diccionario/c_esp.html"
+        }
+      ],
+      "evidence": "UADY (P): «PU'UK: Cerro, loma, sierra, cordillera de cerros bajos». UADY (español-maya, C): «CERRO m: Pu'uk, wiits, múul»."
+    },
+    {
+      "m": "wiits",
+      "es": "cerro",
+      "status": "verificado",
+      "kbStatusBefore": "incorrecto",
+      "variants": [
+        "witz (forma de la base: incorrecta, tz no es grafía de 2014)",
+        "wits (corrección propuesta antes: tampoco la vi)",
+        "múul (sinónimo que da la UADY; también 'montículo')"
+      ],
+      "correction": "CAMBIA la forma: witz → wiits (i larga). Ni witz ni wits aparecen; la UADY escribe wiits. La UADY la da solo dentro de una lista de sinónimos, así que para 'cerro' es mejor enseñar pu'uk y mencionar wiits como sinónimo.",
+      "pr": "wiits (i larga, tono bajo)",
+      "sources": [
+        {
+          "title": "Diccionario español-maya de la UADY, letra C",
+          "url": "https://www.mayas.uady.mx/diccionario/c_esp.html"
+        }
+      ],
+      "evidence": "UADY (español-maya, C): «CERRO m: Pu'uk, wiits, múul». No vi wiits como entrada maya-español."
+    },
+    {
+      "m": "ts'ono'ot",
+      "es": "cenote",
+      "status": "verificado",
+      "kbStatusBefore": "verificado",
+      "variants": [],
+      "correction": "Sin búsqueda nueva ni cambios.",
+      "pr": "ts'o-no-ot (o rearticulada)",
+      "sources": [
+        {
+          "title": "Diccionario maya-español de la UADY, letra TS' (registro previo de la base)",
+          "url": "https://www.mayas.uady.mx/diccionario/ts_glotal_maya.html"
+        },
+        {
+          "title": "INALI, U nuuk'beesajil u ts'íibta'al maayat'aan / Normas de escritura para la lengua maya (2014), registro previo de la base; sin url (la copia consultada por el flujo no es autorizada)"
+        }
+      ],
+      "evidence": "Base previa: UADY «TS'ONO'OT: Cenote» y las Normas de 2014 lo usan como ejemplo."
+    },
+    {
+      "m": "chak",
+      "es": "rojo",
+      "status": "verificado",
+      "kbStatusBefore": "verificado",
+      "variants": [],
+      "correction": "Sin cambio. Bricker (1999) añade que chak abarca también rosa, naranja y tonos tierra.",
+      "pr": "chak",
+      "sources": [
+        {
+          "title": "INEA, curso de lengua maya (registro previo de la base)",
+          "url": "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+        },
+        {
+          "title": "Diccionario maya-español de la UADY, letra CH (registro previo de la base)",
+          "url": "https://www.mayas.uady.mx/diccionario/ch_maya.html"
+        },
+        {
+          "title": "Victoria R. Bricker, «Color and Texture in the Maya Language of Yucatan», Anthropological Linguistics 41(3): 283–307 (1999), resumen",
+          "url": "https://anthling.sitehost.iu.edu/v41-3.html"
+        },
+        {
+          "title": "Sanja Savkic, artículo sobre los términos de color en maya yucateco, Estudios de Cultura Maya 37 (SciELO, pdf)",
+          "url": "https://www.scielo.org.mx/pdf/ecm/v37/v37a4.pdf"
+        }
+      ],
+      "evidence": "Base previa: INEA «Chak (rojo)», UADY «CHAK: Rojo, colorado». Bricker 1999 (resumen): «cak 'red, pink, orange, rust colored'». Savkic: chak entre los cinco términos básicos."
+    },
+    {
+      "m": "sak",
+      "es": "blanco",
+      "status": "verificado",
+      "kbStatusBefore": "verificado",
+      "variants": [],
+      "correction": "Sin cambio.",
+      "pr": "sak",
+      "sources": [
+        {
+          "title": "Victoria R. Bricker, «Color and Texture in the Maya Language of Yucatan», Anthropological Linguistics 41(3): 283–307 (1999), resumen",
+          "url": "https://anthling.sitehost.iu.edu/v41-3.html"
+        },
+        {
+          "title": "Sanja Savkic, artículo sobre los términos de color en maya yucateco, Estudios de Cultura Maya 37 (SciELO, pdf)",
+          "url": "https://www.scielo.org.mx/pdf/ecm/v37/v37a4.pdf"
+        }
+      ],
+      "evidence": "Base previa: UADY «SAK: Blanco». Bricker 1999: «sak 'white'». Savkic: sak, término básico."
+    },
+    {
+      "m": "ya'ax",
+      "es": "verde (también azul-verde)",
+      "status": "verificado",
+      "kbStatusBefore": "verificado",
+      "variants": [],
+      "correction": "Sin cambio de forma. Savkic lo traduce 'verde-azul', así que ya se puede decir que incluye tonos azules (antes estaba «por verificar»).",
+      "pr": "ya-ash (a rearticulada)",
+      "sources": [
+        {
+          "title": "Diccionario maya-español de la UADY, letra Y (registro previo de la base)",
+          "url": "https://www.mayas.uady.mx/diccionario/y_maya.html"
+        },
+        {
+          "title": "Victoria R. Bricker, «Color and Texture in the Maya Language of Yucatan», Anthropological Linguistics 41(3): 283–307 (1999), resumen",
+          "url": "https://anthling.sitehost.iu.edu/v41-3.html"
+        },
+        {
+          "title": "Sanja Savkic, artículo sobre los términos de color en maya yucateco, Estudios de Cultura Maya 37 (SciELO, pdf)",
+          "url": "https://www.scielo.org.mx/pdf/ecm/v37/v37a4.pdf"
+        }
+      ],
+      "evidence": "Base previa: UADY «YA'AX: Verde». Bricker 1999: «'green'» (el resumen muestra la forma deformada «y?a»). Savkic: ya'ax 'verde-azul'."
+    },
+    {
+      "m": "k'an",
+      "es": "amarillo",
+      "status": "probable",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "k'aan (UADY)"
+      ],
+      "correction": "Sube a probable con la forma k'an (vocal corta): así la escriben las dos fuentes académicas (Bricker 1999 y Savkic) y Montgomery. La UADY da K'AAN, bajo el mismo encabezado que 'mecate'. El resumen de Bricker usa una grafía simplificada en la que la longitud de las vocales no es segura, así que el conflicto no está resuelto del todo: enseñar k'an con la nota «la UADY escribe k'aan». La acepción 'maduro' no se volvió a buscar.",
+      "pr": "k'an (a corta, k glotalizada)",
+      "sources": [
+        {
+          "title": "Victoria R. Bricker, «Color and Texture in the Maya Language of Yucatan», Anthropological Linguistics 41(3): 283–307 (1999), resumen",
+          "url": "https://anthling.sitehost.iu.edu/v41-3.html"
+        },
+        {
+          "title": "Sanja Savkic, artículo sobre los términos de color en maya yucateco, Estudios de Cultura Maya 37 (SciELO, pdf)",
+          "url": "https://www.scielo.org.mx/pdf/ecm/v37/v37a4.pdf"
+        },
+        {
+          "title": "Diccionario maya-español de la UADY, letra K'",
+          "url": "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+        },
+        {
+          "title": "John Montgomery, Maya-English / English-Maya Dictionary & Phrasebook (Hippocrene, 2004), registro previo de la base; sin url"
+        }
+      ],
+      "evidence": "Bricker 1999 (resumen): «the five basic color terms are ?ek' 'black', cak 'red…', k'an 'yellow, orange', sak 'white', and [ya'ax] 'green'». Savkic: términos básicos «sak, ek', chak, k'an y ya'ax». UADY (K'): «K'AAN: Amarillo, cosa amarilla»; «K'AN CH'UUY: Pálido, amarillento». Montgomery (base): k'an 'amarillo'."
+    },
+    {
+      "m": "éek'",
+      "es": "negro, oscuro; también sucio",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [
+        "ek' (Bricker y Savkic, en grafía simplificada)",
+        "boox (sinónimo para 'negro')"
+      ],
+      "correction": "Se amplía la glosa: además de 'sucio' (INEA), éek' es 'negro' según el diccionario español-maya de la UADY, que lo escribe con tono alto. Así queda resuelto lo que pedía el verificador: 'negro' es éek' (tono alto) y 'estrella' es eek' (tono bajo).",
+      "pr": "éek' (ée larga con tono alto)",
+      "sources": [
+        {
+          "title": "Diccionario español-maya de la UADY, letra N",
+          "url": "https://www.mayas.uady.mx/diccionario/n_esp.html"
+        },
+        {
+          "title": "INEA, curso de lengua maya (registro previo de la base)",
+          "url": "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+        },
+        {
+          "title": "Diccionario maya-español de la UADY, letra E (registro previo de la base)",
+          "url": "https://www.mayas.uady.mx/diccionario/e_maya.html"
+        },
+        {
+          "title": "Sanja Savkic, artículo sobre los términos de color en maya yucateco, Estudios de Cultura Maya 37 (SciELO, pdf)",
+          "url": "https://www.scielo.org.mx/pdf/ecm/v37/v37a4.pdf"
+        }
+      ],
+      "evidence": "UADY (español-maya, N): «NEGRO, A adj: Éek', boox». INEA (base): «Éek' · sucio». UADY (E, base): «EEK': Negro, obscuro, sucio». Savkic y Bricker: ek' 'negro' como término básico (sin marcar longitud ni tono)."
+    },
+    {
+      "m": "boox",
+      "es": "negro",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "Sin cambio; pasa a verificado (una fuente institucional). Es útil porque no tiene el problema de tono de éek'.",
+      "pr": "boosh (o larga, tono bajo)",
+      "sources": [
+        {
+          "title": "Diccionario español-maya de la UADY, letra N",
+          "url": "https://www.mayas.uady.mx/diccionario/n_esp.html"
+        }
+      ],
+      "evidence": "UADY (español-maya, N): «NEGRO, A adj: Éek', boox». También aparece en la descripción de un video didáctico (perro negro); no se cita porque no es académico."
+    },
+    {
+      "m": "lak'in",
+      "es": "oriente, este",
+      "status": "verificado",
+      "kbStatusBefore": "verificado",
+      "variants": [],
+      "correction": "Sin cambio.",
+      "pr": "la-k'in",
+      "sources": [
+        {
+          "title": "Diccionario maya-español de la UADY, letra L (registro previo de la base)",
+          "url": "https://www.mayas.uady.mx/diccionario/l_maya.html"
+        },
+        {
+          "title": "UADY, Yucatán: Identidad y Cultura Maya, artículo sobre el Hanal Pixan y la cosmología maya (articulos/pixan.html)",
+          "url": "https://www.mayas.uady.mx/articulos/pixan.html"
+        }
+      ],
+      "evidence": "Base previa: UADY «LAK'IN: oriente». UADY (cosmología): Lak'in, el oriente, de color rojo."
+    },
+    {
+      "m": "chik'in",
+      "es": "poniente, oeste",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "Sin cambio; pasa a verificado (una fuente institucional).",
+      "pr": "chi-k'in",
+      "sources": [
+        {
+          "title": "UADY, Yucatán: Identidad y Cultura Maya, artículo sobre el Hanal Pixan y la cosmología maya (articulos/pixan.html)",
+          "url": "https://www.mayas.uady.mx/articulos/pixan.html"
+        }
+      ],
+      "evidence": "UADY (cosmología): «y al oeste Chik'in, al que le correspondía el color negro»."
+    },
+    {
+      "m": "xaman",
+      "es": "norte",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "Sin cambio; pasa a verificado.",
+      "pr": "sha-man",
+      "sources": [
+        {
+          "title": "Diccionario maya-español de la UADY, letra X",
+          "url": "https://www.mayas.uady.mx/diccionario/x_maya.html"
+        },
+        {
+          "title": "UADY, Yucatán: Identidad y Cultura Maya, artículo sobre el Hanal Pixan y la cosmología maya (articulos/pixan.html)",
+          "url": "https://www.mayas.uady.mx/articulos/pixan.html"
+        }
+      ],
+      "evidence": "UADY (X): «XAMAN: Norte, boreal». UADY (cosmología): Xaman, el norte, de color blanco."
+    },
+    {
+      "m": "nojol",
+      "es": "sur",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "Sin cambio; pasa a verificado (una fuente institucional).",
+      "pr": "no-jol (j suave)",
+      "sources": [
+        {
+          "title": "UADY, Yucatán: Identidad y Cultura Maya, artículo sobre el Hanal Pixan y la cosmología maya (articulos/pixan.html)",
+          "url": "https://www.mayas.uady.mx/articulos/pixan.html"
+        }
+      ],
+      "evidence": "UADY (cosmología): «Al sur, Nojol, de color amarillo»."
+    },
+    {
+      "m": "Lak'in: chak · Xaman: sak · Chik'in: éek' · Nojol: k'an · al centro, el ya'axche'",
+      "es": "Colores y rumbos: oriente rojo, norte blanco, poniente negro, sur amarillo; en el centro, la ceiba verde",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "boox en lugar de éek' para 'negro'"
+      ],
+      "correction": "La asociación queda verificada (UADY) y coincide con la de la base. Cambios en el texto: escribir éek' (tono alto) o boox para 'negro', no eek' (que es 'estrella'). Para 'amarillo', k'an con la nota de la UADY (k'aan). Para el centro, la UADY habla del Ya'axche', «árbol verde de la vida», que «atravesaba todos los espacios, uniéndolos»: decirlo así y no «une el cielo, la tierra y el inframundo», que no lo vi literal. La UADY presenta los rumbos como esquinas guardadas por los Bacabes.",
+      "pr": "la-k'in chak · sha-man sak · chi-k'in éek' · no-jol k'an · ya-ash-che'",
+      "sources": [
+        {
+          "title": "UADY, Yucatán: Identidad y Cultura Maya, artículo sobre el Hanal Pixan y la cosmología maya (articulos/pixan.html)",
+          "url": "https://www.mayas.uady.mx/articulos/pixan.html"
+        }
+      ],
+      "evidence": "UADY (artículo de cosmología, pixan.html): los Bacabes guardan las esquinas del mundo; «Al sur, Nojol, de color amarillo; … y al oeste Chik'in, al que le correspondía el color negro»; el resumen del buscador completa Xaman, norte, blanco y Lak'in, oriente, rojo. En el centro, el Ya'axche'. La página da los colores en español; las palabras mayas de color están verificadas por separado (chak, sak, éek', ya'ax) o son probables (k'an). Es una sola fuente institucional."
+    },
+    {
+      "m": "kuum",
+      "es": "olla",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "kum (forma de la base: no la vi)"
+      ],
+      "correction": "CAMBIA la forma: kum → kuum (u larga), como la escribe la UADY.",
+      "pr": "kuum (u larga, tono bajo)",
+      "sources": [
+        {
+          "title": "Diccionario maya-español de la UADY (mayas.uady.mx), letra K",
+          "url": "https://www.mayas.uady.mx/diccionario/k_maya.html"
+        }
+      ],
+      "evidence": "UADY (K): «KUUM: Olla». El resumen del buscador señaló que la consulta decía «KUM» y que la entrada es KUUM."
+    },
+    {
+      "m": "xamach",
+      "es": "comal",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "Sin cambio; pasa a verificado.",
+      "pr": "sha-mach",
+      "sources": [
+        {
+          "title": "Diccionario maya-español de la UADY, letra X",
+          "url": "https://www.mayas.uady.mx/diccionario/x_maya.html"
+        }
+      ],
+      "evidence": "UADY (X): «XAMACH: Comal»."
+    },
+    {
+      "m": "p'úul",
+      "es": "cántaro (vasija de barro)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "Sin cambio; pasa a verificado. La UADY la da también para 'piñata', que antes se hacía con una olla de barro. No confundir con puul 'arrojar'.",
+      "pr": "p'úul (p glotalizada, úu larga con tono alto)",
+      "sources": [
+        {
+          "title": "Diccionario español-maya de la UADY, letra C",
+          "url": "https://www.mayas.uady.mx/diccionario/c_esp.html"
+        },
+        {
+          "title": "Diccionario español-maya de la UADY, letra P",
+          "url": "https://www.mayas.uady.mx/diccionario/p_esp.html"
+        }
+      ],
+      "evidence": "UADY (español-maya, C): «CÁNTARO m: P'úul». UADY (español-maya, P): «PIÑATA f: P'úul». UADY (P): «PUUL: arrojar, tirar» es otra palabra."
+    },
+    {
+      "m": "k'óoben",
+      "es": "cocina; fogón (tradicional, de tres piedras)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "Sin cambio; pasa a verificado.",
+      "pr": "k'óo-ben (óo larga con tono alto)",
+      "sources": [
+        {
+          "title": "Diccionario maya-español de la UADY, letra K'",
+          "url": "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+        },
+        {
+          "title": "UADY, «Comidas campesinas en Xocen, Yucatán»",
+          "url": "https://www.mayas.uady.mx/articulos/comidas.html"
+        }
+      ],
+      "evidence": "UADY (K'): «K'ÓOBEN: Cocina, fogón». UADY, «Comidas campesinas en Xocen»: «La mayoría de la comida es preparada sobre fuego de leña en la cocina en un fogón o k'óoben formado por tres piedras»."
+    },
+    {
+      "m": "jool naj",
+      "es": "puerta (de la casa)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "joonaj (forma contraída, también en la UADY)",
+        "joolnaj (forma de la base, junta: no la vi)"
+      ],
+      "correction": "CAMBIA la grafía: joolnaj → jool naj (separado), o joonaj, que son las dos formas de la UADY. Es transparente: jool 'agujero, hueco' + naj 'casa'. Si las Normas de 2014 piden escribir junto este compuesto, joolnaj sería aceptable, pero no lo comprobé.",
+      "pr": "jool naj (o larga; j suave)",
+      "sources": [
+        {
+          "title": "Diccionario español-maya de la UADY, letra P",
+          "url": "https://www.mayas.uady.mx/diccionario/p_esp.html"
+        },
+        {
+          "title": "Aprendiendo Maya, «Alfabeto maya» (registro previo de la base)",
+          "url": "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+        }
+      ],
+      "evidence": "UADY (español-maya, P): «PUERTA f: Joonaj, jool naj». Aprendiendo Maya (base): jool 'hueco', naj 'casa'."
+    },
+    {
+      "m": "k'áanche'",
+      "es": "banquillo, banquito (asiento de madera)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "Sin cambio; pasa a verificado. No confundir con ka'anche' (o «caanché»), el huerto elevado sobre estacas que menciona otra página de la UADY sin definirlo.",
+      "pr": "k'áan-che' (áa larga con tono alto)",
+      "sources": [
+        {
+          "title": "Diccionario maya-español de la UADY, letra K'",
+          "url": "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+        },
+        {
+          "title": "UADY, «¿Qué es la sobada? Elementos para conocer y entender una práctica…» (pdf)",
+          "url": "https://www.mayas.uady.mx/articulos/pdf/sobada.pdf"
+        }
+      ],
+      "evidence": "UADY (K'): «K'ÁANCHE': banquillo, lugar donde se asienta algo, objeto o cosa que sirve para sentarse». UADY (sobada): una partera sentada en un k'áanche' (banquillo)."
+    },
+    {
+      "m": "ke'el",
+      "es": "frío (del ambiente, del clima)",
+      "status": "probable",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "Sube a probable y se precisa la glosa: es el frío del ambiente o del invierno. El frío de las cosas (agua, viento) es síis. En la UADY K'ÉEL es otra palabra ('tostar en comal').",
+      "pr": "ke-el (e rearticulada)",
+      "sources": [
+        {
+          "title": "Ruptura 360, «Conoce qué significa la ‘heladez’ en la península de Yucatán» (cita a Miguel Güemes Pineda, UADY)",
+          "url": "https://ruptura360.mx/el-estado/heladez-que-significa/"
+        }
+      ],
+      "evidence": "Ruptura 360 (nota sobre la «heladez»; la misma búsqueda devolvió notas de Posta y el resumen no dijo de cuál venía la cita): el investigador Miguel Güemes Pineda (UADY) distingue «síis» para el frío de los objetos («síis iik'» viento frío, «síis ja'» agua fría) y «ke'el» para el frío ambiental o invernal. Es una sola fuente periodística; no vi ninguna entrada de diccionario."
+    },
+    {
+      "m": "síis",
+      "es": "frío, fresco (de cosas: agua, viento)",
+      "status": "probable",
+      "kbStatusBefore": "no estaba en la base",
+      "variants": [],
+      "correction": "Palabra nueva, útil junto a ke'el. Frases vistas: síis ja' 'agua fría', síis iik' 'viento frío'.",
+      "pr": "síis (íi larga con tono alto)",
+      "sources": [
+        {
+          "title": "Ruptura 360, «Conoce qué significa la ‘heladez’ en la península de Yucatán» (cita a Miguel Güemes Pineda, UADY)",
+          "url": "https://ruptura360.mx/el-estado/heladez-que-significa/"
+        }
+      ],
+      "evidence": "Misma nota (Güemes Pineda, UADY): «síis» para el frío de los objetos. En una búsqueda limitada a mayas.uady.mx, el resumen dijo que «el estado de frialdad se llama síis», pero no identificó la página; por eso no la cuento como segunda fuente."
+    },
+    {
+      "m": "nojoch",
+      "es": "grande; mayor, principal",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "nohoch (grafía antigua)",
+        "noj"
+      ],
+      "correction": "Sin búsqueda nueva: ya la verificó recheck-cuerpo-familia (UADY reproducida, Wikcionario, INAH «Nohoch Mul»). Sin cambio de forma.",
+      "pr": "no-joch (j suave)",
+      "sources": [
+        {
+          "title": "kb/recheck-cuerpo-familia.json (re-verificación de este mismo flujo, con sus fuentes)"
+        }
+      ],
+      "evidence": "Según recheck-cuerpo-familia: UADY (reproducción) «NOJOCH: Cosa grande, mayor principal»; Wikcionario 'grande'; INAH «Nohoch Mul» = 'gran montículo'."
+    },
+    {
+      "m": "chichan",
+      "es": "chico, pequeño",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "Sin cambio; pasa a verificado.",
+      "pr": "chi-chan",
+      "sources": [
+        {
+          "title": "Diccionario maya-español de la UADY, letra CH",
+          "url": "https://www.mayas.uady.mx/diccionario/ch_maya.html"
+        }
+      ],
+      "evidence": "UADY (CH): «CHICHAN: chico, pequeño»."
+    },
+    {
+      "m": "k'aas",
+      "es": "malo; feo; inservible",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "k'as (grafía de un artículo de la UADY sobre el español yucateco)"
+      ],
+      "correction": "Sin cambio; pasa a verificado. Dato para el curso: en el español de Yucatán, «k'as» se usa para algo hecho a medias o mal hecho.",
+      "pr": "k'aas (a larga, tono bajo)",
+      "sources": [
+        {
+          "title": "Diccionario maya-español de la UADY, letra K'",
+          "url": "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+        },
+        {
+          "title": "UADY, «Hibridismos en el habla del yucateco»",
+          "url": "https://www.mayas.uady.mx/articulos/hibridismos.html"
+        }
+      ],
+      "evidence": "UADY (K'): «K'AAS: feo, ruin, malo, inservible». UADY, «Hibridismos en el habla del yucateco»: «k'as» significa 'mal, malo', pero en la práctica se usa para algo a medias o mal hecho."
+    },
+    {
+      "m": "Janal Pixan",
+      "es": "Hanal Pixán: «comida de las ánimas», la celebración yucateca de los fieles difuntos",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "Hanal Pixán / Hanal Pixan (grafía tradicional, la más usada en prensa)"
+      ],
+      "correction": "Queda verificado el núcleo: el significado 'comida de las ánimas', la fecha y los altares con comida. Correcciones al texto: (1) las fechas son del 31 de octubre al 2 de noviembre: el 31 se dedica a los niños, el 1 a los adultos y el 2 a todos los fieles difuntos (misa pixán); (2) el platillo es el mucbipollo (mukbil pollo) o pib, un tamal grande de masa y manteca horneado bajo tierra; mukbil quiere decir 'lo que se entierra'. Los nombres de cada día (u hanal palal, u hanal nucuch uinicoob, u hanal pixanoob) están en grafía antigua: mostrarlos así y NO normalizarlos, porque el tono y la longitud no son seguros. 'pixan = alma' se deduce de 'comida de las ánimas'; no vi una entrada de diccionario.",
+      "pr": "ja-nal pi-shan",
+      "sources": [
+        {
+          "title": "PorEsto, «Guía del Hanal Pixán: cuándo se celebra, cómo se arma el altar y qué comidas tradicionales se preparan en Yucatán» (2025)",
+          "url": "https://www.poresto.com/yucatan/2025/10/8/guia-del-hanal-pixan-cuando-se-celebra-como-se-arma-el-altar-y-que-comidas-tradicionales-se-preparan-en-yucatan.html"
+        },
+        {
+          "title": "UnoTV, «Mucbipollo: cómo preparar el platillo ancestral que da sabor al Día de Muertos en Yucatán»",
+          "url": "https://www.unotv.com/estilo-de-vida/gastronomia/mucbipollo-como-preparar-el-platillo-ancestral-que-da-sabor-al-dia-de-muertos-en-yucatan/"
+        },
+        {
+          "title": "Posta, «¿Cómo debe ser un altar tradicional yucateco de Día de Muertos?»",
+          "url": "https://www.posta.com.mx/mexico/como-debe-ser-un-altar-tradicional-yucateco-de-dia-de-muertos/vl1621997"
+        },
+        {
+          "title": "UADY, «El hanal pixan» (articulos/pixan2.html)",
+          "url": "https://www.mayas.uady.mx/articulos/pixan2.html"
+        },
+        {
+          "title": "Yucatán Today, «Janal Pixan in Yucatán» (registro previo de la base)",
+          "url": "https://yucatantoday.com/en/blog/janal-pixan-in-yucatan"
+        }
+      ],
+      "evidence": "PorEsto 2025: Hanal Pixán, 'comida de las ánimas', del 31 de octubre al 2 de noviembre; 31: u hanal palal (niños), 1: u hanal nucuch uinicoob (adultos), 2: u hanal pixanoob o misa pixán (todos los fieles difuntos, rezos en el cementerio); en los altares de niños, dulces, juguetes y flores amarillas de xpujuc. UnoTV: mucbipollo o pib, tamal grande de masa de maíz y manteca; su nombre viene de mukbil, 'algo que debe ser enterrado'; el primer pib va al altar. Posta: el altar tradicional yucateco. La UADY tiene un artículo titulado «El hanal pixan». Yucatán Today (base): la grafía janal pixan, con J, sigue la estandarización del alfabeto. Una fuente de Quintana Roo dice otra cosa sobre el 2 de noviembre; las de Yucatán coinciden."
+    },
+    {
+      "m": "kool (la milpa)",
+      "es": "La milpa: el sistema tradicional de cultivo maya",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "Verificado con matices. Cambiar «maíz, frijol y calabaza» por «maíz con calabaza, camote y varias leguminosas, como el frijol» (UADY). «Roza, tumba y quema» no la vi literal: la UADY habla de «agricultura migratoria» y define kool como 'tierra labrada o rozada'; puede decirse «se roza el monte para sembrar». El mecate (k'aan, 20 × 20 m) y koolnáal ya estaban en la base.",
+      "pr": "kool",
+      "sources": [
+        {
+          "title": "UADY, «La milpa maya como agricultura migratoria»",
+          "url": "https://www.mayas.uady.mx/articulos/milpa.html"
+        },
+        {
+          "title": "Diccionario maya-español de la UADY (mayas.uady.mx), letra K",
+          "url": "https://www.mayas.uady.mx/diccionario/k_maya.html"
+        },
+        {
+          "title": "UADY, multimedia: «U meeyjil ich kool / El trabajo de la milpa»",
+          "url": "https://www.mayas.uady.mx/multimedia/trabajo.html"
+        }
+      ],
+      "evidence": "UADY, «La milpa maya como agricultura migratoria»: «este sistema toma el nombre de 'milpa', o 'kool' en lengua maya» y es «un policultivo basado en la asociación del maíz (Zea mais) con el camote (Hypomoea batata), la calabaza (Cucurbita moschata) y varios tipos de leguminosas». UADY (K): «KOOL: Milpa; tierra labrada o rozada»."
+    },
+    {
+      "m": "jarana",
+      "es": "La jarana: el baile tradicional de Yucatán (palabra del español)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "El texto de la base es correcto en lo esencial. Detalles verificados que se pueden añadir: se baila en compás de 6/8 y de 3/4; las vaquerías nacieron de las fiestas de herrado y conteo del ganado en las haciendas; las «bombas» son versos cómicos que dice un hombre cuando se detiene la música al grito de «¡bomba!».",
+      "pr": "ja-ra-na (es español)",
+      "sources": [
+        {
+          "title": "Wikipedia (inglés), «Jarana yucateca»",
+          "url": "https://en.wikipedia.org/wiki/Jarana_yucateca"
+        },
+        {
+          "title": "Yucatán Today, «Yucatecan traditions: vaquería and jarana»",
+          "url": "https://yucatantoday.com/en/blog/yucatecan-traditions-vaqueria-and-jarana/"
+        }
+      ],
+      "evidence": "Wikipedia («Jarana yucateca»): baile típico de Yucatán, en 6/8 y 3/4; la vaquería surgió de las fiestas de herrado y conteo del ganado en haciendas y ranchos, y hoy tiene misa, corrida y baile; las bombas son rimas que recitan los bailarines cuando la música se detiene al grito de «bomba». Yucatán Today: vaquería y jarana."
+    },
+    {
+      "m": "hipil",
+      "es": "El hipil: el vestido tradicional de la mujer yucateca (palabra del español, del náhuatl huipilli)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "huipil (forma general en México)"
+      ],
+      "correction": "Verificado: en Yucatán se dice hipil; la palabra viene del náhuatl huipilli; es una túnica blanca de algodón con bordados; el terno, el traje de gala, tiene tres piezas: jubón, hipil y fustán. Precisar en el texto que el terno incluye el hipil, no que es «una versión» de él.",
+      "pr": "i-pil (es español)",
+      "sources": [
+        {
+          "title": "Fashion History Timeline (FIT, Nueva York), «Huipilli / huipil»",
+          "url": "https://fashionhistory.fitnyc.edu/huipilli-huipil"
+        },
+        {
+          "title": "EcuRed, «Huipil»",
+          "url": "https://www.ecured.cu/Huipil"
+        },
+        {
+          "title": "Posta, «Día Nacional del Huipil: conoce el origen de la tradicional vestimenta yucateca»",
+          "url": "https://www.posta.com.mx/mexico/dia-nacional-del-huipil-conoce-el-origen-de-la-tradicional-vestimenta-yucateca/vl1551278"
+        },
+        {
+          "title": "destination.com, guía de Mérida: vaquerías, jarana y traje de mestiza",
+          "url": "https://www.destination.com/guides/merida-santiago-july-vaquerias-jarana-dance-mestiza-dress-makers-neighborhood-fiestas-thunderstorm-horchata"
+        },
+        {
+          "title": "Yucatán Today, «Yucatecan traditions: vaquería and jarana»",
+          "url": "https://yucatantoday.com/en/blog/yucatecan-traditions-vaqueria-and-jarana/"
+        }
+      ],
+      "evidence": "FIT Fashion History: huipil viene del náhuatl huipilli. EcuRed / Hispanopedia: túnica de una o más piezas rectangulares; en Yucatán se llama hipil. Resumen de la búsqueda (Posta y otras): la versión yucateca suele ser una túnica blanca de algodón bordada; el terno combina jubón, hipil y fustán (también en la guía de destination.com)."
+    },
+    {
+      "m": "íipil",
+      "es": "hipil (supuesta forma maya)",
+      "status": "dudoso",
+      "kbStatusBefore": "no estaba en la base (solo se mencionaba en la tarea)",
+      "variants": [],
+      "correction": "No enseñar: la forma maya íipil no apareció en ninguna búsqueda (ni en la UADY ni en la web general). Usar solo la palabra española hipil.",
+      "pr": "—",
+      "sources": [],
+      "evidence": "Dos búsquedas («íipil» con hipil/huipil, y en mayas.uady.mx) sin ningún resultado para esta forma. Para lenguas mayas de Guatemala se menciona po't, que no es yucateco."
+    },
+    {
+      "m": "Maaya t'aan: 774,755 hablantes (INEGI 2020)",
+      "es": "Número de hablantes de maya según el Censo 2020",
+      "status": "verificado",
+      "kbStatusBefore": "verificado",
+      "variants": [],
+      "correction": "Sin búsqueda propia ni cambios. Wikipedia redondea a unos 800 000 hablantes según el censo de 2020, lo que coincide con la cifra.",
+      "pr": "maa-ya t'aan",
+      "sources": [
+        {
+          "title": "INALI, «Lengua del mes: Maayat'aan (maya)» (registro previo de la base)",
+          "url": "https://www.inali.gob.mx/detalle/lengua-del-mes-maayataan-maya"
+        },
+        {
+          "title": "Wikipedia (inglés), «Yucatec Maya language»",
+          "url": "https://en.wikipedia.org/wiki/Yucatec_Maya_language"
+        }
+      ],
+      "evidence": "Base previa: INALI (Lengua del mes) cita 774,755 hablantes (INEGI 2020). Wikipedia: «about 800,000 speakers according to the 2020 census» (en el resumen de una búsqueda de este turno)."
+    }
+  ]
+}

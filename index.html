@@ -3,19 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
-</head>
-<body>
 <title>Ko'ox Maaya</title>
-<meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Curso de maya yucateco (maaya t'aan) desde cero, en español: lecciones cortas, repaso espaciado y diccionario.">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="application-name" content="Ko'ox Maaya">
 <meta name="theme-color" content="" id="meta-theme">
+<meta name="apple-mobile-web-app-title" content="Ko'ox Maaya">
+<meta name="theme-color" content="#eef2ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1815" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" id="gfonts" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" media="print">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap"></noscript>
+<style>
+:root { color-scheme: light; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px) }
+body { margin: 0; font: 14px system-ui, sans-serif }
+img { max-width: 100% }
+[hidden] { display: none !important }
+</style>
 <style>
 /* Layout: una columna centrada (máx. 600 px) con barra inferior Material 3; la ruta de
    lecciones sube en escalones, como la greca escalonada que firma la app.
@@ -353,6 +361,19 @@ button:disabled { cursor: default; }
   animation: pop-in .2s ease both;
 }
 body.in-session .toast { bottom: auto; top: calc(env(safe-area-inset-top, 0px) + 64px); }
+/* Aviso «Hay una versión nueva»: solo en la versión web instalable (lo crea app.js). Mientras está
+   vacío no se ve, pero ya existe como región viva para que se anuncie al llenarse. */
+.update-note {
+  position: fixed; z-index: 55; left: var(--gut-l); right: var(--gut-r); margin-inline: auto; max-width: 440px;
+  bottom: calc(var(--nav-h) + env(safe-area-inset-bottom, 0px) + 12px);
+  display: flex; align-items: center; gap: 8px; padding: 6px 4px 6px 16px; border-radius: var(--r);
+  background: var(--surface-hi); color: var(--fg); border: 1px solid var(--line-strong); box-shadow: var(--shadow);
+}
+.update-note:empty { padding: 0; border: 0; box-shadow: none; }
+.update-note:not(:empty) { animation: pop-in .2s ease both; }
+.update-note .update-txt { flex: 1; min-width: 0; font-weight: 700; }
+.update-note .btn { min-height: 44px; padding: 8px 18px; }
+body.in-session .update-note { bottom: auto; top: calc(env(safe-area-inset-top, 0px) + 64px); }
 .goal-banner {
   display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: var(--r);
   background: var(--kan-soft); color: var(--kan-ink); font-weight: 700;
@@ -748,7 +769,9 @@ ol.steps { margin: 0; padding-left: 22px; display: flex; flex-direction: column;
 }
 
 </style>
-
+<script>window.KOOX_STANDALONE = true; window.KOOX_BUILD = "a1c4c44f271d";</script>
+</head>
+<body>
 <div class="app" id="app" lang="es">
   <noscript><p class="noscript">Ko'ox Maaya necesita JavaScript para funcionar.</p></noscript>
 
@@ -1503,6 +1526,14 @@ window.COURSE.guide = {
     {
       title: "Mora-Marín (UNC Chapel Hill) – Maya T'aan Summer 2017, blog del curso de maya yucateco",
       url: "https://davidmm.web.unc.edu/2017/06/22/maya-taan-summer-2017/"
+    },
+    {
+      title: "UADY – Diccionario español-maya, letra C (comienzo: káajal)",
+      url: "https://www.mayas.uady.mx/diccionario/c_esp.html"
+    },
+    {
+      title: "UADY – Diccionario español-maya, letra T (también: bey xan)",
+      url: "https://www.mayas.uady.mx/diccionario/t_esp.html"
     }
   ],
   lessons: [
@@ -1537,7 +1568,7 @@ window.COURSE.guide = {
         {
           kind: "tip",
           title: "¿Y «buenos días»?",
-          html: "<span class=\"m\">Ma'alob k'iin</span> («buen día») es un calco del español: los saludos por hora del día no son tradicionales en maya. El prontuario del INALI pone <span class=\"m\">Bix a beel?</span> como equivalente de «buenos días» y <span class=\"m\">Ba'ax ka wa'alik?</span> para «buenas noches».<br>Con la misma idea se oyen <span class=\"m\">Ma'alob chíinil k'iin</span>, «buenas tardes», y <span class=\"m\">Ma'alob áak'ab</span>, «buenas noches» (<span class=\"m\">áak'ab</span> es «noche»). Las guías no coinciden en la vocal de <span class=\"m\">chíinil</span> y ninguna fuente académica recoge estas dos fórmulas: por eso llevan la marca «por confirmar»."
+          html: "<span class=\"m\">Ma'alob k'iin</span> («buen día») es un calco del español: los saludos por hora del día no son tradicionales en maya. El prontuario del INALI pone <span class=\"m\">Bix a beel?</span> como equivalente de «buenos días» y <span class=\"m\">Ba'ax ka wa'alik?</span> para «buenas noches».<br>Con la misma idea se oyen <span class=\"m\">Ma'alob chíinil k'iin</span>, «buenas tardes», y <span class=\"m\">Ma'alob áak'ab</span>, «buenas noches» (<span class=\"m\">áak'ab</span> es «noche»). Ninguna fuente académica recoge estas dos fórmulas, pero <span class=\"m\">Ma'alob áak'ab</span> aparece en varias fuentes independientes. <span class=\"m\">Ma'alob chíinil k'iin</span> sigue «por confirmar», porque las guías no coinciden en la vocal de <span class=\"m\">chíinil</span>."
         }
       ],
       vocab: [
@@ -1628,8 +1659,8 @@ window.COURSE.guide = {
           m: "Ma'alob áak'ab",
           es: "buenas noches",
           pr: "ma-alob áak'ab",
-          note: "Calco del español. Áak'ab es «noche».",
-          conf: "media"
+          note: "Calco del español, como Ma'alob k'iin; lo dan varias fuentes independientes. Áak'ab es «noche».",
+          conf: "alta"
         }
       ],
       dialogue: {
@@ -1671,10 +1702,10 @@ window.COURSE.guide = {
         {
           type: "choice",
           q: "¿Cómo se dice en maya?",
-          prompt: "nada",
+          prompt: "buenas noches",
           promptLang: "es",
-          answer: "Mixba'al",
-          options: ["Mixba'al", "Ma'alob", "Kux teech?"]
+          answer: "Ma'alob áak'ab",
+          options: ["Ma'alob áak'ab", "Ma'alob k'iin", "Mixba'al"]
         },
         {
           type: "fill",
@@ -1769,7 +1800,7 @@ window.COURSE.guide = {
           m: "Tu'ux a kaajal?",
           es: "¿De dónde eres?",
           pr: "tu-ush a kaajal",
-          note: "Lit. «¿dónde es tu pueblo?».",
+          note: "Lit. «¿dónde es tu pueblo?». No confundas kaajal (pueblo) con káajal, de tono alto, que es «comenzar; comienzo».",
           conf: "media"
         },
         {
@@ -1810,7 +1841,8 @@ window.COURSE.guide = {
           m: "Beyxan teen",
           es: "yo también; igualmente",
           pr: "beyshan teen",
-          note: "Bey (así) + xan (también) + teen (yo).",
+          note: "Bey (así) + xan (también) + teen (yo). El diccionario de la UADY escribe bey xan, separado.",
+          alt: ["Bey xan teen"],
           conf: "alta"
         }
       ],
@@ -2246,12 +2278,15 @@ window.COURSE.guide = {
       title: "Gobierno de Yucatán – Letra del Himno de Yucatán, versión en maya (grafía ko'olel)",
       url: "https://www.yucatan.gob.mx/simbolosyucatecos/files/1.%20Letras%20del%20Himno%20(Espa%C3%B1ol%20y%20maya)/LETRA%20DEL%20HIMNO%20DE%20YUCAT%C3%81N%20(V.%20MAYA).pdf"
     },
-    { title: "Material didáctico de maya yucateco (documento en Scribd: xi'ipal, ch'úupal)" },
+    { title: "Material didáctico de maya yucateco (xi'ipal, ch'úupal)" },
     {
       title: "Americanía (Universidad Pablo de Olavide), texto en maya sobre los mayores de Kanxoc (nojoch máako'ob)",
       url: "https://upo.es/revistas/index.php/americania/article/download/2624/2088/8058"
     },
-    { title: "UADY – Diccionario maya-español, letra W (wíinik)", url: "https://www.mayas.uady.mx/diccionario/w_maya.html" }
+    { title: "UADY – Diccionario maya-español, letra W (wíinik)", url: "https://www.mayas.uady.mx/diccionario/w_maya.html" },
+    { title: "UADY – Diccionario español-maya, letra P (padre, papá: yuum, taat, taatáa)", url: "https://www.mayas.uady.mx/diccionario/p_esp.html" },
+    { title: "UADY – Diccionario español-maya, letra A (abuelo: nool; abuela: chiich)", url: "https://www.mayas.uady.mx/diccionario/a_esp.html" },
+    { title: "UADY – Diccionario español-maya, letra T (también: bey xan)", url: "https://www.mayas.uady.mx/diccionario/t_esp.html" }
   ],
   lessons: [
     {
@@ -2339,7 +2374,8 @@ window.COURSE.guide = {
           m: "Beyxan teech",
           es: "igualmente; a ti también",
           pr: "beyshan teech",
-          note: "Para devolver un buen deseo.",
+          note: "Para devolver un buen deseo. El diccionario de la UADY escribe bey xan, separado.",
+          alt: ["Bey xan teech"],
           conf: "media"
         }
       ],
@@ -2578,8 +2614,8 @@ window.COURSE.guide = {
         },
         {
           kind: "tip",
-          title: "Papá: yuum",
-          html: "Para «papá» o «padre» se dice <span class=\"m\">yuum</span>: así lo dan el diccionario de la UADY («padre, señor») y medios como Posta y México Desconocido. Es la misma palabra de <span class=\"m\">Yuum bo'otik</span>, «muchas gracias», y también sirve para «señor, dueño».<br>Algunas guías dan otra palabra para «papá», pero ninguna fuente yucateca la confirma: usa <span class=\"m\">yuum</span>."
+          title: "Papá: yuum y taat",
+          html: "Para «papá» o «padre» se dice <span class=\"m\">yuum</span>: así lo dan el diccionario de la UADY («padre, señor») y medios como Posta y México Desconocido. Es la misma palabra de <span class=\"m\">Yuum bo'otik</span>, «muchas gracias», y también sirve para «señor, dueño».<br>El mismo diccionario da además <span class=\"m\">taat</span> (y <span class=\"m\">taatáa</span>). Otras formas que circulan, como <i>taata</i> o <i>taataj</i>, no están en el diccionario: no las enseñamos."
         }
       ],
       vocab: [
@@ -2596,7 +2632,15 @@ window.COURSE.guide = {
           m: "yuum",
           es: "padre, papá; señor, dueño",
           pr: "yuum (u larga)",
-          note: "La palabra para «papá» que dan las fuentes. Aparece en Yuum bo'otik, «muchas gracias».",
+          note: "La palabra para «papá» más común en las fuentes. Aparece en Yuum bo'otik, «muchas gracias».",
+          conf: "alta"
+        },
+        {
+          id: "u3-taat",
+          m: "taat",
+          es: "papá, padre",
+          pr: "taat (a larga)",
+          note: "El diccionario de la UADY la da junto a yuum y taatáa. Las formas taata y taataj no están en el diccionario.",
           conf: "alta"
         },
         {
@@ -2607,7 +2651,7 @@ window.COURSE.guide = {
           note: "Vocal larga; con vocal corta, chich es «duro».",
           conf: "alta"
         },
-        { id: "u3-nool", m: "nool", es: "abuelo", pr: "nool (o larga)", conf: "media" },
+        { id: "u3-nool", m: "nool", es: "abuelo", pr: "nool (o larga)", note: "En la misma entrada, el diccionario de la UADY da chiich para «abuela».", conf: "alta" },
         { id: "u3-atan", m: "atan", es: "esposa", note: "Con posesivo lleva w: in watan, a watan.", conf: "alta" },
         {
           id: "u3-iicham",
@@ -2696,11 +2740,11 @@ window.COURSE.guide = {
         { type: "type", q: "Escribe en maya", prompt: "madre, mamá", answer: "na'" },
         {
           type: "choice",
-          q: "Repaso: ¿qué significa?",
-          prompt: "x ch'uup",
+          q: "¿Qué significa?",
+          prompt: "taat",
           promptLang: "m",
-          answer: "mujer",
-          options: ["mujer", "hombre, varón", "niño, niña"]
+          answer: "papá, padre",
+          options: ["papá, padre", "abuelo", "madre, mamá"]
         }
       ]
     },
@@ -2873,7 +2917,7 @@ window.COURSE.guide = {
   title: "Números",
   subtitle: "Del 1 al 20, contar cosas, personas y plantas, y preguntar cuántos",
   sources: [
-    { title: "UADY – Curso de maya yucateco, lección 5.6 (números con -p'éel)", url: "https://www.mayas.uady.mx/curso_maya/lec5_6.html" },
+    { title: "UADY – Curso de maya yucateco, lección 5.6 (números con -p'éel; uklahun)", url: "https://www.mayas.uady.mx/curso_maya/lec5_6.html" },
     { title: "Omniglot – Numbers in Yucatec Maya", url: "https://www.omniglot.com/language/numbers/yucatecmaya.htm" },
     { title: "Mújica (1995), Junp'iit Maaya – A little bit of Maya (sitio de Christian Lehmann)", url: "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html" },
     { title: "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)", url: "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php" },
@@ -2893,7 +2937,7 @@ window.COURSE.guide = {
     { title: "INALI – Normas de escritura para la lengua maya (2014), PDF", url: "https://site.inali.gob.mx/pdf/norma_maya.pdf" },
     { title: "Normas de escritura para la lengua maya: ka'ap'éel" },
     { title: "Uth y Gutiérrez Bravo (2018), el plural en maya yucateco (Redalyc)", url: "https://www.redalyc.org/journal/5259/525957259005/525957259005.pdf" },
-    { title: "Numerales y clasificadores (material docente en Scribd)" },
+    { title: "Numerales y clasificadores (material docente)" },
     { title: "La cuantificación actual en el maya yucateco (blog Los Ocelotes)", url: "https://losocelotesproyectotemasdelinguistica.wordpress.com/2021/06/09/la-cuantificacion-actual-en-el-maya-yucateco/" },
     { title: "Wiktionary – lahun, buluk (maya yucateco)", url: "https://en.wiktionary.org/wiki/buluk" },
     { title: "PorEsto – ¿Cómo saludar y despedir en maya? (jump'éel ma'alob k'iin)", url: "https://www.poresto.com/yucatan/2024/1/8/como-saludar-despedir-en-maya.html" },
@@ -2901,7 +2945,9 @@ window.COURSE.guide = {
     { title: "Diccionario de uso del maya yucateco (juntúul)", url: "https://www.academia.edu/142986420/Diccionario_de_uso_del_maya_yucateco" },
     { title: "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes" },
     { title: "parryc – Yucatec Maya (ya'ab máak, yanchaj)", url: "https://parryc.com/language/yucatec-maya" },
-    { title: "La Lengua Maya de Yucatán – Frases básicas (ya'ab, junp'íit)", url: "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas" }
+    { title: "La Lengua Maya de Yucatán – Frases básicas (ya'ab, junp'íit)", url: "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas" },
+    { title: "UADY – Diccionario maya, letra J (ja'ab, año)", url: "https://www.mayas.uady.mx/diccionario/j_maya.html" },
+    { title: "UADY – Diccionario español-maya, letra P (porción: p'íit)", url: "https://www.mayas.uady.mx/diccionario/p_esp.html" }
   ],
   lessons: [
     {
@@ -3046,7 +3092,7 @@ window.COURSE.guide = {
             ["14", "kanlajun", "kan + lajun"],
             ["15", "jo'olajun", "jo' + lajun"],
             ["16", "waklajun", "wak + lajun"],
-            ["17", "uklajun", "uk + lajun (por confirmar)"],
+            ["17", "uklajun", "uk + lajun"],
             ["18", "waxaklajun", "waxak + lajun"],
             ["19", "bolonlajun", "bolon + lajun"],
             ["20", "k'aal", "una veintena"]
@@ -3070,7 +3116,7 @@ window.COURSE.guide = {
         { id: "u4-kanlajun", m: "kanlajun", es: "catorce (14)", pr: "kanlajun", note: "kan + lajun.", conf: "alta" },
         { id: "u4-joolajun", m: "jo'olajun", es: "quince (15)", pr: "jo-olajun", note: "jo' + lajun, con la vocal repetida: jo'o-.", conf: "alta" },
         { id: "u4-waklajun", m: "waklajun", es: "dieciséis (16)", pr: "waklajun", note: "wak + lajun.", conf: "alta" },
-        { id: "u4-uklajun", m: "uklajun", es: "diecisiete (17)", pr: "uklajun", note: "Armada por regla: uk + lajun. La única fuente que da el 17 escribe u'uklajun o wuklajun; por confirmar.", conf: "media" },
+        { id: "u4-uklajun", m: "uklajun", es: "diecisiete (17)", pr: "uklajun", note: "uk + lajun. El curso de la UADY lo escribe uklahun, con la h de la grafía anterior a 2014; Omniglot da u'uklajun o wuklajun.", conf: "alta" },
         { id: "u4-waxaklajun", m: "waxaklajun", es: "dieciocho (18)", pr: "washaklajun", note: "waxak + lajun.", conf: "alta" },
         { id: "u4-bolonlajun", m: "bolonlajun", es: "diecinueve (19)", pr: "bolonlajun", note: "bolon + lajun.", conf: "alta" },
         { id: "u4-kaal", m: "k'aal", es: "veinte; una veintena (20)", pr: "k'aal (a larga, tono bajo)", note: "Con tono bajo: k'aal, no k'áal. Es la base para contar de veinte en veinte.", conf: "alta" },
@@ -3117,12 +3163,12 @@ window.COURSE.guide = {
       vocab: [
         { id: "u4-jaypeel", m: "Jayp'éel?", es: "¿Cuántos? (cosas)", pr: "jayp'éel", note: "jay- (¿cuánto?) + -p'éel. jay- nunca va solo.", conf: "alta" },
         { id: "u4-jaytuul", m: "Jaytúul?", es: "¿Cuántos? (personas o animales)", pr: "jaytúul", note: "jay- + -túul.", conf: "alta" },
-        { id: "u4-jaypeel-jaab", m: "Jayp'éel ja'ab yaan teech?", es: "¿Cuántos años tienes?", pr: "jayp'éel ja-ab yaan teech", note: "Lit. «¿cuántos años hay contigo?». La da una sola fuente (el manual Junp'iit Maaya); por confirmar.", conf: "media" },
+        { id: "u4-jaypeel-jaab", m: "Jayp'éel ja'ab yaan teech?", es: "¿Cuántos años tienes?", pr: "jayp'éel ja-ab yaan teech", note: "Lit. «¿cuántos años hay contigo?». ja'ab, «año», está confirmado en el diccionario de la UADY, pero la frase completa la da una sola fuente (el manual Junp'iit Maaya): por confirmar.", conf: "media" },
         { id: "u4-kaateen", m: "ka'atéen", es: "dos veces; por segunda vez", pr: "ka-atéen", note: "ka'a- + -téen (vez).", conf: "alta" },
         { id: "u4-tu-kaateen", m: "tu ka'atéen", es: "otra vez, de nuevo", pr: "tu ka-atéen", note: "Lit. «por segunda vez». Sirve para pedir que te repitan algo.", conf: "alta" },
         { id: "u4-yaab", m: "ya'ab", es: "mucho, muchos", pr: "ya-ab", note: "Va antes del sustantivo. Con jach se refuerza: jach ya'ab, muchísimo.", ex: { m: "ya'ab máak", es: "mucha gente" }, conf: "alta" },
         { id: "u4-yaan-yaab-maak", m: "Yaan ya'ab máak.", es: "Hay mucha gente.", pr: "yaan ya-ab máak", note: "yaan (hay) + ya'ab (mucho) + máak (gente). Las fuentes registran el pasado: Yanchaj ya'ab máak, «hubo mucha gente».", conf: "media" },
-        { id: "u4-jumpiit", m: "junp'íit", es: "un poco, un poquito", pr: "junp'íit (suena «jump'íit»)", alt: ["jump'íit"], note: "jun + p'íit. Con n, como en el título del manual Junp'iit Maaya, «un poquito de maya» (Mújica 1995), que no marca el tono; otras fuentes escriben jump'íit.", ex: { m: "Chéen junp'íit.", es: "Solo un poco." }, conf: "media" }
+        { id: "u4-jumpiit", m: "junp'íit", es: "un poco, un poquito", pr: "junp'íit (suena «jump'íit»)", alt: ["jump'íit"], note: "jun + p'íit, con el tono alto que da la UADY para p'íit. Con n, como en el título del manual Junp'iit Maaya, «un poquito de maya» (Mújica 1995); otras fuentes escriben jump'íit.", ex: { m: "Chéen junp'íit.", es: "Solo un poco." }, conf: "alta" }
       ],
       exercises: [
         { type: "choice", q: "¿Cómo preguntas cuántas personas hay?", prompt: "¿Cuántos? (personas)", promptLang: "es", answer: "Jaytúul?", options: ["Jaytúul?", "Bix?", "Ka'atúul?"] },
@@ -3130,7 +3176,7 @@ window.COURSE.guide = {
         { type: "fill", es: "¿Cuántas casas?", before: "", after: "naj?", answer: "Jayp'éel", options: ["Jayp'éel", "Jaytúul", "Junp'éel"] },
         { type: "choice", q: "¿Qué significa?", prompt: "Jayp'éel ja'ab yaan teech?", promptLang: "m", answer: "¿Cuántos años tienes?", options: ["¿Cuántos años tienes?", "¿Cuántas casas tienes?", "¿Cómo te llamas?"] },
         { type: "type", q: "Escribe en maya", prompt: "dos veces", answer: "ka'atéen" },
-        { type: "choice", q: "¿Qué significa?", prompt: "tu ka'atéen", promptLang: "m", answer: "otra vez, de nuevo", options: ["otra vez, de nuevo", "dos cosas", "por primera vez"] },
+        { type: "choice", q: "Cuidado con la forma: ¿qué significa?", prompt: "ja'ab", promptLang: "m", answer: "año", options: ["año", "agua", "mucho, muchos"] },
         { type: "build", es: "mucha gente", m: "ya'ab máak", distractors: ["junp'íit", "juntúul"] },
         { type: "choice", q: "¿Qué significa?", prompt: "Chéen junp'íit.", promptLang: "m", answer: "Solo un poco.", options: ["Solo un poco.", "Hay mucha gente.", "Otra vez."] }
       ]
@@ -3161,7 +3207,7 @@ window.COURSE.guide = {
     { title: "Aprendiendo Maya – Consonantes (k'aay)", url: "https://www.aprendiendomaya.com/escritura/alfabeto-maya" },
     { title: "UADY – Diccionario maya, letra TS (tsikbal)", url: "https://www.mayas.uady.mx/diccionario/ts_maya.html" },
     { title: "UADY – Diccionario maya, letra B (ba'ax, ba'axten)", url: "https://www.mayas.uady.mx/diccionario/b_maya.html" },
-    { title: "UADY – Diccionario maya, letra M (mix, mixmáak)", url: "https://www.mayas.uady.mx/diccionario/m_maya.html" },
+    { title: "UADY – Diccionario maya, letra M (máax, mix, mixmáak)", url: "https://www.mayas.uady.mx/diccionario/m_maya.html" },
     { title: "UADY – Diccionario maya, letra CH (chaambéel)", url: "https://www.mayas.uady.mx/diccionario/ch_maya.html" },
     { title: "UADY – Diccionario español-maya, letra C (na'at, entender)", url: "https://www.mayas.uady.mx/diccionario/c_esp.html" },
     { title: "AnderBois (2018), puntuación y partículas de pregunta en maya (kux, wáaj)", url: "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S2007-736X2018000100388" },
@@ -3169,6 +3215,10 @@ window.COURSE.guide = {
     { title: "La Lengua Maya de Yucatán – Frases básicas", url: "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas" },
     { title: "Omniglot – Useful phrases in Yucatec Maya", url: "https://www.omniglot.com/language/phrases/yucatec-maya.php" },
     { title: "Vocabulario.com.mx – Diccionario maya-español: verbo saber", url: "https://www.vocabulario.com.mx/blog/diccionario-maya-espanol-verbo-saber/" },
+    { title: "UADY – Diccionario español-maya, letra S (saber: ojel)", url: "https://www.mayas.uady.mx/diccionario/s_esp.html" },
+    { title: "UADY – Diccionario español-maya, letra T (trabajar: meyaj)", url: "https://www.mayas.uady.mx/diccionario/t_esp.html" },
+    { title: "UADY – Diccionario español-maya, letra L (leer, lectura: xook)", url: "https://www.mayas.uady.mx/diccionario/l_esp.html" },
+    { title: "Na'atik Language & Culture Institute – Yucatec Maya Phrases (Tene tin na'atik)", url: "https://naatikmexico.org/blog/yucatec-maya-phrases" },
     { title: "Idioma Maya Yucateco, material de curso (mixtu'ux)" },
     { title: "Epinvestiga – La lengua que perdimos (Táan in kanik maaya)", url: "https://epinvestiga.com/dominical/la-lengua-que-perdimos/" },
     { title: "Heraldo de México – Ko'ox kanik maaya t'aan", url: "https://yucatan.heraldodemexico.com.mx/tendencias/2025/8/27/koox-kanik-maaya-taan-asi-seran-los-cursos-para-preservar-la-lengua-maya-en-yucatan-1949.html" },
@@ -3216,8 +3266,8 @@ window.COURSE.guide = {
       vocab: [
         { id: "u5-bin", m: "bin", es: "ir", pr: "bin", note: "Presente habitual: kin bin, ka bin, ku bin…", ex: { m: "Tu'ux ka bin?", es: "¿A dónde vas?" }, conf: "alta" },
         { id: "u5-janal", m: "janal", es: "comer; comida", pr: "janal", note: "Verbo sin objeto: kin janal (como). En la grafía antigua se escribía hanal.", ex: { m: "Kin janal.", es: "Como (habitualmente)." }, conf: "alta" },
-        { id: "u5-meyaj", m: "meyaj", es: "trabajar", pr: "meyaj", ex: { m: "Kin meyaj.", es: "Trabajo." }, conf: "media" },
-        { id: "u5-xook", m: "xook", es: "leer; estudiar", pr: "shook", note: "La x suena «sh».", ex: { m: "Kin xook bul k'iin.", es: "Estudio todos los días." }, conf: "media" },
+        { id: "u5-meyaj", m: "meyaj", es: "trabajar", pr: "meyaj", ex: { m: "Kin meyaj.", es: "Trabajo." }, conf: "alta" },
+        { id: "u5-xook", m: "xook", es: "leer; estudiar", pr: "shook", note: "La x suena «sh». La UADY la da también para «lectura» y «lección».", ex: { m: "Kin xook bul k'iin.", es: "Estudio todos los días." }, conf: "alta" },
         { id: "u5-taal", m: "taal", es: "venir", pr: "taal", note: "El prontuario del INALI la usa en taalech, «viniste».", ex: { m: "Ku taal.", es: "Viene (suele venir)." }, conf: "alta" },
         { id: "u5-wenel", m: "wenel", es: "dormir", pr: "wenel", conf: "alta" },
         { id: "u5-kaay", m: "k'aay", es: "cantar; canto", pr: "k'aay", conf: "alta" },
@@ -3268,7 +3318,7 @@ window.COURSE.guide = {
       ],
       vocab: [
         { id: "u5-baax", m: "ba'ax", es: "¿qué?", pr: "ba-ash", note: "Vocal rearticulada (a'a) y x = sh.", ex: { m: "Ba'ax ka wa'alik?", es: "¿Qué tal? (lit. ¿qué dices?)" }, conf: "alta" },
-        { id: "u5-maax", m: "máax", es: "¿quién?", pr: "máash", note: "Una gramática confirma el significado y la vocal larga; el tono alto todavía no se confirmó en una fuente normativa.", conf: "media" },
+        { id: "u5-maax", m: "máax", es: "¿quién?", pr: "máash", note: "Vocal larga con tono alto, como la escribe la UADY. Sin tono, maax es otra palabra.", conf: "alta" },
         { id: "u5-tuux", m: "tu'ux", es: "¿dónde?, ¿a dónde?", pr: "tu-ush", conf: "alta" },
         { id: "u5-bix", m: "bix", es: "¿cómo?", pr: "bish", ex: { m: "Bix a k'aaba'?", es: "¿Cómo te llamas?" }, conf: "alta" },
         { id: "u5-baaxten", m: "ba'axten", es: "¿por qué?", pr: "ba-ashten", conf: "alta" },
@@ -3295,12 +3345,12 @@ window.COURSE.guide = {
         {
           kind: "text",
           title: "Negar en presente: ma' + tin",
-          html: "Para negar se pone <span class=\"m\">ma'</span> al principio. Con verbos en presente ya no se usa <span class=\"m\">kin</span> sino <span class=\"m\">tin</span> (que viene de <span class=\"m\">táan in</span>): <span class=\"m\">Kin na'atik</span> (entiendo) → <span class=\"m\">Ma' tin na'atik</span> (no entiendo).<br>Igual con otros verbos: <span class=\"m\">Ma' tin meyaj te' súutukila'</span>, «no estoy trabajando en este momento»."
+          html: "Para negar se pone <span class=\"m\">ma'</span> al principio. Con verbos en presente, en la negación no se usa <span class=\"m\">kin</span> sino <span class=\"m\">tin</span> (que viene de <span class=\"m\">táan in</span>): <span class=\"m\">Ma' tin na'atik</span>, «no entiendo». Para «entiendo», Omniglot y el instituto Na'atik usan también <span class=\"m\">tin</span>: <span class=\"m\">Tin na'atik</span> (por confirmar).<br>Igual con otros verbos: <span class=\"m\">Ma' tin meyaj te' súutukila'</span>, «no estoy trabajando en este momento»."
         },
         {
           kind: "tip",
           title: "La cola -i' y el verbo «saber»",
-          html: "Muchas negaciones se cierran con <span class=\"m\">-i'</span> al final: <span class=\"m\">Ma' in woojeli'</span>, «no sé». «Saber» no lleva k-: <span class=\"m\">in woojel</span> es «sé».<br>Con <span class=\"m\">Ma' tin na'atik</span> la -i' varía por región: en el noroeste de Yucatán se dice sin ella y en otras zonas se agrega."
+          html: "Muchas negaciones se cierran con <span class=\"m\">-i'</span> al final: <span class=\"m\">Ma' in wojeli'</span>, «no sé». «Saber» no lleva k-: <span class=\"m\">in wojel</span> es «sé». El diccionario de la UADY escribe <span class=\"m\">ojel</span>, con o corta; algunas guías escriben <i>woojel</i>.<br>Con <span class=\"m\">Ma' tin na'atik</span> la -i' varía por región: en el noroeste de Yucatán se dice sin ella y en otras zonas se agrega."
         },
         {
           kind: "culture",
@@ -3315,8 +3365,8 @@ window.COURSE.guide = {
       ],
       vocab: [
         { id: "u5-ma-tin-naatik", m: "Ma' tin na'atik.", es: "No entiendo.", pr: "ma- tin na-atik", note: "ma' (no) + tin + na'atik (entender algo).", conf: "alta" },
-        { id: "u5-kin-naatik", m: "Kin na'atik.", es: "Entiendo.", pr: "kin na-atik", note: "Sin negación se usa kin.", conf: "media" },
-        { id: "u5-ma-in-woojeli", m: "Ma' in woojeli'.", es: "No sé.", pr: "ma- in woojeli-", alt: ["Ma' in woojel.", "Ma' in wojeli'"], note: "También se oye sin la -i' final: Ma' in woojel. Las fuentes dudan entre woojel y wojel.", conf: "media" },
+        { id: "u5-kin-naatik", m: "Tin na'atik.", es: "Entiendo.", pr: "tin na-atik", note: "tin (de táan in) + na'atik, como en Ma' tin na'atik. Así lo dan Omniglot y el instituto Na'atik; otra guía da Kin na'atik.", conf: "media" },
+        { id: "u5-ma-in-woojeli", m: "Ma' in wojeli'.", es: "No sé.", pr: "ma- in wojeli-", alt: ["Ma' in wojel.", "Ma' in woojeli'."], note: "De ojel, saber, con o corta, como lo escribe la UADY. También se oye sin la -i' final: Ma' in wojel. Algunas guías escriben woojel.", conf: "media" },
         { id: "u5-chaambeel", m: "chaambéel", es: "despacio, con calma", pr: "chaambéel", alt: ["chaanbéel", "chambéel"], note: "Útil para pedir que te hablen más despacio.", conf: "alta" },
         { id: "u5-taan-in-kanik-maaya", m: "Táan in kanik maaya.", es: "Estoy aprendiendo maya.", pr: "táan in kanik maaya", note: "táan + in + verbo = estoy …-ando (acción en curso).", conf: "media" },
         { id: "u5-cheen-jumpiit-maaya", m: "Chéen junp'íit maaya kin t'aanik.", es: "Solo hablo un poquito de maya.", pr: "chéen junp'íit maaya kin t'aanik", alt: ["Chéen jump'íit maaya kin t'aanik."], note: "chéen = solo; junp'íit (o jump'íit) = un poco; t'aanik = hablar (una lengua).", conf: "media" },
@@ -3344,7 +3394,7 @@ window.COURSE.guide = {
         { type: "choice", q: "¿Qué significa?", prompt: "Táan in kanik maaya.", promptLang: "m", answer: "Estoy aprendiendo maya.", options: ["Estoy aprendiendo maya.", "Hablo maya todos los días.", "No entiendo maya."] },
         { type: "type", q: "Escribe en maya", prompt: "despacio, con calma", answer: "chaambéel", alt: ["chaanbéel", "chambéel"] },
         { type: "choice", q: "Repaso: ¿cómo pides que te lo repitan?", prompt: "otra vez", promptLang: "es", answer: "tu ka'atéen", options: ["tu ka'atéen", "ka'ap'éel", "mixmáak"] },
-        { type: "choice", q: "¿Qué significa?", prompt: "Ma' in woojeli'.", promptLang: "m", answer: "No sé.", options: ["No sé.", "No entiendo.", "No voy a ningún lado."] },
+        { type: "choice", q: "¿Qué significa?", prompt: "Ma' in wojeli'.", promptLang: "m", answer: "No sé.", options: ["No sé.", "No entiendo.", "No voy a ningún lado."] },
         { type: "choice", q: "¿Qué significa?", prompt: "Chéen junp'íit maaya kin t'aanik.", promptLang: "m", answer: "Solo hablo un poquito de maya.", options: ["Solo hablo un poquito de maya.", "Estoy aprendiendo maya.", "Hablo mucho maya."] }
       ]
     }
@@ -3362,12 +3412,14 @@ window.COURSE.guide = {
   sources: [
     { title: "UADY – Diccionario maya, letra W (waaj, wakax)", url: "https://www.mayas.uady.mx/diccionario/w_maya.html" },
     { title: "UADY – Diccionario maya, letra B (bu'ul, bajux)", url: "https://www.mayas.uady.mx/diccionario/b_maya.html" },
-    { title: "UADY – Diccionario maya, letra K (kakaw, ki', kay, ko'oj)", url: "https://www.mayas.uady.mx/diccionario/k_maya.html" },
-    { title: "UADY – Diccionario maya, letra K' (k'éek'en, k'áax)", url: "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html" },
+    { title: "UADY – Diccionario maya, letra K (kakaw, ki', kay, ko'oj, koonol)", url: "https://www.mayas.uady.mx/diccionario/k_maya.html" },
+    { title: "UADY – Diccionario maya, letra K' (k'éek'en, k'áax, k'eyem)", url: "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html" },
     { title: "UADY – Diccionario maya, letra T (taak'in)", url: "https://www.mayas.uady.mx/diccionario/t_maya.html" },
     { title: "UADY – Diccionario maya, letra X (xamach)", url: "https://www.mayas.uady.mx/diccionario/x_maya.html" },
-    { title: "UADY – Diccionario español-maya, letra G (kaax, gallina)", url: "https://www.mayas.uady.mx/diccionario/g_esp.html" },
-    { title: "UADY – Diccionario español-maya, letra P (tojol, k'íiwik)", url: "https://www.mayas.uady.mx/diccionario/p_esp.html" },
+    { title: "UADY – Diccionario español-maya, letra G (gallina: kaax; gallo: t'eel)", url: "https://www.mayas.uady.mx/diccionario/g_esp.html" },
+    { title: "UADY – Diccionario español-maya, letra P (tojol, k'íiwik; pavo: úulum, tso')", url: "https://www.mayas.uady.mx/diccionario/p_esp.html" },
+    { title: "UADY – Diccionario español-maya, letra C (canasta: xaak; carne: bak'; caliente: chokoj)", url: "https://www.mayas.uady.mx/diccionario/c_esp.html" },
+    { title: "UADY – Diccionario español-maya, letra H (huevo: je'; hambre: wi'ij)", url: "https://www.mayas.uady.mx/diccionario/h_esp.html" },
     { title: "UADY – Diccionario maya, letra S (sa')", url: "https://www.mayas.uady.mx/diccionario/s_maya.html" },
     { title: "UADY – Diccionario maya, letra O (o'och)", url: "https://www.mayas.uady.mx/diccionario/o_maya.html" },
     { title: "UADY – Diccionario maya, letra U (uk', uk'ul)", url: "https://www.mayas.uady.mx/diccionario/u_maya.html" },
@@ -3437,7 +3489,7 @@ window.COURSE.guide = {
         { id: "u6-nal", m: "nal", es: "elote", pr: "nal", conf: "alta" },
         { id: "u6-juuch", m: "juuch'", es: "masa (de maíz)", pr: "juuch'", note: "Vocal larga y ch glotalizada al final.", conf: "alta" },
         { id: "u6-waaj", m: "waaj", es: "tortilla; pan", pr: "waaj", conf: "alta" },
-        { id: "u6-keyem", m: "k'eyem", es: "pozole (bebida de masa de maíz)", pr: "k'eyem", conf: "media" },
+        { id: "u6-keyem", m: "k'eyem", es: "pozole (bebida de masa de maíz)", pr: "k'eyem", conf: "alta" },
         { id: "u6-buul", m: "bu'ul", es: "frijol", pr: "bu-ul", note: "Vocal rearticulada u'u, como en ja'as.", conf: "alta" },
         { id: "u6-kakaw", m: "kakaw", es: "cacao", pr: "kakau", note: "Con k simple las dos veces. En la época prehispánica el cacao también servía como moneda.", conf: "alta" },
         { id: "u6-iis", m: "iis", es: "camote", pr: "iis", note: "Vocal larga. Crece en la milpa junto al maíz.", conf: "alta" },
@@ -3501,7 +3553,7 @@ window.COURSE.guide = {
         { id: "u6-chujuk", m: "ch'ujuk", es: "dulce", pr: "ch'ujuk", conf: "alta" },
         { id: "u6-chooch", m: "ch'óoch'", es: "salado", pr: "ch'óoch'", note: "Vocal larga con tono alto, entre dos ch glotalizadas.", conf: "alta" },
         { id: "u6-taab", m: "ta'ab", es: "sal", pr: "ta-ab", conf: "alta" },
-        { id: "u6-chokoj", m: "chokoj", es: "caliente", pr: "chokoj", conf: "media" },
+        { id: "u6-chokoj", m: "chokoj", es: "caliente", pr: "chokoj", note: "De la misma raíz viene chokwil, «fiebre», que verás en la unidad del cuerpo.", conf: "alta" },
         { id: "u6-ki", m: "ki'", es: "sabroso, rico; agradable", pr: "ki- (i corta con corte de voz al final)", note: "Sirve para la comida y para lo agradable en general.", ex: { m: "Jach ki'!", es: "¡Qué rico! (lit. muy sabroso)" }, conf: "alta" }
       ],
       exercises: [
@@ -3544,7 +3596,7 @@ window.COURSE.guide = {
         { id: "u6-taakin", m: "taak'in", es: "dinero", pr: "taak'in", ex: { m: "Mina'an taak'in.", es: "No hay dinero." }, conf: "alta" },
         { id: "u6-yaan-waaj-jaas", m: "Yaan wáaj ja'as?", es: "¿Hay plátano?", pr: "yaan wáaj ja-as", note: "yaan (hay) + wáaj (pregunta de sí o no) + ja'as (plátano).", conf: "media" },
         { id: "u6-bootik", m: "bo'otik", es: "pagar (algo)", pr: "bo-otik", note: "De aquí viene Dios bo'otik, «gracias».", ex: { m: "Dios bo'otik.", es: "Gracias (lit. Dios lo paga)." }, conf: "media" },
-        { id: "u6-xaak", m: "xaak", es: "canasta", pr: "shaak", note: "La x suena «sh».", conf: "media" }
+        { id: "u6-xaak", m: "xaak", es: "canasta", pr: "shaak", note: "La x suena «sh». Así la escribe la UADY en su entrada para «canasta»; en la de «cesto» pone xáak, con tono alto. Otra palabra: xúuxak.", conf: "alta" }
       ],
       dialogue: {
         title: "En el mercado (diálogo de práctica)",
@@ -3602,7 +3654,7 @@ window.COURSE.guide = {
         { id: "u6-kooj", m: "ko'oj", es: "caro", pr: "ko-oj", note: "Con corte de voz. Sin él, kooj es «golpear».", ex: { m: "Jach ko'oj!", es: "¡Qué caro! (lit. muy caro)" }, conf: "alta" },
         { id: "u6-maan", m: "maan", es: "comprar (sin objeto: ir de compras)", pr: "maan (a larga, tono bajo)", note: "Sin objeto, como xook (leer, estudiar). Con objeto se dice manik.", ex: { m: "Táan in bin maan.", es: "Voy a hacer compras." }, conf: "alta" },
         { id: "u6-manik", m: "manik", es: "comprar (algo)", pr: "manik", note: "Lleva -ik porque tiene objeto. En pasado: tin manaj, «lo compré».", conf: "alta" },
-        { id: "u6-koonol", m: "koonol", es: "vender", pr: "koonol", conf: "media" },
+        { id: "u6-koonol", m: "koonol", es: "vender", pr: "koonol", note: "La UADY la da también para «venta» y «vendedor».", conf: "alta" },
         { id: "u6-kiiwik", m: "k'íiwik", es: "plaza (centro del pueblo)", pr: "k'íiwik (íi larga con tono alto)", note: "Es la plaza; el mercado suele estar cerca, pero la palabra no significa «mercado».", conf: "alta" }
       ],
       exercises: [
@@ -3624,7 +3676,7 @@ window.COURSE.guide = {
         {
           kind: "text",
           title: "Animales de granja",
-          html: "Los animales que se crían en casa y en el rancho: <span class=\"m\">kaax</span>, gallina; <span class=\"m\">t'eel</span>, gallo; <span class=\"m\">tso'</span>, pavo; <span class=\"m\">k'éek'en</span>, cerdo, y <span class=\"m\">wakax</span>, res. De ellos salen el huevo (<span class=\"m\">je'</span>) y la carne (<span class=\"m\">bak'</span>). Y el pescado es <span class=\"m\">kay</span>."
+          html: "Los animales que se crían en casa y en el rancho: <span class=\"m\">kaax</span>, gallina; <span class=\"m\">t'eel</span>, gallo; <span class=\"m\">tso'</span>, pavo macho; <span class=\"m\">k'éek'en</span>, cerdo, y <span class=\"m\">wakax</span>, res. De ellos salen el huevo (<span class=\"m\">je'</span>) y la carne (<span class=\"m\">bak'</span>). Y el pescado es <span class=\"m\">kay</span>."
         },
         {
           kind: "culture",
@@ -3644,12 +3696,12 @@ window.COURSE.guide = {
       ],
       vocab: [
         { id: "u6-kaax", m: "kaax", es: "gallina", pr: "kaash (a larga, tono bajo)", note: "La UADY la registra también con el prefijo femenino: (x)kaax. No la confundas con k'áax, «monte».", conf: "alta" },
-        { id: "u6-teel", m: "t'eel", es: "gallo", pr: "t'eel", note: "La glosa «gallo» viene de una sola fuente; por confirmar.", conf: "media" },
-        { id: "u6-tso", m: "tso'", es: "pavo, guajolote", pr: "tso-", note: "Termina con corte de voz. Una sola fuente; por confirmar.", conf: "media" },
+        { id: "u6-teel", m: "t'eel", es: "gallo", pr: "t'eel", note: "La UADY la da también con el prefijo masculino: jt'eel.", conf: "alta" },
+        { id: "u6-tso", m: "tso'", es: "pavo macho, guajolote macho", pr: "tso-", note: "Termina con corte de voz. Según la UADY, tso' es el macho; el pavo en general es úulum y la hembra, xtuux.", conf: "alta" },
         { id: "u6-keeken", m: "k'éek'en", es: "cerdo, puerco", pr: "k'éek'en (dos k glotalizadas, ée con tono alto)", ex: { m: "juntúul k'éek'en", es: "un cerdo" }, conf: "alta" },
         { id: "u6-wakax", m: "wakax", es: "res, vaca, toro (ganado)", pr: "wakash", note: "Préstamo antiguo del español «vacas».", conf: "alta" },
-        { id: "u6-je", m: "je'", es: "huevo", pr: "je-", conf: "media" },
-        { id: "u6-bak", m: "bak'", es: "carne", pr: "bak'", note: "Con vocal larga y k simple, baak es «hueso».", conf: "media" },
+        { id: "u6-je", m: "je'", es: "huevo", pr: "je-", note: "La UADY da también e'el.", conf: "alta" },
+        { id: "u6-bak", m: "bak'", es: "carne", pr: "bak'", note: "Con vocal larga y k simple, baak es «hueso».", conf: "alta" },
         { id: "u6-kay", m: "kay", es: "pez, pescado", pr: "kai", note: "Vocal corta. No la confundas con k'aay, «canto».", conf: "alta" }
       ],
       exercises: [
@@ -3669,27 +3721,44 @@ window.COURSE.guide = {
 <script>
 /* src/content/u7.js */
 /* Unidad 7 · Cuerpo y salud. Solo formas con estado «verificado» (conf alta) o «probable» (conf media)
-   en la base o en la reverificación (kb/recheck-cuerpo-familia.json).
-   Frases armadas con reglas confirmadas (posesivo + sustantivo, juego B, ma' … -i', wáaj, yaj + posesivo) van con conf media.
-   No se enseñan «pecho», «fiebre», «tos», «vómito» ni «salud»: siguen «dudosos». */
+   en la base o en las reverificaciones (kb/recheck-cuerpo-familia.json, kb/recheck3-salud-cuerpo.json).
+   Frases armadas con reglas confirmadas (juego B, ma' … -i', wáaj, yaj + posesivo) siguen con conf media,
+   igual que in wook y u yook, que no se piden escribir. xeej va con conf media: el diccionario de la UADY
+   no marca tono, pero un artículo de la UADY escribe xéej. No se enseñan yaaj, k'iinam ni ts'aak yaaj
+   (incorrectas) ni j-ts'aak (dudosa). */
 (window.COURSE = window.COURSE || { units: [] }).units.push({
   id: "u7",
   n: 7,
   title: "Cuerpo y salud",
-  subtitle: "Partes del cuerpo, decir que estás enfermo o qué te duele, y frases de cortesía para la clínica",
+  subtitle: "Partes del cuerpo, decir que estás enfermo o qué te duele, síntomas comunes y frases de cortesía para la clínica",
   sources: [
     { title: "UADY – Diccionario maya, letra N (ni')", url: "https://www.mayas.uady.mx/diccionario/n_maya.html" },
-    { title: "UADY – Diccionario maya, letra CH (chi')", url: "https://www.mayas.uady.mx/diccionario/ch_maya.html" },
-    { title: "UADY – Diccionario maya, letra X (xikin)", url: "https://www.mayas.uady.mx/diccionario/x_maya.html" },
+    { title: "UADY – Diccionario maya, letra CH (chi', chi'ibal, chokwil)", url: "https://www.mayas.uady.mx/diccionario/ch_maya.html" },
+    { title: "UADY – Diccionario maya, letra X (xikin, xeej)", url: "https://www.mayas.uady.mx/diccionario/x_maya.html" },
     { title: "UADY – Diccionario maya, letra O (ook)", url: "https://www.mayas.uady.mx/diccionario/o_maya.html" },
     { title: "UADY – Diccionario maya, letra U (u'uy, u'ub)", url: "https://www.mayas.uady.mx/diccionario/u_maya.html" },
     { title: "UADY – Diccionario maya, letra CH' (ch'a' iik')", url: "https://www.mayas.uady.mx/diccionario/ch_glotal_maya.html" },
-    { title: "UADY – Diccionario maya, letra K' (k'an ch'uuy)", url: "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html" },
+    { title: "UADY – Diccionario maya, letra K' (k'an ch'uuy, k'i'inam)", url: "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html" },
     { title: "UADY – Diccionario español-maya, letra E (enfermo, enfermedad, enfermarse)", url: "https://www.mayas.uady.mx/diccionario/e_esp.html" },
     { title: "UADY – Diccionario maya, letra M (mina'an)", url: "https://www.mayas.uady.mx/diccionario/m_maya.html" },
-    { title: "UADY – Diccionario maya, letra Y (yaan)", url: "https://www.mayas.uady.mx/diccionario/y_maya.html" },
+    { title: "UADY – Diccionario maya, letra Y (yaan, yaj)", url: "https://www.mayas.uady.mx/diccionario/y_maya.html" },
+    { title: "UADY – Diccionario maya, letra P (paach, píix)", url: "https://www.mayas.uady.mx/diccionario/p_maya.html" },
+    { title: "UADY – Diccionario maya, letra B (baak, bak')", url: "https://www.mayas.uady.mx/diccionario/b_maya.html" },
+    { title: "UADY – Diccionario maya, letra TS' (ts'aak, ts'ak yaj)", url: "https://www.mayas.uady.mx/diccionario/ts_glotal_maya.html" },
+    { title: "UADY – Diccionario español-maya, letra C (cabello: tso'otsel pool)", url: "https://www.mayas.uady.mx/diccionario/c_esp.html" },
+    { title: "UADY – Diccionario español-maya, letra M (médico: ts'ak máak, ts'ak yaj)", url: "https://www.mayas.uady.mx/diccionario/m_esp.html" },
+    { title: "UADY – Diccionario español-maya, letra P (pecho: tseem)", url: "https://www.mayas.uady.mx/diccionario/p_esp.html" },
+    { title: "UADY – Diccionario español-maya, letra S (salud: toj oolal; sano: toj óol)", url: "https://www.mayas.uady.mx/diccionario/s_esp.html" },
+    { title: "UADY – Diccionario español-maya, letra T (tos, toser: se'en)", url: "https://www.mayas.uady.mx/diccionario/t_esp.html" },
+    { title: "UADY, Identidad y Cultura Maya – Partería y medicina alopática en Yucatán (yaj, k'i'inam, chi'ibal pool, xéej)", url: "https://www.mayas.uady.mx/articulos/pdf/parteria.pdf" },
+    { title: "UADY, Identidad y Cultura Maya – artículo sobre la concepción maya del dolor y la enfermedad (chi'ibal pool, chi'ibal koj)", url: "https://www.mayas.uady.mx/articulos/concepcion.html" },
+    { title: "UADY, Facultad de Medicina – Programa «Lengua Maya para Profesionales de la Salud. Nivel Inicial»", url: "https://www.medicina.uady.mx/principal/docs/nut/2021/Lengua_Maya_Profesionales_Salud_Nivel_Inicial.pdf" },
     { title: "Diccionario maya de la UADY: entradas CABEZA (pool, jo'ol) y CORAZÓN (puksi'ik'al), consultadas en una reproducción no oficial" },
-    { title: "Lehmann, Gramática del maya yucateco: partes del cuerpo (ho'l, ich, koh, kaal, in tso'tsel)", url: "https://christianlehmann.eu/ling/sprachen/maya/gramatica/onomas/posesion/partes_cuerpo.html" },
+    { title: "Lehmann, Gramática del maya yucateco: partes del cuerpo (ho'l, ich, koh, kaal, tsem, in tso'tsel)", url: "https://christianlehmann.eu/ling/sprachen/maya/gramatica/onomas/posesion/partes_cuerpo.html" },
+    { title: "Lehmann, Possession in Yucatec Maya (in wich)", url: "https://www.christianlehmann.eu/publ/ASSidUE10.pdf" },
+    { title: "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann): u y-ich, koten", url: "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php" },
+    { title: "Blair y Vermont-Salas, Spoken Yucatec Maya (sitio de Christian Lehmann): kul-en, ko'ten", url: "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html" },
+    { title: "Mújica (1995), Junp'iit Maaya – A little bit of Maya (sitio de Christian Lehmann): u tseem, ko'oten", url: "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html" },
     { title: "SEP, Nueva Escuela Mexicana – La diversidad del corazón en diferentes lenguas indígenas (puksi'ik'al)", url: "https://nuevaescuelamexicana.sep.gob.mx/contenido/recurso/la-diversidad-del-corazon-en-diferentes-lenguas-indigenas/" },
     { title: "México Desconocido – El cenote Puksi'ik'al de Kanxoc", url: "https://www.mexicodesconocido.com.mx/cenote-puksiikal.html" },
     { title: "Redalyc – Rescate arqueológico en la cueva Pool Balam, «cabeza de jaguar»", url: "https://www.redalyc.org/pdf/745/74516316005.pdf" },
@@ -3698,12 +3767,12 @@ window.COURSE.guide = {
     { title: "Wiktionary – blood, traducciones (maya yucateco: k'i'ik')", url: "https://en.wiktionary.org/wiki/blood/translations" },
     { title: "Wikcionario – yaj (maya yucateco): daño, dolor", url: "https://es.wiktionary.org/wiki/yaj" },
     { title: "Wikcionario – ts'ak yaj (maya yucateco): médico, curandero", url: "https://es.wiktionary.org/wiki/ts%CA%BCak_yaj" },
-    { title: "Glosbe español-maya yucateco – dolor (escribe yaaj)", url: "https://es.glosbe.com/es/yua/dolor" },
-    { title: "Material didáctico de maya yucateco titulado «Material» (Scribd): yaj in pool, yaj in nak'" },
+    { title: "Material didáctico de maya yucateco titulado «Material»: yaj in pool, yaj in nak'" },
     { title: "Yucatán Today – The J-meenes or Maya medicine men", url: "https://yucatantoday.com/en/blog/the-j-meenes-or-maya-medicine-men" },
     { title: "Bolles, gramática del maya yucateco en FAMSI: los chamanes (H-Men)", url: "https://www.famsi.org/research/bolles/shamans/index.html" },
     { title: "Castillo Tzec, U áanalte'il u tsikbalil ts'aak – Manual de frases médicas (Indemaya y Conalep Yucatán)" },
     { title: "Posta – Presentan manual de frases médicas en lengua maya (Indemaya y Conalep Yucatán)", url: "https://www.posta.com.mx/yucatan/presentan-manual-de-frases-medicas-en-lengua-maya/vl2163920" },
+    { title: "Gobierno del Estado de Yucatán, Sala de prensa – Presentan manual de frases médicas en lengua maya (Indemaya y Conalep Yucatán)", url: "https://www.yucatan.gob.mx/saladeprensa/ver_nota.php?id=10514" },
     { title: "INEA / MEVyT – Lengua maya (Yucatán): vocales y consonantes (k'ab, aak', ook, ts'aak)", url: "https://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm" },
     { title: "Aprendiendo Maya – Consonantes (nak', píix, baak)", url: "https://www.aprendiendomaya.com/escritura/alfabeto-maya" },
     { title: "Aprendiendo Maya – Las vocales y sus reglas de uso (paach, aak')", url: "https://aprendiendomaya.com/escritura/vocales/las-vocales-y-sus-reglas-de-uso" },
@@ -3727,12 +3796,12 @@ window.COURSE.guide = {
         {
           kind: "text",
           title: "Del rostro a los pies",
-          html: "En la cara: la nariz es <span class=\"m\">ni'</span>, la boca <span class=\"m\">chi'</span>, la oreja <span class=\"m\">xikin</span> y la lengua <span class=\"m\">aak'</span>.<br>En el resto del cuerpo: la mano <span class=\"m\">k'ab</span>, la barriga <span class=\"m\">nak'</span>, la espalda <span class=\"m\">paach</span>, la rodilla <span class=\"m\">píix</span> y el pie <span class=\"m\">ook</span>. Por dentro, el hueso es <span class=\"m\">baak</span>."
+          html: "En la cara: la nariz es <span class=\"m\">ni'</span>, la boca <span class=\"m\">chi'</span>, la oreja <span class=\"m\">xikin</span> y la lengua <span class=\"m\">aak'</span>.<br>En el resto del cuerpo: la mano <span class=\"m\">k'ab</span>, el pecho <span class=\"m\">tseem</span>, la barriga <span class=\"m\">nak'</span>, la espalda <span class=\"m\">paach</span>, la rodilla <span class=\"m\">píix</span> y el pie <span class=\"m\">ook</span>. Por dentro, el hueso es <span class=\"m\">baak</span>."
         },
         {
           kind: "tip",
           title: "Mi mano, su pie",
-          html: "Con los posesivos que ya conoces: <span class=\"m\">in k'ab</span> (mi mano), <span class=\"m\">a k'ab</span> (tu mano), <span class=\"m\">u k'ab</span> (su mano).<br>Si la palabra empieza con vocal, se agrega una letra de unión: <span class=\"m\">in wook</span> (mi pie), <span class=\"m\">a wook</span> (tu pie), <span class=\"m\">u yook</span> (su pie). Es la misma regla de <span class=\"m\">in wotoch</span>, «mi casa»."
+          html: "Con los posesivos que ya conoces: <span class=\"m\">in k'ab</span> (mi mano), <span class=\"m\">a k'ab</span> (tu mano), <span class=\"m\">u k'ab</span> (su mano).<br>Si la palabra empieza con vocal, se agrega una letra de unión: <span class=\"m\">in wook</span> (mi pie), <span class=\"m\">a wook</span> (tu pie), <span class=\"m\">u yook</span> (su pie). Es la misma regla de <span class=\"m\">in wotoch</span>, «mi casa».<br>La regla está confirmada, pero estas tres formas con <span class=\"m\">ook</span> todavía no las vimos en una fuente académica: por ahora la app no te pide escribirlas."
         },
         {
           kind: "text",
@@ -3742,30 +3811,31 @@ window.COURSE.guide = {
         {
           kind: "tip",
           title: "Más partes del cuerpo",
-          html: "La cabeza (<span class=\"m\">pool</span>), el ojo (<span class=\"m\">ich</span>), el diente (<span class=\"m\">koj</span>) y el corazón (<span class=\"m\">puksi'ik'al</span>) ya están confirmados: los verás en la lección «Cabeza, ojos y corazón» de esta unidad.<br>Una palabra que todavía no enseñamos es «pecho» (el tórax): las fuentes no coinciden en cómo se escribe. Y no lo confundas con <span class=\"m\">iim</span>, que es el seno o la mama."
+          html: "La cabeza (<span class=\"m\">pool</span>), el ojo (<span class=\"m\">ich</span>), el diente (<span class=\"m\">koj</span>) y el corazón (<span class=\"m\">puksi'ik'al</span>) los verás en la lección «Cabeza, ojos y corazón» de esta unidad.<br>El pecho, el tórax, es <span class=\"m\">tseem</span>, con vocal larga de tono bajo: así lo escriben el diccionario de la UADY y el manual Junp'iit Maaya. No lo confundas con <span class=\"m\">iim</span>, que es el seno o la mama."
         }
       ],
       vocab: [
         { id: "u7-kab", m: "k'ab", es: "mano", pr: "k'ab", note: "Muchas guías la dan también como «brazo»; la fuente que la confirma dice «mano».", ex: { m: "in k'ab", es: "mi mano" }, conf: "alta" },
-        { id: "u7-ook", m: "ook", es: "pie", pr: "ook", note: "Empieza con vocal: in wook (mi pie), u yook (su pie).", ex: { m: "in wook", es: "mi pie" }, conf: "alta" },
+        { id: "u7-ook", m: "ook", es: "pie", pr: "ook", note: "Empieza con vocal: in wook (mi pie), u yook (su pie). Esas dos formas siguen la regla de unión, pero aún no las vimos en una fuente académica.", conf: "alta" },
         { id: "u7-ni", m: "ni'", es: "nariz", pr: "ni-", note: "Termina con corte de voz.", conf: "alta" },
         { id: "u7-chi", m: "chi'", es: "boca; orilla", pr: "chi-", note: "La misma palabra nombra la boca y la orilla.", conf: "alta" },
         { id: "u7-xikin", m: "xikin", es: "oreja; oído", pr: "shikin", note: "La x suena «sh».", conf: "alta" },
         { id: "u7-aak", m: "aak'", es: "lengua (órgano); bejuco", pr: "aak'", note: "Vocal larga de tono bajo y k' al final. No confundir con áak (tortuga) ni con t'aan (lengua que se habla).", conf: "alta" },
         { id: "u7-nak", m: "nak'", es: "barriga, vientre, estómago", pr: "nak'", note: "k' glotalizada al final. Aparece en Yaj in nak', «me duele el estómago».", conf: "alta" },
-        { id: "u7-paach", m: "paach", es: "espalda", pr: "paach", conf: "media" },
-        { id: "u7-piix", m: "píix", es: "rodilla", pr: "píish", note: "Tono alto; la x suena «sh».", conf: "media" },
-        { id: "u7-baak", m: "baak", es: "hueso", pr: "baak", note: "Vocal larga. Con vocal corta y k', bak' es «carne».", conf: "media" },
+        { id: "u7-paach", m: "paach", es: "espalda", pr: "paach", note: "Vocal larga de tono bajo. Sirve para la espalda de una persona o de un animal.", conf: "alta" },
+        { id: "u7-piix", m: "píix", es: "rodilla", pr: "píish", note: "Tono alto; la x suena «sh». Sin tono, piix es «vaina, funda».", conf: "alta" },
+        { id: "u7-baak", m: "baak", es: "hueso", pr: "baak", note: "Vocal larga. Con vocal corta y k', bak' es «carne».", conf: "alta" },
+        { id: "u7-tseem", m: "tseem", es: "pecho (tórax)", pr: "tseem", note: "Vocal larga de tono bajo. Para el seno o la mama se usa iim.", conf: "alta" },
         { id: "u7-iim", m: "iim", es: "seno, mama", pr: "iim", note: "Vocal larga.", conf: "alta" }
       ],
       exercises: [
         { type: "choice", q: "¿Qué significa?", prompt: "k'ab", promptLang: "m", answer: "mano", options: ["mano", "pie", "boca"] },
         { type: "choice", q: "¿Cómo se dice «nariz»?", prompt: "nariz", promptLang: "es", answer: "ni'", options: ["ni'", "chi'", "iik'"] },
-        { type: "fill", es: "mi pie", before: "in", after: "", answer: "wook", options: ["wook", "ook", "yook"] },
-        { type: "build", es: "mi mano y mi pie", m: "in k'ab yéetel in wook", distractors: ["u", "yook"] },
+        { type: "fill", es: "mi espalda", before: "in", after: "", answer: "paach", options: ["paach", "píix", "baak"] },
+        { type: "build", es: "mi mano y mi pecho", m: "in k'ab yéetel in tseem", distractors: ["u", "iim"] },
         { type: "choice", q: "¿Qué significa?", prompt: "aak'", promptLang: "m", answer: "lengua (órgano); bejuco", options: ["lengua (órgano); bejuco", "tortuga", "palabra, idioma"] },
         { type: "type", q: "Escribe en maya", prompt: "oreja", answer: "xikin" },
-        { type: "choice", q: "¿Qué significa?", prompt: "chi'", promptLang: "m", answer: "boca; orilla", options: ["boca; orilla", "nariz", "espalda"] },
+        { type: "choice", q: "¿Cómo se dice «pecho» (el tórax)?", prompt: "pecho (tórax)", promptLang: "es", answer: "tseem", options: ["tseem", "paach", "nak'"] },
         { type: "choice", q: "Repaso: ¿qué significa?", prompt: "baak", promptLang: "m", answer: "hueso", options: ["hueso", "carne", "rodilla"] }
       ]
     },
@@ -3792,7 +3862,7 @@ window.COURSE.guide = {
         {
           kind: "tip",
           title: "¿Y «me duele»?",
-          html: "«Me duele…» ya está respaldado: lo verás en la lección «¿Qué te duele?», cuando ya conozcas la cabeza y los dientes.<br>En cambio, «fiebre», «tos», «vómito» y «salud» todavía no los pudimos confirmar en una fuente. Preferimos no enseñarlos aún: es peor aprender una forma equivocada que esperar."
+          html: "«Me duele…» lo verás en la lección «¿Qué te duele?», cuando ya conozcas la cabeza y los dientes.<br>«Fiebre», «tos», «vómito» y «salud» llegan en la última lección de esta unidad, «Fiebre, tos y otros síntomas»."
         }
       ],
       vocab: [
@@ -3845,11 +3915,11 @@ window.COURSE.guide = {
         }
       ],
       vocab: [
-        { id: "u7-maanen-waye", m: "Máanen waye'.", es: "Pase usted. (lit. pasa por aquí)", pr: "máanen waye-", note: "Fórmula del prontuario de cortesía del INALI.", conf: "media" },
-        { id: "u7-kulen", m: "Kulen.", es: "Siéntate. / Siéntese.", pr: "kulen", note: "Orden del verbo kutal, sentarse.", conf: "media" },
-        { id: "u7-kooten", m: "Ko'oten.", es: "Ven. / Venga.", pr: "ko-oten", note: "Orden irregular de taal, venir. A varias personas: ko'otene'ex.", conf: "media" },
+        { id: "u7-maanen-waye", m: "Máanen waye'.", es: "Pase usted. (lit. pasa por aquí)", pr: "máanen waye-", note: "Fórmula del prontuario de cortesía del INALI. Máanen es la orden de máan, pasar.", conf: "alta" },
+        { id: "u7-kulen", m: "Kulen.", es: "Siéntate. / Siéntese.", pr: "kulen", note: "Orden del verbo kutal, sentarse. A varias personas: kulene'ex.", conf: "alta" },
+        { id: "u7-kooten", m: "Ko'oten.", es: "Ven. / Venga.", pr: "ko-oten", note: "Orden irregular de taal, venir. A varias personas: ko'otene'ex.", conf: "alta" },
         { id: "u7-tsook-a-janal", m: "Ts'o'ok a janal?", es: "¿Ya comiste? / ¿Ya comió?", pr: "ts'o-ok a janal", note: "Como Ts'o'ok in janal (ya comí), con a (tú). No está confirmado si basta la entonación o si se agrega wáaj.", conf: "media" },
-        { id: "u7-tsaak", m: "ts'aak", es: "medicina, remedio", pr: "ts'aak", note: "ts' glotalizada y vocal larga. Aparece en el título del Manual de frases médicas: U áanalte'il u tsikbalil ts'aak.", conf: "alta" },
+        { id: "u7-tsaak", m: "ts'aak", es: "medicina, remedio", pr: "ts'aak", note: "ts' glotalizada y vocal larga. La UADY la da también como verbo: curar, medicar. Aparece en el título del Manual de frases médicas: U áanalte'il u tsikbalil ts'aak.", conf: "alta" },
         { id: "u7-yaan-waaj-tsaak", m: "Yaan wáaj ts'aak?", es: "¿Hay medicina?", pr: "yaan wáaj ts'aak", note: "yaan (hay) + wáaj (pregunta de sí o no) + ts'aak.", conf: "media" },
         { id: "u7-minaan-tsaak", m: "Mina'an ts'aak.", es: "No hay medicina.", pr: "mina-an ts'aak", note: "Como Mina'an taak'in, «no hay dinero».", conf: "media" },
         { id: "u7-uub", m: "u'ub", es: "oír, escuchar; entender", pr: "u-ub", note: "Vocal rearticulada u'u.", conf: "alta" }
@@ -3869,12 +3939,12 @@ window.COURSE.guide = {
       },
       exercises: [
         { type: "choice", q: "¿Qué significa?", prompt: "Máanen waye'.", promptLang: "m", answer: "Pase usted.", options: ["Pase usted.", "Siéntese.", "Hasta mañana."] },
-        { type: "choice", q: "¿Qué significa?", prompt: "Kulen.", promptLang: "m", answer: "Siéntese.", options: ["Siéntese.", "Venga.", "Pase usted."] },
+        { type: "choice", q: "Invitas a alguien a sentarse. ¿Qué dices?", prompt: "Siéntese.", promptLang: "es", answer: "Kulen.", options: ["Kulen.", "Ko'oten.", "Máanen waye'."] },
         { type: "choice", q: "¿Qué significa?", prompt: "Yaan wáaj ts'aak?", promptLang: "m", answer: "¿Hay medicina?", options: ["¿Hay medicina?", "No hay medicina.", "¿Ya comió?"] },
         { type: "build", es: "agua y medicina", m: "ja' yéetel ts'aak", distractors: ["mina'an", "wáaj"] },
         { type: "type", q: "Escribe en maya", prompt: "medicina, remedio", answer: "ts'aak" },
         { type: "choice", q: "¿Qué significa?", prompt: "Ts'o'ok a janal?", promptLang: "m", answer: "¿Ya comiste?", options: ["¿Ya comiste?", "¿Tienes hambre?", "¿Estás enfermo?"] },
-        { type: "choice", q: "Repaso: ¿cómo dices «no entiendo»?", prompt: "No entiendo.", promptLang: "es", answer: "Ma' tin na'atik.", options: ["Ma' tin na'atik.", "Kin na'atik.", "Ma' in woojeli'."] },
+        { type: "choice", q: "Repaso: ¿cómo dices «no entiendo»?", prompt: "No entiendo.", promptLang: "es", answer: "Ma' tin na'atik.", options: ["Ma' tin na'atik.", "Tin na'atik.", "Ma' in wojeli'."] },
         { type: "choice", q: "¿Qué significa?", prompt: "u'ub", promptLang: "m", answer: "oír, escuchar; entender", options: ["oír, escuchar; entender", "sentir", "respirar"] }
       ]
     },
@@ -3891,7 +3961,7 @@ window.COURSE.guide = {
         {
           kind: "text",
           title: "La cara y el cuello",
-          html: "<span class=\"m\">ich</span> es el ojo y también la cara. Suena igual que <span class=\"m\">ich</span>, «en, dentro de», como en <span class=\"m\">Ka t'aan wáaj ich maaya?</span>, «¿hablas maya?». El diente es <span class=\"m\">koj</span> (también el pico de un ave) y el cuello, <span class=\"m\">kaal</span>; no lo confundas con <span class=\"m\">k'aal</span>, «veinte».<br>El cabello se dice con posesivo: <span class=\"m\">in tso'otsel</span>, «mi cabello». Lehmann lo escribe <i>in tso'tsel</i>; la grafía con o'o la dedujimos, así que va «por confirmar»."
+          html: "<span class=\"m\">ich</span> es el ojo y también la cara. Suena igual que <span class=\"m\">ich</span>, «en, dentro de», como en <span class=\"m\">Ka t'aan wáaj ich maaya?</span>, «¿hablas maya?». El diente es <span class=\"m\">koj</span> (también el pico de un ave) y el cuello, <span class=\"m\">kaal</span>; no lo confundas con <span class=\"m\">k'aal</span>, «veinte».<br>El cabello se dice con posesivo: <span class=\"m\">in tso'otsel</span>, «mi cabello». Lehmann lo escribe <i>in tso'tsel</i>, con una grafía más antigua; el diccionario de la UADY escribe <span class=\"m\">tso'otsel</span> y llama al cabello de la cabeza <span class=\"m\">tso'otsel pool</span>."
         },
         {
           kind: "text",
@@ -3901,15 +3971,15 @@ window.COURSE.guide = {
         {
           kind: "tip",
           title: "Mi cabeza, tu ojo",
-          html: "Lo más común es nombrar las partes del cuerpo con su posesivo: <span class=\"m\">in pool</span> (mi cabeza), <span class=\"m\">a koj</span> (tu diente), <span class=\"m\">u puksi'ik'al</span> (su corazón).<br>Con vocal inicial se agrega la letra de unión, como en <span class=\"m\">in wook</span>: <span class=\"m\">in wich</span> (mi ojo), <span class=\"m\">u yich</span> (su ojo). Estas dos últimas las armamos con la regla; no las vimos escritas."
+          html: "Lo más común es nombrar las partes del cuerpo con su posesivo: <span class=\"m\">in pool</span> (mi cabeza), <span class=\"m\">a koj</span> (tu diente), <span class=\"m\">u puksi'ik'al</span> (su corazón).<br>Con vocal inicial se agrega la letra de unión, como en <span class=\"m\">in wook</span>: <span class=\"m\">in wich</span> (mi ojo), <span class=\"m\">u yich</span> (su ojo). Estas dos sí aparecen tal cual en las gramáticas de Lehmann y de Andrade."
         }
       ],
       vocab: [
         { id: "u7-pool", m: "pool", es: "cabeza", pr: "pool", note: "Vocal larga de tono bajo. Sirve también para la cabeza de un animal.", ex: { m: "in pool", es: "mi cabeza" }, conf: "alta" },
         { id: "u7-jool", m: "jo'ol", es: "cabeza; pelo de la cabeza", pr: "jo-ol", note: "Vocal rearticulada o'o. En textos antiguos: ho'l.", conf: "alta" },
-        { id: "u7-ich", m: "ich", es: "ojo; cara", pr: "ich", note: "Suena igual que ich, «en, dentro de». Empieza con vocal: in wich (mi ojo), forma armada por regla.", conf: "alta" },
+        { id: "u7-ich", m: "ich", es: "ojo; cara", pr: "ich", note: "Suena igual que ich, «en, dentro de». Empieza con vocal: in wich (mi ojo), u yich (su ojo).", ex: { m: "in wich", es: "mi ojo; mi cara" }, conf: "alta" },
         { id: "u7-koj", m: "koj", es: "diente; pico (de ave)", pr: "koj", note: "La j suena suave. En textos antiguos: koh.", ex: { m: "in koj", es: "mi diente" }, conf: "alta" },
-        { id: "u7-in-tsootsel", m: "in tso'otsel", es: "mi cabello, mi pelo", pr: "in tso-otsel", note: "Se dice con posesivo. Lehmann escribe in tso'tsel; la grafía con o'o es deducida.", conf: "media" },
+        { id: "u7-in-tsootsel", m: "in tso'otsel", es: "mi cabello, mi pelo", pr: "in tso-otsel", note: "Se dice con posesivo. Lehmann escribe in tso'tsel, con una grafía más antigua; la UADY, tso'otsel.", conf: "alta" },
         { id: "u7-kaal", m: "kaal", es: "cuello", pr: "kaal", note: "Vocal larga de tono bajo. No confundir con k'aal, «veinte».", conf: "alta" },
         { id: "u7-puksiikal", m: "puksi'ik'al", es: "corazón", pr: "puksi-ik'al", note: "Vocal rearticulada i'i y k' glotalizada.", conf: "alta" },
         { id: "u7-kiik-sangre", m: "k'i'ik'", es: "sangre", pr: "k'i-ik'", note: "k' glotalizada al principio y al final, y vocal rearticulada i'i.", conf: "alta" }
@@ -3919,7 +3989,7 @@ window.COURSE.guide = {
         { type: "choice", q: "¿Cómo se dice «corazón»?", prompt: "corazón", promptLang: "es", answer: "puksi'ik'al", options: ["puksi'ik'al", "k'i'ik'", "kaal"] },
         { type: "fill", es: "mi diente", before: "in", after: "", answer: "koj", options: ["koj", "kaal", "ich"] },
         { type: "type", q: "Escribe en maya", prompt: "sangre", answer: "k'i'ik'" },
-        { type: "choice", q: "¿Qué significa?", prompt: "ich", promptLang: "m", answer: "ojo; cara", options: ["ojo; cara", "diente", "cuello"] },
+        { type: "fill", es: "mi ojo", before: "in", after: "", answer: "wich", options: ["wich", "yich", "ich"] },
         { type: "build", es: "mi cabeza y mi corazón", m: "in pool yéetel in puksi'ik'al", distractors: ["u", "koj"] },
         { type: "type", q: "Escribe en maya", prompt: "cuello", answer: "kaal" },
         { type: "choice", q: "¿Qué significa?", prompt: "jo'ol", promptLang: "m", answer: "cabeza; pelo de la cabeza", options: ["cabeza; pelo de la cabeza", "ojo; cara", "sangre"] }
@@ -3933,33 +4003,33 @@ window.COURSE.guide = {
         {
           kind: "text",
           title: "Yaj: me duele",
-          html: "<span class=\"m\">yaj</span> es «dolor» o «doloroso». Para decir qué te duele, pon <span class=\"m\">yaj</span> y después la parte del cuerpo con su posesivo: <span class=\"m\">Yaj in pool</span>, «me duele la cabeza»; <span class=\"m\">Yaj in nak'</span>, «me duele el estómago».<br>Con la misma regla: <span class=\"m\">Yaj in koj</span> (me duele el diente), <span class=\"m\">Yaj in paach</span> (me duele la espalda) y, como <span class=\"m\">ook</span> empieza con vocal, <span class=\"m\">Yaj in wook</span> (me duele el pie)."
+          html: "<span class=\"m\">yaj</span> es «dolor» o «daño»: es la palabra general para el dolor. Para decir qué te duele, pon <span class=\"m\">yaj</span> y después la parte del cuerpo con su posesivo: <span class=\"m\">Yaj in pool</span>, «me duele la cabeza»; <span class=\"m\">Yaj in nak'</span>, «me duele el estómago».<br>Con la misma regla: <span class=\"m\">Yaj in koj</span> (me duele el diente), <span class=\"m\">Yaj in paach</span> (me duele la espalda) y, como <span class=\"m\">ook</span> empieza con vocal, <span class=\"m\">Yaj in wook</span> (me duele el pie)."
         },
         {
           kind: "tip",
           title: "Preguntar, y por qué «por confirmar»",
-          html: "Para preguntar, <span class=\"m\">wáaj</span> va después de la primera palabra, como en <span class=\"m\">K'oja'anech wáaj?</span>: <span class=\"m\">Yaj wáaj a pool?</span>, «¿te duele la cabeza?».<br>Las frases con la cabeza y el estómago vienen de un material didáctico; las demás las armamos con la misma regla. Además, una fuente escribe <span class=\"m\">yaj</span> con vocal larga. Por eso todas van «por confirmar»."
+          html: "Para preguntar, <span class=\"m\">wáaj</span> va después de la primera palabra, como en <span class=\"m\">K'oja'anech wáaj?</span>: <span class=\"m\">Yaj wáaj a pool?</span>, «¿te duele la cabeza?».<br><span class=\"m\">yaj</span> ya está confirmado en el diccionario de la UADY, y la construcción tiene apoyo en un artículo académico de la UADY. Pero las frases completas no las vimos escritas en una fuente académica: las de la cabeza y el estómago vienen de un material didáctico, y las demás las armamos con la regla. Por eso van «por confirmar»."
         },
         {
           kind: "warn",
-          title: "Lo que todavía no enseñamos",
-          html: "«Fiebre», «tos», «vómito» y «salud» siguen sin confirmarse en una fuente, y otra palabra para «dolor» que dan algunas guías tampoco tiene clara su escritura. Por eso no las enseñamos todavía.<br>Estas frases sirven para mostrar interés y cercanía, <b>no para hacer un diagnóstico</b>: para preguntar síntomas con precisión, trabaja con un intérprete."
+          title: "Para acompañar, no para diagnosticar",
+          html: "Para el dolor de cabeza y el de muelas, los artículos de la UADY usan además <span class=\"m\">chi'ibal</span>: lo verás en la lección siguiente, junto con la fiebre, la tos y el vómito.<br>Estas frases sirven para mostrar interés y cercanía, <b>no para hacer un diagnóstico</b>: para preguntar síntomas con precisión, trabaja con un intérprete."
         },
         {
           kind: "culture",
           title: "El jmeen y el ts'ak yaj",
-          html: "<span class=\"m\">jmeen</span> es el curandero tradicional, que también es sacerdote maya. La <span class=\"m\">j-</span> inicial es el prefijo de los nombres masculinos, y en textos antiguos verás <i>h-men</i>.<br><span class=\"m\">ts'ak yaj</span>, literalmente «cura-dolor», nombra al médico o al curandero. Solo la vimos en Wikcionario, que la explica como <span class=\"m\">ts'ak</span>, «curar», más <span class=\"m\">yaj</span>, «dolor», y la escribe con vocal corta, a diferencia de <span class=\"m\">ts'aak</span>, «medicina». Esa vocal corta falta confirmarla en otra fuente: por eso va «por confirmar»."
+          html: "<span class=\"m\">jmeen</span> es el curandero tradicional, que también es sacerdote maya. La <span class=\"m\">j-</span> inicial es el prefijo de los nombres masculinos, y en textos antiguos verás <i>h-men</i>.<br><span class=\"m\">ts'ak yaj</span>, literalmente «cura-dolor», nombra al médico o al curandero. Así la escriben el diccionario de la UADY y Wikcionario: en el compuesto, <span class=\"m\">ts'ak</span> va con vocal corta, aunque <span class=\"m\">ts'aak</span>, «medicina; curar», la lleva larga. Para «médico», la UADY da también <span class=\"m\">ts'ak máak</span>."
         }
       ],
       vocab: [
-        { id: "u7-yaj", m: "yaj", es: "dolor; doloroso", pr: "yaj", note: "Una fuente la escribe con vocal larga (yaaj): por confirmar.", conf: "media" },
+        { id: "u7-yaj", m: "yaj", es: "dolor; daño", pr: "yaj", note: "Vocal corta, como la escribe el diccionario de la UADY. Es la palabra general para el dolor.", conf: "alta" },
         { id: "u7-yaj-in-pool", m: "Yaj in pool.", es: "Me duele la cabeza.", pr: "yaj in pool", note: "yaj + in (mi) + pool (cabeza). Vista en un material didáctico.", conf: "media" },
         { id: "u7-yaj-in-nak", m: "Yaj in nak'.", es: "Me duele el estómago.", pr: "yaj in nak'", note: "Vista en el mismo material didáctico.", conf: "media" },
         { id: "u7-yaj-in-koj", m: "Yaj in koj.", es: "Me duele el diente.", pr: "yaj in koj", note: "Armada con la misma regla: yaj + posesivo + parte del cuerpo.", conf: "media" },
         { id: "u7-yaj-in-paach", m: "Yaj in paach.", es: "Me duele la espalda.", pr: "yaj in paach", note: "Armada con la misma regla.", conf: "media" },
         { id: "u7-yaj-in-wook", m: "Yaj in wook.", es: "Me duele el pie.", pr: "yaj in wook", note: "ook empieza con vocal: in wook. Armada con la misma regla.", conf: "media" },
         { id: "u7-yaj-waaj-a-pool", m: "Yaj wáaj a pool?", es: "¿Te duele la cabeza? / ¿Le duele la cabeza?", pr: "yaj wáaj a pool", note: "wáaj va después de la primera palabra. Armada por regla.", conf: "media" },
-        { id: "u7-tsak-yaj", m: "ts'ak yaj", es: "médico; curandero (lit. cura-dolor)", pr: "ts'ak yaj", note: "ts'ak (curar) + yaj (dolor), según Wikcionario: una sola fuente.", conf: "media" },
+        { id: "u7-tsak-yaj", m: "ts'ak yaj", es: "médico; curandero (lit. cura-dolor)", pr: "ts'ak yaj", note: "ts'ak (cura) + yaj (dolor), con dos vocales cortas; ts'aak, «medicina; curar», lleva vocal larga. La UADY da también ts'ak máak para «médico».", conf: "alta" },
         { id: "u7-jmeen", m: "jmeen", es: "curandero tradicional; sacerdote maya", pr: "jmeen", note: "j- es el prefijo masculino. Grafía antigua: h-men.", conf: "alta" }
       ],
       dialogue: {
@@ -3981,8 +4051,55 @@ window.COURSE.guide = {
         { type: "type", q: "Escribe en maya", prompt: "curandero tradicional; sacerdote maya", answer: "jmeen" },
         { type: "choice", q: "¿Qué significa?", prompt: "ts'ak yaj", promptLang: "m", answer: "médico; curandero", options: ["médico; curandero", "medicina, remedio", "enfermedad"] },
         { type: "choice", q: "¿Qué significa?", prompt: "Yaj in wook.", promptLang: "m", answer: "Me duele el pie.", options: ["Me duele el pie.", "Me duele la mano.", "Me duele el diente."] },
-        { type: "build", es: "mi pie y mi diente", m: "in wook yéetel in koj", distractors: ["yaj", "u"] },
-        { type: "choice", q: "Repaso: ¿qué significa?", prompt: "ts'aak", promptLang: "m", answer: "medicina, remedio", options: ["medicina, remedio", "dolor; doloroso", "curandero tradicional"] }
+        { type: "build", es: "mi diente y mi espalda", m: "in koj yéetel in paach", distractors: ["yaj", "u"] },
+        { type: "choice", q: "Repaso: ¿qué significa?", prompt: "ts'aak", promptLang: "m", answer: "medicina, remedio", options: ["medicina, remedio", "dolor; daño", "curandero tradicional"] }
+      ]
+    },
+    {
+      id: "u7l6",
+      title: "Fiebre, tos y otros síntomas",
+      goal: "Al terminar podrás nombrar la fiebre, la tos y el vómito, reconocer otras palabras para el dolor, como el dolor de cabeza o el de muelas, y la palabra para «salud».",
+      teach: [
+        {
+          kind: "text",
+          title: "Fiebre, tos y vómito",
+          html: "La fiebre o calentura es <span class=\"m\">chokwil</span>; comparte raíz con <span class=\"m\">chokoj</span>, «caliente», que viste en la unidad de comida. La tos es <span class=\"m\">se'en</span>, y la misma palabra sirve para «toser». El vómito es <span class=\"m\">xeej</span>, que también es «vomitar»; la x suena «sh».<br>Las tres vienen del diccionario de la UADY. En <span class=\"m\">xeej</span> queda una duda: el diccionario no marca tono, pero un artículo de la UADY sobre partería escribe <i>xéej</i>, con tono alto. Por eso va «por confirmar»."
+        },
+        {
+          kind: "text",
+          title: "Tres palabras para el dolor",
+          html: "Según un artículo de la UADY sobre cómo se entiende el dolor en la cultura maya, hay tres raíces básicas: <span class=\"m\">yaj</span>, la más general; <span class=\"m\">chi'ibal</span>, el dolor que muerde o arde, y <span class=\"m\">k'i'inam</span>, el dolor que late o no se quita.<br>Con <span class=\"m\">chi'ibal</span> se dice <span class=\"m\">chi'ibal pool</span>, «dolor de cabeza», y <span class=\"m\">chi'ibal koj</span>, «dolor de muelas». El mismo artículo cuenta que parte de este vocabulario casi no se usa hoy, salvo entre las personas mayores, y que al hablar muchos dicen <i>yaan dóolor</i>, con la palabra del español."
+        },
+        {
+          kind: "tip",
+          title: "Cuida la escritura",
+          html: "<span class=\"m\">chi'ibal</span> y <span class=\"m\">k'i'inam</span> llevan vocal rearticulada (i'i). Wikcionario y Glosbe escriben <i>k'iinam</i>, sin el corte, pero el diccionario de la UADY escribe <span class=\"m\">k'i'inam</span>.<br>Para «salud», el mismo diccionario da <span class=\"m\">toj óolal</span>, emparentada con <span class=\"m\">toj óol</span>, «sano», y con <span class=\"m\">óol</span>, el ánimo. Va «por confirmar» porque otras fuentes escriben <i>tooj</i>, con vocal larga, en frases parecidas."
+        },
+        {
+          kind: "warn",
+          title: "Vocabulario, no diagnóstico",
+          html: "Estas palabras te sirven para entender y acompañar. <b>No sustituyen a un intérprete</b>: para preguntar síntomas, explicar un tratamiento o pedir un consentimiento, trabaja con un intérprete o con material validado por hablantes. Este curso es experimental y no está validado para uso clínico."
+        }
+      ],
+      vocab: [
+        { id: "u7-chokwil", m: "chokwil", es: "fiebre, calentura", pr: "chokwil", note: "Comparte raíz con chokoj, «caliente». Así la da el diccionario de la UADY.", conf: "alta" },
+        { id: "u7-seen", m: "se'en", es: "tos; toser", pr: "se-en", note: "Vocal rearticulada e'e. Sirve como sustantivo y como verbo. Para «toser», la UADY da también sasa' kaal.", conf: "alta" },
+        { id: "u7-xeej", m: "xeej", es: "vómito; vomitar", pr: "sheej", note: "La x suena «sh» y la vocal es larga. El diccionario de la UADY escribe xeej, sin tono; un artículo de la UADY escribe xéej, con tono alto: por confirmar.", conf: "media" },
+        { id: "u7-chiibal", m: "chi'ibal", es: "dolor (que muerde o arde); morder; ladrar", pr: "chi-ibal", note: "Vocal rearticulada i'i. El diccionario de la UADY la da con los tres sentidos.", conf: "alta" },
+        { id: "u7-chiibal-pool", m: "chi'ibal pool", es: "dolor de cabeza, jaqueca", pr: "chi-ibal pool", note: "chi'ibal (dolor) + pool (cabeza). Lo registran dos artículos de la UADY.", conf: "alta" },
+        { id: "u7-chiibal-koj", m: "chi'ibal koj", es: "dolor de muelas", pr: "chi-ibal koj", note: "chi'ibal (dolor) + koj (diente, muela). Lo registra un artículo de la UADY.", conf: "alta" },
+        { id: "u7-kiinam", m: "k'i'inam", es: "dolor (continuo, que late; físico o moral)", pr: "k'i-inam", note: "Vocal rearticulada i'i: no se escribe k'iinam. Para el dolor en general se usa yaj.", conf: "alta" },
+        { id: "u7-toj-oolal", m: "toj óolal", es: "salud", pr: "toj óolal", note: "La UADY escribe toj oolal; el tono alto de óolal sigue a toj óol, «sano», del mismo diccionario. Otras fuentes escriben tooj, con vocal larga: por confirmar.", conf: "media" }
+      ],
+      exercises: [
+        { type: "choice", q: "¿Qué significa?", prompt: "chokwil", promptLang: "m", answer: "fiebre, calentura", options: ["fiebre, calentura", "tos; toser", "caliente"] },
+        { type: "choice", q: "¿Cómo se dice «tos»?", prompt: "tos; toser", promptLang: "es", answer: "se'en", options: ["se'en", "chokwil", "chi'ibal"] },
+        { type: "choice", q: "¿Qué significa?", prompt: "xeej", promptLang: "m", answer: "vómito; vomitar", options: ["vómito; vomitar", "fiebre, calentura", "dolor de cabeza, jaqueca"] },
+        { type: "choice", q: "¿Qué significa?", prompt: "chi'ibal pool", promptLang: "m", answer: "dolor de cabeza, jaqueca", options: ["dolor de cabeza, jaqueca", "dolor de muelas", "fiebre, calentura"] },
+        { type: "fill", es: "dolor de muelas", before: "chi'ibal", after: "", answer: "koj", options: ["koj", "pool", "kaal"] },
+        { type: "build", es: "fiebre y tos", m: "chokwil yéetel se'en", distractors: ["chi'ibal", "yaj"] },
+        { type: "choice", q: "Cuidado con la forma: ¿qué significa?", prompt: "k'i'inam", promptLang: "m", answer: "dolor (continuo, que late)", options: ["dolor (continuo, que late)", "sangre", "fiebre, calentura"] },
+        { type: "choice", q: "¿Qué significa?", prompt: "toj óolal", promptLang: "m", answer: "salud", options: ["salud", "enfermedad", "medicina, remedio"] }
       ]
     }
   ]
@@ -3992,7 +4109,8 @@ window.COURSE.guide = {
 /* src/content/u8.js */
 /* Unidad 8 · Naturaleza y colores. Solo formas con estado «verificado» (conf alta) o «probable» (conf media)
    en la base o en la reverificación (kb/recheck-naturaleza-cultura.json).
-   k'an (amarillo) va con conf media: la UADY lo escribe con vocal larga. No se enseñan tunkuluchu' ni wiits como vocabulario. */
+   y en la tercera verificación (kb/recheck3-resto.json). k'an (amarillo) va con conf alta: vocal corta, como en Bricker,
+   Savkic y la propia UADY (k'an ch'uuy). No se enseñan tunkuluchu' ni wiits como vocabulario. */
 (window.COURSE = window.COURSE || { units: [] }).units.push({
   id: "u8",
   n: 8,
@@ -4016,8 +4134,12 @@ window.COURSE.guide = {
     { title: "UADY – Diccionario maya, letra K' (k'aan, el mecate; k'áax, el monte; k'an ch'uuy)", url: "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html" },
     { title: "UADY – Diccionario maya, letra X (xaman, xooch')", url: "https://www.mayas.uady.mx/diccionario/x_maya.html" },
     { title: "UADY – Diccionario maya, letra P (pu'uk)", url: "https://www.mayas.uady.mx/diccionario/p_maya.html" },
-    { title: "UADY – Diccionario español-maya, letra N (negro: éek', boox; nube: múuyal)", url: "https://www.mayas.uady.mx/diccionario/n_esp.html" },
-    { title: "UADY – Diccionario español-maya, letra C (cueva: áaktun; cerro: pu'uk, wiits)", url: "https://www.mayas.uady.mx/diccionario/c_esp.html" },
+    { title: "UADY – Diccionario español-maya, letra N (negro: éek', boox; nube: múuyal; nido: k'u')", url: "https://www.mayas.uady.mx/diccionario/n_esp.html" },
+    { title: "UADY – Diccionario español-maya, letra C (cueva: áaktun; cerro: pu'uk, wiits; conejo: t'u'ul; carrizo: jalal)", url: "https://www.mayas.uady.mx/diccionario/c_esp.html" },
+    { title: "UADY – Diccionario español-maya, letra A (arriba: yóok'ol; anterior, antes: táanil)", url: "https://www.mayas.uady.mx/diccionario/a_esp.html" },
+    { title: "UADY – Diccionario español-maya, letra L (lodo: luuk')", url: "https://www.mayas.uady.mx/diccionario/l_esp.html" },
+    { title: "UADY – Diccionario maya, letra J (juuj)", url: "https://www.mayas.uady.mx/diccionario/j_maya.html" },
+    { title: "Wiktionnaire (francés) – k'an (maya yucateco): amarillo; maduro", url: "https://fr.wiktionary.org/wiki/k%E2%80%99an" },
     { title: "UADY, Yucatán: Identidad y Cultura Maya – el Hanal Pixan y la cosmología maya (rumbos, colores y ya'axche')", url: "https://www.mayas.uady.mx/articulos/pixan.html" },
     { title: "UADY – ¿Qué es la sobada? (la ceiba o ya'axche')", url: "https://www.mayas.uady.mx/articulos/pdf/sobada.pdf" },
     { title: "UADY – La milpa maya como agricultura migratoria (kool)", url: "https://www.mayas.uady.mx/articulos/milpa.html" },
@@ -4072,10 +4194,10 @@ window.COURSE.guide = {
         { id: "u8-keej", m: "kéej", es: "venado", pr: "kéej", note: "Tono alto.", conf: "alta" },
         { id: "u8-baalam", m: "báalam", es: "jaguar", pr: "báalam", note: "Tono alto. La UADY la registra también como «guardián protector»; en nombres antiguos se escribe balam, como en Ek' Balam.", conf: "alta" },
         { id: "u8-aak", m: "áak", es: "tortuga", pr: "áak", note: "Tono alto y k simple; no confundir con aak' (lengua).", conf: "alta" },
-        { id: "u8-juuj", m: "juuj", es: "iguana", pr: "juuj", conf: "media" },
+        { id: "u8-juuj", m: "juuj", es: "iguana", pr: "juuj", conf: "alta" },
         { id: "u8-muuch", m: "muuch", es: "sapo, rana", pr: "muuch", conf: "alta" },
         { id: "u8-choom", m: "ch'oom", es: "zopilote", pr: "ch'oom", conf: "alta" },
-        { id: "u8-tuul", m: "t'u'ul", es: "conejo", pr: "t'u-ul", note: "t' glotalizada y vocal rearticulada u'u.", conf: "media" },
+        { id: "u8-tuul", m: "t'u'ul", es: "conejo", pr: "t'u-ul", note: "t' glotalizada y vocal rearticulada u'u.", conf: "alta" },
         { id: "u8-cho", m: "ch'o'", es: "ratón, rata", pr: "ch'o-", note: "ch' glotalizada al inicio y corte de voz al final.", conf: "alta" },
         { id: "u8-turix", m: "turix", es: "libélula", pr: "turish", note: "La x suena «sh». Una de las pocas palabras con r.", conf: "alta" }
       ],
@@ -4103,7 +4225,7 @@ window.COURSE.guide = {
         {
           kind: "text",
           title: "Amarillo y negro",
-          html: "Esos mismos estudios cuentan cinco colores básicos: <span class=\"m\">sak</span>, <span class=\"m\">éek'</span>, <span class=\"m\">chak</span>, <span class=\"m\">k'an</span> y <span class=\"m\">ya'ax</span>.<br>Para «negro» hay dos palabras: <span class=\"m\">éek'</span>, con tono alto, y <span class=\"m\">boox</span>. No confundas <span class=\"m\">éek'</span> con <span class=\"m\">eek'</span>, de tono bajo, que es «estrella»; además, <span class=\"m\">éek'</span> también quiere decir «sucio».<br>«Amarillo» es <span class=\"m\">k'an</span>, como en <span class=\"m\">k'an ch'uuy</span>, «pálido, amarillento». La UADY lo escribe con vocal larga, así que va «por confirmar»."
+          html: "Esos mismos estudios cuentan cinco colores básicos: <span class=\"m\">sak</span>, <span class=\"m\">éek'</span>, <span class=\"m\">chak</span>, <span class=\"m\">k'an</span> y <span class=\"m\">ya'ax</span>.<br>Para «negro» hay dos palabras: <span class=\"m\">éek'</span>, con tono alto, y <span class=\"m\">boox</span>. No confundas <span class=\"m\">éek'</span> con <span class=\"m\">eek'</span>, de tono bajo, que es «estrella»; además, <span class=\"m\">éek'</span> también quiere decir «sucio».<br>«Amarillo» es <span class=\"m\">k'an</span>, como en <span class=\"m\">k'an ch'uuy</span>, «pálido, amarillento». Así, con vocal corta, lo escriben Bricker, Savkic y Montgomery; en su entrada para «amarillo», el diccionario de la UADY pone <i>k'aan</i>, que es también «mecate»."
         },
         {
           kind: "culture",
@@ -4113,22 +4235,22 @@ window.COURSE.guide = {
         {
           kind: "text",
           title: "Aquí, lejos, encima",
-          html: "<span class=\"m\">waye'</span> es «aquí», como en <span class=\"m\">Máanen waye'</span> (pase usted). <span class=\"m\">náach</span> es «lejos», <span class=\"m\">yóok'ol</span> es «encima, sobre» y <span class=\"m\">táanil</span> es «adelante», de <span class=\"m\">táan</span>, la frente."
+          html: "<span class=\"m\">waye'</span> es «aquí», como en <span class=\"m\">Máanen waye'</span> (pase usted). <span class=\"m\">náach</span> es «lejos», <span class=\"m\">yóok'ol</span> es «encima, sobre, arriba» y <span class=\"m\">táanil</span> es «adelante» y también «antes», de <span class=\"m\">táan</span>, la frente."
         }
       ],
       vocab: [
         { id: "u8-chak", m: "chak", es: "rojo", pr: "chak", note: "Vocal corta. Abarca también el rosa y el naranja. Con vocal larga y tono alto, cháak es «lluvia».", conf: "alta" },
         { id: "u8-sak", m: "sak", es: "blanco", pr: "sak", conf: "alta" },
         { id: "u8-yaax", m: "ya'ax", es: "verde", pr: "ya-ash", note: "Vocal rearticulada. Abarca también tonos azules. No confundir con yáax, «primero».", conf: "alta" },
-        { id: "u8-kan-amarillo", m: "k'an", es: "amarillo", pr: "k'an", note: "k' glotalizada y vocal corta, como la escriben Bricker y Savkic. La UADY la escribe con vocal larga: por confirmar.", conf: "media" },
+        { id: "u8-kan-amarillo", m: "k'an", es: "amarillo", pr: "k'an", note: "k' glotalizada y vocal corta, como la escriben Bricker, Savkic y la propia UADY en k'an ch'uuy. En su entrada para «amarillo», la UADY pone k'aan. También quiere decir «maduro», de la fruta.", conf: "alta" },
         { id: "u8-eek-negro", m: "éek'", es: "negro, oscuro; sucio", pr: "éek'", note: "Tono alto. Con tono bajo, eek' es «estrella».", conf: "alta" },
         { id: "u8-boox", m: "boox", es: "negro", pr: "boosh", note: "Vocal larga de tono bajo; la x suena «sh».", conf: "alta" },
         { id: "u8-sak-bej", m: "sak bej", es: "camino blanco; calzada maya (sacbé)", pr: "sak bej", note: "sak (blanco) + bej (camino). Las dos palabras están confirmadas; el compuesto no lo vimos escrito en una fuente.", conf: "media" },
         { id: "u8-lakin", m: "lak'in", es: "oriente, este", pr: "lak'in", conf: "alta" },
         { id: "u8-naach", m: "náach", es: "lejos", pr: "náach", note: "Tono alto.", conf: "alta" },
         { id: "u8-waye", m: "waye'", es: "aquí, acá", pr: "waye-", conf: "alta" },
-        { id: "u8-yookol", m: "yóok'ol", es: "encima, sobre", pr: "yóok'ol", conf: "media" },
-        { id: "u8-taanil", m: "táanil", es: "adelante, enfrente", pr: "táanil", note: "De táan, la frente.", conf: "media" }
+        { id: "u8-yookol", m: "yóok'ol", es: "encima, sobre; arriba", pr: "yóok'ol", note: "Tono alto. No lo confundas con jóok'ol, «salir».", conf: "alta" },
+        { id: "u8-taanil", m: "táanil", es: "adelante; antes, anterior", pr: "táanil", note: "De táan, la frente. La UADY da máan táanil, «avanzar».", conf: "alta" }
       ],
       exercises: [
         { type: "choice", q: "¿Qué significa?", prompt: "sak", promptLang: "m", answer: "blanco", options: ["blanco", "rojo", "verde"] },
@@ -4170,15 +4292,15 @@ window.COURSE.guide = {
       vocab: [
         { id: "u8-tsonoot", m: "ts'ono'ot", es: "cenote", pr: "ts'ono-ot", note: "ts' glotalizada y vocal rearticulada o'o.", conf: "alta" },
         { id: "u8-kool", m: "kool", es: "milpa", pr: "kool", note: "Vocal larga de tono bajo. También «tierra labrada o rozada». Es la base de koolnáal, campesino.", conf: "alta" },
-        { id: "u8-kaan-mecate", m: "k'aan", es: "mecate, cuerda; medida de terreno (20 × 20 m)", pr: "k'aan", note: "Tono bajo. Con tono alto, k'áan es «hamaca».", conf: "media" },
+        { id: "u8-kaan-mecate", m: "k'aan", es: "mecate, cuerda; medida de terreno (20 × 20 m)", pr: "k'aan", note: "Tono bajo. En la misma entrada, la UADY da también «amarillo». Con tono alto, k'áan es «hamaca».", conf: "alta" },
         { id: "u8-kaax-monte", m: "k'áax", es: "monte, selva, bosque", pr: "k'áash", note: "Tono alto. Con tono bajo, k'aax es «amarrar»; sin glotal, kaax es «gallina».", conf: "alta" },
         { id: "u8-yaaxche", m: "ya'axche'", es: "ceiba (árbol sagrado)", pr: "ya-ashche-", note: "Vocal rearticulada a'a y corte de voz al final.", conf: "alta" },
         { id: "u8-lool", m: "lool", es: "flor", pr: "lool", conf: "alta" },
         { id: "u8-nikte", m: "nikte'", es: "flor de mayo (plumeria)", pr: "nikte-", note: "La palabra general para «flor» es lool. En textos antiguos: nicte.", conf: "alta" },
         { id: "u8-beek", m: "béek", es: "roble", pr: "béek", note: "Tono alto.", conf: "alta" },
-        { id: "u8-jalal", m: "jalal", es: "carrizo", pr: "jalal", conf: "media" },
-        { id: "u8-luuk", m: "luuk'", es: "lodo", pr: "luuk'", conf: "media" },
-        { id: "u8-ku", m: "k'u'", es: "nido", pr: "k'u-", conf: "media" },
+        { id: "u8-jalal", m: "jalal", es: "carrizo", pr: "jalal", conf: "alta" },
+        { id: "u8-luuk", m: "luuk'", es: "lodo", pr: "luuk'", conf: "alta" },
+        { id: "u8-ku", m: "k'u'", es: "nido", pr: "k'u-", conf: "alta" },
         { id: "u8-chak-iik", m: "chak iik'", es: "viento fuerte; tempestad", pr: "chak iik'", note: "Literalmente «viento rojo». Sin la k' final, chak iik es el chile habanero. Para «huracán» algunas fuentes dan otra palabra (por confirmar).", conf: "media" }
       ],
       exercises: [
@@ -4298,7 +4420,7 @@ window.COURSE.guide = {
 /* src/content/u9.js */
 /* Unidad 9 · Tiempo y cultura. Solo formas con estado «verificado» (conf alta) o «probable» (conf media)
    en la base o en la reverificación (kb/recheck-conversacion-gramatica.json, kb/recheck-naturaleza-cultura.json).
-   bejla'e', jo'oljeak y ka'abej siguen «probables». Las reglas de ts'o'ok, bíin y del pasado intransitivo (binen, taalen)
+   bejla'e', jo'oljeak, ka'abej y kuxtal quedaron verificadas (kb/recheck3-resto.json). Las reglas de ts'o'ok, bíin y del pasado intransitivo (binen, taalen)
    quedaron verificadas; el resto del pasado y del futuro sigue con conf media. Jarana e hipil son palabras del español:
    no se enseña ninguna forma maya para el hipil (íipil quedó «dudoso»). */
 (window.COURSE = window.COURSE || { units: [] }).units.push({
@@ -4310,8 +4432,11 @@ window.COURSE.guide = {
     { title: "UADY – Diccionario maya, letra B (bejla'e')", url: "https://www.mayas.uady.mx/diccionario/b_maya.html" },
     { title: "UADY – Diccionario maya, letra S (sáamal)", url: "https://www.mayas.uady.mx/diccionario/s_maya.html" },
     { title: "UADY – Diccionario maya, letra J (jo'oljeak)", url: "https://www.mayas.uady.mx/diccionario/j_maya.html" },
-    { title: "UADY – Diccionario español-maya, letra A (áak'ab, noche)", url: "https://www.mayas.uady.mx/diccionario/a_esp.html" },
+    { title: "UADY – Diccionario español-maya, letra A (ahora: bejla'e'; ayer: jo'oljeak; noche: áak'ab)", url: "https://www.mayas.uady.mx/diccionario/a_esp.html" },
     { title: "Gran Museo del Mundo Maya de Mérida – Palabras mayas (ka'abej, bejla'e', sáamal)", url: "https://www.granmuseodelmundomaya.com.mx/aprende/palabras-mayas" },
+    { title: "UADY, literatura maya – cuento bilingüe maya-español (ka'abeje', pasado mañana)", url: "https://www.mayas.uady.mx/literatura/cuent5.html" },
+    { title: "UADY – Diccionario maya, letra K (kuxtal: vida, existencia)", url: "https://www.mayas.uady.mx/diccionario/k_maya.html" },
+    { title: "UADY – Curso de maya, lección 4.7 (kuxtal, vivir)", url: "https://www.mayas.uady.mx/curso_maya/lec4_7.html" },
     { title: "Top Yucatán – Frases básicas en maya y español (bejla'e', jo'oljeak)", url: "https://topyucatan.com/notas/the-yucatan-culture/frases-basicas-en-maya-y-espanol" },
     { title: "Spoken Yucatec Maya (Universidad de Chicago) – Intransitive Forms (sáamal in bin)", url: "https://lucy.lib.uchicago.edu/?section=4&uuid=770214c7-0111-4081-a7bf-c2fa91a835ab" },
     { title: "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes (te' súutukila', ts'o'ok)" },
@@ -4354,7 +4479,7 @@ window.COURSE.guide = {
     { title: "Pfeiler y Hofling (2006), Apuntes sobre la variación dialectal en el maya yucateco", url: "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S1870-57662006000100002" },
     { title: "UADY – Diccionario español-maya, letra B (bueno, bonito)", url: "https://www.mayas.uady.mx/diccionario/b_esp.html" },
     { title: "UADY – Briceida Cuevas Cob, «In k'aaba'»", url: "https://www.mayas.uady.mx/literatura/poem25.html" },
-    { title: "Diccionario maya de la UADY: entrada FELICIDAD (ki'imak óolal), consultada en una reproducción no oficial" },
+    { title: "UADY – Diccionario español-maya, letra F (felicidad: ki'imak óolal; feliz: ki'imak óol)", url: "https://www.mayas.uady.mx/diccionario/f_esp.html" },
     { title: "Na'atik Language & Culture Institute – Yucatec Maya Phrases (Ki'imak óolal)", url: "https://naatikmexico.org/blog/yucatec-maya-phrases" },
     { title: "Omniglot – Useful phrases in Yucatec Maya (Ki'imak óolal)", url: "https://www.omniglot.com/language/phrases/yucatec-maya.php" }
   ],
@@ -4384,7 +4509,7 @@ window.COURSE.guide = {
         {
           kind: "tip",
           title: "El verbo mira la acción, no el reloj",
-          html: "El verbo maya no marca el tiempo como el español: marca si la acción es costumbre, si está en curso o si ya terminó (lo verás en la siguiente lección). Por eso las palabras de tiempo ayudan tanto a ubicarla.<br><span class=\"m\">sáamal</span> está confirmada; <span class=\"m\">bejla'e'</span>, <span class=\"m\">jo'oljeak</span> y <span class=\"m\">ka'abej</span> aparecen en diccionarios y guías, pero en la última revisión no las pudimos volver a confirmar, así que siguen «por confirmar»."
+          html: "El verbo maya no marca el tiempo como el español: marca si la acción es costumbre, si está en curso o si ya terminó (lo verás en la siguiente lección). Por eso las palabras de tiempo ayudan tanto a ubicarla.<br><span class=\"m\">sáamal</span>, <span class=\"m\">bejla'e'</span>, <span class=\"m\">jo'oljeak</span> y <span class=\"m\">ka'abej</span> están confirmadas: las tres primeras, en el diccionario de la UADY, y <span class=\"m\">ka'abej</span>, en el Gran Museo del Mundo Maya y en un cuento bilingüe publicado por la UADY. <span class=\"m\">te' súutukila'</span> sigue «por confirmar»."
         },
         {
           kind: "text",
@@ -4393,13 +4518,13 @@ window.COURSE.guide = {
         }
       ],
       vocab: [
-        { id: "u9-bejlae", m: "bejla'e'", es: "hoy; ahora", pr: "bejla-e-", note: "Suele ir al inicio o al final de la frase.", conf: "media" },
+        { id: "u9-bejlae", m: "bejla'e'", es: "hoy; ahora", pr: "bejla-e-", note: "Suele ir al inicio o al final de la frase. La UADY la da para «hoy» y para «ahora».", conf: "alta" },
         { id: "u9-saamal", m: "sáamal", es: "mañana (el día siguiente)", pr: "sáamal", note: "Tono alto. Ya la usaste en Tak sáamal, «hasta mañana».", conf: "alta" },
-        { id: "u9-jooljeak", m: "jo'oljeak", es: "ayer", pr: "jo-oljeak", note: "Algunas fuentes escriben jo'oljej.", alt: ["jo'oljej"], conf: "media" },
-        { id: "u9-kaabej", m: "ka'abej", es: "pasado mañana", pr: "ka-abej", conf: "media" },
+        { id: "u9-jooljeak", m: "jo'oljeak", es: "ayer", pr: "jo-oljeak", note: "Así la da el diccionario de la UADY.", conf: "alta" },
+        { id: "u9-kaabej", m: "ka'abej", es: "pasado mañana", pr: "ka-abej", note: "Con la terminación de tema -e' queda ka'abeje', como en un cuento bilingüe de la UADY.", conf: "alta" },
         { id: "u9-te-suutukila", m: "te' súutukila'", es: "en este momento; ahorita; ahora", pr: "te- súutukila-", note: "Expresión fija; termina en -a', «este».", conf: "media" },
         { id: "u9-aakab", m: "áak'ab", es: "noche", pr: "áak'ab", note: "Tono alto.", conf: "alta" },
-        { id: "u9-ulaak", m: "uláak'", es: "otro, otra", pr: "uláak'", note: "Va antes del sustantivo: uláak' k'iin, otro día.", ex: { m: "Tak ti' uláak' k'iin.", es: "Hasta otro día." }, conf: "media" },
+        { id: "u9-ulaak", m: "uláak'", es: "otro, otra", pr: "uláak'", note: "Va antes del sustantivo: uláak' k'iin, otro día. Así la escribe el INALI; el tono todavía no está confirmado en el diccionario.", ex: { m: "Tak ti' uláak' k'iin.", es: "Hasta otro día." }, conf: "media" },
         { id: "u9-saamal-in-bin", m: "Sáamal in bin.", es: "Mañana voy.", pr: "sáamal in bin", note: "En este ejemplo (curso de la Universidad de Chicago), con sáamal al inicio el verbo aparece sin k-.", conf: "media" },
         { id: "u9-ma-tin-meyaj-te-suutukila", m: "Ma' tin meyaj te' súutukila'.", es: "No estoy trabajando en este momento.", pr: "ma- tin meyaj te- súutukila-", conf: "media" }
       ],
@@ -4409,8 +4534,8 @@ window.COURSE.guide = {
         { type: "choice", q: "¿Qué significa?", prompt: "Sáamal in bin.", promptLang: "m", answer: "Mañana voy.", options: ["Mañana voy.", "Ayer fui.", "Tengo que ir."] },
         { type: "choice", q: "¿Qué significa?", prompt: "Ma' tin meyaj te' súutukila'.", promptLang: "m", answer: "No estoy trabajando en este momento.", options: ["No estoy trabajando en este momento.", "Trabajo todos los días.", "Ya trabajé hoy."] },
         { type: "type", q: "Escribe en maya", prompt: "noche", answer: "áak'ab" },
-        { type: "choice", q: "¿Qué significa?", prompt: "ka'abej", promptLang: "m", answer: "pasado mañana", options: ["pasado mañana", "ayer", "noche"] },
-        { type: "fill", es: "Repaso: Hasta mañana.", before: "Tak", after: ".", answer: "sáamal", options: ["sáamal", "áak'ab", "k'iin"] },
+        { type: "choice", q: "¿Cómo se dice «pasado mañana»?", prompt: "pasado mañana", promptLang: "es", answer: "ka'abej", options: ["ka'abej", "jo'oljeak", "bejla'e'"] },
+        { type: "type", q: "Escribe en maya", prompt: "ayer", answer: "jo'oljeak" },
         { type: "build", es: "el día y la noche", m: "k'iin yéetel áak'ab", distractors: ["sáamal", "uj"] }
       ]
     },
@@ -4499,7 +4624,7 @@ window.COURSE.guide = {
       vocab: [
         { id: "u9-janal-pixan", m: "Janal Pixan", es: "comida de las ánimas (días de muertos en Yucatán)", pr: "janal pishan", note: "Del 31 de octubre al 2 de noviembre. En grafía antigua, Hanal Pixán.", conf: "alta" },
         { id: "u9-kiimil", m: "kíimil", es: "morir; muerte", pr: "kíimil", note: "Tono alto. En grafía colonial: cimil.", conf: "alta" },
-        { id: "u9-kuxtal", m: "kuxtal", es: "vida; vivir", pr: "kushtal", note: "La x suena «sh». La forma aparece en textos académicos en maya, pero el significado «vida» solo lo vimos en una fuente divulgativa.", conf: "media" },
+        { id: "u9-kuxtal", m: "kuxtal", es: "vida; vivir", pr: "kushtal", note: "La x suena «sh». El diccionario de la UADY la da como «vida, existencia», y el curso de la UADY, como «vivir».", conf: "alta" },
         { id: "u9-waay", m: "wáay", es: "brujo; fantasma", pr: "wáay", note: "Tono alto. Aparece en relatos tradicionales de espantos.", conf: "alta" },
         { id: "u9-paax", m: "paax", es: "tocar (un instrumento)", pr: "paash", note: "La x suena «sh».", conf: "media" },
         { id: "u9-uts", m: "uts", es: "bueno", pr: "uts", note: "Se usa sobre todo en el oriente de la península; en otras regiones se prefiere ma'alob.", conf: "alta" },
@@ -5088,6 +5213,7 @@ window.COURSE.guide = {
       var target = document.getElementById(opts.scrollTo);
       if (target) target.scrollIntoView({ block: "start" });
     }
+    if (PWA && PWA.on) PWA.flush(); // aviso de versión nueva que esperaba a que terminara la sesión
   }
   function updateBadge() {
     var n = dueList().length;
@@ -6217,7 +6343,8 @@ window.COURSE.guide = {
     if (COURSE.guide.length) h += '<section class="section" aria-labelledby="guide-title"><h2 id="guide-title">Guía de pronunciación</h2>' +
       '<p class="muted">Cómo se leen las ' + COURSE.guide.length + ' letras del alfabeto maya. Está en el Diccionario.</p>' +
       '<div class="btn-row"><button class="btn tonal" type="button" id="btn-profile-guide">' + ICON.book + "Abrir la guía</button></div></section>";
-    h += '<section class="section" aria-labelledby="install-title"><h2 id="install-title">Instalar en Android</h2><ol class="steps">' +
+    if (PWA && PWA.on) h += PWA.installHTML(); // versión web instalable; en el Artifact, el texto de siempre:
+    else h += '<section class="section" aria-labelledby="install-title"><h2 id="install-title">Instalar en Android</h2><ol class="steps">' +
       "<li>Abre esta página en Chrome.</li><li>Toca el menú ⋮ (arriba a la derecha).</li>" +
       "<li>Elige «Agregar a la pantalla principal» o «Instalar app».</li><li>Abre Ko'ox Maaya desde el ícono, como cualquier app.</li></ol>" +
       '<p class="muted">Necesita conexión a internet para abrirse. Tu avance se guarda solo en este teléfono y en este navegador.</p></section>';
@@ -6243,8 +6370,9 @@ window.COURSE.guide = {
       '<p class="muted">Borra tu XP, racha, lecciones y repasos de este navegador; tus ajustes se conservan. No se puede deshacer.</p>' +
       '<div class="btn-row"><button class="btn ghost-danger" type="button" id="btn-reset">Borrar avance</button></div>' +
       '<p class="reset-msg" id="reset-msg" tabindex="-1" aria-live="polite"></p></section>';
-    h += '<p class="foot">Ko\'ox Maaya v2 · experimental, sin validación clínica.</p>';
+    h += '<p class="foot">Ko\'ox Maaya v4 · experimental, sin validación clínica.</p>';
     v.innerHTML = h;
+    if (PWA && PWA.on) PWA.bindInstall();
     $("#goal").addEventListener("change", function () {
       var g = Number(this.value);
       if (GOALS.indexOf(g) >= 0) { state.goal = g; save(); toast("Meta diaria: " + g + " XP"); }
@@ -6400,6 +6528,100 @@ window.COURSE.guide = {
     storageOK: function () { return storageOK; }
   };
 
+  /* ================= Versión web instalable (PWA) ================= */
+  // Solo actúa cuando la página es el sitio independiente: build-web.mjs define window.KOOX_STANDALONE
+  // y window.KOOX_BUILD (la versión). En el Artifact de claude.ai PWA.on es false y nada de esto corre.
+  var PWA = (function () {
+    var api = { on: window.KOOX_STANDALONE === true };
+    if (!api.on) return api;
+    var deferred = null, installedNow = false, pending = false, note = null;
+    var ICON_INSTALL = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v10.5M7.5 10 12 14.5 16.5 10"/><path d="M5 19.5h14"/></svg>';
+    function runningAsApp() {
+      try { return window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true; }
+      catch (e) { return false; }
+    }
+    api.installHTML = function () {
+      var h = '<section class="section" aria-labelledby="install-title"><h2 id="install-title">Instalar en Android</h2>';
+      var offline = "Después de la primera visita funciona sin conexión: las lecciones, el repaso y el diccionario quedan guardados en el teléfono.";
+      if (runningAsApp() || installedNow) {
+        return h + "<p>" + (installedNow ? "Ko'ox Maaya quedó instalada. Ábrela desde su ícono en la pantalla principal."
+          : "Ya usas Ko'ox Maaya como app instalada.") + "</p>" +
+          '<p class="muted">' + offline + " Tu avance se guarda solo en este teléfono.</p></section>";
+      }
+      return h + '<div class="btn-row"><button class="btn primary" type="button" id="btn-install"' + (deferred ? "" : " hidden") + ">" +
+        ICON_INSTALL + "Instalar app</button></div>" +
+        '<ol class="steps"><li>Abre esta página en Chrome.</li><li>Toca el menú ⋮ (arriba a la derecha).</li>' +
+        "<li>Elige «Instalar app» o «Agregar a la pantalla principal».</li><li>Abre Ko'ox Maaya desde el ícono, como cualquier app.</li></ol>" +
+        '<p class="muted">' + offline + " Tu avance se guarda solo en este teléfono y en este navegador.</p></section>";
+    };
+    function refreshInstall() {
+      var t = $("#install-title");
+      if (!t || !t.parentNode) return;
+      t.parentNode.outerHTML = api.installHTML();
+      api.bindInstall();
+    }
+    api.bindInstall = function () {
+      var b = $("#btn-install");
+      if (!b) return;
+      b.addEventListener("click", function () {
+        var ev = deferred;
+        if (!ev) return;
+        deferred = null;
+        b.hidden = true;
+        try {
+          var p = ev.prompt(); // diálogo de instalación de Chrome (no es window.prompt)
+          if (p && p.catch) p.catch(function () {});
+          if (ev.userChoice && ev.userChoice.then) ev.userChoice.then(function (c) {
+            if (!c || c.outcome !== "accepted") return;
+            installedNow = true;
+            refreshInstall();
+          }, function () {});
+        } catch (e) { /* sin efecto */ }
+      });
+    };
+    window.addEventListener("beforeinstallprompt", function (e) {
+      e.preventDefault(); // sin la mini barra de Chrome: se instala con el botón de Perfil
+      deferred = e;
+      var b = $("#btn-install");
+      if (b) b.hidden = false;
+    });
+    window.addEventListener("appinstalled", function () {
+      deferred = null;
+      installedNow = true;
+      refreshInstall();
+      toast("Ko'ox Maaya quedó instalada");
+    });
+
+    // Aviso discreto cuando el service worker activa una versión distinta de la que se está viendo.
+    // Durante una lección se espera a que termine (showTab llama a flush).
+    function showUpdate() {
+      if (S) { pending = true; return; }
+      pending = false;
+      if (note) { note.hidden = false; return; }
+      note = document.createElement("div");
+      note.className = "update-note";
+      note.id = "update-note";
+      note.setAttribute("role", "status");
+      (document.getElementById("app") || document.body).appendChild(note);
+      // El contenido llega después de crear la región para que los lectores de pantalla lo anuncien.
+      setTimeout(function () {
+        note.innerHTML = '<span class="update-txt">Hay una versión nueva</span>' +
+          '<button class="btn primary" type="button" id="btn-update">Actualizar</button>' +
+          '<button class="icon-btn" type="button" id="btn-update-close" aria-label="Cerrar aviso">' + ICON.x + "</button>";
+        $("#btn-update").addEventListener("click", function () { location.reload(); });
+        $("#btn-update-close").addEventListener("click", function () { note.hidden = true; });
+      }, 60);
+    }
+    api.flush = function () { if (pending) showUpdate(); };
+    try {
+      if ("serviceWorker" in navigator) navigator.serviceWorker.addEventListener("message", function (e) {
+        var d = e.data;
+        if (d && d.type === "koox-sw-updated" && d.version && d.version !== window.KOOX_BUILD) showUpdate();
+      });
+    } catch (e) { /* sin service worker */ }
+    return api;
+  })();
+
   /* ================= Arranque ================= */
   try { if (!document.documentElement.lang) document.documentElement.lang = "es"; } catch (e) { /* sin efecto */ }
   (function fontsOn() {
@@ -6447,6 +6669,21 @@ window.COURSE.guide = {
 })();
 
 </script>
-
+<script>
+(function () {
+  var local = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
+  if (!("serviceWorker" in navigator) || !(location.protocol === "https:" || local)) return;
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("sw.js").then(function (reg) {
+      var last = Date.now();
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState !== "visible" || Date.now() - last < 30 * 60 * 1000) return;
+        last = Date.now();
+        reg.update().catch(function () {});
+      });
+    }).catch(function () {});
+  });
+})();
+</script>
 </body>
 </html>

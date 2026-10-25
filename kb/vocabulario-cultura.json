@@ -1,0 +1,4262 @@
+{
+  "domain": "vocabulario-cultura",
+  "entries": [
+    {
+      "m": "jun",
+      "es": "uno (1)",
+      "cat": "número",
+      "pr": "jun",
+      "notes": "Ante p y b la n se escribe m: jump'éel (una cosa), jump'íit (un poco).",
+      "variants": [],
+      "ex": {
+        "m": "jump'éel",
+        "es": "una (cosa); un, una"
+      },
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Numerales y clasificadores en maya",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://losocelotesproyectotemasdelinguistica.wordpress.com/2021/06/09/la-cuantificacion-actual-en-el-maya-yucateco/",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      ],
+      "evidence": "Material «Numerales y clasificadores» (un sitio de documentos compartidos) y blog Los Ocelotes: la n de jun se escribe m ante p (jump'éel, kamp'éel); serie jump'éel, ka'ap'éel. Junp'iit Maaya (Mújica 1995, sitio de Lehmann): título traducido «A little bit of Maya». Ninguna fuente académica registrada da la glosa «uno» de jun aislado."
+    },
+    {
+      "m": "ka'",
+      "es": "dos (2)",
+      "cat": "número",
+      "pr": "ka-",
+      "notes": "Vocal glotalizada al final. Ante clasificador se vuelve rearticulada: ka'ap'éel (dos cosas). Muchos cursos escriben ka'a para el número suelto. La misma raíz da ka'atéen (por segunda vez) y tu ka'atéen (otra vez).",
+      "variants": [
+        "ka'a"
+      ],
+      "ex": {
+        "m": "ka'ap'éel",
+        "es": "dos (cosas)"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/k_maya.html",
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Diccionario Maya Popular",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "UADY: «KA'» = dos, segundo, segunda vez, otra vez. Normas de escritura (INALI 2014, copia no autorizada): ka'ap'éel 'dos cosas', ejemplo de glotalizada final que se rearticula ante consonante. Diccionario Maya Popular: ka'atéen 'por segunda vez'."
+    },
+    {
+      "m": "óox",
+      "es": "tres (3)",
+      "cat": "número",
+      "pr": "óosh",
+      "notes": "Tono alto. La misma palabra nombra al ramón, árbol nativo de la península. Con clasificador: óoxp'éel (tres cosas).",
+      "variants": [],
+      "ex": {
+        "m": "óoxp'éel",
+        "es": "tres (cosas)"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/o_maya.html",
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "UADY: «ÓOX» = tres / ramón. INEA: «óo · Óox · ramón / tres»."
+    },
+    {
+      "m": "kan",
+      "es": "cuatro (4)",
+      "cat": "número",
+      "pr": "kan",
+      "notes": "Vocal corta. No confundir con kaan (serpiente), ka'an (cielo) ni k'an (amarillo). Ante p se escribe m: kamp'éel.",
+      "variants": [],
+      "ex": {
+        "m": "kamp'éel",
+        "es": "cuatro (cosas)"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/k_maya.html",
+        {
+          "title": "Numerales y clasificadores en maya",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "UADY: «KAN: Cuatro». Material de numerales (un sitio de documentos compartidos): kanp'éel debe escribirse kamp'éel."
+    },
+    {
+      "m": "jo'",
+      "es": "cinco (5)",
+      "cat": "número",
+      "pr": "jo-",
+      "notes": "Se escribe igual que Jo', el nombre maya de Mérida. Ante clasificador, por la regla de las Normas, se esperaría jo'op'éel (por verificar).",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "wak",
+      "es": "seis (6)",
+      "cat": "número",
+      "pr": "wak",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "uk",
+      "es": "siete (7)",
+      "cat": "número",
+      "pr": "uk",
+      "notes": "No confundir con uk' (piojo; beber), con k glotalizada.",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "waxak",
+      "es": "ocho (8)",
+      "cat": "número",
+      "pr": "washak",
+      "notes": "x = sh.",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "bolon",
+      "es": "nueve (9)",
+      "cat": "número",
+      "pr": "bolon",
+      "notes": "Ante p se esperaría bolomp'éel (regla n → m; por verificar).",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "lajun",
+      "es": "diez (10)",
+      "cat": "número",
+      "pr": "lajun",
+      "notes": "Ante p se esperaría lajump'éel (regla n → m; por verificar).",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "buluk",
+      "es": "once (11)",
+      "cat": "número",
+      "pr": "buluk",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "lajka'",
+      "es": "doce (12)",
+      "cat": "número",
+      "pr": "lajka-",
+      "notes": "Parece formarse de lajun + ka' (diez y dos).",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "óoxlajun",
+      "es": "trece (13)",
+      "cat": "número",
+      "pr": "óoshlajun",
+      "notes": "Del 13 al 19: unidad + lajun (óox + lajun = 3 + 10).",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "kanlajun",
+      "es": "catorce (14)",
+      "cat": "número",
+      "pr": "kanlajun",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "jo'lajun",
+      "es": "quince (15)",
+      "cat": "número",
+      "pr": "jo-lajun",
+      "notes": "Por la regla de rearticulación de las Normas podría escribirse jo'olajun; confirmar la grafía normativa.",
+      "variants": [
+        "jo'olajun"
+      ],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "waklajun",
+      "es": "dieciséis (16)",
+      "cat": "número",
+      "pr": "waklajun",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "uklajun",
+      "es": "diecisiete (17)",
+      "cat": "número",
+      "pr": "uklajun",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "waxaklajun",
+      "es": "dieciocho (18)",
+      "cat": "número",
+      "pr": "washaklajun",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "bolonlajun",
+      "es": "diecinueve (19)",
+      "cat": "número",
+      "pr": "bolonlajun",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "k'áal",
+      "es": "veinte; una veintena (20)",
+      "cat": "número",
+      "pr": "k'áal",
+      "notes": "Base del conteo vigesimal: jun k'áal (20), ka' k'áal (40). Confirmar el tono (algunas grafías: k'aal).",
+      "variants": [
+        "k'aal",
+        "jun k'áal"
+      ],
+      "ex": {
+        "m": "jun k'áal",
+        "es": "veinte"
+      },
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "yáax",
+      "es": "primero",
+      "cat": "número",
+      "pr": "yáash",
+      "notes": "Tono alto. Con ya'ax (rearticulada) significa «verde»: no confundirlas.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/y_maya.html",
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "UADY: «YÁAX: Cosa primera, primero». Guía gramatical: «para el primero, se usa yáax»."
+    },
+    {
+      "m": "ka'atéen",
+      "es": "por segunda vez; dos veces",
+      "cat": "número",
+      "pr": "ka-atéen",
+      "notes": "ka'a + -téen (vez). Tu ka'atéen = otra vez, de nuevo.",
+      "variants": [
+        "ka'teen"
+      ],
+      "ex": {
+        "m": "tu ka'atéen",
+        "es": "otra vez"
+      },
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Diccionario Maya Popular",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.mayas.uady.mx/diccionario/k_maya.html"
+      ],
+      "evidence": "Diccionario Maya Popular: «ka'atéen» por segunda vez; «tu ka'atéen» otra vez. UADY: raíz KA' = dos, segunda vez, otra vez."
+    },
+    {
+      "m": "-p'éel",
+      "es": "clasificador para cosas (objetos inanimados)",
+      "cat": "clasificador",
+      "pr": "p'éel",
+      "notes": "Se pega al número: jump'éel, ka'ap'éel, óoxp'éel, kamp'éel. Jump'éel funciona también como artículo «un, una».",
+      "variants": [],
+      "ex": {
+        "m": "Ka yanak teech jump'éel ma'alob k'iin.",
+        "es": "Que tengas un buen día."
+      },
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Numerales y clasificadores en maya",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://losocelotesproyectotemasdelinguistica.wordpress.com/2021/06/09/la-cuantificacion-actual-en-el-maya-yucateco/",
+        "https://www.poresto.com/yucatan/2024/1/8/como-saludar-despedir-en-maya.html"
+      ],
+      "evidence": "Normas (INALI 2014): ka'ap'éel 'dos cosas'. Material de numerales (un sitio de documentos compartidos) y blog Los Ocelotes: serie jump'éel, ka'ap'éel; kamp'éel. PorEsto (citando a Santos Tuz): «Ka yanak teech jump'éel ma'alob k'iin»."
+    },
+    {
+      "m": "jump'éel",
+      "es": "uno, una (cosa); un, una",
+      "cat": "clasificador",
+      "pr": "jump'éel",
+      "notes": "jun + -p'éel. Además de contar, se usa como artículo indefinido: jump'éel ma'alob k'iin (un buen día).",
+      "variants": [
+        "junp'éel",
+        "junp'el"
+      ],
+      "ex": {
+        "m": "Tu'ux yaan jump'éel restaurant?",
+        "es": "¿Dónde hay un restaurante?"
+      },
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "Numerales y clasificadores en maya",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.poresto.com/yucatan/2024/1/8/como-saludar-despedir-en-maya.html",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      ],
+      "evidence": "Un sitio de documentos compartidos (numerales): serie jump'éel, ka'ap'éel. PorEsto: «jump'éel ma'alob k'iin». Junp'iit Maaya: «Tu'ux yaan junp'el restaurant? Where is a restaurant?»."
+    },
+    {
+      "m": "ka'ap'éel",
+      "es": "dos (cosas)",
+      "cat": "clasificador",
+      "pr": "ka-ap'éel",
+      "notes": "La glotalizada de ka' se vuelve rearticulada ante el clasificador.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Numerales y clasificadores en maya",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Normas (INALI 2014, copia no autorizada): «ka'ap'éel» = dos cosas. Un sitio de documentos compartidos (numerales): serie jump'éel, ka'ap'éel."
+    },
+    {
+      "m": "óoxp'éel",
+      "es": "tres (cosas)",
+      "cat": "clasificador",
+      "pr": "óoshp'éel",
+      "notes": "óox + -p'éel.",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/o_maya.html",
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Deducción de la gramática: óox = tres (UADY) + -p'éel, clasificador de cosas atestiguado en ka'ap'éel (Normas). La forma combinada no aparece literal en las notas."
+    },
+    {
+      "m": "kamp'éel",
+      "es": "cuatro (cosas)",
+      "cat": "clasificador",
+      "pr": "kamp'éel",
+      "notes": "kan + -p'éel; la n pasa a m ante p.",
+      "variants": [
+        "kanp'éel"
+      ],
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Numerales y clasificadores en maya",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://losocelotesproyectotemasdelinguistica.wordpress.com/2021/06/09/la-cuantificacion-actual-en-el-maya-yucateco/"
+      ],
+      "evidence": "Material de numerales (un sitio de documentos compartidos): «kanp'éel» debe escribirse «kamp'éel». Grafía repetida en la nota de Los Ocelotes según el resumen del flujo."
+    },
+    {
+      "m": "jo'op'éel",
+      "es": "cinco (cosas)",
+      "cat": "clasificador",
+      "pr": "jo-op'éel",
+      "notes": "jo' + -p'éel con la rearticulación que piden las Normas (por verificar).",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "jump'íit",
+      "es": "un poco, un poquito",
+      "cat": "cantidad",
+      "pr": "jump'íit",
+      "notes": "jun + p'íit (poco). La n de jun se escribe m ante p.",
+      "variants": [
+        "junp'íit",
+        "junp'iit",
+        "jumpit"
+      ],
+      "ex": {
+        "m": "Chéen jump'íit.",
+        "es": "Solo un poco."
+      },
+      "conf": "media",
+      "sources": [
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html",
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas",
+        {
+          "title": "Numerales y clasificadores en maya",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Junp'iit Maaya (Mújica, 1995): título traducido «A little bit of Maya». La Lengua Maya de Yucatán: «Chéen junp'íit maaya kin t'anik» (solo hablo un poquito de maya)."
+    },
+    {
+      "m": "-téen",
+      "es": "clasificador de veces",
+      "cat": "clasificador",
+      "pr": "téen",
+      "notes": "Cuenta repeticiones: ka'atéen (por segunda vez, dos veces).",
+      "variants": [],
+      "ex": {
+        "m": "ka'atéen",
+        "es": "por segunda vez"
+      },
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Diccionario Maya Popular",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Diccionario Maya Popular: «ka'atéen» por segunda vez y «tu ka'atéen» otra vez; el valor de -téen como clasificador de veces es deducción."
+    },
+    {
+      "m": "-túul",
+      "es": "clasificador para seres vivos (personas y animales)",
+      "cat": "clasificador",
+      "pr": "túul",
+      "notes": "Ej.: juntúul peek' (un perro), óoxtúul paalal (tres niños). Pendiente de confirmar.",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "juntúul",
+      "es": "uno, una (persona o animal)",
+      "cat": "clasificador",
+      "pr": "juntúul",
+      "notes": "",
+      "variants": [],
+      "ex": {
+        "m": "juntúul peek'",
+        "es": "un perro"
+      },
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "ka'atúul",
+      "es": "dos (personas o animales)",
+      "cat": "clasificador",
+      "pr": "ka-atúul",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "óoxtúul",
+      "es": "tres (personas o animales)",
+      "cat": "clasificador",
+      "pr": "óoshtúul",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "-kúul",
+      "es": "clasificador para plantas y árboles",
+      "cat": "clasificador",
+      "pr": "kúul",
+      "notes": "Ej.: junkúul che' (un árbol).",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "-wáal",
+      "es": "clasificador para cosas planas (hojas, papel)",
+      "cat": "clasificador",
+      "pr": "wáal",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "-ts'íit",
+      "es": "clasificador para cosas largas y delgadas (velas, palos)",
+      "cat": "clasificador",
+      "pr": "ts'íit",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "ya'ab",
+      "es": "mucho, muchos",
+      "cat": "cantidad",
+      "pr": "ya-ab",
+      "notes": "Jach ya'ab = muchísimo.",
+      "variants": [],
+      "ex": {
+        "m": "Ma' jach ya'ab maaya kin t'aaniki'.",
+        "es": "No hablo mucho maya."
+      },
+      "conf": "media",
+      "sources": [
+        "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+      ],
+      "evidence": "La Lengua Maya de Yucatán: «Ma' jach ya'ab maaya kin t'aniki'» = no hablo mucho maya. Notas de gramática (parryc.com, URL exacta no registrada): «yanchaj ya'ab máak» = hubo mucha gente."
+    },
+    {
+      "m": "ja'ab",
+      "es": "año",
+      "cat": "tiempo",
+      "pr": "ja-ab",
+      "notes": "Rearticulada. Base para hablar de la edad (ja'abil, por verificar).",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/j_maya.html"
+      ],
+      "evidence": "UADY: «JA'AB: Año»."
+    },
+    {
+      "m": "Jaytúul?",
+      "es": "¿Cuántos? (personas o animales)",
+      "cat": "pregunta",
+      "pr": "jaytúul",
+      "notes": "jay- (¿cuánto?) + clasificador.",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "Jayp'éel?",
+      "es": "¿Cuántos? (cosas)",
+      "cat": "pregunta",
+      "pr": "jayp'éel",
+      "notes": "jay- + -p'éel.",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "Jayp'éel a ja'abil?",
+      "es": "¿Cuántos años tienes?",
+      "cat": "pregunta",
+      "pr": "jayp'éel a ja-abil",
+      "notes": "Lit. ¿cuántos (son) tus años? ja'ab (año) sí está verificado; la frase no.",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "Bajux?",
+      "es": "¿Cuánto? (precio)",
+      "cat": "mercado",
+      "pr": "bajush",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "Bajux u tojol?",
+      "es": "¿Cuánto cuesta? (lit. ¿cuánto es su precio?)",
+      "cat": "mercado",
+      "pr": "bajush u tojol",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "na'",
+      "es": "madre, mamá",
+      "cat": "familia",
+      "pr": "na-",
+      "notes": "Con posesivo: in na' (mi mamá), a na' (tu mamá).",
+      "variants": [],
+      "ex": {
+        "m": "Bix u k'aaba' a na'?",
+        "es": "¿Cómo se llama tu mamá?"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/n_maya.html",
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "UADY: «NA': Madre». Curso «Idioma Maya Yucateco»: «¿Bix u k'àaba' a na'? = ¿Cómo se llama tu mamá?» (grafía con acentos graves, aquí normalizada)."
+    },
+    {
+      "m": "yuum",
+      "es": "padre; señor, dueño",
+      "cat": "familia",
+      "pr": "yuum",
+      "notes": "Tratamiento de respeto. Aparece en Yuum bo'otik (muchas gracias).",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/y_maya.html",
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "UADY: «YUUM: Padre, señor, amo». Aprendiendo Maya: «yuum (padre)»."
+    },
+    {
+      "m": "taata",
+      "es": "papá",
+      "cat": "familia",
+      "pr": "taata",
+      "notes": "El curso «Idioma Maya Yucateco» lo escribe tàatah, con el sistema anterior de acentos graves.",
+      "variants": [
+        "tàatah",
+        "taatah"
+      ],
+      "ex": {
+        "m": "Kux a taata yéetel a na'?",
+        "es": "¿Y tu papá y tu mamá?"
+      },
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Curso «Idioma Maya Yucateco» (copia no autorizada): «Kux a tàatah yéetel a na', ¿bix u bèelo'ob?». Una sola fuente de curso."
+    },
+    {
+      "m": "suku'un",
+      "es": "hermano mayor",
+      "cat": "familia",
+      "pr": "suku-un",
+      "notes": "Se usa también como trato respetuoso entre hombres (por verificar).",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+      ],
+      "evidence": "Blair y Vermont-Salas, Spoken Yucatec Maya, lección 1 (BVS_01.01.01, sitio de Lehmann): la glosa del saludo inicial es «hello · elder.brother»; la transcripción maya exacta no quedó registrada en las notas."
+    },
+    {
+      "m": "kiik",
+      "es": "hermana mayor",
+      "cat": "familia",
+      "pr": "kiik",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "íits'in",
+      "es": "hermano o hermana menor",
+      "cat": "familia",
+      "pr": "íits'in",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "chiich",
+      "es": "abuela",
+      "cat": "familia",
+      "pr": "chiich",
+      "notes": "Vocal larga; con vocal corta, chich significa «duro».",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0185-25742013000100006"
+      ],
+      "evidence": "Sobrino (2013): chiich ('abuela') frente a chich ('duro'), 255 ms frente a 105 ms de duración vocálica."
+    },
+    {
+      "m": "nool",
+      "es": "abuelo",
+      "cat": "familia",
+      "pr": "nool",
+      "notes": "",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya (consonantes): «nool (abuelo)»."
+    },
+    {
+      "m": "paal",
+      "es": "niño, niña",
+      "cat": "familia",
+      "pr": "paal",
+      "notes": "Con posesivo se usa para «hijo, hija» (in paal, mi hijo; por verificar).",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya (consonantes): «paal (niño)»."
+    },
+    {
+      "m": "paalal",
+      "es": "niños, niñas (plural)",
+      "cat": "familia",
+      "pr": "paalal",
+      "notes": "Plural irregular de paal (por verificar).",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "láak'",
+      "es": "pariente; compañero",
+      "cat": "familia",
+      "pr": "láak'",
+      "notes": "Las fuentes no coinciden en la consonante final: Aprendiendo Maya escribe láak' (pariente) y la UADY LÁAK (compañero, pariente), distinto de LAAK' (otro). Confirmar.",
+      "variants": [
+        "láak"
+      ],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya",
+        "https://www.mayas.uady.mx/diccionario/l_maya.html"
+      ],
+      "evidence": "Aprendiendo Maya: «láak' (pariente)». UADY: «LÁAK: compañero, pariente»; «LAAK': otro»."
+    },
+    {
+      "m": "atan",
+      "es": "esposa",
+      "cat": "familia",
+      "pr": "atan",
+      "notes": "Con posesivo lleva w: in watan (mi esposa), a watan (tu esposa). El curso «Idioma Maya Yucateco» escribe a watàan (vocal larga): confirmar la longitud.",
+      "variants": [
+        "atàan"
+      ],
+      "ex": {
+        "m": "Kux a watan, bix u k'aaba'?",
+        "es": "¿Y tu esposa, cómo se llama?"
+      },
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "INEA: «a · Atan · esposa». Curso «Idioma Maya Yucateco»: «¿Kux a watàan, bix u k'àaba'?». Guía gramatical: ante vocal se inserta w después de in y a."
+    },
+    {
+      "m": "íicham",
+      "es": "esposo",
+      "cat": "familia",
+      "pr": "íicham",
+      "notes": "Tono alto. Con posesivo: u yíicham (su esposo), por la y de unión ante vocal.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "INEA: «íi · Íicham · esposo». Guía gramatical: ante vocal inicial se inserta y con u."
+    },
+    {
+      "m": "iich",
+      "es": "gemelo, gemela",
+      "cat": "familia",
+      "pr": "iich",
+      "notes": "Vocal larga de tono bajo.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "INEA: «ii · Iich · gemelo»."
+    },
+    {
+      "m": "xiib",
+      "es": "hombre, varón",
+      "cat": "familia",
+      "pr": "shiib",
+      "notes": "x = sh.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/x_maya.html",
+        {
+          "title": "Diccionario introductorio español-maya, maya-español",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "UADY: «XIIB: Hombre varón, macho masculino». Diccionario introductorio: máak, wíinik, xiib asociados a «hombre»."
+    },
+    {
+      "m": "x ch'uup",
+      "es": "mujer",
+      "cat": "familia",
+      "pr": "sh ch'uup",
+      "notes": "La x- inicial es el prefijo femenino.",
+      "variants": [
+        "xch'uup",
+        "ch'uup"
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/x_maya.html"
+      ],
+      "evidence": "UADY: «X CH'UUP: mujer»."
+    },
+    {
+      "m": "wíinik",
+      "es": "persona, ser humano; hombre",
+      "cat": "familia",
+      "pr": "wíinik",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/w_maya.html",
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "UADY: «WÍINIK: Hombre, humano, individuo». Guía gramatical: wíinik 'hombre'."
+    },
+    {
+      "m": "máak",
+      "es": "persona, gente",
+      "cat": "familia",
+      "pr": "máak",
+      "notes": "Mixmáak = nadie.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://www.mayas.uady.mx/diccionario/m_maya.html"
+      ],
+      "evidence": "INEA: «Máak (persona)». UADY: «MIXMÁAK: nadie»."
+    },
+    {
+      "m": "ko'olel",
+      "es": "mujer, señora",
+      "cat": "familia",
+      "pr": "ko-olel",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "xiipal",
+      "es": "muchacho, joven",
+      "cat": "familia",
+      "pr": "shiipal",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "ch'úupal",
+      "es": "muchacha, joven",
+      "cat": "familia",
+      "pr": "ch'úupal",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "nojoch máak",
+      "es": "persona mayor, anciano",
+      "cat": "familia",
+      "pr": "nojoch máak",
+      "notes": "nojoch = grande (por verificar).",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "pool",
+      "es": "cabeza",
+      "cat": "cuerpo",
+      "pr": "pool",
+      "notes": "Para «cabeza» también se oye jo'ol (por verificar).",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "jo'ol",
+      "es": "cabeza",
+      "cat": "cuerpo",
+      "pr": "jo-ol",
+      "notes": "Variante regional de pool (por verificar).",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "ich",
+      "es": "ojo; cara",
+      "cat": "cuerpo",
+      "pr": "ich",
+      "notes": "Homógrafo de ich «en, dentro de» (Ka t'aan wáaj ich maaya?), que sí está atestiguado.",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "ni'",
+      "es": "nariz",
+      "cat": "cuerpo",
+      "pr": "ni-",
+      "notes": "Glotalizada final.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/n_maya.html"
+      ],
+      "evidence": "UADY: «NI': Nariz»."
+    },
+    {
+      "m": "chi'",
+      "es": "boca; orilla",
+      "cat": "cuerpo",
+      "pr": "chi-",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/ch_maya.html"
+      ],
+      "evidence": "UADY: «CHI': Boca, orilla»."
+    },
+    {
+      "m": "xikin",
+      "es": "oreja; oído",
+      "cat": "cuerpo",
+      "pr": "shikin",
+      "notes": "x = sh.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/x_maya.html",
+        "https://site.inali.gob.mx/pdf/norma_maya.pdf"
+      ],
+      "evidence": "UADY: «XIKIN: Oreja, oído». Norma del INALI: xikin como ejemplo de x."
+    },
+    {
+      "m": "aak'",
+      "es": "lengua (órgano); bejuco, liana",
+      "cat": "cuerpo",
+      "pr": "aak'",
+      "notes": "Vocal larga de tono bajo y k' final. No confundir con áak (tortuga).",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://aprendiendomaya.com/escritura/vocales/las-vocales-y-sus-reglas-de-uso"
+      ],
+      "evidence": "INEA: «aa · Aak' · bejuco, liana, lengua». Aprendiendo Maya: aak' (lengua)."
+    },
+    {
+      "m": "koj",
+      "es": "diente",
+      "cat": "cuerpo",
+      "pr": "koj",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "táan",
+      "es": "frente (de la cara)",
+      "cat": "cuerpo",
+      "pr": "táan",
+      "notes": "Tono alto. De aquí táanil (adelante). Se opone a t'aan (palabra).",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Yucatec_Maya_language",
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Wikipedia (Yucatec Maya): «t'àan 'speech' versus táan 'forehead'». Aprendiendo Maya: táanil (adelante)."
+    },
+    {
+      "m": "p'u'uk",
+      "es": "mejilla, cachete",
+      "cat": "cuerpo",
+      "pr": "p'u-uk",
+      "notes": "p' glotalizada y rearticulada u'u.",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya",
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Aprendiendo Maya: «p'u'uk (mejilla)». Las Normas incluyen p'u'uk en la serie de p' (sin glosa en las notas)."
+    },
+    {
+      "m": "k'ab",
+      "es": "mano",
+      "cat": "cuerpo",
+      "pr": "k'ab",
+      "notes": "Muchas guías la dan también como «brazo» (por verificar).",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "INEA: «K'ab (mano)»."
+    },
+    {
+      "m": "ook",
+      "es": "pie",
+      "cat": "cuerpo",
+      "pr": "ook",
+      "notes": "Con posesivo: in wook (mi pie), u yook (su pie). Para «pierna» por verificar.",
+      "variants": [],
+      "ex": {
+        "m": "in wook",
+        "es": "mi pie"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/o_maya.html",
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "UADY: «OOK: Pie». INEA: «oo · Ook · pie». Guía gramatical: w tras in y a ante vocal (de ahí in wook)."
+    },
+    {
+      "m": "píix",
+      "es": "rodilla",
+      "cat": "cuerpo",
+      "pr": "píish",
+      "notes": "Tono alto; x = sh.",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «píix (rodilla)»."
+    },
+    {
+      "m": "nak'",
+      "es": "barriga, vientre",
+      "cat": "cuerpo",
+      "pr": "nak'",
+      "notes": "",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «nak' (barriga)»."
+    },
+    {
+      "m": "paach",
+      "es": "espalda",
+      "cat": "cuerpo",
+      "pr": "paach",
+      "notes": "",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://aprendiendomaya.com/escritura/vocales/las-vocales-y-sus-reglas-de-uso"
+      ],
+      "evidence": "Aprendiendo Maya (vocales): «paach (espalda)»."
+    },
+    {
+      "m": "iim",
+      "es": "seno, mama",
+      "cat": "cuerpo",
+      "pr": "iim",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Normas (INALI 2014, copia no autorizada): ejemplos de i: iik (chile), iim (seno), iis (camote)."
+    },
+    {
+      "m": "baak",
+      "es": "hueso",
+      "cat": "cuerpo",
+      "pr": "baak",
+      "notes": "Vocal larga. Con vocal corta y k', bak' es «carne».",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «baak (hueso)», «bak' (carne)»."
+    },
+    {
+      "m": "tso'otsel",
+      "es": "cabello, pelo",
+      "cat": "cuerpo",
+      "pr": "tso-otsel",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "puksi'ik'al",
+      "es": "corazón",
+      "cat": "cuerpo",
+      "pr": "puksi-ik'al",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "k'i'ik'",
+      "es": "sangre",
+      "cat": "cuerpo",
+      "pr": "k'i-ik'",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "kaal",
+      "es": "cuello; garganta",
+      "cat": "cuerpo",
+      "pr": "kaal",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "tséem",
+      "es": "pecho (tórax)",
+      "cat": "cuerpo",
+      "pr": "tséem",
+      "notes": "",
+      "variants": [
+        "tseem"
+      ],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "aax",
+      "es": "verruga",
+      "cat": "cuerpo",
+      "pr": "aash",
+      "notes": "x = sh.",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://aprendiendomaya.com/escritura/vocales/las-vocales-y-sus-reglas-de-uso"
+      ],
+      "evidence": "Aprendiendo Maya (vocales): «aax (verruga)»."
+    },
+    {
+      "m": "wiix",
+      "es": "orina",
+      "cat": "cuerpo",
+      "pr": "wiish",
+      "notes": "x = sh.",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «wiix (orina)»."
+    },
+    {
+      "m": "u'uy",
+      "es": "sentir, percibir",
+      "cat": "cuerpo",
+      "pr": "u-uy",
+      "notes": "Rearticulada.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/u_maya.html"
+      ],
+      "evidence": "UADY: «U'UY: sentir»."
+    },
+    {
+      "m": "uuts'",
+      "es": "oler",
+      "cat": "cuerpo",
+      "pr": "uuts'",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/u_maya.html"
+      ],
+      "evidence": "UADY: «UUTS': oler»."
+    },
+    {
+      "m": "u'ub",
+      "es": "oír, escuchar; entender",
+      "cat": "cuerpo",
+      "pr": "u-ub",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/u_maya.html"
+      ],
+      "evidence": "UADY: «U'UB: oír, escuchar, entender»."
+    },
+    {
+      "m": "ch'a' iik'",
+      "es": "respirar",
+      "cat": "cuerpo",
+      "pr": "ch'a- iik'",
+      "notes": "iik' = aire, viento. La glosa literal «tomar aire» es una deducción (ch'a' = tomar, por verificar).",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/ch_glotal_maya.html"
+      ],
+      "evidence": "UADY: «CH'A' IIK': respirar»."
+    },
+    {
+      "m": "k'oja'an",
+      "es": "enfermo, enferma",
+      "cat": "salud",
+      "pr": "k'oja-an",
+      "notes": "Rearticulada a'a. Diccionarios antiguos escriben k'oha'an.",
+      "variants": [
+        "k'oha'an"
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/e_esp.html"
+      ],
+      "evidence": "UADY (español-maya): «K'OJA'AN: Enfermo, falto de salud»."
+    },
+    {
+      "m": "k'oja'anil",
+      "es": "enfermedad",
+      "cat": "salud",
+      "pr": "k'oja-anil",
+      "notes": "k'oja'an + -il (sustantivo abstracto).",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/e_esp.html"
+      ],
+      "evidence": "UADY (español-maya): «ENFERMEDAD: K'oja'anil»."
+    },
+    {
+      "m": "k'oja'antal",
+      "es": "enfermarse",
+      "cat": "salud",
+      "pr": "k'oja-antal",
+      "notes": "Para «enfermar» la UADY da también k'oja'ankun.",
+      "variants": [
+        "k'oja'ankun"
+      ],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/e_esp.html"
+      ],
+      "evidence": "UADY (español-maya): «ENFERMAR: K'oja'ankun, k'oja'antal»."
+    },
+    {
+      "m": "K'oja'anen.",
+      "es": "Estoy enfermo / enferma.",
+      "cat": "salud",
+      "pr": "k'oja-anen",
+      "notes": "k'oja'an + -en (yo). Con -o'on: k'oja'ano'on (estamos enfermos; deducción).",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/e_esp.html",
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "UADY: k'oja'an = enfermo. Guía gramatical (Yoshida): el juego B se sufija a sustantivos y adjetivos (wíinik-o'on = somos hombres). Heraldo de México (dic. 2025, URL no registrada): «K'oja'anen» = enfermo/a."
+    },
+    {
+      "m": "ts'aak",
+      "es": "medicina, remedio",
+      "cat": "salud",
+      "pr": "ts'aak",
+      "notes": "ts' glotalizada.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "INEA: «ts' · Ts'aak (medicina)»."
+    },
+    {
+      "m": "wi'ijen",
+      "es": "Tengo hambre.",
+      "cat": "salud",
+      "pr": "wi-ijen",
+      "notes": "wi'ij (hambriento) + -en (yo).",
+      "variants": [],
+      "ex": {
+        "m": "Tene' wi'ijen, uk'ajen.",
+        "es": "Yo tengo hambre, tengo sed."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.omniglot.com/language/phrases/yucatec-maya.php",
+        "https://topyucatan.com/notas/the-yucatan-culture/frases-basicas-en-maya-y-espanol",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      ],
+      "evidence": "Omniglot: «Wi'ijen = I am hungry». Top Yucatán: «Tengo hambre: Wi'ijen». Junp'iit Maaya: wi'ijen 'tengo hambre'. Narraciones mayas de Campeche (INALI, URL no registrada): «Tene' wi'ijen, uk'ajen»."
+    },
+    {
+      "m": "uk'ajen",
+      "es": "Tengo sed.",
+      "cat": "salud",
+      "pr": "uk'ajen",
+      "notes": "uk'aj (sediento) + -en (yo).",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://topyucatan.com/notas/the-yucatan-culture/frases-basicas-en-maya-y-espanol",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      ],
+      "evidence": "Top Yucatán: «Tengo sed: Uk'ajen». Junp'iit Maaya: uk'ajen 'tengo sed'."
+    },
+    {
+      "m": "Ma' wi'ijeni'.",
+      "es": "No tengo hambre.",
+      "cat": "salud",
+      "pr": "ma- wi-ijeni-",
+      "notes": "Negación con ma' … -i' en predicados de estado.",
+      "variants": [],
+      "ex": {
+        "m": "Ma' wi'ijeni', ts'o'ok in janal.",
+        "es": "No tengo hambre, ya comí."
+      },
+      "conf": "media",
+      "sources": [
+        "https://www.christianlehmann.eu/ling/sprachen/maya/gramatica/onomas/negacion.html"
+      ],
+      "evidence": "Lehmann (negación): ma' … -i' discontinuo en oraciones nominales. Notas del flujo (parryc.com, basado en Andrade; URL exacta no registrada): «Ma' wi'ijeni' ts'o'ok in janal» = No tengo hambre, ya comí."
+    },
+    {
+      "m": "k'i'inam",
+      "es": "dolor",
+      "cat": "salud",
+      "pr": "k'i-inam",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "K'i'inam in pool.",
+      "es": "Me duele la cabeza.",
+      "cat": "salud",
+      "pr": "k'i-inam in pool",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "chokwil",
+      "es": "fiebre, calentura",
+      "cat": "salud",
+      "pr": "chokwil",
+      "notes": "Probablemente relacionado con chokoj (caliente).",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "se'en",
+      "es": "tos",
+      "cat": "salud",
+      "pr": "se-en",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "xej",
+      "es": "vomitar; vómito",
+      "cat": "salud",
+      "pr": "shej",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "toj óolal",
+      "es": "salud",
+      "cat": "salud",
+      "pr": "toj óolal",
+      "notes": "Relacionado con Toj in wóol (estoy bien), que sí está atestiguado.",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "kuxtal",
+      "es": "vida; vivir",
+      "cat": "salud",
+      "pr": "kushtal",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "kíimil",
+      "es": "morir",
+      "cat": "salud",
+      "pr": "kíimil",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "k'aas",
+      "es": "malo; feo",
+      "cat": "salud",
+      "pr": "k'aas",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "jmeen",
+      "es": "curandero tradicional; sacerdote maya",
+      "cat": "salud",
+      "pr": "jmeen",
+      "notes": "Se ve escrito h-men o j-men.",
+      "variants": [
+        "h-men",
+        "j-men"
+      ],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "janal",
+      "es": "comer; comida",
+      "cat": "comida",
+      "pr": "janal",
+      "notes": "Verbo intransitivo: kin janal (como, habitual), táan in janal (estoy comiendo). En la grafía antigua, hanal (como en Hanal Pixan).",
+      "variants": [
+        "hanal",
+        "jaanal"
+      ],
+      "ex": {
+        "m": "Kin janal.",
+        "es": "Como (habitualmente)."
+      },
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://en.wiktionary.org/wiki/janal",
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "INEA: «Janal (comida)». Wiktionary: janal intr. 'comer', kin janal; perfectivo jjanen. Notas de gramática (Montgomery/Bolles): «Kin janal = como», «Tan in hanal = I am eating». UADY curso: hanal entre los intransitivos (grafía antigua)."
+    },
+    {
+      "m": "Ko'ox janal!",
+      "es": "¡Vamos a comer!",
+      "cat": "comida",
+      "pr": "ko-osh janal",
+      "notes": "Ko'ox = vamos (invitación a un grupo). Misma construcción que Ko'ox kanik maaya t'aan.",
+      "variants": [
+        "Ko'ox jaanal"
+      ],
+      "conf": "media",
+      "sources": [
+        "https://yucatan.heraldodemexico.com.mx/tendencias/2025/8/27/koox-kanik-maaya-taan-asi-seran-los-cursos-para-preservar-la-lengua-maya-en-yucatan-1949.html",
+        "https://www.posta.com.mx/yucatan/impulsan-la-preservacion-de-la-lengua-maya-en-yucatan-con-el-programa-koox-kanik-maaya-taan/vl2087271",
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "Construcción deducida: Ko'ox + verbo, como en el programa «Ko'ox kanik maaya t'aan» = «Vamos a aprender lengua maya» (Heraldo, Posta); PorEsto 2025 (URL no registrada): Ko'ox = vamos, invitación colectiva. janal (INEA). La frase literal no está atestiguada."
+    },
+    {
+      "m": "o'och",
+      "es": "comida, alimento",
+      "cat": "comida",
+      "pr": "o-och",
+      "notes": "Rearticulada o'o.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/o_maya.html"
+      ],
+      "evidence": "UADY: «O'OCH: comida»."
+    },
+    {
+      "m": "waaj",
+      "es": "tortilla; pan",
+      "cat": "comida",
+      "pr": "waaj",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://www.mayas.uady.mx/diccionario/w_maya.html"
+      ],
+      "evidence": "INEA: «Waaj (tortilla, pan)». UADY: «WAAJ: Tortilla de maíz; pan en general»."
+    },
+    {
+      "m": "sa'",
+      "es": "atole",
+      "cat": "comida",
+      "pr": "sa-",
+      "notes": "Glotalizada final.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://www.mayas.uady.mx/diccionario/s_maya.html"
+      ],
+      "evidence": "INEA: «a' · Sa' · atole». UADY: «SA': Atole»."
+    },
+    {
+      "m": "ja'",
+      "es": "agua",
+      "cat": "comida",
+      "pr": "ja-",
+      "notes": "j aspirada y saltillo final.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/j_maya.html"
+      ],
+      "evidence": "UADY: «JA': Agua»."
+    },
+    {
+      "m": "je'",
+      "es": "huevo",
+      "cat": "comida",
+      "pr": "je-",
+      "notes": "",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «je' (huevo)»."
+    },
+    {
+      "m": "bak'",
+      "es": "carne",
+      "cat": "comida",
+      "pr": "bak'",
+      "notes": "Con vocal larga y k simple, baak es «hueso».",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «bak' (carne)», «baak (hueso)»."
+    },
+    {
+      "m": "iik",
+      "es": "chile",
+      "cat": "comida",
+      "pr": "iik",
+      "notes": "Sin glotal final. Con k', iik' es «viento».",
+      "variants": [],
+      "ex": {
+        "m": "chak iik",
+        "es": "chile habanero"
+      },
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.mayas.uady.mx/literatura/adiv1.html"
+      ],
+      "evidence": "Normas: iik (chile). UADY (adivinanzas): «Chak iik» = chile habanero."
+    },
+    {
+      "m": "chak iik",
+      "es": "chile habanero",
+      "cat": "comida",
+      "pr": "chak iik",
+      "notes": "Literalmente «chile rojo».",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/literatura/adiv1.html"
+      ],
+      "evidence": "UADY (adivinanzas): «Chak iik» glosado como chile habanero."
+    },
+    {
+      "m": "maax",
+      "es": "chile max (chile pequeño)",
+      "cat": "comida",
+      "pr": "maash",
+      "notes": "x = sh. También se ve maax iik.",
+      "variants": [
+        "maax iik"
+      ],
+      "conf": "media",
+      "sources": [
+        "https://aprendiendomaya.com/escritura/vocales/las-vocales-y-sus-reglas-de-uso"
+      ],
+      "evidence": "Aprendiendo Maya (vocales): «maax» como variedad de chile. Notas del flujo (Heraldo/Posta, URL no registrada): «maax iik» = chile pequeño."
+    },
+    {
+      "m": "p'aak",
+      "es": "tomate, jitomate",
+      "cat": "comida",
+      "pr": "p'aak",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "INEA: «P'aak (tomate)». Normas: p'aak en la serie de p'. Guía gramatical: p'aak 'tomate'."
+    },
+    {
+      "m": "oop'",
+      "es": "tostada",
+      "cat": "comida",
+      "pr": "oop'",
+      "notes": "INEA lo glosa «tostada»; confirmar otras acepciones con un diccionario.",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "INEA: «p' · Oop' (tostada)»."
+    },
+    {
+      "m": "ja'as",
+      "es": "plátano",
+      "cat": "comida",
+      "pr": "ja-as",
+      "notes": "Rearticulada a'a.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "INEA: «a'a · Ja'as · plátano». Normas: ja'as (plátano)."
+    },
+    {
+      "m": "ya'",
+      "es": "zapote",
+      "cat": "comida",
+      "pr": "ya-",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "INEA: «Ya' (zapote)». Aprendiendo Maya: ya' (zapote)."
+    },
+    {
+      "m": "poox",
+      "es": "guanábana",
+      "cat": "comida",
+      "pr": "poosh",
+      "notes": "x = sh.",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «poox (guanábana)»."
+    },
+    {
+      "m": "oon",
+      "es": "aguacate",
+      "cat": "comida",
+      "pr": "oon",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "INEA: «Oon (aguacate)»."
+    },
+    {
+      "m": "nal",
+      "es": "elote",
+      "cat": "comida",
+      "pr": "nal",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "INEA: «Nal (elote)»."
+    },
+    {
+      "m": "juuch'",
+      "es": "masa (de maíz)",
+      "cat": "comida",
+      "pr": "juuch'",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "INEA: «Juuch' (masa)». Aprendiendo Maya: juuch' (masa)."
+    },
+    {
+      "m": "ixi'im",
+      "es": "maíz (grano)",
+      "cat": "comida",
+      "pr": "ishi-im",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "bu'ul",
+      "es": "frijol",
+      "cat": "comida",
+      "pr": "bu-ul",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "k'eyem",
+      "es": "pozole (bebida de masa de maíz)",
+      "cat": "comida",
+      "pr": "k'eyem",
+      "notes": "",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «k'eyem (pozole)»."
+    },
+    {
+      "m": "ta'ab",
+      "es": "sal",
+      "cat": "comida",
+      "pr": "ta-ab",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "INEA: «Ta'ab (sal)»."
+    },
+    {
+      "m": "kaab",
+      "es": "miel",
+      "cat": "comida",
+      "pr": "kaab",
+      "notes": "También nombra a la abeja (por verificar).",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «kaab (miel)»."
+    },
+    {
+      "m": "ch'ujuk",
+      "es": "dulce",
+      "cat": "comida",
+      "pr": "ch'ujuk",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "INEA: «Ch'ujuk (dulce)». Normas: ch'ujuk en la serie de ch'."
+    },
+    {
+      "m": "ch'óoch'",
+      "es": "salado",
+      "cat": "comida",
+      "pr": "ch'óoch'",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/ch_glotal_maya.html"
+      ],
+      "evidence": "UADY: «CH'ÓOCH': Salado»."
+    },
+    {
+      "m": "abal",
+      "es": "ciruela",
+      "cat": "comida",
+      "pr": "abal",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "INEA: «Abal (ciruela)». Normas: abal (ciruela)."
+    },
+    {
+      "m": "iis",
+      "es": "camote",
+      "cat": "comida",
+      "pr": "iis",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Normas: iis (camote)."
+    },
+    {
+      "m": "ts'óol",
+      "es": "calabaza",
+      "cat": "comida",
+      "pr": "ts'óol",
+      "notes": "",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «ts'óol (calabaza)»."
+    },
+    {
+      "m": "kakaw",
+      "es": "cacao",
+      "cat": "comida",
+      "pr": "kakaw",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "uk'",
+      "es": "beber, tomar",
+      "cat": "comida",
+      "pr": "uk'",
+      "notes": "Homógrafo de uk' (piojo). De aquí uk'ajen (tengo sed) y uk'ul (bebida, desayuno).",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/u_maya.html"
+      ],
+      "evidence": "UADY: «UK': piojo» y «UK': beber, tomar»."
+    },
+    {
+      "m": "uk'ul",
+      "es": "bebida; desayuno; beber",
+      "cat": "comida",
+      "pr": "uk'ul",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "INEA: «Uk'ul (desayuno / beber)»."
+    },
+    {
+      "m": "chaak",
+      "es": "salcochar, sancochar (cocer en agua)",
+      "cat": "comida",
+      "pr": "chaak",
+      "notes": "Vocal larga de tono bajo. Con tono alto, cháak es «lluvia».",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "INEA: «aa · Chaak · salcochar, sancochar»."
+    },
+    {
+      "m": "ki'",
+      "es": "sabroso, rico",
+      "cat": "comida",
+      "pr": "ki-",
+      "notes": "",
+      "variants": [],
+      "ex": {
+        "m": "Jach ki'.",
+        "es": "Muy sabroso."
+      },
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "maan",
+      "es": "comprar",
+      "cat": "mercado",
+      "pr": "maan",
+      "notes": "",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «maan (comprar)». Diccionario de uso del maya yucateco (academia.edu, URL no registrada): «Bin in ka'aj in man junp'iis ta'ab…» = voy a comprar una carga de sal."
+    },
+    {
+      "m": "yaan",
+      "es": "hay; haber, tener, existir",
+      "cat": "mercado",
+      "pr": "yaan",
+      "notes": "Sirve para «hay» y para «tener»: yaan + posesivo + cosa.",
+      "variants": [],
+      "ex": {
+        "m": "Tu'ux yaan jump'éel restaurant?",
+        "es": "¿Dónde hay un restaurante?"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/y_maya.html",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      ],
+      "evidence": "UADY: «YAAN: haber, tener, existir». Junp'iit Maaya: «Tu'ux yaan junp'el restaurant?»."
+    },
+    {
+      "m": "Tu'ux yaan jump'éel restaurant?",
+      "es": "¿Dónde hay un restaurante?",
+      "cat": "mercado",
+      "pr": "tu-ush yaan jump'éel restaurant",
+      "notes": "Plantilla: Tu'ux yaan jump'éel …? (¿dónde hay un …?).",
+      "variants": [
+        "Tu'ux yaan junp'el restaurant?"
+      ],
+      "conf": "media",
+      "sources": [
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      ],
+      "evidence": "Junp'iit Maaya (Mújica 1995): «Tu'ux yaan junp'el restaurant? Where is a restaurant?»; grafía normalizada."
+    },
+    {
+      "m": "yéey",
+      "es": "escoger",
+      "cat": "mercado",
+      "pr": "yéey",
+      "notes": "",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «yéey (escoger)»."
+    },
+    {
+      "m": "koonol",
+      "es": "vender",
+      "cat": "mercado",
+      "pr": "koonol",
+      "notes": "",
+      "variants": [
+        "kòonol"
+      ],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante. El curso de la UADY (lección 4) incluye «kòonol» entre los intransitivos a conjugar, pero la glosa «vender» no quedó registrada."
+    },
+    {
+      "m": "taak'in",
+      "es": "dinero; oro",
+      "cat": "mercado",
+      "pr": "taak'in",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "tojol",
+      "es": "precio",
+      "cat": "mercado",
+      "pr": "tojol",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "ko'oj",
+      "es": "caro",
+      "cat": "mercado",
+      "pr": "ko-oj",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "k'íiwik",
+      "es": "plaza, mercado (centro del pueblo)",
+      "cat": "mercado",
+      "pr": "k'íiwik",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "mina'an",
+      "es": "no hay",
+      "cat": "mercado",
+      "pr": "mina-an",
+      "notes": "Lo contrario de yaan.",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "peek'",
+      "es": "perro",
+      "cat": "animal",
+      "pr": "peek'",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya",
+        "https://www.mayas.uady.mx/diccionario/p_esp.html"
+      ],
+      "evidence": "Aprendiendo Maya: «peek' (perro)». UADY (español-maya): «PERRO: Peek'»."
+    },
+    {
+      "m": "miis",
+      "es": "gato",
+      "cat": "animal",
+      "pr": "miis",
+      "notes": "Tono bajo. Con tono alto, míis es «escoba».",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://en.wikipedia.org/wiki/Yucatec_Maya_language",
+        {
+          "title": "Diccionario básico maya-español",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "INEA: «ii · Miis · gato». Wikipedia: miis 'cat' frente a míis 'broom'. Diccionario básico: «MIIS gato doméstico»."
+    },
+    {
+      "m": "kéej",
+      "es": "venado",
+      "cat": "animal",
+      "pr": "kéej",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/k_maya.html",
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "UADY: «KÉEJ: venado». Aprendiendo Maya: kéej (venado)."
+    },
+    {
+      "m": "báalam",
+      "es": "jaguar",
+      "cat": "animal",
+      "pr": "báalam",
+      "notes": "La UADY la glosa también como «guardián».",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya",
+        "https://www.mayas.uady.mx/diccionario/b_maya.html"
+      ],
+      "evidence": "Aprendiendo Maya: «báalam (jaguar)». UADY: «BÁALAM: guardián». El sentido «jaguar» queda con una sola fuente registrada."
+    },
+    {
+      "m": "kaan",
+      "es": "serpiente, víbora",
+      "cat": "animal",
+      "pr": "kaan",
+      "notes": "Vocal larga. Con vocal corta, kan es «cuatro».",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya",
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Aprendiendo Maya: «kaan (víbora)». Montgomery: «kaan n. snake; worm; culebra; gusano»."
+    },
+    {
+      "m": "ch'íich'",
+      "es": "pájaro, ave",
+      "cat": "animal",
+      "pr": "ch'íich'",
+      "notes": "Plural: ch'íich'o'ob.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/ch_glotal_maya.html",
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Bevington, Maya for Travelers and Students (University of Texas Press)",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "UADY: «CH'ÍICH': Pájaro ave pequeña». Normas: ch'íich'. Guía gramatical: plural ch'íich'o'ob. Bevington: ch'iich' 'bird'."
+    },
+    {
+      "m": "ch'o'",
+      "es": "ratón, rata",
+      "cat": "animal",
+      "pr": "ch'o-",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/ch_glotal_maya.html"
+      ],
+      "evidence": "UADY: «CH'O': Ratón, rata, animal roedor»."
+    },
+    {
+      "m": "juuj",
+      "es": "iguana",
+      "cat": "animal",
+      "pr": "juuj",
+      "notes": "",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://aprendiendomaya.com/escritura/vocales/las-vocales-y-sus-reglas-de-uso"
+      ],
+      "evidence": "Aprendiendo Maya (vocales): «juuj (iguana)»."
+    },
+    {
+      "m": "áak",
+      "es": "tortuga",
+      "cat": "animal",
+      "pr": "áak",
+      "notes": "Tono alto y k simple; no confundir con aak' (lengua).",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "INEA: «áa · Áak · tortuga»."
+    },
+    {
+      "m": "t'u'ul",
+      "es": "conejo",
+      "cat": "animal",
+      "pr": "t'u-ul",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya",
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Aprendiendo Maya: «t'u'ul (conejo)». Normas: t'u'ul en la serie de t'."
+    },
+    {
+      "m": "t'eel",
+      "es": "gallo",
+      "cat": "animal",
+      "pr": "t'eel",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya",
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Aprendiendo Maya: «t'eel (gallo)». Normas: t'eel en la serie de t'."
+    },
+    {
+      "m": "tso'",
+      "es": "pavo, guajolote",
+      "cat": "animal",
+      "pr": "tso-",
+      "notes": "",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «tso' (pavo)»."
+    },
+    {
+      "m": "tsuutsuy",
+      "es": "paloma",
+      "cat": "animal",
+      "pr": "tsuutsuy",
+      "notes": "Las fuentes dan dos palabras para «paloma»: tsuutsuy y úukum; probablemente especies distintas (por verificar).",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «tsuutsuy (paloma)»."
+    },
+    {
+      "m": "úukum",
+      "es": "paloma",
+      "cat": "animal",
+      "pr": "úukum",
+      "notes": "Ver tsuutsuy.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Normas: úukum (paloma)."
+    },
+    {
+      "m": "beech'",
+      "es": "codorniz",
+      "cat": "animal",
+      "pr": "beech'",
+      "notes": "",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «beech' (codorniz)»."
+    },
+    {
+      "m": "ch'oom",
+      "es": "zopilote",
+      "cat": "animal",
+      "pr": "ch'oom",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "INEA: «Ch'oom (zopilote)»."
+    },
+    {
+      "m": "muuch",
+      "es": "sapo, rana",
+      "cat": "animal",
+      "pr": "muuch",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/m_maya.html",
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "UADY: «MUUCH: sapo, rana». INEA: «uu · Muuch · rana»."
+    },
+    {
+      "m": "tsíimin",
+      "es": "caballo (originalmente, tapir)",
+      "cat": "animal",
+      "pr": "tsíimin",
+      "notes": "Al llegar el caballo con los españoles se le dio el nombre del tapir.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/ts_maya.html",
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "UADY: «TSÍIMIN: Caballo»; artículo UADY: «Literalmente quiere decir 'tapir'». INEA: «Tsíimin (caballo)»."
+    },
+    {
+      "m": "kitam",
+      "es": "jabalí",
+      "cat": "animal",
+      "pr": "kitam",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "INEA: «Kitam (jabalí)»."
+    },
+    {
+      "m": "am",
+      "es": "araña",
+      "cat": "animal",
+      "pr": "am",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Normas: am (araña)."
+    },
+    {
+      "m": "úurich",
+      "es": "caracol",
+      "cat": "animal",
+      "pr": "úurich",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Normas: úurich (caracol)."
+    },
+    {
+      "m": "ch'ik",
+      "es": "pulga",
+      "cat": "animal",
+      "pr": "ch'ik",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/ch_glotal_maya.html"
+      ],
+      "evidence": "UADY: «CH'IK: pulga»."
+    },
+    {
+      "m": "turix",
+      "es": "libélula",
+      "cat": "animal",
+      "pr": "turish",
+      "notes": "Una de las pocas palabras con r, siempre en medio de palabra.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "INEA: «r · Turix (libélula)»."
+    },
+    {
+      "m": "tsáab",
+      "es": "cascabel (de la víbora)",
+      "cat": "animal",
+      "pr": "tsáab",
+      "notes": "",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «tsáab (cascabel)»."
+    },
+    {
+      "m": "k'u'",
+      "es": "nido",
+      "cat": "animal",
+      "pr": "k'u-",
+      "notes": "",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «k'u' (nido)»."
+    },
+    {
+      "m": "wakax",
+      "es": "res, vaca",
+      "cat": "animal",
+      "pr": "wakash",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "k'éek'en",
+      "es": "cerdo",
+      "cat": "animal",
+      "pr": "k'éek'en",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "kaax",
+      "es": "gallina",
+      "cat": "animal",
+      "pr": "kaash",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "kay",
+      "es": "pez, pescado",
+      "cat": "animal",
+      "pr": "kay",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "ba'ats'",
+      "es": "mono aullador, saraguato",
+      "cat": "animal",
+      "pr": "ba-ats'",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "sinik",
+      "es": "hormiga",
+      "cat": "animal",
+      "pr": "sinik",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "ch'amak",
+      "es": "zorra gris",
+      "cat": "animal",
+      "pr": "ch'amak",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante. Las Normas incluyen la forma ch'amak en la serie de ch', pero la glosa no quedó registrada: la fuente no confirma el significado."
+    },
+    {
+      "m": "tunkuluchu'",
+      "es": "búho, tecolote",
+      "cat": "animal",
+      "pr": "tunkuluchu-",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "xooch'",
+      "es": "lechuza",
+      "cat": "animal",
+      "pr": "shooch'",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "ts'ono'ot",
+      "es": "cenote",
+      "cat": "naturaleza",
+      "pr": "ts'ono-ot",
+      "notes": "ts' glotalizada y rearticulada o'o. Se suele decir que el español «cenote» viene de esta palabra (por verificar).",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/ts_glotal_maya.html",
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "UADY: «TS'ONO'OT: Cenote». Normas: ts'ono'ot como ejemplo."
+    },
+    {
+      "m": "k'áax",
+      "es": "monte, selva",
+      "cat": "naturaleza",
+      "pr": "k'áash",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "kool",
+      "es": "milpa",
+      "cat": "naturaleza",
+      "pr": "kool",
+      "notes": "De aquí koolnáal (milpero, campesino).",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante. Indicio indirecto: las notas de gramática registran «Koolnáal-en = soy campesino» (diapositivas hpsg.uky.edu, URL exacta no registrada)."
+    },
+    {
+      "m": "ya'axche'",
+      "es": "ceiba",
+      "cat": "naturaleza",
+      "pr": "ya-ashche-",
+      "notes": "Árbol sagrado; ya'ax (verde) + che' (árbol). Solo los componentes están verificados.",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "cháak",
+      "es": "lluvia",
+      "cat": "naturaleza",
+      "pr": "cháak",
+      "notes": "Tono alto. Con tono bajo, chaak es «salcochar». Se suele decir que también nombra a la deidad de la lluvia (por verificar).",
+      "variants": [],
+      "ex": {
+        "m": "Ch'a' cháak",
+        "es": "ceremonia para pedir lluvia"
+      },
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://www.mayas.uady.mx/exposiciones/exp_05foto1.html"
+      ],
+      "evidence": "INEA: «áa · Cháak · lluvia». UADY: exposición «Ch'a' Cháak, Ceremonia de la lluvia»."
+    },
+    {
+      "m": "uj",
+      "es": "luna; mes",
+      "cat": "naturaleza",
+      "pr": "uj",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "eek'",
+      "es": "estrella; también negro, oscuro",
+      "cat": "naturaleza",
+      "pr": "eek'",
+      "notes": "La UADY reúne bajo EEK' «estrella» y «negro, oscuro». Con tono alto, éek' es «sucio».",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://www.mayas.uady.mx/diccionario/e_maya.html"
+      ],
+      "evidence": "INEA: «ee · Eek' · estrella». UADY: «EEK': Estrella, lucero, astro» y «EEK': Negro, obscuro, sucio»."
+    },
+    {
+      "m": "k'iin",
+      "es": "sol; día; tiempo",
+      "cat": "naturaleza",
+      "pr": "k'iin",
+      "notes": "Aparece en Ma'alob k'iin (buenos días).",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+      ],
+      "evidence": "UADY: «K'IIN: Día, sol, tiempo, época»."
+    },
+    {
+      "m": "ka'an",
+      "es": "cielo",
+      "cat": "naturaleza",
+      "pr": "ka-an",
+      "notes": "Rearticulada. No confundir con kaan (serpiente) ni kan (cuatro).",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/k_maya.html"
+      ],
+      "evidence": "UADY: «KA'AN: Cielo, firmamento, atmósfera»."
+    },
+    {
+      "m": "lu'um",
+      "es": "tierra, suelo",
+      "cat": "naturaleza",
+      "pr": "lu-um",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/l_maya.html",
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "UADY: «LU'UM: Tierra, suelo, terreno, planeta». Aprendiendo Maya: lu'um (tierra)."
+    },
+    {
+      "m": "k'áak'náab",
+      "es": "mar",
+      "cat": "naturaleza",
+      "pr": "k'áak'náab",
+      "notes": "k'áak' + náab.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+      ],
+      "evidence": "UADY: «K'ÁAK'NÁAB: Mar, océano»."
+    },
+    {
+      "m": "che'",
+      "es": "árbol; madera, palo",
+      "cat": "naturaleza",
+      "pr": "che-",
+      "notes": "Glotalizada final.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/ch_maya.html"
+      ],
+      "evidence": "UADY: «CHE': Árbol, madera, palo»."
+    },
+    {
+      "m": "lool",
+      "es": "flor",
+      "cat": "naturaleza",
+      "pr": "lool",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "INEA: «Lool (flor)»."
+    },
+    {
+      "m": "nikte'",
+      "es": "flor (en especial la flor de mayo, plumeria)",
+      "cat": "naturaleza",
+      "pr": "nikte-",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "tuunich",
+      "es": "piedra",
+      "cat": "naturaleza",
+      "pr": "tuunich",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/p_esp.html",
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "UADY (español-maya): «PIEDRA: Tuunich». Aprendiendo Maya: tuunich (piedra)."
+    },
+    {
+      "m": "iik'",
+      "es": "viento, aire; aliento",
+      "cat": "naturaleza",
+      "pr": "iik'",
+      "notes": "k' final; sin ella, iik es «chile».",
+      "variants": [],
+      "ex": {
+        "m": "chak iik'",
+        "es": "viento fuerte, huracán"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/a_esp.html",
+        "https://filosofiamaya.com/2020/10/08/el-huracan-segun-las-lenguas-mayas/"
+      ],
+      "evidence": "UADY (español-maya): aire = iik'. Filosofía Maya: iik' viento; chak iik' viento fuerte."
+    },
+    {
+      "m": "chak iik'",
+      "es": "viento fuerte; tempestad; huracán",
+      "cat": "naturaleza",
+      "pr": "chak iik'",
+      "notes": "Literalmente «viento rojo».",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://filosofiamaya.com/2020/10/08/el-huracan-segun-las-lenguas-mayas/"
+      ],
+      "evidence": "Filosofía Maya: «chak iik', que puede significar 'viento fuerte', 'tempestad' o 'huracán'». Una sola fuente no académica."
+    },
+    {
+      "m": "bat",
+      "es": "granizo",
+      "cat": "naturaleza",
+      "pr": "bat",
+      "notes": "Vocal corta; con vocal larga y tono alto, báat es «hacha».",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0185-25742013000100006",
+        "https://aprendiendomaya.com/escritura/vocales/las-vocales-y-sus-reglas-de-uso"
+      ],
+      "evidence": "Sobrino (2013): bat 'granizo' frente a báat 'hacha'. Aprendiendo Maya: bat (granizo)."
+    },
+    {
+      "m": "múuyal",
+      "es": "nube",
+      "cat": "naturaleza",
+      "pr": "múuyal",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "k'áak'",
+      "es": "fuego, lumbre; fogón",
+      "cat": "naturaleza",
+      "pr": "k'áak'",
+      "notes": "Dos k' y tono alto.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html",
+        {
+          "title": "Diccionario introductorio español-maya, maya-español",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Bevington, Maya for Travelers and Students (University of Texas Press)",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "UADY: «K'ÁAK': Fuego, lumbre, fogón, hoguera». Diccionario introductorio: «K'ÁAK'.- Fuego, lumbre». Bevington: k'aak' 'fire'."
+    },
+    {
+      "m": "luuk'",
+      "es": "lodo",
+      "cat": "naturaleza",
+      "pr": "luuk'",
+      "notes": "",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «luuk' (lodo)»."
+    },
+    {
+      "m": "jalal",
+      "es": "carrizo",
+      "cat": "naturaleza",
+      "pr": "jalal",
+      "notes": "",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «jalal (carrizo)»."
+    },
+    {
+      "m": "béek",
+      "es": "roble",
+      "cat": "naturaleza",
+      "pr": "béek",
+      "notes": "Tono alto.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "INEA: «ée · Béek · roble»."
+    },
+    {
+      "m": "pe'ten",
+      "es": "isla",
+      "cat": "naturaleza",
+      "pr": "pe-ten",
+      "notes": "Rearticulación interna marcada con un solo saltillo en la fuente.",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «pe'ten (isla)»."
+    },
+    {
+      "m": "witz",
+      "es": "cerro",
+      "cat": "naturaleza",
+      "pr": "witz",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "áaktun",
+      "es": "cueva, gruta",
+      "cat": "naturaleza",
+      "pr": "áaktun",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "sak bej",
+      "es": "camino blanco; calzada maya (sacbé)",
+      "cat": "naturaleza",
+      "pr": "sak bej",
+      "notes": "sak (blanco) y bej (camino) sí están verificados; el término compuesto no.",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "chak",
+      "es": "rojo",
+      "cat": "color",
+      "pr": "chak",
+      "notes": "Vocal corta; con tono alto y vocal larga, cháak es «lluvia». Aparece en chak iik (chile habanero) y chak iik' (viento fuerte, huracán).",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://www.mayas.uady.mx/diccionario/ch_maya.html"
+      ],
+      "evidence": "INEA: «Chak (rojo)». UADY: «CHAK: Rojo, colorado»."
+    },
+    {
+      "m": "sak",
+      "es": "blanco",
+      "cat": "color",
+      "pr": "sak",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/s_maya.html",
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "UADY: «SAK: Blanco». Aprendiendo Maya: sak (blanco)."
+    },
+    {
+      "m": "k'an",
+      "es": "amarillo; maduro",
+      "cat": "color",
+      "pr": "k'an",
+      "notes": "Las fuentes no coinciden en la longitud: Montgomery k'an, UADY K'AAN. Tak'an = maduro (Montgomery).",
+      "variants": [
+        "k'aan"
+      ],
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+      ],
+      "evidence": "Montgomery: «k'an (k'ahn); amarillo» y «tak'an; maduro». UADY: «K'AAN: Amarillo, cosa amarilla» y «Fruta madura o sazonada»."
+    },
+    {
+      "m": "ya'ax",
+      "es": "verde",
+      "cat": "color",
+      "pr": "ya-ash",
+      "notes": "Rearticulada. La UADY la glosa «verde»; otras fuentes la extienden a verde-azul (por verificar). No confundir con yáax (primero).",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/y_maya.html"
+      ],
+      "evidence": "UADY: «YA'AX: Verde»."
+    },
+    {
+      "m": "boox",
+      "es": "negro",
+      "cat": "color",
+      "pr": "boosh",
+      "notes": "Para «negro» la UADY da eek' (ver esa entrada).",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "k'an ch'uuy",
+      "es": "pálido",
+      "cat": "color",
+      "pr": "k'an ch'uuy",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+      ],
+      "evidence": "UADY: «K'AN CH'UUY: pálido»."
+    },
+    {
+      "m": "lak'in",
+      "es": "oriente, este",
+      "cat": "rumbo",
+      "pr": "lak'in",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/l_maya.html"
+      ],
+      "evidence": "UADY: «LAK'IN: oriente»."
+    },
+    {
+      "m": "chik'in",
+      "es": "poniente, oeste",
+      "cat": "rumbo",
+      "pr": "chik'in",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "xaman",
+      "es": "norte",
+      "cat": "rumbo",
+      "pr": "shaman",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "nojol",
+      "es": "sur",
+      "cat": "rumbo",
+      "pr": "nojol",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "táanil",
+      "es": "adelante, enfrente",
+      "cat": "rumbo",
+      "pr": "táanil",
+      "notes": "De táan (frente).",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «táanil (adelante)»."
+    },
+    {
+      "m": "yóok'ol",
+      "es": "encima, sobre",
+      "cat": "rumbo",
+      "pr": "yóok'ol",
+      "notes": "",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «yóok'ol (encima)»."
+    },
+    {
+      "m": "náach",
+      "es": "lejos",
+      "cat": "rumbo",
+      "pr": "náach",
+      "notes": "Tono alto.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/n_maya.html"
+      ],
+      "evidence": "UADY: «NÁACH: lejos»."
+    },
+    {
+      "m": "waye'",
+      "es": "aquí, acá",
+      "cat": "rumbo",
+      "pr": "waye-",
+      "notes": "",
+      "variants": [],
+      "ex": {
+        "m": "Máanen waye'.",
+        "es": "Pase usted."
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/w_maya.html",
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+      ],
+      "evidence": "UADY: «WAYE': Acá, por aquí». INALI: «Máanen waye'»."
+    },
+    {
+      "m": "naj",
+      "es": "casa",
+      "cat": "casa",
+      "pr": "naj",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/n_maya.html",
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "UADY: «NAJ: Casa». Aprendiendo Maya: naj (casa)."
+    },
+    {
+      "m": "otoch",
+      "es": "casa, hogar (de alguien)",
+      "cat": "casa",
+      "pr": "otoch",
+      "notes": "Suele ir con posesivo: in wotoch (mi casa), u yotoch (su casa).",
+      "variants": [],
+      "ex": {
+        "m": "in wotoch",
+        "es": "mi casa"
+      },
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/o_maya.html",
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "UADY: «OTOCH: Casa». Guía gramatical: w tras in/a e y tras u ante vocal."
+    },
+    {
+      "m": "k'áan",
+      "es": "hamaca",
+      "cat": "casa",
+      "pr": "k'áan",
+      "notes": "Tono alto; con tono bajo, k'aan es «mecate».",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Curso «Idioma Maya Yucateco»: lista de palabras de tono alto con «K'áan Hamaca»."
+    },
+    {
+      "m": "k'aan",
+      "es": "mecate, cuerda; medida de terreno (20 × 20 m)",
+      "cat": "casa",
+      "pr": "k'aan",
+      "notes": "En Yucatán «mecate» es a la vez la cuerda y la medida agraria.",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+      ],
+      "evidence": "UADY: «K'AAN: Mecate; medida lineal de superficie que tiene una longitud de 20 x 20 mts.»."
+    },
+    {
+      "m": "luuch",
+      "es": "jícara",
+      "cat": "casa",
+      "pr": "luuch",
+      "notes": "",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «luuch (jícara)»."
+    },
+    {
+      "m": "xaak",
+      "es": "canasta",
+      "cat": "casa",
+      "pr": "shaak",
+      "notes": "x = sh.",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «xaak (canasta)»."
+    },
+    {
+      "m": "ch'óoy",
+      "es": "cubeta, cubo",
+      "cat": "casa",
+      "pr": "ch'óoy",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya",
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Aprendiendo Maya: «ch'óoy (cubo)». Normas: ch'óoy en la serie de ch'."
+    },
+    {
+      "m": "kib",
+      "es": "vela",
+      "cat": "casa",
+      "pr": "kib",
+      "notes": "",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «kib (vela)»."
+    },
+    {
+      "m": "suum",
+      "es": "soga, cuerda",
+      "cat": "casa",
+      "pr": "suum",
+      "notes": "",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://aprendiendomaya.com/escritura/vocales/las-vocales-y-sus-reglas-de-uso"
+      ],
+      "evidence": "Aprendiendo Maya (vocales): «suum (soga)»."
+    },
+    {
+      "m": "máaskab",
+      "es": "machete",
+      "cat": "casa",
+      "pr": "máaskab",
+      "notes": "",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «máaskab (machete)»."
+    },
+    {
+      "m": "míis",
+      "es": "escoba; barrer",
+      "cat": "casa",
+      "pr": "míis",
+      "notes": "Tono alto; con tono bajo, miis es «gato».",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://en.wikipedia.org/wiki/Yucatec_Maya_language",
+        {
+          "title": "Diccionario básico maya-español",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "INEA: «íi · Míis · escoba». Wikipedia: míis 'broom; to sweep'. Diccionario básico: «MÍIS escoba»."
+    },
+    {
+      "m": "báat",
+      "es": "hacha",
+      "cat": "casa",
+      "pr": "báat",
+      "notes": "Tono alto; con vocal corta, bat es «granizo».",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0185-25742013000100006"
+      ],
+      "evidence": "Sobrino (2013): báat ('hacha') frente a bat ('granizo')."
+    },
+    {
+      "m": "cheem",
+      "es": "canoa",
+      "cat": "casa",
+      "pr": "cheem",
+      "notes": "",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «cheem (canoa)»."
+    },
+    {
+      "m": "p'óok",
+      "es": "sombrero",
+      "cat": "casa",
+      "pr": "p'óok",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Normas: p'óok en la serie de p'. Aprendiendo Maya: «p'óok (sombrero)»."
+    },
+    {
+      "m": "xanab",
+      "es": "zapato, calzado",
+      "cat": "casa",
+      "pr": "shanab",
+      "notes": "x = sh.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "INEA: «x · Xanab (zapato)»."
+    },
+    {
+      "m": "ba'al",
+      "es": "cosa",
+      "cat": "casa",
+      "pr": "ba-al",
+      "notes": "Mixba'al = nada.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/b_maya.html",
+        "https://www.mayas.uady.mx/curso_maya/lecc01_1.html"
+      ],
+      "evidence": "UADY: «BA'AL: cosa». Curso UADY lección 1: ba'al (cosa)."
+    },
+    {
+      "m": "jool",
+      "es": "hueco, agujero",
+      "cat": "casa",
+      "pr": "jool",
+      "notes": "",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «jool (hueco)»."
+    },
+    {
+      "m": "nook'",
+      "es": "ropa; tela",
+      "cat": "casa",
+      "pr": "nook'",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante. Indicio: notas del flujo citan una publicación de Pedro Abelardo Ic Estrella en X (nook' = tela/ropa), sin URL registrada."
+    },
+    {
+      "m": "kum",
+      "es": "olla",
+      "cat": "casa",
+      "pr": "kum",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "xamach",
+      "es": "comal",
+      "cat": "casa",
+      "pr": "shamach",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "p'úul",
+      "es": "cántaro",
+      "cat": "casa",
+      "pr": "p'úul",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "k'óoben",
+      "es": "cocina, fogón tradicional",
+      "cat": "casa",
+      "pr": "k'óoben",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "joolnaj",
+      "es": "puerta",
+      "cat": "casa",
+      "pr": "joolnaj",
+      "notes": "Parece formarse de jool (hueco, verificado) + naj (casa, verificado).",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "k'áanche'",
+      "es": "banquito de madera",
+      "cat": "casa",
+      "pr": "k'áanche-",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "chokoj",
+      "es": "caliente",
+      "cat": "descripción",
+      "pr": "chokoj",
+      "notes": "",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «chokoj (caliente)»."
+    },
+    {
+      "m": "ke'el",
+      "es": "frío",
+      "cat": "descripción",
+      "pr": "ke-el",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "polok",
+      "es": "gordo, gorda",
+      "cat": "descripción",
+      "pr": "polok",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "INEA: «Polok (gordo/a)»."
+    },
+    {
+      "m": "aal",
+      "es": "pesado",
+      "cat": "descripción",
+      "pr": "aal",
+      "notes": "",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://aprendiendomaya.com/escritura/vocales/las-vocales-y-sus-reglas-de-uso"
+      ],
+      "evidence": "Aprendiendo Maya (vocales): «aal (pesado)»."
+    },
+    {
+      "m": "chich",
+      "es": "duro",
+      "cat": "descripción",
+      "pr": "chich",
+      "notes": "Vocal corta; con vocal larga, chiich es «abuela».",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0185-25742013000100006",
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Sobrino (2013): chich 'duro'. Aprendiendo Maya: «chich (duro)»."
+    },
+    {
+      "m": "éek'",
+      "es": "sucio",
+      "cat": "descripción",
+      "pr": "éek'",
+      "notes": "Tono alto; con tono bajo, eek' es «estrella».",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm",
+        "https://www.mayas.uady.mx/diccionario/e_maya.html"
+      ],
+      "evidence": "INEA: «ée · Éek' · sucio». UADY: «EEK': Negro, obscuro, sucio»."
+    },
+    {
+      "m": "ts'íik",
+      "es": "enojado, bravo",
+      "cat": "descripción",
+      "pr": "ts'íik",
+      "notes": "Aprendiendo Maya da también k'uux con la glosa «enojado»; la diferencia de uso no está registrada.",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «ts'íik (enojado)»."
+    },
+    {
+      "m": "k'uux",
+      "es": "enojado",
+      "cat": "descripción",
+      "pr": "k'uush",
+      "notes": "Ver ts'íik.",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «k'uux (enojado)»."
+    },
+    {
+      "m": "su'",
+      "es": "tupido, espeso",
+      "cat": "descripción",
+      "pr": "su-",
+      "notes": "",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «su' (tupido)»."
+    },
+    {
+      "m": "nojoch",
+      "es": "grande",
+      "cat": "descripción",
+      "pr": "nojoch",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "chichan",
+      "es": "pequeño",
+      "cat": "descripción",
+      "pr": "chichan",
+      "notes": "",
+      "variants": [],
+      "conf": "baja",
+      "sources": [],
+      "evidence": "SIN VERIFICAR: en esta ejecución el presupuesto de búsquedas web estaba agotado y la forma no aparece en la evidencia registrada por el flujo. Viene del conocimiento previo (y/o de la lista v1, que no es fuente). No enseñar hasta confirmarla en un diccionario (UADY, Bricker et al., Diccionario Maya Popular) o con un hablante."
+    },
+    {
+      "m": "wenel",
+      "es": "dormir",
+      "cat": "verbo",
+      "pr": "wenel",
+      "notes": "Intransitivo.",
+      "variants": [],
+      "ex": {
+        "m": "Juan táan u wenel.",
+        "es": "Juan está durmiendo."
+      },
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+          "note": "copia no autorizada: se cita solo el título"
+        }
+      ],
+      "evidence": "Montgomery (Hippocrene): «wenel (WEHN-ehl) in. v. sleep, dormir»; ejemplo «Juan tun wenel» = Juan está durmiendo (aquí con táan u, forma completa de tun). Notas: Lehmann (langsci) wen-el 'sueño'; UADY «WENEL: dormir» (vía copia)."
+    },
+    {
+      "m": "lúubul",
+      "es": "caer",
+      "cat": "verbo",
+      "pr": "lúubul",
+      "notes": "Tono alto.",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "INEA: «úu · Lúubul · caer»."
+    },
+    {
+      "m": "okol",
+      "es": "entrar",
+      "cat": "verbo",
+      "pr": "okol",
+      "notes": "",
+      "variants": [],
+      "conf": "alta",
+      "sources": [
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ],
+      "evidence": "INEA: «Okol (entrar)»."
+    },
+    {
+      "m": "k'aay",
+      "es": "cantar; canto",
+      "cat": "verbo",
+      "pr": "k'aay",
+      "notes": "Habitual: kin k'aay (canto).",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      ],
+      "evidence": "Aprendiendo Maya: «k'aay (cantar)». Notas de gramática: Wiktionary (entrada k'aay, URL exacta no registrada) da k'aay intr. 'cantar', kin k'aay; perfectivo k'aaynajen."
+    },
+    {
+      "m": "paax",
+      "es": "tocar (un instrumento); música",
+      "cat": "verbo",
+      "pr": "paash",
+      "notes": "x = sh.",
+      "variants": [],
+      "conf": "media",
+      "sources": [
+        "https://aprendiendomaya.com/escritura/vocales/las-vocales-y-sus-reglas-de-uso"
+      ],
+      "evidence": "Aprendiendo Maya (vocales): «paax (tocar)»."
+    }
+  ],
+  "grammar": [
+    {
+      "topic": "Contar cosas: número + clasificador",
+      "explanation": "Para contar, al número se le une un clasificador según lo que se cuenta. Para objetos se usa -p'éel: jump'éel (una cosa), ka'ap'éel (dos), óoxp'éel (tres), kamp'éel (cuatro). Jump'éel sirve además como artículo «un, una»: jump'éel ma'alob k'iin (un buen día). Otros clasificadores comunes (-túul para personas y animales, -kúul para plantas) están en esta base como pendientes de verificar.",
+      "examples": [
+        {
+          "m": "ka'ap'éel",
+          "es": "dos (cosas)"
+        },
+        {
+          "m": "kamp'éel",
+          "es": "cuatro (cosas)"
+        },
+        {
+          "m": "Ka yanak teech jump'éel ma'alob k'iin.",
+          "es": "Que tengas un buen día."
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Numerales y clasificadores en maya",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://losocelotesproyectotemasdelinguistica.wordpress.com/2021/06/09/la-cuantificacion-actual-en-el-maya-yucateco/",
+        "https://www.poresto.com/yucatan/2024/1/8/como-saludar-despedir-en-maya.html"
+      ]
+    },
+    {
+      "topic": "Cambios de escritura al unir número y clasificador",
+      "explanation": "1) La n de jun y kan se escribe m ante p: jump'éel, kamp'éel, jump'íit. 2) La vocal glotalizada solo va al final de palabra; si se le añade algo, se vuelve rearticulada: ka' → ka'ap'éel.",
+      "examples": [
+        {
+          "m": "jun → jump'éel",
+          "es": "uno → una cosa"
+        },
+        {
+          "m": "kan → kamp'éel",
+          "es": "cuatro → cuatro cosas"
+        },
+        {
+          "m": "ka' → ka'ap'éel",
+          "es": "dos → dos cosas"
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Numerales y clasificadores en maya",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://losocelotesproyectotemasdelinguistica.wordpress.com/2021/06/09/la-cuantificacion-actual-en-el-maya-yucateco/"
+      ]
+    },
+    {
+      "topic": "Contar de veinte en veinte (sistema vigesimal)",
+      "explanation": "PENDIENTE DE VERIFICAR. El sistema tradicional cuenta por veintenas: del 11 al 19 se forman con lajun (10) —óoxlajun = 3 + 10— y el 20 es k'áal (jun k'áal). No hay evidencia registrada en esta ejecución para los números del 5 al 20 ni para las potencias de 20.",
+      "examples": [
+        {
+          "m": "óoxlajun",
+          "es": "trece"
+        },
+        {
+          "m": "jun k'áal",
+          "es": "veinte"
+        }
+      ],
+      "conf": "baja",
+      "sources": []
+    },
+    {
+      "topic": "Parientes y partes del cuerpo con posesivo",
+      "explanation": "Parientes y partes del cuerpo suelen ir con posesivo antepuesto: in (mi), a (tu), u (su), k (nuestro). Si la palabra empieza con vocal se intercala w tras in y a, y tras u: atan (esposa) → a watan; íicham (esposo) → u yíicham; ook (pie) → in wook.",
+      "examples": [
+        {
+          "m": "Bix u k'aaba' a na'?",
+          "es": "¿Cómo se llama tu mamá?"
+        },
+        {
+          "m": "Kux a taata yéetel a na'?",
+          "es": "¿Y tu papá y tu mamá?"
+        },
+        {
+          "m": "Kux a watan?",
+          "es": "¿Y tu esposa?"
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        {
+          "title": "Idioma Maya Yucateco, material de curso",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ]
+    },
+    {
+      "topic": "Cómo me siento: -en (tengo hambre, tengo sed, estoy enfermo)",
+      "explanation": "Los estados del cuerpo se dicen pegando al adjetivo la terminación de persona -en (yo): wi'ij → wi'ijen (tengo hambre), uk'aj → uk'ajen (tengo sed), k'oja'an → k'oja'anen (estoy enfermo). La Guía gramatical describe este juego de sufijos (juego B) sobre sustantivos y adjetivos: wíinik-o'on = somos hombres. Para negar se rodea con ma' … -i': Ma' wi'ijeni'.",
+      "examples": [
+        {
+          "m": "Wi'ijen.",
+          "es": "Tengo hambre."
+        },
+        {
+          "m": "Uk'ajen.",
+          "es": "Tengo sed."
+        },
+        {
+          "m": "K'oja'anen.",
+          "es": "Estoy enfermo / enferma."
+        },
+        {
+          "m": "Ma' wi'ijeni', ts'o'ok in janal.",
+          "es": "No tengo hambre, ya comí."
+        }
+      ],
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+          "note": "copia no autorizada: se cita solo el título"
+        },
+        "https://www.omniglot.com/language/phrases/yucatec-maya.php",
+        "https://topyucatan.com/notas/the-yucatan-culture/frases-basicas-en-maya-y-espanol",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html",
+        "https://www.mayas.uady.mx/diccionario/e_esp.html",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/gramatica/onomas/negacion.html"
+      ]
+    },
+    {
+      "topic": "Hay / tener: yaan",
+      "explanation": "Yaan significa «hay» y también «tener» (yaan + posesivo + cosa). Para preguntar dónde hay algo: Tu'ux yaan jump'éel …? Su contrario, mina'an (no hay), está pendiente de verificar.",
+      "examples": [
+        {
+          "m": "Tu'ux yaan jump'éel restaurant?",
+          "es": "¿Dónde hay un restaurante?"
+        }
+      ],
+      "conf": "media",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/y_maya.html",
+        "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      ]
+    },
+    {
+      "topic": "El color va antes de lo que describe",
+      "explanation": "En los compuestos registrados el color precede al sustantivo: chak (rojo) + iik (chile) = chile habanero; chak + iik' (viento) = viento fuerte, huracán. Deducción a partir de estos ejemplos.",
+      "examples": [
+        {
+          "m": "chak iik",
+          "es": "chile habanero"
+        },
+        {
+          "m": "chak iik'",
+          "es": "viento fuerte, huracán"
+        }
+      ],
+      "conf": "media",
+      "sources": [
+        "https://www.mayas.uady.mx/literatura/adiv1.html",
+        "https://filosofiamaya.com/2020/10/08/el-huracan-segun-las-lenguas-mayas/"
+      ]
+    },
+    {
+      "topic": "Preguntar cantidad, precio y edad",
+      "explanation": "PENDIENTE DE VERIFICAR. Se pregunta «¿cuántos?» con jay- + clasificador (jaytúul para seres vivos, jayp'éel para cosas), el precio con bajux (Bajux u tojol?) y la edad con Jayp'éel a ja'abil? Solo ja'ab (año) está verificado.",
+      "examples": [
+        {
+          "m": "Jaytúul?",
+          "es": "¿Cuántos (personas o animales)?"
+        },
+        {
+          "m": "Bajux u tojol?",
+          "es": "¿Cuánto cuesta?"
+        },
+        {
+          "m": "Jayp'éel a ja'abil?",
+          "es": "¿Cuántos años tienes?"
+        }
+      ],
+      "conf": "baja",
+      "sources": []
+    }
+  ],
+  "culture": [
+    {
+      "title": "Maaya t'aan: cuántos lo hablan y dónde",
+      "text": "Sus hablantes llaman a su lengua maaya t'aan; el INALI la escribe Maayat'aan. Según el censo 2020 del INEGI, citado por el INALI, tiene 774,755 hablantes. Se habla en Yucatán, Campeche y Quintana Roo, y también en el norte de Belice.",
+      "conf": "alta",
+      "sources": [
+        "https://www.inali.gob.mx/detalle/lengua-del-mes-maayataan-maya",
+        "https://epinvestiga.com/dominical/la-lengua-que-perdimos/"
+      ]
+    },
+    {
+      "title": "K'iin: sol, día y tiempo",
+      "text": "Una sola palabra, k'iin, nombra al sol, al día y al tiempo (UADY). Por eso «buenos días» se calca como Ma'alob k'iin, y para despedirse se dice Tak ti' uláak' k'iin, «hasta otro día».",
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html",
+        "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+      ]
+    },
+    {
+      "title": "Tsíimin: del tapir al caballo",
+      "text": "Tsíimin significa hoy «caballo», pero, según la UADY, literalmente quiere decir «tapir». Cuando los españoles trajeron el caballo, los mayas lo nombraron como al animal grande que ya conocían.",
+      "conf": "alta",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/ts_maya.html",
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ]
+    },
+    {
+      "title": "El mecate: una cuerda y una medida",
+      "text": "En Yucatán «mecate» (k'aan) es a la vez la cuerda y una medida de terreno: la UADY la define como una superficie de 20 × 20 metros.",
+      "conf": "media",
+      "sources": [
+        "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+      ]
+    },
+    {
+      "title": "Chak iik': el viento grande",
+      "text": "Iik' es viento. Con chak (rojo) se forma chak iik', que puede significar viento fuerte, tempestad o huracán. Ojo con la k: iik sin glotal es «chile», y chak iik es el chile habanero.",
+      "conf": "media",
+      "sources": [
+        "https://filosofiamaya.com/2020/10/08/el-huracan-segun-las-lenguas-mayas/",
+        "https://www.mayas.uady.mx/literatura/adiv1.html",
+        "https://www.mayas.uady.mx/diccionario/a_esp.html"
+      ]
+    },
+    {
+      "title": "Ch'a' Cháak: pedir la lluvia",
+      "text": "Cháak es la lluvia, y Ch'a' Cháak es la ceremonia de la lluvia, documentada en una exposición fotográfica de la UADY. Ojo con el tono: chaak, con tono bajo, significa «salcochar».",
+      "conf": "media",
+      "sources": [
+        "https://www.mayas.uady.mx/exposiciones/exp_05foto1.html",
+        "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+      ]
+    },
+    {
+      "title": "Ko'ox kanik maaya t'aan",
+      "text": "«Vamos a aprender lengua maya» es el nombre de un programa de cursos del Gobierno de Yucatán (2025) para preservar la lengua. Ko'ox, «vamos», es la misma palabra que da nombre a esta app.",
+      "conf": "alta",
+      "sources": [
+        "https://yucatan.heraldodemexico.com.mx/tendencias/2025/8/27/koox-kanik-maaya-taan-asi-seran-los-cursos-para-preservar-la-lengua-maya-en-yucatan-1949.html",
+        "https://www.posta.com.mx/yucatan/impulsan-la-preservacion-de-la-lengua-maya-en-yucatan-con-el-programa-koox-kanik-maaya-taan/vl2087271"
+      ]
+    },
+    {
+      "title": "Hanal Pixan: la comida de las ánimas",
+      "text": "PENDIENTE DE VERIFICAR. Hanal Pixan (en grafía actual janal pixan) significa «comida de las ánimas»: janal es comida y pixan, alma. Es la celebración yucateca de los fieles difuntos, a fines de octubre y principios de noviembre. Las familias ponen altares con comida para las almas, y el platillo típico es el mukbil pollo o pib, un tamal grande cocido bajo tierra.",
+      "conf": "baja",
+      "sources": [],
+      "evidence": "Solo «janal = comida» está verificado (INEA). Lo demás es conocimiento previo; verificar con fuentes del Gobierno de Yucatán, la UADY o Indemaya."
+    },
+    {
+      "title": "La milpa",
+      "text": "PENDIENTE DE VERIFICAR. La milpa (kool) es el sistema tradicional de cultivo en el que se siembran juntos maíz, frijol y calabaza. En Yucatán el terreno se prepara con roza, tumba y quema, y se mide en mecates (k'aan, 20 × 20 m). El campesino milpero es el koolnáal.",
+      "conf": "baja",
+      "sources": [],
+      "evidence": "Solo la medida del mecate está verificada (UADY). Lo demás es conocimiento previo."
+    },
+    {
+      "title": "Colores y rumbos del mundo",
+      "text": "PENDIENTE DE VERIFICAR. En la tradición maya cada rumbo tiene un color: el oriente (lak'in) es rojo (chak), el norte (xaman) blanco (sak), el poniente (chik'in) negro (eek') y el sur (nojol) amarillo (k'an). En el centro, verde (ya'ax), está la ceiba (ya'axche'), que une el cielo, la tierra y el inframundo.",
+      "conf": "baja",
+      "sources": [],
+      "evidence": "Verificados por separado: lak'in = oriente, chak, sak, eek', k'an y ya'ax (UADY). La asociación rumbo-color, xaman, chik'in, nojol y ya'axche' no están verificados."
+    },
+    {
+      "title": "Jarana e hipil",
+      "text": "PENDIENTE DE VERIFICAR. La jarana es el baile tradicional de Yucatán y se baila en las vaquerías; en las pausas se dicen «bombas», versos pícaros. El hipil es el vestido blanco con flores bordadas que usan las mujeres mayas; su versión de gala es el terno. La palabra hipil viene del náhuatl huipilli.",
+      "conf": "baja",
+      "sources": [],
+      "evidence": "Conocimiento previo; ninguna fuente registrada en esta ejecución."
+    }
+  ],
+  "sources": [
+    {
+      "title": "INALI – Normas de escritura para la lengua maya (2014), PDF",
+      "url": "https://site.inali.gob.mx/pdf/norma_maya.pdf"
+    },
+    {
+      "title": "U nu'ukbesajil u ts'íibta'al maayat'aan – Normas de escritura",
+      "note": "copia no autorizada: se cita solo el título"
+    },
+    {
+      "title": "INALI – Lengua del mes: Maayat'aan (maya)",
+      "url": "https://www.inali.gob.mx/detalle/lengua-del-mes-maayataan-maya"
+    },
+    {
+      "title": "INALI – Prontuario maya",
+      "url": "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+    },
+    {
+      "title": "INEA – Curso de lengua maya (alfabeto y ejemplos)",
+      "url": "http://www.cursosinea.conevyt.org.mx/cursos/lenguas_indigenas/yucatan/maya.htm"
+    },
+    {
+      "title": "UADY – Diccionario maya-español, letra B",
+      "url": "https://www.mayas.uady.mx/diccionario/b_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario maya-español, letra CH",
+      "url": "https://www.mayas.uady.mx/diccionario/ch_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario maya-español, letra CH'",
+      "url": "https://www.mayas.uady.mx/diccionario/ch_glotal_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario maya-español, letra E",
+      "url": "https://www.mayas.uady.mx/diccionario/e_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario maya-español, letra J",
+      "url": "https://www.mayas.uady.mx/diccionario/j_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario maya-español, letra K",
+      "url": "https://www.mayas.uady.mx/diccionario/k_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario maya-español, letra K'",
+      "url": "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario maya-español, letra L",
+      "url": "https://www.mayas.uady.mx/diccionario/l_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario maya-español, letra M",
+      "url": "https://www.mayas.uady.mx/diccionario/m_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario maya-español, letra N",
+      "url": "https://www.mayas.uady.mx/diccionario/n_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario maya-español, letra O",
+      "url": "https://www.mayas.uady.mx/diccionario/o_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario maya-español, letra S",
+      "url": "https://www.mayas.uady.mx/diccionario/s_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario maya-español, letra TS",
+      "url": "https://www.mayas.uady.mx/diccionario/ts_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario maya-español, letra TS'",
+      "url": "https://www.mayas.uady.mx/diccionario/ts_glotal_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario maya-español, letra U",
+      "url": "https://www.mayas.uady.mx/diccionario/u_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario maya-español, letra W",
+      "url": "https://www.mayas.uady.mx/diccionario/w_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario maya-español, letra X",
+      "url": "https://www.mayas.uady.mx/diccionario/x_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario maya-español, letra Y",
+      "url": "https://www.mayas.uady.mx/diccionario/y_maya.html"
+    },
+    {
+      "title": "UADY – Diccionario español-maya, letra A",
+      "url": "https://www.mayas.uady.mx/diccionario/a_esp.html"
+    },
+    {
+      "title": "UADY – Diccionario español-maya, letra E",
+      "url": "https://www.mayas.uady.mx/diccionario/e_esp.html"
+    },
+    {
+      "title": "UADY – Diccionario español-maya, letra P",
+      "url": "https://www.mayas.uady.mx/diccionario/p_esp.html"
+    },
+    {
+      "title": "UADY – Curso de maya, lección 1",
+      "url": "https://www.mayas.uady.mx/curso_maya/lecc01_1.html"
+    },
+    {
+      "title": "UADY – Adivinanzas (chak iik)",
+      "url": "https://www.mayas.uady.mx/literatura/adiv1.html"
+    },
+    {
+      "title": "UADY – Ch'a' Cháak, ceremonia de la lluvia (exposición)",
+      "url": "https://www.mayas.uady.mx/exposiciones/exp_05foto1.html"
+    },
+    {
+      "title": "Sobrino Gómez (2013), Descripción fonética de los tonos del maya yucateco, Estudios de Cultura Maya 41",
+      "url": "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0185-25742013000100006"
+    },
+    {
+      "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes",
+      "note": "copia no autorizada: se cita solo el título"
+    },
+    {
+      "title": "Diccionario introductorio español-maya, maya-español",
+      "note": "copia no autorizada: se cita solo el título"
+    },
+    {
+      "title": "Diccionario Maya Popular",
+      "note": "copia no autorizada: se cita solo el título"
+    },
+    {
+      "title": "Montgomery, Maya (Yucatec) Dictionary & Phrasebook (Hippocrene)",
+      "note": "copia no autorizada: se cita solo el título"
+    },
+    {
+      "title": "Bevington, Maya for Travelers and Students",
+      "note": "copia no autorizada: se cita solo el título"
+    },
+    {
+      "title": "Idioma Maya Yucateco, material de curso",
+      "note": "copia no autorizada: se cita solo el título"
+    },
+    {
+      "title": "Idioma Maya Yucateco, material de curso",
+      "note": "copia no autorizada: se cita solo el título"
+    },
+    {
+      "title": "Mújica (1995), Junp'iit Maaya – A little bit of Maya (sitio de Christian Lehmann)",
+      "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+    },
+    {
+      "title": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (sitio de Christian Lehmann)",
+      "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+    },
+    {
+      "title": "Lehmann, Gramática maya: negación",
+      "url": "https://www.christianlehmann.eu/ling/sprachen/maya/gramatica/onomas/negacion.html"
+    },
+    {
+      "title": "Wikipedia – Yucatec Maya language",
+      "url": "https://en.wikipedia.org/wiki/Yucatec_Maya_language"
+    },
+    {
+      "title": "Wiktionary – janal (Yucatec Maya)",
+      "url": "https://en.wiktionary.org/wiki/janal"
+    },
+    {
+      "title": "Numerales y clasificadores en maya",
+      "note": "copia no autorizada: se cita solo el título"
+    },
+    {
+      "title": "La cuantificación actual en el maya yucateco (blog Los Ocelotes)",
+      "url": "https://losocelotesproyectotemasdelinguistica.wordpress.com/2021/06/09/la-cuantificacion-actual-en-el-maya-yucateco/"
+    },
+    {
+      "title": "Diccionario básico maya-español",
+      "note": "copia no autorizada: se cita solo el título"
+    },
+    {
+      "title": "Aprendiendo Maya – Consonantes / alfabeto maya",
+      "url": "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+    },
+    {
+      "title": "Aprendiendo Maya – Las vocales y sus reglas de uso",
+      "url": "https://aprendiendomaya.com/escritura/vocales/las-vocales-y-sus-reglas-de-uso"
+    },
+    {
+      "title": "La Lengua Maya de Yucatán – Frases básicas",
+      "url": "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+    },
+    {
+      "title": "Omniglot – Useful phrases in Yucatec Maya",
+      "url": "https://www.omniglot.com/language/phrases/yucatec-maya.php"
+    },
+    {
+      "title": "Top Yucatán – Frases básicas en maya y español",
+      "url": "https://topyucatan.com/notas/the-yucatan-culture/frases-basicas-en-maya-y-espanol"
+    },
+    {
+      "title": "Filosofía Maya – El huracán según las lenguas mayas",
+      "url": "https://filosofiamaya.com/2020/10/08/el-huracan-segun-las-lenguas-mayas/"
+    },
+    {
+      "title": "PorEsto – ¿Cómo saludar y despedir en maya?",
+      "url": "https://www.poresto.com/yucatan/2024/1/8/como-saludar-despedir-en-maya.html"
+    },
+    {
+      "title": "Heraldo de México – Ko'ox kanik maaya t'aan",
+      "url": "https://yucatan.heraldodemexico.com.mx/tendencias/2025/8/27/koox-kanik-maaya-taan-asi-seran-los-cursos-para-preservar-la-lengua-maya-en-yucatan-1949.html"
+    },
+    {
+      "title": "Posta – Programa Ko'ox kanik maaya t'aan",
+      "url": "https://www.posta.com.mx/yucatan/impulsan-la-preservacion-de-la-lengua-maya-en-yucatan-con-el-programa-koox-kanik-maaya-taan/vl2087271"
+    },
+    {
+      "title": "Epinvestiga – La lengua que perdimos",
+      "url": "https://epinvestiga.com/dominical/la-lengua-que-perdimos/"
+    }
+  ]
+}

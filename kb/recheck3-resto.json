@@ -1,0 +1,1263 @@
+{
+  "group": "resto",
+  "searchesUsed": 50,
+  "date": "2026-10-25",
+  "method": "Tercera verificación con WebSearch (tope de 50 búsquedas, todas usadas). Antes de buscar se leyó el estado en kb/*.verified.json, kb/recheck-*.json y src/content (script de extracción del vocab con conf «media», sin u7). La mayoría de las consultas se restringieron a mayas.uady.mx: el Diccionario básico español-maya-español (Bastarrachea, Yah Pech y Briceño Chel) devuelve entradas literales; las páginas *_esp.html son español-maya y *_maya.html maya-español. Las grafías de la UADY ya son modernas (j, tonos con acento agudo); las del curso de la UADY son anteriores a 2014 (h por j, acento grave = tono bajo). Solo se normalizó con reglas seguras (h → j). Los extractos del buscador son resúmenes: cuando un resumen podía estar mal transcrito se dice en evidence. Omniglot atribuye sus frases a un profesor de Na'atik, así que Omniglot y Na'atik no cuentan como fuentes independientes.",
+  "items": [
+    {
+      "m": "k'an",
+      "es": "amarillo; maduro",
+      "status": "verificado",
+      "contentId": "u8-kan-amarillo",
+      "statusBefore": "probable",
+      "correction": "Sin cambio de forma; pasa de probable a verificado. Escriben k'an, con vocal corta, una fuente académica (Savkic), Bricker 1999, Montgomery y el Wikcionario francés. La propia UADY escribe el compuesto K'AN CH'UUY ('pálido, amarillento') con vocal corta, aunque pone 'amarillo' bajo el encabezado K'AAN, junto a 'mecate'. Enseñar k'an y decir en la nota que la UADY escribe k'aan. Se puede añadir la acepción 'maduro' (UADY, Wikcionario francés).",
+      "variants": [
+        "k'aan (UADY, encabezado K'AAN: «Amarillo, cosa amarilla»)"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Diccionario maya-español, letra K'",
+          "url": "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+        },
+        {
+          "title": "Wiktionnaire (francés), «k'an» (maya yucateco)",
+          "url": "https://fr.wiktionary.org/wiki/k%E2%80%99an"
+        },
+        {
+          "title": "Sanja Savkic, términos de color en maya yucateco, Estudios de Cultura Maya 37 (SciELO)",
+          "url": "https://www.scielo.org.mx/pdf/ecm/v37/v37a4.pdf"
+        },
+        {
+          "title": "Victoria R. Bricker (1999), «Color and Texture in the Maya Language of Yucatan», Anthropological Linguistics 41(3), resumen",
+          "url": "https://anthling.sitehost.iu.edu/v41-3.html"
+        },
+        {
+          "title": "Artículo sobre términos de color en maya yucateco en Redalyc (el extracto no daba el título)",
+          "url": "https://www.redalyc.org/pdf/2813/281322183004.pdf"
+        }
+      ],
+      "evidence": "Búsqueda 1 (UADY, letra K'): «K'AAN: Amarillo, cosa amarilla», con 'fruta madura o sazonada' y 'mecate; medida lineal de 20 × 20 m' en la misma entrada, y «K'AN CH'UUY: Pálido, amarillento». Búsqueda 2: el Wikcionario francés da k'an como adjetivo maya yucateco, «mûr» y «jaune», con sinónimos tak'aan y yi'h. Un estudio de términos de color en Redalyc y Savkic ponen k'an entre los cinco colores básicos (sak, ek', chak, k'an, ya'ax). El PDF de colores lacandones (lengua emparentada) no se tomó como fuente."
+    },
+    {
+      "m": "k'aan",
+      "es": "mecate, cuerda; medida de terreno (20 × 20 m)",
+      "status": "verificado",
+      "contentId": "u8-kaan-mecate",
+      "statusBefore": "probable",
+      "correction": "Sin cambio de forma; pasa a verificado: la UADY da la forma y el significado. Encabezado sin acento, es decir, tono bajo. k'áan, 'hamaca', con tono alto, sigue en probable (solo lo da el curso «Idioma Maya Yucateco»).",
+      "variants": [],
+      "sources": [
+        {
+          "title": "UADY, Diccionario maya-español, letra K'",
+          "url": "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+        }
+      ],
+      "evidence": "Búsqueda 1: la entrada K'AAN de la UADY incluye 'mecate' y 'medida lineal de superficie de 20 × 20 m', además de 'amarillo'. Búsqueda 37: otra página de la UADY dice de la palabra para 'hamaca' que «se refiere también a cuerda, hilo, soga, mecate»; el extracto no mostraba la grafía exacta."
+    },
+    {
+      "m": "bejla'e'",
+      "es": "hoy; ahora",
+      "status": "verificado",
+      "contentId": "u9-bejlae",
+      "statusBefore": "probable",
+      "correction": "Sin cambio de forma; pasa a verificado. La UADY la da como encabezado en las dos direcciones del diccionario.",
+      "variants": [
+        "bejla'e (Gran Museo del Mundo Maya)",
+        "bejla'"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra A (AHORA)",
+          "url": "https://www.mayas.uady.mx/diccionario/a_esp.html"
+        },
+        {
+          "title": "UADY, Diccionario maya-español, letra B (registro de la base)",
+          "url": "https://www.mayas.uady.mx/diccionario/b_maya.html"
+        },
+        {
+          "title": "Gran Museo del Mundo Maya, Palabras mayas (registro de la base)",
+          "url": "https://www.granmuseodelmundomaya.com.mx/aprende/palabras-mayas"
+        }
+      ],
+      "evidence": "Búsqueda 3 (UADY, español-maya): «AHORA: Bejla'e'». En la base ya estaba la entrada maya-español «BEJLA'E': Hoy, ahora» y el Gran Museo daba «HOY: Bejla'e»."
+    },
+    {
+      "m": "jo'oljeak",
+      "es": "ayer",
+      "status": "verificado",
+      "contentId": "u9-jooljeak",
+      "statusBefore": "probable",
+      "correction": "Sin cambio de forma; pasa a verificado. Revisar la variante del campo alt: según el extracto, la UADY español-maya da «Jo'olej» como segunda forma, no jo'oljej. Puede ser un error de transcripción del buscador, porque el diccionario bilingüe de la base da jo'oljej. Mientras no se vea la página, conviene dejar solo jo'oljeak.",
+      "variants": [
+        "jo'olej (extracto de la UADY a_esp; posible error de transcripción)",
+        "jo'oljej (diccionario bilingüe de la base)",
+        "jo'oljeake'"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra A (AYER)",
+          "url": "https://www.mayas.uady.mx/diccionario/a_esp.html"
+        },
+        {
+          "title": "UADY, Diccionario maya-español, letra J (registro de la base)",
+          "url": "https://www.mayas.uady.mx/diccionario/j_maya.html"
+        }
+      ],
+      "evidence": "Búsqueda 3 (UADY, español-maya): «AYER: Jo'olej, jo'oljeak». En la base ya estaba la entrada maya-español «JO'OLJEAK: Ayer»."
+    },
+    {
+      "m": "ka'abej",
+      "es": "pasado mañana",
+      "status": "verificado",
+      "contentId": "u9-kaabej",
+      "statusBefore": "probable",
+      "correction": "Sin cambio de forma; pasa a verificado con dos fuentes independientes e institucionales: el Gran Museo la da como entrada y un cuento bilingüe de la UADY la usa donde la versión en español dice «pasado mañana». En el cuento aparece con el marcador de tema -e' (ka'abeje'), como bejla'e'.",
+      "variants": [
+        "ka'abeje' (con -e' de tema, cuento de la UADY)"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Literatura maya: cuento bilingüe maya-español (cuent5)",
+          "url": "https://www.mayas.uady.mx/literatura/cuent5.html"
+        },
+        {
+          "title": "Gran Museo del Mundo Maya, Palabras mayas, sección Tiempos (registro de la base)",
+          "url": "https://www.granmuseodelmundomaya.com.mx/aprende/palabras-mayas"
+        }
+      ],
+      "evidence": "Búsqueda 6: en el cuento de la UADY, la versión en español dice «pasado mañana le tocará a la zorrita» y la maya, «ka'abeje' chan ch'omak kun bin». La correspondencia sale del texto paralelo, no de una glosa. Búsquedas 4 y 5: ninguna entrada de diccionario; la UADY da «MAÑANA: Sáamal, ja'atskab», sin «pasado mañana». La base ya tenía el Gran Museo: «PASADO MAÑANA: Ka'abej»."
+    },
+    {
+      "m": "Ba'ax k'iin …?",
+      "es": "¿Qué día …? (propuesto para «¿cuándo?»)",
+      "status": "dudoso",
+      "contentId": null,
+      "statusBefore": "dudoso",
+      "correction": "Sin cambio. Ninguna fuente lo usa como «¿cuándo?». Para «¿cuándo?», la UADY tiene una palabra propia (ver la entrada bik'iin). Si se enseña ba'ax k'iin, que sea solo como «¿qué día?», composición transparente de ba'ax y k'iin, ambas verificadas.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "UADY, Diccionario maya-español, letra B",
+          "url": "https://www.mayas.uady.mx/diccionario/b_maya.html"
+        }
+      ],
+      "evidence": "Búsqueda 7 (UADY): «BA'AX: ¿Qué? ¿Qué cosa?» y «BIK'I: ¿Cuándo?». No apareció «ba'ax k'iin» ni «ba'ax ora»."
+    },
+    {
+      "m": "bik'iin",
+      "es": "¿cuándo?",
+      "status": "dudoso",
+      "contentId": null,
+      "statusBefore": "no estaba en la base",
+      "correction": "Entrada nueva, candidata para «¿cuándo?» en lugar de ba'ax k'iin. La grafía no está fijada: el extracto de la UADY dice BIK'I (puede estar cortado) y una página de baja calidad da mixbik'iin, 'nunca'. No enseñar hasta ver la entrada completa de la UADY.",
+      "variants": [
+        "bik'i (extracto de la UADY)",
+        "mixbik'iin 'nunca' (página FAQ de baja calidad)"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Diccionario maya-español, letra B",
+          "url": "https://www.mayas.uady.mx/diccionario/b_maya.html"
+        },
+        {
+          "title": "Página FAQ «¿Cómo se dice no en maya?» (baja calidad)",
+          "url": "https://www.clubmitsubishiasx.com/faq/como-se-dice-no-en-maya"
+        }
+      ],
+      "evidence": "Búsqueda 7: «BIK'I: ¿Cuándo?» (UADY, según el extracto). Búsqueda 46: ninguna fuente fiable; solo la página FAQ con «mixbik'iin» = nunca, jamás."
+    },
+    {
+      "m": "Ma'alob chíinil k'iin.",
+      "es": "Buenas tardes (calco moderno).",
+      "status": "probable",
+      "contentId": "u2-maalob-chiinil-kiin",
+      "statusBefore": "probable",
+      "correction": "Sin cambio. Sigue sin fuente académica. Tampoco se pudo fijar la vocal de chíinil frente a chi'inil (la UADY no devolvió ni TARDE ni la raíz chíin). Mantener la nota «por confirmar».",
+      "variants": [
+        "Ma'lob chi'inil k'iin (Omniglot, registro de la base)",
+        "Yutsil chíinil k'iin (página FAQ)"
+      ],
+      "sources": [
+        {
+          "title": "Página FAQ «¿Qué palabras hay en maya?» (baja calidad)",
+          "url": "https://www.clubmitsubishiasx.com/faq/que-palabras-hay-en-maya"
+        },
+        {
+          "title": "Material de clase de maya (documento subido por un usuario; sin url)"
+        }
+      ],
+      "evidence": "Búsqueda 9: varias páginas FAQ dan «Buenas tardes – Ma'alob chíinil k'iin». El material de un sitio de documentos compartidos la sitúa al ocultarse el sol, de 4 a 6 de la tarde. Una página da «Yutsil chíinil k'iin». Búsquedas 8 y 10 (UADY, TARDE y CHÍIN): nada."
+    },
+    {
+      "m": "Ma'alob óok'iin.",
+      "es": "Buenas tardes (variante)",
+      "status": "dudoso",
+      "contentId": null,
+      "statusBefore": "dudoso",
+      "correction": "Sin cambio. No apareció ni óok'iin ni ok'iin como 'tarde' en ninguna fuente. No enseñarla.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "La Lengua Maya de Yucatán, Frases básicas (única fuente previa; no re-vista)",
+          "url": "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+        }
+      ],
+      "evidence": "Búsqueda 11: solo salieron entradas del Wiktionary para ok'ol/ookol ('entrar'), que es otra palabra. Búsqueda 8 (UADY): nada."
+    },
+    {
+      "m": "Ma'alob áak'ab.",
+      "es": "Buenas noches (calco moderno).",
+      "status": "verificado",
+      "contentId": "u2-maalob-aakab",
+      "statusBefore": "probable",
+      "correction": "Sin cambio de forma; pasa a verificado por el criterio de dos fuentes independientes: PorEsto y un material de clase, además de páginas FAQ. Ninguna es académica, pero las dos piezas están verificadas (ma'alob; áak'ab 'noche' en la UADY). Seguir presentándola como calco del español, igual que Ma'alob k'iin, que tiene el mismo estado.",
+      "variants": [
+        "Ma'lob ak'ab (registro de la base)"
+      ],
+      "sources": [
+        {
+          "title": "PorEsto (2024), «¿Cómo se dice buenos días, tardes y noches en maya?» (registro de la base)",
+          "url": "https://www.poresto.com/yucatan/2024/1/6/como-se-dice-buenos-dias-tardes-noches-en-maya.html"
+        },
+        {
+          "title": "Material de clase de maya (documento subido por un usuario; sin url)"
+        },
+        {
+          "title": "Página FAQ «¿Qué palabras hay en maya?» (baja calidad)",
+          "url": "https://www.clubmitsubishiasx.com/faq/que-palabras-hay-en-maya"
+        }
+      ],
+      "evidence": "Búsqueda 9: las fuentes de saludos dan «Ma'alob áak'ab» para buenas noches. PorEsto ya estaba en la base. áak'ab = noche está verificado (UADY, base)."
+    },
+    {
+      "m": "Jayp'éel ja'ab yaan teech?",
+      "es": "¿Cuántos años tienes? (lit. ¿cuántos años hay contigo?)",
+      "status": "probable",
+      "contentId": "u4-jaypeel-jaab",
+      "statusBefore": "probable",
+      "correction": "Sin cambio. Sigue con una sola atestiguación literal (Junp'iit, sin marcar longitud ni tono). Se confirmó una pieza más: ja'ab, 'año', en la UADY.",
+      "variants": [
+        "Jayp'el ja'ab yaan tech? (Junp'iit)"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Diccionario maya-español, letra J (JA'AB)",
+          "url": "https://www.mayas.uady.mx/diccionario/j_maya.html"
+        },
+        {
+          "title": "Junp'iit Maaya (Mújica 1995), sitio de Christian Lehmann (registro de la base)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        }
+      ],
+      "evidence": "Búsqueda 50 (UADY): «JA'AB: Año», distinto de JAAB, 'separar, dispersar'. Búsquedas 12 y 13: la frase completa no apareció."
+    },
+    {
+      "m": "Ki'imak óolal.",
+      "es": "¡Bienvenido! / ¡Bienvenida! (lit. alegría)",
+      "status": "probable",
+      "contentId": "u9-kiimak-oolal",
+      "statusBefore": "probable",
+      "correction": "Sin cambio. El sentido 'bienvenido' solo lo dan fuentes divulgativas, y Omniglot y Na'atik no son independientes: Omniglot atribuye sus frases a un profesor de Na'atik. PorEsto (2023) la da además como «mucho gusto». El sentido básico, 'felicidad', sí está verificado en la UADY (entrada siguiente). Mantener la glosa «¡bienvenido! (lit. alegría)».",
+      "variants": [
+        "Kíimak óolal (Na'atik, PorEsto)",
+        "Kíimak 'oolal (Omniglot)"
+      ],
+      "sources": [
+        {
+          "title": "Na'atik, Yucatec Maya Phrases",
+          "url": "https://naatikmexico.org/blog/yucatec-maya-phrases"
+        },
+        {
+          "title": "PorEsto (2023), «¿Cómo se dice hola en Yucatán?»",
+          "url": "https://www.poresto.com/yucatan/2023/7/27/como-se-dice-hola-en-yucatan.html"
+        },
+        {
+          "title": "UADY, Diccionario español-maya, letra F (FELICIDAD)",
+          "url": "https://www.mayas.uady.mx/diccionario/f_esp.html"
+        }
+      ],
+      "evidence": "Búsqueda 47: Na'atik da «Welcome: Kíimak óolal» y PorEsto (2023), «Muncho gusto: Kíimak óolal». Búsqueda 14: la UADY no tiene una entrada BIENVENIDO."
+    },
+    {
+      "m": "ki'imak óolal",
+      "es": "alegría, felicidad",
+      "status": "verificado",
+      "contentId": null,
+      "statusBefore": "verificado (vía una reproducción no oficial de la UADY)",
+      "correction": "Sin cambio. Ahora la entrada se vio en la página de la propia UADY y no en una reproducción, así que en u9 se puede citar la UADY directamente (letra F) en lugar de la «reproducción no oficial».",
+      "variants": [
+        "ki'imak óol 'feliz' (UADY)"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra F (FELICIDAD, FELIZ)",
+          "url": "https://www.mayas.uady.mx/diccionario/f_esp.html"
+        }
+      ],
+      "evidence": "Búsqueda 14 (UADY): «FELICIDAD f: Ki'imak óolal. FELIZ adj: Ki'imak óol»."
+    },
+    {
+      "m": "taat",
+      "es": "papá, padre",
+      "status": "verificado",
+      "contentId": null,
+      "statusBefore": "dudoso (en la base como taata / taataj)",
+      "correction": "CAMBIA la forma: la UADY da taat y taatáa, no taata ni taataj. Si se quiere una palabra para 'papá' además de yuum, usar taat. Ver la entrada «taata / taataj».",
+      "variants": [
+        "taatáa (UADY)",
+        "yuum (UADY, primera forma de la entrada)"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra P (PADRE, PAPÁ)",
+          "url": "https://www.mayas.uady.mx/diccionario/p_esp.html"
+        }
+      ],
+      "evidence": "Búsqueda 15 (UADY): «PADRE m: Yuum, taat, taatáa» y «PAPÁ m: Yuum, taat, taatáa»."
+    },
+    {
+      "m": "taata / taataj",
+      "es": "papá",
+      "status": "dudoso",
+      "contentId": null,
+      "statusBefore": "dudoso",
+      "correction": "No enseñar estas formas. taata solo aparece en el vocativo de un rezo, «Taata Yuum», que la UADY traduce «Señor Padre». taataj solo sale del curso antiguo «Idioma Maya Yucateco» (tàatah). Las formas de diccionario son taat y taatáa (entrada anterior).",
+      "variants": [
+        "Taata Yuum (vocativo en un rezo; UADY, exposición de Rasmussen)",
+        "tàatah (curso «Idioma Maya Yucateco», registro de la base)"
+      ],
+      "sources": [
+        {
+          "title": "UADY, exposición «Ch'a' Cháak, ceremonia de la lluvia» (Christian H. Rasmussen)",
+          "url": "https://www.mayas.uady.mx/exposiciones/exp_05foto19.html"
+        },
+        {
+          "title": "UADY, Diccionario español-maya, letra P",
+          "url": "https://www.mayas.uady.mx/diccionario/p_esp.html"
+        }
+      ],
+      "evidence": "Búsqueda 15: en la exposición, «Taata Yuum» aparece en un rezo en maya, traducido «Señor Padre». El diccionario no registra ni taata ni taataj."
+    },
+    {
+      "m": "uklajun",
+      "es": "diecisiete (17)",
+      "status": "verificado",
+      "contentId": "u4-uklajun",
+      "statusBefore": "probable",
+      "correction": "Sin cambio de forma; pasa a verificado. El curso de la UADY la escribe uklahun(p'el) en su tabla del 1 al 20; con la regla segura h → j sale uklajun. Ojo: el resumen del buscador numeró esa tabla con un desfase de uno (dijo uklahunp'el = 16, waxaklahunp'el = 17, bolonlahunp'el = 18). Pero uk = 7 y waxak = 8 están verificados, así que uklahun es el 17. Omniglot da u'uklajun o wuklajun para el 17. Se puede quitar de la nota «la única fuente…» y citar la UADY.",
+      "variants": [
+        "uklahunp'el (curso de la UADY, grafía anterior a 2014)",
+        "u'uklajun, wuklajun (Omniglot)"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Curso de maya yucateco, lección 5.6 (numerales)",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec5_6.html"
+        },
+        {
+          "title": "Omniglot, Numbers in Yucatec Maya (registro de la base)",
+          "url": "https://www.omniglot.com/language/numbers/yucatecmaya.htm"
+        }
+      ],
+      "evidence": "Búsqueda 17: la lección 5.6 de la UADY tiene la serie hunp'el … uklahunp'el, waxaklahunp'el, bolonlahunp'el … k'al, con la numeración del resumen desplazada en uno. Búsqueda 16 (diccionario): nada."
+    },
+    {
+      "m": "ka'alajun",
+      "es": "doce (12)",
+      "status": "verificado",
+      "contentId": "u4-kaalajun",
+      "statusBefore": "verificado",
+      "correction": "Sin cambio; no hubo evidencia nueva (la búsqueda 16 no devolvió los numerales).",
+      "variants": [
+        "ka'alahun (curso de la UADY)",
+        "lajka'a (Omniglot)"
+      ],
+      "sources": [
+        {
+          "title": "Junp'iit Maaya, sitio de Christian Lehmann (registro de la base)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        },
+        {
+          "title": "Omniglot, Numbers in Yucatec Maya (registro de la base)",
+          "url": "https://www.omniglot.com/language/numbers/yucatecmaya.htm"
+        }
+      ],
+      "evidence": "Búsqueda 16 (UADY, DOCE): ningún numeral; un artículo de la UADY dice que después del cuatro se suelen usar números del español."
+    },
+    {
+      "m": "lajka'",
+      "es": "doce (12), forma tradicional",
+      "status": "dudoso",
+      "contentId": null,
+      "statusBefore": "dudoso",
+      "correction": "Sin cambio. El curso de la UADY la escribe lahkah, que con h → j da lajkaj, sin cierre glotal; Omniglot da lajka'a. El final sigue sin resolver. Usar ka'alajun para el 12.",
+      "variants": [
+        "lahkah (curso de la UADY)",
+        "lajka'a (Omniglot)"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Curso de maya yucateco, lección 5.6",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec5_6.html"
+        }
+      ],
+      "evidence": "Búsqueda 17: «lahkah» aparece en la tabla de la UADY (el resumen la puso en el 11 por el mismo desfase; por posición es el 12)."
+    },
+    {
+      "m": "junkúul",
+      "es": "uno, una (planta o árbol)",
+      "status": "probable",
+      "contentId": "u4-junkuul",
+      "statusBefore": "probable (clasificador -kúul verificado; la combinación no se ha visto)",
+      "correction": "Sin cambio. Ninguna fuente escribe junkúul tal cual. Se arma con la regla jun + -kúul; el clasificador está verificado (Blaha Pfeiler y Skopeteas, Lehmann, Omniglot).",
+      "variants": [
+        "jun-kúul"
+      ],
+      "sources": [
+        {
+          "title": "Blaha Pfeiler y Skopeteas (2024), Numeral classifiers in Yucatec Maya (registro de la base)",
+          "url": "https://historicalsyntax.org/hs/index.php/hs/article/view/219"
+        }
+      ],
+      "evidence": "Búsqueda 45: solo trabajos generales sobre clasificadores, entre ellos uno de Briceño Chel (UNAM); ninguno con la forma."
+    },
+    {
+      "m": "jo'op'éel",
+      "es": "cinco (cosas)",
+      "status": "probable",
+      "contentId": "u4-jopeel",
+      "statusBefore": "probable",
+      "correction": "Sin cambio. No se le dedicó una búsqueda propia por el tope. Sigue siendo una forma armada por regla: el curso de la UADY, anterior a 2014, escribe ho'p'éel.",
+      "variants": [
+        "ho'p'éel (curso de la UADY)"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Curso de maya yucateco, lección 5.6 (registro de la base)",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec5_6.html"
+        }
+      ],
+      "evidence": "Sin evidencia nueva."
+    },
+    {
+      "m": "ka'ak'aal",
+      "es": "cuarenta (lit. dos veintenas)",
+      "status": "probable",
+      "contentId": "u4-kaakaal",
+      "statusBefore": "probable",
+      "correction": "Sin cambio. Sigue con una sola fuente (Omniglot). No confundir con K'AK'AL, 'seco, flaco' (UADY).",
+      "variants": [],
+      "sources": [
+        {
+          "title": "Omniglot, Numbers in Yucatec Maya (registro de la base)",
+          "url": "https://www.omniglot.com/language/numbers/yucatecmaya.htm"
+        }
+      ],
+      "evidence": "Búsquedas 18 y 19: no se encontró ka'ak'aal. En la UADY salieron K'AAL, 'abrochar, cerrar', y K'AK'AL, 'seco, flaco'."
+    },
+    {
+      "m": "junk'aal",
+      "es": "veinte (lit. una veintena)",
+      "status": "probable",
+      "contentId": "u4-junkaal",
+      "statusBefore": "probable",
+      "correction": "Sin cambio. Sigue con una sola fuente (Omniglot). La lección 5.6 de la UADY da k'al (= k'aal) solo para el 20.",
+      "variants": [
+        "jun k'aal",
+        "k'aal (solo)"
+      ],
+      "sources": [
+        {
+          "title": "Omniglot, Numbers in Yucatec Maya (registro de la base)",
+          "url": "https://www.omniglot.com/language/numbers/yucatecmaya.htm"
+        },
+        {
+          "title": "UADY, Curso de maya yucateco, lección 5.6",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec5_6.html"
+        }
+      ],
+      "evidence": "Búsquedas 17 a 19: la UADY da k'al = 20 en su tabla, sin jun; no apareció junk'aal."
+    },
+    {
+      "m": "in wíits'in",
+      "es": "mi hermano menor; mi hermana menor",
+      "status": "probable",
+      "contentId": null,
+      "statusBefore": "probable (íits'in verificado; la forma poseída se arma por regla)",
+      "correction": "Sin cambio. Sale de una regla verificada (in + w- ante vocal + íits'in, que está verificado), pero no se vio escrita tal cual.",
+      "variants": [
+        "iits'in xiib 'hermano menor' (material de un sitio de documentos compartidos)"
+      ],
+      "sources": [
+        {
+          "title": "Wikcionario, «íitsʼin» (registro de la base)",
+          "url": "https://es.wiktionary.org/wiki/%C3%ADits%CA%BCin"
+        },
+        {
+          "title": "Lista de parentesco (documento subido por un usuario; sin url)"
+        }
+      ],
+      "evidence": "Búsqueda 20: un documento de un sitio de documentos compartidos da «Iits'in xiib – Hermano menor». Ninguna fuente escribe in wíits'in."
+    },
+    {
+      "m": "jóok'ol",
+      "es": "salir; salida",
+      "status": "verificado",
+      "contentId": "u5-jookol",
+      "statusBefore": "verificado",
+      "correction": "Sin cambio; no se volvió a buscar.",
+      "variants": [
+        "hóok'ol (grafía antigua)"
+      ],
+      "sources": [
+        {
+          "title": "Hilario Chi Canul (2012), «U jóok'ol t'aan», Redalyc (registro de la base)",
+          "url": "https://www.redalyc.org/pdf/2813/281323561007.pdf"
+        }
+      ],
+      "evidence": "Se mantiene la evidencia de la pasada anterior."
+    },
+    {
+      "m": "Bix u ya'ala'al … ich maaya t'aan?",
+      "es": "¿Cómo se dice … en maya?",
+      "status": "dudoso",
+      "contentId": null,
+      "statusBefore": "dudoso",
+      "correction": "Sin cambio. La pasiva ya'ala'al existe: la UADY la usa en un ejemplo (bajo ABECEDARIO) y también aparece en la Declaración Universal en maya. Pero la fórmula completa no se vio en ninguna fuente, y no se sabe si lleva k- (bix ku …). No enseñarla como fórmula fija.",
+      "variants": [
+        "Bix u yaálal ich maaya táan (Omniglot, registro de la base)"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra A (ejemplo con ya'ala'al)",
+          "url": "https://www.mayas.uady.mx/diccionario/a_esp.html"
+        },
+        {
+          "title": "Omniglot, Useful phrases in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/phrases/yucatec-maya.php"
+        }
+      ],
+      "evidence": "Búsqueda 21: ningún resultado con «bix u ya'alal», «bix ku ya'alal» ni «bix u ya'ala'al». Búsqueda 22: en la UADY, ya'ala'al solo dentro de un ejemplo (ABECEDARIO); no hay entrada para DECIR."
+    },
+    {
+      "m": "Ma' in wojeli'.",
+      "es": "No sé.",
+      "status": "probable",
+      "contentId": "u5-ma-in-woojeli",
+      "statusBefore": "probable (como «Ma' in woojeli'.»)",
+      "correction": "CAMBIO PROPUESTO de la longitud vocálica: woojeli' → wojeli'. El diccionario de la UADY da «SABER v: Ojel», con o corta; la UADY sí marca las vocales largas (xook, luuk', nool). Yoshida también cita ojel, y vocabulario.com.mx escribe literalmente «Ma' in wojeli'». La o larga solo aparece en Omniglot («Má in woojel», frase de Na'atik) y en Ruta Tren Maya. Dejar woojeli' como variante.",
+      "variants": [
+        "Ma' in woojeli' (forma actual de la app; Omniglot y Ruta Tren Maya, sin -i')",
+        "Ma' in wojel (sin -i')"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra S (SABER)",
+          "url": "https://www.mayas.uady.mx/diccionario/s_esp.html"
+        },
+        {
+          "title": "vocabulario.com.mx, verbo saber en maya (registro de la base)",
+          "url": "https://www.vocabulario.com.mx/blog/diccionario-maya-espanol-verbo-saber/"
+        },
+        {
+          "title": "Omniglot, Useful phrases in Yucatec Maya (registro de la base)",
+          "url": "https://www.omniglot.com/language/phrases/yucatec-maya.php"
+        }
+      ],
+      "evidence": "Búsqueda 23 (UADY): «SABER v: Ojel». Búsqueda 24: no apareció ninguna fuente nueva con la frase. La regla de -i' en la negación (Lehmann) y la ausencia de k- con ojel (Yoshida) vienen de pasadas anteriores."
+    },
+    {
+      "m": "Pa'atik in jáan máan.",
+      "es": "Con permiso. / Disculpe usted.",
+      "status": "verificado",
+      "contentId": "u2-paatik-in-jaan-maan",
+      "statusBefore": "verificado",
+      "correction": "Sin cambio; no se volvió a buscar porque ya estaba verificada en el prontuario del INALI.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "INALI, Prontuario maya-español (2009), PDF alojado por Arqueología Mexicana (registro de la base)",
+          "url": "https://arqueologiamexicana.mx/sites/default/files/banco_imagenes/prontuario_maya.pdf"
+        }
+      ],
+      "evidence": "Se mantiene la evidencia de la pasada anterior."
+    },
+    {
+      "m": "máax",
+      "es": "¿quién?",
+      "status": "verificado",
+      "contentId": "u5-maax",
+      "statusBefore": "probable",
+      "correction": "Sin cambio de forma; pasa a verificado, con tono alto confirmado. No confundir con maax, de tono bajo, que en la misma página tiene otros sentidos.",
+      "variants": [
+        "maax (Bolles, sin tono)",
+        "ma'ax (Yucatan Living)"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Diccionario maya-español, letra M",
+          "url": "https://www.mayas.uady.mx/diccionario/m_maya.html"
+        }
+      ],
+      "evidence": "Búsqueda 25 (UADY): «MÁAX: ¿Quién?», dos veces en la página."
+    },
+    {
+      "m": "meyaj",
+      "es": "trabajar; trabajo",
+      "status": "verificado",
+      "contentId": "u5-meyaj",
+      "statusBefore": "probable",
+      "correction": "Sin cambio de forma; pasa a verificado.",
+      "variants": [
+        "meyah (curso de la UADY)"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra T (TRABAJAR)",
+          "url": "https://www.mayas.uady.mx/diccionario/t_esp.html"
+        }
+      ],
+      "evidence": "Búsqueda 26 (UADY): «TRABAJAR v: Meyaj»."
+    },
+    {
+      "m": "xook",
+      "es": "leer; estudiar; lectura",
+      "status": "verificado",
+      "contentId": "u5-xook",
+      "statusBefore": "probable",
+      "correction": "Sin cambio de forma; pasa a verificado. La UADY da xook también para «lección» y «lectura».",
+      "variants": [
+        "xòok (curso de la UADY, acento grave = tono bajo)"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra L (LEER)",
+          "url": "https://www.mayas.uady.mx/diccionario/l_esp.html"
+        }
+      ],
+      "evidence": "Búsqueda 27 (UADY): «LEER v: Xook», y xook también bajo LECCIÓN y LECTURA."
+    },
+    {
+      "m": "luuk'",
+      "es": "lodo",
+      "status": "verificado",
+      "contentId": "u8-luuk",
+      "statusBefore": "probable",
+      "correction": "Sin cambio de forma; pasa a verificado.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra L (LODO)",
+          "url": "https://www.mayas.uady.mx/diccionario/l_esp.html"
+        }
+      ],
+      "evidence": "Búsqueda 27 (UADY): «LODO m: Luuk'»."
+    },
+    {
+      "m": "yóok'ol",
+      "es": "arriba; encima, sobre",
+      "status": "verificado",
+      "contentId": "u8-yookol",
+      "statusBefore": "probable",
+      "correction": "Sin cambio de forma; pasa a verificado. La UADY la da bajo ARRIBA; conviene añadir «arriba» a la glosa.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra A (ARRIBA)",
+          "url": "https://www.mayas.uady.mx/diccionario/a_esp.html"
+        }
+      ],
+      "evidence": "Búsqueda 28 (UADY): «ARRIBA: Ka'anal, yóok'ol». La UADY no tiene una entrada ENCIMA."
+    },
+    {
+      "m": "je'",
+      "es": "huevo",
+      "status": "verificado",
+      "contentId": "u6-je",
+      "statusBefore": "probable",
+      "correction": "Sin cambio de forma; pasa a verificado. La UADY da también e'el como sinónimo.",
+      "variants": [
+        "e'el (sinónimo, UADY)"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra H (HUEVO)",
+          "url": "https://www.mayas.uady.mx/diccionario/h_esp.html"
+        },
+        {
+          "title": "Aprendiendo Maya, Consonantes del alfabeto maya (registro de la base)",
+          "url": "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+        }
+      ],
+      "evidence": "Búsqueda 32 (UADY): «HUEVO m: Je', e'el»."
+    },
+    {
+      "m": "wi'ijech",
+      "es": "Tienes hambre.",
+      "status": "probable",
+      "contentId": "u6-wiijech",
+      "statusBefore": "sin registro en la base",
+      "correction": "Sin cambio de forma. La raíz wi'ij, 'hambre', está verificada en la UADY. La forma con -ech sale de la regla de los predicados de estado y no se vio escrita tal cual.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra H (HAMBRE)",
+          "url": "https://www.mayas.uady.mx/diccionario/h_esp.html"
+        }
+      ],
+      "evidence": "Búsqueda 32 (UADY): «HAMBRE f: Wi'ij, taakil janal»."
+    },
+    {
+      "m": "Ma' wi'ijeni'.",
+      "es": "No tengo hambre.",
+      "status": "probable",
+      "contentId": "u6-ma-wiijeni",
+      "statusBefore": "probable",
+      "correction": "Sin cambio. La raíz wi'ij quedó verificada (UADY); la forma negativa con -en + -i' se arma por regla.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra H (HAMBRE)",
+          "url": "https://www.mayas.uady.mx/diccionario/h_esp.html"
+        }
+      ],
+      "evidence": "Búsqueda 32 (UADY): «HAMBRE f: Wi'ij, taakil janal»."
+    },
+    {
+      "m": "a wotoch",
+      "es": "tu casa",
+      "status": "probable",
+      "contentId": "u3-a-wotoch",
+      "statusBefore": "sin registro en la base",
+      "correction": "Sin cambio de forma. otoch, 'casa', está verificado en la UADY. La forma poseída (a + w- ante vocal) se arma con la regla verificada y no se vio escrita tal cual. La UADY da también naj y taanaj para 'casa'.",
+      "variants": [
+        "otoch (sin poseer)"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra C (CASA)",
+          "url": "https://www.mayas.uady.mx/diccionario/c_esp.html"
+        }
+      ],
+      "evidence": "Búsqueda 33 (UADY): «CASA f: Naj, taanaj, otoch»."
+    },
+    {
+      "m": "bak'",
+      "es": "carne",
+      "status": "verificado",
+      "contentId": "u6-bak",
+      "statusBefore": "probable",
+      "correction": "Sin cambio de forma; pasa a verificado.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra C (CARNE)",
+          "url": "https://www.mayas.uady.mx/diccionario/c_esp.html"
+        },
+        {
+          "title": "Aprendiendo Maya, Consonantes del alfabeto maya (registro de la base)",
+          "url": "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+        }
+      ],
+      "evidence": "Búsqueda 33 (UADY): «CARNE f: Bak'»."
+    },
+    {
+      "m": "chokoj",
+      "es": "caliente; cálido",
+      "status": "verificado",
+      "contentId": "u6-chokoj",
+      "statusBefore": "probable",
+      "correction": "Sin cambio de forma; pasa a verificado.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra C (CALIENTE, CÁLIDO)",
+          "url": "https://www.mayas.uady.mx/diccionario/c_esp.html"
+        },
+        {
+          "title": "UADY, Literatura maya, cuento 19",
+          "url": "https://www.mayas.uady.mx/literatura/cuent19.html"
+        }
+      ],
+      "evidence": "Búsqueda 34 (UADY): «CALIENTE: chokoj» y chokoj también bajo CÁLIDO. Un texto literario de la UADY usa chokoj para el calor."
+    },
+    {
+      "m": "t'u'ul",
+      "es": "conejo",
+      "status": "verificado",
+      "contentId": "u8-tuul",
+      "statusBefore": "probable",
+      "correction": "Sin cambio de forma; pasa a verificado.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra C (CONEJO)",
+          "url": "https://www.mayas.uady.mx/diccionario/c_esp.html"
+        },
+        {
+          "title": "UADY, Literatura maya, cuento 19",
+          "url": "https://www.mayas.uady.mx/literatura/cuent19.html"
+        }
+      ],
+      "evidence": "Búsqueda 34 (UADY): «CONEJO m, zool: T'u'ul»; un texto literario de la UADY usa t'u'ul para el conejo."
+    },
+    {
+      "m": "Yaan wáaj ja'as?",
+      "es": "¿Hay plátano?",
+      "status": "probable",
+      "contentId": "u6-yaan-waaj-jaas",
+      "statusBefore": "sin registro en la base",
+      "correction": "Sin cambio. ja'as, 'plátano', quedó verificado en la UADY; la pregunta con wáaj se arma por regla (AnderBois, registro de la base).",
+      "variants": [],
+      "sources": [
+        {
+          "title": "UADY, Diccionario maya-español, letra J (JA'AS)",
+          "url": "https://www.mayas.uady.mx/diccionario/j_maya.html"
+        }
+      ],
+      "evidence": "Búsqueda 35 (UADY): «JA'AS: Plátano». No apareció ninguna entrada para PAGAR ni para bo'ot."
+    },
+    {
+      "m": "nool",
+      "es": "abuelo",
+      "status": "verificado",
+      "contentId": "u3-nool",
+      "statusBefore": "probable",
+      "correction": "Sin cambio de forma; pasa a verificado. En la misma entrada, la UADY da chiich para 'abuela'.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra A (ABUELO, A)",
+          "url": "https://www.mayas.uady.mx/diccionario/a_esp.html"
+        },
+        {
+          "title": "Aprendiendo Maya, Consonantes del alfabeto maya (registro de la base)",
+          "url": "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+        }
+      ],
+      "evidence": "Búsqueda 37 (UADY): «ABUELO, A m, f: (m) Nool, (f) chiich». No apareció una entrada APRENDER."
+    },
+    {
+      "m": "koonol",
+      "es": "vender; venta",
+      "status": "verificado",
+      "contentId": "u6-koonol",
+      "statusBefore": "probable",
+      "correction": "Sin cambio de forma; pasa a verificado.",
+      "variants": [
+        "kòonol (curso de la UADY)"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Diccionario maya-español, letra K",
+          "url": "https://www.mayas.uady.mx/diccionario/k_maya.html"
+        }
+      ],
+      "evidence": "Búsqueda 38 (UADY): la entrada KOONOL abarca 'venta', 'vender' y 'vendedor'."
+    },
+    {
+      "m": "kuxtal",
+      "es": "vida; vivir",
+      "status": "verificado",
+      "contentId": "u9-kuxtal",
+      "statusBefore": "probable",
+      "correction": "Sin cambio de forma; pasa a verificado.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "UADY, Diccionario maya-español, letra K",
+          "url": "https://www.mayas.uady.mx/diccionario/k_maya.html"
+        },
+        {
+          "title": "UADY, Curso de maya yucateco, lección 4.7",
+          "url": "https://www.mayas.uady.mx/curso_maya/lec4_7.html"
+        }
+      ],
+      "evidence": "Búsqueda 38: el diccionario de la UADY da kuxtal como 'vida, existencia', y el curso, como 'vivir; establecerse en un lugar'."
+    },
+    {
+      "m": "t'eel",
+      "es": "gallo",
+      "status": "verificado",
+      "contentId": "u6-teel",
+      "statusBefore": "probable",
+      "correction": "Sin cambio de forma; pasa a verificado. La UADY da también (j)t'eel, con el prefijo masculino.",
+      "variants": [
+        "jt'eel (con prefijo masculino)"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra G (GALLO)",
+          "url": "https://www.mayas.uady.mx/diccionario/g_esp.html"
+        },
+        {
+          "title": "Aprendiendo Maya, Consonantes del alfabeto maya (registro de la base)",
+          "url": "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+        }
+      ],
+      "evidence": "Búsqueda 39 (UADY): «GALLO m, zool: T'eel, (j)t'eel»."
+    },
+    {
+      "m": "tso'",
+      "es": "pavo macho, guajolote macho",
+      "status": "verificado",
+      "contentId": "u6-tso",
+      "statusBefore": "probable",
+      "correction": "La forma no cambia, pero hay que CORREGIR LA GLOSA: según la UADY, tso' es el pavo macho. El término general es úulum, la hembra es (x)tuux y el pavo de monte, kuuts. Cambiar la glosa a «pavo (macho), guajolote» y quitar de la nota «una sola fuente; por confirmar».",
+      "variants": [
+        "úulum (pavo, término general)",
+        "xtuux (hembra)",
+        "kuuts (pavo de monte)"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra P (PAVO, A)",
+          "url": "https://www.mayas.uady.mx/diccionario/p_esp.html"
+        },
+        {
+          "title": "Aprendiendo Maya, Consonantes del alfabeto maya (registro de la base)",
+          "url": "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+        }
+      ],
+      "evidence": "Búsqueda 40 (UADY): «PAVO, A m, f: Úulum, (m) tso', (f) (x)tuux, (de monte) kuuts». Búsqueda 39: no salió la entrada GUAJOLOTE."
+    },
+    {
+      "m": "junp'íit",
+      "es": "un poco, un poquito",
+      "status": "verificado",
+      "contentId": "u4-jumpiit",
+      "statusBefore": "probable",
+      "correction": "Sin cambio de forma; pasa a verificado. Lo dan con forma y significado dos fuentes independientes: el manual Junp'iit Maaya («A little bit of Maya») y La Lengua Maya de Yucatán. Omniglot da además «Chen jumpit» = «sí, un poco». El tono alto de p'íit lo confirma la UADY. La alternancia n/m (junp'íit ~ jump'íit) sigue como está en la app.",
+      "variants": [
+        "jump'íit",
+        "junp'iit (Junp'iit Maaya, sin tono)",
+        "jumpit (Omniglot)"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra P (PORCIÓN)",
+          "url": "https://www.mayas.uady.mx/diccionario/p_esp.html"
+        },
+        {
+          "title": "Junp'iit Maaya (Mújica 1995), sitio de Christian Lehmann (registro de la base)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        },
+        {
+          "title": "La Lengua Maya de Yucatán, Frases básicas (registro de la base)",
+          "url": "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+        },
+        {
+          "title": "Omniglot, Useful phrases in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/phrases/yucatec-maya.php"
+        }
+      ],
+      "evidence": "Búsqueda 40 (UADY): «PORCIÓN f: Ts'e'ets'ek, p'íit». Búsqueda 30: Omniglot, «Yes, a little: Chen jumpit». La UADY no tiene una entrada POCO."
+    },
+    {
+      "m": "k'eyem",
+      "es": "pozole (bebida de masa de maíz)",
+      "status": "verificado",
+      "contentId": "u6-keyem",
+      "statusBefore": "probable",
+      "correction": "Sin cambio de forma; pasa a verificado.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "UADY, Diccionario maya-español, letra K'",
+          "url": "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+        }
+      ],
+      "evidence": "Búsqueda 43 (UADY): «K'EYEM: Pozole, bebida que se prepara con masa de maíz cocido hasta reventar»."
+    },
+    {
+      "m": "xaak",
+      "es": "canasta",
+      "status": "verificado",
+      "contentId": "u6-xaak",
+      "statusBefore": "probable",
+      "correction": "Sin cambio de forma; pasa a verificado. Ojo: en la entrada CESTO, la misma página de la UADY escribe Xáak, con tono alto. Se mantiene xaak, que coincide con la entrada CANASTA y con Aprendiendo Maya. Sinónimo: xúuxak.",
+      "variants": [
+        "xáak (UADY, entrada CESTO)",
+        "xúuxak (sinónimo, UADY)"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra C (CANASTA, CESTO)",
+          "url": "https://www.mayas.uady.mx/diccionario/c_esp.html"
+        },
+        {
+          "title": "Aprendiendo Maya, Consonantes del alfabeto maya (registro de la base)",
+          "url": "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+        }
+      ],
+      "evidence": "Búsqueda 44 (UADY): «CANASTA: Xaak, xúuxak» y «CESTO m: Xáak, xúuxak»."
+    },
+    {
+      "m": "jalal",
+      "es": "carrizo",
+      "status": "verificado",
+      "contentId": "u8-jalal",
+      "statusBefore": "probable",
+      "correction": "Sin cambio de forma; pasa a verificado. La UADY la da también bajo CAÑA.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra C (CARRIZO)",
+          "url": "https://www.mayas.uady.mx/diccionario/c_esp.html"
+        }
+      ],
+      "evidence": "Búsqueda 44 (UADY): «CARRIZO m, bot: Jalal»."
+    },
+    {
+      "m": "k'u'",
+      "es": "nido",
+      "status": "verificado",
+      "contentId": "u8-ku",
+      "statusBefore": "probable",
+      "correction": "Sin cambio de forma; pasa a verificado.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra N (NIDO)",
+          "url": "https://www.mayas.uady.mx/diccionario/n_esp.html"
+        }
+      ],
+      "evidence": "Búsqueda 36 (UADY): «NIDO m: K'u'»."
+    },
+    {
+      "m": "juuj",
+      "es": "iguana",
+      "status": "verificado",
+      "contentId": "u8-juuj",
+      "statusBefore": "probable",
+      "correction": "Sin cambio de forma; pasa a verificado.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "UADY, Diccionario maya-español, letra J (JUUJ)",
+          "url": "https://www.mayas.uady.mx/diccionario/j_maya.html"
+        },
+        {
+          "title": "Aprendiendo Maya, Las vocales y sus reglas de uso (registro de la base)",
+          "url": "https://aprendiendomaya.com/escritura/vocales/las-vocales-y-sus-reglas-de-uso"
+        }
+      ],
+      "evidence": "Búsqueda 50 (UADY): «JUUJ: Iguana, iguano»."
+    },
+    {
+      "m": "táanil",
+      "es": "adelante, delante; antes, anterior",
+      "status": "verificado",
+      "contentId": "u8-taanil",
+      "statusBefore": "probable",
+      "correction": "La forma no cambia, pero hay que AJUSTAR LA GLOSA: la UADY da táanil para «anterior» y «antes», y máan táanil para «avanzar» (pasar adelante). Ninguna fuente lo da como «enfrente»: quitar «enfrente» de la glosa de u8-taanil.",
+      "variants": [
+        "táanij (UADY, bajo ANTES)"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra A (ANTERIOR, ANTES, AVANZAR)",
+          "url": "https://www.mayas.uady.mx/diccionario/a_esp.html"
+        }
+      ],
+      "evidence": "Búsqueda 48 (UADY): «ANTERIOR adj: Táanil», «ANTES adv: Táanil, táanij, yáax», «ADELANTAR v: Táanilkun», «AVANZAR v: Táanichajal, máan táanil». No hay entradas ADELANTE ni ENFRENTE."
+    },
+    {
+      "m": "Tin na'atik.",
+      "es": "Entiendo. (Ma' tin na'atik = No entiendo.)",
+      "status": "probable",
+      "contentId": "u5-kin-naatik",
+      "statusBefore": "sin registro en la base (en la app como «Kin na'atik.»)",
+      "correction": "CAMBIO PROPUESTO: Kin na'atik → Tin na'atik. La única fuente encontrada usa táan → tin para 'entiendo' (Omniglot: «Tene tin na'atik» = I understand; «Má tin naátik» = I don't understand). Kin na'atik, en habitual, no se vio en ninguna fuente. Ojo: la UADY da na'at como 'adivinar, atinar' y no tiene una entrada ENTENDER, así que el sentido 'entender' descansa en una sola fuente divulgativa.",
+      "variants": [
+        "Kin na'atik (forma actual de la app; no atestiguada)",
+        "Má tin naátik (Omniglot, grafía no normativa)"
+      ],
+      "sources": [
+        {
+          "title": "Omniglot, Useful phrases in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/phrases/yucatec-maya.php"
+        },
+        {
+          "title": "UADY, Diccionario español-maya, letra A (ADIVINAR, ATINAR)",
+          "url": "https://www.mayas.uady.mx/diccionario/a_esp.html"
+        }
+      ],
+      "evidence": "Búsqueda 30: Omniglot. Búsqueda 28 (UADY): «ADIVINAR v: Na'at», «ATINAR v: Tsaay; na'at». Búsqueda 29: Haviland titula una colección de adivinanzas «Na'at le ba'ala' paalen», sin glosa."
+    },
+    {
+      "m": "Beyxan teech.",
+      "es": "Igualmente. / A ti también.",
+      "status": "probable",
+      "contentId": "u3-beyxan-teech",
+      "statusBefore": "sin registro propio (beyxan probable; «Beyxan teen» verificado)",
+      "correction": "Sin cambio de forma. La UADY escribe «bey xan», en dos palabras, bajo TAMBIÉN. Junp'iit escribe beyxan junto. No se pudo confirmar qué hacen las Normas de 2014; mencionar bey xan como variante.",
+      "variants": [
+        "Bey xan teech (grafía separada, como la UADY)"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra T (TAMBIÉN)",
+          "url": "https://www.mayas.uady.mx/diccionario/t_esp.html"
+        },
+        {
+          "title": "Junp'iit Maaya, sitio de Christian Lehmann (registro de la base)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        }
+      ],
+      "evidence": "Búsqueda 26 (UADY): «TAMBIÉN adv: Bey, bey xan, láayli'e', léeyli'e'» (el extracto juntaba las formas). La base ya tenía «Beyxan teen» y «Beyxan teech» en Junp'iit."
+    },
+    {
+      "m": "Meent uts.",
+      "es": "Por favor (lit. haz el bien).",
+      "status": "probable",
+      "contentId": "u2-meent-uts",
+      "statusBefore": "probable",
+      "correction": "Sin cambio. Omniglot la da otra vez («Meent' uts», con un apóstrofo que no es normativo), pero Omniglot y Na'atik cuentan como una sola fuente. Sigue sin fuente académica.",
+      "variants": [
+        "Meent' uts (Omniglot)",
+        "Beet uts",
+        "Bet uts"
+      ],
+      "sources": [
+        {
+          "title": "Omniglot, Useful phrases in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/phrases/yucatec-maya.php"
+        }
+      ],
+      "evidence": "Búsqueda 30: Omniglot, «Please: Meent' uts»."
+    },
+    {
+      "m": "Ka t'aan wáaj ich maaya?",
+      "es": "¿Hablas maya?",
+      "status": "probable",
+      "contentId": "u5-ka-taan-waaj",
+      "statusBefore": "probable",
+      "correction": "Sin cambio. Omniglot no la usa: para «Do you speak Yucatec Maya?» da otra fórmula, «Teeche' a tsiikbal maaya?», con tsikbal, 'platicar'. La forma de la app sigue con una sola fuente (La Lengua Maya de Yucatán).",
+      "variants": [
+        "Teeche' a tsiikbal maaya? (Omniglot; otra construcción)"
+      ],
+      "sources": [
+        {
+          "title": "Omniglot, Useful phrases in Yucatec Maya",
+          "url": "https://www.omniglot.com/language/phrases/yucatec-maya.php"
+        },
+        {
+          "title": "La Lengua Maya de Yucatán, Frases básicas (registro de la base)",
+          "url": "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+        }
+      ],
+      "evidence": "Búsqueda 30: Omniglot, «Do you speak Yucatec Maya? → Teeche' a tsiikbal maaya?»."
+    },
+    {
+      "m": "Tu'ux a kaajal?",
+      "es": "¿De dónde eres? (lit. ¿dónde es tu pueblo?)",
+      "status": "probable",
+      "contentId": "u2-tuux-a-kaajal",
+      "statusBefore": "probable",
+      "correction": "Sin cambio. No se encontró en la UADY. Ojo: la UADY tiene káajal, con tono alto, como 'comenzar; comienzo', que es otra palabra. Vale la pena una nota para no confundir kaajal (pueblo) con káajal (comenzar).",
+      "variants": [
+        "Tu'ux a kajal? (Omniglot, registro de la base)"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra C (COMIENZO, COMENZAR)",
+          "url": "https://www.mayas.uady.mx/diccionario/c_esp.html"
+        }
+      ],
+      "evidence": "Búsqueda 49 (UADY): «COMIENZO m: Chúunpajal, káajal, léekel, jo'op'ol»; no apareció PUEBLO ni kaaj."
+    },
+    {
+      "m": "xi'ipal",
+      "es": "muchacho, joven",
+      "status": "probable",
+      "contentId": "u3-xiipal",
+      "statusBefore": "probable",
+      "correction": "Sin cambio. La UADY no la devolvió: solo X CH'ÚUPAL 'muchacha', XIIB 'varón' y X CH'UUP 'mujer'.",
+      "variants": [],
+      "sources": [
+        {
+          "title": "UADY, Diccionario maya-español, letra X",
+          "url": "https://www.mayas.uady.mx/diccionario/x_maya.html"
+        }
+      ],
+      "evidence": "Búsqueda 41 (UADY): «X CH'ÚUPAL: Muchacha»; no hay entrada para muchacho."
+    },
+    {
+      "m": "uláak'",
+      "es": "otro, otra",
+      "status": "probable",
+      "contentId": "u9-ulaak",
+      "statusBefore": "probable",
+      "correction": "Sin cambio, pero hay un conflicto de tono por resolver. Según el extracto, la UADY da «LAAK': Otro» con tono bajo, y LÁAK con tono alto para 'compañero, pariente'. En cambio, el INALI escribe uláak' en «Tak ti' uláak' k'iin». La pasada de cuerpo-familia había leído láak' 'otro' en la UADY: los extractos no coinciden. Mantener uláak' (INALI) hasta ver la página completa.",
+      "variants": [
+        "laak' (UADY, según el extracto de la búsqueda 42)"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Diccionario maya-español, letra L",
+          "url": "https://www.mayas.uady.mx/diccionario/l_maya.html"
+        },
+        {
+          "title": "INALI, Prontuario maya-español (registro de la base)",
+          "url": "https://arqueologiamexicana.mx/sites/default/files/banco_imagenes/prontuario_maya.pdf"
+        }
+      ],
+      "evidence": "Búsqueda 42 (UADY): «LAAK': Otro» y «LÁAK: Compañero, prójimo, pariente» (según el extracto)."
+    },
+    {
+      "m": "paalal",
+      "es": "niños, niñas",
+      "status": "probable",
+      "contentId": "u3-paalal",
+      "statusBefore": "probable",
+      "correction": "Sin cambio. El singular paal, 'niño, niña', quedó verificado en la UADY, que también da chaanpal / chan paal, 'nene'. El plural paalal sigue sin glosa explícita (solo aparece en el título del INALI «U páajtalil mejen paalal»).",
+      "variants": [
+        "paal (singular, UADY)"
+      ],
+      "sources": [
+        {
+          "title": "UADY, Diccionario español-maya, letra N (NIÑO, A)",
+          "url": "https://www.mayas.uady.mx/diccionario/n_esp.html"
+        }
+      ],
+      "evidence": "Búsqueda 36 (UADY): «NIÑO, A m, f: Paal» y «NENE, A m, f: Chaanpal, chan paal»."
+    }
+  ],
+  "notReached": {
+    "note": "Vocab con conf «media» (u1–u6, u8, u9) que no se buscó en esta pasada porque se agotó el tope de 50 búsquedas, ordenado de más a menos útil para un principiante. Su estado sigue siendo el de la base.",
+    "ids": [
+      "u5-taan-in-kanik-maaya (se buscó APRENDER en la UADY sin resultado)",
+      "u5-cheen-jumpiit-maaya",
+      "u2-mucho-gusto",
+      "u2-in-kaajale",
+      "u2-cheen-mixbaal",
+      "u2-ka-xiik-teex-utsil",
+      "u3-yaan-teen",
+      "u4-yaan-yaab-maak",
+      "u5-bul-kiin",
+      "u5-mixmaak",
+      "u5-ma-tin-bin-mixtuux",
+      "u6-koox-janal",
+      "u6-bootik (se buscó PAGAR en la UADY sin resultado)",
+      "u9-saamal-in-bin",
+      "u9-yaan-in-bin",
+      "u9-te-suutukila",
+      "u9-ma-tin-meyaj-te-suutukila",
+      "u9-janen",
+      "u9-meyajnajen",
+      "u9-tin-xokaj",
+      "u9-taant-in-janale",
+      "u9-biin-in-jaantej",
+      "u9-yuum-bootik-taalech",
+      "u9-ka-suunakech",
+      "u3-nojoch-maak",
+      "u3-u-pook-pedro",
+      "u1-taan-frente",
+      "u6-chak-iik",
+      "u8-chak-iik",
+      "u8-sak-bej",
+      "u9-paax"
+    ]
+  }
+}

@@ -1,0 +1,920 @@
+{
+  "group": "cuerpo-familia",
+  "searchesUsed": 40,
+  "date": "2026-10-25",
+  "method": "40 llamadas a WebSearch (tope estricto alcanzado). WebFetch falló (ENOTFOUND) en christianlehmann.eu y cephcis.unam.mx; no se insistió. El buscador devuelve resúmenes de fragmentos, no páginas completas: toda la evidencia es lo que mostraban esos fragmentos. Las páginas FAQ de clubmitsubishiasx.com reproducen entradas con el formato del diccionario en línea de la UADY (mayas.uady.mx, «CABEZA f: Pool, jo'ol»); se citan como «UADY vía reproducción no oficial»: cuentan como una sola fuente y no se dan por institucionales sin otra fuente que coincida. Las copias de sitios de documentos compartidos se citan sin url. Las frases armadas por regla nunca pasan de «probable» si no se vieron literalmente.",
+  "items": [
+    {
+      "m": "pool",
+      "es": "cabeza",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "pol"
+      ],
+      "correction": "Sin cambio de forma. Pasa de dudoso a verificado. PorEsto dice que pool también es la cabeza de cualquier animal (danza de la Cabeza de Cochino).",
+      "pr": "pool (o larga, tono bajo)",
+      "sources": [
+        {
+          "title": "Diccionario maya en línea de la UADY (mayas.uady.mx), entrada reproducida en clubmitsubishiasx.com «¿Cómo se dice en maya ojo?»",
+          "url": "https://www.clubmitsubishiasx.com/faq/como-se-dice-en-maya-ojo"
+        },
+        {
+          "title": "PorEsto, «Danza de la cabeza de cochino, reconocido sello del folclor peninsular» (2021)",
+          "url": "https://www.poresto.com/yucatan/2021/8/11/danza-de-la-cabeza-de-cochino-reconocido-sello-del-folclor-peninsular.amp.html"
+        },
+        {
+          "title": "Artículo de Redalyc sobre el rescate arqueológico de la cueva Pool Balam (Yucatán)",
+          "url": "https://www.redalyc.org/pdf/745/74516316005.pdf"
+        }
+      ],
+      "evidence": "UADY (reproducción): «CABEZA f: Pool, jo'ol». PorEsto: «pool (cabeza de cualquier animal)». Redalyc: el nombre de la cueva Pool Balam significa «cabeza de jaguar» en maya yucateco. Tres fuentes independientes, una de ellas académica (Redalyc)."
+    },
+    {
+      "m": "jo'ol",
+      "es": "cabeza (también el pelo de la cabeza, según Lehmann)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "ho'l",
+        "jo'l"
+      ],
+      "correction": "Sin cambio de forma. Pasa a verificado. Lehmann escribe ho'l. La normalización a jo'ol cambia h por j (regla segura) y repone la vocal rearticulada, que es la grafía plena que da la UADY.",
+      "pr": "jo'ol (j suave, corte glotal entre las dos o)",
+      "sources": [
+        {
+          "title": "Diccionario maya en línea de la UADY, reproducido en clubmitsubishiasx.com («CABEZA f: Pool, jo'ol»)",
+          "url": "https://www.clubmitsubishiasx.com/faq/como-se-dice-en-maya-ojo"
+        },
+        {
+          "title": "Christian Lehmann, Gramática del maya yucateco: «Partes del cuerpo» (clases de posesión)",
+          "url": "https://christianlehmann.eu/ling/sprachen/maya/gramatica/onomas/posesion/partes_cuerpo.html"
+        }
+      ],
+      "evidence": "UADY (reproducción): «CABEZA f: Pool, jo'ol». Lehmann (académica): «ho'l | cabeza | head; head hair». Dos fuentes independientes, una académica."
+    },
+    {
+      "m": "ich",
+      "es": "ojo; cara",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "Sin cambio. Pasa a verificado. Es homónimo de la preposición ich 'en, dentro de' (Ka t'aan wáaj ich maaya?); conviene decirlo en el curso.",
+      "pr": "ich",
+      "sources": [
+        {
+          "title": "Christian Lehmann, «Partes del cuerpo» (maya yucateco)",
+          "url": "https://christianlehmann.eu/ling/sprachen/maya/gramatica/onomas/posesion/partes_cuerpo.html"
+        }
+      ],
+      "evidence": "Lehmann (académica): «ich | ojo, cara | eye, face». Una fuente académica."
+    },
+    {
+      "m": "koj",
+      "es": "diente (también pico de ave)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "koh"
+      ],
+      "correction": "Sin cambio. Pasa a verificado. Las dos fuentes escriben koh; en 2014 se escribe koj (h por j, regla segura).",
+      "pr": "koj (j suave al final)",
+      "sources": [
+        {
+          "title": "Christian Lehmann, «Partes del cuerpo» (maya yucateco)",
+          "url": "https://christianlehmann.eu/ling/sprachen/maya/gramatica/onomas/posesion/partes_cuerpo.html"
+        },
+        {
+          "title": "Wiktionary (en), entrada «koh» (Yucatec Maya)",
+          "url": "https://en.wiktionary.org/wiki/koh"
+        }
+      ],
+      "evidence": "Lehmann: «hump'éel koh 'un diente'; in koh 'mi diente'». Wiktionary: Yucatec koh 'tooth; beak', del protomaya *kooh. Dos fuentes, una académica. Ejemplo normalizado: jump'éel koj 'un diente', in koj 'mi diente'."
+    },
+    {
+      "m": "tso'otsel",
+      "es": "cabello, pelo de la cabeza (forma poseída: in tso'otsel 'mi cabello')",
+      "status": "probable",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "tso'tsel",
+        "tso'ots"
+      ],
+      "correction": "Sube de dudoso a probable. Lehmann escribe «in tso'tsel» 'mi pelo'. La forma con la vocal rearticulada repuesta, tso'otsel, se dedujo por analogía con ho'l → jo'ol y con «tso'ots» (fuente de baja calidad); no la vi escrita literalmente. Conviene enseñarla poseída (in tso'otsel), que es como la atestigua Lehmann; -el es el sufijo de posesión inalienable.",
+      "pr": "tso'otsel (ts como en 'tsetsé', corte glotal)",
+      "sources": [
+        {
+          "title": "Christian Lehmann, «Partes del cuerpo» (maya yucateco)",
+          "url": "https://christianlehmann.eu/ling/sprachen/maya/gramatica/onomas/posesion/partes_cuerpo.html"
+        },
+        {
+          "title": "Vocabulario en clubmitsubishiasx.com «¿Cómo se dice pies en maya?» (baja calidad)",
+          "url": "https://www.clubmitsubishiasx.com/faq/como-se-dice-pies-en-maya"
+        }
+      ],
+      "evidence": "Lehmann (académica): «in tso'tsel» 'mi pelo'. Vocabulario en línea: «tso'ots: sustantivo; cabello». Wiktionary tiene un adjetivo tso'otsil en su lista de adjetivos yucatecos, pero el fragmento no daba su glosa."
+    },
+    {
+      "m": "puksi'ik'al",
+      "es": "corazón",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "puksi'ikal"
+      ],
+      "correction": "Sin cambio de forma. Pasa a verificado.",
+      "pr": "puk-si'-ik'-al (dos cortes glotales; la segunda k es glotalizada)",
+      "sources": [
+        {
+          "title": "SEP, Nueva Escuela Mexicana: «La diversidad del corazón en diferentes lenguas indígenas»",
+          "url": "https://nuevaescuelamexicana.sep.gob.mx/contenido/recurso/la-diversidad-del-corazon-en-diferentes-lenguas-indigenas/"
+        },
+        {
+          "title": "Diccionario de la UADY, reproducido en clubmitsubishiasx.com «¿Cómo se dice en maya corazón?»",
+          "url": "https://www.clubmitsubishiasx.com/faq/como-se-dice-en-maya-corazon"
+        },
+        {
+          "title": "México Desconocido, «Un cenote resguardado por un gigante de piedra» (cenote Puksi'ik'al, Kanxoc)",
+          "url": "https://www.mexicodesconocido.com.mx/cenote-puksiikal.html"
+        }
+      ],
+      "evidence": "SEP (institucional): «Puksi'ik'al (Maya)», junto a yolot (náhuatl). UADY (reproducción): «CORAZÓN m: Puksi'ik'al». México Desconocido: el cenote Puksi'ik'al de Kanxoc debe su nombre a la palabra maya para 'corazón' (escribe también puksi'ikal)."
+    },
+    {
+      "m": "k'i'ik'",
+      "es": "sangre",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "kʼiʼikʼ",
+        "k'i?k'",
+        "kik' (colonial)"
+      ],
+      "correction": "Sin cambio de forma. Pasa a verificado, con una reserva: una de las dos fuentes es un artículo de arXiv con una tesis no aceptada (origen austronesio), aunque su lista comparativa es estándar. Ojo: el resumen del buscador propuso «k'ik'» por error; las fuentes yucatecas muestran la vocal rearticulada.",
+      "pr": "k'i'ik' (k glotalizada al principio y al final, i cortada por un golpe de glotis)",
+      "sources": [
+        {
+          "title": "Wiktionary (en), «blood/translations» (Yucatec Maya) y «Category:Yucatec Maya nouns»",
+          "url": "https://en.wiktionary.org/wiki/blood/translations"
+        },
+        {
+          "title": "arXiv 1210.5321, lista comparativa de palabras mayas (tesis no aceptada; se usa solo por la lista)",
+          "url": "https://arxiv.org/pdf/1210.5321"
+        },
+        {
+          "title": "Revista Ciencia y Humanismo en la Salud (Facultad de Medicina, UADY): término maya colonial xekik para la fiebre amarilla",
+          "url": "https://revista.medicina.uady.mx/revista/index.php/cienciayhumanismo/article/view/109/216"
+        }
+      ],
+      "evidence": "Wiktionary: Yucatec Maya «kʼiʼikʼ» como traducción de blood; la palabra está en la categoría de sustantivos yucatecos. arXiv: «pMY *kik' / Yuc. k'i?k' / Itzaj k'ik' / Ch'ol ch'ich' 'blood'» (? = oclusión glotal, es decir, k'i'ik'). UADY (revista de medicina): «xekik (vómito de sangre)» como nombre colonial de la fiebre amarilla; confirma la raíz, pero no la grafía moderna."
+    },
+    {
+      "m": "kaal",
+      "es": "cuello",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "Cambia la glosa: quitar «garganta», que no se confirmó. Lehmann registra aparte k'o'ch 'papada; gaznate'.",
+      "pr": "kaal (a larga)",
+      "sources": [
+        {
+          "title": "Christian Lehmann, «Partes del cuerpo» (maya yucateco)",
+          "url": "https://christianlehmann.eu/ling/sprachen/maya/gramatica/onomas/posesion/partes_cuerpo.html"
+        }
+      ],
+      "evidence": "Lehmann (académica): «kaal | cuello | neck», en la clase de posesión inalienable. «k'o'ch | papada; gaznate | Adam's apple» aparece como otra entrada. Una fuente académica."
+    },
+    {
+      "m": "tséem",
+      "es": "pecho (tórax)",
+      "status": "dudoso",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "tsem",
+        "tseem"
+      ],
+      "correction": "Sigue dudoso: no enseñarlo. Lehmann escribe la palabra con vocal corta y sin tono («tsem | pecho | chest»), y él escribe la vocal larga doble (kaal), así que su forma contradice la vocal larga y el tono alto de tséem. Wikcionario y Glosbe traducen «pecho» por iim (seno, mama; ya verificado en las Normas). Si hace falta 'pecho' en el curso, falta confirmar tsem o tséem en Bricker et al. (1998) o en el Diccionario Maya Popular.",
+      "pr": "tsem (forma de Lehmann; sin confirmar)",
+      "sources": [
+        {
+          "title": "Christian Lehmann, «Partes del cuerpo» (maya yucateco)",
+          "url": "https://christianlehmann.eu/ling/sprachen/maya/gramatica/onomas/posesion/partes_cuerpo.html"
+        },
+        {
+          "title": "Wikcionario (es), «pecho» (traducción al maya yucateco)",
+          "url": "https://es.wiktionary.org/wiki/pecho"
+        },
+        {
+          "title": "Glosbe español-yucateco, «pecho»",
+          "url": "https://es.glosbe.com/es/yua/pecho"
+        }
+      ],
+      "evidence": "Fragmento de Lehmann (según el resumen del buscador): «tsem | pecho | chest», en la clase de posesión neutral. Wikcionario y Glosbe dan «iim» para 'pecho' y 'seno'. Ninguna fuente mostró tséem ni tseem."
+    },
+    {
+      "m": "nak'",
+      "es": "barriga, vientre, estómago",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [],
+      "correction": "Sin cambio de forma. Aparece una segunda fuente independiente (material didáctico con «yaj in nak'», 'me duele el estómago'), así que pasa a verificado, aunque ninguna de las dos fuentes es académica.",
+      "pr": "nak' (k glotalizada)",
+      "sources": [
+        {
+          "title": "Material didáctico de maya yucateco, titulado «Material» (sin url)"
+        },
+        {
+          "title": "Aprendiendo Maya (registro previo de la base: «nak' (barriga)»)"
+        }
+      ],
+      "evidence": "Material de un sitio de documentos compartidos: «tumen yaj in nak' (me duele el estómago)». Aprendiendo Maya (registrado en la base): «nak' (barriga)»."
+    },
+    {
+      "m": "k'iinam",
+      "es": "dolor",
+      "status": "probable",
+      "kbStatusBefore": "dudoso (como k'i'inam)",
+      "variants": [
+        "k'i'inam (sin fuente)",
+        "k’iinam"
+      ],
+      "correction": "Cambio de forma: la base tenía k'i'inam (rearticulada), que no apareció en ninguna de las 3 búsquedas. La única forma documentada es k'iinam (vocal larga): Wikcionario y Glosbe, que probablemente copia a Wikcionario, así que en la práctica es una sola fuente no académica. Falta confirmar la vocal (larga o rearticulada) en Bricker et al. o en el Diccionario Maya Popular. Hasta entonces, para 'me duele…' usar la construcción atestiguada con yaj (ver «Yaj in pool»).",
+      "pr": "k'iinam (k glotalizada, i larga)",
+      "sources": [
+        {
+          "title": "Wikcionario (es), «dolor» (traducciones al maya yucateco)",
+          "url": "https://es.wiktionary.org/wiki/dolor"
+        },
+        {
+          "title": "Glosbe español-yucateco, «dolor»",
+          "url": "https://es.glosbe.com/es/yua/dolor"
+        }
+      ],
+      "evidence": "Wikcionario «dolor»: «Maya yucateco: [1] kʼiinam; [1-2] yaj». Glosbe: «kʼiinam, k’iinam, yaaj are the top translations of 'dolor' into Yucateco». Las búsquedas de «k'i'inam» con «in pool», sola y con «maya» no dieron ningún resultado."
+    },
+    {
+      "m": "yaj",
+      "es": "dolor; doloroso; daño (también se usa en sentido emocional)",
+      "status": "probable",
+      "kbStatusBefore": "no estaba en la base",
+      "variants": [
+        "yaaj (Glosbe)"
+      ],
+      "correction": "Palabra nueva. Hay dos fuentes independientes no académicas, pero Glosbe la escribe yaaj (vocal larga), así que la longitud de la vocal está en conflicto leve: queda en probable.",
+      "pr": "yaj (j suave)",
+      "sources": [
+        {
+          "title": "Wikcionario (es), «yaj»",
+          "url": "https://es.wiktionary.org/wiki/yaj"
+        },
+        {
+          "title": "Wikcionario (es), «tsʼak yaj»",
+          "url": "https://es.wiktionary.org/wiki/ts%CA%BCak_yaj"
+        },
+        {
+          "title": "Material didáctico de maya yucateco, titulado «Material» (sin url)"
+        },
+        {
+          "title": "Glosbe español-yucateco, «dolor»",
+          "url": "https://es.glosbe.com/es/yua/dolor"
+        }
+      ],
+      "evidence": "Wikcionario: yaj, sustantivo, 'daño, dolor', del protomaya *ra7h ('doloroso, picante'); tsʼak yaj = ts'ak 'curar' + yaj 'dolor' ('médico, curandero'). Material de un sitio de documentos compartidos: «yaj in pool (me duele la cabeza)», «yaj in nak' (me duele el estómago)». Glosbe: «yaaj»."
+    },
+    {
+      "m": "Yaj in pool.",
+      "es": "Me duele la cabeza.",
+      "status": "probable",
+      "kbStatusBefore": "no estaba en la base (la base tenía «K'i'inam in pool.», dudoso)",
+      "variants": [
+        "Yaj in nak'. (Me duele el estómago.)"
+      ],
+      "correction": "Sustituye a «K'i'inam in pool.»: esta es la única construcción para 'me duele la cabeza' atestiguada en esta pasada. Patrón: yaj + in (juego A, 'mi') + parte del cuerpo.",
+      "pr": "yaj in pool",
+      "sources": [
+        {
+          "title": "Material didáctico de maya yucateco, titulado «Material» (sin url)"
+        },
+        {
+          "title": "Wikcionario (es), «yaj»",
+          "url": "https://es.wiktionary.org/wiki/yaj"
+        }
+      ],
+      "evidence": "Material de un sitio de documentos compartidos, literal: «tumen (porque) yaj in pool (me duele la cabeza), tumen yaj in nak' (me duele el estómago)». Piezas: yaj 'dolor' (Wikcionario), in 'mi' (juego A; Lehmann y Bolles, en la base) y pool 'cabeza' (verificado arriba). La frase solo aparece en una fuente no académica."
+    },
+    {
+      "m": "K'i'inam in pool.",
+      "es": "Me duele la cabeza.",
+      "status": "dudoso",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "K'iinam in pool."
+      ],
+      "correction": "No enseñarla. No se encontró ni la frase ni la forma k'i'inam. Usar «Yaj in pool.» (atestiguada) mientras no se confirme k'iinam o k'i'inam y su uso con posesivo.",
+      "pr": "—",
+      "sources": [],
+      "evidence": "Búsquedas: «k'i'inam in pool», «k'i'inam» maya y la frase con yaj o k'i'inam: ningún resultado yucateco."
+    },
+    {
+      "m": "chokwil",
+      "es": "fiebre, calentura",
+      "status": "dudoso",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "Sigue dudoso: no apareció en 3 búsquedas (sola, con «fiebre» y en Wikcionario/Glosbe). Wikcionario solo da k'áak' 'fuego', que no equivale a 'fiebre'. No enseñarla.",
+      "pr": "—",
+      "sources": [],
+      "evidence": "Ningún resultado de búsqueda contenía chokwil. Wikcionario tiene «jach chokoj k'iin» (chokoj 'caliente'), lo que hace verosímil una raíz chok-, pero no confirma chokwil 'fiebre'."
+    },
+    {
+      "m": "se'en",
+      "es": "tos",
+      "status": "dudoso",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "Sigue dudoso: no apareció en 3 búsquedas. La entrada «tos» de Wikcionario no tiene traducción al maya yucateco. No enseñarla.",
+      "pr": "—",
+      "sources": [],
+      "evidence": "Sin resultados."
+    },
+    {
+      "m": "xej",
+      "es": "vomitar; vómito",
+      "status": "dudoso",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "xe' (raíz colonial, por deducción)"
+      ],
+      "correction": "Sigue dudoso. La revista de medicina de la UADY cita el término colonial «xekik» ('vómito de sangre', fiebre amarilla), que apunta a una raíz xe- 'vomitar', pero la forma moderna normativa (xej, xe'ej o xe') no apareció. El buscador relacionó ch'iin con 'vomitar' a partir de la entrada «lanzar» de Wikcionario; es un error de lectura (ch'iin es 'arrojar, tirar'). No enseñarla.",
+      "pr": "—",
+      "sources": [
+        {
+          "title": "Revista Ciencia y Humanismo en la Salud (Facultad de Medicina, UADY)",
+          "url": "https://revista.medicina.uady.mx/revista/index.php/cienciayhumanismo/article/view/109/216"
+        }
+      ],
+      "evidence": "UADY: término maya colonial para la fiebre amarilla «xekik (vómito de sangre)». No hay entrada moderna."
+    },
+    {
+      "m": "toj óolal",
+      "es": "salud",
+      "status": "dudoso",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "tooj óolal",
+        "toj óol"
+      ],
+      "correction": "Sigue dudoso: no apareció en la búsqueda dirigida. Una página FAQ de baja calidad dice que «toj óol» alude a la salud, pero lo presenta como un estado de ánimo. Sigue sin resolverse si es toj o tooj (ver «Toj in wóol» en sonidos-conversacion). No enseñarla.",
+      "pr": "—",
+      "sources": [
+        {
+          "title": "clubmitsubishiasx.com, resultado de búsqueda sobre emociones en maya (baja calidad)"
+        }
+      ],
+      "evidence": "Ninguna fuente lexicográfica mostró toj óolal = salud."
+    },
+    {
+      "m": "kuxtal",
+      "es": "vida; vivir",
+      "status": "probable",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "Sin cambio de forma. Sube a probable: la forma está atestiguada en un texto académico en maya, pero la glosa 'vida' solo se vio explícita en una fuente no académica.",
+      "pr": "kush-tal (x = sh)",
+      "sources": [
+        {
+          "title": "Americanía (Universidad Pablo de Olavide), artículo con texto en maya yucateco sobre la vida y la muerte de los ancianos de Kanxoc",
+          "url": "https://upo.es/revistas/index.php/americania/article/download/2624/2088/8058"
+        },
+        {
+          "title": "Go Overseas, programa «Ichil le Kuxtal Maya: Journey to the Roots of Life & Culture»",
+          "url": "https://www.gooverseas.com/study-abroad/mexico/program/439524"
+        }
+      ],
+      "evidence": "Americanía usa kuxtal y kíimil en un pasaje yucateco sobre la vida y la muerte (glosa no visible en el fragmento). Go Overseas: título maya «Ichil le Kuxtal Maya» traducido como «Journey to the Roots of Life»."
+    },
+    {
+      "m": "kíimil",
+      "es": "morir (forma de cita del intransitivo; raíz kíim); muerte",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "kíim (raíz)",
+        "cimil (grafía colonial)"
+      ],
+      "correction": "Sin cambio de forma. Pasa a verificado: la forma kíimil aparece en un texto académico y el significado lo dan dos fuentes independientes (Wiktionary para la raíz y la grafía colonial de Chuchiak). El tono de kíim lo marca Wiktionary.",
+      "pr": "kíi-mil (i larga con tono alto)",
+      "sources": [
+        {
+          "title": "Wiktionary, entrada «kíim» (Yucatec Maya)",
+          "url": "https://www.wiktionary.com/wiki/kiim"
+        },
+        {
+          "title": "Americanía (Universidad Pablo de Olavide), texto en maya yucateco",
+          "url": "https://upo.es/revistas/index.php/americania/article/download/2624/2088/8058"
+        },
+        {
+          "title": "John F. Chuchiak, «Yaab Uih Yetel Maya Cimil» (conceptos yucatecos de la muerte, 1580-1660)"
+        }
+      ],
+      "evidence": "Wiktionary: «kíim (intransitive) to die», relacionado con kimen. Americanía: kíimil en contexto de muerte. Chuchiak: cimil, grafía colonial de 'muerte'."
+    },
+    {
+      "m": "jmeen",
+      "es": "curandero tradicional; sacerdote maya (j- es el prefijo masculino)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "j-meen",
+        "h-men",
+        "H-Men (Bolles)",
+        "plural maya jmeeno'ob (Yucatán Today: j-meno'ob)"
+      ],
+      "correction": "Sin cambio de forma. Pasa a verificado. Queda resuelta la duda de la base sobre la vocal larga: Yucatán Today escribe J-meen y la literatura antropológica escribe jmeen; h-men es la grafía antigua. Por el mismo patrón, el plural sería jmeeno'ob, pero Yucatán Today escribe «j-meno'ob» con vocal corta: el plural no está confirmado.",
+      "pr": "jmeen (j suave + 'meen', e larga)",
+      "sources": [
+        {
+          "title": "Yucatán Today, «The J-meenes or Maya medicine men»",
+          "url": "https://yucatantoday.com/en/blog/the-j-meenes-or-maya-medicine-men"
+        },
+        {
+          "title": "Frances Bolles, gramática del maya yucateco en FAMSI (sección sobre los chamanes)",
+          "url": "https://www.famsi.org/research/bolles/shamans/index.html"
+        },
+        {
+          "title": "Estudios de Cultura Maya (UNAM): artículo sobre especialistas rituales (jmeen, aj k'in en Tihosuco)",
+          "url": "https://revistas-filologicas.unam.mx/estudios-cultura-maya/index.php/ecm/article/download/1375/2055/9244"
+        }
+      ],
+      "evidence": "Yucatán Today: «The Maya word J-meen (or h-men, as the old spelling went) is pronounced very similar to the English word men»; plural maya «j-meno'ob», en español «j-meenes». Bolles: «H-Men» 'el que hace'; «H-Men Dzac» 'el que hace medicina' (dzac = ts'aak). Un estudio académico de los resultados (UNAM o Redalyc; el resumen no dejaba claro cuál de los dos) dice que en Tihosuco se usa aj k'in y que parte de la literatura equipara al jmeen con el chamán."
+    },
+    {
+      "m": "ts'aak",
+      "es": "medicina, remedio",
+      "status": "verificado",
+      "kbStatusBefore": "verificado",
+      "variants": [
+        "dzac (grafía antigua)"
+      ],
+      "correction": "Sin cambio. Lo confirman dos fuentes más: el título del manual del Indemaya y Bolles («H-Men Dzac»).",
+      "pr": "ts'aak (ts glotalizada, a larga)",
+      "sources": [
+        {
+          "title": "INEA (registro previo de la base: «Ts'aak (medicina)»)"
+        },
+        {
+          "title": "Posta, «Presentan manual de frases médicas en lengua maya»",
+          "url": "https://www.posta.com.mx/yucatan/presentan-manual-de-frases-medicas-en-lengua-maya/vl2163920"
+        },
+        {
+          "title": "Frances Bolles en FAMSI",
+          "url": "https://www.famsi.org/research/bolles/shamans/index.html"
+        }
+      ],
+      "evidence": "Título del Indemaya: «U áanalte'il u tsikbalil ts'aak – Manual de frases médicas». Bolles: «H-Men Dzac» 'el que hace medicina'."
+    },
+    {
+      "m": "U áanalte'il u tsikbalil ts'aak",
+      "es": "«Manual de frases médicas» (título de la obra de Felipe de Jesús Castillo Tzec, Indemaya y Conalep Yucatán)",
+      "status": "verificado",
+      "kbStatusBefore": "no estaba en la base",
+      "variants": [],
+      "correction": "Nueva referencia. Sirve para una nota cultural o para la bibliografía, no como frase de vocabulario. No pude ver el contenido del manual. Literalmente: «el libro de la plática de la medicina» (deducido: áanalte' 'libro', tsikbal 'plática', ts'aak 'medicina').",
+      "pr": "u áanalte'il u tsikbalil ts'aak",
+      "sources": [
+        {
+          "title": "Posta, «Presentan manual de frases médicas en lengua maya»",
+          "url": "https://www.posta.com.mx/yucatan/presentan-manual-de-frases-medicas-en-lengua-maya/vl2163920"
+        }
+      ],
+      "evidence": "Posta: el libro «U áanalte'il u tsikbalil ts'aak – Manual de frases médicas», de Felipe de Jesús Castillo Tzec, lo impulsaron el Indemaya y el Conalep Yucatán. Reúne frases médicas en maya para la entrevista clínica en medicina general, enfermería, psicología, odontología y trabajo social."
+    },
+    {
+      "m": "k'oja'an",
+      "es": "enfermo, enferma",
+      "status": "verificado",
+      "kbStatusBefore": "verificado",
+      "variants": [
+        "k'oha'an"
+      ],
+      "correction": "Sin cambio; no se re-buscó (ya verificado con la UADY).",
+      "pr": "k'o-ja'-an",
+      "sources": [
+        {
+          "title": "UADY, diccionario español-maya (registro previo de la base)"
+        }
+      ],
+      "evidence": "Base: «K'OJA'AN: Enfermo, falto de salud» (UADY)."
+    },
+    {
+      "m": "K'oja'anech wáaj?",
+      "es": "¿Estás enfermo / enferma?",
+      "status": "probable",
+      "kbStatusBefore": "no estaba en la base",
+      "variants": [],
+      "correction": "Frase armada por regla; la búsqueda literal de «k'oja'anech» no dio ningún resultado. Piezas: k'oja'an (UADY, verificado) + -ech (juego B, 2.ª persona singular, sufijado al adjetivo, como en K'oja'anen, atestiguado) + wáaj (partícula de pregunta de sí o no; AnderBois). Cada pieza está documentada, pero la frase no se vio.",
+      "pr": "k'o-ja'-a-nech wáaj",
+      "sources": [
+        {
+          "title": "UADY (k'oja'an), Yoshida (juego B sufijado a adjetivos), INALI («taalech»), AnderBois 2018 (wáaj): registros previos de la base"
+        }
+      ],
+      "evidence": "K'oja'anen 'estoy enfermo' está atestiguado (Heraldo de México, Yucatán Today: en la base). -ech, 2.ª sg del juego B: INALI «Yuum bo'otik taalech…». wáaj tras el predicado: «Ka t'aan wáaj ich maaya?» (en la base)."
+    },
+    {
+      "m": "Ma' k'oja'aneni'.",
+      "es": "No estoy enfermo / enferma.",
+      "status": "probable",
+      "kbStatusBefore": "no estaba en la base",
+      "variants": [
+        "Ma' k'oja'anen. (sin -i', habla del noroeste según Bolles)"
+      ],
+      "correction": "Frase armada por regla. Negación discontinua ma' … -i' (Lehmann; Bolles: -i' a menudo opcional) aplicada a k'oja'an-en. El patrón con predicado adjetival y juego B está atestiguado literalmente en «Ma' wi'ijeni'» ('no tengo hambre').",
+      "pr": "ma' k'o-ja'-a-ne-ni'",
+      "sources": [
+        {
+          "title": "Lehmann (ma' … -i'), Bolles (-i' opcional), Parry/Andrade («Ma' wi'ijeni' ts'o'ok in janal»): registros previos de la base"
+        }
+      ],
+      "evidence": "Piezas y regla documentadas en la base de gramática; la frase completa no se buscó por separado, para ahorrar presupuesto."
+    },
+    {
+      "m": "Ts'o'ok a janal?",
+      "es": "¿Ya comiste?",
+      "status": "probable",
+      "kbStatusBefore": "no estaba en la base",
+      "variants": [
+        "Ts'o'ok wáaj a janal? (tampoco atestiguada)"
+      ],
+      "correction": "Frase armada por regla; la búsqueda literal no dio resultados. ts'o'ok + juego A + verbo intransitivo en forma incompletiva (Yoshida), como en «Ts'o'ok in janal» 'ya comí' (atestiguada). Que la pregunta se haga solo con la entonación, sin wáaj, no está confirmado.",
+      "pr": "ts'o'ok a ja-nal",
+      "sources": [
+        {
+          "title": "Yoshida (ts'o'ok + forma incompletiva), Parry («Ts'o'ok in janal» / «Ts'in janal»), INEA y Wiktionary (janal): registros previos de la base"
+        }
+      ],
+      "evidence": "Búsqueda «ts'o'ok a janal» OR «ts'o'ok wáaj a janal»: solo salió Janal Pixán y textos de cocina; ninguna frase."
+    },
+    {
+      "m": "Yaan wáaj ts'aak?",
+      "es": "¿Hay medicina?",
+      "status": "probable",
+      "kbStatusBefore": "no estaba en la base",
+      "variants": [],
+      "correction": "Frase armada por regla: yaan 'haber, existir' (UADY) + wáaj (pregunta de sí o no) + ts'aak 'medicina' (INEA). wáaj va tras el primer elemento del predicado, como en «Ka t'aan wáaj ich maaya?». No se vio literalmente.",
+      "pr": "yaan wáaj ts'aak",
+      "sources": [
+        {
+          "title": "UADY (yaan), INEA (ts'aak), AnderBois 2018 (wáaj): registros previos de la base"
+        }
+      ],
+      "evidence": "Piezas documentadas en la base; no hay atestiguación de la frase."
+    },
+    {
+      "m": "yuum",
+      "es": "padre, papá; señor, dueño",
+      "status": "verificado",
+      "kbStatusBefore": "verificado",
+      "variants": [],
+      "correction": "Sin cambio. Es la forma recomendada para 'papá' en el curso, mientras taata siga sin fuente.",
+      "pr": "yuum (u larga)",
+      "sources": [
+        {
+          "title": "Posta, «¿Por qué en Yucatán les dicen chichi a las abuelas?»",
+          "url": "https://www.posta.com.mx/yucatan/por-que-en-yucatan-les-dicen-chichi-a-las-abuelas/vl2245398"
+        },
+        {
+          "title": "México Desconocido, «Cómo se dice papá en 17 lenguas indígenas de México»",
+          "url": "https://www.mexicodesconocido.com.mx/como-se-dice-papa-lenguas-indigenas-mexico.html"
+        },
+        {
+          "title": "UADY (registro previo de la base: «YUUM: Padre, señor, amo»)"
+        }
+      ],
+      "evidence": "Posta: «Yuum: papá», «Na': mamá». México Desconocido da Yuum para el maya, y tata para otras lenguas (náhuatl de la Huasteca, mazahua)."
+    },
+    {
+      "m": "taata",
+      "es": "papá",
+      "status": "dudoso",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "taataj",
+        "tàatah"
+      ],
+      "correction": "Sigue dudoso tras 2 búsquedas (taata / in taata; taataj / tàatah / tatah): ninguna fuente yucateca lo registra. Las dos fuentes que dan 'papá' en maya (Posta, México Desconocido) dan yuum. Tampoco se resolvió si es taata o taataj. No enseñarla; usar yuum.",
+      "pr": "—",
+      "sources": [
+        {
+          "title": "Posta (Yuum: papá)",
+          "url": "https://www.posta.com.mx/yucatan/por-que-en-yucatan-les-dicen-chichi-a-las-abuelas/vl2245398"
+        },
+        {
+          "title": "México Desconocido (papá en lenguas indígenas)",
+          "url": "https://www.mexicodesconocido.com.mx/como-se-dice-papa-lenguas-indigenas-mexico.html"
+        }
+      ],
+      "evidence": "La única fuente previa es el curso «Idioma Maya Yucateco», que escribe «tàatah». No apareció en esta pasada."
+    },
+    {
+      "m": "na'",
+      "es": "madre, mamá",
+      "status": "verificado",
+      "kbStatusBefore": "verificado",
+      "variants": [],
+      "correction": "Sin cambio. Lo confirma una fuente más (Posta).",
+      "pr": "na' (corte glotal al final)",
+      "sources": [
+        {
+          "title": "Posta, «¿Por qué en Yucatán les dicen chichi a las abuelas?»",
+          "url": "https://www.posta.com.mx/yucatan/por-que-en-yucatan-les-dicen-chichi-a-las-abuelas/vl2245398"
+        }
+      ],
+      "evidence": "Posta: «Na': mamá». UADY (en la base): «NA': Madre»."
+    },
+    {
+      "m": "kiik",
+      "es": "hermana mayor",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "kik (itzá)"
+      ],
+      "correction": "Sin cambio de forma. Pasa a verificado.",
+      "pr": "kiik (i larga)",
+      "sources": [
+        {
+          "title": "Wikcionario (es), «kiik» y «íitsʼin» (maya yucateco)",
+          "url": "https://es.wiktionary.org/wiki/kiik"
+        },
+        {
+          "title": "Excélsior, «Mara Lezama, primera mujer nombrada Nojoch Kiik (hermana mayor) por generales mayas»",
+          "url": "https://www.excelsior.com.mx/nacional/mara-lezama-primera-mujer-nombrada-nojoch-kiik-hermana-mayor-por-generales-mayas/1508782"
+        },
+        {
+          "title": "clubmitsubishiasx.com, «¿Cómo se dice hermana en maya?» (reproducción tipo diccionario)",
+          "url": "https://www.clubmitsubishiasx.com/faq/como-se-dice-hermana-en-maya"
+        }
+      ],
+      "evidence": "Wikcionario: kiik es antónimo de íits'in, junto con suku'un, y aparece entre las traducciones de «hermano». Excélsior: «Nojoch Kiik (hermana mayor)», título dado por los generales mayas de Quintana Roo. Página tipo diccionario: «Kiik» para la hermana mayor."
+    },
+    {
+      "m": "íits'in",
+      "es": "hermano menor, hermana menor",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "íts'in"
+      ],
+      "correction": "Sin cambio de forma. Pasa a verificado. Una página de baja calidad escribe «Íts'in: hermanito», sin la vocal larga; prevalece Wikcionario, que cita a Bastarrachea y Briceño (1992).",
+      "pr": "íits'in (i larga con tono alto; ts glotalizada)",
+      "sources": [
+        {
+          "title": "Wikcionario (es), «íitsʼin» (cita a Bastarrachea y Briceño, Diccionario básico español-maya-español, 1992)",
+          "url": "https://es.wiktionary.org/wiki/%C3%ADits%CA%BCin"
+        },
+        {
+          "title": "clubmitsubishiasx.com, «¿Cómo se escribe hermanita en maya?»",
+          "url": "https://www.clubmitsubishiasx.com/faq/como-se-escribe-hermanita-en-maya"
+        }
+      ],
+      "evidence": "Wikcionario: «Parentesco; hermano menor, hermana menor. Antónimos: kiik, sukuʼun. Hiperónimo: láakʼ». FAQ: «Íts'in: hermanito»."
+    },
+    {
+      "m": "suku'un",
+      "es": "hermano mayor",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [
+        "plural suku'uno'ob"
+      ],
+      "correction": "Sin cambio de forma. Pasa a verificado. Plural según Wikcionario: suku'uno'ob.",
+      "pr": "su-ku'-un",
+      "sources": [
+        {
+          "title": "Wikcionario (es), «sukuʼun»",
+          "url": "https://es.wiktionary.org/wiki/suku%CA%BCun"
+        },
+        {
+          "title": "Wiktionary (en), «brother/translations»",
+          "url": "https://en.wiktionary.org/wiki/brother/translations"
+        },
+        {
+          "title": "Living Dictionaries, itzá: «Suku'un intat» (cognado en una lengua hermana)",
+          "url": "https://livingdictionaries.app/itza/entry/6eEALAEP1joFAWkF88KV"
+        },
+        {
+          "title": "Blair y Vermont-Salas, Spoken Yucatec Maya, lección 1 (registro previo de la base: glosa 'elder.brother')"
+        }
+      ],
+      "evidence": "Wikcionario: «Parentesco: Hermano mayor», plural sukuʼunoʼob. Wiktionary (en) lo da como 'elder brother' en las traducciones de brother. En itzá y mopán, suku'un es 'hermano mayor' (cognado, no es una fuente yucateca)."
+    },
+    {
+      "m": "paal",
+      "es": "niño, niña; hijo, hija (con posesivo)",
+      "status": "verificado",
+      "kbStatusBefore": "probable",
+      "variants": [
+        "paalen (vocativo, en Haviland)"
+      ],
+      "correction": "Sin cambio de forma. Pasa a verificado gracias a Haviland (académico) y a una segunda fuente divulgativa. La acepción 'hijo' con posesivo sigue sin verse.",
+      "pr": "paal (a larga)",
+      "sources": [
+        {
+          "title": "John B. Haviland, «Na'at le ba'ala' paalen: Adivina esta cosa, niño» (adivinanzas mayas, UCSD)",
+          "url": "https://pages.ucsd.edu/~jhaviland/Publications/AdivinanzasMayas.pdf"
+        },
+        {
+          "title": "clubmitsubishiasx.com, «¿Cómo se llama el niño en maya?»",
+          "url": "https://www.clubmitsubishiasx.com/faq/como-se-llama-el-nino-en-maya"
+        },
+        {
+          "title": "Aprendiendo Maya (registro previo de la base: «paal (niño)»)"
+        }
+      ],
+      "evidence": "Haviland: título traducido «Adivina esta cosa niño» (paalen, vocativo). FAQ: «niño se dice 'paal'», también ts'iiris para los pequeños. Gobierno de Yucatán: campamento «Baaxal Paal» para niños de 6 a 12 años (PorEsto)."
+    },
+    {
+      "m": "paalal",
+      "es": "niños, niñas (plural colectivo)",
+      "status": "probable",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "mejen paalal (niños pequeños)"
+      ],
+      "correction": "Sin cambio de forma. Sube a probable: la forma aparece en el título de una publicación institucional, pero la glosa 'niños' se deduce del contexto (paal 'niño'); no la vi glosada.",
+      "pr": "paa-lal",
+      "sources": [
+        {
+          "title": "Catálogo de la Biblioteca FAHHO: «U páajtalil mejen paalal» (INALI y CNDH, 2009)",
+          "url": "https://baul.fahho.mx/Record/37178/Channels"
+        }
+      ],
+      "evidence": "Título institucional del INALI y la CNDH (2009): «U páajtalil mejen paalal» (en el catálogo la lengua figura como «malayo», por error). Previsiblemente 'Los derechos de los niños pequeños', pero esa traducción no apareció en el fragmento."
+    },
+    {
+      "m": "láak'",
+      "es": "pariente; compañero (también 'otro', según la UADY, con otra vocal)",
+      "status": "probable",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "láak (UADY)",
+        "la'ak, laak'sil (lista de parentesco)",
+        "láak'tsil (sin fuente)"
+      ],
+      "correction": "Sube a probable. Ahora la k' final la respaldan Wikcionario (láakʼ, hiperónimo de íits'in en el campo del parentesco) y Aprendiendo Maya, frente a «LÁAK» de la UADY. La glosa 'pariente' sigue sin verse explícita en una fuente académica. Forma recomendada: láak'.",
+      "pr": "láak' (a larga con tono alto, k glotalizada)",
+      "sources": [
+        {
+          "title": "Wikcionario (es), «íitsʼin» (hiperónimo: láakʼ)",
+          "url": "https://es.wiktionary.org/wiki/%C3%ADits%CA%BCin"
+        },
+        {
+          "title": "Lista de términos de parentesco en maya (sin url)"
+        },
+        {
+          "title": "Aprendiendo Maya y UADY (registros previos de la base)"
+        }
+      ],
+      "evidence": "Wikcionario: «Hiperónimo: láakʼ» en la entrada íits'in (parentesco). Lista de un sitio de documentos compartidos: «La'ak, laak'sil: pariente». Base: Aprendiendo Maya «láak' (pariente)»; UADY «LÁAK: compañero, pariente», «LAAK': otro»."
+    },
+    {
+      "m": "ko'olel",
+      "es": "señora, mujer adulta (casada o con hijos)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [],
+      "correction": "Sin cambio de forma. Pasa a verificado. Glosa más precisa: 'señora; mujer adulta, casada o con hijos', no 'mujer' en general (para 'mujer, hembra' existe x ch'uup).",
+      "pr": "ko'o-lel",
+      "sources": [
+        {
+          "title": "Diccionario de la UADY reproducido en páginas FAQ de clubmitsubishiasx.com (p. ej. «¿Cómo se dice mujer fuerte en maya?»)",
+          "url": "https://www.clubmitsubishiasx.com/faq/como-se-dice-mujer-fuerte-en-maya"
+        },
+        {
+          "title": "Gobierno del Estado de Yucatán, Letra del Himno de Yucatán (versión en maya)",
+          "url": "https://www.yucatan.gob.mx/simbolosyucatecos/files/1.%20Letras%20del%20Himno%20(Espa%C3%B1ol%20y%20maya)/LETRA%20DEL%20HIMNO%20DE%20YUCAT%C3%81N%20(V.%20MAYA).pdf"
+        }
+      ],
+      "evidence": "Reproducción de la UADY: «KO'OLEL: Señora, mujer casada o con hijos»; «DAMA f: Xunáan, ko'olel». Himno de Yucatán en maya (institucional): la grafía ko'olel aparece en la tercera estrofa, sin traducción. El significado viene de una sola fuente (UADY vía reproducción); la grafía, de dos."
+    },
+    {
+      "m": "xi'ipal",
+      "es": "muchacho, joven",
+      "status": "probable",
+      "kbStatusBefore": "dudoso (como xiipal)",
+      "variants": [
+        "xiipal (forma anterior de la base, sin fuente)"
+      ],
+      "correction": "Cambio de forma: xiipal pasa a xi'ipal (vocal rearticulada). La única fuente encontrada escribe xi'ipal, y coincide con la nota del verificador anterior (referencia Bricker et al. 1998). Es una sola fuente no académica, así que queda en probable. Alternativa: táankelem 'joven, adolescente, muchacho' (UADY vía reproducción, una fuente).",
+      "pr": "shi'i-pal (x = sh, i cortada)",
+      "sources": [
+        {
+          "title": "Material didáctico de maya yucateco, titulado «Material» (sin url)"
+        }
+      ],
+      "evidence": "Material de un sitio de documentos compartidos: «xi'ipal (muchacho)», en pareja con «ch'úupal (muchacha)». Las búsquedas de xiipal no dieron resultados."
+    },
+    {
+      "m": "ch'úupal",
+      "es": "muchacha, joven (mujer)",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "x ch'úupal",
+        "xch'úupal"
+      ],
+      "correction": "Sin cambio de forma. Pasa a verificado. La UADY la registra con el prefijo femenino x-: «X CH'ÚUPAL». Se resuelve el aparente choque de tono con x ch'uup 'mujer': son entradas distintas en la UADY, ch'úupal con tono alto y ch'uup con tono bajo.",
+      "pr": "ch'úu-pal (u larga con tono alto)",
+      "sources": [
+        {
+          "title": "Diccionario de la UADY reproducido en clubmitsubishiasx.com (búsqueda «mujer, muchacha»)",
+          "url": "https://www.clubmitsubishiasx.com/faq/como-se-dice-mujer-fuerte-en-maya"
+        },
+        {
+          "title": "Material didáctico de maya yucateco, titulado «Material» (sin url)"
+        }
+      ],
+      "evidence": "UADY (reproducción): «X CH'ÚUPAL: Muchacha». Material de un sitio de documentos compartidos: «ch'úupal (muchacha)». Dos fuentes independientes con la misma grafía."
+    },
+    {
+      "m": "nojoch",
+      "es": "grande; mayor, principal",
+      "status": "verificado",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "nohoch (grafía antigua)",
+        "noj"
+      ],
+      "correction": "Sin cambio de forma. Pasa a verificado. nohoch se normaliza a nojoch cambiando h por j (regla segura).",
+      "pr": "no-joch",
+      "sources": [
+        {
+          "title": "clubmitsubishiasx.com, «¿Qué significa Nojoch?» (reproducción de la UADY)",
+          "url": "https://www.clubmitsubishiasx.com/faq/que-significa-nojoch"
+        },
+        {
+          "title": "Wikcionario (es), entrada nojoch (maya yucateco; url no mostrada en los resultados)"
+        },
+        {
+          "title": "INAH, página de la zona arqueológica de Cobá (Nohoch Mul; url no mostrada en los resultados)"
+        }
+      ],
+      "evidence": "UADY (reproducción): «NOJOCH: Cosa grande, mayor principal». Wikcionario: 'grande', sinónimos noj, nuuk. INAH: «nohoch mul» = «gran montículo». Excélsior: «Nojoch Kiik (hermana mayor)»."
+    },
+    {
+      "m": "nojoch máak",
+      "es": "persona mayor; adulto (persona importante)",
+      "status": "probable",
+      "kbStatusBefore": "dudoso",
+      "variants": [
+        "plural nojoch máako'ob"
+      ],
+      "correction": "Sube a probable. El plural nojoch máako'ob aparece en un texto académico en maya (Americanía) sobre los ancianos de Kanxoc; la glosa 'anciano' sale del contexto y de nojoch 'mayor', no se vio escrita. Mejor glosarla como 'persona mayor' que como 'anciano'.",
+      "pr": "no-joch máak (a larga con tono alto)",
+      "sources": [
+        {
+          "title": "Americanía (Universidad Pablo de Olavide), artículo con texto en maya yucateco",
+          "url": "https://upo.es/revistas/index.php/americania/article/download/2624/2088/8058"
+        },
+        {
+          "title": "clubmitsubishiasx.com, «¿Qué significa Nojoch?»",
+          "url": "https://www.clubmitsubishiasx.com/faq/que-significa-nojoch"
+        }
+      ],
+      "evidence": "Americanía: «nojoch máako'ob» en un título en maya sobre la enseñanza o la experiencia de los mayores (el resumen del buscador no dio la traducción). nojoch 'grande, mayor' (verificado arriba). máak 'persona' (diccionario introductorio, en la base)."
+    },
+    {
+      "m": "táankelem",
+      "es": "joven, adolescente, muchacho",
+      "status": "probable",
+      "kbStatusBefore": "no estaba en la base",
+      "variants": [],
+      "correction": "Palabra nueva, alternativa a xi'ipal. Una sola fuente (UADY vía reproducción).",
+      "pr": "táan-ke-lem",
+      "sources": [
+        {
+          "title": "Diccionario de la UADY reproducido en clubmitsubishiasx.com — la búsqueda devolvió varias páginas FAQ de este sitio y el resumen no precisó en cuál está la entrada; la url es la más probable",
+          "url": "https://www.clubmitsubishiasx.com/faq/como-se-dice-hombre-en-maya"
+        }
+      ],
+      "evidence": "«TÁANKELEM: Joven, adolescente, muchacho.»"
+    },
+    {
+      "m": "ts'ak yaj",
+      "es": "médico, curandero (lit. 'cura-dolor')",
+      "status": "probable",
+      "kbStatusBefore": "no estaba en la base",
+      "variants": [],
+      "correction": "Palabra nueva. Una sola fuente no académica (Wikcionario). Útil para la unidad de salud, junto a jmeen.",
+      "pr": "ts'ak yaj",
+      "sources": [
+        {
+          "title": "Wikcionario (es), «tsʼak yaj»",
+          "url": "https://es.wiktionary.org/wiki/ts%CA%BCak_yaj"
+        }
+      ],
+      "evidence": "Wikcionario: compuesto de tsʼak ('curar') y yaj ('dolor'), con el sentido de médico o curandero."
+    }
+  ]
+}

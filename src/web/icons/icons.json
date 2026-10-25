@@ -1,0 +1,32 @@
+{
+  "generator": "tools/icons.cjs",
+  "generatorSha256": "88e15d090d4aa6e4aa803539f32386763ecbe9de3e09fcc323a4069cb718173e",
+  "favicon": "favicon.svg",
+  "appleTouchIcon": "apple-touch-icon.png",
+  "icons": [
+    {
+      "file": "icon-192.png",
+      "size": 192,
+      "purpose": "any",
+      "manifest": true
+    },
+    {
+      "file": "icon-512.png",
+      "size": 512,
+      "purpose": "any",
+      "manifest": true
+    },
+    {
+      "file": "icon-maskable-512.png",
+      "size": 512,
+      "purpose": "maskable",
+      "manifest": true
+    },
+    {
+      "file": "apple-touch-icon.png",
+      "size": 180,
+      "purpose": "any",
+      "manifest": false
+    }
+  ]
+}

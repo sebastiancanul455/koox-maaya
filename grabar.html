@@ -4393,26 +4393,29 @@ window.COURSE_AUDIO = {"version":1,"entries":[]};
     groups.forEach(function (g) { g.home = g.items[0].unit; g.long = g.text.length > 18; });
   }
 
-  // Audio que ya tiene la app (window.COURSE_AUDIO): se marca como cubierto lo que tenga voz «nativo».
+  // Audio que ya tiene la app (window.COURSE_AUDIO). Como el motor, una palabra o frase tiene audio si alguna
+  // entrada dice el mismo texto, y una letra si alguna entrada la lista en «letters». Solo la voz de un
+  // hablante («nativo») la cubre: lo que solo tiene voz sintética sigue pendiente (la nativa la reemplaza).
   function markCovered() {
     var A = window.COURSE_AUDIO;
     var list = Array.isArray(A) ? A : (A && Array.isArray(A.entries)) ? A.entries : (A && typeof A === "object") ? Object.keys(A).map(function (k) { return A[k]; }) : [];
-    var nat = list.filter(function (e) { return e && e.kind === "nativo"; });
-    var byV = {}, byL = {};
-    nat.forEach(function (e) {
-      (Array.isArray(e.vocab) ? e.vocab : []).forEach(function (id) { (byV[id] = byV[id] || []).push(e); });
-      (Array.isArray(e.letters) ? e.letters : []).forEach(function (l) { (byL[l] = byL[l] || []).push(e); });
+    var idx = { nativo: { t: {}, l: {} }, sintetico: { t: {}, l: {} } };
+    list.forEach(function (e) {
+      var x = e && idx[e.kind];
+      if (!x) return;
+      if (e.text) (x.t[normText(e.text)] = x.t[normText(e.text)] || []).push(e);
+      (Array.isArray(e.letters) ? e.letters : []).forEach(function (l) { (x.l[l] = x.l[l] || []).push(e); });
     });
+    var hits = function (kind, it) { return (it.type === "letter" ? idx[kind].l[it.letter] : idx[kind].t[normText(it.text)]) || []; };
     groups.forEach(function (g) {
       var authors = {};
-      var all = g.items.every(function (it) {
-        var hits = it.type === "letter" ? (byL[it.letter] || [])
-          : (byV[it.id] || []).filter(function (e) { return normText(e.text) === normText(it.text); });
-        hits.forEach(function (e) { if (e.author) authors[e.author] = 1; });
-        return hits.length > 0;
+      g.covered = g.items.every(function (it) {
+        var h = hits("nativo", it);
+        h.forEach(function (e) { if (e.author) authors[e.author] = 1; });
+        return h.length > 0;
       });
-      g.covered = all;
       g.coveredBy = Object.keys(authors);
+      g.synth = !g.covered && g.items.some(function (it) { return hits("sintetico", it).length > 0; });
     });
   }
 
@@ -4797,6 +4800,7 @@ window.COURSE_AUDIO = {"version":1,"entries":[]};
       if (!$("#p-status").classList.contains("bad") && !$("#p-status").classList.contains("ok")) {
         setStatus(rec ? "Ya está grabada. Puedes escucharla o grabarla otra vez." :
           g && g.covered ? "Ya hay audio" + (g.coveredBy.length ? " de " + g.coveredBy.join(", ") : "") + ". Si quieres, graba tu versión." :
+          g && g.synth ? "Por ahora solo tiene una voz sintética; tu voz la reemplaza." :
           R.stream ? "Micrófono listo." : "", "");
       }
     }
@@ -5348,7 +5352,7 @@ window.COURSE_AUDIO = {"version":1,"entries":[]};
       }
       return -1;
     },
-    groupInfo: function (i) { var g = groups[i]; return g ? { gk: g.gk, text: g.text, home: g.home, covered: g.covered, items: g.items.map(function (it) { return { type: it.type, id: it.id, key: it.key }; }) } : null; }
+    groupInfo: function (i) { var g = groups[i]; return g ? { gk: g.gk, text: g.text, home: g.home, covered: g.covered, synth: g.synth, items: g.items.map(function (it) { return { type: it.type, id: it.id, key: it.key }; }) } : null; }
   };
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot); else boot();

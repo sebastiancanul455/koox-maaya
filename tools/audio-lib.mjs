@@ -37,7 +37,9 @@ export const LICENSES = {
   "CC BY-SA 2.5": { url: CC + "licenses/by-sa/2.5/deed.es" },
   "CC BY 2.5": { url: CC + "licenses/by/2.5/deed.es" },
   "CC BY-SA 2.0": { url: CC + "licenses/by-sa/2.0/deed.es" },
-  "CC BY 2.0": { url: CC + "licenses/by/2.0/deed.es" }
+  "CC BY 2.0": { url: CC + "licenses/by/2.0/deed.es" },
+  // Solo para la voz sintética MMS-TTS (modelo de Meta con licencia no comercial).
+  "CC BY-NC 4.0": { url: CC + "licenses/by-nc/4.0/deed.es" }
 };
 /** Las tres licencias que ofrece la página de grabación (grabar.html). */
 export const RECORDING_LICENSES = ["CC BY-SA 4.0", "CC BY 4.0", "CC0 1.0"];

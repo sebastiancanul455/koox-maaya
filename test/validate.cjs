@@ -427,7 +427,7 @@ function validateAudio(catalog) {
     }
   });
   if (sinUso.length) warnings.push(rel + ": " + sinUso.length + " " + (sinUso.length === 1 ? "audio no ilustra" : "audios no ilustran") +
-    " ninguna palabra ni letra y su texto no aparece en el curso, así que no sonarán: " + sinUso.slice(0, 5).join(", ") + (sinUso.length > 5 ? "…" : ""));
+    " ninguna palabra ni letra y su texto no aparece en el curso, así que no " + (sinUso.length === 1 ? "sonará" : "sonarán") + ": " + sinUso.slice(0, 5).join(", ") + (sinUso.length > 5 ? "…" : ""));
   const dir = path.join(base, "audio");
   const sueltos = fs.existsSync(dir) ? fs.readdirSync(dir).filter((f) => /\.mp3$/i.test(f) && !usados.has(f)) : [];
   if (sueltos.length) warnings.push(path.relative(ROOT, dir) + ": " + sueltos.length + " MP3 no están en el catálogo (no se publican): " + sueltos.slice(0, 5).join(", ") + (sueltos.length > 5 ? "…" : ""));

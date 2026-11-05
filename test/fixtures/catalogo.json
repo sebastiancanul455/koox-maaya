@@ -2,6 +2,23 @@
   "version": 1,
   "entries": [
     {
+      "key": "sint-u1-ja",
+      "file": "audio/sint-u1-ja.mp3",
+      "kind": "sintetico",
+      "text": "ja'",
+      "lang": "yua",
+      "vocab": [
+        "u1-ja"
+      ],
+      "letters": [],
+      "author": "Meta AI · MMS-TTS maya yucateco (prueba)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/deed.es",
+      "source": "https://example.org/mms-tts-yua-prueba",
+      "notes": "Voz sintética aproximada generada por IA (aquí, un tono de prueba): puede equivocarse en el tono, el saltillo y las glotalizadas.",
+      "durationMs": 1300
+    },
+    {
       "key": "u1-ja",
       "file": "audio/u1-ja.mp3",
       "kind": "nativo",
@@ -110,23 +127,6 @@
       "durationMs": 1500,
       "notes": "Voz sintética aproximada generada por IA (aquí, un tono de prueba): puede equivocarse en el tono, el saltillo y las glotalizadas.",
       "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/deed.es"
-    },
-    {
-      "key": "sint-u1-ja",
-      "file": "audio/sint-u1-ja.mp3",
-      "kind": "sintetico",
-      "text": "ja'",
-      "lang": "yua",
-      "vocab": [
-        "u1-ja"
-      ],
-      "letters": [],
-      "author": "Meta AI · MMS-TTS maya yucateco (prueba)",
-      "license": "CC BY-NC 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/deed.es",
-      "source": "https://example.org/mms-tts-yua-prueba",
-      "notes": "Voz sintética aproximada generada por IA (aquí, un tono de prueba): puede equivocarse en el tono, el saltillo y las glotalizadas.",
-      "durationMs": 1300
     },
     {
       "key": "sint-u2-maalob-kux-teech",

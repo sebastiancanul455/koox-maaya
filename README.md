@@ -147,7 +147,7 @@ proponer el ejercicio **«Escucha y elige»**. Sin audio todo funciona igual: no
 `{ "version": 1, "entries": [ … ] }`, y cada entrada apunta a `audio/<key>.mp3` (MP3 mono, 44.1 kHz,
 64 kbps; `key` en `[a-z0-9-]+`). Campos: `key`, `file`, `kind` (`nativo` = voz de un hablante,
 `fonema` = sonido aislado del Alfabeto Fonético Internacional, `sintetico` = voz sintética
-aproximada), `text` (lo que se oye), `lang` (`yua` o `und`), `ipa`, `vocab` (ids de palabras),
+aproximada, p. ej. Meta MMS-TTS), `text` (lo que se oye), `lang` (`yua` o `und`), `ipa`, `vocab` (ids de palabras),
 `letters` (letras de la guía), `speaker`, `region`, `author`, `license`, `licenseUrl`, `source`,
 `title`, `durationMs` y `notes`. `node test/validate.cjs` revisa que las keys no se repitan, que cada
 archivo exista y sea un MP3 mono de 44.1 kHz, que `vocab` y `letters` existan en el curso, que haya
@@ -165,22 +165,31 @@ están en [`revision/README.md` → «Grabar la pronunciación»](revision/READM
 (se prueba con `node test/grabar.cjs`).
 
 **Dónde suena.** El motor busca el audio de una palabra por su id (`vocab`) o por su forma maya, el de
-una letra por `letters`, y el de cualquier texto maya por su forma normalizada (minúsculas, apóstrofo
-recto, sin signos). Para palabras prefiere la voz nativa; para letras, el sonido de referencia. Cada
-botón dice su tipo («Voz nativa», «Sonido de referencia (AFI)», «Voz sintética»). «Escucha y elige»
-usa **solo voces nativas** (1 o 2 por lección y hasta 2 por repaso). En Perfil se puede apagar la
-reproducción automática y elegir la velocidad lenta (0.75, sin cambiar el tono).
+una letra por `letters`, y el de cualquier texto maya (ejemplos, líneas de diálogo, tarjetas) por su
+forma normalizada (minúsculas, apóstrofo recto, sin signos). Para cada elemento la prioridad es
+**nativo > fonema (solo letras y sonidos) > sintético**, sin importar el orden del catálogo ni la key:
+si una palabra tiene voz nativa, su voz sintética nunca aparece. En la guía, junto a la letra suena su
+sonido de referencia y junto al ejemplo, la palabra. Cada botón dice su tipo («Voz nativa», «Sonido de
+referencia (AFI)», «Voz sintética (aproximada)»; en línea, la sintética lleva «aprox.» y borde
+punteado), y la guía y Perfil explican que la voz sintética la genera una IA y puede equivocarse en el
+tono, el saltillo y las glotalizadas. «Escucha y elige» usa **solo voces nativas** (1 o 2 por lección y
+hasta 2 por repaso): con pocas grabaciones casi no aparece. En Perfil se puede apagar la reproducción
+automática, elegir la velocidad lenta (0.75, sin cambiar el tono) y apagar **«Usar voz sintética»**
+(entonces los audios sintéticos no se muestran ni suenan).
 
 **Límites del Artifact.** La página de claude.ai no puede pedir archivos a otro sitio, así que
 `node build.mjs` incrusta cada audio como `data:audio/mpeg;base64` hasta **6 MB** (lo que el audio
 agrega a la página; se cambia con `--audio-limit <MB>`, máximo 15). Si no cabe todo, entran primero los
-sonidos de referencia, luego las voces nativas y al final las sintéticas, y la consola dice cuáles
-quedaron fuera (siguen en el sitio web). En el sitio, el service worker guarda cada audio al
-escucharlo y, si todo el audio suma 8 MB o menos, lo descarga al instalar para que funcione sin conexión.
+sonidos de referencia, luego las voces nativas y al final las sintéticas (las de palabras que ya tienen
+voz nativa, al último), y la consola dice cuáles quedaron fuera (siguen en el sitio web). En el sitio,
+el service worker guarda cada audio al escucharlo y, si todo el audio suma 8 MB o menos, lo descarga al
+instalar (de 6 en 6) para que funcione sin conexión; con cientos de clips sintéticos que pasen de 8 MB,
+solo se guarda lo que se escucha.
 
 **Créditos.** Perfil → «Créditos de audio» muestra autor, hablante, licencia (con enlace) y fuente de
-cada audio, agrupados por autor y licencia. Publica solo audio con una licencia que lo permita
-(CC BY-SA, CC BY, CC0 o dominio público) y respeta la atribución que pida.
+cada audio, agrupados por autor y licencia; las voces sintéticas van en una sola entrada (modelo,
+licencia —CC BY-NC 4.0 en MMS-TTS— y enlace, con el número de audios). Publica solo audio con una
+licencia que lo permita y respeta la atribución que pida; CC BY-NC no permite uso comercial.
 
 **Para escuchar más.** `src/content/recursos.js` agrega a `window.COURSE_RESOURCES` enlaces externos
 (videos, pódcast, radio, sitios) con `id`, `title`, `url` (https), `kind`, `source`, `lang`, `units`,

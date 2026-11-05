@@ -256,6 +256,20 @@ function runSession() {
   }
   out.error = "demasiados pasos"; return out;
 }
+// Espera a que una condición asíncrona de la página se cumpla. (page.waitForFunction no espera las
+// promesas: una función async devuelve una promesa, que cuenta como verdadera, y termina enseguida.)
+function waitAsync(page, fn, arg, timeout) {
+  return page.evaluate(([src, a, ms]) => new Promise((resolve) => {
+    const f = new Function("return (" + src + ")")(), t0 = Date.now();
+    (async function poll() {
+      let ok = false;
+      try { ok = !!(await f(a)); } catch (e) { /* se reintenta */ }
+      if (ok) return resolve(true);
+      if (Date.now() - t0 > ms) return resolve(false);
+      setTimeout(poll, 200);
+    })();
+  }), [fn.toString(), arg, timeout]);
+}
 const swState = (page) => page.evaluate(async () => {
   const reg = await navigator.serviceWorker.getRegistration();
   return {
@@ -307,10 +321,11 @@ async function mainFlow(browser, srv, info) {
   check("Chromium lee el manifest sin errores", am.errors.length === 0 && /manifest\.webmanifest$/.test(am.url), am.errors.map((e) => e.message).join(" | "));
 
   log("\n▸ service worker");
-  await page.waitForFunction(async () => {
+  // Con cientos de audios para precargar, la instalación tarda unos segundos.
+  await waitAsync(page, async () => {
     const r = await navigator.serviceWorker.getRegistration();
     return !!(r && r.active && r.active.state === "activated");
-  }, null, { timeout: 15000, polling: 200 });
+  }, null, 30000);
   let sw = await swState(page);
   check("el service worker se activa con alcance " + BASE, sw.active === "activated" && sw.scope === URL_APP, JSON.stringify(sw));
   check("caché con la versión del contenido", sw.caches.includes("koox-maaya-" + v0), sw.caches.join(", "));
@@ -384,7 +399,7 @@ async function mainFlow(browser, srv, info) {
   await openLesson(page, lessons[0]);
   srv.bump = "c";
   await page.evaluate(() => navigator.serviceWorker.getRegistration().then((r) => r.update()));
-  await page.waitForFunction((n) => caches.keys().then((k) => k.includes(n)), "koox-maaya-" + v0 + "-c", { timeout: 15000, polling: 200 }).catch(() => {});
+  await waitAsync(page, (n) => caches.keys().then((k) => k.includes(n)), "koox-maaya-" + v0 + "-c", 15000);
   await page.waitForTimeout(400);
   const during = await page.evaluate(() => { const n = document.querySelector("#update-note"); return { screen: window.__koox.screen(), note: !!(n && !n.hidden && n.textContent) }; });
   check("durante una lección no interrumpe con el aviso", during.screen !== "home" && !during.note, JSON.stringify(during));

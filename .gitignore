@@ -25,9 +25,14 @@ build.local.json
 /ref/
 /release/
 
+# Descargas de tools/commons/fetch-pendientes.py (originales de Commons; se publican ya convertidos en audio/)
+/tools/commons/descargas/
+
 # Respuestas de los revisores: pueden traer datos personales
 revision/respuestas/
 
 # Sistema
+__pycache__/
+*.pyc
 .DS_Store
 Thumbs.db

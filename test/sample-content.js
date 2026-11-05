@@ -55,6 +55,7 @@
 
 window.COURSE.guide = {
   alphabet: [
+    { l: "a e i o u", desc: "vocales cortas, como en español", ex: { m: "lu'um", es: "tierra" } },
     { l: "x", desc: "suena como sh", ex: { m: "xiib", es: "hombre" } },
     { l: "j", desc: "j suave y aspirada", ex: { m: "ja'", es: "agua" } },
     { l: "k", desc: "siempre k; no se usan c ni q", ex: { m: "kaan", es: "serpiente" } },
@@ -78,7 +79,7 @@ window.COURSE.guide = {
       id: "u2l1", title: "¿Cómo estás?", goal: "Al terminar podrás saludar y responder a un saludo.",
       teach: [
         { kind: "culture", title: "Preguntar por el camino", html: "En maya no hay una palabra exacta para «hola». Se pregunta por el camino del otro: <span class=\"m\">Bix a beel?</span>" },
-        { kind: "text", html: "<span class=\"m\">beel</span> viene de <span class=\"m\">bej</span>, camino." }
+        { kind: "text", html: "<span class=\"m\">beel</span> viene de <span class=\"m\">bej</span>, camino. En <span class=\"m\">a beel</span>, <span class=\"m\">a</span> quiere decir «tu»." }
       ],
       vocab: [
         { id: "u2-bix-a-beel", m: "Bix a beel?", es: "¿Cómo estás?", note: "Literalmente: ¿cómo va tu camino?", conf: "alta" },

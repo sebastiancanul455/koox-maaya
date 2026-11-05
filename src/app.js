@@ -524,6 +524,8 @@
   var RANK = { nativo: 0, fonema: 1, sintetico: 2 };
   var SYNTH_NOTE = "La voz sintética (aproximada) la genera una inteligencia artificial: puede equivocarse en el tono, " +
     "el saltillo y las consonantes glotalizadas. Cuando hay grabaciones de hablantes, se usa la voz nativa en su lugar.";
+  // Atribución completa de cada audio (título, autor, licencia, página de origen y cambios), en el repositorio.
+  var CREDITS_URL = "https://github.com/sebastiancanul455/koox-maaya/blob/main/audio/CREDITOS.md";
   function audioSrc(file, hash) {
     if (/^data:audio\/(mpeg|mp3);base64,/.test(file)) return file;
     if (window.KOOX_STANDALONE === true && /^audio\/[a-z0-9-]+\.mp3$/.test(file)) return file + (/^[0-9a-f]{6,64}$/.test(hash) ? "?v=" + hash : "");
@@ -555,19 +557,51 @@
   function usable(a) { return !!a && !AU.failed[a.key] && (a.kind !== "sintetico" || state.settings.synth !== false); }
   function hasAudio() { return AU.list.some(usable); }
   function hasKind(k) { return AU.list.some(function (a) { return a.kind === k; }); }
-  // El mejor audio de una lista según RANK; con empate, el primero del catálogo.
-  function pickAudio(list) {
-    var best = null;
-    arr(list).forEach(function (a) { if (usable(a) && (!best || RANK[a.kind] < RANK[best.kind])) best = a; });
+  // El mejor audio de una lista según RANK (u otro orden); con empate, el primero del catálogo.
+  function pickAudio(list, rank) {
+    var r = rank || RANK, best = null;
+    arr(list).forEach(function (a) { if (usable(a) && (!best || r[a.kind] < r[best.kind])) best = a; });
     return best;
   }
   // Texto maya normalizado (minúsculas, apóstrofos unificados, sin signos): «Bix a beel?» = «bix a beel».
-  function audioForText(t) { return pickAudio(AU.byText[normalize(t)]); }
+  // Por texto nunca se ofrece un «fonema»: es el sonido aislado de una letra, no una palabra. Así los
+  // posesivos «a», «u» y «k» de la unidad 3 no suenan con la vocal o la consonante del AFI.
+  function textAudios(t) { return arr(AU.byText[normalize(t)]).filter(function (a) { return a.kind !== "fonema"; }); }
+  function audioForText(t) { return pickAudio(textAudios(t)); }
   function audioForVocab(id) {
     var v = COURSE.vocabById[id];
-    return pickAudio(arr(AU.byVocab[id]).concat(v ? arr(AU.byText[normalize(v.m)]) : []));
+    return pickAudio(arr(AU.byVocab[id]).concat(v ? textAudios(v.m) : []));
   }
-  function audioForLetter(l) { return pickAudio(AU.byLetter[str(l)]); }
+  // Letras de la guía: primero el sonido de referencia (AFI); si no hay, una grabación nativa que la ilustre.
+  var LETTER_RANK = { fonema: 0, nativo: 1, sintetico: 2 };
+  function audioForLetter(l) { return pickAudio(AU.byLetter[str(l)], LETTER_RANK); }
+  // Audio de una tarjeta de la guía de pronunciación:
+  //  · letters: el sonido de referencia de la letra; si no hay, una grabación nativa que la ilustre (que no
+  //    sea la del ejemplo). Una tarjeta con varias letras («a e i o u») da un botón por cada letra con
+  //    audio: el de la tarjeta cuyo texto es esa letra.
+  //  · ex: el mejor audio del ejemplo por su texto (nativo > sintético).
+  //  · more: grabaciones nativas de la letra que dicen otra palabra (p. ej. de Wikimedia Commons). Suenan
+  //    junto al ejemplo, cada una con su palabra, y nunca reemplazan al sonido de referencia de la letra.
+  function guideAudio(g) {
+    var all = arr(AU.byLetter[str(g.l)]).filter(usable);
+    var parts = str(g.l).split(/\s+/).filter(Boolean);
+    var xa = g.ex ? audioForText(g.ex.m) : null, exN = g.ex ? normalize(g.ex.m) : null;
+    var letters = [];
+    if (parts.length > 1) {
+      parts.forEach(function (p) {
+        var a = pickAudio(all.filter(function (x) { return normalize(x.text) === normalize(p); }), LETTER_RANK);
+        if (a) letters.push({ l: p, a: a });
+      });
+    }
+    var multi = letters.length > 0;
+    if (!multi) {
+      var la = pickAudio(all.filter(function (x) { return x !== xa && normalize(x.text) !== exN; }), LETTER_RANK);
+      if (la) letters.push({ l: str(g.l), a: la });
+    }
+    var used = letters.map(function (x) { return x.a; }).concat(xa ? [xa] : []);
+    var more = all.filter(function (x) { return x.kind === "nativo" && used.indexOf(x) < 0 && normalize(x.text) !== exN; }).slice(0, 2);
+    return { letters: letters, multi: multi, ex: xa, more: more };
+  }
   // «Escucha y elige» solo usa voces de hablantes: nunca sintéticas ni sonidos aislados.
   function nativeFor(v) { var a = v && audioForVocab(v.id); return a && a.kind === "nativo" ? a : null; }
 
@@ -641,6 +675,11 @@
       '" aria-label="' + esc(auAria(a, shown)) + '" title="' + esc(AU_KIND[a.kind].label) + '">' + ICON.speaker +
       // En línea no cabe la etiqueta completa: la voz sintética lleva «aprox.» y la nota de la tarjeta lo explica.
       (size === "sm" && a.kind === "sintetico" ? '<span class="au-aprox" aria-hidden="true">aprox.</span>' : "") + "</button>";
+  }
+  // Botón con la letra escrita (tarjetas de la guía que agrupan varias letras, como «a e i o u»).
+  function auLetterBtn(a, l) {
+    return '<button class="au-btn md au-l k-' + a.kind + '" type="button" data-au="' + esc(a.key) + '" data-au-key="' + esc(a.key) +
+      '" aria-label="' + esc(auAria(a, l)) + '" title="' + esc(AU_KIND[a.kind].label + (a.ipa ? " " + a.ipa : "")) + '"><span class="m" lang="yua">' + esc(l) + "</span>" + ICON.speaker + "</button>";
   }
   // Etiqueta discreta del tipo de audio.
   function auTag(a) {
@@ -1870,15 +1909,33 @@
   function guideHTML() {
     var fonemas = false, synth = false;
     var cards = COURSE.guide.map(function (g) {
-      // El ejemplo suena con su mejor audio; junto a la letra va otro audio de esa letra (no el mismo).
-      var xa = g.ex ? audioForText(g.ex.m) : null;
-      var la = pickAudio(arr(AU.byLetter[g.l]).filter(function (a) { return a !== xa; }));
-      if (la && la.kind === "fonema") fonemas = true;
-      if ((la && la.kind === "sintetico") || (xa && xa.kind === "sintetico")) synth = true;
-      return '<div class="letter' + (la ? " has-au" : "") + '"><div class="l-top"><span class="l m" lang="yua">' + esc(g.l) + "</span>" + (la ? auBtn(la, g.l, "md") : "") + "</div>" +
-        '<span class="d">' + markMaya(g.desc) + "</span>" +
-        (la ? '<span class="l-au">' + auTag(la) + (la.kind === "fonema" ? '<span class="l-au-n" data-au-key="' + esc(la.key) + '">Sonido aislado, no una palabra maya</span>' : "") + "</span>" : "") +
-        (g.ex ? '<span class="x">' + m(g.ex.m) + (xa ? auBtn(xa, g.ex.m, "sm") : "") + (g.ex.es ? " · " + esc(g.ex.es) : "") + "</span>" : "") + "</div>";
+      // Junto a la letra, su sonido de referencia (o, si no hay, una grabación nativa); junto al ejemplo, la
+      // palabra, y debajo las grabaciones nativas de otras palabras con esa letra (ver guideAudio).
+      var ga = guideAudio(g), xa = ga.ex, la = ga.letters.length === 1 && !ga.multi ? ga.letters[0].a : null;
+      ga.letters.concat(xa ? [{ a: xa }] : []).forEach(function (x) {
+        if (x.a.kind === "fonema") fonemas = true;
+        if (x.a.kind === "sintetico") synth = true;
+      });
+      var tag = "";
+      if (ga.multi) {
+        // Varias letras: una sola etiqueta por tipo, con la transcripción de cada sonido.
+        var kinds = {}, ipas = [];
+        ga.letters.forEach(function (x) { kinds[x.a.kind] = 1; if (x.a.kind === "fonema" && x.a.ipa) ipas.push(x.a.ipa); });
+        tag = '<span class="l-au">' + Object.keys(kinds).map(function (k) {
+          return '<span class="au-kind ' + k + '">' + esc(AU_KIND[k].label) + (k === "fonema" && ipas.length ? ' <span class="ipa">' + esc(ipas.join(" ")) + "</span>" : "") + "</span>";
+        }).join("") + (kinds.fonema ? '<span class="l-au-n">Sonidos aislados, no palabras mayas</span>' : "") + "</span>";
+      } else if (la) {
+        tag = '<span class="l-au">' + auTag(la) +
+          (la.kind === "fonema" ? '<span class="l-au-n" data-au-key="' + esc(la.key) + '">Sonido aislado, no una palabra maya</span>'
+            : normalize(la.text) !== normalize(g.l) ? '<span class="l-au-n" data-au-key="' + esc(la.key) + '">Se oye «' + esc(la.text) + "»</span>" : "") + "</span>";
+      }
+      return '<div class="letter' + (ga.letters.length ? " has-au" : "") + (ga.multi ? " multi" : "") + '"><div class="l-top"><span class="l m" lang="yua">' + esc(g.l) + "</span>" + (la ? auBtn(la, g.l, "md") : "") + "</div>" +
+        (ga.multi ? '<div class="l-multi">' + ga.letters.map(function (x) { return auLetterBtn(x.a, x.l); }).join("") + "</div>" : "") +
+        '<span class="d">' + markMaya(g.desc) + "</span>" + tag +
+        (g.ex ? '<span class="x">' + m(g.ex.m) + (xa ? auBtn(xa, g.ex.m, "sm") : "") + (g.ex.es ? " · " + esc(g.ex.es) : "") + "</span>" : "") +
+        ga.more.map(function (a) {
+          return '<span class="x x-nat" data-au-key="' + esc(a.key) + '">' + esc(AU_KIND.nativo.label) + ": " + m(a.text) + auBtn(a, a.text, "sm") + "</span>";
+        }).join("") + "</div>";
     }).join("");
     return '<details class="guide-box" id="guide"><summary><span class="gs-t">' + ICON.book + "Guía de pronunciación</span>" +
       '<span class="gs-s">' + COURSE.guide.length + " letras</span></summary>" +
@@ -2057,7 +2114,7 @@
       '<p class="muted">Borra tu XP, racha, lecciones y repasos de este navegador; tus ajustes se conservan. No se puede deshacer.</p>' +
       '<div class="btn-row"><button class="btn ghost-danger" type="button" id="btn-reset">Borrar avance</button></div>' +
       '<p class="reset-msg" id="reset-msg" tabindex="-1" aria-live="polite"></p></section>';
-    h += '<p class="foot">Ko\'ox Maaya v4 · experimental, sin validación clínica.</p>';
+    h += '<p class="foot">Ko\'ox Maaya v5 · experimental, sin validación clínica.</p>';
     v.innerHTML = h;
     if (PWA && PWA.on) PWA.bindInstall();
     $("#goal").addEventListener("change", function () {
@@ -2129,13 +2186,15 @@
     if (!AU.list.length) return "";
     var groups = {}, order = [];
     AU.list.forEach(function (a) {
-      var k = (a.kind === "sintetico" ? "sintetico\n" : "") + [a.author, a.license, a.licenseUrl].join("\n");
+      var k = (a.kind === "sintetico" ? "sintetico\n" : "") + [a.author, a.license, a.licenseUrl.replace(/\/+$/, "")].join("\n");
       if (!groups[k]) { groups[k] = { a: a, items: [], kinds: {}, speakers: [], notes: [], sources: [] }; order.push(k); }
       var g = groups[k];
       g.items.push(a); g.kinds[a.kind] = 1;
       var who = a.speaker ? a.speaker + (a.region ? " · " + a.region : "") : "";
       if (who && g.speakers.indexOf(who) < 0) g.speakers.push(who);
-      if (a.kind === "sintetico" && a.notes && g.notes.indexOf(a.notes) < 0) g.notes.push(a.notes);
+      // La nota de cada audio sintético termina con su CER de control: en los créditos va la parte común.
+      var note = a.kind === "sintetico" ? a.notes.replace(/\s*CER de control:\s*[\d.,]+\.?\s*$/, "").trim() : "";
+      if (note && g.notes.indexOf(note) < 0) g.notes.push(note);
       if (g.sources.indexOf(a.source) < 0) g.sources.push(a.source);
     });
     function link(url, text) { return '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + esc(text) + "</a>"; }
@@ -2146,7 +2205,8 @@
     }
     function heard(x) { return x.kind === "fonema" ? esc(x.text) + (x.ipa ? " " + esc(x.ipa) : "") : m(x.text); }
     return '<section class="section" aria-labelledby="credits-title"><h2 id="credits-title">Créditos de audio</h2>' +
-      '<p class="muted">Quién grabó o generó cada audio, con qué licencia y de dónde viene.</p>' +
+      '<p class="muted">Quién grabó o generó cada audio, con qué licencia y de dónde viene. Todos se recortaron, se normalizó su volumen y se convirtieron a MP3; ' +
+      "los que tienen licencia CC BY-SA se comparten con la misma licencia. Atribución completa, audio por audio: " + link(CREDITS_URL, "CREDITOS.md") + ".</p>" +
       '<details class="src-box" id="credits-box"><summary>Ver los créditos de ' + AU.list.length + " " + plural(AU.list.length, "audio", "audios") + "</summary>" +
       order.map(function (k) {
         var g = groups[k], a = g.a, one = g.sources.length === 1;
@@ -2156,7 +2216,8 @@
           var srcs = g.sources.filter(Boolean);
           return '<div class="credit synth"><h3 class="src-unit">' + esc(a.author || "Voz sintética") + "</h3>" +
             '<p class="cr-l">' + esc(AU_KIND.sintetico.label) + " · " + g.items.length + " " + plural(g.items.length, "audio", "audios") + "</p>" +
-            '<p class="cr-l">Licencia: ' + (a.licenseUrl ? link(a.licenseUrl, a.license || a.licenseUrl) : esc(a.license)) + "</p>" +
+            '<p class="cr-l">Licencia: ' + (a.licenseUrl ? link(a.licenseUrl, a.license || a.licenseUrl) : esc(a.license)) +
+            (/\bNC\b/.test(a.license) ? " · solo uso no comercial" : "") + "</p>" +
             (srcs.length ? '<p class="cr-l">' + (srcs.length === 1 ? "Modelo: " + source(srcs[0]) : "Fuentes: " + srcs.slice(0, 3).map(function (x) { return source(x, true); }).join(", ") + (srcs.length > 3 ? "…" : "")) + "</p>" : "") +
             g.notes.slice(0, 2).map(function (t) { return '<p class="cr-n">' + esc(t) + "</p>"; }).join("") + "</div>";
         }
@@ -2310,6 +2371,14 @@
     audioFor: function (what, x) {
       var a = what === "letter" ? audioForLetter(x) : what === "text" ? audioForText(x) : audioForVocab(x);
       return a ? { key: a.key, kind: a.kind } : null;
+    },
+    // Qué suena en la tarjeta de la guía de la letra l: botones de letra, ejemplo y nativas de otras palabras.
+    guideAudio: function (l) {
+      var g = COURSE.guide.filter(function (x) { return x.l === l; })[0];
+      if (!g) return null;
+      var ga = guideAudio(g);
+      return { multi: ga.multi, letters: ga.letters.map(function (x) { return { l: x.l, key: x.a.key, kind: x.a.kind }; }),
+        ex: ga.ex ? ga.ex.key : null, more: ga.more.map(function (a) { return a.key; }) };
     },
     stopAudio: stopAudio,
     playKey: function (k) { return playAudio(AU.byKey[k]); },

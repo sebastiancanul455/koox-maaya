@@ -159,6 +159,61 @@
       "source": "https://example.org/mms-tts-yua-prueba",
       "notes": "Voz sintética aproximada generada por IA (aquí, un tono de prueba): puede equivocarse en el tono, el saltillo y las glotalizadas.",
       "durationMs": 1700
+    },
+    {
+      "key": "fonema-a",
+      "file": "audio/fonema-a.mp3",
+      "kind": "fonema",
+      "text": "a",
+      "lang": "und",
+      "ipa": "[a]",
+      "vocab": [],
+      "letters": [
+        "a e i o u"
+      ],
+      "author": "Ko'ox Maaya (tono de prueba)",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.es",
+      "source": "Generado con ffmpeg: tono sinusoidal de 392 Hz",
+      "durationMs": 1100,
+      "notes": "Tono de prueba: no es habla. Sonido de referencia de la letra «a» en una tarjeta que agrupa varias letras."
+    },
+    {
+      "key": "fonema-u",
+      "file": "audio/fonema-u.mp3",
+      "kind": "fonema",
+      "text": "u",
+      "lang": "und",
+      "ipa": "[u]",
+      "vocab": [],
+      "letters": [
+        "a e i o u"
+      ],
+      "author": "Ko'ox Maaya (tono de prueba)",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.es",
+      "source": "Generado con ffmpeg: tono sinusoidal de 494 Hz",
+      "durationMs": 1100,
+      "notes": "Tono de prueba: no es habla. Sonido de referencia de la letra «u»; por texto no debe sonar (posesivos «a», «u»)."
+    },
+    {
+      "key": "nat-xaak",
+      "file": "audio/nat-xaak.mp3",
+      "kind": "nativo",
+      "text": "xaak",
+      "lang": "yua",
+      "vocab": [],
+      "letters": [
+        "x",
+        "aa"
+      ],
+      "speaker": "Voz de prueba B",
+      "author": "Ko'ox Maaya (tono de prueba)",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.es",
+      "source": "Generado con ffmpeg: tono sinusoidal de 622 Hz",
+      "durationMs": 1400,
+      "notes": "Tono de prueba: no es habla. Grabación nativa de otra palabra que ilustra la x (que tiene fonema) y la aa (que no lo tiene)."
     }
   ]
 }

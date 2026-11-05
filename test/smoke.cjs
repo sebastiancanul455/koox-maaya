@@ -688,10 +688,20 @@ async function audioRun(browser, cfg) {
     if ((await scr(page)) === "vocab") check("[" + cfg.name + "] sin audio: la tarjeta de palabra no tiene botón de escuchar", !(await page.$("#wc-play")) && !(await page.$("#wc-slow")));
     await leaveSession(page);
   } else {
-    check("[" + cfg.name + "] «Escucha y elige» aparece en las lecciones con voz nativa (1 o 2 por lección)", withListen.length > 0 && listenOk, withListen.map((x) => x.id).join(", "));
+    // «Escucha y elige» solo usa voces nativas: sin ninguna (p. ej. solo fonemas y voz sintética) no aparece.
+    if (info.native.length) check("[" + cfg.name + "] «Escucha y elige» aparece en las lecciones con voz nativa (1 o 2 por lección)", withListen.length > 0 && listenOk, withListen.map((x) => x.id).join(", "));
+    else check("[" + cfg.name + "] sin voces nativas, «Escucha y elige» no aparece (nunca usa voz sintética ni fonemas)", !withListen.length, withListen.map((x) => x.id).join(", "));
     // Ninguna lección pide producir con «Escucha y elige» una forma por confirmar.
     check("[" + cfg.name + "] «Escucha y elige» con opciones en maya solo usa formas confirmadas", !plans.some((x) => x.p.some((st) => /^ex:listen-m:.*:(media|\?)$/.test(st))));
-    const target = withListen.length ? withListen[0].id : lessons[0];
+    // La lección de prueba: una con «Escucha y elige» o, si no hay, la primera cuya primera palabra tiene audio
+    // (la búsqueda de la tarjeta se detiene en el primer ejercicio).
+    const withWordAudio = await page.evaluate(() => {
+      for (const u of (window.COURSE && window.COURSE.units) || []) for (const l of u.lessons || []) {
+        if (l.vocab && l.vocab.length && window.__koox.audioFor("vocab", l.vocab[0].id)) return l.id;
+      }
+      return null;
+    });
+    const target = withListen.length ? withListen[0].id : withWordAudio || lessons[0];
     await openLesson(page, cfg, target);
     // Hasta la primera tarjeta de palabra con audio (la reproducción automática ocurre con el toque).
     let autoplayed = null;
@@ -784,6 +794,91 @@ async function audioRun(browser, cfg) {
     if (cfg.shots) { await page.evaluate(() => document.querySelector("#guide").scrollIntoView()); await shot(page, cfg, "audio-guide"); }
     await checkOverflow(page, cfg, "guía con audio");
 
+    // Guía: el botón de una letra suena con su sonido de referencia (si existe); una tarjeta con varias
+    // letras da un botón por letra con audio; las grabaciones nativas de la letra suenan junto al ejemplo.
+    const gl = await page.evaluate(() => {
+      const K = window.__koox, E = K.audioEntries(), out = { bad: [], multi: [], letters: 0, nat: 0 };
+      const low = (s) => String(s).toLowerCase();
+      for (const c of document.querySelectorAll("#guide .letter")) {
+        const l = c.querySelector(".l").textContent, parts = l.split(/\s+/).filter(Boolean);
+        const fon = E.filter((e) => e.kind === "fonema" && e.letters.includes(l));
+        if (parts.length > 1) {
+          const want = parts.filter((p) => E.some((e) => e.letters.includes(l) && low(e.text) === low(p)));
+          const btns = [...c.querySelectorAll(".l-multi [data-au]")];
+          const got = btns.map((b) => b.textContent.trim());
+          if (want.length) out.multi.push(l + ": " + got.join(" "));
+          if (want.join(" ") !== got.join(" ") || (want.length && c.querySelector(".l-top [data-au]"))) out.bad.push("«" + l + "»: botones " + JSON.stringify(got) + ", se esperaban " + JSON.stringify(want));
+          if (btns.some((b) => !/^Escuchar «.+», /.test(b.getAttribute("aria-label")) || b.getBoundingClientRect().height < 44)) out.bad.push("«" + l + "»: aria-label o tamaño de los botones por letra");
+        } else {
+          const b = c.querySelector(".l-top [data-au]"), k = b && b.getAttribute("data-au");
+          if (fon.length) { out.letters++; if (!fon.some((e) => e.key === k)) out.bad.push("«" + l + "»: la letra suena con " + k + " y no con su fonema"); }
+        }
+        // Cada grabación nativa de la letra que no suena en la letra está en la tarjeta (junto al ejemplo).
+        const nat = E.filter((e) => e.kind === "nativo" && e.letters.includes(l));
+        const inCard = nat.filter((e) => c.querySelector('[data-au="' + e.key + '"]'));
+        out.nat += inCard.length;
+        if (fon.length && nat.some((e) => c.querySelector('.l-top [data-au="' + e.key + '"]'))) out.bad.push("«" + l + "»: la voz nativa reemplaza al fonema");
+        if (nat.length && !inCard.length) out.bad.push("«" + l + "»: sin la voz nativa de la letra");
+      }
+      // Por texto (spans .m, diálogos, ejemplos) nunca suena un fonema.
+      out.textFon = E.filter((e) => e.kind === "fonema").map((e) => e.text).filter((t) => (K.audioFor("text", t) || {}).kind === "fonema");
+      return out;
+    });
+    log("  · guía: " + gl.letters + " letras con sonido de referencia" + (gl.multi.length ? " · " + gl.multi.join(" · ") : "") + " · voces nativas de letras en tarjetas: " + gl.nat);
+    check("[" + cfg.name + "] guía: la letra suena con su sonido de referencia; varias letras, un botón por letra; la voz nativa no lo reemplaza", !gl.bad.length, gl.bad.slice(0, 3).join(" | "));
+    if (info.kinds.fonema) check("[" + cfg.name + "] por texto nunca suena un fonema (p. ej. posesivos «a», «u», «k»)", !gl.textFon.length, gl.textFon.join(", "));
+    // Casos de los fixtures (test/fixtures/catalogo.json): x tiene fonema y además una voz nativa de otra
+    // palabra (xaak); aa no tiene fonema (suena la nativa); «a e i o u» agrupa los fonemas de a y u.
+    if (await page.evaluate(() => window.__koox.audioEntries().some((e) => e.key === "nat-xaak"))) {
+      const fx = await page.evaluate(() => {
+        const K = window.__koox, card = (l) => [...document.querySelectorAll("#guide .letter")].find((c) => c.querySelector(".l").textContent === l);
+        const top = (c) => { const b = c && c.querySelector(".l-top [data-au]"); return b ? b.getAttribute("data-au") : null; };
+        const cx = card("x"), caa = card("aa"), cv = card("a e i o u");
+        return {
+          x: K.guideAudio("x"), aa: K.guideAudio("aa"), v: K.guideAudio("a e i o u"), letterX: K.audioFor("letter", "x"),
+          xTop: top(cx), aaTop: top(caa),
+          xNat: !!(cx && cx.querySelector('.x-nat [data-au="nat-xaak"]')), xNatText: cx ? (cx.querySelector(".x-nat") || {}).textContent : "",
+          aaHeard: caa ? (caa.querySelector(".l-au-n") || {}).textContent : "",
+          vBtns: cv ? [...cv.querySelectorAll(".l-multi [data-au]")].map((b) => b.getAttribute("data-au") + ":" + b.textContent.trim()) : [],
+          a: K.audioFor("text", "a"), u: K.audioFor("text", "u")
+        };
+      });
+      check("[" + cfg.name + "] guía (fixture): la x suena con su fonema y la voz nativa de «xaak» va junto al ejemplo",
+        fx.x.letters.length === 1 && fx.x.letters[0].key === "fonema-x" && fx.letterX.key === "fonema-x" && fx.xTop === "fonema-x" && fx.x.ex === "u1-xiib" &&
+        fx.x.more.join() === "nat-xaak" && fx.xNat && /Voz nativa/.test(fx.xNatText) && /xaak/.test(fx.xNatText), JSON.stringify({ x: fx.x, top: fx.xTop, nat: fx.xNatText }));
+      check("[" + cfg.name + "] guía (fixture): sin fonema, la letra aa suena con la voz nativa y dice qué se oye",
+        fx.aa.letters.length === 1 && fx.aa.letters[0].key === "nat-xaak" && fx.aaTop === "nat-xaak" && /Se oye «xaak»/.test(fx.aaHeard), JSON.stringify({ aa: fx.aa, heard: fx.aaHeard }));
+      check("[" + cfg.name + "] guía (fixture): «a e i o u» con un botón por letra con audio (a y u)",
+        fx.v.multi && fx.v.letters.map((x) => x.l + ":" + x.key).join() === "a:fonema-a,u:fonema-u" && fx.vBtns.join() === "fonema-a:a,fonema-u:u", JSON.stringify({ v: fx.v, btns: fx.vBtns }));
+      check("[" + cfg.name + "] por texto, «a» y «u» no suenan con el fonema", fx.a === null && fx.u === null, JSON.stringify({ a: fx.a, u: fx.u }));
+    }
+    // En las tarjetas de explicación, un span maya cuyo texto es el de un fonema (posesivos «a», «u», «k»)
+    // no lleva botón de escuchar.
+    const posTarget = await page.evaluate(() => {
+      const fon = new Set(window.__koox.audioEntries().filter((e) => e.kind === "fonema").map((e) => e.text.toLowerCase()));
+      for (const u of (window.COURSE && window.COURSE.units) || []) for (const l of u.lessons || []) for (const t of l.teach || []) {
+        const re = /<span class="m">([^<]*)<\/span>/g; let mm;
+        while ((mm = re.exec(t.html || ""))) if (fon.has(mm[1].trim().toLowerCase())) return { id: l.id, text: mm[1].trim() };
+      }
+      return null;
+    });
+    if (posTarget) {
+      await gotoTab(page, cfg, "aprender");
+      await openLesson(page, cfg, posTarget.id);
+      let seen = null;
+      for (let g = 0; g < 6 && (await scr(page)) === "teach"; g++) {
+        seen = await page.evaluate((t) => {
+          const sp = [...document.querySelectorAll(".teach-body .m")].filter((x) => x.textContent.trim().toLowerCase() === t.toLowerCase());
+          return sp.length ? { n: sp.length, withBtn: sp.filter((x) => x.nextElementSibling && x.nextElementSibling.matches("[data-au]")).length } : null;
+        }, posTarget.text);
+        if (seen) break;
+        await tap(page, cfg, "#btn-next");
+      }
+      check("[" + cfg.name + "] explicación: «" + posTarget.text + "» (" + posTarget.id + ") sin botón del sonido aislado", seen && seen.withBtn === 0, JSON.stringify(seen));
+      await leaveSession(page);
+      await gotoTab(page, cfg, "diccionario");
+    }
+
     // Perfil: ajustes y créditos.
     await gotoTab(page, cfg, "perfil");
     const prof = await page.evaluate(() => ({
@@ -802,7 +897,7 @@ async function audioRun(browser, cfg) {
       const only = [].concat(...S.map((e) => e.vocab)).filter((v) => !nat.has(v) && (K.audioFor("vocab", v) || {}).kind === "sintetico");
       const credit = [...document.querySelectorAll("#credits-box .credit.synth")];
       return {
-        n: S.length, both, bothNative: both.every((v) => (K.audioFor("vocab", v) || {}).kind === "nativo"), only,
+        n: S.length, both, bothNative: both.every((v) => (K.audioFor("vocab", v) || {}).kind === "nativo"), only, hasNative: E.some((e) => e.kind === "nativo"),
         note: (document.querySelector("#v-profile .synth-note") || {}).textContent || "",
         toggle: (document.querySelector("#au-synth") || {}).checked,
         credit: credit.map((c) => ({ text: c.textContent, list: c.querySelectorAll(".cr-w, .cr-items, .m").length }))
@@ -837,7 +932,7 @@ async function audioRun(browser, cfg) {
           const e = window.__koox.audioEntries().find((x) => x.kind === "sintetico" && x.vocab.includes(id));
           return { porTexto: window.__koox.audioFor("text", e.text), suena: window.__koox.playKey(e.key) };
         }, vid);
-        check("[" + cfg.name + "] sin «Usar voz sintética»: no se muestra ni se ofrece (la nativa sigue)", off.synth === false && off.ofrece === null && tried.porTexto === null && off.botones === 0 && off.nativos > 0 && !off.nota, JSON.stringify(off));
+        check("[" + cfg.name + "] sin «Usar voz sintética»: no se muestra ni se ofrece (la nativa sigue)", off.synth === false && off.ofrece === null && tried.porTexto === null && off.botones === 0 && (off.nativos > 0 || !syn.hasNative) && !off.nota, JSON.stringify(off));
         check("[" + cfg.name + "] sin «Usar voz sintética»: nada sintético suena", tried.suena === false && (await auState(page)).plays === before.plays, JSON.stringify(tried));
         await gotoTab(page, cfg, "perfil");
         await tap(page, cfg, "#au-synth");

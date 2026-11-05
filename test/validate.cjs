@@ -485,6 +485,14 @@ const allCourse = SAMPLE || !EXPLICIT;
 const catalogFile = OPT_CAT || (allCourse ? path.join(ROOT, SAMPLE ? "test/fixtures/catalogo.json" : "audio/catalogo.json") : null);
 const resourcesFile = OPT_RES || (allCourse ? path.join(ROOT, SAMPLE ? "test/fixtures/recursos.js" : "src/content/recursos.js") : null);
 if (catalogFile) validateAudio(catalogFile);
+// audio/CREDITOS.md (la atribución de cada audio) se genera del catálogo con tools/creditos.mjs: avisa si quedó viejo.
+if (catalogFile && path.basename(path.dirname(catalogFile)) === "audio" && fs.existsSync(path.join(ROOT, "tools", "creditos.mjs"))) {
+  try {
+    require("child_process").execFileSync(process.execPath, [path.join(ROOT, "tools", "creditos.mjs"), "--check", "--root", audioBase(catalogFile)], { stdio: "pipe" });
+  } catch (e) {
+    warnings.push(path.relative(ROOT, path.join(path.dirname(catalogFile), "CREDITOS.md")) + ": no está al día con el catálogo; corre node tools/creditos.mjs");
+  }
+}
 if (resourcesFile) validateResources(resourcesFile);
 
 console.log("Ko'ox Maaya · validación de contenido");

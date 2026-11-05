@@ -360,7 +360,7 @@
   var INTERVALS = [0, 1, 3, 7, 16, 35];
   var storageOK = true;
   function freshState() {
-    return { v: 2, xp: 0, xpByDay: {}, streak: { count: 0, best: 0, last: null }, goal: 20, lessons: {}, srs: {}, settings: { sound: true } };
+    return { v: 2, xp: 0, xpByDay: {}, streak: { count: 0, best: 0, last: null }, goal: 20, lessons: {}, srs: {}, settings: { sound: true, autoplay: true, rate: "normal", synth: true } };
   }
   function loadState() {
     var s = freshState(), raw = null;
@@ -384,7 +384,12 @@
         var r = o.srs[id];
         if (r && typeof r === "object") s.srs[id] = { box: clamp(nonNeg(r.box), 0, 5), due: isDay(r.due) ? r.due : today(), right: nonNeg(r.right), wrong: nonNeg(r.wrong) };
       });
-      if (o.settings && typeof o.settings === "object") s.settings.sound = o.settings.sound !== false;
+      if (o.settings && typeof o.settings === "object") {
+        s.settings.sound = o.settings.sound !== false;
+        s.settings.autoplay = o.settings.autoplay !== false;
+        s.settings.rate = o.settings.rate === "lenta" ? "lenta" : "normal";
+        s.settings.synth = o.settings.synth !== false;
+      }
     } catch (e) { /* estado dañado: se empieza de cero */ }
     return s;
   }
@@ -487,12 +492,253 @@
     table: '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M10 10v9"/></svg>',
     chat: '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>',
     word: '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7V5h16v2M12 5v14M9 19h6"/></svg>',
-    mark: '<svg class="brand-mark" viewBox="0 0 28 28" aria-hidden="true"><path d="M1 26h26v-4h-3.5v-4H20v-4h-3.5V9h-5v5H8v4H4.5v4H1z"/></svg>'
+    mark: '<svg class="brand-mark" viewBox="0 0 28 28" aria-hidden="true"><path d="M1 26h26v-4h-3.5v-4H20v-4h-3.5V9h-5v5H8v4H4.5v4H1z"/></svg>',
+    // Audio y recursos para escuchar (íconos genéricos: nunca logotipos de marcas).
+    speaker: '<svg viewBox="0 0 24 24" aria-hidden="true"><path class="cone" d="M3.5 9.4h3.3L11 5.7v12.6l-4.2-3.7H3.5z"/><path d="M15 9.3a3.8 3.8 0 0 1 0 5.4M17.8 6.6a7.6 7.6 0 0 1 0 10.8"/></svg>',
+    headphones: '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15.5V12a8 8 0 0 1 16 0v3.5"/><rect x="3" y="14" width="4.5" height="6.5" rx="1.6"/><rect x="16.5" y="14" width="4.5" height="6.5" rx="1.6"/></svg>',
+    video: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="3.5"/><path class="cone" d="M10 9.3v5.4l4.6-2.7z"/></svg>',
+    music: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17.5V5.8l11-2.3v11.7"/><circle cx="6.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="15.2" r="2.5"/></svg>',
+    mic: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7"/></svg>',
+    radio: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="12" rx="2.5"/><path d="M7 8l10-4.5M6.5 12.5h4M6.5 15.5h4"/><circle cx="15.5" cy="14" r="2.4"/></svg>',
+    globe: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>',
+    phone: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.3h2"/></svg>',
+    external: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-8.5 8.5"/><path d="M18 14v4.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6H10"/></svg>'
   };
   var KINDS = {
     text: ["Aprende", ICON.book], tip: ["Consejo", ICON.tip], culture: ["Cultura", ICON.culture],
     warn: ["Importante", ICON.warn], table: ["Tabla", ICON.table]
   };
+
+  /* ================= Audio de pronunciación ================= */
+  // window.COURSE_AUDIO lo arma build-core.mjs desde audio/catalogo.json: voces de hablantes («nativo»),
+  // sonidos aislados del Alfabeto Fonético Internacional («fonema») y voces sintéticas aproximadas
+  // («sintetico»). En el Artifact cada archivo llega como data: URI (nunca se pide audio a otro sitio);
+  // en el sitio web, como audio/<key>.mp3?v=<hash>. Sin catálogo (o vacío) no aparece ningún botón.
+  var AU_KIND = {
+    nativo: { label: "Voz nativa", low: "voz nativa", aria: "voz nativa" },
+    fonema: { label: "Sonido de referencia (AFI)", low: "sonido de referencia (AFI)", aria: "sonido de referencia del Alfabeto Fonético Internacional" },
+    sintetico: { label: "Voz sintética (aproximada)", low: "voz sintética (aproximada)", aria: "voz sintética aproximada" }
+  };
+  // Prioridad para cualquier elemento: la voz de un hablante, luego el sonido de referencia (solo existe
+  // para letras y sonidos) y al final la voz sintética. Si hay voz nativa, la sintética nunca se muestra.
+  var RANK = { nativo: 0, fonema: 1, sintetico: 2 };
+  var SYNTH_NOTE = "La voz sintética (aproximada) la genera una inteligencia artificial: puede equivocarse en el tono, " +
+    "el saltillo y las consonantes glotalizadas. Cuando hay grabaciones de hablantes, se usa la voz nativa en su lugar.";
+  // Atribución completa de cada audio (título, autor, licencia, página de origen y cambios), en el repositorio.
+  var CREDITS_URL = "https://github.com/sebastiancanul455/koox-maaya/blob/main/audio/CREDITOS.md";
+  function audioSrc(file, hash) {
+    if (/^data:audio\/(mpeg|mp3);base64,/.test(file)) return file;
+    if (window.KOOX_STANDALONE === true && /^audio\/[a-z0-9-]+\.mp3$/.test(file)) return file + (/^[0-9a-f]{6,64}$/.test(hash) ? "?v=" + hash : "");
+    return null;
+  }
+  function buildAudio(raw) {
+    var out = { list: [], byKey: {}, byVocab: {}, byLetter: {}, byText: {}, failed: {} };
+    var entries = raw && typeof raw === "object" && Array.isArray(raw.entries) ? raw.entries : [];
+    function add(map, k, a) { if (k) (map[k] || (map[k] = [])).push(a); }
+    entries.forEach(function (e) {
+      if (!e || typeof e !== "object") return;
+      var key = str(e.key), kind = str(e.kind), src = audioSrc(str(e.file), str(e.hash));
+      if (!/^[a-z0-9-]+$/.test(key) || out.byKey[key] || !AU_KIND[kind] || !src || !str(e.text)) return;
+      var a = {
+        key: key, kind: kind, src: src, text: str(e.text), ipa: str(e.ipa), lang: str(e.lang),
+        vocab: uniqStrings(e.vocab), letters: uniqStrings(e.letters), speaker: str(e.speaker), region: str(e.region),
+        author: str(e.author), license: str(e.license), licenseUrl: /^https:\/\/\S+$/.test(str(e.licenseUrl)) ? str(e.licenseUrl) : "",
+        source: str(e.source), title: str(e.title), notes: str(e.notes)
+      };
+      out.list.push(a); out.byKey[key] = a;
+      a.vocab.forEach(function (id) { add(out.byVocab, id, a); });
+      a.letters.forEach(function (l) { add(out.byLetter, l, a); });
+      add(out.byText, normalize(a.text), a);
+    });
+    return out;
+  }
+  var AU = buildAudio(window.COURSE_AUDIO);
+  // Un audio se ofrece si no falló y, si es sintético, si el ajuste «Usar voz sintética» está activo.
+  function usable(a) { return !!a && !AU.failed[a.key] && (a.kind !== "sintetico" || state.settings.synth !== false); }
+  function hasAudio() { return AU.list.some(usable); }
+  function hasKind(k) { return AU.list.some(function (a) { return a.kind === k; }); }
+  // El mejor audio de una lista según RANK (u otro orden); con empate, el primero del catálogo.
+  function pickAudio(list, rank) {
+    var r = rank || RANK, best = null;
+    arr(list).forEach(function (a) { if (usable(a) && (!best || r[a.kind] < r[best.kind])) best = a; });
+    return best;
+  }
+  // Texto maya normalizado (minúsculas, apóstrofos unificados, sin signos): «Bix a beel?» = «bix a beel».
+  // Por texto nunca se ofrece un «fonema»: es el sonido aislado de una letra, no una palabra. Así los
+  // posesivos «a», «u» y «k» de la unidad 3 no suenan con la vocal o la consonante del AFI.
+  function textAudios(t) { return arr(AU.byText[normalize(t)]).filter(function (a) { return a.kind !== "fonema"; }); }
+  function audioForText(t) { return pickAudio(textAudios(t)); }
+  function audioForVocab(id) {
+    var v = COURSE.vocabById[id];
+    return pickAudio(arr(AU.byVocab[id]).concat(v ? textAudios(v.m) : []));
+  }
+  // Letras de la guía: primero el sonido de referencia (AFI); si no hay, una grabación nativa que la ilustre.
+  var LETTER_RANK = { fonema: 0, nativo: 1, sintetico: 2 };
+  function audioForLetter(l) { return pickAudio(AU.byLetter[str(l)], LETTER_RANK); }
+  // Audio de una tarjeta de la guía de pronunciación:
+  //  · letters: el sonido de referencia de la letra; si no hay, una grabación nativa que la ilustre (que no
+  //    sea la del ejemplo). Una tarjeta con varias letras («a e i o u») da un botón por cada letra con
+  //    audio: el de la tarjeta cuyo texto es esa letra.
+  //  · ex: el mejor audio del ejemplo por su texto (nativo > sintético).
+  //  · more: grabaciones nativas de la letra que dicen otra palabra (p. ej. de Wikimedia Commons). Suenan
+  //    junto al ejemplo, cada una con su palabra, y nunca reemplazan al sonido de referencia de la letra.
+  function guideAudio(g) {
+    var all = arr(AU.byLetter[str(g.l)]).filter(usable);
+    var parts = str(g.l).split(/\s+/).filter(Boolean);
+    var xa = g.ex ? audioForText(g.ex.m) : null, exN = g.ex ? normalize(g.ex.m) : null;
+    var letters = [];
+    if (parts.length > 1) {
+      parts.forEach(function (p) {
+        var a = pickAudio(all.filter(function (x) { return normalize(x.text) === normalize(p); }), LETTER_RANK);
+        if (a) letters.push({ l: p, a: a });
+      });
+    }
+    var multi = letters.length > 0;
+    if (!multi) {
+      var la = pickAudio(all.filter(function (x) { return x !== xa && normalize(x.text) !== exN; }), LETTER_RANK);
+      if (la) letters.push({ l: str(g.l), a: la });
+    }
+    var used = letters.map(function (x) { return x.a; }).concat(xa ? [xa] : []);
+    var more = all.filter(function (x) { return x.kind === "nativo" && used.indexOf(x) < 0 && normalize(x.text) !== exN; }).slice(0, 2);
+    return { letters: letters, multi: multi, ex: xa, more: more };
+  }
+  // «Escucha y elige» solo usa voces de hablantes: nunca sintéticas ni sonidos aislados.
+  function nativeFor(v) { var a = v && audioForVocab(v.id); return a && a.kind === "nativo" ? a : null; }
+
+  // Un solo reproductor: suena un audio a la vez.
+  var player = null, nowKey = null, nowBtn = null;
+  var auStats = { plays: 0, started: 0, ended: 0, errors: 0, blocked: 0, lastKey: null, lastRate: 1 };
+  function auPlayer() {
+    if (player) return player;
+    try { player = new Audio(); } catch (e) { return null; }
+    player.preload = "auto";
+    player.addEventListener("playing", function () { auStats.started++; auMark(true); });
+    player.addEventListener("pause", function () { auMark(false); });
+    player.addEventListener("ended", function () { auStats.ended++; auMark(false); });
+    player.addEventListener("error", function () { if (nowKey) audioBroken(nowKey); });
+    return player;
+  }
+  function auMark(on) {
+    $$("[data-au].is-playing").forEach(function (b) { b.classList.remove("is-playing"); });
+    if (on && nowBtn && document.contains(nowBtn)) nowBtn.classList.add("is-playing");
+  }
+  function playAudio(a, opts) {
+    opts = opts || {};
+    if (!usable(a)) return false;
+    var p = auPlayer();
+    if (!p) return false;
+    stopAudio();
+    nowKey = a.key; nowBtn = opts.btn || null;
+    var rate = opts.slow || state.settings.rate === "lenta" ? 0.75 : 1;
+    try {
+      if (p.kooxSrc !== a.src) { p.kooxSrc = a.src; p.src = a.src; }
+      else { try { p.currentTime = 0; } catch (e) { /* aún sin datos */ } }
+      // Más lento sin cambiar el tono (preservesPitch y sus variantes con prefijo).
+      p.preservesPitch = true; p.mozPreservesPitch = true; p.webkitPreservesPitch = true;
+      p.defaultPlaybackRate = rate; p.playbackRate = rate;
+      auStats.plays++; auStats.lastKey = a.key; auStats.lastRate = rate;
+      var pr = p.play();
+      if (pr && typeof pr.then === "function") pr.then(null, function (e) {
+        var name = e && e.name;
+        if (name === "AbortError") return;                                       // lo interrumpió otro audio
+        if (name === "NotAllowedError") { auStats.blocked++; auMark(false); return; } // el navegador pide un toque
+        if (nowKey === a.key) audioBroken(a.key);
+      });
+    } catch (e) { audioBroken(a.key); return false; }
+    return true;
+  }
+  function stopAudio() {
+    nowKey = null; nowBtn = null;
+    if (player) { try { if (!player.paused) player.pause(); } catch (e) { /* sin efecto */ } }
+    auMark(false);
+  }
+  // Un audio que no carga: se ocultan sus botones y no se vuelve a ofrecer.
+  function audioBroken(key) {
+    if (AU.failed[key]) return;
+    AU.failed[key] = true; auStats.errors++;
+    if (nowKey === key) { nowKey = null; nowBtn = null; }
+    $$('[data-au-key="' + key + '"]').forEach(function (x) { x.hidden = true; });
+    if (cur && cur.ex && cur.ex.type === "listen" && cur.ex.audio.key === key) listenFallback();
+  }
+  document.addEventListener("click", function (e) {
+    var b = e.target && e.target.closest ? e.target.closest("[data-au]") : null;
+    if (!b) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var a = AU.byKey[b.getAttribute("data-au")];
+    if (a) playAudio(a, { slow: b.hasAttribute("data-au-slow"), btn: b });
+  });
+  function auAria(a, shown, slow) { return "Escuchar «" + (shown || a.text) + "»" + (slow ? " lento" : "") + ", " + AU_KIND[a.kind].aria; }
+  // Botón de escuchar. size: "lg" (tarjeta de palabra), "md" (listas, diálogo, guía) o "sm" (en línea).
+  function auBtn(a, shown, size, id) {
+    return '<button class="au-btn ' + size + " k-" + a.kind + '" type="button"' + (id ? ' id="' + id + '"' : "") + ' data-au="' + esc(a.key) + '" data-au-key="' + esc(a.key) +
+      '" aria-label="' + esc(auAria(a, shown)) + '" title="' + esc(AU_KIND[a.kind].label) + '">' + ICON.speaker +
+      // En línea no cabe la etiqueta completa: la voz sintética lleva «aprox.» y la nota de la tarjeta lo explica.
+      (size === "sm" && a.kind === "sintetico" ? '<span class="au-aprox" aria-hidden="true">aprox.</span>' : "") + "</button>";
+  }
+  // Botón con la letra escrita (tarjetas de la guía que agrupan varias letras, como «a e i o u»).
+  function auLetterBtn(a, l) {
+    return '<button class="au-btn md au-l k-' + a.kind + '" type="button" data-au="' + esc(a.key) + '" data-au-key="' + esc(a.key) +
+      '" aria-label="' + esc(auAria(a, l)) + '" title="' + esc(AU_KIND[a.kind].label + (a.ipa ? " " + a.ipa : "")) + '"><span class="m" lang="yua">' + esc(l) + "</span>" + ICON.speaker + "</button>";
+  }
+  // Etiqueta discreta del tipo de audio.
+  function auTag(a) {
+    return '<span class="au-kind ' + a.kind + '" data-au-key="' + esc(a.key) + '">' + esc(AU_KIND[a.kind].label) +
+      (a.kind === "fonema" && a.ipa ? ' <span class="ipa">' + esc(a.ipa) + "</span>" : "") + "</span>";
+  }
+  // Nota con los tipos de audio de una pantalla (tarjetas y diálogos con varios botones).
+  function auNote(kinds, lead) {
+    var ks = ["nativo", "sintetico", "fonema"].filter(function (k) { return kinds[k]; });
+    if (!ks.length) return "";
+    var low = ks.map(function (k) { return AU_KIND[k].low; });
+    return '<p class="au-note">' + ICON.speaker.replace("<svg", '<svg class="ico"') + "<span>" + esc(lead) +
+      (low.length > 1 ? low.slice(0, -1).join(", ") + " y " + low[low.length - 1] : low[0]) + "." +
+      (kinds.sintetico ? " La voz sintética (botones con borde punteado o «aprox.») la genera una IA: no es un hablante." : "") +
+      (kinds.fonema ? " El sonido de referencia (borde punteado) es el sonido aislado, no una palabra maya." : "") + "</span></p>";
+  }
+
+  /* ================= Para escuchar más (enlaces externos) ================= */
+  // window.COURSE_RESOURCES viene de src/content/recursos.js. Íconos genéricos por tipo.
+  var RES_KIND = { youtube: ["YouTube", "video"], spotify: ["Spotify", "music"], podcast: ["Pódcast", "mic"], radio: ["Radio", "radio"], web: ["Sitio web", "globe"], app: ["App", "phone"] };
+  var RES_LANG = { yua: "En maya", es: "En español", "yua-es": "En maya y español", en: "En inglés" };
+  var RES_CRED = { institucional: "Institucional", "hablante nativo": "Hablante nativo", docente: "Docente", otro: "Otra fuente" };
+  var RES = (function (raw) {
+    var seen = {};
+    return arr(raw).filter(function (r) { return r && typeof r === "object"; }).map(function (r) {
+      return {
+        id: str(r.id), title: str(r.title), url: str(r.url), kind: RES_KIND[r.kind] ? r.kind : "web", source: str(r.source),
+        lang: RES_LANG[r.lang] ? r.lang : "", units: uniqStrings(r.units), lessons: uniqStrings(r.lessons),
+        cred: RES_CRED[r.credibility] ? r.credibility : "otro", note: str(r.note)
+      };
+    }).filter(function (r) {
+      var k = r.id || r.url;
+      if (!r.title || !/^https:\/\/[^\s"'<>]+$/.test(r.url) || seen[k]) return false;
+      seen[k] = 1;
+      return true;
+    });
+  })(window.COURSE_RESOURCES);
+  // Los de la lección; si no hay, los de su unidad (primero los que no son de una lección concreta).
+  function resourcesFor(l) {
+    var mine = RES.filter(function (r) { return r.lessons.indexOf(l.id) >= 0; });
+    if (mine.length) return mine;
+    return RES.filter(function (r) { return r.units.indexOf(l.unit.id) >= 0; })
+      .sort(function (a, b) { return (a.lessons.length ? 1 : 0) - (b.lessons.length ? 1 : 0); });
+  }
+  function unitNames(ids) {
+    var ns = COURSE.units.filter(function (u) { return ids.indexOf(u.id) >= 0; }).map(function (u) { return String(u.n); });
+    return ns.length ? (ns.length === 1 ? "Unidad " : "Unidades ") + (ns.length > 1 ? ns.slice(0, -1).join(", ") + " y " + ns[ns.length - 1] : ns[0]) : "";
+  }
+  function resItem(r, withUnits) {
+    var k = RES_KIND[r.kind];
+    var meta = [k[0], r.source, RES_LANG[r.lang], withUnits ? unitNames(r.units) : ""].filter(Boolean).join(" · ");
+    return '<li><a class="res" href="' + esc(r.url) + '" target="_blank" rel="noopener noreferrer">' +
+      '<span class="res-ico" aria-hidden="true">' + ICON[k[1]] + "</span>" +
+      '<span class="res-txt"><span class="res-t">' + markMaya(r.title) + "</span>" +
+      '<span class="res-s">' + esc(meta) + "</span>" +
+      '<span class="res-c ' + r.cred.replace(/\s+/g, "-") + '">' + esc(RES_CRED[r.cred]) + "</span>" +
+      (r.note ? '<span class="res-n">' + markMaya(r.note) + "</span>" : "") + "</span>" +
+      '<span class="res-ext" aria-hidden="true">' + ICON.external + '</span><span class="sr-only"> (se abre fuera de la app)</span></a></li>';
+  }
 
   /* ================= Elementos fijos ================= */
   var el = {
@@ -529,6 +775,7 @@
     if (!TAB_VIEW[name]) name = "aprender";
     tab = name;
     S = null; cur = null;
+    stopAudio();
     document.body.classList.remove("in-session");
     el.session.hidden = true;
     el.feedback.hidden = true;
@@ -684,6 +931,7 @@
       (rec && rec.done ? '<span class="ls-chip done">Completada · mejor ' + rec.best + " %</span>" : "") + "</div>" +
       (lessonFresh(l) ? '<p class="ls-new">' + (lessonFresh(l) === 1 ? "Agregamos una palabra" : "Agregamos " + lessonFresh(l) + " palabras") +
         " a esta lección después de que la terminaste. Repítela para sumarlas a tu repaso.</p>" : "") +
+      lessonListenHTML(l) +
       '<div class="modal-actions"><button class="btn primary wide" type="button" id="btn-start-lesson">' + (rec && rec.done ? "Repetir lección" : "Empezar") + "</button>" +
       '<button class="btn text" type="button" data-close-sheet>Ahora no</button></div>';
     el.lsModal.innerHTML = h;
@@ -691,8 +939,23 @@
     document.body.classList.add("locked");
     histPush("sheet");
     $("#btn-start-lesson").addEventListener("click", function () { closeLessonSheet(true, "keep"); startLesson(l); });
+    var more = $("#btn-ls-more");
+    if (more) more.addEventListener("click", function () {
+      closeLessonSheet(true);
+      showTab("perfil", { scrollTo: "listen-title" });
+      var box = $("#listen-box"); if (box) box.open = true;
+    });
     $$("[data-close-sheet]", el.lessonSheet).forEach(function (b) { b.addEventListener("click", function () { closeLessonSheet(); }); });
     $("#btn-start-lesson").focus();
+  }
+  // «Para escuchar más»: recursos de la lección (o de su unidad), como enlaces externos.
+  var LS_RES_MAX = 3;
+  function lessonListenHTML(l) {
+    var rs = resourcesFor(l);
+    if (!rs.length) return "";
+    return '<section class="ls-listen" aria-labelledby="ls-listen-title"><h3 class="ls-sub" id="ls-listen-title">' + ICON.headphones + "Para escuchar más</h3>" +
+      '<ul class="res-list">' + rs.slice(0, LS_RES_MAX).map(function (r) { return resItem(r); }).join("") + "</ul>" +
+      (rs.length > LS_RES_MAX || RES.length > rs.length ? '<button class="btn text ls-more" type="button" id="btn-ls-more">Ver todos en Perfil · Escucha maya</button>' : "") + "</section>";
   }
   // mode: "pop" = la cerró el botón Atrás; "keep" = la reemplaza una sesión; si no, se quita su entrada.
   function closeLessonSheet(silent, mode) {
@@ -761,6 +1024,24 @@
     same.forEach(function (x) { alt.push(x.m); alt = alt.concat(x.alt); });
     return { type: "type", auto: true, vocab: v, q: "Escribe en maya", prompt: v.es, answer: v.m, alt: alt };
   }
+  // «Escucha y elige»: solo palabras con voz nativa. Alterna entre elegir la forma escrita (solo si está
+  // confirmada: elegir la forma maya ya es producir) y elegir el significado.
+  var listenTurn = Math.random() < 0.5 ? 0 : 1;
+  function makeListen(v) {
+    var a = nativeFor(v);
+    if (!a) return null;
+    var wantM = v.conf === "alta" && listenTurn++ % 2 === 0;
+    var base = (wantM ? makeChoice(v, "es2m") : null) || makeChoice(v, "m2es");
+    if (!base) return null;
+    var optLang = base.promptLang === "es" ? "m" : "es";
+    return {
+      type: "listen", auto: true, vocab: v, audio: a, optLang: optLang,
+      q: optLang === "m" ? "¿Qué palabra escuchaste?" : "¿Qué significa lo que escuchaste?",
+      // Por si el audio falla: se muestra el texto y queda como una elección normal.
+      prompt: optLang === "m" ? v.es : v.m,
+      answer: base.answer, options: base.options
+    };
+  }
   function makePairs(list, fallbackPools) {
     var picks = [];
     function tryAdd(x) {
@@ -791,6 +1072,8 @@
       return makeChoice(v, "es2m") || (canType(v) ? makeType(v) : null);
     }).filter(Boolean);
     var recogB = shuffle(V.filter(function (v) { return inPairs[v.id]; })).map(function (v) { return makeChoice(v, "m2es"); }).filter(Boolean);
+    // 1 o 2 de «Escucha y elige» cuando hay voces nativas de las palabras de la lección.
+    var listen = shuffle(V.filter(function (v) { return nativeFor(v); })).slice(0, 2).map(makeListen).filter(Boolean);
     // No repite lo que ya pregunta un ejercicio escrito a mano o una comprobación intercalada.
     function autoKey(e) {
       if (e.type === "choice") return (e.promptLang === "m" ? "m2es:" + normalize(e.prompt) : "es2m:" + normalize(e.answer));
@@ -800,7 +1083,7 @@
     var handKeys = {};
     hand.concat(pre).forEach(function (e) { var k = autoKey(e); if (k) handKeys[k] = 1; });
     var target = clamp(hand.length + V.length + 3, 10, 15);
-    var need = Math.max(0, target - hand.length - pre.length);
+    var need = Math.max(0, target - hand.length - pre.length - listen.length);
     var queue = (pairs ? [pairs] : []).concat(recogA, recall, recogB).filter(function (e) { return !handKeys[autoKey(e)]; });
     var auto = queue.slice(0, need);
     // Al menos 3 ejercicios de escribir cuando hay palabras confirmadas que se pueden escribir.
@@ -818,10 +1101,10 @@
       }
     });
     // Fases: reconocer -> relacionar -> producir.
-    var all = hand.concat(auto);
+    var all = hand.concat(auto, listen);
     function phase(e) {
       if (e.type === "choice" && e.promptLang === "m") return 0;
-      if (e.type === "pairs" || e.type === "fill" || e.type === "choice") return 1;
+      if (e.type === "pairs" || e.type === "fill" || e.type === "choice" || e.type === "listen") return 1;
       return 2;
     }
     var buckets = [[], [], []];
@@ -837,6 +1120,11 @@
       if (!e) e = makeChoice(v, "m2es") || makeChoice(v, "es2m") || (canType(v) ? makeType(v) : null);
       if (e) out.push(e);
     });
+    // En los repasos también: hasta 2 de «Escucha y elige» con las palabras que tienen voz nativa.
+    for (var i = 0, nl = 0; i < out.length && nl < 2; i++) {
+      var le = out[i].vocab && nativeFor(out[i].vocab) ? makeListen(out[i].vocab) : null;
+      if (le) { out[i] = le; nl++; }
+    }
     if (withPairs) {
       var p = makePairs(list.slice(0, 8), [pairPool || COURSE.vocab]);
       if (p) out.splice(Math.min(2, out.length), 0, p);
@@ -929,6 +1217,7 @@
     document.body.style.setProperty("--sheet-h", (h || 96) + "px");
   }
   function renderStep() {
+    stopAudio();
     el.feedback.hidden = true;
     clearTimeout(announce.t);
     if (el.live) el.live.textContent = "";
@@ -972,22 +1261,40 @@
     }
     h += "</article>";
     el.body.innerHTML = h;
+    if (c.kind !== "table" && hasAudio()) {
+      var used = {};
+      $$(".teach-body .m", el.body).forEach(function (sp) {
+        var t = sp.textContent, a = audioForText(t);
+        if (!a) return;
+        sp.insertAdjacentHTML("afterend", auBtn(a, t, "sm"));
+        used[a.kind] = 1;
+      });
+      var note = auNote(used, "Toca el altavoz para escuchar: ");
+      if (note) $(".teach", el.body).insertAdjacentHTML("beforeend", note);
+    }
   }
   function confBadge(v) {
     return v.conf === "media" ? '<span class="badge-conf" title="Forma probable, aún sin confirmar en una fuente">Por confirmar</span>' : "";
   }
   function renderVocab(st) {
-    var v = st.v;
+    var v = st.v, a = audioForVocab(v.id), xa = v.ex ? audioForText(v.ex.m) : null;
+    if (xa && xa === a) xa = null;
     var h = '<article class="word-card" aria-labelledby="wc-m">' +
       '<p class="eyebrow kind-label">' + ICON.word + (lessonDone(v.lesson) ? "Vocabulario · " : "Palabra nueva · ") + (st.i + 1) + " de " + st.n + "</p>" +
       '<p class="wc-m m' + (v.m.length > 18 ? " long" : "") + '" id="wc-m" lang="yua">' + esc(v.m) + "</p>" +
+      (a ? '<div class="wc-audio" data-au-key="' + esc(a.key) + '"><div class="wc-au-row">' + auBtn(a, v.m, "lg", "wc-play") +
+        '<button class="btn tonal au-slow" type="button" id="wc-slow" data-au="' + esc(a.key) + '" data-au-slow aria-label="' + esc(auAria(a, v.m, true)) + '">' +
+        ICON.speaker + "Lento</button></div>" + auTag(a) + "</div>" : "") +
       '<p class="wc-es">' + esc(v.es) + "</p>" +
       (v.pr ? '<p class="wc-pr">Se pronuncia aprox. «' + esc(v.pr) + "»</p>" : "") +
       (v.conf === "media" ? confBadge(v) + '<p class="conf-explain">Es una forma probable que todavía no se confirmó en una fuente. Compruébala con un hablante.</p>' : "") +
       (v.note ? '<p class="wc-note">' + markMaya(v.note) + "</p>" : "") +
-      (v.ex ? '<div class="wc-ex"><span class="eyebrow">Ejemplo</span>' + m(v.ex.m) + "<span>" + esc(v.ex.es) + "</span></div>" : "") +
+      (v.ex ? '<div class="wc-ex"><span class="eyebrow">Ejemplo</span><span class="wc-ex-m">' + m(v.ex.m) + (xa ? auBtn(xa, v.ex.m, "sm") : "") + "</span><span>" + esc(v.ex.es) + "</span></div>" : "") +
       "</article>";
     el.body.innerHTML = h;
+    // Al aparecer la palabra suena su pronunciación (si el ajuste lo permite). Ocurre dentro del toque
+    // de «Siguiente», así que el navegador lo deja sonar; si no, queda el botón.
+    if (a && state.settings.autoplay) playAudio(a, { btn: $("#wc-play") });
   }
   // Inicial del avatar: salta tratamientos (Don, Doña, Dra., Sr.…) para que «Dra. Pat» y
   // «Don Felipe» no compartan la misma letra.
@@ -998,16 +1305,22 @@
     return w.charAt(0).toUpperCase();
   }
   function renderDialogue(d) {
-    var h = '<div class="section"><p class="eyebrow kind-label">' + ICON.chat + 'Diálogo</p><h2 id="step-title" tabindex="-1">' + esc(d.title) + "</h2>" +
-      '<p class="muted">Lee en voz alta. Toca una línea para ver su traducción.</p></div><div class="dialogue">';
+    var lines = "", used = {};
     d.lines.forEach(function (ln, i) {
-      var name = ln.name || (ln.who === "A" ? "A" : "B");
-      h += '<div class="bubble-row ' + (ln.who === "B" ? "b" : "a") + '" style="animation-delay:' + (i * 60) + 'ms">' +
+      var name = ln.name || (ln.who === "A" ? "A" : "B"), la = audioForText(ln.m);
+      if (la) used[la.kind] = 1;
+      lines += '<div class="bubble-row ' + (ln.who === "B" ? "b" : "a") + '" style="animation-delay:' + (i * 60) + 'ms">' +
         '<span class="avatar" aria-hidden="true">' + esc(initialOf(name)) + "</span>" +
         '<button class="bubble" type="button" aria-expanded="false" id="line-' + i + '">' +
         '<span class="who">' + esc(name) + "</span>" + m(ln.m) +
-        '<span class="tr" hidden>' + esc(ln.es) + '</span><span class="tr-hint">Toca para traducir</span></button></div>';
+        (la && la.kind === "sintetico" ? '<span class="tr-au" data-au-key="' + esc(la.key) + '">' + esc(AU_KIND.sintetico.label) + "</span>" : "") +
+        '<span class="tr" hidden>' + esc(ln.es) + '</span><span class="tr-hint">Toca para traducir</span></button>' +
+        (la ? auBtn(la, ln.m, "md", "line-au-" + i) : "") + "</div>";
     });
+    var withAu = Object.keys(used).length > 0;
+    var h = '<div class="section"><p class="eyebrow kind-label">' + ICON.chat + 'Diálogo</p><h2 id="step-title" tabindex="-1">' + esc(d.title) + "</h2>" +
+      '<p class="muted">' + (withAu ? "Lee en voz alta o toca el altavoz para escuchar. Toca una línea para ver su traducción." : "Lee en voz alta. Toca una línea para ver su traducción.") + "</p>" +
+      (withAu ? auNote(used, "Audio: ") : "") + '</div><div class="dialogue">' + lines;
     h += '</div><button class="btn text" type="button" id="btn-show-all">Mostrar todas las traducciones</button>';
     el.body.innerHTML = h;
     function toggle(b, force) {
@@ -1033,7 +1346,7 @@
   function renderExercise(st) {
     var ex = st.ex;
     cur = { st: st, ex: ex, ready: false, checked: false };
-    var fn = { choice: renderChoice, fill: renderFill, build: renderBuild, type: renderType, pairs: renderPairs }[ex.type];
+    var fn = { choice: renderChoice, fill: renderFill, build: renderBuild, type: renderType, pairs: renderPairs, listen: renderListen }[ex.type];
     fn(st, ex);
   }
   function optionButtons(opts, lang) {
@@ -1076,6 +1389,33 @@
       markOptions();
       return { ok: ok, answer: ex.answer, lang: optLang };
     };
+  }
+  function renderListen(st, ex) {
+    var a = ex.audio, ok = !AU.failed[a.key];
+    cur.opts = shuffle(ex.options.slice());
+    el.body.innerHTML = '<div class="ex">' + (st.retry ? '<p class="ex-tag retry">Otra vez</p>' : "") +
+      '<p class="eyebrow kind-label">' + ICON.speaker.replace("<svg", '<svg class="ico"') + "Escucha y elige</p>" +
+      '<h2 class="ex-q" id="step-title" tabindex="-1">' + esc(ex.q) + "</h2>" +
+      '<div class="listen" id="listen-box" data-au-key="' + esc(a.key) + '"' + (ok ? "" : " hidden") + ">" +
+      '<button class="au-btn xl" type="button" id="listen-play" data-au="' + esc(a.key) + '" aria-label="Escuchar el audio, ' + esc(AU_KIND[a.kind].aria) + '">' + ICON.speaker + "</button>" +
+      '<div class="listen-side"><button class="btn tonal au-slow" type="button" id="listen-slow" data-au="' + esc(a.key) + '" data-au-slow aria-label="Escuchar lento, ' + esc(AU_KIND[a.kind].aria) + '">' + ICON.speaker + "Lento</button>" +
+      auTag(a) + "</div></div>" +
+      '<p class="prompt' + (ex.optLang === "es" ? ' m" lang="yua"' : '"') + ' id="listen-fallback"' + (ok ? " hidden" : "") + ">" + esc(ex.prompt) + "</p>" +
+      (exMedia(ex) ? '<p class="ex-conf">' + confBadge({ conf: "media" }) + "<span>Forma probable, aún sin confirmar en una fuente.</span></p>" : "") +
+      optionButtons(cur.opts, ex.optLang) + "</div>";
+    bindOptions();
+    cur.evaluate = function () {
+      var right = cur.opts[cur.sel] === ex.answer;
+      markOptions();
+      return { ok: right, answer: ex.answer, lang: ex.optLang };
+    };
+    if (ok && state.settings.autoplay) playAudio(a, { btn: $("#listen-play") });
+  }
+  // Si el audio de «Escucha y elige» no carga, se muestra el texto y el ejercicio sigue como una elección.
+  function listenFallback() {
+    var box = $("#listen-box"), fb = $("#listen-fallback");
+    if (box) box.hidden = true;
+    if (fb) fb.hidden = false;
   }
   function renderFill(st, ex) {
     cur.opts = shuffle(ex.options.slice());
@@ -1272,8 +1612,13 @@
     if (res.ok) tone("ok");
     showFeedback(res, ex, st);
   }
+  // Audio de una forma maya de la retroalimentación: el de ese texto o, si es la palabra del ejercicio, el de la palabra.
+  function fbAudio(form, v) {
+    return audioForText(form) || (v && normalize(form) === normalize(v.m) ? audioForVocab(v.id) : null);
+  }
+  function auPairHTML(a, shown) { return '<span class="au" data-au-key="' + esc(a.key) + '">' + auBtn(a, shown, "md") + auTag(a) + "</span>"; }
   function showFeedback(res, ex, st) {
-    var v = ex.vocab, h = "", say = "";
+    var v = ex.vocab, h = "", say = "", ra = null;
     if (res.ok) {
       var title = OK_TITLES[Math.floor(Math.random() * OK_TITLES.length)];
       h += '<p class="fb-title"><span class="fb-icon">' + ICON.check + "</span>" + title + "</p>";
@@ -1291,13 +1636,21 @@
       if (res.other) {
         h += '<p class="fb-extra">Escribiste ' + m(res.typed) + " («" + esc(res.other.es) + "»); se pedía " + m(res.answer) + (v ? " («" + esc(v.es) + "»)" : "") + ". El acento de tono cambia la palabra.</p>";
       }
+      ra = res.lang === "m" ? fbAudio(res.answer, v) : null;
       h += '<p class="fb-label">Respuesta correcta:</p>' +
-        '<p class="fb-answer' + (res.lang === "m" ? ' m" lang="yua"' : '"') + ">" + esc(res.answer) + "</p>";
+        (ra ? '<div class="fb-answer-row"><p class="fb-answer m" lang="yua">' + esc(res.answer) + "</p>" + auPairHTML(ra, res.answer) + "</div>"
+          : '<p class="fb-answer' + (res.lang === "m" ? ' m" lang="yua"' : '"') + ">" + esc(res.answer) + "</p>");
       say = "No es correcto. Respuesta correcta: " + res.answer + ".";
       if (res.es && (ex.type === "build" || ex.type === "fill")) h += '<p class="fb-extra">' + esc(res.es) + "</p>";
       if (ex.type === "type" && res.typed && !res.other) h += '<p class="fb-extra">Escribiste: ' + m(res.typed) + "</p>";
       if (ex.type === "build" && res.built) h += '<p class="fb-extra">Tu respuesta: ' + m(res.built) + "</p>";
       if (v && ex.type === "choice" && ex.promptLang === "es" && v.m !== res.answer) h += '<p class="fb-extra">' + m(v.m) + " = " + esc(v.es) + "</p>";
+    }
+    // Para oír la forma maya del ejercicio (si no se ofreció ya junto a la respuesta correcta).
+    if (ex.type !== "pairs" && !ra) {
+      var form = res.lang === "m" ? res.answer : ex.type === "choice" && ex.promptLang === "m" ? ex.prompt : ex.type === "listen" && v ? v.m : null;
+      var fa = form ? fbAudio(form, v) : null;
+      if (fa) h += '<div class="fb-listen">' + (ex.type === "listen" ? '<span class="fb-heard">Escuchaste ' + m(form) + " · " + esc(v.es) + "</span>" : m(form)) + auPairHTML(fa, form) + "</div>";
     }
     if (v && ex.type !== "pairs") {
       if (!res.ok && v.pr && (res.lang === "m")) h += '<p class="fb-extra">Se pronuncia aprox. «' + esc(v.pr) + "»</p>";
@@ -1341,6 +1694,7 @@
     var s = S;
     s.done = true;
     cur = null;
+    stopAudio();
     var total = s.firstTotal, right = s.firstRight;
     var pct = total ? Math.round(right / total * 100) : 100;
     var xp = 0, newWords = [], h = "";
@@ -1553,13 +1907,42 @@
   /* ================= Diccionario ================= */
   var dictUnit = "all";
   function guideHTML() {
+    var fonemas = false, synth = false;
+    var cards = COURSE.guide.map(function (g) {
+      // Junto a la letra, su sonido de referencia (o, si no hay, una grabación nativa); junto al ejemplo, la
+      // palabra, y debajo las grabaciones nativas de otras palabras con esa letra (ver guideAudio).
+      var ga = guideAudio(g), xa = ga.ex, la = ga.letters.length === 1 && !ga.multi ? ga.letters[0].a : null;
+      ga.letters.concat(xa ? [{ a: xa }] : []).forEach(function (x) {
+        if (x.a.kind === "fonema") fonemas = true;
+        if (x.a.kind === "sintetico") synth = true;
+      });
+      var tag = "";
+      if (ga.multi) {
+        // Varias letras: una sola etiqueta por tipo, con la transcripción de cada sonido.
+        var kinds = {}, ipas = [];
+        ga.letters.forEach(function (x) { kinds[x.a.kind] = 1; if (x.a.kind === "fonema" && x.a.ipa) ipas.push(x.a.ipa); });
+        tag = '<span class="l-au">' + Object.keys(kinds).map(function (k) {
+          return '<span class="au-kind ' + k + '">' + esc(AU_KIND[k].label) + (k === "fonema" && ipas.length ? ' <span class="ipa">' + esc(ipas.join(" ")) + "</span>" : "") + "</span>";
+        }).join("") + (kinds.fonema ? '<span class="l-au-n">Sonidos aislados, no palabras mayas</span>' : "") + "</span>";
+      } else if (la) {
+        tag = '<span class="l-au">' + auTag(la) +
+          (la.kind === "fonema" ? '<span class="l-au-n" data-au-key="' + esc(la.key) + '">Sonido aislado, no una palabra maya</span>'
+            : normalize(la.text) !== normalize(g.l) ? '<span class="l-au-n" data-au-key="' + esc(la.key) + '">Se oye «' + esc(la.text) + "»</span>" : "") + "</span>";
+      }
+      return '<div class="letter' + (ga.letters.length ? " has-au" : "") + (ga.multi ? " multi" : "") + '"><div class="l-top"><span class="l m" lang="yua">' + esc(g.l) + "</span>" + (la ? auBtn(la, g.l, "md") : "") + "</div>" +
+        (ga.multi ? '<div class="l-multi">' + ga.letters.map(function (x) { return auLetterBtn(x.a, x.l); }).join("") + "</div>" : "") +
+        '<span class="d">' + markMaya(g.desc) + "</span>" + tag +
+        (g.ex ? '<span class="x">' + m(g.ex.m) + (xa ? auBtn(xa, g.ex.m, "sm") : "") + (g.ex.es ? " · " + esc(g.ex.es) : "") + "</span>" : "") +
+        ga.more.map(function (a) {
+          return '<span class="x x-nat" data-au-key="' + esc(a.key) + '">' + esc(AU_KIND.nativo.label) + ": " + m(a.text) + auBtn(a, a.text, "sm") + "</span>";
+        }).join("") + "</div>";
+    }).join("");
     return '<details class="guide-box" id="guide"><summary><span class="gs-t">' + ICON.book + "Guía de pronunciación</span>" +
       '<span class="gs-s">' + COURSE.guide.length + " letras</span></summary>" +
-      '<p class="muted">El alfabeto normativo de 2014. Casi todo se lee como en español; estas son las diferencias.</p><div class="alphabet">' +
-      COURSE.guide.map(function (g) {
-        return '<div class="letter"><span class="l m" lang="yua">' + esc(g.l) + '</span><span class="d">' + markMaya(g.desc) + "</span>" +
-          (g.ex ? '<span class="x">' + m(g.ex.m) + (g.ex.es ? " · " + esc(g.ex.es) : "") + "</span>" : "") + "</div>";
-      }).join("") + "</div></details>";
+      '<p class="muted">El alfabeto normativo de 2014. Casi todo se lee como en español; estas son las diferencias.</p>' +
+      (fonemas ? '<p class="au-note">' + ICON.speaker.replace("<svg", '<svg class="ico"') + "<span>«Sonido de referencia (AFI)» es el sonido aislado, como lo describe el Alfabeto Fonético Internacional: no es una palabra maya ni la voz de un hablante.</span></p>" : "") +
+      (synth || (hasKind("sintetico") && state.settings.synth !== false) ? '<p class="au-note synth-note">' + ICON.speaker.replace("<svg", '<svg class="ico"') + "<span>" + esc(SYNTH_NOTE) + "</span></p>" : "") +
+      '<div class="alphabet">' + cards + "</div></details>";
   }
   function openGuide() {
     showTab("diccionario");
@@ -1569,9 +1952,17 @@
     d.scrollIntoView({ block: "start" });
     var sm = $("summary", d); if (sm) sm.focus({ preventScroll: true });
   }
+  var guideSig = "";
   function renderDict() {
     var gw = $("#dict-guide");
-    if (gw && !gw.childElementCount && COURSE.guide.length) gw.innerHTML = guideHTML();
+    // La guía se vuelve a armar si cambió qué audio se puede ofrecer (ajuste o audio que falló).
+    var sig = String(state.settings.synth !== false) + Object.keys(AU.failed).length;
+    if (gw && COURSE.guide.length && (!gw.childElementCount || sig !== guideSig)) {
+      var was = $("#guide", gw), open = !!(was && was.open);
+      gw.innerHTML = guideHTML();
+      if (open) $("#guide", gw).open = true;
+      guideSig = sig;
+    }
     if (!el.dictUnits.childElementCount) {
       el.dictUnits.innerHTML = '<button class="chip" type="button" id="dict-u-all" data-u="all" aria-pressed="true">Todas</button>' +
         COURSE.units.map(function (u) {
@@ -1632,12 +2023,13 @@
       return;
     }
     el.dictList.innerHTML = list.slice(0, 300).map(function (v) {
-      return '<li class="entry"><div class="entry-top">' + m(v.m) + '<span class="es">' + esc(v.es) + "</span>" + confBadge(v) + "</div>" +
+      var a = audioForVocab(v.id);
+      return '<li class="entry"><div class="entry-top">' + m(v.m) + (a ? auBtn(a, v.m, "md") : "") + '<span class="es">' + esc(v.es) + "</span>" + confBadge(v) + "</div>" +
         (v.pr ? '<p class="pr">Se pronuncia aprox. «' + esc(v.pr) + "»</p>" : "") +
         (v.alt.length ? '<p class="pr">También se escribe: ' + v.alt.map(function (a) { return m(a); }).join(", ") + "</p>" : "") +
         (v.note ? '<p class="note">' + markMaya(v.note) + "</p>" : "") +
         (v.ex ? '<p class="entry-ex">' + m(v.ex.m) + " · " + esc(v.ex.es) + "</p>" : "") +
-        '<div class="entry-meta"><span>Unidad ' + v.unit.n + " · " + markMaya(v.lesson.title) + "</span>" + levelDots(v) + "</div></li>";
+        '<div class="entry-meta"><span>Unidad ' + v.unit.n + " · " + markMaya(v.lesson.title) + "</span>" + levelDots(v) + (a ? auTag(a) : "") + "</div></li>";
     }).join("");
   }
   var dictClear = $("#dict-clear");
@@ -1675,11 +2067,25 @@
       '<div class="setting"><label class="setting-txt" for="goal">Meta diaria<small>XP que quieres ganar cada día</small></label><select id="goal">' +
       GOALS.map(function (g) { return '<option value="' + g + '"' + (g === state.goal ? " selected" : "") + ">" + g + " XP</option>"; }).join("") + "</select></div>" +
       '<label class="setting" for="sound"><span class="setting-txt">Sonido de aciertos<small>Tonos cortos y suaves</small></span><input class="switch" type="checkbox" role="switch" id="sound"' + (state.settings.sound ? " checked" : "") + "></label>" +
-      "</div>" + (audioFailed ? '<p class="storage-warn">El sonido no está disponible en este navegador.</p>' : "") +
+      (AU.list.length ? '<label class="setting" for="au-auto"><span class="setting-txt">Reproducir al presentar palabras<small>Suena la pronunciación al aparecer cada palabra</small></span>' +
+        '<input class="switch" type="checkbox" role="switch" id="au-auto"' + (state.settings.autoplay ? " checked" : "") + "></label>" +
+        '<div class="setting"><label class="setting-txt" for="au-rate">Velocidad<small>De la pronunciación grabada</small></label><select id="au-rate">' +
+        '<option value="normal"' + (state.settings.rate !== "lenta" ? " selected" : "") + '>Normal</option><option value="lenta"' + (state.settings.rate === "lenta" ? " selected" : "") + ">Lenta</option></select></div>" +
+        (hasKind("sintetico") ? '<label class="setting" for="au-synth"><span class="setting-txt">Usar voz sintética<small>Para las palabras que aún no tienen voz nativa</small></span>' +
+          '<input class="switch" type="checkbox" role="switch" id="au-synth"' + (state.settings.synth !== false ? " checked" : "") + "></label>" : "") : "") +
+      "</div>" +
+      (hasKind("sintetico") ? '<p class="au-note synth-note">' + ICON.speaker.replace("<svg", '<svg class="ico"') + "<span>" + esc(SYNTH_NOTE) + "</span></p>" : "") + (audioFailed ? '<p class="storage-warn">El sonido no está disponible en este navegador.</p>' : "") +
       (storageOK ? "" : '<p class="storage-warn">Este navegador no permite guardar datos (modo privado o almacenamiento bloqueado). Tu avance se perderá al cerrar la página.</p>') + "</section>";
     if (COURSE.guide.length) h += '<section class="section" aria-labelledby="guide-title"><h2 id="guide-title">Guía de pronunciación</h2>' +
       '<p class="muted">Cómo se leen las ' + COURSE.guide.length + ' letras del alfabeto maya. Está en el Diccionario.</p>' +
       '<div class="btn-row"><button class="btn tonal" type="button" id="btn-profile-guide">' + ICON.book + "Abrir la guía</button></div></section>";
+    h += listenSectionHTML();
+    // Solo en el sitio web y si se publicó la herramienta de grabación (build-web.mjs define KOOX_GRABAR).
+    if (window.KOOX_STANDALONE === true && window.KOOX_GRABAR === true) {
+      h += '<section class="card help-rec" aria-labelledby="rec-title"><h2 id="rec-title">' + ICON.mic.replace("<svg", '<svg class="ico"') + "¿Hablas maya? Ayuda a grabar las palabras</h2>" +
+        "<p>Si el maya es tu lengua, puedes grabar las palabras del curso para que quienes aprenden las escuchen en voz de un hablante.</p>" +
+        '<div class="btn-row"><a class="btn primary" href="grabar.html" id="btn-grabar">Ayudar a grabar</a></div></section>';
+    }
     if (PWA && PWA.on) h += PWA.installHTML(); // versión web instalable; en el Artifact, el texto de siempre:
     else h += '<section class="section" aria-labelledby="install-title"><h2 id="install-title">Instalar en Android</h2><ol class="steps">' +
       "<li>Abre esta página en Chrome.</li><li>Toca el menú ⋮ (arriba a la derecha).</li>" +
@@ -1703,11 +2109,12 @@
         }).join("") + "</details>";
     } else h += '<p class="muted">Sin fuentes registradas.</p>';
     h += "</section>";
+    h += creditsHTML();
     h += '<section class="section" aria-labelledby="reset-title"><h2 id="reset-title">Borrar avance</h2>' +
       '<p class="muted">Borra tu XP, racha, lecciones y repasos de este navegador; tus ajustes se conservan. No se puede deshacer.</p>' +
       '<div class="btn-row"><button class="btn ghost-danger" type="button" id="btn-reset">Borrar avance</button></div>' +
       '<p class="reset-msg" id="reset-msg" tabindex="-1" aria-live="polite"></p></section>';
-    h += '<p class="foot">Ko\'ox Maaya v4 · experimental, sin validación clínica.</p>';
+    h += '<p class="foot">Ko\'ox Maaya v5 · experimental, sin validación clínica.</p>';
     v.innerHTML = h;
     if (PWA && PWA.on) PWA.bindInstall();
     $("#goal").addEventListener("change", function () {
@@ -1721,6 +2128,18 @@
       if (this.checked) { audioFailed = false; tone("ok"); }
       save();
     });
+    var as = $("#au-synth");
+    if (as) as.addEventListener("change", function () {
+      state.settings.synth = this.checked; save(); stopAudio();
+      toast(this.checked ? "Voz sintética activada" : "Voz sintética desactivada");
+    });
+    var aa = $("#au-auto");
+    if (aa) aa.addEventListener("change", function () { state.settings.autoplay = this.checked; save(); });
+    var ar = $("#au-rate");
+    if (ar) ar.addEventListener("change", function () {
+      state.settings.rate = this.value === "lenta" ? "lenta" : "normal"; save();
+      toast(state.settings.rate === "lenta" ? "Pronunciación lenta" : "Pronunciación a velocidad normal");
+    });
     var armed = false, timer = null, rb = $("#btn-reset");
     rb.addEventListener("click", function () {
       if (!armed) {
@@ -1730,8 +2149,8 @@
         return;
       }
       clearTimeout(timer);
-      var sound = state.settings.sound, goal = state.goal;
-      state = freshState(); state.settings.sound = sound; state.goal = goal;
+      var settings = state.settings, goal = state.goal;
+      state = freshState(); state.settings = settings; state.goal = goal;
       save();
       renderProfile();
       updateBadge();
@@ -1740,6 +2159,75 @@
       msg.focus({ preventScroll: true });
       toast("Avance borrado");
     });
+  }
+
+  // Perfil → Escucha maya: todos los recursos, por unidad (los de varias unidades, aparte).
+  function listenSectionHTML() {
+    if (!RES.length) return "";
+    var groups = [];
+    var multi = RES.filter(function (r) { return r.units.length > 1; });
+    if (multi.length) groups.push(["Para varias unidades", multi, true]);
+    COURSE.units.forEach(function (u) {
+      var list = RES.filter(function (r) { return r.units.length === 1 && r.units[0] === u.id; });
+      if (list.length) groups.push(["Unidad " + u.n + " · " + u.title, list, false]);
+    });
+    var n = groups.reduce(function (t, g) { return t + g[1].length; }, 0);
+    if (!n) return "";
+    return '<section class="section" aria-labelledby="listen-title"><h2 id="listen-title">Escucha maya</h2>' +
+      '<p class="muted">Videos, pódcast, radio y sitios para oír maya. Se abren fuera de la app: fíjate quién los publica.</p>' +
+      '<details class="src-box listen-box" id="listen-box"><summary>Ver ' + (n === 1 ? "el recurso" : "los " + n + " recursos") + ", por unidad</summary>" +
+      groups.map(function (g) {
+        return '<h3 class="src-unit">' + esc(g[0]) + '</h3><ul class="res-list">' + g[1].map(function (r) { return resItem(r, g[2]); }).join("") + "</ul>";
+      }).join("") + "</details></section>";
+  }
+  // Perfil → Créditos de audio: agrupados por autor y licencia; la fuente, una vez si es la misma para
+  // todo el grupo o junto a cada audio si cambia (p. ej. una página por archivo).
+  function creditsHTML() {
+    if (!AU.list.length) return "";
+    var groups = {}, order = [];
+    AU.list.forEach(function (a) {
+      var k = (a.kind === "sintetico" ? "sintetico\n" : "") + [a.author, a.license, a.licenseUrl.replace(/\/+$/, "")].join("\n");
+      if (!groups[k]) { groups[k] = { a: a, items: [], kinds: {}, speakers: [], notes: [], sources: [] }; order.push(k); }
+      var g = groups[k];
+      g.items.push(a); g.kinds[a.kind] = 1;
+      var who = a.speaker ? a.speaker + (a.region ? " · " + a.region : "") : "";
+      if (who && g.speakers.indexOf(who) < 0) g.speakers.push(who);
+      // La nota de cada audio sintético termina con su CER de control: en los créditos va la parte común.
+      var note = a.kind === "sintetico" ? a.notes.replace(/\s*CER de control:\s*[\d.,]+\.?\s*$/, "").trim() : "";
+      if (note && g.notes.indexOf(note) < 0) g.notes.push(note);
+      if (g.sources.indexOf(a.source) < 0) g.sources.push(a.source);
+    });
+    function link(url, text) { return '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + esc(text) + "</a>"; }
+    function source(src, short) {
+      if (!/^https:\/\/\S+$/.test(src)) return esc(src);
+      var host = src.replace(/^https:\/\//, "");
+      return link(src, short ? host.split("/")[0] : host);
+    }
+    function heard(x) { return x.kind === "fonema" ? esc(x.text) + (x.ipa ? " " + esc(x.ipa) : "") : m(x.text); }
+    return '<section class="section" aria-labelledby="credits-title"><h2 id="credits-title">Créditos de audio</h2>' +
+      '<p class="muted">Quién grabó o generó cada audio, con qué licencia y de dónde viene. Todos se recortaron, se normalizó su volumen y se convirtieron a MP3; ' +
+      "los que tienen licencia CC BY-SA se comparten con la misma licencia. Atribución completa, audio por audio: " + link(CREDITS_URL, "CREDITOS.md") + ".</p>" +
+      '<details class="src-box" id="credits-box"><summary>Ver los créditos de ' + AU.list.length + " " + plural(AU.list.length, "audio", "audios") + "</summary>" +
+      order.map(function (k) {
+        var g = groups[k], a = g.a, one = g.sources.length === 1;
+        var kinds = ["nativo", "sintetico", "fonema"].filter(function (x) { return g.kinds[x]; }).map(function (x) { return AU_KIND[x].label; }).join(" · ");
+        if (a.kind === "sintetico") {
+          // Cientos de audios de un mismo modelo: una sola entrada, sin lista de palabras.
+          var srcs = g.sources.filter(Boolean);
+          return '<div class="credit synth"><h3 class="src-unit">' + esc(a.author || "Voz sintética") + "</h3>" +
+            '<p class="cr-l">' + esc(AU_KIND.sintetico.label) + " · " + g.items.length + " " + plural(g.items.length, "audio", "audios") + "</p>" +
+            '<p class="cr-l">Licencia: ' + (a.licenseUrl ? link(a.licenseUrl, a.license || a.licenseUrl) : esc(a.license)) +
+            (/\bNC\b/.test(a.license) ? " · solo uso no comercial" : "") + "</p>" +
+            (srcs.length ? '<p class="cr-l">' + (srcs.length === 1 ? "Modelo: " + source(srcs[0]) : "Fuentes: " + srcs.slice(0, 3).map(function (x) { return source(x, true); }).join(", ") + (srcs.length > 3 ? "…" : "")) + "</p>" : "") +
+            g.notes.slice(0, 2).map(function (t) { return '<p class="cr-n">' + esc(t) + "</p>"; }).join("") + "</div>";
+        }
+        return '<div class="credit"><h3 class="src-unit">' + esc(a.author || "Sin autor") + "</h3>" +
+          '<p class="cr-l">' + esc(kinds) + (g.speakers.length ? " · " + esc(g.speakers.join("; ")) : "") + "</p>" +
+          '<p class="cr-l">Licencia: ' + (a.licenseUrl ? link(a.licenseUrl, a.license || a.licenseUrl) : esc(a.license)) + "</p>" +
+          (one ? (a.source ? '<p class="cr-l">Fuente: ' + source(a.source) + "</p>" : "") + '<p class="cr-w">' + g.items.map(heard).join(", ") + "</p>"
+            : '<ul class="cr-items">' + g.items.map(function (x) { return "<li>" + heard(x) + (x.source ? ' <span class="cr-src">· ' + source(x.source, true) + "</span>" : "") + "</li>"; }).join("") + "</ul>") +
+          g.notes.map(function (t) { return '<p class="cr-n">' + esc(t) + "</p>"; }).join("") + "</div>";
+      }).join("") + "</details></section>";
   }
 
   /* ================= Teclado ================= */
@@ -1768,7 +2256,7 @@
     if (e.key === "Enter") {
       if (e.repeat || e.shiftKey) return;
       var t = e.target;
-      if (t === el.close || (t && t.closest && t.closest("#btn-show-all, .results-actions, .bubble, .tile, .pair-btn, .key-btn"))) return;
+      if (t === el.close || (t && t.closest && t.closest("#btn-show-all, .results-actions, .bubble, .tile, .pair-btn, .key-btn, [data-au]"))) return;
       if (t && t.classList && t.classList.contains("opt") && t.getAttribute("aria-pressed") !== "true") return;
       if (S.done) {
         if (t && t.tagName === "BUTTON") return;
@@ -1782,7 +2270,7 @@
       else next();
       return;
     }
-    if (/^[1-9]$/.test(e.key) && cur && !cur.checked && !isTyping(e.target) && (cur.ex.type === "choice" || cur.ex.type === "fill")) {
+    if (/^[1-9]$/.test(e.key) && cur && !cur.checked && !isTyping(e.target) && (cur.ex.type === "choice" || cur.ex.type === "fill" || cur.ex.type === "listen")) {
       var b = $("#opt-" + (Number(e.key) - 1));
       if (b) { e.preventDefault(); b.click(); b.focus(); }
     }
@@ -1792,7 +2280,7 @@
   function solve(wrong) {
     if (!S || !cur || cur.checked) return false;
     var ex = cur.ex;
-    if (ex.type === "choice" || ex.type === "fill") {
+    if (ex.type === "choice" || ex.type === "fill" || ex.type === "listen") {
       var idx = -1;
       for (var i = 0; i < cur.opts.length; i++) if ((cur.opts[i] === ex.answer) !== !!wrong) { idx = i; break; }
       if (idx < 0) return false;
@@ -1858,11 +2346,44 @@
       return l ? lessonSteps(l).map(function (st) {
         if (st.t !== "ex") return st.t;
         var e = st.ex;
-        return "ex:" + e.type + (e.type === "choice" ? (e.promptLang === "m" ? "-m2es" : "-es2m") : "") + (e.hand ? ":hand" : e.quick ? ":quick" : ":auto") +
+        return "ex:" + e.type + (e.type === "choice" ? (e.promptLang === "m" ? "-m2es" : "-es2m") : e.type === "listen" ? "-" + e.optLang : "") + (e.hand ? ":hand" : e.quick ? ":quick" : ":auto") +
           ":" + (e.type === "pairs" ? e.items.map(function (x) { return x.conf; }).join("") : (e.vocab ? e.vocab.conf : e.conf || "?"));
       }) : null;
     },
-    storageOK: function () { return storageOK; }
+    storageOK: function () { return storageOK; },
+    // Audio: qué hay, qué suena y qué audio corresponde a una palabra, letra o texto.
+    audio: function () {
+      var k = {};
+      AU.list.forEach(function (a) { k[a.kind] = (k[a.kind] || 0) + 1; });
+      return { count: AU.list.length, kinds: k, failed: Object.keys(AU.failed), resources: RES.length,
+        native: COURSE.vocab.filter(function (v) { return nativeFor(v); }).map(function (v) { return v.id; }) };
+    },
+    audioState: function () {
+      var p = player;
+      return {
+        playing: !!(p && !p.paused && !p.ended), key: nowKey, lastKey: auStats.lastKey, lastRate: auStats.lastRate,
+        rate: p ? p.playbackRate : null, preservesPitch: p ? p.preservesPitch !== false : null, currentTime: p ? p.currentTime : 0,
+        src: p && p.kooxSrc ? (p.kooxSrc.slice(0, 5) === "data:" ? "data:" : p.kooxSrc) : null,
+        plays: auStats.plays, started: auStats.started, ended: auStats.ended, errors: auStats.errors, blocked: auStats.blocked
+      };
+    },
+    audioEntries: function () { return AU.list.map(function (a) { return { key: a.key, kind: a.kind, text: a.text, vocab: a.vocab.slice(), letters: a.letters.slice() }; }); },
+    audioFor: function (what, x) {
+      var a = what === "letter" ? audioForLetter(x) : what === "text" ? audioForText(x) : audioForVocab(x);
+      return a ? { key: a.key, kind: a.kind } : null;
+    },
+    // Qué suena en la tarjeta de la guía de la letra l: botones de letra, ejemplo y nativas de otras palabras.
+    guideAudio: function (l) {
+      var g = COURSE.guide.filter(function (x) { return x.l === l; })[0];
+      if (!g) return null;
+      var ga = guideAudio(g);
+      return { multi: ga.multi, letters: ga.letters.map(function (x) { return { l: x.l, key: x.a.key, kind: x.a.kind }; }),
+        ex: ga.ex ? ga.ex.key : null, more: ga.more.map(function (a) { return a.key; }) };
+    },
+    stopAudio: stopAudio,
+    playKey: function (k) { return playAudio(AU.byKey[k]); },
+    // Abre una práctica de un solo «Escucha y elige» (para pruebas y capturas).
+    tryListen: function (vid) { var e = makeListen(COURSE.vocabById[vid]); if (e) openSession("practice", [{ t: "ex", ex: e }]); return !!e; }
   };
 
   /* ================= Versión web instalable (PWA) ================= */
@@ -1999,7 +2520,8 @@
   syncThemeColor();
   // Al volver a la app otro día, refresca racha y repasos.
   document.addEventListener("visibilitychange", function () {
-    if (document.visibilityState === "visible" && !S) showTab(tab, { keepScroll: true });
+    if (document.visibilityState !== "visible") stopAudio();
+    else if (!S) showTab(tab, { keepScroll: true });
   });
   var initial = (location.hash || "").replace("#", "");
   showTab(TAB_VIEW[initial] ? initial : "aprender");

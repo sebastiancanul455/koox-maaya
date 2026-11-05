@@ -1,0 +1,116 @@
+[
+  {
+    "input": "descargas/afi-africada-eyectiva-alveolar.ogg",
+    "key": "afi-africada-eyectiva-alveolar",
+    "kind": "fonema",
+    "text": "ts'",
+    "lang": "und",
+    "ipa": "[tsʼ]",
+    "letters": [
+      "ts'"
+    ],
+    "vocab": [],
+    "author": "Adamsa123",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Alveolar_ejective_affricate.ogg",
+    "title": "Alveolar ejective affricate.ogg",
+    "notes": "Sonido aislado del Alfabeto Fonético Internacional; no es una grabación de un hablante de maya. Se oye la africada alveolar eyectiva [tsʼ]. Licencia CC BY-SA 3.0: el audio procesado (recortado, normalizado y convertido a MP3) se publica con la misma licencia CC BY-SA 3.0 y con la atribución al autor y el enlace a la página de Commons."
+  },
+  {
+    "input": "descargas/afi-africada-eyectiva-postalveolar.ogg",
+    "key": "afi-africada-eyectiva-postalveolar",
+    "kind": "fonema",
+    "text": "ch'",
+    "lang": "und",
+    "ipa": "[tʃʼ]",
+    "letters": [
+      "ch'"
+    ],
+    "vocab": [],
+    "author": "Adamsa123",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Palato-alveolar_ejective_affricate.ogg",
+    "title": "Palato-alveolar ejective affricate.ogg",
+    "notes": "Sonido aislado del Alfabeto Fonético Internacional; no es una grabación de un hablante de maya. Se oye la africada postalveolar eyectiva [tʃʼ]. Licencia CC BY-SA 3.0: el audio procesado (recortado, normalizado y convertido a MP3) se publica con la misma licencia CC BY-SA 3.0 y con la atribución al autor y el enlace a la página de Commons."
+  },
+  {
+    "input": "descargas/n-maayataan.ogg",
+    "key": "n-maayataan",
+    "kind": "nativo",
+    "text": "maayat'aan",
+    "lang": "yua",
+    "letters": [
+      "t'",
+      "aa"
+    ],
+    "vocab": [
+      "u1-maaya-taan"
+    ],
+    "author": "Aaron Tamay",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Maaya-t_aan.ogg",
+    "title": "Maaya-t aan.ogg",
+    "notes": "Maayat'aan, «lengua maya», como la nombran sus hablantes. Según su página de Commons, lo pronuncia una persona mayahablante nativa (voz de hombre). Licencia CC BY-SA 4.0: el audio procesado (recortado, normalizado y convertido a MP3) se publica con la misma licencia CC BY-SA 4.0 y con la atribución al autor y el enlace a la página de Commons."
+  },
+  {
+    "input": "descargas/n-tsiimin-kaak.ogg",
+    "key": "n-tsiimin-kaak",
+    "kind": "nativo",
+    "text": "tsíimin k'áak'",
+    "lang": "yua",
+    "letters": [
+      "ts",
+      "k'",
+      "áa"
+    ],
+    "vocab": [],
+    "author": "Aaron Tamay",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Ts%C3%ADimin-k_%C3%A1ak.ogg",
+    "title": "Tsíimin-k áak.ogg",
+    "notes": "Tsíimin k'áak', nombre en maya del Tren Maya («caballo de fuego»). Según su página de Commons, lo pronuncia una persona mayahablante nativa. Literalmente, «caballo de fuego». Licencia CC BY-SA 4.0: el audio procesado (recortado, normalizado y convertido a MP3) se publica con la misma licencia CC BY-SA 4.0 y con la atribución al autor y el enlace a la página de Commons."
+  },
+  {
+    "input": "descargas/n-te-koom.ogg",
+    "key": "n-te-koom",
+    "kind": "nativo",
+    "text": "Te' k'óom",
+    "lang": "yua",
+    "letters": [
+      "'",
+      "k'",
+      "áa"
+    ],
+    "vocab": [],
+    "author": "Aluxano",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Te%27_k%27%C3%B3om.ogg",
+    "title": "Te' k'óom.ogg",
+    "notes": "Te' k'óom, nombre en maya de la comunidad de Tekom, Yucatán. Según su página de Commons, lo pronuncia una persona mayahablante nativa (voz de mujer). Licencia CC BY-SA 4.0: el audio procesado (recortado, normalizado y convertido a MP3) se publica con la misma licencia CC BY-SA 4.0 y con la atribución al autor y el enlace a la página de Commons."
+  },
+  {
+    "input": "descargas/n-puurux.wav",
+    "key": "n-puurux",
+    "kind": "nativo",
+    "text": "p'uurux",
+    "lang": "yua",
+    "letters": [
+      "p'",
+      "r",
+      "x"
+    ],
+    "vocab": [],
+    "speaker": "Lorenzo Itzá",
+    "author": "Lorenzo Itzá (Lorenzoitza)",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:LL-Q13354_(yua)-Lorenzo_Itz%C3%A1_(Lorenzoitza)-P%27uurux.wav",
+    "title": "LL-Q13354 (yua)-Lorenzo Itzá (Lorenzoitza)-P'uurux.wav",
+    "notes": "P'uurux, en voz de Lorenzo Itzá. Grabación del proyecto Lingua Libre; Commons no indica qué significa la palabra. Dedicado al dominio público (CC0): no exige atribución, pero se da el crédito."
+  }
+]

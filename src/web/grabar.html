@@ -1,0 +1,1557 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Grabar la pronunciación · Ko'ox Maaya</title>
+<meta name="description" content="Graba desde tu celular cómo se dicen las palabras y frases del curso de maya yucateco Ko'ox Maaya. Nada se envía a ningún servidor: todo queda en tu teléfono hasta que decidas compartirlo.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#eef2ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1815" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" id="gfonts" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap"></noscript>
+<style>
+/* Estudio de grabación de Ko'ox Maaya. Misma identidad que la app (src/app.css): ya'ax (verde-azul del
+   cenote) y k'an (amarillo del maíz) sobre sascab; Bricolage Grotesque para títulos y Atkinson
+   Hyperlegible para el texto; claro y oscuro según el teléfono. */
+:root {
+  --bg: #eef2ee; --bg-2: #e3eae5; --surface: #fbfdfb; --surface-hi: #ffffff;
+  --fg: #16251f; --muted: #52625a; --line: #d3ddd6; --line-strong: #aebfb4; --field-border: #788b82;
+  --yaax: #0d6b62; --yaax-hi: #095a52; --yaax-soft: #d6ebe6; --yaax-ink: #0a5b53;
+  --kan: #c98e0c; --kan-hi: #f0b52c; --kan-soft: #f6e8c4; --kan-ink: #664400;
+  --on-accent: #ffffff; --on-kan: #2b1e00;
+  --ok: #1f7a3a; --ok-soft: #dcefe0; --ok-ink: #165c2b;
+  --bad: #b3261e; --bad-soft: #f8dedb; --bad-ink: #8c1d17;
+  --focus: #8f6200;
+  --shadow-up: 0 -4px 20px rgba(22, 37, 31, 0.10);
+  --display: "Bricolage Grotesque", "Segoe UI", Roboto, system-ui, sans-serif;
+  --body: "Atkinson Hyperlegible", "Segoe UI", Roboto, system-ui, sans-serif;
+  --fs-xs: 0.78rem; --fs-sm: 0.9rem; --fs-md: 1rem; --fs-lg: 1.18rem; --fs-xl: 1.45rem; --fs-2xl: 1.9rem;
+  --r-sm: 10px; --r: 16px; --r-lg: 22px; --col: 600px;
+  --gut-l: max(16px, env(safe-area-inset-left, 0px));
+  --gut-r: max(16px, env(safe-area-inset-right, 0px));
+  --greca: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='12'%3E%3Cpolygon points='0,12 0,9 3,9 3,6 6,6 6,3 9,3 9,0 15,0 15,3 18,3 18,6 21,6 21,9 24,9 24,12' fill='black'/%3E%3C/svg%3E");
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1815; --bg-2: #1d2c27; --surface: #15221e; --surface-hi: #1b2b26;
+    --fg: #e3ece7; --muted: #9fb2a9; --line: #2a3a34; --line-strong: #43584f; --field-border: #6a8278;
+    --yaax: #4cc3b3; --yaax-hi: #6fd5c7; --yaax-soft: #173a35; --yaax-ink: #84dfd2;
+    --kan: #e8b84a; --kan-hi: #ffd774; --kan-soft: #3a2f14; --kan-ink: #f3d07c;
+    --on-accent: #05201b; --on-kan: #241900;
+    --ok: #6fd08b; --ok-soft: #163625; --ok-ink: #93e3aa;
+    --bad: #ff8a80; --bad-soft: #3d1c1a; --bad-ink: #ffb4ac;
+    --focus: #e8b84a; --shadow-up: 0 -4px 20px rgba(0, 0, 0, 0.45);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1815; --bg-2: #1d2c27; --surface: #15221e; --surface-hi: #1b2b26;
+  --fg: #e3ece7; --muted: #9fb2a9; --line: #2a3a34; --line-strong: #43584f; --field-border: #6a8278;
+  --yaax: #4cc3b3; --yaax-hi: #6fd5c7; --yaax-soft: #173a35; --yaax-ink: #84dfd2;
+  --kan: #e8b84a; --kan-hi: #ffd774; --kan-soft: #3a2f14; --kan-ink: #f3d07c;
+  --on-accent: #05201b; --on-kan: #241900;
+  --ok: #6fd08b; --ok-soft: #163625; --ok-ink: #93e3aa;
+  --bad: #ff8a80; --bad-soft: #3d1c1a; --bad-ink: #ffb4ac;
+  --focus: #e8b84a; --shadow-up: 0 -4px 20px rgba(0, 0, 0, 0.45);
+  color-scheme: dark;
+}
+
+[hidden] { display: none !important; }
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 17px; line-height: 1.55;
+  padding: 0 var(--gut-r) 32px var(--gut-l); -webkit-tap-highlight-color: transparent;
+}
+body.with-panel { padding-bottom: calc(var(--panel-h, 270px) + 20px); }
+.app { max-width: var(--col); margin: 0 auto; min-width: 0; }
+h1, h2, h3 { font-family: var(--display); line-height: 1.12; margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+h1 { font-size: var(--fs-2xl); font-weight: 800; }
+h2 { font-size: var(--fs-lg); font-weight: 800; }
+h3 { font-size: var(--fs-md); font-weight: 700; }
+p { margin: 0; }
+a { color: var(--yaax-ink); text-underline-offset: 3px; }
+b, strong { font-weight: 700; }
+.m { font-weight: 700; overflow-wrap: anywhere; }
+.muted { color: var(--muted); }
+.small { font-size: var(--fs-sm); }
+.eyebrow { font-size: var(--fs-xs); font-weight: 700; text-transform: uppercase; letter-spacing: 0.09em; color: var(--muted); }
+.sr-only { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; -webkit-user-select: none; user-select: none; }
+button:disabled, [aria-disabled="true"] { cursor: default; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 6px; }
+[tabindex="-1"]:focus { outline: none; }
+svg.ico { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+svg.ico.fill { fill: currentColor; stroke: none; }
+
+/* ---------- Cabecera y pasos ---------- */
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 0 6px; min-width: 0; }
+.brand { display: inline-flex; align-items: center; gap: 8px; font-family: var(--display); font-weight: 800; font-size: 1.08rem; color: var(--yaax-ink); text-decoration: none; min-height: 44px; }
+.brand-mark { width: 28px; height: 28px; border-radius: 8px; background: var(--yaax); display: grid; place-items: center; }
+.brand-mark i { width: 18px; height: 9px; background: var(--kan-hi); -webkit-mask: var(--greca) no-repeat center / 18px 9px; mask: var(--greca) no-repeat center / 18px 9px; }
+.top a.back { font-size: var(--fs-sm); font-weight: 700; min-height: 44px; display: inline-flex; align-items: center; }
+.greca { height: 12px; background: var(--kan); -webkit-mask: var(--greca) repeat-x left bottom / 24px 12px; mask: var(--greca) repeat-x left bottom / 24px 12px; }
+.steps {
+  position: sticky; top: 0; z-index: 6; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px;
+  margin-inline: calc(-1 * var(--gut-l)) calc(-1 * var(--gut-r)); padding: 8px var(--gut-r) 8px var(--gut-l);
+  background: var(--bg); border-bottom: 1px solid var(--line);
+}
+.steps-in { display: contents; }
+.step {
+  min-height: 44px; min-width: 0; padding: 6px 6px; border-radius: 12px; border: 1px solid var(--line-strong); background: transparent;
+  display: flex; align-items: center; justify-content: center; gap: 6px; font-weight: 700; font-size: var(--fs-sm); color: var(--fg);
+}
+.step .n { flex: none; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: var(--bg-2); font-size: 0.75rem; }
+.step .lbl { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.step[aria-current="step"] { background: var(--yaax-soft); border-color: var(--yaax); color: var(--yaax-ink); }
+.step[aria-current="step"] .n { background: var(--yaax); color: var(--on-accent); }
+.step[aria-disabled="true"] { color: var(--muted); border-style: dashed; }
+.step .count { flex: none; min-width: 22px; padding: 0 6px; height: 20px; border-radius: 99px; background: var(--kan); color: var(--on-kan); font-size: 0.72rem; display: inline-grid; place-items: center; }
+@media (min-width: 640px) { .steps { margin-inline: 0; padding-inline: 0; } }
+
+/* ---------- Vistas y bloques ---------- */
+.view { display: flex; flex-direction: column; gap: 20px; padding-block: 18px 12px; min-width: 0; }
+.head { display: flex; flex-direction: column; gap: 6px; }
+.lead { color: var(--muted); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.card.kan { background: var(--kan-soft); border-color: transparent; }
+.card.kan h2 { color: var(--kan-ink); }
+.card.yaax { background: var(--yaax-soft); border-color: transparent; }
+.card.yaax h2 { color: var(--yaax-ink); }
+.card.danger { border-color: var(--bad); }
+.card h2 { display: flex; align-items: center; gap: 8px; }
+ul.tips, ol.howto { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 6px; }
+.facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.fact { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 10px 12px; display: flex; flex-direction: column; min-width: 0; }
+.fact b { font-family: var(--display); font-size: var(--fs-xl); line-height: 1.1; }
+.fact span { font-size: var(--fs-xs); color: var(--muted); }
+.banner { border-radius: var(--r); padding: 12px 14px; font-size: var(--fs-sm); margin-top: 10px; }
+.banner.warn { background: var(--bad-soft); color: var(--bad-ink); }
+
+/* ---------- Formulario ---------- */
+.field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.field label, .legend { font-weight: 700; }
+.hint { font-size: var(--fs-sm); color: var(--muted); }
+input[type="text"] {
+  width: 100%; min-height: 50px; padding: 10px 14px; border-radius: 14px; border: 2px solid var(--field-border);
+  background: var(--surface-hi); color: var(--fg); font-size: 1.05rem; -webkit-appearance: none; appearance: none;
+}
+input[type="text"]:focus { outline: none; border-color: var(--yaax); box-shadow: 0 0 0 3px var(--yaax-soft); }
+fieldset { border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+legend { padding: 0; margin-bottom: 4px; font-weight: 700; }
+.opt {
+  display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 4px 12px; align-items: start; padding: 12px 14px;
+  border: 1px solid var(--line-strong); border-radius: var(--r); background: var(--surface); cursor: pointer;
+}
+.opt:has(input:checked) { border-color: var(--yaax); background: var(--yaax-soft); }
+.opt input { grid-row: 1 / span 2; width: 24px; height: 24px; margin: 2px 0 0; accent-color: var(--yaax); }
+.opt .t { font-weight: 700; }
+.opt .t small { font-weight: 700; font-size: var(--fs-xs); color: var(--kan-ink); background: var(--kan-soft); border-radius: 99px; padding: 1px 8px; margin-left: 6px; white-space: nowrap; }
+.opt .d { font-size: var(--fs-sm); color: var(--muted); grid-column: 2; }
+.opt .d a { white-space: nowrap; }
+.consent {
+  display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 12px; align-items: start; padding: 16px;
+  border-radius: var(--r-lg); border: 2px solid var(--kan); background: var(--kan-soft); cursor: pointer;
+}
+.consent input { width: 28px; height: 28px; margin: 0; accent-color: var(--yaax); }
+.consent .t { font-weight: 700; }
+
+/* ---------- Botones ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; padding: 12px 22px;
+  border-radius: 999px; border: 2px solid transparent; font-weight: 700; font-size: var(--fs-md); line-height: 1.2; text-align: center;
+  background: var(--bg-2); color: var(--fg); text-decoration: none; transition: transform .12s ease, background-color .15s ease;
+}
+.btn:active:not(:disabled) { transform: translateY(1px) scale(.99); }
+.btn.wide { width: 100%; }
+.btn.primary { background: var(--yaax); color: var(--on-accent); }
+.btn.primary:hover:not(:disabled) { background: var(--yaax-hi); }
+.btn.tonal { background: var(--yaax-soft); color: var(--yaax-ink); }
+.btn.ghost { background: transparent; border-color: var(--line-strong); }
+.btn.danger { background: var(--bad); color: var(--on-accent); }
+.btn.ghost-danger { background: transparent; border-color: var(--bad); color: var(--bad-ink); }
+.btn.text { background: transparent; color: var(--yaax-ink); padding-inline: 10px; min-height: 44px; }
+.btn:disabled { background: var(--bg-2); color: var(--muted); border-color: var(--line); }
+.btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn-row > .btn { flex: 1 1 150px; }
+
+/* ---------- Lista para grabar ---------- */
+.progress { display: flex; flex-direction: column; gap: 8px; }
+.progress .big { font-family: var(--display); font-size: var(--fs-xl); font-weight: 800; line-height: 1.1; }
+.bar { height: 10px; border-radius: 99px; background: var(--bg-2); overflow: hidden; }
+.bar i { display: block; height: 100%; width: 0; background: var(--yaax); border-radius: 99px; transition: width .3s ease; }
+.who { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-size: var(--fs-sm); color: var(--muted); }
+.who .btn.text { min-height: 44px; }
+.chips {
+  display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding-block: 2px;
+  margin-inline: calc(-1 * var(--gut-l)) calc(-1 * var(--gut-r)); padding-inline: var(--gut-l) var(--gut-r);
+}
+.chips::-webkit-scrollbar { display: none; }
+@media (min-width: 640px) { .chips { margin-inline: 0; padding-inline: 0; flex-wrap: wrap; } }
+.chip {
+  flex: none; min-height: 44px; padding: 8px 14px; border-radius: 12px; border: 1px solid var(--line-strong);
+  background: transparent; color: var(--fg); font-size: var(--fs-sm); font-weight: 700; white-space: nowrap;
+}
+.chip[aria-pressed="true"] { background: var(--yaax-soft); border-color: var(--yaax); color: var(--yaax-ink); }
+.seg { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); background: var(--bg-2); border-radius: 14px; padding: 4px; gap: 4px; }
+.seg button { min-height: 44px; border: 0; border-radius: 10px; background: transparent; font-weight: 700; font-size: var(--fs-sm); color: var(--muted); padding: 4px 6px; min-width: 0; }
+.seg button[aria-pressed="true"] { background: var(--surface-hi); color: var(--fg); box-shadow: 0 1px 3px rgba(0, 0, 0, .12); }
+.seg .c { display: block; font-size: var(--fs-xs); font-weight: 400; }
+.list-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.list .sep { padding: 12px 2px 2px; font-family: var(--display); font-weight: 800; font-size: var(--fs-md); color: var(--muted); }
+.list .sep:first-child { padding-top: 0; }
+.row {
+  width: 100%; display: flex; align-items: center; gap: 12px; text-align: left; padding: 12px 14px; min-height: 64px;
+  border-radius: var(--r); border: 1px solid var(--line); background: var(--surface); color: var(--fg);
+  scroll-margin-top: 72px; scroll-margin-bottom: calc(var(--panel-h, 270px) + 16px);
+}
+.row:hover { border-color: var(--line-strong); }
+.row[aria-current="true"] { border-color: var(--yaax); box-shadow: inset 0 0 0 1px var(--yaax); background: var(--surface-hi); }
+.row .txt { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.row .m { font-size: 1.15rem; color: var(--yaax-ink); line-height: 1.25; }
+.row .es { font-size: var(--fs-sm); color: var(--muted); overflow-wrap: anywhere; }
+.tags { display: flex; flex-wrap: wrap; gap: 4px 6px; margin-top: 2px; }
+.tag { font-size: var(--fs-xs); font-weight: 700; padding: 1px 8px; border-radius: 99px; background: var(--bg-2); color: var(--muted); white-space: nowrap; }
+.tag.letter { background: var(--kan-soft); color: var(--kan-ink); }
+.tag.have { background: var(--yaax-soft); color: var(--yaax-ink); }
+.st { flex: none; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; }
+.st svg { width: 18px; height: 18px; }
+.st.done { background: var(--ok); color: var(--on-accent); }
+.st.covered { background: var(--yaax-soft); color: var(--yaax-ink); }
+.st.todo { border: 2px dashed var(--line-strong); }
+.empty { padding: 20px; border-radius: var(--r-lg); background: var(--surface); border: 1px dashed var(--line-strong); display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+
+/* ---------- Panel de grabación (abajo, a la mano del pulgar) ---------- */
+.panel {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 8; background: var(--surface); border-top: 1px solid var(--line);
+  border-radius: 22px 22px 0 0; box-shadow: var(--shadow-up);
+  padding: 12px var(--gut-r) calc(12px + env(safe-area-inset-bottom, 0px)) var(--gut-l);
+}
+.panel-in { max-width: var(--col); margin: 0 auto; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.p-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 30px; min-width: 0; }
+.p-top .tags { margin: 0; min-width: 0; }
+.p-del { flex: none; min-height: 44px; margin: -8px -8px -8px 0; padding: 0 10px; border: 0; background: transparent; color: var(--bad-ink); font-weight: 700; font-size: var(--fs-sm); display: inline-flex; align-items: center; gap: 4px; }
+.p-del svg { width: 18px; height: 18px; }
+.p-m { font-family: var(--display); font-size: 1.8rem; font-weight: 800; color: var(--yaax-ink); line-height: 1.1; overflow-wrap: anywhere; }
+.p-m.long { font-size: 1.4rem; }
+.p-es { color: var(--muted); font-size: var(--fs-sm); }
+.p-meter { display: flex; align-items: center; gap: 10px; min-height: 22px; }
+.meter { flex: 1; height: 8px; border-radius: 99px; background: var(--bg-2); overflow: hidden; }
+.meter i { display: block; height: 100%; width: 100%; background: var(--yaax); transform-origin: left center; transform: scaleX(0); }
+.meter.hot i { background: var(--kan); }
+.p-time { flex: none; font-size: var(--fs-sm); font-variant-numeric: tabular-nums; color: var(--muted); min-width: 4.6em; text-align: right; }
+.p-status { font-size: var(--fs-sm); min-height: 1.5em; }
+.p-status.bad { color: var(--bad-ink); font-weight: 700; }
+.p-status.ok { color: var(--ok-ink); font-weight: 700; }
+.controls { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: end; gap: 8px; }
+.ctl {
+  display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 44px; padding: 4px; border: 0; background: none;
+  color: var(--fg); font-weight: 700; font-size: var(--fs-sm); border-radius: 16px;
+}
+.ctl .disc { width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; background: var(--bg-2); color: var(--fg); }
+.ctl:disabled { color: var(--muted); }
+.ctl:disabled .disc { opacity: .5; }
+.ctl.rec .disc { position: relative; width: 78px; height: 78px; background: var(--yaax); color: var(--on-accent); }
+.ctl.rec .disc svg { width: 30px; height: 30px; }
+.ctl.rec[data-state="recording"] .disc { background: var(--bad); }
+.ctl.rec[data-state="recording"] .disc::before {
+  content: ""; position: absolute; inset: -7px; border-radius: 50%;
+  background: conic-gradient(var(--kan) calc(var(--p, 0) * 1turn), var(--bg-2) 0);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 6px), #000 calc(100% - 5px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 6px), #000 calc(100% - 5px));
+}
+.ctl.rec[data-state="busy"] .disc { opacity: .7; }
+.ctl.play[data-state="playing"] .disc { background: var(--yaax-soft); color: var(--yaax-ink); }
+.ctl.next .disc { background: var(--yaax-soft); color: var(--yaax-ink); }
+
+/* ---------- Enviar ---------- */
+.ready { display: flex; flex-direction: column; gap: 10px; }
+.file-line { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: var(--r); background: var(--ok-soft); color: var(--ok-ink); font-weight: 700; overflow-wrap: anywhere; min-width: 0; }
+.file-line svg { flex: none; }
+.check-line { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 10px; align-items: start; cursor: pointer; }
+.check-line input { width: 24px; height: 24px; margin: 2px 0 0; accent-color: var(--yaax); }
+.confirm { display: flex; flex-direction: column; gap: 10px; padding: 14px; border-radius: var(--r); background: var(--bad-soft); color: var(--fg); }
+.confirm h3 { color: var(--bad-ink); }
+.status { font-size: var(--fs-sm); min-height: 1.4em; }
+.status:empty { min-height: 0; margin-top: -10px; }
+.status.bad { color: var(--bad-ink); font-weight: 700; }
+.foot { font-size: var(--fs-xs); color: var(--muted); padding-top: 4px; }
+
+@media (max-width: 370px) {
+  .p-m { font-size: 1.55rem; }
+  .p-m.long { font-size: 1.25rem; }
+  .ctl .disc { width: 50px; height: 50px; }
+  .ctl.rec .disc { width: 72px; height: 72px; }
+  .step { font-size: 0.82rem; gap: 4px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+  <header class="top">
+    <a class="brand" href="./"><span class="brand-mark" aria-hidden="true"><i></i></span>Ko'ox Maaya</a>
+    <a class="back" href="./">Ir a la app</a>
+  </header>
+  <div class="greca" aria-hidden="true"></div>
+
+  <noscript><p class="banner warn">Esta página necesita JavaScript para grabar.</p></noscript>
+  <p class="banner warn" id="no-course" hidden>No se encontró el contenido del curso. Esta página se arma con <b>node build-web.mjs</b>; ábrela desde el sitio publicado.</p>
+  <p class="banner warn" id="storage-warn" role="status" hidden></p>
+
+  <nav class="steps" id="steps" aria-label="Pasos" hidden>
+    <button class="step" type="button" data-view="intro"><span class="n" aria-hidden="true">1</span><span class="lbl">Tus datos</span></button>
+    <button class="step" type="button" data-view="rec"><span class="n" aria-hidden="true">2</span><span class="lbl">Grabar</span></button>
+    <button class="step" type="button" data-view="send"><span class="n" aria-hidden="true">3</span><span class="lbl">Enviar</span><span class="count" id="send-count" hidden></span></button>
+  </nav>
+
+  <main id="main" hidden>
+    <!-- Paso 1: presentación, datos, licencia y consentimiento -->
+    <section class="view" id="v-intro" aria-labelledby="intro-title">
+      <header class="head">
+        <p class="eyebrow">Para hablantes de maya yucateco</p>
+        <h1 id="intro-title" tabindex="-1">Graba cómo se dice</h1>
+        <p class="lead">Con tu voz, quienes aprenden maya con Ko'ox Maaya podrán escuchar cómo se dicen las palabras y frases del curso. Aquí las grabas una por una, desde tu celular.</p>
+      </header>
+
+      <div class="facts" aria-label="Cuánto toma">
+        <p class="fact"><b id="f-total">0</b><span>palabras, frases y letras</span></p>
+        <p class="fact"><b>~10 s</b><span>cada una</span></p>
+        <p class="fact"><b id="f-unit">5–10</b><span>minutos por unidad</span></p>
+      </div>
+
+      <div class="card">
+        <h2>Cómo funciona</h2>
+        <ol class="howto">
+          <li>Escribe tus datos (si quieres), elige la licencia y acepta el consentimiento.</li>
+          <li>Toca una palabra y graba. No hace falta grabarlas todas: <b>cada una ayuda</b>. Puedes parar y seguir otro día; se guarda en este teléfono.</li>
+          <li>Cuando quieras, crea el archivo y envíalo por WhatsApp, correo o Drive a quien te invitó.</li>
+        </ol>
+      </div>
+
+      <div class="card kan">
+        <h2>Consejos para que se oiga bien</h2>
+        <ul class="tips">
+          <li>Busca un <b>lugar silencioso</b>: sin ventilador, tele, radio ni gente platicando cerca.</li>
+          <li>Sostén el celular a <b>un palmo</b> de la boca (unos 20 cm).</li>
+          <li>Toca <b>Grabar</b>, espera un instante y di la palabra <b>una sola vez</b>, con naturalidad, <b>como se dice en tu comunidad</b>.</li>
+          <li>Si en tu pueblo se dice distinto, dila como la dices tú. Si no la conoces, sáltala.</li>
+          <li>Escúchala. Si no quedó bien, vuelve a grabarla.</li>
+        </ul>
+      </div>
+
+      <div class="card yaax">
+        <h2><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Tu voz se queda contigo</h2>
+        <p>Nada se envía a ningún servidor. Las grabaciones se guardan <b>solo en este teléfono</b>, en este navegador, hasta que tú crees el archivo y decidas a quién mandarlo. Puedes borrarlas cuando quieras.</p>
+      </div>
+
+      <form class="card" id="profile-form" novalidate>
+        <h2>Tus datos <span class="muted small">(opcionales)</span></h2>
+        <div class="field">
+          <label for="f-speaker">Nombre o seudónimo para el crédito</label>
+          <input type="text" id="f-speaker" autocomplete="nickname" maxlength="80" aria-describedby="f-speaker-h">
+          <p class="hint" id="f-speaker-h">Así aparecerá en los créditos de la app. Si lo dejas vacío, saldrá «Hablante anónimo».</p>
+        </div>
+        <div class="field">
+          <label for="f-region">Comunidad o municipio</label>
+          <input type="text" id="f-region" autocomplete="off" maxlength="80" aria-describedby="f-region-h">
+          <p class="hint" id="f-region-h">Ayuda a saber de qué región es la pronunciación. Por ejemplo: Peto, Valladolid, Hopelchén.</p>
+        </div>
+
+        <fieldset id="f-license">
+          <legend>Licencia de tus grabaciones</legend>
+          <p class="hint">Dice qué pueden hacer otras personas con tus grabaciones.</p>
+          <label class="opt">
+            <input type="radio" name="license" value="CC BY-SA 4.0" checked>
+            <span class="t">CC BY-SA 4.0<small>Recomendada</small></span>
+            <span class="d">Cualquiera puede usarlas, compartirlas y adaptarlas, siempre que <b>te dé crédito</b> y comparta lo que haga <b>con esta misma licencia</b>. <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es" target="_blank" rel="noopener">Leer la licencia</a></span>
+          </label>
+          <label class="opt">
+            <input type="radio" name="license" value="CC BY 4.0">
+            <span class="t">CC BY 4.0</span>
+            <span class="d">Cualquiera puede usarlas, compartirlas y adaptarlas, siempre que <b>te dé crédito</b>. <a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank" rel="noopener">Leer la licencia</a></span>
+          </label>
+          <label class="opt">
+            <input type="radio" name="license" value="CC0 1.0">
+            <span class="t">CC0 1.0 (dominio público)</span>
+            <span class="d">Las regalas a todos: cualquiera puede usarlas para lo que sea, <b>sin tener que darte crédito</b> (Ko'ox Maaya igual pondrá tu nombre si lo escribiste). <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.es" target="_blank" rel="noopener">Leer la licencia</a></span>
+          </label>
+        </fieldset>
+
+        <label class="consent" for="f-consent">
+          <input type="checkbox" id="f-consent" aria-labelledby="consent-text" aria-describedby="f-consent-h">
+          <span>
+            <span class="t" id="consent-text">Acepto que mis grabaciones se publiquen en la app Ko'ox Maaya con esta licencia y con el crédito indicado.</span>
+            <span class="hint" id="f-consent-h" style="display:block;margin-top:4px">Licencia elegida: <b id="consent-lic">CC BY-SA 4.0</b> · crédito: <b id="consent-credit">Hablante anónimo</b>. Mientras no envíes el archivo, nada sale de tu teléfono.</span>
+          </span>
+        </label>
+
+        <button class="btn primary wide" type="submit" id="btn-start" disabled>Empezar a grabar</button>
+        <p class="hint" id="start-hint" aria-live="polite">Para empezar, marca la casilla de consentimiento.</p>
+      </form>
+      <p class="foot">Ko'ox Maaya es una app experimental para aprender maya yucateco. Tus grabaciones ayudan a que se escuche la pronunciación real. ¡Dios bo'otik!</p>
+    </section>
+
+    <!-- Paso 2: lista y grabación -->
+    <section class="view" id="v-rec" aria-labelledby="rec-title" hidden>
+      <header class="head">
+        <p class="eyebrow">Paso 2</p>
+        <h1 id="rec-title" tabindex="-1">Graba</h1>
+        <p class="lead">Toca una palabra de la lista y después el botón <b>Grabar</b>. Di la palabra una vez y toca <b>Detener</b> (a los 6 segundos se detiene sola).</p>
+      </header>
+      <div class="card progress">
+        <p><span class="big" id="prog-big">0 de 0</span> <span class="muted">grabadas</span></p>
+        <div class="bar" aria-hidden="true"><i id="prog-bar"></i></div>
+        <p class="small muted" id="prog-sub"></p>
+        <div class="who"><span id="who-line"></span><button class="btn text" type="button" id="btn-edit">Cambiar datos</button></div>
+      </div>
+      <div class="chips" id="unit-chips" role="group" aria-label="Sección del curso"></div>
+      <div class="seg" id="status-seg" role="group" aria-label="Mostrar">
+        <button type="button" data-status="pend" aria-pressed="true">Por grabar<span class="c" id="c-pend"></span></button>
+        <button type="button" data-status="mine" aria-pressed="false">Grabadas<span class="c" id="c-mine"></span></button>
+        <button type="button" data-status="all" aria-pressed="false">Todas<span class="c" id="c-all"></span></button>
+      </div>
+      <div class="list-head"><h2 id="list-title">Todo el curso</h2><span class="small muted" id="list-count" aria-live="polite"></span></div>
+      <ul class="list" id="list" aria-labelledby="list-title"></ul>
+      <div class="empty" id="list-empty" hidden>
+        <p id="list-empty-text"></p>
+        <button class="btn tonal" type="button" id="btn-empty-send">Enviar mis grabaciones</button>
+      </div>
+    </section>
+
+    <!-- Paso 3: exportar y enviar -->
+    <section class="view" id="v-send" aria-labelledby="send-title" hidden>
+      <header class="head">
+        <p class="eyebrow">Paso 3</p>
+        <h1 id="send-title" tabindex="-1">Envía tus grabaciones</h1>
+        <p class="lead">Se crea un solo archivo (ZIP) con tus grabaciones y tus datos. Tú decides a quién enviarlo.</p>
+      </header>
+      <div class="card">
+        <h2 id="send-sum">Aún no tienes grabaciones</h2>
+        <p class="small muted" id="send-who"></p>
+        <label class="check-line" id="only-new-line" hidden>
+          <input type="checkbox" id="f-only-new">
+          <span>Solo las nuevas desde el último envío (<span id="only-new-n">0</span>)</span>
+        </label>
+        <button class="btn primary wide" type="button" id="btn-export" disabled>
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Crear y descargar el archivo
+        </button>
+        <div class="ready" id="ready" hidden>
+          <p class="file-line"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span id="ready-name"></span></p>
+          <div class="btn-row">
+            <button class="btn tonal" type="button" id="btn-share" hidden><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.4M8.2 13.2l7.6 4.4"/></svg>Compartir</button>
+            <button class="btn ghost" type="button" id="btn-download">Descargar otra vez</button>
+          </div>
+        </div>
+        <p class="status" id="send-status" aria-live="polite"></p>
+      </div>
+
+      <div class="card">
+        <h2>Cómo enviarlo</h2>
+        <p class="small">El archivo queda en la carpeta <b>Descargas</b> del teléfono (la app <b>Archivos</b> o <b>Files</b>). Envíalo a la persona que te invitó a grabar:</p>
+        <ul class="tips">
+          <li><b>WhatsApp:</b> abre el chat, toca el clip <span aria-hidden="true">📎</span> → <b>Documento</b> y elige el archivo de Descargas.</li>
+          <li><b>Correo:</b> adjunta el archivo. Si pesa más de 20 MB, mejor usa WhatsApp o Drive.</li>
+          <li><b>Google Drive:</b> toca <b>+</b> → <b>Subir</b>, elige el archivo y comparte el enlace.</li>
+        </ul>
+        <p class="small muted">Después puedes seguir grabando. La próxima vez marca «Solo las nuevas» para no mandar dos veces lo mismo.</p>
+      </div>
+
+      <div class="card danger">
+        <h2>Borrar todo de este teléfono</h2>
+        <p class="small">Borra tus grabaciones y tus datos de este navegador. Lo que ya enviaste no se borra.</p>
+        <button class="btn ghost-danger" type="button" id="btn-wipe">Borrar todo…</button>
+        <div class="confirm" id="wipe-confirm" role="group" aria-labelledby="wipe-title" hidden>
+          <h3 id="wipe-title" tabindex="-1">¿Borrar todo?</h3>
+          <p class="small" id="wipe-text"></p>
+          <div class="btn-row">
+            <button class="btn danger" type="button" id="btn-wipe-yes">Sí, borrar todo</button>
+            <button class="btn ghost" type="button" id="btn-wipe-no">Cancelar</button>
+          </div>
+        </div>
+        <p class="status" id="wipe-status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- Panel de grabación: fijo abajo, para usarse con una mano -->
+<div class="panel" id="panel" role="region" aria-label="Grabación" hidden>
+  <div class="panel-in">
+    <div class="p-top">
+      <div class="tags" id="p-tags"></div>
+      <button class="p-del" type="button" id="btn-del" hidden><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M10 7V5h4v2M7 7l1 13h8l1-13"/></svg>Borrar</button>
+    </div>
+    <p class="p-m" id="p-m" lang="yua"></p>
+    <p class="p-es" id="p-es"></p>
+    <div class="p-meter"><div class="meter" id="meter" aria-hidden="true"><i id="meter-i"></i></div><span class="p-time" id="p-time" aria-hidden="true"></span></div>
+    <p class="p-status" id="p-status" aria-live="polite"></p>
+    <div class="controls">
+      <button class="ctl play" type="button" id="btn-play" disabled><span class="disc"><svg class="ico fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg></span><span class="lbl">Escuchar</span></button>
+      <button class="ctl rec" type="button" id="btn-rec" data-state="idle"><span class="disc"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg></span><span class="lbl">Grabar</span></button>
+      <button class="ctl next" type="button" id="btn-next"><span class="disc"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5.5l6.5 6.5L9 18.5"/></svg></span><span class="lbl">Saltar</span></button>
+    </div>
+  </div>
+</div>
+
+<script>
+/*@@CONTENT@@*/
+</script>
+<script>
+/* Estudio de grabación de Ko'ox Maaya.
+   - Lista de lo que se puede grabar: el ejemplo de cada letra de la guía (COURSE.guide.alphabet), cada palabra
+     (vocab.m) y cada frase de ejemplo (vocab.ex.m). Si el mismo texto aparece varias veces (la palabra de
+     ejemplo de una letra también es vocabulario), se graba una sola vez y la grabación sirve para todos.
+   - Graba con MediaRecorder, recorta el silencio del inicio y del final con WebAudio y guarda WAV mono de
+     16 bits a 44.1 kHz en IndexedDB. Nada sale del teléfono hasta que la persona exporta el ZIP.
+   - Exporta un ZIP sin compresión: grabaciones.json, LEEME.txt y wav/<key>.wav. Lo importa
+     tools/import-recordings.mjs. */
+(function () {
+  "use strict";
+  var COURSE = window.COURSE;
+  var $ = function (s) { return document.querySelector(s); };
+  var $$ = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
+  var esc = function (s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); };
+
+  var SR = 44100;                 // frecuencia de la exportación
+  var MAX_MS = 6000;              // límite de cada grabación
+  var MIC_IDLE_MS = 90000;        // el micrófono se apaga solo tras este tiempo sin grabar
+  var ANON = "Hablante anónimo";
+  var CONSENT_TEXT = "Acepto que mis grabaciones se publiquen en la app Ko'ox Maaya con esta licencia y con el crédito indicado.";
+  var LICENSES = {
+    "CC BY-SA 4.0": "https://creativecommons.org/licenses/by-sa/4.0/deed.es",
+    "CC BY 4.0": "https://creativecommons.org/licenses/by/4.0/deed.es",
+    "CC0 1.0": "https://creativecommons.org/publicdomain/zero/1.0/deed.es"
+  };
+  var TYPE_LABEL = { letter: "Letra", vocab: "Palabra", example: "Frase de ejemplo" };
+
+  // ---------------------------------------------------------------- Utilidades de texto
+  function normText(s) {
+    return String(s || "").normalize("NFC").toLowerCase().replace(/[’‘ʼ´`]/g, "'")
+      .replace(/[¿¡!.,;:"“”«»()…]/g, " ").replace(/\?/g, " ? ").replace(/\s+/g, " ").trim();
+  }
+  // Misma regla que tools/audio-lib.mjs (slugLetter): «ch'» → ch-saltillo, «áa» → a-alto-a.
+  function slugLetter(l) {
+    return String(l).normalize("NFD").toLowerCase().replace(/[’‘ʼ´`]/g, "'").replace(/́/g, "-alto-")
+      .replace(/[̀-ͯ]/g, "").replace(/'/g, "-saltillo-").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  }
+  function slug(s) {
+    return String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 40);
+  }
+  var fmtNum = function (n) { return Number(n).toLocaleString("es-MX"); };
+  var fmtS = function (ms) { return (ms / 1000).toFixed(1).replace(".", ",") + " s"; };
+  function fmtMB(bytes) {
+    if (bytes < 1024 * 1024) return Math.max(1, Math.round(bytes / 1024)) + " KB";
+    return (bytes / 1048576).toFixed(1).replace(".", ",") + " MB";
+  }
+  function pad2(n) { return (n < 10 ? "0" : "") + n; }
+
+  // ---------------------------------------------------------------- Modelo: elementos y grupos
+  var items = [], groups = [], byGk = new Map(), units = [];
+  function buildModel() {
+    var alphabet = (COURSE.guide && Array.isArray(COURSE.guide.alphabet)) ? COURSE.guide.alphabet : [];
+    alphabet.forEach(function (a) {
+      if (!a || !a.ex || !a.ex.m) return;
+      items.push({ type: "letter", id: slugLetter(a.l), letter: a.l, text: a.ex.m, es: a.ex.es, unit: "L", desc: a.desc });
+    });
+    (COURSE.units || []).forEach(function (u) {
+      units.push({ id: u.id, n: u.n, title: u.title });
+      (u.lessons || []).forEach(function (l) {
+        (l.vocab || []).forEach(function (v) {
+          items.push({ type: "vocab", id: v.id, text: v.m, es: v.es, unit: u.id });
+          if (v.ex && v.ex.m) items.push({ type: "example", id: v.id, text: v.ex.m, es: v.ex.es, unit: u.id, parent: v.m });
+        });
+      });
+    });
+    items.forEach(function (it, i) {
+      it.i = i;
+      it.key = (it.type === "vocab" ? "v-" : it.type === "example" ? "ex-" : "l-") + it.id;
+      var gk = normText(it.text);
+      var g = byGk.get(gk);
+      if (!g) {
+        g = { i: groups.length, gk: gk, text: it.text, es: it.es, items: [], units: {}, pos: {}, file: "wav/" + it.key + ".wav" };
+        groups.push(g); byGk.set(gk, g);
+      }
+      g.items.push(it);
+      if (!(it.unit in g.pos)) g.pos[it.unit] = i;
+      g.units[it.unit] = true;
+    });
+    groups.forEach(function (g) { g.home = g.items[0].unit; g.long = g.text.length > 18; });
+  }
+
+  // Audio que ya tiene la app (window.COURSE_AUDIO). Como el motor, una palabra o frase tiene audio si alguna
+  // entrada dice el mismo texto, y una letra si alguna entrada la lista en «letters». Solo la voz de un
+  // hablante («nativo») la cubre: lo que solo tiene voz sintética sigue pendiente (la nativa la reemplaza).
+  function markCovered() {
+    var A = window.COURSE_AUDIO;
+    var list = Array.isArray(A) ? A : (A && Array.isArray(A.entries)) ? A.entries : (A && typeof A === "object") ? Object.keys(A).map(function (k) { return A[k]; }) : [];
+    var idx = { nativo: { t: {}, l: {} }, sintetico: { t: {}, l: {} } };
+    list.forEach(function (e) {
+      var x = e && idx[e.kind];
+      if (!x) return;
+      if (e.text) (x.t[normText(e.text)] = x.t[normText(e.text)] || []).push(e);
+      (Array.isArray(e.letters) ? e.letters : []).forEach(function (l) { (x.l[l] = x.l[l] || []).push(e); });
+    });
+    var hits = function (kind, it) { return (it.type === "letter" ? idx[kind].l[it.letter] : idx[kind].t[normText(it.text)]) || []; };
+    groups.forEach(function (g) {
+      var authors = {};
+      g.covered = g.items.every(function (it) {
+        var h = hits("nativo", it);
+        h.forEach(function (e) { if (e.author) authors[e.author] = 1; });
+        return h.length > 0;
+      });
+      g.coveredBy = Object.keys(authors);
+      g.synth = !g.covered && g.items.some(function (it) { return hits("sintetico", it).length > 0; });
+    });
+  }
+
+  // ---------------------------------------------------------------- Almacenamiento (IndexedDB con respaldo en memoria)
+  var DB_NAME = "koox-maaya-grabar";
+  var db = null, mem = { meta: new Map(), recs: new Map(), wavs: new Map() };
+  function openDB() {
+    return new Promise(function (resolve) {
+      var done = function (d) { db = d; resolve(!!d); };
+      try {
+        if (!window.indexedDB) return done(null);
+        var req = window.indexedDB.open(DB_NAME, 1);
+        req.onupgradeneeded = function () {
+          var d = req.result;
+          ["meta", "recs", "wavs"].forEach(function (n) { if (!d.objectStoreNames.contains(n)) d.createObjectStore(n); });
+        };
+        req.onsuccess = function () { done(req.result); };
+        req.onerror = function () { done(null); };
+        req.onblocked = function () { done(null); };
+      } catch (e) { done(null); }
+    });
+  }
+  function tx(stores, mode, fn) {
+    if (!db) {
+      try { return Promise.resolve(fn(null)); } catch (e) { return Promise.reject(e); }
+    }
+    return new Promise(function (resolve, reject) {
+      var t, out;
+      try { t = db.transaction(stores, mode); out = fn(t); }
+      catch (e) { reject(e); return; }
+      t.oncomplete = function () { resolve(out && out.result !== undefined && out instanceof IDBRequest ? out.result : out); };
+      t.onerror = function () { reject(t.error); };
+      t.onabort = function () { reject(t.error || new Error("abort")); };
+    });
+  }
+  function dbGet(store, key) {
+    if (!db) return Promise.resolve(mem[store].get(key));
+    return new Promise(function (resolve, reject) {
+      try {
+        var r = db.transaction(store, "readonly").objectStore(store).get(key);
+        r.onsuccess = function () { resolve(r.result); };
+        r.onerror = function () { reject(r.error); };
+      } catch (e) { reject(e); }
+    });
+  }
+  function dbAll(store) {
+    if (!db) return Promise.resolve(Array.from(mem[store].values()));
+    return new Promise(function (resolve, reject) {
+      try {
+        var r = db.transaction(store, "readonly").objectStore(store).getAll();
+        r.onsuccess = function () { resolve(r.result || []); };
+        r.onerror = function () { reject(r.error); };
+      } catch (e) { reject(e); }
+    });
+  }
+  function dbPut(store, key, val) {
+    return tx([store], "readwrite", function (t) {
+      if (!t) { mem[store].set(key, val); return; }
+      t.objectStore(store).put(val, key);
+    });
+  }
+  function saveRec(meta, wav) {
+    return tx(["recs", "wavs"], "readwrite", function (t) {
+      if (!t) { mem.recs.set(meta.gk, meta); mem.wavs.set(meta.gk, wav); return; }
+      t.objectStore("wavs").put(wav, meta.gk);
+      t.objectStore("recs").put(meta, meta.gk);
+    });
+  }
+  function delRec(gk) {
+    return tx(["recs", "wavs"], "readwrite", function (t) {
+      if (!t) { mem.recs.delete(gk); mem.wavs.delete(gk); return; }
+      t.objectStore("wavs").delete(gk);
+      t.objectStore("recs").delete(gk);
+    });
+  }
+  function wipeAll() {
+    return tx(["meta", "recs", "wavs"], "readwrite", function (t) {
+      if (!t) { mem.meta.clear(); mem.recs.clear(); mem.wavs.clear(); return; }
+      ["meta", "recs", "wavs"].forEach(function (n) { t.objectStore(n).clear(); });
+    });
+  }
+
+  // ---------------------------------------------------------------- Estado
+  var S = {
+    profile: { speaker: "", region: "", license: "CC BY-SA 4.0", consent: false, consentAt: null, speakerId: null },
+    recs: new Map(),          // gk → metadatos (sin el audio)
+    view: "intro", unit: "all", status: "pend", cur: null,
+    listOrder: [], exportBlob: null, exportName: "", exportGks: []
+  };
+  var isMine = function (g) { return S.recs.has(g.gk); };
+  var isPending = function (g) { return !isMine(g) && !g.covered; };
+
+  function randomId() {
+    var a = new Uint8Array(6);
+    try { window.crypto.getRandomValues(a); } catch (e) { for (var i = 0; i < a.length; i++) a[i] = Math.floor(Math.random() * 256); }
+    return Array.prototype.map.call(a, function (b) { return (b < 16 ? "0" : "") + b.toString(16); }).join("");
+  }
+  var saveProfileTimer = 0;
+  function saveProfile(now) {
+    clearTimeout(saveProfileTimer);
+    var go = function () { dbPut("meta", "profile", Object.assign({}, S.profile)).catch(storageFailed); };
+    if (now) go(); else saveProfileTimer = setTimeout(go, 300);
+  }
+  function storageFailed(e) {
+    var w = $("#storage-warn");
+    w.textContent = "No se pudo guardar en este teléfono" + (e && e.name === "QuotaExceededError" ? " porque no queda espacio" : "") +
+      ". Envía tus grabaciones antes de cerrar la página.";
+    w.hidden = false;
+  }
+
+  // ---------------------------------------------------------------- Vistas
+  function setView(v, focus) {
+    if ((v === "rec" || v === "send") && !S.profile.consent) v = "intro";
+    if (S.view === "rec" && v !== "rec") {
+      stopPlayback();
+      if (R.state === "recording") stopRecording();
+      if (R.state === "opening") R.state = "idle";
+      releaseMic();
+    }
+    S.view = v;
+    ["intro", "rec", "send"].forEach(function (n) { $("#v-" + n).hidden = n !== v; });
+    $$(".step").forEach(function (b) {
+      var bv = b.getAttribute("data-view");
+      if (bv === v) b.setAttribute("aria-current", "step"); else b.removeAttribute("aria-current");
+      var locked = bv !== "intro" && !S.profile.consent;
+      if (locked) b.setAttribute("aria-disabled", "true"); else b.removeAttribute("aria-disabled");
+    });
+    $("#panel").hidden = v !== "rec";
+    document.body.classList.toggle("with-panel", v === "rec");
+    if (v === "rec") { renderProgress(); renderList(); renderPanel(); }
+    if (v === "send") renderSend();
+    if (v === "intro") renderIntro();
+    if (focus !== false) {
+      window.scrollTo(0, 0);
+      var h = $("#v-" + v + " h1");
+      if (h && focus) h.focus({ preventScroll: true });
+    }
+  }
+
+  // ---------------------------------------------------------------- Paso 1
+  function renderIntro() {
+    var p = S.profile;
+    $("#f-speaker").value = p.speaker || "";
+    $("#f-region").value = p.region || "";
+    $$("#f-license input").forEach(function (r) { r.checked = r.value === p.license; });
+    $("#f-consent").checked = !!p.consent;
+    updateConsentUI();
+  }
+  function updateConsentUI() {
+    var p = S.profile;
+    $("#consent-lic").textContent = p.license;
+    $("#consent-credit").textContent = (p.speaker || "").trim() || ANON;
+    $("#btn-start").disabled = !p.consent;
+    $("#btn-start").textContent = S.recs.size ? "Seguir grabando" : "Empezar a grabar";
+    $("#start-hint").textContent = p.consent ? "" : "Para empezar, marca la casilla de consentimiento.";
+    $("#start-hint").hidden = !!p.consent;
+    $$(".step").forEach(function (b) {
+      if (b.getAttribute("data-view") !== "intro") {
+        if (p.consent) b.removeAttribute("aria-disabled"); else b.setAttribute("aria-disabled", "true");
+      }
+    });
+  }
+  function bindIntro() {
+    $("#f-speaker").addEventListener("input", function () { S.profile.speaker = this.value; updateConsentUI(); saveProfile(); });
+    $("#f-region").addEventListener("input", function () { S.profile.region = this.value; saveProfile(); });
+    $$("#f-license input").forEach(function (r) {
+      r.addEventListener("change", function () { if (this.checked) { S.profile.license = this.value; updateConsentUI(); saveProfile(true); } });
+    });
+    $("#f-consent").addEventListener("change", function () {
+      S.profile.consent = this.checked;
+      S.profile.consentAt = this.checked ? new Date().toISOString() : null;
+      if (!S.profile.speakerId) S.profile.speakerId = randomId();
+      updateConsentUI(); saveProfile(true);
+      if (this.checked) requestPersist();
+    });
+    $("#profile-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!S.profile.consent) { $("#f-consent").focus(); return; }
+      saveProfile(true);
+      setView("rec", true);
+    });
+  }
+  // Pide al navegador que no borre las grabaciones si se llena el almacenamiento (Chrome no pregunta).
+  function requestPersist() {
+    try {
+      if (navigator.storage && navigator.storage.persist && navigator.storage.persisted) {
+        navigator.storage.persisted().then(function (p) { if (!p) return navigator.storage.persist(); }).catch(function () {});
+      }
+    } catch (e) { /* sin soporte */ }
+  }
+
+  // ---------------------------------------------------------------- Paso 2: lista
+  function unitLabel(u) {
+    if (u === "all") return "Todo el curso";
+    if (u === "L") return "Letras de la guía";
+    var x = units.filter(function (z) { return z.id === u; })[0];
+    return x ? "Unidad " + x.n + " · " + x.title : u;
+  }
+  function inUnit(g, u) { return u === "all" || !!g.units[u]; }
+  function renderChips() {
+    var opts = [{ id: "all", t: "Todo" }, { id: "L", t: "Letras" }].concat(units.map(function (u) { return { id: u.id, t: "Unidad " + u.n }; }));
+    $("#unit-chips").innerHTML = opts.map(function (o) {
+      return '<button class="chip" type="button" data-unit="' + esc(o.id) + '" aria-pressed="' + (S.unit === o.id) + '"' +
+        (o.id !== "all" && o.id !== "L" ? ' aria-label="' + esc(unitLabel(o.id)) + '"' : "") + ">" + esc(o.t) + "</button>";
+    }).join("");
+  }
+  function filtered(status) {
+    var u = S.unit;
+    var list = groups.filter(function (g) {
+      if (!inUnit(g, u)) return false;
+      if (status === "pend") return isPending(g);
+      if (status === "mine") return isMine(g);
+      return true;
+    });
+    if (u !== "all") list.sort(function (a, b) { return a.pos[u] - b.pos[u]; });
+    return list;
+  }
+  function tagsHtml(g, short) {
+    var seen = {}, out = [];
+    g.items.forEach(function (it) {
+      var t = it.type === "letter" ? "Letra " + it.letter : TYPE_LABEL[it.type] + (short ? "" : " · U" + it.unit.slice(1));
+      if (seen[t]) return; seen[t] = 1;
+      out.push('<span class="tag' + (it.type === "letter" ? " letter" : "") + '">' + esc(t) + "</span>");
+    });
+    if (g.covered) out.push('<span class="tag have">Ya tiene audio</span>');
+    return out.join("");
+  }
+  var ICON_DONE = '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+  var ICON_COVER = '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>';
+  function rowStateHtml(g) {
+    if (isMine(g)) return '<span class="st done">' + ICON_DONE + '</span><span class="sr-only">Grabada.</span>';
+    if (g.covered) return '<span class="st covered">' + ICON_COVER + '</span><span class="sr-only">Ya tiene audio.</span>';
+    return '<span class="st todo" aria-hidden="true"></span><span class="sr-only">Por grabar.</span>';
+  }
+  function rowHtml(g) {
+    return '<li><button class="row" type="button" data-i="' + g.i + '" aria-current="' + (S.cur === g.gk) + '">' +
+      '<span class="txt"><span class="m" lang="yua">' + esc(g.text) + '</span><span class="es">' + esc(g.es || "") + "</span>" +
+      '<span class="tags">' + tagsHtml(g) + "</span></span>" + rowStateHtml(g) + "</button></li>";
+  }
+  function renderList() {
+    renderChips();
+    $$("#status-seg button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-status") === S.status)); });
+    $("#c-pend").textContent = fmtNum(filtered("pend").length);
+    $("#c-mine").textContent = fmtNum(filtered("mine").length);
+    $("#c-all").textContent = fmtNum(filtered("all").length);
+    var list = filtered(S.status);
+    S.listOrder = list.map(function (g) { return g.gk; });
+    $("#list-title").textContent = unitLabel(S.unit);
+    $("#list-count").textContent = fmtNum(list.length) + (list.length === 1 ? " elemento" : " elementos");
+    var html = [], lastHome = null;
+    list.forEach(function (g) {
+      if (S.unit === "all" && g.home !== lastHome) { lastHome = g.home; html.push('<li class="sep" aria-hidden="true">' + esc(unitLabel(g.home)) + "</li>"); }
+      html.push(rowHtml(g));
+    });
+    $("#list").innerHTML = html.join("");
+    var empty = !list.length;
+    $("#list-empty").hidden = !empty;
+    if (empty) {
+      $("#list-empty-text").textContent = S.status === "pend" ? "¡Listo! En esta sección ya está todo grabado." :
+        S.status === "mine" ? "Todavía no grabas nada en esta sección." : "No hay elementos en esta sección.";
+      $("#btn-empty-send").hidden = !(S.status === "pend" && S.recs.size);
+    }
+    if (!S.cur || !byGk.has(S.cur) || (list.length && S.listOrder.indexOf(S.cur) < 0 && R.state === "idle")) {
+      var first = list.filter(isPending)[0] || list[0];
+      S.cur = first ? first.gk : null;
+      $$("#list .row").forEach(function (r) { r.setAttribute("aria-current", String(S.cur === groups[+r.getAttribute("data-i")].gk)); });
+    }
+  }
+  function updateRow(g) {
+    var b = document.querySelector('#list .row[data-i="' + g.i + '"]');
+    if (!b) return;
+    b.querySelector(".tags").innerHTML = tagsHtml(g);
+    $$('#list .row[data-i="' + g.i + '"] .st, #list .row[data-i="' + g.i + '"] .sr-only').forEach(function (n) { n.remove(); });
+    b.insertAdjacentHTML("beforeend", rowStateHtml(g));
+  }
+  function renderProgress() {
+    var mine = 0, cov = 0;
+    groups.forEach(function (g) { if (isMine(g)) mine++; else if (g.covered) cov++; });
+    $("#prog-big").textContent = fmtNum(mine) + " de " + fmtNum(groups.length);
+    $("#prog-bar").style.width = (groups.length ? (100 * mine / groups.length) : 0).toFixed(1) + "%";
+    var left = groups.length - mine - cov;
+    $("#prog-sub").textContent = left > 0 ? (left === 1 ? "Falta 1" : "Faltan " + fmtNum(left)) + " por grabar" +
+      (cov ? " · " + fmtNum(cov) + (cov === 1 ? " ya tiene" : " ya tienen") + " audio de otra persona (puedes grabar tu versión)." : ".")
+      : "¡Grabaste todo lo que faltaba! Gracias.";
+    var p = S.profile;
+    $("#who-line").textContent = "Crédito: " + ((p.speaker || "").trim() || ANON) + ((p.region || "").trim() ? " · " + p.region.trim() : "") + " · " + p.license;
+    var n = S.recs.size, c = $("#send-count");
+    c.hidden = !n; c.textContent = fmtNum(n);
+    var sb = document.querySelector('.step[data-view="send"]');
+    if (n) sb.setAttribute("aria-label", "Enviar (" + n + (n === 1 ? " grabación" : " grabaciones") + ")"); else sb.removeAttribute("aria-label");
+  }
+  function select(gk, scroll) {
+    if (R.state !== "idle") { setStatus("Espera a que termine la grabación.", ""); return; }
+    stopPlayback();
+    if (S.cur !== gk) setStatus("", "");
+    S.cur = gk;
+    $$("#list .row").forEach(function (r) { r.setAttribute("aria-current", String(groups[+r.getAttribute("data-i")].gk === gk)); });
+    renderPanel();
+    if (scroll) {
+      var g = byGk.get(gk), b = g && document.querySelector('#list .row[data-i="' + g.i + '"]');
+      if (b) b.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    }
+  }
+  function nextGroup() {
+    var order = S.listOrder.length ? S.listOrder : groups.map(function (g) { return g.gk; });
+    var i = order.indexOf(S.cur), n = order.length;
+    for (var k = 1; k <= n; k++) {
+      var gk = order[(i + k + n) % n], g = byGk.get(gk);
+      if (g && isPending(g) && gk !== S.cur) return gk;
+    }
+    return n ? order[(i + 1 + n) % n] : null;
+  }
+  function bindList() {
+    $("#unit-chips").addEventListener("click", function (e) {
+      var b = e.target.closest("[data-unit]");
+      if (!b || R.state !== "idle") return;
+      S.unit = b.getAttribute("data-unit");
+      S.cur = null;
+      setStatus("", "");
+      renderList(); renderPanel();
+    });
+    $("#status-seg").addEventListener("click", function (e) {
+      var b = e.target.closest("[data-status]");
+      if (!b || R.state !== "idle") return;
+      S.status = b.getAttribute("data-status");
+      setStatus("", "");
+      renderList(); renderPanel();
+    });
+    $("#list").addEventListener("click", function (e) {
+      var b = e.target.closest(".row");
+      if (b) select(groups[+b.getAttribute("data-i")].gk, false);
+    });
+    $("#btn-edit").addEventListener("click", function () { setView("intro", true); });
+    $("#btn-empty-send").addEventListener("click", function () { setView("send", true); });
+  }
+
+  // ---------------------------------------------------------------- Paso 2: panel de grabación
+  var R = { state: "idle", stream: null, ctx: null, src: null, analyser: null, buf: null, rec: null, chunks: [], mime: "",
+    t0: 0, timer: 0, raf: 0, idle: 0, target: null, audio: null, audioUrl: null };
+
+  function setStatus(msg, kind) {
+    var s = $("#p-status");
+    s.textContent = msg || "";
+    s.className = "p-status" + (kind ? " " + kind : "");
+  }
+  function renderPanel() {
+    var g = S.cur ? byGk.get(S.cur) : null;
+    var has = !!g;
+    $("#p-m").textContent = has ? g.text : "Nada que grabar aquí";
+    $("#p-m").classList.toggle("long", has && g.long);
+    var parts = [];
+    if (has) {
+      parts.push(g.es || "");
+      var letters = g.items.filter(function (it) { return it.type === "letter"; });
+      if (letters.length) parts.push("Ejemplo de la letra " + letters.map(function (it) { return it.letter; }).join(", "));
+      var ex = g.items.filter(function (it) { return it.type === "example"; })[0];
+      if (ex && !g.items.some(function (it) { return it.type === "vocab"; })) parts.push("Frase de ejemplo de «" + ex.parent + "»");
+    }
+    $("#p-es").textContent = parts.filter(Boolean).join(" · ");
+    $("#p-tags").innerHTML = has ? tagsHtml(g, true) : "";
+    var rec = has ? S.recs.get(g.gk) : null;
+    $("#btn-del").hidden = !rec || R.state !== "idle";
+    var rb = $("#btn-rec");
+    rb.disabled = !has || !S.profile.consent || R.state === "busy" || R.state === "opening";
+    rb.setAttribute("data-state", R.state === "recording" ? "recording" : (R.state === "idle" ? "idle" : "busy"));
+    rb.querySelector(".lbl").textContent = R.state === "recording" ? "Detener" : R.state === "idle" ? (rec ? "Otra vez" : "Grabar") : "Espera…";
+    rb.querySelector(".disc").innerHTML = R.state === "recording"
+      ? '<svg class="ico fill" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="2"/></svg>'
+      : '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg>';
+    rb.setAttribute("aria-label", R.state === "recording" ? "Detener la grabación" : has ? (rec ? "Volver a grabar «" + g.text + "»" : "Grabar «" + g.text + "»") : "Grabar");
+    var pb = $("#btn-play");
+    pb.disabled = !rec || R.state !== "idle";
+    pb.setAttribute("data-state", R.audio ? "playing" : "idle");
+    pb.querySelector(".lbl").textContent = R.audio ? "Parar" : "Escuchar";
+    pb.setAttribute("aria-label", R.audio ? "Parar" : "Escuchar la grabación");
+    var nb = $("#btn-next");
+    nb.disabled = R.state !== "idle" || !S.listOrder.length;
+    nb.querySelector(".lbl").textContent = rec ? "Siguiente" : "Saltar";
+    nb.setAttribute("aria-label", rec ? "Siguiente palabra" : "Saltar esta palabra");
+    if (R.state === "idle") {
+      $("#p-time").textContent = rec ? fmtS(rec.durationMs) : "";
+      if (!$("#p-status").classList.contains("bad") && !$("#p-status").classList.contains("ok")) {
+        setStatus(rec ? "Ya está grabada. Puedes escucharla o grabarla otra vez." :
+          g && g.covered ? "Ya hay audio" + (g.coveredBy.length ? " de " + g.coveredBy.join(", ") : "") + ". Si quieres, graba tu versión." :
+          g && g.synth ? "Por ahora solo tiene una voz sintética; tu voz la reemplaza." :
+          R.stream ? "Micrófono listo." : "", "");
+      }
+    }
+    updatePanelHeight();
+  }
+  function updatePanelHeight() {
+    var p = $("#panel");
+    if (!p.hidden) document.documentElement.style.setProperty("--panel-h", p.offsetHeight + "px");
+  }
+
+  function micError(e) {
+    var n = e && e.name;
+    if (n === "NotAllowedError" || n === "SecurityError" || n === "PermissionDeniedError") {
+      return "No hay permiso para usar el micrófono. Toca el candado junto a la dirección de la página → Permisos → Micrófono → Permitir, y vuelve a tocar Grabar.";
+    }
+    if (n === "NotFoundError" || n === "OverconstrainedError" || n === "DevicesNotFoundError") return "No se encontró un micrófono en este teléfono.";
+    if (n === "NotReadableError" || n === "TrackStartError") return "Otra app está usando el micrófono. Ciérrala y vuelve a intentar.";
+    if (n === "NoMediaRecorder") return "Este navegador no puede grabar audio. Abre la página en Chrome.";
+    if (n === "Insecure") return "El navegador no deja usar el micrófono en esta dirección. Abre la página con https:// en Chrome.";
+    return "No se pudo usar el micrófono" + (e && e.message ? " (" + e.message + ")" : "") + ".";
+  }
+  function pickMime() {
+    var c = ["audio/webm;codecs=opus", "audio/mp4", "audio/webm", "audio/ogg;codecs=opus"];
+    try { for (var i = 0; i < c.length; i++) if (window.MediaRecorder.isTypeSupported(c[i])) return c[i]; } catch (e) { /* sin isTypeSupported */ }
+    return "";
+  }
+  function ensureMic() {
+    if (R.stream && R.stream.active) return Promise.resolve();
+    if (!window.isSecureContext || !navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+      return Promise.reject({ name: "Insecure" });
+    }
+    if (!window.MediaRecorder) return Promise.reject({ name: "NoMediaRecorder" });
+    return navigator.mediaDevices.getUserMedia({
+      audio: { channelCount: 1, echoCancellation: false, noiseSuppression: false, autoGainControl: false }
+    }).then(function (stream) {
+      R.stream = stream;
+      R.mime = pickMime();
+      try {
+        var AC = window.AudioContext || window.webkitAudioContext;
+        if (!R.ctx) R.ctx = new AC();
+        if (R.ctx.state === "suspended") R.ctx.resume();
+        R.src = R.ctx.createMediaStreamSource(stream);
+        R.analyser = R.ctx.createAnalyser();
+        R.analyser.fftSize = 1024;
+        R.buf = new Float32Array(R.analyser.fftSize);
+        R.src.connect(R.analyser);
+        meterLoop();
+      } catch (e) { R.analyser = null; /* sin medidor; la grabación funciona igual */ }
+      stream.getAudioTracks().forEach(function (t) { t.addEventListener("ended", function () { releaseMic(); renderPanel(); }); });
+    });
+  }
+  function releaseMic() {
+    clearTimeout(R.idle);
+    cancelAnimationFrame(R.raf);
+    if (R.src) { try { R.src.disconnect(); } catch (e) { /* ya estaba */ } }
+    if (R.stream) R.stream.getTracks().forEach(function (t) { t.stop(); });
+    R.stream = null; R.src = null; R.analyser = null;
+    $("#meter-i").style.transform = "scaleX(0)";
+  }
+  function armIdle() {
+    clearTimeout(R.idle);
+    R.idle = setTimeout(function () { if (R.state === "idle") { releaseMic(); setStatus("Se apagó el micrófono. Toca Grabar para seguir.", ""); } }, MIC_IDLE_MS);
+  }
+  function meterLoop() {
+    cancelAnimationFrame(R.raf);
+    var tick = function () {
+      if (!R.analyser) return;
+      R.analyser.getFloatTimeDomainData(R.buf);
+      var s = 0, pk = 0;
+      for (var i = 0; i < R.buf.length; i++) { var v = R.buf[i]; s += v * v; if (v > pk) pk = v; else if (-v > pk) pk = -v; }
+      var db = 20 * Math.log10(Math.sqrt(s / R.buf.length) + 1e-9);
+      var x = Math.max(0, Math.min(1, (db + 60) / 54));
+      $("#meter-i").style.transform = "scaleX(" + x.toFixed(3) + ")";
+      $("#meter").classList.toggle("hot", pk > 0.97);
+      if (R.state === "recording") {
+        var el = performance.now() - R.t0;
+        $("#p-time").textContent = fmtS(Math.min(el, MAX_MS)) + " / 6 s";
+        $("#btn-rec").style.setProperty("--p", Math.min(1, el / MAX_MS).toFixed(3));
+      }
+      R.raf = requestAnimationFrame(tick);
+    };
+    R.raf = requestAnimationFrame(tick);
+  }
+
+  function startRecording() {
+    var g = S.cur && byGk.get(S.cur);
+    if (!g || !S.profile.consent || R.state !== "idle") return;
+    stopPlayback();
+    R.state = "opening"; R.target = g.gk;
+    setStatus("Abriendo el micrófono…", "");
+    renderPanel();
+    ensureMic().then(function () {
+      if (R.state !== "opening") return;
+      R.chunks = [];
+      var rec;
+      try { rec = R.mime ? new MediaRecorder(R.stream, { mimeType: R.mime }) : new MediaRecorder(R.stream); }
+      catch (e) { rec = new MediaRecorder(R.stream); }
+      R.rec = rec;
+      rec.ondataavailable = function (e) { if (e.data && e.data.size) R.chunks.push(e.data); };
+      rec.onstop = onRecorderStop;
+      rec.onerror = function (e) { failRecording(micError(e && e.error)); };
+      rec.onstart = function () {
+        R.state = "recording"; R.t0 = performance.now();
+        clearTimeout(R.idle);
+        R.timer = setTimeout(stopRecording, MAX_MS);
+        if (!R.analyser) R.raf = 0;
+        setStatus("Grabando… di «" + g.text + "» y toca Detener.", "");
+        renderPanel();
+        if (!R.analyser) {
+          var tick = function () {
+            if (R.state !== "recording") return;
+            var el = performance.now() - R.t0;
+            $("#p-time").textContent = fmtS(Math.min(el, MAX_MS)) + " / 6 s";
+            $("#btn-rec").style.setProperty("--p", Math.min(1, el / MAX_MS).toFixed(3));
+            requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        }
+      };
+      rec.start();
+    }).catch(function (e) { failRecording(micError(e)); });
+  }
+  function stopRecording() {
+    clearTimeout(R.timer);
+    if (R.rec && R.rec.state === "recording") {
+      R.state = "busy";
+      R.rawMs = performance.now() - R.t0;
+      setStatus("Procesando…", "");
+      renderPanel();
+      try { R.rec.stop(); } catch (e) { failRecording("No se pudo detener la grabación."); }
+    }
+  }
+  function failRecording(msg) {
+    clearTimeout(R.timer);
+    R.state = "idle"; R.rec = null;
+    $("#btn-rec").style.setProperty("--p", "0");
+    setStatus(msg, "bad");
+    renderPanel();
+  }
+  function onRecorderStop() {
+    var type = (R.rec && R.rec.mimeType) || R.mime || "audio/webm";
+    var blob = new Blob(R.chunks, { type: type });
+    var gk = R.target, rawMs = R.rawMs || 0;
+    R.rec = null; R.chunks = [];
+    $("#btn-rec").style.setProperty("--p", "0");
+    processBlob(blob).then(function (res) {
+      if (!res) { failRecording("No se oyó la voz. Acerca un poco el celular y vuelve a intentar."); return; }
+      var g = byGk.get(gk);
+      var meta = {
+        gk: gk, text: g.text, file: g.file, durationMs: res.durationMs, rawMs: Math.round(rawMs), peakDb: res.peakDb,
+        mime: type, createdAt: new Date().toISOString(), sentAt: null,
+        items: g.items.map(function (it) { return { type: it.type, id: it.id, letter: it.letter, text: it.text, es: it.es }; })
+      };
+      return saveRec(meta, res.wav).then(function () {
+        S.recs.set(gk, meta);
+        S.exportBlob = null;
+        R.state = "idle";
+        var hint = res.peakDb > -0.3 ? " Se oye saturada: aleja un poco el celular y grábala otra vez." :
+          res.rmsDb < -42 ? " Se oye bajita: acerca un poco el celular." : "";
+        setStatus("Guardada (" + fmtS(res.durationMs) + ")." + hint, hint ? "bad" : "ok");
+        renderPanel(); updateRow(g); renderProgress();
+        armIdle();
+      }, function (e) {
+        storageFailed(e);
+        failRecording("No se pudo guardar la grabación en este teléfono.");
+      });
+    }).catch(function () { failRecording("No se pudo procesar la grabación. Vuelve a intentar."); });
+  }
+
+  // Decodifica (a 44.1 kHz), mezcla a mono, recorta el silencio de los extremos y codifica WAV de 16 bits.
+  function processBlob(blob) {
+    return blob.arrayBuffer().then(function (ab) {
+      var OAC = window.OfflineAudioContext || window.webkitOfflineAudioContext;
+      var ctx = new OAC(1, SR, SR);
+      return new Promise(function (resolve, reject) {
+        var p = ctx.decodeAudioData(ab, resolve, reject);
+        if (p && p.then) p.then(resolve, reject);
+      });
+    }).then(function (buf) {
+      var n = buf.length, ch = buf.numberOfChannels, mono = new Float32Array(n);
+      for (var c = 0; c < ch; c++) { var d = buf.getChannelData(c); for (var i = 0; i < n; i++) mono[i] += d[i] / ch; }
+      if (buf.sampleRate !== SR) mono = resample(mono, buf.sampleRate, SR);
+      var b = trimBounds(mono, SR);
+      if (!b) return null;
+      var seg = mono.slice(b.start, b.end);
+      var fade = Math.min(Math.round(SR * 0.006), seg.length >> 2);
+      for (var k = 0; k < fade; k++) { var f = k / fade; seg[k] *= f; seg[seg.length - 1 - k] *= f; }
+      return { wav: encodeWav(seg, SR), durationMs: Math.round(seg.length / SR * 1000), peakDb: b.peakDb, rmsDb: b.rmsDb };
+    });
+  }
+  // Remuestreo lineal (solo si el navegador no decodificó a 44.1 kHz).
+  function resample(x, from, to) {
+    var n = Math.round(x.length * to / from), out = new Float32Array(n), r = from / to;
+    for (var i = 0; i < n; i++) { var p = i * r, j = Math.floor(p), f = p - j; out[i] = (x[j] || 0) * (1 - f) + (x[j + 1] || 0) * f; }
+    return out;
+  }
+  /**
+   * Busca la voz por energía (RMS en ventanas de 10 ms). Umbral: el mayor entre 3× el ruido de fondo,
+   * -26 dB respecto al tramo más fuerte y -52 dBFS. Un ruido corto y aislado en un extremo (el toque en la
+   * pantalla) no cuenta. Deja 150 ms antes y 200 ms después: así no se cortan los inicios suaves (j) ni la
+   * soltura de las glotalizadas (k', t'). Devuelve { start, end, peakDb, rmsDb } en muestras o null si no hay voz.
+   */
+  function trimBounds(x, sr) {
+    var F = Math.round(sr * 0.01), nF = Math.floor(x.length / F);
+    if (nF < 5) return null;
+    var rms = new Float32Array(nF), peak = 0;
+    for (var f = 0; f < nF; f++) {
+      var s = 0;
+      for (var i = f * F, e = i + F; i < e; i++) { var v = x[i]; s += v * v; if (v > peak) peak = v; else if (-v > peak) peak = -v; }
+      rms[f] = Math.sqrt(s / F);
+    }
+    var sorted = Array.prototype.slice.call(rms).sort(function (a, b) { return a - b; });
+    var floor = sorted[Math.floor(nF * 0.1)], top = sorted[nF - 1];
+    if (top < 0.0025) return null;
+    var thr = Math.max(floor * 3, top * 0.05, 0.0025);
+    var runs = [], a = -1;
+    for (f = 0; f <= nF; f++) {
+      var on = f < nF && rms[f] >= thr;
+      if (on && a < 0) a = f;
+      if (!on && a >= 0) { runs.push([a, f]); a = -1; }
+    }
+    var short = function (r) { return r[1] - r[0] < 6; };
+    while (runs.length > 1 && short(runs[0]) && runs[1][0] - runs[0][1] >= 20) runs.shift();
+    while (runs.length > 1 && short(runs[runs.length - 1]) && runs[runs.length - 1][0] - runs[runs.length - 2][1] >= 20) runs.pop();
+    if (!runs.length || (runs.length === 1 && runs[0][1] - runs[0][0] < 3)) return null;
+    var st = Math.max(0, runs[0][0] - 15), en = Math.min(nF, runs[runs.length - 1][1] + 20);
+    return { start: st * F, end: Math.min(x.length, en * F), peakDb: 20 * Math.log10(peak + 1e-9), rmsDb: 20 * Math.log10(top + 1e-9) };
+  }
+  function encodeWav(samples, sr) {
+    var n = samples.length, buf = new ArrayBuffer(44 + n * 2), v = new DataView(buf);
+    var w = function (o, s) { for (var i = 0; i < s.length; i++) v.setUint8(o + i, s.charCodeAt(i)); };
+    w(0, "RIFF"); v.setUint32(4, 36 + n * 2, true); w(8, "WAVE");
+    w(12, "fmt "); v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true);
+    v.setUint32(24, sr, true); v.setUint32(28, sr * 2, true); v.setUint16(32, 2, true); v.setUint16(34, 16, true);
+    w(36, "data"); v.setUint32(40, n * 2, true);
+    for (var i = 0, o = 44; i < n; i++, o += 2) {
+      var s = Math.max(-1, Math.min(1, samples[i]));
+      v.setInt16(o, s < 0 ? Math.round(s * 32768) : Math.round(s * 32767), true);
+    }
+    return buf;
+  }
+
+  function stopPlayback() {
+    if (R.audio) { try { R.audio.pause(); } catch (e) { /* nada */ } R.audio = null; }
+    if (R.audioUrl) { URL.revokeObjectURL(R.audioUrl); R.audioUrl = null; }
+  }
+  function togglePlay() {
+    if (R.audio) { stopPlayback(); renderPanel(); return; }
+    var g = S.cur && byGk.get(S.cur);
+    if (!g || !S.recs.has(g.gk)) return;
+    dbGet("wavs", g.gk).then(function (wav) {
+      if (!wav) { setStatus("No se encontró el audio de esta grabación.", "bad"); return; }
+      R.audioUrl = URL.createObjectURL(new Blob([wav], { type: "audio/wav" }));
+      var a = new Audio(R.audioUrl);
+      R.audio = a;
+      a.onended = a.onerror = function () { if (R.audio === a) { stopPlayback(); renderPanel(); } };
+      renderPanel();
+      var p = a.play();
+      if (p && p.catch) p.catch(function () { if (R.audio === a) { stopPlayback(); renderPanel(); } });
+    });
+  }
+  function bindPanel() {
+    $("#btn-rec").addEventListener("click", function () {
+      if (R.state === "recording") stopRecording();
+      else if (R.state === "idle") startRecording();
+    });
+    $("#btn-play").addEventListener("click", togglePlay);
+    $("#btn-next").addEventListener("click", function () {
+      if (R.state !== "idle") return;
+      var nx = nextGroup();
+      setStatus("", "");
+      if (S.status === "pend") { S.cur = nx; renderList(); }
+      if (nx) select(nx, true);
+    });
+    $("#btn-del").addEventListener("click", function () {
+      var g = S.cur && byGk.get(S.cur);
+      if (!g || R.state !== "idle") return;
+      stopPlayback();
+      delRec(g.gk).then(function () {
+        S.recs.delete(g.gk); S.exportBlob = null;
+        setStatus("Grabación borrada.", "");
+        renderPanel(); updateRow(g); renderProgress();
+      }, storageFailed);
+    });
+    if (window.ResizeObserver) new ResizeObserver(updatePanelHeight).observe($("#panel"));
+    window.addEventListener("resize", updatePanelHeight);
+    // Al salir de la página (o pasar a otra app) se apaga el micrófono.
+    document.addEventListener("visibilitychange", function () {
+      if (document.visibilityState !== "hidden" || R.state === "opening") return;
+      if (R.state === "recording") stopRecording();
+      stopPlayback();
+      setTimeout(function () { if (R.state === "idle") releaseMic(); }, 0);
+    });
+    window.addEventListener("pagehide", function () { releaseMic(); });
+  }
+
+  // ---------------------------------------------------------------- Paso 3: exportar
+  var CRC = (function () {
+    var t = new Uint32Array(256);
+    for (var n = 0; n < 256; n++) { var c = n; for (var k = 0; k < 8; k++) c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1; t[n] = c >>> 0; }
+    return t;
+  })();
+  function crc32(u8) {
+    var c = 0xffffffff;
+    for (var i = 0; i < u8.length; i++) c = CRC[(c ^ u8[i]) & 0xff] ^ (c >>> 8);
+    return (c ^ 0xffffffff) >>> 0;
+  }
+  /** ZIP sin compresión (método store), nombres en UTF-8. files: [{ name, data: Uint8Array }]. */
+  function makeZip(files, date) {
+    var enc = new TextEncoder(), parts = [], central = [], offset = 0;
+    var dtime = (date.getHours() << 11) | (date.getMinutes() << 5) | (date.getSeconds() >> 1);
+    var ddate = ((Math.max(1980, date.getFullYear()) - 1980) << 9) | ((date.getMonth() + 1) << 5) | date.getDate();
+    files.forEach(function (f) {
+      var name = enc.encode(f.name), data = f.data, crc = crc32(data);
+      var h = new DataView(new ArrayBuffer(30));
+      h.setUint32(0, 0x04034b50, true); h.setUint16(4, 20, true); h.setUint16(6, 0x0800, true); h.setUint16(8, 0, true);
+      h.setUint16(10, dtime, true); h.setUint16(12, ddate, true); h.setUint32(14, crc, true);
+      h.setUint32(18, data.length, true); h.setUint32(22, data.length, true); h.setUint16(26, name.length, true); h.setUint16(28, 0, true);
+      parts.push(h.buffer, name, data);
+      var c = new DataView(new ArrayBuffer(46));
+      c.setUint32(0, 0x02014b50, true); c.setUint16(4, 20, true); c.setUint16(6, 20, true); c.setUint16(8, 0x0800, true);
+      c.setUint16(10, 0, true); c.setUint16(12, dtime, true); c.setUint16(14, ddate, true); c.setUint32(16, crc, true);
+      c.setUint32(20, data.length, true); c.setUint32(24, data.length, true); c.setUint16(28, name.length, true);
+      c.setUint16(30, 0, true); c.setUint16(32, 0, true); c.setUint16(34, 0, true); c.setUint16(36, 0, true);
+      c.setUint32(38, 0, true); c.setUint32(42, offset, true);
+      central.push(c.buffer, name);
+      offset += 30 + name.length + data.length;
+    });
+    var cdSize = central.reduce(function (s, b) { return s + b.byteLength; }, 0);
+    var e = new DataView(new ArrayBuffer(22));
+    e.setUint32(0, 0x06054b50, true); e.setUint16(4, 0, true); e.setUint16(6, 0, true);
+    e.setUint16(8, files.length, true); e.setUint16(10, files.length, true);
+    e.setUint32(12, cdSize, true); e.setUint32(16, offset, true); e.setUint16(20, 0, true);
+    return new Blob(parts.concat(central, [e.buffer]), { type: "application/zip" });
+  }
+  function toSend() {
+    var only = $("#f-only-new").checked && !$("#only-new-line").hidden;
+    return Array.from(S.recs.values()).filter(function (r) { return !only || !r.sentAt; })
+      .sort(function (a, b) { var ga = byGk.get(a.gk), gb = byGk.get(b.gk); return (ga ? ga.i : 1e9) - (gb ? gb.i : 1e9); });
+  }
+  function renderSend() {
+    var all = Array.from(S.recs.values());
+    var unsent = all.filter(function (r) { return !r.sentAt; }).length;
+    var everSent = all.some(function (r) { return r.sentAt; });
+    $("#only-new-line").hidden = !everSent;
+    $("#only-new-n").textContent = fmtNum(unsent);
+    var list = toSend();
+    var bytes = list.reduce(function (s, r) { return s + 44 + Math.round(r.durationMs / 1000 * SR) * 2; }, 0);
+    var only = $("#f-only-new").checked && everSent;
+    $("#send-sum").textContent = !all.length ? "Aún no tienes grabaciones" :
+      (only ? "Vas a enviar " + fmtNum(list.length) + (list.length === 1 ? " grabación nueva" : " grabaciones nuevas")
+        : "Tienes " + fmtNum(list.length) + (list.length === 1 ? " grabación" : " grabaciones")) +
+      (list.length ? " (" + fmtMB(bytes + 4096) + ")" : "");
+    var p = S.profile;
+    $("#send-who").textContent = all.length ? "Crédito: " + ((p.speaker || "").trim() || ANON) + ((p.region || "").trim() ? " · " + p.region.trim() : "") +
+      " · Licencia " + p.license + (bytes > 20 * 1048576 ? ". Pesa más de 20 MB: envíalo por WhatsApp o Drive." : "") : "Graba al menos una palabra para crear el archivo.";
+    $("#btn-export").disabled = !list.length || !S.profile.consent;
+    $("#ready").hidden = !S.exportBlob;
+    $("#wipe-confirm").hidden = true;
+    $("#btn-wipe").hidden = false;
+    $("#btn-wipe").disabled = !all.length && !S.profile.consent && !S.profile.speaker && !S.profile.region;
+  }
+  function buildExport() {
+    var list = toSend();
+    if (!list.length) return Promise.resolve(null);
+    var now = new Date(), p = S.profile;
+    return Promise.all(list.map(function (r) { return dbGet("wavs", r.gk); })).then(function (wavs) {
+      var files = [], outItems = [], seenFiles = {}, missing = 0;
+      list.forEach(function (r, k) {
+        var wav = wavs[k];
+        if (!wav) { missing++; return; }
+        var g = byGk.get(r.gk);
+        var file = r.file || (g ? g.file : null);
+        if (!file || seenFiles[file]) return;
+        seenFiles[file] = 1;
+        files.push({ name: file, data: new Uint8Array(wav) });
+        var its = g ? g.items : r.items;
+        its.forEach(function (it) {
+          var o = { id: it.id, type: it.type, text: it.text, file: file };
+          if (it.type === "letter") o.letter = it.letter;
+          if (it.es) o.es = it.es;
+          o.durationMs = r.durationMs; o.recordedAt = r.createdAt;
+          outItems.push(o);
+        });
+      });
+      var manifest = {
+        app: "koox-maaya", version: 1, createdAt: now.toISOString(),
+        speaker: (p.speaker || "").trim() || null, region: (p.region || "").trim() || null,
+        license: p.license, licenseUrl: LICENSES[p.license], consent: true, consentText: CONSENT_TEXT,
+        consentAt: p.consentAt, speakerId: p.speakerId, format: "WAV PCM 16 bits, mono, 44100 Hz",
+        items: outItems
+      };
+      var enc = new TextEncoder();
+      var readme = [
+        "Grabaciones para Ko'ox Maaya (curso de maya yucateco)",
+        "",
+        "Hablante: " + (manifest.speaker || ANON) + (manifest.region ? " · " + manifest.region : ""),
+        "Licencia: " + p.license + " (" + LICENSES[p.license] + ")",
+        "Fecha: " + now.toLocaleString("es-MX"),
+        files.length + " grabaciones en la carpeta wav/ (WAV mono, 16 bits, 44.1 kHz). La lista está en grabaciones.json.",
+        "",
+        "La persona que grabó aceptó: «" + CONSENT_TEXT + "»",
+        "",
+        "Para importarlas (quien mantiene la app): node tools/import-recordings.mjs <este archivo>.zip"
+      ].join("\r\n") + "\r\n";
+      var zip = makeZip([
+        { name: "grabaciones.json", data: enc.encode(JSON.stringify(manifest, null, 2) + "\n") },
+        { name: "LEEME.txt", data: enc.encode(readme) }
+      ].concat(files), now);
+      var stamp = now.getFullYear() + pad2(now.getMonth() + 1) + pad2(now.getDate()) + "-" + pad2(now.getHours()) + pad2(now.getMinutes());
+      var who = slug(manifest.speaker) || "anonimo";
+      return { blob: zip, name: "koox-maaya-grabaciones-" + who + "-" + stamp + ".zip", gks: list.map(function (r) { return r.gk; }), count: files.length, missing: missing };
+    });
+  }
+  function download(blob, name) {
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url; a.download = name; a.rel = "noopener";
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function () { URL.revokeObjectURL(url); }, 60000);
+  }
+  function markSent(gks) {
+    var when = new Date().toISOString();
+    return Promise.all(gks.map(function (gk) {
+      var r = S.recs.get(gk);
+      if (!r || r.sentAt) return null;
+      r.sentAt = when;
+      return dbPut("recs", gk, r);
+    })).catch(storageFailed);
+  }
+  function canShareFile(file) {
+    try { return !!(navigator.canShare && navigator.share && navigator.canShare({ files: [file] })); } catch (e) { return false; }
+  }
+  function bindSend() {
+    $("#f-only-new").addEventListener("change", function () { S.exportBlob = null; renderSend(); });
+    $("#btn-export").addEventListener("click", function () {
+      var btn = this, st = $("#send-status");
+      btn.disabled = true;
+      st.className = "status"; st.textContent = "Creando el archivo…";
+      buildExport().then(function (res) {
+        if (!res) { st.textContent = "No hay grabaciones para enviar."; return; }
+        S.exportBlob = res.blob; S.exportName = res.name; S.exportGks = res.gks;
+        download(res.blob, res.name);
+        return markSent(res.gks).then(function () {
+          renderSend();
+          $("#ready-name").textContent = res.name + " · " + fmtMB(res.blob.size);
+          var file = null;
+          try { file = new File([res.blob], res.name, { type: "application/zip" }); } catch (e) { file = null; }
+          $("#btn-share").hidden = !(file && canShareFile(file));
+          st.textContent = "Listo: se descargó el archivo con " + fmtNum(res.count) + (res.count === 1 ? " grabación" : " grabaciones") +
+            (res.missing ? " (faltaron " + res.missing + ")" : "") + ". Ahora envíalo." +
+            ($("#btn-share").hidden ? " Búscalo en Descargas." : "");
+        });
+      }).catch(function (e) {
+        st.className = "status bad";
+        st.textContent = "No se pudo crear el archivo" + (e && e.message ? " (" + e.message + ")" : "") + ".";
+      }).then(function () { btn.disabled = !toSend().length; });
+    });
+    $("#btn-download").addEventListener("click", function () { if (S.exportBlob) download(S.exportBlob, S.exportName); });
+    $("#btn-share").addEventListener("click", function () {
+      if (!S.exportBlob) return;
+      var st = $("#send-status");
+      var file = new File([S.exportBlob], S.exportName, { type: "application/zip" });
+      navigator.share({ files: [file], title: "Grabaciones para Ko'ox Maaya", text: "Grabaciones de pronunciación para Ko'ox Maaya" })
+        .then(function () { st.className = "status"; st.textContent = "Compartido. ¡Dios bo'otik!"; })
+        .catch(function (e) { if (e && e.name !== "AbortError") { st.className = "status bad"; st.textContent = "No se pudo compartir; envía el archivo que se descargó."; } });
+    });
+    $("#btn-wipe").addEventListener("click", function () {
+      var n = S.recs.size;
+      $("#wipe-text").textContent = "Se borrarán " + (n ? fmtNum(n) + (n === 1 ? " grabación" : " grabaciones") + " y " : "") +
+        "tus datos de este teléfono. Si no las has enviado, se perderán. Esto no se puede deshacer.";
+      $("#wipe-confirm").hidden = false; this.hidden = true;
+      $("#wipe-title").focus();
+    });
+    var cancel = function () { $("#wipe-confirm").hidden = true; $("#btn-wipe").hidden = false; $("#btn-wipe").focus(); };
+    $("#btn-wipe-no").addEventListener("click", cancel);
+    $("#wipe-confirm").addEventListener("keydown", function (e) { if (e.key === "Escape") cancel(); });
+    $("#btn-wipe-yes").addEventListener("click", function () {
+      stopPlayback(); releaseMic();
+      wipeAll().then(function () {
+        S.recs.clear(); S.exportBlob = null; S.cur = null;
+        S.profile = { speaker: "", region: "", license: "CC BY-SA 4.0", consent: false, consentAt: null, speakerId: null };
+        setView("intro", true);
+        $("#start-hint").hidden = false;
+        $("#start-hint").textContent = "Se borró todo de este teléfono.";
+      }, function (e) { $("#wipe-status").className = "status bad"; $("#wipe-status").textContent = "No se pudo borrar" + (e && e.message ? " (" + e.message + ")" : "") + "."; });
+    });
+  }
+
+  // ---------------------------------------------------------------- Arranque
+  function bindSteps() {
+    $("#steps").addEventListener("click", function (e) {
+      var b = e.target.closest(".step");
+      if (!b) return;
+      if (b.getAttribute("aria-disabled") === "true") {
+        setView("intro", false);
+        $("#start-hint").hidden = false;
+        $("#start-hint").textContent = "Primero marca la casilla de consentimiento.";
+        $("#f-consent").focus();
+        return;
+      }
+      setView(b.getAttribute("data-view"), true);
+    });
+  }
+  function fonts() {
+    var gf = document.getElementById("gfonts");
+    if (gf && gf.media !== "all") { if (gf.sheet) gf.media = "all"; else gf.addEventListener("load", function () { gf.media = "all"; }); }
+  }
+  function boot() {
+    fonts();
+    if (!COURSE || !Array.isArray(COURSE.units) || !COURSE.units.length) { $("#no-course").hidden = false; return; }
+    buildModel(); markCovered();
+    $("#f-total").textContent = fmtNum(groups.length);
+    var perUnit = units.map(function (u) { return groups.filter(function (g) { return g.units[u.id]; }).length; });
+    var lo = Math.min.apply(null, perUnit), hi = Math.max.apply(null, perUnit);
+    $("#f-unit").textContent = Math.max(1, Math.round(lo * 10 / 60)) + "–" + Math.max(2, Math.round(hi * 10 / 60));
+    bindIntro(); bindList(); bindPanel(); bindSend(); bindSteps();
+    openDB().then(function (ok) {
+      if (!ok) {
+        var w = $("#storage-warn");
+        w.textContent = "Este navegador no deja guardar datos aquí (¿ventana privada?): las grabaciones se perderán si cierras o recargas la página. Envíalas antes de salir.";
+        w.hidden = false;
+      }
+      return Promise.all([dbGet("meta", "profile"), dbAll("recs")]).catch(function () { return [null, []]; });
+    }).then(function (r) {
+      var prof = r[0], recs = r[1] || [];
+      if (prof && typeof prof === "object") S.profile = Object.assign(S.profile, prof);
+      if (!LICENSES[S.profile.license]) S.profile.license = "CC BY-SA 4.0";
+      recs.forEach(function (m) { if (m && m.gk) S.recs.set(m.gk, m); });
+      $("#main").hidden = false; $("#steps").hidden = false;
+      renderIntro();
+      setView(S.profile.consent ? "rec" : "intro", false);
+      window.__grabar.ready = true;
+    });
+  }
+
+  // Ganchos para las pruebas automáticas (test/grabar.cjs).
+  window.__grabar = {
+    ready: false,
+    view: function () { return S.view; },
+    state: function () { return R.state; },
+    current: function () { return S.cur; },
+    total: function () { return groups.length; },
+    recorded: function () { return Array.from(S.recs.values()).map(function (r) { return { gk: r.gk, text: r.text, durationMs: r.durationMs, rawMs: r.rawMs, sentAt: r.sentAt }; }); },
+    storage: function () { return db ? "indexeddb" : "memoria"; },
+    groupIndex: function (type, id) {
+      for (var i = 0; i < groups.length; i++) {
+        if (groups[i].items.some(function (it) { return it.type === type && it.id === id; })) return groups[i].i;
+      }
+      return -1;
+    },
+    groupInfo: function (i) { var g = groups[i]; return g ? { gk: g.gk, text: g.text, home: g.home, covered: g.covered, synth: g.synth, items: g.items.map(function (it) { return { type: it.type, id: it.id, key: it.key }; }) } : null; }
+  };
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot); else boot();
+})();
+</script>
+</body>
+</html>

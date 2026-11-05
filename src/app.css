@@ -754,6 +754,9 @@ svg .cone { fill: currentColor; }
 }
 .au-btn.sm::after { content: ""; position: absolute; inset: -7px; border-radius: 999px; }
 .au-btn.sm svg { width: 17px; height: 17px; stroke-width: 2.4; }
+.au-btn.sm.k-sintetico { width: auto; padding: 0 8px 0 6px; grid-auto-flow: column; gap: 3px; }
+.au-aprox { font-size: 0.72rem; font-weight: 700; line-height: 1; }
+.bubble .tr-au { font-size: var(--fs-xs); font-weight: 700; color: var(--muted); }
 .au-kind { font-size: var(--fs-xs); font-weight: 700; color: var(--muted); letter-spacing: .02em; line-height: 1.3; }
 .au-kind.sintetico, .au-kind.fonema {
   padding: 1px 8px; border-radius: 99px; border: 1px dashed var(--line-strong); color: var(--fg);

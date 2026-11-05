@@ -638,7 +638,9 @@
   // Botón de escuchar. size: "lg" (tarjeta de palabra), "md" (listas, diálogo, guía) o "sm" (en línea).
   function auBtn(a, shown, size, id) {
     return '<button class="au-btn ' + size + " k-" + a.kind + '" type="button"' + (id ? ' id="' + id + '"' : "") + ' data-au="' + esc(a.key) + '" data-au-key="' + esc(a.key) +
-      '" aria-label="' + esc(auAria(a, shown)) + '" title="' + esc(AU_KIND[a.kind].label) + '">' + ICON.speaker + "</button>";
+      '" aria-label="' + esc(auAria(a, shown)) + '" title="' + esc(AU_KIND[a.kind].label) + '">' + ICON.speaker +
+      // En línea no cabe la etiqueta completa: la voz sintética lleva «aprox.» y la nota de la tarjeta lo explica.
+      (size === "sm" && a.kind === "sintetico" ? '<span class="au-aprox" aria-hidden="true">aprox.</span>' : "") + "</button>";
   }
   // Etiqueta discreta del tipo de audio.
   function auTag(a) {
@@ -652,7 +654,7 @@
     var low = ks.map(function (k) { return AU_KIND[k].low; });
     return '<p class="au-note">' + ICON.speaker.replace("<svg", '<svg class="ico"') + "<span>" + esc(lead) +
       (low.length > 1 ? low.slice(0, -1).join(", ") + " y " + low[low.length - 1] : low[0]) + "." +
-      (kinds.sintetico ? " La voz sintética (botones con borde punteado) es aproximada: la genera una IA, no un hablante." : "") +
+      (kinds.sintetico ? " La voz sintética (botones con borde punteado o «aprox.») la genera una IA: no es un hablante." : "") +
       (kinds.fonema ? " El sonido de referencia (borde punteado) es el sonido aislado, no una palabra maya." : "") + "</span></p>";
   }
 
@@ -1272,6 +1274,7 @@
         '<span class="avatar" aria-hidden="true">' + esc(initialOf(name)) + "</span>" +
         '<button class="bubble" type="button" aria-expanded="false" id="line-' + i + '">' +
         '<span class="who">' + esc(name) + "</span>" + m(ln.m) +
+        (la && la.kind === "sintetico" ? '<span class="tr-au" data-au-key="' + esc(la.key) + '">' + esc(AU_KIND.sintetico.label) + "</span>" : "") +
         '<span class="tr" hidden>' + esc(ln.es) + '</span><span class="tr-hint">Toca para traducir</span></button>' +
         (la ? auBtn(la, ln.m, "md", "line-au-" + i) : "") + "</div>";
     });

@@ -17,7 +17,8 @@ Qué hace (reproducible: semillas fijas; sin red una vez que los modelos están 
   4. control    Transcribe cada toma con mms-1b-all/yua a 16 kHz y calcula el CER contra el texto del curso:
                 la salida del reconocedor se pasa a ortografía INALI (a_inali) y ambas se comparan en
                 minúsculas, sin puntuación, sin espacios y sin acentos de tono (el saltillo ' sí cuenta).
-                Se queda con la toma de menor CER; la acepta si CER <= 0.30 (3+ palabras) o <= 0.40 (1–2).
+                Se queda con la toma de menor CER; la acepta si CER <= 0.25, y en textos de hasta 4 letras
+                (sin contar el saltillo) solo si CER = 0, porque ahí una letra mal suele dar otra palabra.
   5. salida     <trabajo>/wav/<key>.wav (aceptados), <trabajo>/rechazados/<key>.wav (mejor toma de los
                 rechazados, solo para revisarla de oído), <trabajo>/textos.json, <trabajo>/tomas*.jsonl (todas
                 las tomas con su transcripción y CER) y el lote --spec para tools/audio-import.mjs: kind
@@ -197,8 +198,15 @@ def cer(ref: str, hyp: str, **kw) -> float:
     return lev(r, h) / max(1, len(r))
 
 
-def umbral(palabras: int) -> float:
-    return 0.40 if palabras <= 2 else 0.30
+UMBRAL_CER = 0.25      # CER máximo de la mejor toma para aceptarla
+LETRAS_CORTAS = 4      # en palabras de hasta 4 letras (sin contar el saltillo) se exige CER 0
+
+
+def umbral(texto: str) -> float:
+    """Una sola letra mal en una palabra corta suele dar otra palabra (máak → máan): ahí se exige CER 0."""
+    if len(normalizar_cmp(texto, saltillo=False)) <= LETRAS_CORTAS:
+        return 0.0
+    return UMBRAL_CER
 
 
 # ---------------------------------------------------------------- modelos ---------------------------------------
@@ -269,13 +277,13 @@ def evaluar(m: Modelos, t: dict, tomas: int, wav_dir: Path, ortografia: str = "b
         if mejor is None or clave < mejor[0]:
             mejor, mejor_w = (clave, r), w
     b = mejor[1]
-    ok = b["cer"] <= umbral(t["palabras"])
+    ok = b["cer"] <= umbral(t["text"])
     # la toma aceptada va a wav/; la mejor toma de un texto rechazado se guarda aparte, solo para revisarla de oído
     destino = wav_dir if ok else wav_dir.parent / "rechazados"
     destino.mkdir(parents=True, exist_ok=True)
     sf.write(destino / (t["key"] + ".wav"), np.asarray(mejor_w, dtype=np.float32), m.sr, subtype="PCM_16")
     return {"key": t["key"], "entrada": entrada, "tokens": m.tokens(entrada), "tomas": res, "elegida": b,
-            "umbral": umbral(t["palabras"]), "aceptado": ok}
+            "umbral": umbral(t["text"]), "aceptado": ok}
 
 
 # ---------------------------------------------------------------- lote para audio-import ------------------------

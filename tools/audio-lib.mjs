@@ -22,17 +22,25 @@ export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "
 export const KEY_RE = /^[a-z0-9-]+$/;
 export const KINDS = ["nativo", "fonema", "sintetico"];
 export const LANGS = ["yua", "und"];
-/** Licencias aceptadas en el catálogo (identificadores SPDX) con su nombre y la página de la licencia. */
+/**
+ * Licencias aceptadas en el catálogo, con el nombre tal como se escribe en "license" (el mismo que
+ * reconoce test/validate.cjs) y la página de la licencia (licenseUrl por omisión).
+ */
+const CC = "https://creativecommons.org/";
 export const LICENSES = {
-  "CC0-1.0": { name: "CC0 1.0 (dominio público)", url: "https://creativecommons.org/publicdomain/zero/1.0/deed.es" },
-  "CC-BY-4.0": { name: "CC BY 4.0", url: "https://creativecommons.org/licenses/by/4.0/deed.es" },
-  "CC-BY-SA-4.0": { name: "CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/deed.es" },
-  "CC-BY-3.0": { name: "CC BY 3.0", url: "https://creativecommons.org/licenses/by/3.0/deed.es" },
-  "CC-BY-SA-3.0": { name: "CC BY-SA 3.0", url: "https://creativecommons.org/licenses/by-sa/3.0/deed.es" },
-  "PDM-1.0": { name: "Marca de dominio público 1.0", url: "https://creativecommons.org/publicdomain/mark/1.0/deed.es" }
+  "CC BY-SA 4.0": { url: CC + "licenses/by-sa/4.0/deed.es" },
+  "CC BY 4.0": { url: CC + "licenses/by/4.0/deed.es" },
+  "CC0 1.0": { url: CC + "publicdomain/zero/1.0/deed.es" },
+  "Dominio público": { url: CC + "publicdomain/mark/1.0/deed.es" },
+  "CC BY-SA 3.0": { url: CC + "licenses/by-sa/3.0/deed.es" },
+  "CC BY 3.0": { url: CC + "licenses/by/3.0/deed.es" },
+  "CC BY-SA 2.5": { url: CC + "licenses/by-sa/2.5/deed.es" },
+  "CC BY 2.5": { url: CC + "licenses/by/2.5/deed.es" },
+  "CC BY-SA 2.0": { url: CC + "licenses/by-sa/2.0/deed.es" },
+  "CC BY 2.0": { url: CC + "licenses/by/2.0/deed.es" }
 };
 /** Las tres licencias que ofrece la página de grabación (grabar.html). */
-export const RECORDING_LICENSES = ["CC-BY-SA-4.0", "CC-BY-4.0", "CC0-1.0"];
+export const RECORDING_LICENSES = ["CC BY-SA 4.0", "CC BY 4.0", "CC0 1.0"];
 
 export const TARGET_LUFS = -18;
 export const TARGET_TP_DB = -1.5;
@@ -49,14 +57,18 @@ export class AudioError extends Error {
 }
 const fail = (msg, code) => { throw new AudioError(msg, code); };
 
-/** Convierte "CC BY-SA 4.0", "cc-by-sa-4.0" o "CC0" al identificador SPDX; null si no es una licencia aceptada. */
+const licToken = (x) => String(x).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase().replace(/[\s_.\-]+/g, "");
+const LIC_ALIASES = new Map(Object.keys(LICENSES).map((k) => [licToken(k), k]));
+[["CC0", "CC0 1.0"], ["PD", "Dominio público"], ["PDM", "Dominio público"], ["PDM10", "Dominio público"],
+  ["PUBLICDOMAIN", "Dominio público"]].forEach(([a, b]) => LIC_ALIASES.set(a, b));
+
+/**
+ * Normaliza una licencia a su nombre del catálogo: "CC-BY-SA-4.0" (SPDX), "cc by-sa 4.0" → "CC BY-SA 4.0";
+ * "CC0" → "CC0 1.0"; "PD" → "Dominio público". Devuelve null si no es una licencia aceptada.
+ */
 export function normalizeLicense(value) {
   if (typeof value !== "string" || !value.trim()) return null;
-  let s = value.trim().toUpperCase().replace(/[\s_]+/g, "-").replace(/-+/g, "-");
-  if (s === "CC0") s = "CC0-1.0";
-  if (s === "PDM" || s === "PD") s = "PDM-1.0";
-  s = s.replace(/^CC-?0-?1(\.0)?$/, "CC0-1.0");
-  return Object.prototype.hasOwnProperty.call(LICENSES, s) ? s : null;
+  return LIC_ALIASES.get(licToken(value)) || null;
 }
 
 /**
@@ -300,6 +312,8 @@ async function measure(input, trim) {
  *   license, licenseUrl?, source, title?, notes?, root?, replace?, dryRun? }
  *   root: raíz del repositorio (por omisión, la carpeta de arriba de tools/).
  *   replace: permite reemplazar una entrada existente con la misma key de otro autor.
+ *   sameAuthor(prev, entry): opcional; decide si la entrada existente es del mismo autor (por omisión,
+ *     compara author).
  *   dryRun: solo valida y dice qué haría; no ejecuta ffmpeg ni escribe nada.
  * @returns {Promise<{ key, file, action, entry, gainDb?, lufs?, durationMs? }>}
  *   action: "nueva", "actualizada" o (con dryRun) "simulada-nueva" / "simulada-actualizada".
@@ -316,8 +330,9 @@ export async function importAudio(spec) {
   if (st.size > MAX_INPUT_BYTES) fail("el archivo de entrada pesa más de 200 MB.", "ENTRADA");
 
   const prev = findEntry(readCatalog(root), entry.key);
-  if (prev && prev.author !== entry.author && !spec.replace) {
-    fail("ya existe audio/" + entry.key + ".mp3 de otro autor («" + prev.author + "»); usa replace para reemplazarlo.", "OTRO_AUTOR");
+  const same = typeof spec.sameAuthor === "function" ? spec.sameAuthor(prev, entry) : prev && prev.author === entry.author;
+  if (prev && !same && !spec.replace) {
+    fail("ya existe audio/" + entry.key + ".mp3 de otro autor («" + prev.author + "»); para reemplazarlo usa --replace (replace: true).", "OTRO_AUTOR");
   }
   const action = prev ? "actualizada" : "nueva";
   if (spec.dryRun) return { key: entry.key, file: entry.file, action: "simulada-" + action, entry };

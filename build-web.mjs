@@ -177,7 +177,7 @@ function build() {
   if (fs.existsSync(GRABAR)) {
     const tpl = fs.readFileSync(GRABAR, "utf8");
     if (tpl.split("/*@@CONTENT@@*/").length !== 2) fail("src/web/grabar.html debe tener el marcador /*@@CONTENT@@*/ exactamente una vez.");
-    if (!/^\uFEFF?\s*<!doctype html>/i.test(tpl)) fail("src/web/grabar.html debe ser un documento completo (empezar con <!doctype html>).");
+    if (!/^\uFEFF?\s*(<!--[\s\S]*?-->\s*)*<!doctype html>/i.test(tpl)) fail("src/web/grabar.html debe ser un documento completo (empezar con <!doctype html>).");
     grabar = tpl.replace("/*@@CONTENT@@*/", () => content);
   }
 

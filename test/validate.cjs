@@ -1,7 +1,12 @@
 #!/usr/bin/env node
 // Valida archivos de contenido de Ko'ox Maaya contra el contrato.
-//   node test/validate.cjs                 -> todos los src/content/u*.js
-//   node test/validate.cjs a.js b.js ...   -> solo esos archivos
+//   node test/validate.cjs                 -> todos los src/content/u*.js, el catálogo de audio
+//                                             (audio/catalogo.json) y los recursos (src/content/recursos.js)
+//   node test/validate.cjs --sample        -> el contenido de prueba (test/sample-content.js) con sus
+//                                             audios y recursos (test/fixtures)
+//   node test/validate.cjs a.js b.js ...   -> solo esos archivos de contenido (sin audio ni recursos,
+//                                             que se refieren al curso completo)
+//   --catalogo <ruta> / --recursos <ruta>  -> valida otro catálogo u otro archivo de recursos
 // Sale con código 1 si hay errores.
 "use strict";
 const fs = require("fs");
@@ -11,7 +16,18 @@ const vm = require("vm");
 const COPIAS = /dokumen\.(?:pub|tips)|scribd|pdfcoffee|studocu|idoc\.pub|doku\.pub|epdf\.pub|kupdf|vdocuments|pdfslide|1library/i;
 
 const ROOT = path.resolve(__dirname, "..");
-let files = process.argv.slice(2);
+const argv = process.argv.slice(2);
+const SAMPLE = argv.includes("--sample");
+function optPath(name) {
+  const i = argv.indexOf(name);
+  if (i < 0) return null;
+  if (!argv[i + 1] || argv[i + 1].startsWith("--")) { console.error("Falta la ruta después de " + name + "."); process.exit(2); }
+  return path.resolve(argv[i + 1]);
+}
+const OPT_CAT = optPath("--catalogo"), OPT_RES = optPath("--recursos");
+let files = argv.filter((a, i) => !a.startsWith("--") && !["--catalogo", "--recursos"].includes(argv[i - 1]));
+const EXPLICIT = files.length > 0;
+if (SAMPLE && !files.length) files = [path.join(ROOT, "test/sample-content.js")];
 if (!files.length) {
   const dir = path.join(ROOT, "src/content");
   files = fs.existsSync(dir)
@@ -88,7 +104,7 @@ function checkOptions(file, where, ex, mayaOptions) {
 }
 
 const counts = { units: 0, lessons: 0, vocab: 0, vocabMedia: 0, cards: 0, dialogues: 0, exercises: 0, byType: {} };
-const unitIds = new Set(), lessonIds = new Set(), vocabIds = new Map();
+const unitIds = new Set(), lessonIds = new Set(), vocabIds = new Map(), vocabForms = new Map(), lessonUnit = new Map();
 const mayaForms = new Map();
 const sandbox = { window: {}, console: { log() {}, warn() {}, error() {} } };
 vm.createContext(sandbox);
@@ -147,6 +163,7 @@ for (const file of files) {
       if (l.id !== expectId) err(file, lw, "id debe ser «" + expectId + "» (consecutivo)");
       if (lessonIds.has(l.id)) err(file, lw, "id de lección repetido");
       lessonIds.add(l.id);
+      lessonUnit.set(l.id, u.id);
       if (!isStr(l.title)) err(file, lw, "falta title");
       if (!isStr(l.goal)) err(file, lw, "falta goal");
       else if (!/^Al terminar podrás/.test(l.goal)) warn(file, lw, "goal debería empezar con «Al terminar podrás»");
@@ -191,6 +208,7 @@ for (const file of files) {
         else if (!String(v.id).startsWith(u.id + "-")) err(file, vw, "id debe empezar con «" + u.id + "-»");
         if (vocabIds.has(v.id)) err(file, vw, "id de vocab repetido (ya está en " + vocabIds.get(v.id) + ")");
         vocabIds.set(v.id, l.id);
+        vocabForms.set(v.id, [v.m].concat(Array.isArray(v.alt) ? v.alt : []).filter(isStr).map(normalize));
         if (!isStr(v.m)) err(file, vw, "falta m"); else mayaStr(file, vw + ".m", v.m);
         if (!isStr(v.es)) err(file, vw, "falta es");
         if (v.conf !== "alta" && v.conf !== "media") err(file, vw, "conf debe ser \"alta\" o \"media\"");
@@ -303,12 +321,170 @@ if (hasU1) {
   warnings.push("guide: definido fuera de la unidad 1");
 }
 
+/* ---------------- Audio (catálogo) ---------------- */
+const AUDIO_KINDS = ["nativo", "fonema", "sintetico"];
+const AUDIO_FIELDS = ["key", "file", "kind", "text", "lang", "ipa", "vocab", "letters", "speaker", "region", "author", "license", "licenseUrl", "source", "title", "durationMs", "notes"];
+const LICENCIAS = ["CC BY-SA 4.0", "CC BY 4.0", "CC0 1.0", "Dominio público", "CC BY-SA 3.0", "CC BY 3.0", "CC BY-SA 2.5", "CC BY 2.5", "CC BY-SA 2.0", "CC BY 2.0"];
+// Primer encabezado de cuadro MPEG de un archivo (saltando la etiqueta ID3v2): capa, frecuencia, canales, kbps.
+function mp3Info(buf) {
+  let i = 0;
+  if (buf.length >= 10 && buf.toString("latin1", 0, 3) === "ID3") {
+    const size = ((buf[6] & 0x7f) << 21) | ((buf[7] & 0x7f) << 14) | ((buf[8] & 0x7f) << 7) | (buf[9] & 0x7f);
+    i = 10 + size + (buf[5] & 0x10 ? 10 : 0);
+  }
+  const BR1 = [0, 32, 40, 48, 56, 64, 80, 96, 112, 128, 160, 192, 224, 256, 320];
+  const BR2 = [0, 8, 16, 24, 32, 40, 48, 56, 64, 80, 96, 112, 128, 144, 160];
+  for (const lim = Math.min(buf.length - 4, i + 65536); i <= lim; i++) {
+    if (buf[i] !== 0xff || (buf[i + 1] & 0xe0) !== 0xe0) continue;
+    const ver = (buf[i + 1] >> 3) & 3, layer = (buf[i + 1] >> 1) & 3, br = buf[i + 2] >> 4, sr = (buf[i + 2] >> 2) & 3, ch = buf[i + 3] >> 6;
+    if (ver === 1 || layer === 0 || br === 0 || br === 15 || sr === 3) continue;
+    const rates = ver === 3 ? [44100, 48000, 32000] : ver === 2 ? [22050, 24000, 16000] : [11025, 12000, 8000];
+    return { layer: 4 - layer, sampleRate: rates[sr], mono: ch === 3, kbps: layer === 1 ? (ver === 3 ? BR1 : BR2)[br] : null };
+  }
+  return null;
+}
+// La base de "file": la raíz si el catálogo está en audio/ (audio/catalogo.json), si no su carpeta (test/fixtures).
+function audioBase(catalog) {
+  const dir = path.dirname(catalog);
+  return path.basename(dir) === "audio" ? path.dirname(dir) : dir;
+}
+const audioCounts = { total: 0, bytes: 0, byKind: {} };
+function validateAudio(catalog) {
+  const rel = path.relative(ROOT, catalog);
+  if (!fs.existsSync(catalog)) { warnings.push(rel + ": no existe; la app no tendrá audio."); return; }
+  const where = (i, key) => rel + " · entries[" + i + "]" + (key ? " " + key : "");
+  let data;
+  try { data = JSON.parse(fs.readFileSync(catalog, "utf8")); }
+  catch (e) { errors.push(rel + ": no es JSON válido: " + e.message); return; }
+  if (!data || typeof data !== "object") { errors.push(rel + ": debe ser un objeto { version, entries }"); return; }
+  if (data.version !== 1) errors.push(rel + ": version debe ser 1");
+  if (!Array.isArray(data.entries)) { errors.push(rel + ": entries debe ser una lista"); return; }
+  const base = audioBase(catalog);
+  const letters = new Set(((C.guide && Array.isArray(C.guide.alphabet)) ? C.guide.alphabet : []).map((a) => a && a.l).filter(isStr));
+  const keys = new Set(), usados = new Set();
+  data.entries.forEach((e, i) => {
+    if (!e || typeof e !== "object") { errors.push(where(i) + ": no es un objeto"); return; }
+    const w = where(i, e.key);
+    const E = (m) => errors.push(w + ": " + m), W = (m) => warnings.push(w + ": " + m);
+    Object.keys(e).forEach((k) => { if (!AUDIO_FIELDS.includes(k)) W("campo desconocido «" + k + "» (se ignora)"); });
+    audioCounts.total++;
+    if (!isStr(e.key) || !/^[a-z0-9-]+$/.test(e.key)) E("key debe tener solo minúsculas ascii, números y guiones ([a-z0-9-]+)");
+    else if (keys.has(e.key)) E("key repetida");
+    keys.add(e.key);
+    if (e.file !== "audio/" + e.key + ".mp3") E("file debe ser «audio/" + e.key + ".mp3» (tiene " + JSON.stringify(e.file) + ")");
+    else {
+      const abs = path.join(base, e.file);
+      usados.add(path.basename(e.file));
+      if (!fs.existsSync(abs)) E("no existe el archivo " + path.relative(ROOT, abs));
+      else {
+        const buf = fs.readFileSync(abs);
+        audioCounts.bytes += buf.length;
+        const info = mp3Info(buf);
+        if (!info || info.layer !== 3) E(e.file + " no es un MP3 (MPEG capa III)");
+        else {
+          if (!info.mono) E(e.file + " debe ser mono (el contrato es MP3 mono, 44.1 kHz, 64 kbps); conviértelo con tools/audio-import.mjs");
+          if (info.sampleRate !== 44100) E(e.file + " debe ser de 44.1 kHz (tiene " + info.sampleRate + " Hz)");
+          if (info.kbps !== 64) W(e.file + " no parece de 64 kbps (primer cuadro: " + info.kbps + " kbps)");
+        }
+        if (buf.length > 300 * 1024) W("pesa " + (buf.length / 1024).toFixed(0) + " KB; un audio de palabra o frase no debería pasar de 300 KB");
+      }
+    }
+    if (!AUDIO_KINDS.includes(e.kind)) E("kind debe ser \"nativo\", \"fonema\" o \"sintetico\"");
+    else audioCounts.byKind[e.kind] = (audioCounts.byKind[e.kind] || 0) + 1;
+    if (!isStr(e.text)) E("falta text (lo que se oye: la forma maya o el símbolo)");
+    if (e.lang !== "yua" && e.lang !== "und") E("lang debe ser \"yua\" o \"und\"");
+    if (e.lang === "yua") mayaStr(catalog, "entries[" + i + "].text", e.text);
+    if (e.ipa !== undefined && !isStr(e.ipa)) E("ipa, si existe, debe ser texto");
+    if (e.kind === "fonema" && !isStr(e.ipa)) W("un «fonema» debería llevar ipa (p. ej. \"[ʃ]\")");
+    ["vocab", "letters"].forEach((k) => { if (!Array.isArray(e[k]) || !e[k].every(isStr)) E(k + " debe ser una lista de textos (puede estar vacía)"); });
+    if (Array.isArray(e.vocab)) e.vocab.forEach((id) => {
+      if (!vocabIds.has(id)) E("vocab «" + id + "» no existe en el curso");
+      else if (isStr(e.text) && e.kind !== "fonema" && !vocabForms.get(id).includes(normalize(e.text))) W("text «" + e.text + "» no coincide con la forma de la palabra " + id + " (¿es la grabación correcta?)");
+    });
+    if (Array.isArray(e.letters)) e.letters.forEach((l) => { if (!letters.has(l)) E("letters «" + l + "» no está en COURSE.guide.alphabet"); });
+    if (Array.isArray(e.vocab) && Array.isArray(e.letters) && !e.vocab.length && !e.letters.length) W("no ilustra ninguna palabra ni letra: solo sonará donde el texto maya coincida");
+    ["author", "license", "source"].forEach((k) => { if (!isStr(e[k])) E("falta " + k + " (los créditos son obligatorios)"); });
+    if (isStr(e.license) && !LICENCIAS.includes(e.license)) W("licencia «" + e.license + "» poco común; revisa que permita publicar el audio");
+    if (e.licenseUrl !== undefined && !/^https:\/\/\S+$/.test(String(e.licenseUrl))) E("licenseUrl, si existe, debe empezar con https://");
+    if (isStr(e.source) && /^[a-z]+:/i.test(e.source) && !/^https:\/\/\S+$/.test(e.source)) E("source: un enlace debe empezar con https://");
+    if (isStr(e.source) && COPIAS.test(e.source)) E("source: no enlazar copias no autorizadas");
+    ["speaker", "region", "title", "notes"].forEach((k) => { if (e[k] !== undefined && !isStr(e[k])) E(k + ", si existe, debe ser texto no vacío"); });
+    if (e.durationMs !== undefined && !(typeof e.durationMs === "number" && e.durationMs > 0)) E("durationMs, si existe, debe ser un número positivo");
+    else if (e.durationMs > 15000) W("dura " + (e.durationMs / 1000).toFixed(1) + " s; ¿es una palabra o frase corta?");
+    if (e.kind === "sintetico" && !(isStr(e.notes) && /aproxima/i.test(e.notes))) {
+      E("un audio «sintetico» debe llevar notes que expliquen que es aproximado (p. ej. \"Voz sintética aproximada; no sustituye a un hablante.\")");
+    }
+  });
+  const dir = path.join(base, "audio");
+  if (fs.existsSync(dir)) fs.readdirSync(dir).filter((f) => /\.mp3$/i.test(f) && !usados.has(f)).forEach((f) => {
+    warnings.push(path.relative(ROOT, path.join(dir, f)) + ": no está en el catálogo (no se publica)");
+  });
+}
+
+/* ---------------- Recursos para escuchar ---------------- */
+const RES_FIELDS = ["id", "title", "url", "kind", "source", "lang", "units", "lessons", "credibility", "note"];
+const RES_KINDS = ["youtube", "spotify", "podcast", "radio", "web", "app"];
+const RES_LANGS = ["yua", "es", "yua-es", "en"];
+const RES_CRED = ["institucional", "hablante nativo", "docente", "otro"];
+let resCount = 0;
+function validateResources(file) {
+  const rel = path.relative(ROOT, file);
+  if (!fs.existsSync(file)) { warnings.push(rel + ": no existe; no habrá «Para escuchar más»."); return; }
+  const code = fs.readFileSync(file, "utf8");
+  if (code.includes("`")) errors.push(rel + ": contiene backticks (`); usa comillas dobles");
+  if (/<\/script/i.test(code)) errors.push(rel + ": contiene </script");
+  const box = { window: {}, console: { log() {}, warn() {}, error() {} } };
+  vm.createContext(box);
+  try { vm.runInContext(code, box, { filename: path.basename(file), timeout: 2000 }); }
+  catch (e) { errors.push(rel + ": error al ejecutar: " + (e && e.message)); return; }
+  const list = box.window.COURSE_RESOURCES;
+  if (!Array.isArray(list)) { errors.push(rel + ": no definió window.COURSE_RESOURCES como lista"); return; }
+  const ids = new Set();
+  list.forEach((r, i) => {
+    const w = rel + " · recurso[" + i + "]" + (r && r.id ? " " + r.id : "");
+    const E = (m) => errors.push(w + ": " + m), W = (m) => warnings.push(w + ": " + m);
+    if (!r || typeof r !== "object") { E("no es un objeto"); return; }
+    resCount++;
+    Object.keys(r).forEach((k) => { if (!RES_FIELDS.includes(k)) W("campo desconocido «" + k + "» (se ignora)"); });
+    if (!isStr(r.id) || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(r.id)) E("id debe tener solo minúsculas ascii, números y guiones");
+    else if (ids.has(r.id)) E("id repetido");
+    ids.add(r.id);
+    if (!isStr(r.title)) E("falta title");
+    if (!isStr(r.url) || !/^https:\/\/\S+$/.test(r.url)) E("url debe empezar con https://");
+    else if (COPIAS.test(r.url)) E("url: no enlazar copias no autorizadas");
+    if (!RES_KINDS.includes(r.kind)) E("kind debe ser uno de: " + RES_KINDS.join(", "));
+    if (!isStr(r.source)) E("falta source (canal o autor)");
+    if (!RES_LANGS.includes(r.lang)) E("lang debe ser uno de: " + RES_LANGS.join(", "));
+    if (!RES_CRED.includes(r.credibility)) E("credibility debe ser uno de: " + RES_CRED.join(", "));
+    if (!Array.isArray(r.units) || !r.units.length) E("units debe ser una lista con al menos una unidad");
+    else r.units.forEach((u) => { if (!unitIds.has(u)) E("la unidad «" + u + "» no existe"); });
+    if (r.lessons !== undefined) {
+      if (!Array.isArray(r.lessons) || !r.lessons.length) E("lessons, si existe, debe ser una lista no vacía");
+      else r.lessons.forEach((l) => {
+        if (!lessonIds.has(l)) E("la lección «" + l + "» no existe");
+        else if (Array.isArray(r.units) && !r.units.includes(lessonUnit.get(l))) E("la lección «" + l + "» es de " + lessonUnit.get(l) + ", que no está en units");
+      });
+    }
+    if (r.note !== undefined && !isStr(r.note)) E("note, si existe, debe ser texto no vacío");
+  });
+}
+
+const allCourse = SAMPLE || !EXPLICIT;
+const catalogFile = OPT_CAT || (allCourse ? path.join(ROOT, SAMPLE ? "test/fixtures/catalogo.json" : "audio/catalogo.json") : null);
+const resourcesFile = OPT_RES || (allCourse ? path.join(ROOT, SAMPLE ? "test/fixtures/recursos.js" : "src/content/recursos.js") : null);
+if (catalogFile) validateAudio(catalogFile);
+if (resourcesFile) validateResources(resourcesFile);
+
 console.log("Ko'ox Maaya · validación de contenido");
 console.log("Archivos: " + files.map((f) => path.relative(ROOT, f)).join(", "));
 console.log("Unidades: " + counts.units + " · Lecciones: " + counts.lessons + " · Tarjetas: " + counts.cards + " · Diálogos: " + counts.dialogues);
 console.log("Vocab: " + counts.vocab + " (" + counts.vocabMedia + " por confirmar) · Ejercicios: " + counts.exercises + " " +
   JSON.stringify(counts.byType));
 if (C.guide && Array.isArray(C.guide.alphabet)) console.log("Guía: " + C.guide.alphabet.length + " letras");
+if (catalogFile) console.log("Audio (" + path.relative(ROOT, catalogFile) + "): " + audioCounts.total + " " + (audioCounts.total === 1 ? "entrada" : "entradas") +
+  (audioCounts.total ? " " + JSON.stringify(audioCounts.byKind) + " · " + (audioCounts.bytes / 1024).toFixed(1) + " KB" : ""));
+else console.log("Audio y recursos: no se validan con una lista de archivos (se refieren al curso completo; usa --catalogo / --recursos).");
+if (resourcesFile) console.log("Recursos (" + path.relative(ROOT, resourcesFile) + "): " + resCount);
 if (warnings.length) { console.log("\nAvisos (" + warnings.length + "):"); warnings.forEach((w) => console.log("  · " + w)); }
 if (errors.length) {
   console.log("\nERRORES (" + errors.length + "):");

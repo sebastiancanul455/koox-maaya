@@ -4,20 +4,31 @@
    - Precarga index.html, el manifest y los íconos en una caché con la versión en el nombre.
    - Navegación: primero la red (para recibir actualizaciones) y, sin red o si tarda, la copia guardada.
    - Fuentes de Google: stale-while-revalidate en una caché aparte que sobrevive a las versiones.
+   - Audio (audio/<key>.mp3?v=<hash>): primero la caché, en otra caché que sobrevive a las versiones
+     (la URL cambia cuando cambia el archivo). Si todo el audio suma 8 MB o menos, build-web.mjs
+     pone la lista en AUDIO_PRECACHE y se descarga al instalar; si no, se guarda al escucharlo.
+     Responde los pedidos con Range (los usa <audio>) con 206 a partir de la copia completa.
    - activate: borra las cachés viejas de esta app (solo las suyas: en usuario.github.io el origen
-     es compartido con otros proyectos), toma el control y avisa a la página. */
+     es compartido con otros proyectos) y los audios que ya no están en el catálogo, toma el
+     control y avisa a la página. */
 "use strict";
 
-const VERSION = "a1c4c44f271d";
-const PRECACHE = ["index.html","manifest.webmanifest","icons/favicon.svg","icons/apple-touch-icon.png","icons/icon-192.png","icons/icon-512.png","icons/icon-maskable-512.png"];
+const VERSION = "b2af6b850c54";
+const PRECACHE = ["index.html","grabar.html","manifest.webmanifest","icons/favicon.svg","icons/apple-touch-icon.png","icons/icon-192.png","icons/icon-512.png","icons/icon-maskable-512.png"];
+const AUDIO_PRECACHE = [];
+const AUDIO_FILES = [];
 const PREFIX = "koox-maaya-";
 const CACHE = PREFIX + VERSION;
 const FONTS = PREFIX + "fonts";
+const AUDIO = PREFIX + "audio";
+const AUDIO_RE = /\/audio\/[a-z0-9-]+\.mp3$/;
 const FONT_HOSTS = ["fonts.googleapis.com", "fonts.gstatic.com"];
 const FONT_MAX = 40;            // entradas máximas en la caché de fuentes
 const NAV_TIMEOUT_MS = 4000;    // con red lenta, pasado este tiempo se muestra la copia guardada
 const SCOPE = self.registration.scope;
 const INDEX = new URL("index.html", SCOPE).href;
+// Otras páginas del sitio que se guardan (p. ej. grabar.html); sin red se sirve su copia.
+const PAGES = PRECACHE.filter((p) => /\.html$/.test(p)).map((p) => new URL(p, SCOPE).href);
 
 self.addEventListener("install", (event) => {
   event.waitUntil((async () => {
@@ -33,6 +44,16 @@ self.addEventListener("install", (event) => {
       }
       await cache.put(url, res);
     }));
+    // Audio: lo que ya está guardado no se vuelve a bajar; un fallo no impide instalar la app.
+    const audio = await caches.open(AUDIO);
+    await Promise.all(AUDIO_PRECACHE.map(async (p) => {
+      const url = new URL(p, SCOPE).href;
+      try {
+        if (await audio.match(url)) return;
+        const res = await fetch(url);
+        if (res.ok && res.status === 200) await audio.put(url, res);
+      } catch (e) { /* se guardará al escucharlo */ }
+    }));
     await self.skipWaiting();
   })());
 });
@@ -41,8 +62,13 @@ self.addEventListener("activate", (event) => {
   event.waitUntil((async () => {
     const keys = await caches.keys();
     await Promise.all(keys
-      .filter((k) => k.startsWith(PREFIX) && k !== CACHE && k !== FONTS)
+      .filter((k) => k.startsWith(PREFIX) && k !== CACHE && k !== FONTS && k !== AUDIO)
       .map((k) => caches.delete(k)));
+    if (keys.includes(AUDIO)) {
+      const audio = await caches.open(AUDIO);
+      const keep = new Set(AUDIO_FILES.map((p) => new URL(p, SCOPE).href));
+      for (const r of await audio.keys()) if (!keep.has(r.url)) await audio.delete(r);
+    }
     await self.clients.claim();
     // La página compara esta versión con la suya (window.KOOX_BUILD) y, si difieren,
     // ofrece «Actualizar».
@@ -60,6 +86,7 @@ self.addEventListener("fetch", (event) => {
     return;
   }
   if (FONT_HOSTS.includes(url.hostname)) { event.respondWith(font(event)); return; }
+  if (req.url.startsWith(SCOPE) && AUDIO_RE.test(url.pathname)) { event.respondWith(audio(req)); return; }
   if (req.url.startsWith(SCOPE)) event.respondWith(asset(req));
 });
 
@@ -67,6 +94,13 @@ function isIndex(href) {
   const u = new URL(href);
   u.search = ""; u.hash = "";
   return u.href === SCOPE || u.href === INDEX;
+}
+// Clave de caché de una navegación: index.html o una de PAGES (sin ?búsqueda ni #); null si no se guarda.
+function pageKey(href) {
+  if (isIndex(href)) return INDEX;
+  const u = new URL(href);
+  u.search = ""; u.hash = "";
+  return PAGES.includes(u.href) ? u.href : null;
 }
 
 function offlinePage() {
@@ -82,12 +116,13 @@ async function navigate(event) {
   const cache = await caches.open(CACHE);
   let req = event.request;
   try { req = new Request(event.request, { cache: "no-cache" }); } catch (e) { /* se usa la original */ }
+  const key = pageKey(event.request.url);
   const fromNet = fetch(req).then(async (res) => {
-    if (res.ok && res.type === "basic" && isIndex(event.request.url)) await cache.put(INDEX, res.clone());
+    if (res.ok && res.type === "basic" && key) await cache.put(key, res.clone());
     return res;
   });
   event.waitUntil(fromNet.then(() => {}, () => {}));
-  const saved = () => cache.match(INDEX, { ignoreVary: true });
+  const saved = async () => (key && key !== INDEX && await cache.match(key, { ignoreVary: true })) || cache.match(INDEX, { ignoreVary: true });
   let timer;
   const late = new Promise((resolve) => { timer = setTimeout(() => resolve(null), NAV_TIMEOUT_MS); });
   try {
@@ -107,6 +142,45 @@ async function navigate(event) {
 async function asset(req) {
   const hit = await caches.match(req, { cacheName: CACHE, ignoreVary: true });
   return hit || fetch(req);
+}
+
+// Audio: primero la copia guardada; si no está, se baja completo (sin Range), se guarda y se responde.
+async function audio(req) {
+  const cache = await caches.open(AUDIO);
+  let res = await cache.match(req.url);
+  if (!res) {
+    let net;
+    try { net = await fetch(req.url, { credentials: "same-origin" }); }
+    catch (e) { return Response.error(); }
+    if (!net.ok || net.status !== 200) return net;
+    try { await cache.put(req.url, net.clone()); } catch (e) { /* sin espacio: se responde igual */ }
+    res = net;
+  }
+  const range = req.headers.get("range");
+  return range ? partial(res, range) : res;
+}
+
+// Respuesta 206 con el tramo pedido («bytes=inicio-fin»); con un Range que no se entiende, el archivo entero.
+async function partial(res, range) {
+  const m = /^bytes=(\d*)-(\d*)$/.exec(range.trim());
+  if (!m || (!m[1] && !m[2])) return res;
+  const buf = await res.arrayBuffer();
+  const size = buf.byteLength;
+  let start, end;
+  if (m[1]) { start = Number(m[1]); end = m[2] ? Math.min(Number(m[2]), size - 1) : size - 1; }
+  else { start = Math.max(0, size - Number(m[2])); end = size - 1; }
+  if (start >= size || start > end) {
+    return new Response(null, { status: 416, headers: { "content-range": "bytes */" + size } });
+  }
+  return new Response(buf.slice(start, end + 1), {
+    status: 206,
+    headers: {
+      "content-type": res.headers.get("content-type") || "audio/mpeg",
+      "content-range": "bytes " + start + "-" + end + "/" + size,
+      "content-length": String(end - start + 1),
+      "accept-ranges": "bytes"
+    }
+  });
 }
 
 // Fuentes: responde con la copia guardada (si hay) y la renueva en segundo plano.

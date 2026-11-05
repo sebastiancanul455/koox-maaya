@@ -7,6 +7,8 @@
 // Levanta un servidor estático local que imita GitHub Pages (sitio de proyecto en /koox-maaya/,
 // Cache-Control: max-age=600) y comprueba con Chromium: archivos y manifest, service worker,
 // sección de instalación, aviso de versión nueva, modo sin conexión y el modo Artifact intacto.
+// Si el sitio trae audio (p. ej. node build-web.mjs --sample → node test/pwa.cjs site-sample),
+// comprueba que se precarga y que se reproduce sin conexión después de la primera visita.
 // Al final corre la prueba de humo (test/smoke.cjs) contra site/index.html.
 // Capturas en test/shots-web. Sale con código 1 si algo falla.
 "use strict";
@@ -95,7 +97,24 @@ function staticChecks() {
   const atd = fs.existsSync(at) ? pngSize(at) : null;
   check("apple-touch-icon 180×180", atd && atd.w === 180 && atd.h === 180);
   check("favicon.svg es SVG", /^<svg[\s\S]*<\/svg>\s*$/.test(read("icons/favicon.svg")));
-  return { build, man };
+  // Audio: lo que la página puede pedir y lo que se precarga al instalar.
+  const list = (name) => JSON.parse((new RegExp("const " + name + " = (\\[[^\\]]*\\])").exec(sw) || [])[1] || "null");
+  const audioFiles = list("AUDIO_FILES"), audioPre = list("AUDIO_PRECACHE");
+  check("sw.js tiene las listas de audio", Array.isArray(audioFiles) && Array.isArray(audioPre));
+  const files = audioFiles || [];
+  const bytes = files.reduce((n, u) => n + (fs.existsSync(path.join(SITE, u.split("?")[0])) ? fs.statSync(path.join(SITE, u.split("?")[0])).size : 0), 0);
+  if (files.length) {
+    check("audio: cada archivo existe en el sitio y se pide con ?v=<hash>", files.every((u) => /^audio\/[a-z0-9-]+\.mp3\?v=[0-9a-f]{10}$/.test(u) && fs.existsSync(path.join(SITE, u.split("?")[0]))), files.length + " archivos");
+    check("audio: con 8 MB o menos se precarga todo", bytes > 8 * 1024 * 1024 ? audioPre.length === 0 : JSON.stringify(audioPre) === JSON.stringify(files), (bytes / 1024).toFixed(1) + " KB");
+    check("audio: index.html los anuncia en COURSE_AUDIO", files.every((u) => index.includes('"file":"' + u.split("?")[0] + '"')));
+  } else log("  · el sitio no tiene audio");
+  const grabar = fs.existsSync(path.join(SITE, "grabar.html"));
+  if (grabar) {
+    const g = read("grabar.html");
+    check("grabar.html: documento completo con el contenido de la app", /<!doctype html>/i.test(g) && !g.includes("/*@@CONTENT@@*/") && g.includes("window.COURSE_AUDIO = ") && g.includes("COURSE_RESOURCES"));
+    check("grabar.html se precarga y la app lo sabe", pre.includes("grabar.html") && /window\.KOOX_GRABAR = true/.test(head));
+  } else check("sin grabar.html, la app no lo anuncia", !/KOOX_GRABAR/.test(index) && !pre.includes("grabar.html"));
+  return { build, man, audio: files, audioPre: audioPre || [], grabar };
 }
 
 // ---------- Servidor estático (imita GitHub Pages) ----------
@@ -103,7 +122,7 @@ const MIME = {
   ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".mjs": "text/javascript; charset=utf-8",
   ".css": "text/css; charset=utf-8", ".json": "application/json; charset=utf-8",
   ".webmanifest": "application/manifest+json; charset=utf-8", ".png": "image/png", ".svg": "image/svg+xml",
-  ".ico": "image/x-icon", ".txt": "text/plain; charset=utf-8", ".woff2": "font/woff2"
+  ".ico": "image/x-icon", ".txt": "text/plain; charset=utf-8", ".woff2": "font/woff2", ".mp3": "audio/mpeg"
 };
 function startServer(version) {
   const st = { bump: "", hits: {}, version };
@@ -289,6 +308,10 @@ async function mainFlow(browser, srv, info) {
   check("caché con la versión del contenido", sw.caches.includes("koox-maaya-" + v0), sw.caches.join(", "));
   const cached = await page.evaluate(async (name) => (await (await caches.open(name)).keys()).map((r) => new URL(r.url).pathname), "koox-maaya-" + v0);
   check("precargó index, manifest e íconos", cached.some((p) => p.endsWith("/index.html")) && cached.some((p) => p.endsWith("/manifest.webmanifest")) && cached.filter((p) => p.includes("/icons/")).length >= 4, cached.join(", "));
+  if (info.audioPre.length) {
+    const audioCached = await page.evaluate(async () => (await caches.has("koox-maaya-audio")) ? (await (await caches.open("koox-maaya-audio")).keys()).map((r) => r.url.split("/koox-maaya/")[1]) : []);
+    check("precargó el audio en su propia caché", info.audioPre.every((u) => audioCached.includes(u)), audioCached.length + "/" + info.audioPre.length);
+  }
   await page.reload({ waitUntil: "load" });
   await waitApp(page);
   sw = await swState(page);
@@ -310,6 +333,8 @@ async function mainFlow(browser, srv, info) {
   check("dice que funciona sin conexión después de la primera visita", /primera visita funciona sin conexión/.test(ins.text));
   check("no repite que necesita internet", !/Necesita conexión a internet/.test(ins.text));
   check("el botón «Instalar app» espera a beforeinstallprompt", ins.btn && ins.hidden === true);
+  const rec = await page.evaluate(() => { const a = document.querySelector("#btn-grabar"); return a ? a.getAttribute("href") : null; });
+  check(info.grabar ? "Perfil invita a grabar (enlace a grabar.html)" : "sin grabar.html, Perfil no invita a grabar", info.grabar ? rec === "grabar.html" : rec === null, String(rec));
   await page.evaluate(() => {
     const e = new Event("beforeinstallprompt", { cancelable: true });
     e.prompt = () => { window.__installPrompted = (window.__installPrompted || 0) + 1; return Promise.resolve(); };
@@ -392,6 +417,23 @@ async function mainFlow(browser, srv, info) {
   check("sin conexión se abre y se completa una lección", fr.ok && fr.ex > 0, first + " → " + (fr.error || "resultados") + " · " + fr.ex + " ejercicios");
   const offMf = await page.evaluate(() => fetch("manifest.webmanifest").then((r) => r.ok, () => false));
   check("sin conexión, el manifest sale de la caché", offMf);
+  if (info.audio.length) {
+    // Un audio que no se escuchó en la primera visita: debe salir de la precarga.
+    await page.evaluate(() => { const b = document.querySelector("#btn-results-home"); if (b) b.click(); });
+    await page.waitForFunction(() => window.__koox.screen() === "home", null, { timeout: 3000 }).catch(() => {});
+    await gotoTab(page, "diccionario");
+    const st0 = await page.evaluate(() => window.__koox.audioState());
+    const sel = "#dict-list .entry [data-au]";
+    const hasBtn = !!(await page.$(sel));
+    if (hasBtn) await tap(page, sel);
+    const played = hasBtn && await page.waitForFunction((n) => window.__koox.audioState().started > n, st0.started, { timeout: 6000 }).then(() => true, () => false);
+    const st1 = await page.evaluate(() => window.__koox.audioState());
+    check("sin conexión, el audio se reproduce desde la caché", played && st1.errors === 0 && /^audio\/[a-z0-9-]+\.mp3\?v=/.test(st1.src || ""), JSON.stringify({ played, src: st1.src, errors: st1.errors }));
+    if (info.grabar) {
+      const g = await page.evaluate(() => fetch("grabar.html").then((r) => r.ok && r.text().then((t) => t.includes("COURSE_AUDIO")), () => false));
+      check("sin conexión, grabar.html sale de la caché", g === true);
+    }
+  }
   const fontsCached = await page.evaluate(async () => (await caches.has("koox-maaya-fonts")) ? (await (await caches.open("koox-maaya-fonts")).keys()).length : 0);
   log("  · fuentes guardadas por el service worker: " + fontsCached);
   check("sin diálogos del navegador (alert/confirm/prompt)", (await page.evaluate(() => window.__dialogs.length)) === 0);

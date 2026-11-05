@@ -4,6 +4,8 @@
 // Acepta el html del Artifact (lo envuelve como la plataforma) o un documento completo que empiece
 // con <!doctype (la versión web, site/index.html), que se abre tal cual.
 // Capturas en test/shots, o en la carpeta de la variable de entorno KOOX_SHOTS.
+// Si la página trae audio (window.COURSE_AUDIO) o recursos (window.COURSE_RESOURCES), prueba sus
+// botones, «Escucha y elige», «Para escuchar más» y los créditos; si no, que no aparezca nada de eso.
 // Sale con código 1 si algo falla.
 "use strict";
 const fs = require("fs");
@@ -248,7 +250,7 @@ async function stepRun(page, cfg, cap, opts) {
 
 // Pantallas que el motor siempre genera, y pantallas que dependen de lo que traiga el contenido.
 const CORE_CAPS = ["ex-choice", "ex-type", "ex-pairs", "vocab", "feedback-ok", "feedback-bad"];
-const CONTENT_CAPS = ["ex-fill", "ex-build", "dialogue", "teach-text", "teach-tip", "teach-culture", "teach-warn", "teach-table"];
+const CONTENT_CAPS = ["ex-fill", "ex-build", "ex-listen", "dialogue", "teach-text", "teach-tip", "teach-culture", "teach-warn", "teach-table"];
 async function lessonFeatures(page) {
   return page.evaluate(() => {
     const out = {};
@@ -259,6 +261,7 @@ async function lessonFeatures(page) {
       (l.exercises || []).forEach((e) => { if (e && (e.type === "fill" || e.type === "build")) f.push("ex-" + e.type); });
       if (l.dialogue) f.push("dialogue");
       (l.teach || []).forEach((c) => { if (c && c.kind) f.push("teach-" + c.kind); });
+      if ((window.__koox.plan(l.id) || []).some((st) => /^ex:listen/.test(st))) f.push("ex-listen");
       out[l.id] = f;
     }));
     return out;
@@ -465,7 +468,8 @@ async function mobileFull(browser, cfg) {
   check("[" + cfg.name + "] acento de tono: correcta con aviso", g.d.ok && g.d.accent);
   check("[" + cfg.name + "] la glotalizada cuenta (kaak' ≠ k'áak')", !g.e);
   check("[" + cfg.name + "] ignora signos ¿?", g.f);
-  check("[" + cfg.name + "] par mínimo: «miis» (gato) no vale por «míis» (escoba)", g.mp1 && g.mp1.ok === false && g.mp2 && g.mp2.ok && g.mp3 && g.mp3.ok, JSON.stringify([g.mp1, g.mp2, g.mp3]));
+  if (g.mp1 || g.mp2 || g.mp3) check("[" + cfg.name + "] par mínimo: «miis» (gato) no vale por «míis» (escoba)", g.mp1 && g.mp1.ok === false && g.mp2 && g.mp2.ok && g.mp3 && g.mp3.ok, JSON.stringify([g.mp1, g.mp2, g.mp3]));
+  else console.log("  · AVISO [" + cfg.name + "] el contenido no tiene u1-miis-escoba / u1-miis-gato (sin prueba de par mínimo)");
   check("[" + cfg.name + "] saneado con lista blanca", !/img|script|onerror|<a/i.test(g.h) && /<b>x<\/b>/.test(g.h) && /class="m"/.test(g.h), g.h);
 
   // Perfil: meta diaria, guía y borrar avance.
@@ -494,6 +498,12 @@ async function mobileFull(browser, cfg) {
   await ctx.close();
 }
 
+// De resultados al inicio, esperando a que termine la vuelta del historial.
+async function toHome(page) {
+  await page.evaluate(() => { const b = document.querySelector("#btn-results-home"); if (b) b.click(); });
+  await page.waitForFunction(() => window.__koox.screen() === "home", null, { timeout: 3000 }).catch(() => {});
+}
+
 async function mobileDark(browser, cfg) {
   const { ctx, page } = await newPage(browser, cfg);
   await load(page);
@@ -505,10 +515,11 @@ async function mobileDark(browser, cfg) {
     if (!needStep(i, lessons[i], cap, feats)) continue;
     if ((await scr(page)) === "home") await openLesson(page, cfg, lessons[i]);
     const r = await stepRun(page, cfg, cap, { wrongOnce: i === 0, stopWhen: (c) => i > 0 && allSeen(c, feats) });
-    if (r === "results") await page.evaluate(() => document.querySelector("#btn-results-home").click());
+    if (r === "results") await toHome(page);
     if (r === "stopped") break;
   }
   checkCaps(cfg, cap, feats);
+  if ((await scr(page)) === "results") await toHome(page);
   if ((await scr(page)) === "home") await openLesson(page, cfg, lessons[Math.min(1, lessons.length - 1)]);
   // Botón Atrás del sistema: pide confirmar, luego cierra la confirmación y sigue en la lección.
   await page.evaluate(() => history.back());
@@ -635,6 +646,266 @@ async function robustness(browser, cfg) {
   await ctx.close();
 }
 
+// ---------- Audio de pronunciación y recursos para escuchar ----------
+const AU_LABELS = ["Voz nativa", "Voz sintética", "Sonido de referencia (AFI)"];
+const auState = (page) => page.evaluate(() => window.__koox.audioState());
+async function waitStarted(page, n) {
+  return page.waitForFunction((k) => window.__koox.audioState().started > k, n, { timeout: 5000 }).then(() => true, () => false);
+}
+async function leaveSession(page) {
+  await page.evaluate(() => {
+    const b = document.querySelector("#btn-close"); if (b) b.click();
+    const x = document.querySelector("#btn-confirm-exit"); if (x && !document.querySelector("#confirm").hidden) x.click();
+  });
+  await page.waitForFunction(() => window.__koox.screen() === "home", null, { timeout: 3000 }).catch(() => {});
+}
+async function audioRun(browser, cfg) {
+  let { ctx, page } = await newPage(browser, cfg);
+  const audioReqs = [];
+  page.on("request", (r) => { const u = r.url(); if (!u.startsWith("data:") && /\.mp3(\?|$)|\/audio\//.test(u)) audioReqs.push(u); });
+  await load(page);
+  const info = await page.evaluate(() => window.__koox.audio());
+  log("  · audio: " + info.count + " " + JSON.stringify(info.kinds) + " · palabras con voz nativa: " + info.native.length + " · recursos: " + info.resources);
+  const lessons = await page.evaluate(() => window.__koox.lessons());
+  const plans = await page.evaluate(() => window.__koox.lessons().map((id) => ({ id, p: window.__koox.plan(id) })));
+  const withListen = plans.filter((x) => x.p.some((st) => /^ex:listen/.test(st)));
+  const listenOk = plans.every((x) => x.p.filter((st) => /^ex:listen/.test(st)).length <= 2);
+
+  if (!info.count) {
+    // Sin audio: ni botones, ni ajustes, ni créditos, ni «Escucha y elige».
+    check("[" + cfg.name + "] sin audio: ninguna lección tiene «Escucha y elige»", !withListen.length, withListen.map((x) => x.id).join(", "));
+    await gotoTab(page, cfg, "diccionario");
+    await page.evaluate(() => { const d = document.querySelector("#guide"); if (d) d.open = true; });
+    await gotoTab(page, cfg, "perfil");
+    const none = await page.evaluate(() => ({ btn: document.querySelectorAll("[data-au]").length, set: !!document.querySelector("#au-auto, #au-rate"), cred: !!document.querySelector("#credits-title") }));
+    check("[" + cfg.name + "] sin audio: sin botones, ajustes ni créditos de audio", !none.btn && !none.set && !none.cred, JSON.stringify(none));
+    await gotoTab(page, cfg, "aprender");
+    await openLesson(page, cfg, lessons[0]);
+    for (let g = 0; g < 12 && ["teach", "vocab"].includes(await scr(page)); g++) {
+      if ((await scr(page)) === "vocab") break;
+      await tap(page, cfg, "#btn-next");
+    }
+    if ((await scr(page)) === "vocab") check("[" + cfg.name + "] sin audio: la tarjeta de palabra no tiene botón de escuchar", !(await page.$("#wc-play")) && !(await page.$("#wc-slow")));
+    await leaveSession(page);
+  } else {
+    check("[" + cfg.name + "] «Escucha y elige» aparece en las lecciones con voz nativa (1 o 2 por lección)", withListen.length > 0 && listenOk, withListen.map((x) => x.id).join(", "));
+    // Ninguna lección pide producir con «Escucha y elige» una forma por confirmar.
+    check("[" + cfg.name + "] «Escucha y elige» con opciones en maya solo usa formas confirmadas", !plans.some((x) => x.p.some((st) => /^ex:listen-m:.*:(media|\?)$/.test(st))));
+    const target = withListen.length ? withListen[0].id : lessons[0];
+    await openLesson(page, cfg, target);
+    // Hasta la primera tarjeta de palabra con audio (la reproducción automática ocurre con el toque).
+    let autoplayed = null;
+    for (let g = 0; g < 20; g++) {
+      const s = await scr(page);
+      if (s === "vocab" && (await page.$("#wc-play"))) break;
+      if (!["teach", "vocab", "dialogue"].includes(s)) break;
+      const before = await auState(page);
+      await tap(page, cfg, "#btn-next");
+      if ((await scr(page)) === "vocab" && (await page.$("#wc-play"))) {
+        await waitStarted(page, before.started);
+        const after = await auState(page);
+        const key = await page.getAttribute("#wc-play", "data-au");
+        autoplayed = after.plays > before.plays && after.lastKey === key;
+      }
+    }
+    const card = await page.evaluate(() => {
+      const b = document.querySelector("#wc-play"), sl = document.querySelector("#wc-slow"), tag = document.querySelector(".wc-audio .au-kind");
+      if (!b) return null;
+      const r = b.getBoundingClientRect(), rs = sl.getBoundingClientRect();
+      return { w: r.width, h: r.height, sh: rs.height, label: b.getAttribute("aria-label"), slow: sl.getAttribute("aria-label"), tag: tag ? tag.textContent : "", word: document.querySelector("#wc-m").textContent };
+    });
+    check("[" + cfg.name + "] la tarjeta de palabra nueva tiene botón de escuchar y «Lento»", !!card, card ? card.word : "sin tarjeta con audio");
+    if (card) {
+      check("[" + cfg.name + "] botones de escuchar de 44 px o más", card.w >= 44 && card.h >= 44 && card.sh >= 44, card.w + "×" + card.h + ", lento " + card.sh);
+      check("[" + cfg.name + "] aria-label «Escuchar «…»» con el tipo de audio", /^Escuchar «.+», (voz nativa|voz sintética aproximada|sonido de referencia)/.test(card.label) && /lento/.test(card.slow), card.label);
+      check("[" + cfg.name + "] etiqueta del tipo de audio junto al botón", AU_LABELS.some((l) => card.tag.startsWith(l)), card.tag);
+      check("[" + cfg.name + "] la palabra suena al aparecer (ajuste por omisión)", autoplayed === true, String(autoplayed));
+      if (cfg.shots) await shot(page, cfg, "audio-vocab");
+      let st0 = await auState(page);
+      await tap(page, cfg, "#wc-play");
+      const started = await waitStarted(page, st0.started);
+      const st1 = await auState(page);
+      check("[" + cfg.name + "] al tocar el botón, el audio se reproduce", started && (st1.playing || st1.ended > st0.ended) && st1.errors === 0 && st1.rate === 1, JSON.stringify(st1));
+      if (!FULL_DOC) check("[" + cfg.name + "] el Artifact reproduce el audio incrustado (data:)", st1.src === "data:", st1.src);
+      st0 = st1;
+      await tap(page, cfg, "#wc-slow");
+      const slowStarted = await waitStarted(page, st0.started);
+      const st2 = await auState(page);
+      check("[" + cfg.name + "] «Lento» reproduce a 0.75 sin cambiar el tono", slowStarted && st2.rate === 0.75 && st2.preservesPitch === true, JSON.stringify({ rate: st2.rate, pitch: st2.preservesPitch }));
+    }
+    // Sigue la lección hasta «Escucha y elige».
+    let listened = null;
+    for (let g = 0; g < 80 && withListen.length; g++) {
+      const s = await scr(page);
+      if (s === "results") break;
+      if (["teach", "vocab", "dialogue"].includes(s)) { await page.evaluate(() => document.querySelector("#btn-next").click()); continue; }
+      if (s === "feedback") { await page.evaluate(() => document.querySelector("#btn-continue").click()); continue; }
+      if (s !== "exercise") break;
+      const p = await page.evaluate(() => window.__koox.peek());
+      if (p.type === "listen") {
+        const ex = await page.evaluate(() => {
+          const b = document.querySelector("#listen-play"), r = b ? b.getBoundingClientRect() : { width: 0, height: 0 };
+          return { w: r.width, h: r.height, label: b ? b.getAttribute("aria-label") : "", opts: document.querySelectorAll(".opt").length, fallback: !document.querySelector("#listen-fallback").hidden };
+        });
+        if (cfg.shots) await shot(page, cfg, "audio-listen");
+        const st0 = await auState(page);
+        await tap(page, cfg, "#listen-play");
+        const ok = await waitStarted(page, st0.started);
+        await page.evaluate(() => window.__koox.solve());
+        await tap(page, cfg, "#btn-check");
+        const fb = await page.evaluate(() => ({ s: window.__koox.screen(), bad: document.querySelector("#feedback").classList.contains("bad"), au: document.querySelectorAll("#fb-body [data-au]").length }));
+        listened = { ex, ok, fb, answer: p.answer };
+        if (cfg.shots) await shot(page, cfg, "audio-listen-feedback");
+        break;
+      }
+      await page.evaluate(() => window.__koox.solve());
+      if ((await scr(page)) === "exercise") await page.evaluate(() => document.querySelector("#btn-check").click());
+    }
+    if (withListen.length) {
+      check("[" + cfg.name + "] aparece «Escucha y elige» con botón grande y opciones", listened && listened.ex.w >= 44 && listened.ex.opts >= 2 && !listened.ex.fallback, JSON.stringify(listened && listened.ex));
+      check("[" + cfg.name + "] su aria-label no revela la respuesta", listened && /^Escuchar el audio/.test(listened.ex.label) && listened.ex.label.indexOf(listened.answer) < 0, listened && listened.ex.label);
+      check("[" + cfg.name + "] «Escucha y elige»: el audio suena y solve() lo resuelve", listened && listened.ok && listened.fb.s === "feedback" && !listened.fb.bad, JSON.stringify(listened && listened.fb));
+      check("[" + cfg.name + "] la hoja de retroalimentación ofrece escuchar la palabra", listened && listened.fb.au > 0);
+    }
+    await leaveSession(page);
+    check("[" + cfg.name + "] el audio se detiene al cambiar de pantalla", !(await auState(page)).playing);
+
+    // Diccionario y guía de sonidos.
+    await gotoTab(page, cfg, "diccionario");
+    const dict = await page.evaluate(() => ({ btns: document.querySelectorAll("#dict-list .entry [data-au]").length, tags: [...document.querySelectorAll("#dict-list .au-kind")].map((t) => t.textContent) }));
+    check("[" + cfg.name + "] diccionario: botones de escuchar con su tipo", dict.btns > 0 && dict.tags.length === dict.btns, JSON.stringify({ btns: dict.btns, tags: dict.tags.length }));
+    const guide = await page.evaluate(() => {
+      const d = document.querySelector("#guide"); if (d) d.open = true;
+      const fon = [...document.querySelectorAll("#guide .letter .au-kind.fonema")];
+      return { btns: document.querySelectorAll("#guide [data-au]").length, fon: fon.length, fonText: fon.map((x) => x.closest(".letter").textContent).join(" | "), note: (document.querySelector("#guide .au-note") || {}).textContent || "" };
+    });
+    check("[" + cfg.name + "] guía de sonidos con audio", guide.btns > 0, guide.btns);
+    if (info.kinds.fonema) check("[" + cfg.name + "] guía: el «fonema» aclara que es el sonido aislado del AFI, no una palabra maya", guide.fon > 0 && /Sonido de referencia \(AFI\)/.test(guide.fonText) && /no una palabra maya/.test(guide.fonText) && /Alfabeto Fonético Internacional/.test(guide.note), guide.fonText.slice(0, 120));
+    if (cfg.shots) { await page.evaluate(() => document.querySelector("#guide").scrollIntoView()); await shot(page, cfg, "audio-guide"); }
+    await checkOverflow(page, cfg, "guía con audio");
+
+    // Perfil: ajustes y créditos.
+    await gotoTab(page, cfg, "perfil");
+    const prof = await page.evaluate(() => ({
+      auto: (document.querySelector("#au-auto") || {}).checked, rate: (document.querySelector("#au-rate") || {}).value,
+      credits: [...document.querySelectorAll("#credits-box a")].map((a) => [a.getAttribute("target"), a.getAttribute("rel"), a.href]),
+      creditText: (document.querySelector("#credits-box") || {}).textContent || ""
+    }));
+    check("[" + cfg.name + "] Perfil: «Reproducir al presentar palabras» (sí) y «Velocidad» (normal)", prof.auto === true && prof.rate === "normal", JSON.stringify({ auto: prof.auto, rate: prof.rate }));
+    check("[" + cfg.name + "] Perfil: créditos de audio con licencia enlazada", prof.creditText.length > 0 && /Licencia:/.test(prof.creditText) && prof.credits.every((l) => l[0] === "_blank" && /noopener/.test(l[1]) && /^https:/.test(l[2])), prof.credits.length + " enlaces");
+    await tap(page, cfg, "#au-auto");
+    await page.selectOption("#au-rate", "lenta");
+    const set = await page.evaluate(() => window.__koox.state().settings);
+    check("[" + cfg.name + "] los ajustes de audio se guardan", set.autoplay === false && set.rate === "lenta", JSON.stringify(set));
+    await gotoTab(page, cfg, "aprender");
+    await openLesson(page, cfg, target);
+    const before = await auState(page);
+    for (let g = 0; g < 20 && !(await page.$("#wc-play")) && ["teach", "vocab", "dialogue"].includes(await scr(page)); g++) await tap(page, cfg, "#btn-next");
+    await page.waitForTimeout(300);
+    const afterNo = await auState(page);
+    check("[" + cfg.name + "] sin «Reproducir al presentar», la palabra no suena sola", afterNo.plays === before.plays, before.plays + " → " + afterNo.plays);
+    if (await page.$("#wc-play")) {
+      await tap(page, cfg, "#wc-play");
+      await waitStarted(page, afterNo.started);
+      check("[" + cfg.name + "] velocidad «Lenta» global: 0.75", (await auState(page)).rate === 0.75);
+    }
+    await leaveSession(page);
+
+    // Repaso: también trae «Escucha y elige».
+    if (info.native.length) {
+      await page.evaluate((ids) => {
+        const d = new Date(); d.setDate(d.getDate() - 1);
+        const y = d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+        const s = window.__koox.state();
+        ids.forEach((id) => { s.srs[id] = { box: 1, due: y, right: 0, wrong: 0 }; });
+        localStorage.setItem("koox-maaya-v2", JSON.stringify(s));
+      }, info.native);
+      await load(page);
+      await gotoTab(page, cfg, "repasar");
+      await tap(page, cfg, "#btn-start-review");
+      const fr = await page.evaluate(fastRunInPage);
+      check("[" + cfg.name + "] el repaso incluye «Escucha y elige» y se completa", fr.ok && (fr.types.listen || 0) >= 1, (fr.error || "") + " " + JSON.stringify(fr.types));
+      await page.evaluate(() => { const b = document.querySelector("#btn-results-home"); if (b) b.click(); });
+    }
+  }
+
+  // «Para escuchar más» (hoja de la lección) y «Escucha maya» (Perfil).
+  if (info.resources) {
+    await gotoTab(page, cfg, "aprender");
+    let sheet = null;
+    for (const id of lessons) {
+      await page.evaluate(() => window.scrollTo(0, 0));
+      await tap(page, cfg, '[data-lesson="' + id + '"]');
+      await page.waitForSelector("#lesson-sheet:not([hidden])");
+      const links = await page.$$eval("#ls-modal .ls-listen a.res", (a) => a.map((x) => [x.getAttribute("target"), x.getAttribute("rel"), x.href, x.textContent]));
+      if (links.length) { sheet = { id, links }; if (cfg.shots) await shot(page, cfg, "audio-sheet"); }
+      await page.keyboard.press("Escape");
+      await page.waitForTimeout(250);
+      if (sheet) break;
+    }
+    check("[" + cfg.name + "] «Para escuchar más» en la hoja de la lección: enlaces externos", sheet && sheet.links.every((l) => l[0] === "_blank" && /noopener/.test(l[1]) && /^https:/.test(l[2])), sheet ? sheet.id + ": " + sheet.links.length : "ninguna lección");
+    check("[" + cfg.name + "] cada recurso dice su fuente y su credibilidad", sheet && sheet.links.every((l) => /(Institucional|Hablante nativo|Docente|Otra fuente)/.test(l[3])), sheet && sheet.links[0] && sheet.links[0][3]);
+    await gotoTab(page, cfg, "perfil");
+    const all = await page.$$eval("#listen-box a.res", (a) => a.map((x) => [x.getAttribute("target"), x.getAttribute("rel"), x.href]));
+    check("[" + cfg.name + "] Perfil → «Escucha maya» con todos los recursos", all.length === info.resources && all.every((l) => l[0] === "_blank" && /noopener/.test(l[1])), all.length + "/" + info.resources);
+    await page.evaluate(() => { document.querySelector("#listen-box").open = true; const c = document.querySelector("#credits-box"); if (c) c.open = true; });
+    await checkOverflow(page, cfg, "perfil con recursos y créditos");
+    if (cfg.shots) { await page.evaluate(() => document.querySelector("#listen-title").scrollIntoView()); await shot(page, cfg, "audio-profile"); }
+  } else {
+    await gotoTab(page, cfg, "aprender");
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await tap(page, cfg, '[data-lesson="' + lessons[0] + '"]');
+    await page.waitForSelector("#lesson-sheet:not([hidden])");
+    const has = await page.evaluate(() => !!document.querySelector("#ls-modal .ls-listen"));
+    await page.keyboard.press("Escape");
+    await gotoTab(page, cfg, "perfil");
+    check("[" + cfg.name + "] sin recursos: sin «Para escuchar más» ni «Escucha maya»", !has && !(await page.$("#listen-title")));
+  }
+  const grabar = await page.evaluate(() => !!document.querySelector("#btn-grabar"));
+  const grabarEsperado = await page.evaluate(() => window.KOOX_STANDALONE === true && window.KOOX_GRABAR === true);
+  check("[" + cfg.name + "] «¿Hablas maya?» solo en el sitio con grabar.html", grabar === grabarEsperado, String(grabar));
+  if (!FULL_DOC) {
+    const files = await page.evaluate(() => ((window.COURSE_AUDIO && window.COURSE_AUDIO.entries) || []).map((e) => String(e.file).slice(0, 23)));
+    check("[" + cfg.name + "] el Artifact no pide audio a ningún sitio (todo es data:)", !audioReqs.length && files.every((f) => f === "data:audio/mpeg;base64,"), audioReqs.slice(0, 2).join(", "));
+  }
+  check("[" + cfg.name + "] audio: sin errores de JavaScript", page.errors.length === 0, page.errors.slice(0, 5).join(" | "));
+  await ctx.close();
+
+  // Un audio que no carga: se oculta su botón y «Escucha y elige» sigue con el texto.
+  if (info.native.length) {
+    ({ ctx, page } = await newPage(browser, cfg));
+    const vid = info.native[0];
+    await page.addInitScript((id) => {
+      let v;
+      Object.defineProperty(window, "COURSE_AUDIO", {
+        configurable: true, get() { return v; },
+        set(x) {
+          try { x.entries.forEach((e) => { if ((e.vocab || []).includes(id) && e.kind === "nativo") e.file = "data:audio/mpeg;base64,AAAAAAAAAAAAAAAA"; }); } catch (e) { /* sin efecto */ }
+          v = x;
+        }
+      });
+    }, vid);
+    await load(page);
+    await page.evaluate((id) => window.__koox.tryListen(id), vid);
+    const fell = await page.waitForFunction(() => { const f = document.querySelector("#listen-fallback"); return f && !f.hidden; }, null, { timeout: 5000 }).then(() => true, () => false);
+    const fb = await page.evaluate(() => ({ box: document.querySelector("#listen-box").hidden, errors: window.__koox.audioState().errors }));
+    check("[" + cfg.name + "] audio dañado: «Escucha y elige» muestra el texto y oculta el botón", fell && fb.box && fb.errors >= 1, JSON.stringify(fb));
+    await page.evaluate(() => window.__koox.solve());
+    await tap(page, cfg, "#btn-check");
+    check("[" + cfg.name + "] audio dañado: el ejercicio se puede contestar", (await scr(page)) === "feedback");
+    await leaveSession(page);
+    await gotoTab(page, cfg, "diccionario");
+    const hidden = await page.evaluate((id) => {
+      const failed = window.__koox.audio().failed, now = window.__koox.audioFor("vocab", id);
+      const shown = [...document.querySelectorAll("#dict-list [data-au]")].filter((x) => !x.hidden && x.offsetParent !== null).map((x) => x.getAttribute("data-au"));
+      return { failed, now: now ? now.key : null, shown: shown.length, shownBroken: shown.filter((k) => failed.includes(k)).length };
+    }, vid);
+    check("[" + cfg.name + "] audio dañado: ya no se ofrece y lo demás sigue", hidden.failed.length >= 1 && !hidden.failed.includes(hidden.now) && !hidden.shownBroken && (info.count < 2 || hidden.shown > 0), JSON.stringify(hidden));
+    check("[" + cfg.name + "] audio dañado: sin errores de JavaScript", page.errors.length === 0, page.errors.slice(0, 3).join(" | "));
+    await ctx.close();
+  }
+}
+
 async function desktop(browser, cfg) {
   const { ctx, page } = await newPage(browser, cfg);
   await load(page);
@@ -685,6 +956,8 @@ async function desktop(browser, cfg) {
     ["móvil oscuro", mobileDark, { name: "390-oscuro", viewport: MOBILE, mobile: true, scheme: "dark", shots: true }],
     ["escritorio claro", desktop, { name: "1280-claro", viewport: DESK, scheme: "light", shots: true }],
     ["escritorio oscuro", desktop, { name: "1280-oscuro", viewport: DESK, scheme: "dark" }],
+    ["audio y recursos (claro)", audioRun, { name: "audio-claro", viewport: MOBILE, mobile: true, scheme: "light", shots: true }],
+    ["audio y recursos (oscuro)", audioRun, { name: "audio-oscuro", viewport: MOBILE, mobile: true, scheme: "dark", shots: true }],
     ["robustez (sin curso, contenido degradado, sin almacenamiento)", robustness, { name: "robustez", viewport: { width: 360, height: 740 }, mobile: true, scheme: "light" }]
   ];
   for (const [label, fn, cfg] of runs) {

@@ -4,6 +4,7 @@ node_modules/
 # Salidas de las pruebas
 test/shots/
 test/shots-web/
+test/shots-grabar/
 test/qa/
 test/.fontcache/
 test/sample-build.html

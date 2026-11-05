@@ -93,7 +93,9 @@ src/
   app.css             estilos
   app.js              motor: lecciones, ejercicios, repaso, diccionario, progreso
   content/u1.js …     contenido, un archivo por unidad
-  web/                piezas de la versión web: plantilla del service worker e íconos
+  content/recursos.js enlaces para escuchar maya (window.COURSE_RESOURCES)
+  web/                piezas de la versión web: plantilla del service worker, íconos y grabar.html
+audio/                catalogo.json y los MP3 de pronunciación (ver «Audio»)
 build-core.mjs        ensamblado común de la página
 build.mjs             página única en formato Artifact de claude.ai (dist/)
 build-web.mjs         sitio web instalable (PWA)
@@ -102,7 +104,7 @@ dist/                 koox-maaya-artifact.html: la página para claude.ai, gener
 data/                 glosario.json y glosario.csv, generados
 revision/             hoja de revisión para hablantes e instrucciones
 kb/                   bases de conocimiento con estados y fuentes
-test/                 validate.cjs, smoke.cjs, pwa.cjs y contenido de muestra
+test/                 validate.cjs, smoke.cjs, pwa.cjs, contenido de muestra y fixtures/ (audios y recursos de prueba)
 tools/                utilidades (icons.cjs genera los PNG de los íconos)
 ```
 
@@ -125,6 +127,7 @@ npm install && npx playwright install chromium
 | `node export-data.mjs` | Regenera `data/glosario.json`, `data/glosario.csv` y la hoja de `revision/`. Con `--detalle` lista las palabras sin respaldo en `kb/`. |
 | `node test/smoke.cjs <html>` | Pruebas de extremo a extremo con Playwright sobre una página armada: `node test/smoke.cjs dist/koox-maaya-artifact.html` o `node test/smoke.cjs index.html`. |
 | `node test/pwa.cjs .` | Pruebas de la versión web instalable (manifest, service worker, sin conexión, aviso de versión nueva) sobre el sitio de la raíz; al final corre `smoke.cjs` sobre `index.html`. |
+| `node build.mjs --sample` y `node build-web.mjs --sample` | Arman la página y el sitio **de prueba** (`test/sample-build.html` y `site-sample/`) con `test/sample-content.js` y los audios y recursos de `test/fixtures/`. Nunca tocan la raíz ni el catálogo real. Se prueban con `npm run test:sample` (valida, arma y corre `smoke.cjs`) y `npm run test:pwa:sample` (sitio de prueba y `pwa.cjs site-sample`, con audio sin conexión). |
 
 Atajos: `npm run validate`, `npm run build`, `npm run build:web`, `npm run export`, `npm test`
 (valida, arma y corre `smoke.cjs` sobre el Artifact) y `npm run test:pwa`.
@@ -134,6 +137,51 @@ pruebas. Haz commit de los archivos regenerados (`index.html`, `sw.js`, `dist/`,
 `revision/`) junto con el cambio. Si cambias el diseño del ícono en `tools/icons.cjs`, corre
 `node tools/icons.cjs` antes de `build-web.mjs` (si se te olvida, `build-web.mjs` se detiene y
 lo avisa).
+
+## Audio
+
+La app puede reproducir la pronunciación de palabras, frases del diálogo y letras de la guía, y
+proponer el ejercicio **«Escucha y elige»**. Sin audio todo funciona igual: no aparece ningún botón.
+
+**Contrato.** `audio/catalogo.json` es la fuente de verdad:
+`{ "version": 1, "entries": [ … ] }`, y cada entrada apunta a `audio/<key>.mp3` (MP3 mono, 44.1 kHz,
+64 kbps; `key` en `[a-z0-9-]+`). Campos: `key`, `file`, `kind` (`nativo` = voz de un hablante,
+`fonema` = sonido aislado del Alfabeto Fonético Internacional, `sintetico` = voz sintética
+aproximada), `text` (lo que se oye), `lang` (`yua` o `und`), `ipa`, `vocab` (ids de palabras),
+`letters` (letras de la guía), `speaker`, `region`, `author`, `license`, `licenseUrl`, `source`,
+`title`, `durationMs` y `notes`. `node test/validate.cjs` revisa que las keys no se repitan, que cada
+archivo exista y sea un MP3 mono de 44.1 kHz, que `vocab` y `letters` existan en el curso, que haya
+autor, licencia y fuente, y que todo audio `sintetico` lleve en `notes` que es aproximado.
+
+**Cómo agregar audio.** No se editan los MP3 ni el catálogo a mano: `node tools/audio-import.mjs`
+recorta silencios, normaliza el volumen, convierte al formato del contrato y actualiza el catálogo
+(`node tools/audio-import.mjs --help` explica las opciones; las grabaciones que exporta `grabar.html`
+se importan con `node tools/import-recordings.mjs <archivo.zip>`). Después: `node test/validate.cjs`,
+`node build.mjs` y `node build-web.mjs --out .`.
+
+**Dónde suena.** El motor busca el audio de una palabra por su id (`vocab`) o por su forma maya, el de
+una letra por `letters`, y el de cualquier texto maya por su forma normalizada (minúsculas, apóstrofo
+recto, sin signos). Para palabras prefiere la voz nativa; para letras, el sonido de referencia. Cada
+botón dice su tipo («Voz nativa», «Sonido de referencia (AFI)», «Voz sintética»). «Escucha y elige»
+usa **solo voces nativas** (1 o 2 por lección y hasta 2 por repaso). En Perfil se puede apagar la
+reproducción automática y elegir la velocidad lenta (0.75, sin cambiar el tono).
+
+**Límites del Artifact.** La página de claude.ai no puede pedir archivos a otro sitio, así que
+`node build.mjs` incrusta cada audio como `data:audio/mpeg;base64` hasta **6 MB** (lo que el audio
+agrega a la página; se cambia con `--audio-limit <MB>`, máximo 15). Si no cabe todo, entran primero los
+sonidos de referencia, luego las voces nativas y al final las sintéticas, y la consola dice cuáles
+quedaron fuera (siguen en el sitio web). En el sitio, el service worker guarda cada audio al
+escucharlo y, si todo el audio suma 8 MB o menos, lo descarga al instalar para que funcione sin conexión.
+
+**Créditos.** Perfil → «Créditos de audio» muestra autor, hablante, licencia (con enlace) y fuente de
+cada audio, agrupados por autor y licencia. Publica solo audio con una licencia que lo permita
+(CC BY-SA, CC BY, CC0 o dominio público) y respeta la atribución que pida.
+
+**Para escuchar más.** `src/content/recursos.js` agrega a `window.COURSE_RESOURCES` enlaces externos
+(videos, pódcast, radio, sitios) con `id`, `title`, `url` (https), `kind`, `source`, `lang`, `units`,
+`lessons` (opcional), `credibility` y `note`. La hoja de cada lección muestra los de esa lección (o
+los de su unidad) y Perfil → «Escucha maya», todos. En el sitio web, si existe `src/web/grabar.html`,
+`build-web.mjs` lo publica como `grabar.html` y Perfil invita a los hablantes a grabar.
 
 ## Agregar una unidad o una lección
 

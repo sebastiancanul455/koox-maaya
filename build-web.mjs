@@ -2,6 +2,12 @@
 //   node build-web.mjs             -> site/ (index.html, manifest.webmanifest, sw.js, icons/, .nojekyll)
 //   node build-web.mjs --out .     -> lo mismo en la raíz del repositorio (GitHub Pages desde main, raíz)
 //   node build-web.mjs --out <dir> -> en otra carpeta (relativa a esta)
+//   node build-web.mjs --sample    -> site-sample/ con el contenido, los audios y los recursos de prueba
+//                                     (test/sample-content.js y test/fixtures); nunca en la raíz
+// Audio: los archivos de audio/catalogo.json se copian a <sitio>/audio/ (con --out . ya están ahí y no
+// se tocan); el service worker los guarda al reproducirlos y, si suman 8 MB o menos, los precarga.
+// Si existe src/web/grabar.html (herramienta de grabación), se escribe como grabar.html con el mismo
+// contenido que recibe la app en su marcador /*@@CONTENT@@*/.
 // Parte del mismo ensamblado que el Artifact (build-core.mjs) y solo lo reacomoda en un documento
 // completo. Los PNG de los íconos se generan aparte con Playwright (node tools/icons.cjs) y aquí
 // solo se copian. site/ se borra y se vuelve a escribir entero: no edites nada a mano ahí. Con --out
@@ -12,8 +18,9 @@ import path from "path";
 import crypto from "crypto";
 import { assemble, BuildError, ROOT } from "./build-core.mjs";
 
-const DEFAULT_SITE = path.join(ROOT, "site");
 const argv = process.argv.slice(2);
+const SAMPLE = argv.includes("--sample");
+const DEFAULT_SITE = path.join(ROOT, SAMPLE ? "site-sample" : "site");
 const iOut = argv.indexOf("--out");
 if (iOut >= 0 && (!argv[iOut + 1] || argv[iOut + 1].startsWith("--"))) {
   console.error("ERROR: falta la carpeta después de --out."); process.exit(1);
@@ -23,6 +30,9 @@ const WEB = path.join(ROOT, "src", "web");
 const ICONS = path.join(WEB, "icons");
 const NAME = "Ko'ox Maaya";
 const VERSION_MARK = "@@VERSION@@";
+const AUDIO_PRECACHE_MAX = 8 * 1024 * 1024; // con más audio, solo se guarda lo que se escucha
+const GRABAR = path.join(WEB, "grabar.html");
+const SW_MARKS = ["/*@@PRECACHE@@*/[]", "/*@@AUDIO_PRECACHE@@*/[]", "/*@@AUDIO_FILES@@*/[]"];
 
 const fail = (msg) => { throw new BuildError(msg); };
 const sha256 = (data) => crypto.createHash("sha256").update(data).digest("hex");
@@ -85,7 +95,8 @@ function loadIcons() {
 }
 
 function build() {
-  const { html, parts } = assemble({ warn: (m) => console.warn(m) });
+  if (SAMPLE && SITE === ROOT) fail("--sample no se puede escribir en la raíz: los audios y recursos de prueba nunca se publican.");
+  const { html, parts, content, audio } = assemble({ sample: SAMPLE, warn: (m) => console.warn(m) });
   const css = fs.readFileSync(path.join(ROOT, "src", "app.css"), "utf8");
   const col = palette(css);
   const icons = loadIcons();
@@ -119,7 +130,8 @@ function build() {
     "<style>\n:root { color-scheme: light; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px) }\n" +
       "body { margin: 0; font: 14px system-ui, sans-serif }\nimg { max-width: 100% }\n[hidden] { display: none !important }\n</style>",
     style,
-    '<script>window.KOOX_STANDALONE = true; window.KOOX_BUILD = "' + VERSION_MARK + '";</script>'
+    '<script>window.KOOX_STANDALONE = true; window.KOOX_BUILD = "' + VERSION_MARK + '";' +
+      (fs.existsSync(GRABAR) ? " window.KOOX_GRABAR = true;" : "") + "</script>"
   ];
 
   // Registro del service worker: solo con https o en localhost (contextos seguros).
@@ -160,22 +172,38 @@ function build() {
     }))
   }, null, 2) + "\n";
 
-  const swTemplate = fs.readFileSync(path.join(WEB, "sw.js"), "utf8");
-  if (swTemplate.split(VERSION_MARK).length !== 2 || swTemplate.split("/*@@PRECACHE@@*/[]").length !== 2) {
-    fail("src/web/sw.js debe tener " + VERSION_MARK + " y /*@@PRECACHE@@*/[] exactamente una vez.");
+  // Herramienta de grabación (la escribe otro módulo): recibe el mismo contenido que la app.
+  let grabar = null;
+  if (fs.existsSync(GRABAR)) {
+    const tpl = fs.readFileSync(GRABAR, "utf8");
+    if (tpl.split("/*@@CONTENT@@*/").length !== 2) fail("src/web/grabar.html debe tener el marcador /*@@CONTENT@@*/ exactamente una vez.");
+    if (!/^\uFEFF?\s*<!doctype html>/i.test(tpl)) fail("src/web/grabar.html debe ser un documento completo (empezar con <!doctype html>).");
+    grabar = tpl.replace("/*@@CONTENT@@*/", () => content);
   }
-  const precache = ["index.html", "manifest.webmanifest", ...icons.files.map((f) => "icons/" + f)];
+
+  // Audio: lo que la página puede pedir (con ?v=<hash>, así una grabación nueva nunca sale de una caché vieja).
+  const audioFiles = audio.included.map((it) => ({ file: it.entry.file, abs: it.abs, bytes: it.bytes, url: it.entry.file + "?v=" + it.hash }));
+  const audioBytes = audioFiles.reduce((n, a) => n + a.bytes, 0);
+  const audioPrecache = audioBytes <= AUDIO_PRECACHE_MAX ? audioFiles.map((a) => a.url) : [];
+
+  const swTemplate = fs.readFileSync(path.join(WEB, "sw.js"), "utf8");
+  for (const mk of [VERSION_MARK, ...SW_MARKS]) {
+    if (swTemplate.split(mk).length !== 2) fail("src/web/sw.js debe tener " + mk + " exactamente una vez.");
+  }
+  const precache = ["index.html", ...(grabar ? ["grabar.html"] : []), "manifest.webmanifest", ...icons.files.map((f) => "icons/" + f)];
 
   // Versión = hash de todo lo que se publica (con el marcador en lugar de la versión).
   const h = crypto.createHash("sha256");
-  for (const chunk of [index, manifest, swTemplate, JSON.stringify(precache)]) h.update(chunk).update("\0");
+  for (const chunk of [index, manifest, swTemplate, JSON.stringify(precache), grabar || "", JSON.stringify(audioFiles.map((a) => a.url)), JSON.stringify(audioPrecache)]) h.update(chunk).update("\0");
   for (const f of icons.files) h.update(fs.readFileSync(path.join(ICONS, f))).update("\0");
   const version = h.digest("hex").slice(0, 12);
 
   index = index.replace(VERSION_MARK, () => version);
   const sw = swTemplate
     .replace(VERSION_MARK, () => version)
-    .replace("/*@@PRECACHE@@*/[]", () => JSON.stringify(precache));
+    .replace("/*@@PRECACHE@@*/[]", () => JSON.stringify(precache))
+    .replace("/*@@AUDIO_PRECACHE@@*/[]", () => JSON.stringify(audioPrecache))
+    .replace("/*@@AUDIO_FILES@@*/[]", () => JSON.stringify(audioFiles.map((a) => a.url)));
 
   // Comprobaciones del documento final.
   if (!/^<!doctype html>/i.test(index)) fail("index.html debe empezar con <!doctype html>.");
@@ -187,7 +215,7 @@ function build() {
   // Carpeta propia (site/): se borra entera. Otra carpeta (p. ej. la raíz del repositorio): solo se
   // reemplazan los archivos generados; icons/ se vacía solo si no tiene nada más que íconos.
   const dentro = (p) => p === ROOT || p.startsWith(ROOT + path.sep);
-  for (const prot of ["src", "kb", "test", "data", "revision", "tools", "dist"]) {
+  for (const prot of ["src", "kb", "test", "data", "revision", "tools", "dist", "audio"]) {
     const pp = path.join(ROOT, prot);
     if (SITE === pp) fail("--out no puede ser la carpeta " + prot + "/.");
     if (pp.startsWith(SITE + path.sep) && SITE !== ROOT) fail("--out no puede ser " + path.relative(ROOT, SITE) + ": contiene la carpeta " + prot + "/ del repositorio.");
@@ -195,7 +223,7 @@ function build() {
   }
   if (SITE === DEFAULT_SITE) fs.rmSync(SITE, { recursive: true, force: true });
   else {
-    if (!dentro(SITE) && fs.existsSync(SITE) && fs.readdirSync(SITE).some((f) => !/^(index\.html|manifest\.webmanifest|sw\.js|\.nojekyll|icons)$/.test(f))) {
+    if (!dentro(SITE) && fs.existsSync(SITE) && fs.readdirSync(SITE).some((f) => !/^(index\.html|grabar\.html|manifest\.webmanifest|sw\.js|\.nojekyll|icons|audio)$/.test(f))) {
       fail("--out " + SITE + " tiene otros archivos y está fuera del repositorio; usa una carpeta vacía.");
     }
     const dirIcons = path.join(SITE, "icons");
@@ -204,6 +232,13 @@ function build() {
       if (ajenos.length) fail("icons/ tiene archivos que no son íconos generados: " + ajenos.join(", "));
       fs.rmSync(dirIcons, { recursive: true, force: true });
     }
+    // audio/ de otra carpeta es una copia: se reemplaza si solo tiene audios (en la raíz es el original).
+    const dirAudio = path.join(SITE, "audio");
+    if (SITE !== ROOT && fs.existsSync(dirAudio)) {
+      const ajenos = fs.readdirSync(dirAudio).filter((f) => !/^[a-z0-9-]+\.mp3$/.test(f));
+      if (ajenos.length) fail("audio/ de " + SITE + " tiene archivos que no son audios copiados: " + ajenos.join(", "));
+      fs.rmSync(dirAudio, { recursive: true, force: true });
+    }
   }
   fs.mkdirSync(path.join(SITE, "icons"), { recursive: true });
   fs.writeFileSync(path.join(SITE, "index.html"), index);
@@ -211,11 +246,22 @@ function build() {
   fs.writeFileSync(path.join(SITE, "sw.js"), sw);
   fs.writeFileSync(path.join(SITE, ".nojekyll"), "");
   for (const f of icons.files) fs.copyFileSync(path.join(ICONS, f), path.join(SITE, "icons", f));
+  if (grabar) fs.writeFileSync(path.join(SITE, "grabar.html"), grabar);
+  else if (SITE !== ROOT && fs.existsSync(path.join(SITE, "grabar.html"))) fs.rmSync(path.join(SITE, "grabar.html"));
+  else if (SITE === ROOT && fs.existsSync(path.join(SITE, "grabar.html"))) console.warn("AVISO: hay un grabar.html en la raíz pero ya no existe src/web/grabar.html; bórralo si ya no se publica.");
+  if (audioFiles.length && SITE !== ROOT) {
+    fs.mkdirSync(path.join(SITE, "audio"), { recursive: true });
+    for (const a of audioFiles) fs.copyFileSync(a.abs, path.join(SITE, a.file));
+  }
 
   const kb = (s) => (Buffer.byteLength(s, "utf8") / 1024).toFixed(1) + " KB";
   console.log("Escrito " + (path.relative(process.cwd(), SITE) || ".") + "/");
   console.log("  index.html " + kb(index) + " · " + parts.length + " archivo(s) de contenido");
-  console.log("  manifest.webmanifest, sw.js, .nojekyll, icons/ (" + icons.files.length + " archivos)");
+  console.log("  manifest.webmanifest, sw.js, .nojekyll, icons/ (" + icons.files.length + " archivos)" + (grabar ? ", grabar.html " + kb(grabar) : ""));
+  if (audioFiles.length) {
+    console.log("  audio/: " + audioFiles.length + " archivo(s), " + (audioBytes / 1024).toFixed(1) + " KB" + (SITE === ROOT ? " (ya están en la raíz)" : " copiados") +
+      " · " + (audioPrecache.length ? "se precargan al instalar" : "más de 8 MB: se guardan al escucharlos"));
+  } else console.log("  audio: el catálogo no tiene audios");
   console.log("  versión de caché: koox-maaya-" + version);
 }
 

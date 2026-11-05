@@ -7,8 +7,12 @@
       "kind": "nativo",
       "text": "ja'",
       "lang": "yua",
-      "vocab": ["u1-ja"],
-      "letters": ["j"],
+      "vocab": [
+        "u1-ja"
+      ],
+      "letters": [
+        "j"
+      ],
       "speaker": "Voz de prueba A",
       "region": "Sin región (prueba)",
       "author": "Ko'ox Maaya (tono de prueba)",
@@ -24,8 +28,12 @@
       "kind": "nativo",
       "text": "k'iin",
       "lang": "yua",
-      "vocab": ["u1-kiin"],
-      "letters": ["k'"],
+      "vocab": [
+        "u1-kiin"
+      ],
+      "letters": [
+        "k'"
+      ],
       "speaker": "Voz de prueba A",
       "author": "Ko'ox Maaya (tono de prueba)",
       "license": "CC0 1.0",
@@ -39,7 +47,9 @@
       "kind": "nativo",
       "text": "xiib",
       "lang": "yua",
-      "vocab": ["u1-xiib"],
+      "vocab": [
+        "u1-xiib"
+      ],
       "letters": [],
       "speaker": "Voz de prueba B",
       "author": "Ko'ox Maaya (tono de prueba)",
@@ -54,7 +64,9 @@
       "kind": "nativo",
       "text": "Bix a beel?",
       "lang": "yua",
-      "vocab": ["u2-bix-a-beel"],
+      "vocab": [
+        "u2-bix-a-beel"
+      ],
       "letters": [],
       "speaker": "Voz de prueba B",
       "author": "Ko'ox Maaya (tono de prueba)",
@@ -72,7 +84,9 @@
       "lang": "und",
       "ipa": "[ʃ]",
       "vocab": [],
-      "letters": ["x"],
+      "letters": [
+        "x"
+      ],
       "author": "Ko'ox Maaya (tono de prueba)",
       "license": "Dominio público",
       "source": "Generado con ffmpeg: tono sinusoidal de 660 Hz",
@@ -84,13 +98,67 @@
       "kind": "sintetico",
       "text": "k'áak'",
       "lang": "yua",
-      "vocab": ["u1-kaak"],
-      "letters": ["áa"],
-      "author": "Ko'ox Maaya (tono de prueba)",
-      "license": "CC0 1.0",
-      "source": "Generado con ffmpeg: tono sinusoidal de 349 Hz",
+      "vocab": [
+        "u1-kaak"
+      ],
+      "letters": [
+        "áa"
+      ],
+      "author": "Meta AI · MMS-TTS maya yucateco (prueba)",
+      "license": "CC BY-NC 4.0",
+      "source": "https://example.org/mms-tts-yua-prueba",
       "durationMs": 1500,
-      "notes": "Voz sintética aproximada (aquí, un tono de prueba): no sustituye a un hablante."
+      "notes": "Voz sintética aproximada generada por IA (aquí, un tono de prueba): puede equivocarse en el tono, el saltillo y las glotalizadas.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/deed.es"
+    },
+    {
+      "key": "sint-u1-ja",
+      "file": "audio/sint-u1-ja.mp3",
+      "kind": "sintetico",
+      "text": "ja'",
+      "lang": "yua",
+      "vocab": [
+        "u1-ja"
+      ],
+      "letters": [],
+      "author": "Meta AI · MMS-TTS maya yucateco (prueba)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/deed.es",
+      "source": "https://example.org/mms-tts-yua-prueba",
+      "notes": "Voz sintética aproximada generada por IA (aquí, un tono de prueba): puede equivocarse en el tono, el saltillo y las glotalizadas.",
+      "durationMs": 1300
+    },
+    {
+      "key": "sint-u2-maalob-kux-teech",
+      "file": "audio/sint-u2-maalob-kux-teech.mp3",
+      "kind": "sintetico",
+      "text": "Ma'alob, kux teech?",
+      "lang": "yua",
+      "vocab": [
+        "u2-maalob-kux-teech"
+      ],
+      "letters": [],
+      "author": "Meta AI · MMS-TTS maya yucateco (prueba)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/deed.es",
+      "source": "https://example.org/mms-tts-yua-prueba",
+      "notes": "Voz sintética aproximada generada por IA (aquí, un tono de prueba): puede equivocarse en el tono, el saltillo y las glotalizadas.",
+      "durationMs": 1800
+    },
+    {
+      "key": "sint-frase-ja-yeetel-kaak",
+      "file": "audio/sint-frase-ja-yeetel-kaak.mp3",
+      "kind": "sintetico",
+      "text": "ja' yéetel k'áak'",
+      "lang": "yua",
+      "vocab": [],
+      "letters": [],
+      "author": "Meta AI · MMS-TTS maya yucateco (prueba)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/deed.es",
+      "source": "https://example.org/mms-tts-yua-prueba",
+      "notes": "Voz sintética aproximada generada por IA (aquí, un tono de prueba): puede equivocarse en el tono, el saltillo y las glotalizadas.",
+      "durationMs": 1700
     }
   ]
 }

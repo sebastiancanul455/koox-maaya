@@ -53,7 +53,10 @@ function assemble() {
       { key: "prueba-bat", file: "audio/prueba-bat.mp3", kind: "nativo", text: "bat", lang: "yua", vocab: [VOCAB_COVERED], letters: [],
         author: "Voz de prueba", license: "CC0 1.0", source: "Prueba" },
       { key: "prueba-sint", file: "audio/prueba-sint.mp3", kind: "sintetico", text: "chich", lang: "yua", vocab: ["u1-chich"], letters: [],
-        author: "Prueba", license: "CC0 1.0", source: "Prueba", notes: "Voz sintética aproximada." }
+        author: "Prueba", license: "CC0 1.0", source: "Prueba", notes: "Voz sintética aproximada." },
+      // Frase con voz nativa encontrada solo por su texto (sin vocab), como los ejemplos que importa import-recordings.
+      { key: "prueba-frase", file: "audio/prueba-frase.mp3", kind: "nativo", text: "Bix a k'aaba'?", lang: "yua", vocab: [], letters: [],
+        author: "Voz de prueba", license: "CC0 1.0", source: "Prueba" }
     ] }) + ";"
   });
   // Igual que build-core.mjs: cada parte en su propio <script>.
@@ -316,9 +319,16 @@ async function main() {
       await page.tap('#unit-chips [data-unit="u1"]');
       await page.tap('#status-seg [data-status="all"]');
       check("la fila cubierta dice «Ya tiene audio»", /Ya tiene audio/.test(await page.textContent('#list .row[data-i="' + picks.covered + '"]')));
-      check("un audio «sintetico» no cuenta como cubierto", (await G(page, () => window.__grabar.groupInfo(window.__grabar.groupIndex("vocab", "u1-chich")).covered)) === false);
+      const sint = await G(page, () => window.__grabar.groupIndex("vocab", "u1-chich"));
+      const sintInfo = await G(page, (i) => window.__grabar.groupInfo(i), sint);
+      check("un audio «sintetico» no cuenta como cubierto", sintInfo.covered === false && sintInfo.synth === true);
+      const frase = await G(page, () => window.__grabar.groupIndex("example", "u3-a-kaaba"));
+      check("una frase con voz nativa (encontrada por su texto) queda cubierta", (await G(page, (i) => window.__grabar.groupInfo(i).covered, frase)) === true);
       await page.tap('#status-seg [data-status="pend"]');
       check("«Por grabar» oculta lo ya cubierto", !(await page.$('#list .row[data-i="' + picks.covered + '"]')));
+      check("«Por grabar» incluye lo que solo tiene voz sintética", !!(await page.$('#list .row[data-i="' + sint + '"]')));
+      await page.tap('#list .row[data-i="' + sint + '"]');
+      check("el panel avisa que la voz nativa reemplaza a la sintética", /solo tiene una voz sintética/.test(await page.textContent("#p-status")), await page.textContent("#p-status"));
 
       const r1 = await recordGroup(page, cfg, picks.letter, { shot: "grabando" });
       check("graba la letra ch' (" + r1.info.text + ")", /Guardada/.test(r1.status), r1.status);
@@ -335,6 +345,14 @@ async function main() {
       await page.tap("#btn-next");
       check("«Siguiente» pasa a otro elemento", (await G(page, () => window.__grabar.current())) !== curBefore);
       await checkOverflow(page, cfg, "Grabar (con grabaciones)");
+      for (const w of [360, 420]) {
+        await page.setViewportSize({ width: w, height: 760 });
+        await page.waitForTimeout(150);
+        const o = await overflow(page);
+        check("[" + cfg.scheme + "] sin scroll horizontal a " + w + " px en Grabar", o.sw <= o.cw + 1 && !o.bad.length, "scrollWidth " + o.sw + " / " + o.cw + " " + o.bad.join(", "));
+        if (w === 360) await page.screenshot({ path: path.join(SHOTS, "grabar-360-" + cfg.scheme + ".png") });
+      }
+      await page.setViewportSize({ width: 390, height: 844 });
 
       // Persistencia: recargar
       await page.reload({ waitUntil: "load" });
@@ -478,6 +496,18 @@ async function main() {
   const pre = runNode([path.join(REPO, "tools/audio-import.mjs"), "--in", wav, "--key", conflictKey, "--kind", "nativo", "--text", vocabItem.text,
     "--vocab", vocabItem.id, "--license", "CC0", "--author", "Otra Persona", "--source", "Prueba previa"]);
   check("audio-import.mjs importa un archivo suelto", pre.code === 0 && fs.existsSync(path.join(REPO, "audio", conflictKey + ".mp3")), pre.out.trim().split("\n").slice(-3).join(" | "));
+  // Voz sintética de la misma palabra que la letra ch' (u1-chiich-pajaro): una en la key que derivaría la
+  // grabación (el peor caso) y otra con la key propia de las sintéticas. Ninguna debe tocarse.
+  const synthItem = manifest.items.find((i) => i.type === "vocab" && i.id === "u1-chiich-pajaro");
+  const synthKeys = ["v-" + synthItem.id, "sint-" + synthItem.id];
+  for (const k of synthKeys) {
+    const r = runNode([path.join(REPO, "tools/audio-import.mjs"), "--in", wav, "--key", k, "--kind", "sintetico", "--text", synthItem.text,
+      "--vocab", synthItem.id, "--license", "CC0", "--author", "Ko'ox Maaya (voz sintética)", "--source", "Prueba",
+      "--notes", "Voz sintética aproximada; no sustituye a un hablante."]);
+    if (r.code !== 0) check("prepara la voz sintética " + k, false, r.out);
+  }
+  const synthSnap = () => JSON.stringify(synthKeys.map((k) => [JSON.parse(fs.readFileSync(catFile, "utf8")).entries.find((e) => e.key === k), sha(path.join(REPO, "audio", k + ".mp3"))]));
+  const synthBefore = synthSnap();
   const catBefore = sha(catFile);
 
   const dry = runNode([path.join(REPO, "tools/import-recordings.mjs"), zipPath, "--dry-run"]);
@@ -490,14 +520,19 @@ async function main() {
   check("no sobrescribe la entrada de otro autor sin --replace", conflict1 && conflict1.author === "Otra Persona" && /omitida/.test(imp.out));
   const mine = cat1.entries.filter((e) => e.author === "Hablante de Prueba");
   const mineKeys = mine.map((e) => e.key).sort();
-  check("crea las entradas del catálogo con las keys derivadas", JSON.stringify(mineKeys) === JSON.stringify(expectedKeys.filter((k) => k !== conflictKey)),
-    mineKeys.join(", ") + " · esperadas " + expectedKeys.join(", "));
+  const wantKeys = expectedKeys.filter((k) => k !== conflictKey).map((k) => (k === synthKeys[0] ? k + "-2" : k)).sort();
+  check("crea las entradas del catálogo con las keys derivadas", JSON.stringify(mineKeys) === JSON.stringify(wantKeys),
+    mineKeys.join(", ") + " · esperadas " + wantKeys.join(", "));
+  check("la grabación nativa convive con la voz sintética de la misma palabra (key -2)", synthSnap() === synthBefore &&
+    mine.some((e) => e.key === synthKeys[0] + "-2" && JSON.stringify(e.vocab) === JSON.stringify([synthItem.id])) && /convive con la voz «sintetico»/.test(imp.out));
   const letterEntry = cat1.entries.find((e) => e.key === "l-ch-saltillo");
   check("la letra queda como l-ch-saltillo con letters [\"ch'\"]", letterEntry && JSON.stringify(letterEntry.letters) === "[\"ch'\"]" && letterEntry.vocab.length === 0);
   check("entradas «nativo» con crédito, licencia, región y fuente", mine.length > 0 && mine.every((e) =>
     e.kind === "nativo" && e.lang === "yua" && e.license === "CC BY 4.0" && e.speaker === "Hablante de Prueba" && e.region === "Peto" &&
     /^Grabación para Ko'ox Maaya, \d{4}-\d{2}-\d{2}$/.test(e.source) && e.durationMs > 0 && e.file === "audio/" + e.key + ".mp3"));
-  check("vocab según el tipo (palabra y ejemplo → [id])", mine.filter((e) => /^(v|ex)-/.test(e.key)).every((e) => e.vocab.length === 1 && e.key.endsWith(e.vocab[0])));
+  check("vocab según el tipo (palabra → [id]; ejemplo → [], se encuentra por texto)",
+    mine.filter((e) => /^v-/.test(e.key)).every((e) => e.vocab.length === 1 && e.key.replace(/-\d+$/, "").endsWith(e.vocab[0])) &&
+    mine.filter((e) => /^ex-/.test(e.key)).every((e) => e.vocab.length === 0 && e.letters.length === 0));
   const mp3s = mine.map((e) => probe(path.join(REPO, e.file)));
   check("se crearon los MP3 (mono, 44.1 kHz)", mp3s.length && mp3s.every((x) => x && x.codec === "mp3" && x.channels === 1 && x.sampleRate === 44100),
     mp3s.map((x) => x && x.durationMs + " ms").join(", "));
@@ -514,10 +549,14 @@ async function main() {
   const rep = runNode([path.join(REPO, "tools/import-recordings.mjs"), zipPath, "--replace"]);
   const cat4 = JSON.parse(fs.readFileSync(catFile, "utf8"));
   check("--replace reemplaza la entrada de otro autor", rep.code === 0 && cat4.entries.find((e) => e.key === conflictKey).author === "Hablante de Prueba");
+  check("ni --alternate ni --replace tocan las voces sintéticas", synthSnap() === synthBefore && !cat4.entries.some((e) => e.key === synthKeys[0] + "-3"));
 
   const val = runNode([path.join(REPO, "test/validate.cjs")], REPO);
   const audioErrors = val.out.split("\n").filter((l) => /✗/.test(l) && /audio\//.test(l));
   check("test/validate.cjs acepta el catálogo resultante (sin errores de audio)", !audioErrors.length, audioErrors.slice(0, 3).join(" | ") || val.out.split("\n").filter((l) => /^Audio/.test(l)).join(""));
+  const audioWarn = val.out.split("\n").filter((l) => /audio\/catalogo\.json/.test(l) && /·/.test(l) && !/✗/.test(l));
+  check("validate.cjs no avisa que el texto no coincide con la palabra", !audioWarn.some((l) => /no coincide/.test(l)), audioWarn.join(" | "));
+  if (process.env.VERBOSE && audioWarn.length) log("    avisos de validate.cjs sobre el catálogo: " + audioWarn.map((l) => l.trim()).join(" | "));
 
   // ZIP con deflate (otro programa lo pudo volver a comprimir): se acepta.
   const repack = entries.map((e) => ({ name: e.name, data: lib.extractEntry(zbuf, e) }));

@@ -88,7 +88,7 @@ function checkHtml(file, where, html) {
   if (stack.length) err(file, where, "etiquetas sin cerrar: " + stack.join(", "));
   // Revisa el texto maya dentro de <span class="m">.
   const spanRe = /<span class=(["'])m\1>([\s\S]*?)<\/span>/g;
-  while ((m = spanRe.exec(html))) mayaStr(file, where + " <span class=\"m\">", m[2]);
+  while ((m = spanRe.exec(html))) { mayaStr(file, where + " <span class=\"m\">", m[2]); addText(m[2]); }
 }
 function checkOptions(file, where, ex, mayaOptions) {
   if (!Array.isArray(ex.options)) { err(file, where, "options debe ser una lista"); return; }
@@ -105,6 +105,10 @@ function checkOptions(file, where, ex, mayaOptions) {
 
 const counts = { units: 0, lessons: 0, vocab: 0, vocabMedia: 0, cards: 0, dialogues: 0, exercises: 0, byType: {} };
 const unitIds = new Set(), lessonIds = new Set(), vocabIds = new Map(), vocabForms = new Map(), lessonUnit = new Map();
+// Textos mayas del curso (formas, ejemplos, diálogos, tarjetas, respuestas): un audio sin palabra ni
+// letra solo suena donde su texto coincide con uno de estos.
+const courseTexts = new Set();
+const addText = (t) => { if (isStr(t)) courseTexts.add(normalize(t)); };
 const mayaForms = new Map();
 const sandbox = { window: {}, console: { log() {}, warn() {}, error() {} } };
 vm.createContext(sandbox);
@@ -186,7 +190,7 @@ for (const file of files) {
             r.forEach((cell, k) => {
               if (typeof cell !== "string") err(file, cw + ".rows[" + ri + "][" + k + "]", "la celda debe ser texto");
               else if (/[<>]/.test(cell)) err(file, cw + ".rows[" + ri + "][" + k + "]", "las celdas son texto plano (sin etiquetas)");
-              if (mayaCols[k]) mayaStr(file, cw + ".rows[" + ri + "][" + k + "]", cell);
+              if (mayaCols[k]) { mayaStr(file, cw + ".rows[" + ri + "][" + k + "]", cell); addText(cell); }
             });
           });
         } else if (["text", "tip", "culture", "warn"].includes(c.kind)) {
@@ -216,7 +220,7 @@ for (const file of files) {
         ["pr", "note"].forEach((k) => { if (v[k] !== undefined && !isStr(v[k])) err(file, vw, k + ", si existe, debe ser texto no vacío"); });
         if (v.ex !== undefined) {
           if (!v.ex || !isStr(v.ex.m) || !isStr(v.ex.es)) err(file, vw, "ex debe ser { m, es } con textos no vacíos");
-          else mayaStr(file, vw + ".ex.m", v.ex.m);
+          else { mayaStr(file, vw + ".ex.m", v.ex.m); addText(v.ex.m); }
         }
         if (v.alt !== undefined) {
           if (!Array.isArray(v.alt) || !v.alt.every(isStr)) err(file, vw, "alt debe ser una lista de textos");
@@ -226,6 +230,8 @@ for (const file of files) {
           const k = normalize(v.m);
           if (lessonM.has(k)) warn(file, vw, "la misma forma maya aparece dos veces en la lección");
           lessonM.add(k);
+          addText(v.m);
+          if (Array.isArray(v.alt)) v.alt.forEach(addText);
           if (mayaForms.has(k) && mayaForms.get(k) !== v.id) warn(file, vw, "«" + v.m + "» ya existe como " + mayaForms.get(k));
           else mayaForms.set(k, v.id);
         }
@@ -243,7 +249,7 @@ for (const file of files) {
             const w = dw + ".lines[" + i + "]";
             if (!ln || (ln.who !== "A" && ln.who !== "B")) err(file, w, "who debe ser \"A\" o \"B\"");
             if (!ln || !isStr(ln.name)) err(file, w, "falta name");
-            if (!ln || !isStr(ln.m)) err(file, w, "falta m"); else mayaStr(file, w + ".m", ln.m);
+            if (!ln || !isStr(ln.m)) err(file, w, "falta m"); else { mayaStr(file, w + ".m", ln.m); addText(ln.m); }
             if (!ln || !isStr(ln.es)) err(file, w, "falta es");
           });
         }
@@ -264,12 +270,14 @@ for (const file of files) {
           if (ex.promptLang !== "m" && ex.promptLang !== "es") err(file, ew, "promptLang debe ser \"m\" o \"es\"");
           if (ex.promptLang === "m") mayaStr(file, ew + ".prompt", ex.prompt);
           checkOptions(file, ew, ex, ex.promptLang === "es");
+          if (ex.promptLang === "m") addText(ex.prompt); else if (isStr(ex.answer)) addText(ex.answer);
         } else if (ex.type === "fill") {
           if (!isStr(ex.es)) err(file, ew, "falta es");
           if (!isStrOrEmpty(ex.before) || !isStrOrEmpty(ex.after)) err(file, ew, "before y after deben ser textos (pueden estar vacíos)");
           mayaStr(file, ew + ".before", ex.before); mayaStr(file, ew + ".after", ex.after);
           if (!isStr(ex.before) && !isStr(ex.after)) warn(file, ew, "before y after están vacíos; el hueco queda sin contexto");
           checkOptions(file, ew, ex, true);
+          if (isStr(ex.answer)) addText([ex.before, ex.answer].filter(isStr).join(" ") + (isStr(ex.after) ? " " + ex.after : ""));
         } else if (ex.type === "build") {
           if (!isStr(ex.es)) err(file, ew, "falta es");
           if (!isStr(ex.m)) { err(file, ew, "falta m"); return; }
@@ -290,7 +298,9 @@ for (const file of files) {
               seen.add(k);
             });
           }
+          addText(ex.m);
         } else if (ex.type === "type") {
+          addText(ex.answer);
           if (!isStr(ex.q)) err(file, ew, "falta q");
           if (!isStr(ex.prompt)) err(file, ew, "falta prompt");
           if (!isStr(ex.answer)) err(file, ew, "answer vacío"); else mayaStr(file, ew + ".answer", ex.answer);
@@ -310,6 +320,7 @@ if (hasU1) {
   const g = C.guide;
   if (!g || !Array.isArray(g.alphabet) || !g.alphabet.length) errors.push("guide: la unidad 1 debe definir window.COURSE.guide.alphabet (lista no vacía)");
   else g.alphabet.forEach((a, i) => {
+    if (a && a.ex) addText(a.ex.m);
     const gw = "guide.alphabet[" + i + "]";
     if (!a || !isStr(a.l)) errors.push(gw + ": falta l");
     if (!a || !isStr(a.desc)) errors.push(gw + ": falta desc");
@@ -324,7 +335,7 @@ if (hasU1) {
 /* ---------------- Audio (catálogo) ---------------- */
 const AUDIO_KINDS = ["nativo", "fonema", "sintetico"];
 const AUDIO_FIELDS = ["key", "file", "kind", "text", "lang", "ipa", "vocab", "letters", "speaker", "region", "author", "license", "licenseUrl", "source", "title", "durationMs", "notes"];
-const LICENCIAS = ["CC BY-SA 4.0", "CC BY 4.0", "CC0 1.0", "Dominio público", "CC BY-SA 3.0", "CC BY 3.0", "CC BY-SA 2.5", "CC BY 2.5", "CC BY-SA 2.0", "CC BY 2.0"];
+const LICENCIAS = ["CC BY-SA 4.0", "CC BY 4.0", "CC0 1.0", "Dominio público", "CC BY-NC 4.0", "CC BY-NC-SA 4.0", "CC BY-SA 3.0", "CC BY 3.0", "CC BY-SA 2.5", "CC BY 2.5", "CC BY-SA 2.0", "CC BY 2.0"];
 // Primer encabezado de cuadro MPEG de un archivo (saltando la etiqueta ID3v2): capa, frecuencia, canales, kbps.
 function mp3Info(buf) {
   let i = 0;
@@ -361,7 +372,7 @@ function validateAudio(catalog) {
   if (!Array.isArray(data.entries)) { errors.push(rel + ": entries debe ser una lista"); return; }
   const base = audioBase(catalog);
   const letters = new Set(((C.guide && Array.isArray(C.guide.alphabet)) ? C.guide.alphabet : []).map((a) => a && a.l).filter(isStr));
-  const keys = new Set(), usados = new Set();
+  const keys = new Set(), usados = new Set(), sinUso = [];
   data.entries.forEach((e, i) => {
     if (!e || typeof e !== "object") { errors.push(where(i) + ": no es un objeto"); return; }
     const w = where(i, e.key);
@@ -402,7 +413,7 @@ function validateAudio(catalog) {
       else if (isStr(e.text) && e.kind !== "fonema" && !vocabForms.get(id).includes(normalize(e.text))) W("text «" + e.text + "» no coincide con la forma de la palabra " + id + " (¿es la grabación correcta?)");
     });
     if (Array.isArray(e.letters)) e.letters.forEach((l) => { if (!letters.has(l)) E("letters «" + l + "» no está en COURSE.guide.alphabet"); });
-    if (Array.isArray(e.vocab) && Array.isArray(e.letters) && !e.vocab.length && !e.letters.length) W("no ilustra ninguna palabra ni letra: solo sonará donde el texto maya coincida");
+    if (Array.isArray(e.vocab) && Array.isArray(e.letters) && !e.vocab.length && !e.letters.length && isStr(e.text) && e.kind !== "fonema" && !courseTexts.has(normalize(e.text))) sinUso.push(e.key + " («" + e.text + "»)");
     ["author", "license", "source"].forEach((k) => { if (!isStr(e[k])) E("falta " + k + " (los créditos son obligatorios)"); });
     if (isStr(e.license) && !LICENCIAS.includes(e.license)) W("licencia «" + e.license + "» poco común; revisa que permita publicar el audio");
     if (e.licenseUrl !== undefined && !/^https:\/\/\S+$/.test(String(e.licenseUrl))) E("licenseUrl, si existe, debe empezar con https://");
@@ -415,10 +426,11 @@ function validateAudio(catalog) {
       E("un audio «sintetico» debe llevar notes que expliquen que es aproximado (p. ej. \"Voz sintética aproximada; no sustituye a un hablante.\")");
     }
   });
+  if (sinUso.length) warnings.push(rel + ": " + sinUso.length + " " + (sinUso.length === 1 ? "audio no ilustra" : "audios no ilustran") +
+    " ninguna palabra ni letra y su texto no aparece en el curso, así que no sonarán: " + sinUso.slice(0, 5).join(", ") + (sinUso.length > 5 ? "…" : ""));
   const dir = path.join(base, "audio");
-  if (fs.existsSync(dir)) fs.readdirSync(dir).filter((f) => /\.mp3$/i.test(f) && !usados.has(f)).forEach((f) => {
-    warnings.push(path.relative(ROOT, path.join(dir, f)) + ": no está en el catálogo (no se publica)");
-  });
+  const sueltos = fs.existsSync(dir) ? fs.readdirSync(dir).filter((f) => /\.mp3$/i.test(f) && !usados.has(f)) : [];
+  if (sueltos.length) warnings.push(path.relative(ROOT, dir) + ": " + sueltos.length + " MP3 no están en el catálogo (no se publican): " + sueltos.slice(0, 5).join(", ") + (sueltos.length > 5 ? "…" : ""));
 }
 
 /* ---------------- Recursos para escuchar ---------------- */

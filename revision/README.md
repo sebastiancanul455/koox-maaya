@@ -113,3 +113,91 @@ acordado: correo, WhatsApp o en persona. Si le quedó a medias, envíe lo que te
    ```
    `node export-data.mjs --detalle` lista las palabras que no tienen respaldo en `kb/`.
 7. Haz *commit* y publica el sitio (ver «Publicar» en el README principal).
+
+---
+
+## Grabar la pronunciación
+
+Además de revisar cómo se escribe, un hablante de maya puede **grabar cómo se dice** cada palabra,
+cada frase de ejemplo y el ejemplo de cada letra de la guía, desde el navegador de su celular. Así
+quienes aprenden con la app escuchan una voz real en lugar de la voz sintética. La página no envía
+nada a ningún servidor: las grabaciones se quedan en el teléfono hasta que la persona crea el
+archivo y decide a quién mandarlo.
+
+### Para la persona que graba
+
+1. Abra <https://sebastiancanul455.github.io/koox-maaya/grabar.html> en **Chrome** de Android.
+2. Lea la presentación. Si quiere, escriba su **nombre o seudónimo** (así aparecerá en los créditos;
+   si lo deja vacío saldrá «Hablante anónimo») y su **comunidad o municipio**.
+3. Elija la **licencia**: CC BY-SA 4.0 (la recomendada: cualquiera puede usar las grabaciones si le
+   da crédito y comparte con la misma licencia), CC BY 4.0 (solo pide crédito) o CC0 (dominio
+   público, sin necesidad de crédito).
+4. Marque la casilla **«Acepto que mis grabaciones se publiquen en la app Ko'ox Maaya con esta
+   licencia y con el crédito indicado»**. Sin ella no se puede grabar.
+5. Toque **Empezar a grabar**. La primera vez Chrome pregunta si la página puede usar el micrófono:
+   toque **Permitir**. Si lo negó por error: toque el candado junto a la dirección → Permisos →
+   Micrófono → Permitir.
+6. Toque una palabra de la lista y luego **Grabar**. Espere un instante, diga la palabra **una sola
+   vez**, con naturalidad, **como se dice en su comunidad**, y toque **Detener** (a los 6 segundos se
+   detiene sola). Toque **Escuchar**; si no quedó bien, **Otra vez**. Luego **Siguiente**. Si no
+   conoce una palabra, **Saltar**.
+   - Busque un lugar silencioso (sin ventilador, tele ni radio) y sostenga el celular a un palmo de
+     la boca.
+   - Arriba de la lista puede elegir la unidad o las letras, y ver lo que falta («Por grabar»), lo
+     ya grabado o todo. Lo que ya tiene la voz de otro hablante aparece como «Ya tiene audio»; puede
+     grabar su versión de todos modos.
+   - Cada palabra toma unos 10 segundos; una unidad, de 5 a 10 minutos. No hace falta grabar todo:
+     puede parar y seguir otro día, lo grabado queda guardado **en ese teléfono y ese navegador**
+     (no borre los datos del navegador mientras tanto; en una ventana de incógnito no se guarda).
+7. Para enviar, toque **3 · Enviar** → **Crear y descargar el archivo**. Se descarga un ZIP a la
+   carpeta Descargas. Si aparece **Compartir**, puede mandarlo directo; si no, envíelo desde
+   WhatsApp (clip → Documento → el archivo de Descargas), por correo (si pesa menos de 20 MB) o
+   súbalo a Google Drive y comparta el enlace. La próxima vez marque «Solo las nuevas desde el
+   último envío».
+8. Para borrar todo del teléfono: **Enviar** → **Borrar todo…** → **Sí, borrar todo**. Lo que ya
+   envió no se borra.
+
+El ZIP trae `grabaciones.json` (sus datos, la licencia, el consentimiento y la lista de lo grabado),
+`LEEME.txt` y una carpeta `wav/` con los audios (WAV mono, 16 bits, 44.1 kHz, sin silencios largos).
+
+### Para quien mantiene la app: importar las grabaciones
+
+1. **Guarda el ZIP en privado** (por ejemplo en `revision/respuestas/`, que está en `.gitignore`):
+   trae el nombre y la comunidad de la persona. No lo publiques; consérvalo como constancia del
+   consentimiento.
+2. **Revisa** sin escribir nada:
+   ```bash
+   node tools/import-recordings.mjs archivo.zip --dry-run
+   ```
+3. **Importa**:
+   ```bash
+   node tools/import-recordings.mjs archivo.zip
+   ```
+   Necesita `ffmpeg` y `ffprobe`. El importador rechaza el ZIP si falta el consentimiento, si la
+   licencia no es CC BY-SA 4.0, CC BY 4.0 o CC0 1.0, o si trae rutas peligrosas. Cada elemento entra
+   como `kind: "nativo"` con la key `v-<id>` (palabra, `vocab: [id]`), `ex-<id>` (frase de ejemplo; sin
+   `vocab`, la app la encuentra por su texto) o `l-<letra>` (ejemplo de una letra, `letters: [letra]`;
+   «ch'» → `l-ch-saltillo`). El crédito es el nombre que dio la persona (o «Hablante anónimo»), la
+   fuente es «Grabación para Ko'ox Maaya, <fecha>» y se guardan su comunidad y su licencia. Cada audio
+   se recorta, se normaliza (~-18 LUFS, pico -1.5 dB), lleva 60 ms de silencio a cada lado y se
+   guarda como `audio/<key>.mp3` (MP3 mono, 44.1 kHz, 64 kbps).
+   - Si ya hay una grabación nativa **de otra persona** en esa key, se omite: `--replace` la
+     reemplaza y `--alternate` guarda la nueva al lado (`<key>-2`). Reimportar el ZIP de la misma
+     persona actualiza sus entradas.
+   - Las **voces sintéticas** y los fonemas nunca se borran ni se reemplazan: si ocupan la key, la
+     grabación nativa se guarda al lado (`<key>-2`) y la app prefiere la voz nativa.
+   - Si el curso cambió desde que se grabó (otra forma, otro ejemplo, id que ya no existe), el
+     elemento se omite; `--force` lo importa igual.
+4. **Escucha** algunos `audio/<key>.mp3` antes de publicar.
+5. **Valida y regenera**:
+   ```bash
+   node test/validate.cjs && node build.mjs && node build-web.mjs --out .
+   ```
+   y haz *commit* de `audio/` junto con los archivos regenerados (ver «Publicar» en el README
+   principal).
+6. Si la persona pide retirar sus grabaciones, borra sus entradas de `audio/catalogo.json` (las de su
+   `author`) y sus MP3, y vuelve a generar.
+
+Para archivos de otras fuentes (un audio suelto o una lista) está `node tools/audio-import.mjs`
+(`--help` explica las opciones). La página de grabación se prueba con `node test/grabar.cjs`
+(Playwright con micrófono falso; importa a una copia temporal del repositorio, nunca al catálogo real).

@@ -3,7 +3,9 @@
 //   node tools/import-recordings.mjs <archivo.zip> [--dry-run] [--replace] [--alternate] [--force] [--root <carpeta>]
 // El ZIP trae grabaciones.json y wav/<…>.wav. Cada elemento se importa con importAudio (tools/audio-lib.mjs)
 // como kind "nativo", con la key derivada de su id: "v-<id>" (palabra), "ex-<id>" (ejemplo de la palabra <id>)
-// o "l-<letra>" (ejemplo de una letra de la guía; «ch'» → l-ch-saltillo).
+// o "l-<letra>" (ejemplo de una letra de la guía; «ch'» → l-ch-saltillo). vocab = [id] solo en las palabras
+// (los ejemplos se encuentran por texto); letters = [letra] en las letras. Nunca toca las entradas sintéticas
+// ni los fonemas: si ocupan la key, la grabación nativa se guarda al lado (<key>-2).
 // Solo usa módulos de Node (fs, path, zlib) y ffmpeg/ffprobe (a través de audio-lib.mjs).
 import fs from "fs";
 import path from "path";
@@ -28,9 +30,14 @@ Uso:
 
 Opciones:
   --dry-run     revisa el ZIP y muestra qué haría, sin escribir nada
-  --replace     reemplaza las entradas que ya existen de otro autor (por omisión se omiten)
-  --alternate   si ya existe una entrada de otro autor, guarda esta como versión adicional
-                (<key>-2, <key>-3, …) en lugar de omitirla
+  --replace     reemplaza las grabaciones nativas que ya existen de otro autor (por omisión
+                se omiten)
+  --alternate   si ya existe una grabación nativa de otro autor, guarda esta como versión
+                adicional (<key>-2, <key>-3, …) en lugar de omitirla
+
+Las voces sintéticas y los fonemas del catálogo nunca se borran ni se reemplazan: si la key
+derivada ya la ocupa una de ellas, la grabación nativa se guarda al lado (<key>-2) y la app la
+prefiere. Las frases de ejemplo se guardan sin vocab: la app las encuentra por su texto.
   --force       importa también los elementos que ya no coinciden con el curso actual
   --root <dir>  raíz del repositorio donde escribir (por omisión, la de este script)
   -h, --help    muestra esta ayuda
@@ -292,7 +299,9 @@ async function main() {
         if (course && !v) mismatch = "el id " + it.id + " no está en el curso";
         else if (course && !want) mismatch = "la palabra " + it.id + " ya no tiene ejemplo";
         else if (want && normText(want) !== normText(it.text)) mismatch = "el curso ahora dice «" + want + "»";
-        vocab = [it.id];
+        // Una frase de ejemplo no lleva vocab: el motor la encuentra por su texto (audioForText). Si llevara
+        // el id, la palabra podría sonar con la frase completa.
+        vocab = it.type === "vocab" ? [it.id] : [];
       }
       if (mismatch && !o.force) { show("↷", "se omite: " + mismatch + " (con --force se importa igual)"); results.omitida++; continue; }
 
@@ -302,16 +311,23 @@ async function main() {
         speaker: meta.speaker || undefined, region: meta.region || undefined, author,
         license: meta.license, source, notes, root, replace: o.replace, sameAuthor, dryRun: o.dryRun
       };
-      const prev = findEntry(cat, baseKey);
-      if (prev && !sameAuthor(prev, spec) && !o.replace) {
-        if (!o.alternate) { show("↷", "se omite: ya hay audio de «" + prev.author + "» (usa --replace o --alternate)"); results.omitida++; continue; }
-        let n = 2, k;
-        for (;; n++) {
-          k = baseKey + "-" + n;
-          const e = findEntry(cat, k);
-          if (!usedKeys.has(k) && (!e || sameAuthor(e, spec))) break;
+      // Una key sirve si está libre o es una grabación «nativo» del mismo autor (reimportar la actualiza).
+      // Las entradas de otro tipo (voz sintética, fonema) nunca se tocan, ni con --replace: la grabación
+      // nativa convive con ellas en otra key (<key>-2, …) y el motor la prefiere.
+      const usable = (e) => !e || (e.kind === "nativo" && sameAuthor(e, spec));
+      const nextFree = () => {
+        for (let n = 2; ; n++) {
+          const k = baseKey + "-" + n;
+          if (!usedKeys.has(k) && usable(findEntry(cat, k))) return k;
         }
-        spec.key = k;
+      };
+      const prev = findEntry(cat, baseKey);
+      let note = "";
+      if (!usable(prev)) {
+        if (prev.kind !== "nativo") { spec.key = nextFree(); spec.replace = false; note = " (convive con la voz «" + prev.kind + "» de " + baseKey + ")"; }
+        else if (o.replace) note = " (reemplaza la de «" + prev.author + "»)";
+        else if (o.alternate) { spec.key = nextFree(); spec.replace = false; }
+        else { show("↷", "se omite: ya hay audio de «" + prev.author + "» (usa --replace o --alternate)"); results.omitida++; continue; }
       }
       if (usedKeys.has(spec.key)) { show("✗", "key repetida en el ZIP"); results.error++; continue; }
       usedKeys.add(spec.key);
@@ -330,8 +346,8 @@ async function main() {
         if (o.dryRun) spec.input = o.zip; // solo para que importAudio valide; con dryRun no se lee
         else spec.input = input;
         const r = await importAudio(spec);
-        const key = r.key === baseKey ? "" : " como " + r.key;
-        if (o.dryRun) show("·", (prev ? "se actualizaría" : "se agregaría") + key);
+        const key = (r.key === baseKey ? "" : " como " + r.key) + note;
+        if (o.dryRun) show("·", (r.action === "simulada-actualizada" ? "se actualizaría" : "se agregaría") + key);
         else show("✓", r.action + key + " · " + (r.durationMs / 1000).toFixed(2).replace(".", ",") + " s");
         if (!o.dryRun) {
           const fresh = readCatalog(root);

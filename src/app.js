@@ -360,7 +360,7 @@
   var INTERVALS = [0, 1, 3, 7, 16, 35];
   var storageOK = true;
   function freshState() {
-    return { v: 2, xp: 0, xpByDay: {}, streak: { count: 0, best: 0, last: null }, goal: 20, lessons: {}, srs: {}, settings: { sound: true, autoplay: true, rate: "normal" } };
+    return { v: 2, xp: 0, xpByDay: {}, streak: { count: 0, best: 0, last: null }, goal: 20, lessons: {}, srs: {}, settings: { sound: true, autoplay: true, rate: "normal", synth: true } };
   }
   function loadState() {
     var s = freshState(), raw = null;
@@ -388,6 +388,7 @@
         s.settings.sound = o.settings.sound !== false;
         s.settings.autoplay = o.settings.autoplay !== false;
         s.settings.rate = o.settings.rate === "lenta" ? "lenta" : "normal";
+        s.settings.synth = o.settings.synth !== false;
       }
     } catch (e) { /* estado dañado: se empieza de cero */ }
     return s;
@@ -516,10 +517,13 @@
   var AU_KIND = {
     nativo: { label: "Voz nativa", low: "voz nativa", aria: "voz nativa" },
     fonema: { label: "Sonido de referencia (AFI)", low: "sonido de referencia (AFI)", aria: "sonido de referencia del Alfabeto Fonético Internacional" },
-    sintetico: { label: "Voz sintética", low: "voz sintética", aria: "voz sintética aproximada" }
+    sintetico: { label: "Voz sintética (aproximada)", low: "voz sintética (aproximada)", aria: "voz sintética aproximada" }
   };
-  var RANK_WORD = { nativo: 0, sintetico: 1, fonema: 2 };   // para palabras: primero la voz de un hablante
-  var RANK_LETTER = { fonema: 0, nativo: 1, sintetico: 2 }; // para letras: primero el sonido aislado
+  // Prioridad para cualquier elemento: la voz de un hablante, luego el sonido de referencia (solo existe
+  // para letras y sonidos) y al final la voz sintética. Si hay voz nativa, la sintética nunca se muestra.
+  var RANK = { nativo: 0, fonema: 1, sintetico: 2 };
+  var SYNTH_NOTE = "La voz sintética (aproximada) la genera una inteligencia artificial: puede equivocarse en el tono, " +
+    "el saltillo y las consonantes glotalizadas. Cuando hay grabaciones de hablantes, se usa la voz nativa en su lugar.";
   function audioSrc(file, hash) {
     if (/^data:audio\/(mpeg|mp3);base64,/.test(file)) return file;
     if (window.KOOX_STANDALONE === true && /^audio\/[a-z0-9-]+\.mp3$/.test(file)) return file + (/^[0-9a-f]{6,64}$/.test(hash) ? "?v=" + hash : "");
@@ -547,20 +551,23 @@
     return out;
   }
   var AU = buildAudio(window.COURSE_AUDIO);
-  function hasAudio() { return AU.list.some(function (a) { return !AU.failed[a.key]; }); }
-  // El mejor audio de una lista según el orden de tipos; con empate, el primero del catálogo.
-  function pickAudio(list, rank) {
+  // Un audio se ofrece si no falló y, si es sintético, si el ajuste «Usar voz sintética» está activo.
+  function usable(a) { return !!a && !AU.failed[a.key] && (a.kind !== "sintetico" || state.settings.synth !== false); }
+  function hasAudio() { return AU.list.some(usable); }
+  function hasKind(k) { return AU.list.some(function (a) { return a.kind === k; }); }
+  // El mejor audio de una lista según RANK; con empate, el primero del catálogo.
+  function pickAudio(list) {
     var best = null;
-    arr(list).forEach(function (a) { if (!AU.failed[a.key] && (!best || rank[a.kind] < rank[best.kind])) best = a; });
+    arr(list).forEach(function (a) { if (usable(a) && (!best || RANK[a.kind] < RANK[best.kind])) best = a; });
     return best;
   }
   // Texto maya normalizado (minúsculas, apóstrofos unificados, sin signos): «Bix a beel?» = «bix a beel».
-  function audioForText(t) { return pickAudio(AU.byText[normalize(t)], RANK_WORD); }
+  function audioForText(t) { return pickAudio(AU.byText[normalize(t)]); }
   function audioForVocab(id) {
     var v = COURSE.vocabById[id];
-    return pickAudio(arr(AU.byVocab[id]).concat(v ? arr(AU.byText[normalize(v.m)]) : []), RANK_WORD);
+    return pickAudio(arr(AU.byVocab[id]).concat(v ? arr(AU.byText[normalize(v.m)]) : []));
   }
-  function audioForLetter(l) { return pickAudio(AU.byLetter[str(l)], RANK_LETTER); }
+  function audioForLetter(l) { return pickAudio(AU.byLetter[str(l)]); }
   // «Escucha y elige» solo usa voces de hablantes: nunca sintéticas ni sonidos aislados.
   function nativeFor(v) { var a = v && audioForVocab(v.id); return a && a.kind === "nativo" ? a : null; }
 
@@ -583,7 +590,7 @@
   }
   function playAudio(a, opts) {
     opts = opts || {};
-    if (!a || AU.failed[a.key]) return false;
+    if (!usable(a)) return false;
     var p = auPlayer();
     if (!p) return false;
     stopAudio();
@@ -645,7 +652,7 @@
     var low = ks.map(function (k) { return AU_KIND[k].low; });
     return '<p class="au-note">' + ICON.speaker.replace("<svg", '<svg class="ico"') + "<span>" + esc(lead) +
       (low.length > 1 ? low.slice(0, -1).join(", ") + " y " + low[low.length - 1] : low[0]) + "." +
-      (kinds.sintetico ? " La voz sintética (botón con borde punteado) es una aproximación, no un hablante." : "") +
+      (kinds.sintetico ? " La voz sintética (botones con borde punteado) es aproximada: la genera una IA, no un hablante." : "") +
       (kinds.fonema ? " El sonido de referencia (borde punteado) es el sonido aislado, no una palabra maya." : "") + "</span></p>";
   }
 
@@ -1858,11 +1865,13 @@
   /* ================= Diccionario ================= */
   var dictUnit = "all";
   function guideHTML() {
-    var fonemas = false;
+    var fonemas = false, synth = false;
     var cards = COURSE.guide.map(function (g) {
-      var la = audioForLetter(g.l), xa = g.ex ? audioForText(g.ex.m) : null;
-      if (la && la === xa) la = null; // el mismo audio va una sola vez, junto al ejemplo
+      // El ejemplo suena con su mejor audio; junto a la letra va otro audio de esa letra (no el mismo).
+      var xa = g.ex ? audioForText(g.ex.m) : null;
+      var la = pickAudio(arr(AU.byLetter[g.l]).filter(function (a) { return a !== xa; }));
       if (la && la.kind === "fonema") fonemas = true;
+      if ((la && la.kind === "sintetico") || (xa && xa.kind === "sintetico")) synth = true;
       return '<div class="letter' + (la ? " has-au" : "") + '"><div class="l-top"><span class="l m" lang="yua">' + esc(g.l) + "</span>" + (la ? auBtn(la, g.l, "md") : "") + "</div>" +
         '<span class="d">' + markMaya(g.desc) + "</span>" +
         (la ? '<span class="l-au">' + auTag(la) + (la.kind === "fonema" ? '<span class="l-au-n" data-au-key="' + esc(la.key) + '">Sonido aislado, no una palabra maya</span>' : "") + "</span>" : "") +
@@ -1872,6 +1881,7 @@
       '<span class="gs-s">' + COURSE.guide.length + " letras</span></summary>" +
       '<p class="muted">El alfabeto normativo de 2014. Casi todo se lee como en español; estas son las diferencias.</p>' +
       (fonemas ? '<p class="au-note">' + ICON.speaker.replace("<svg", '<svg class="ico"') + "<span>«Sonido de referencia (AFI)» es el sonido aislado, como lo describe el Alfabeto Fonético Internacional: no es una palabra maya ni la voz de un hablante.</span></p>" : "") +
+      (synth || (hasKind("sintetico") && state.settings.synth !== false) ? '<p class="au-note synth-note">' + ICON.speaker.replace("<svg", '<svg class="ico"') + "<span>" + esc(SYNTH_NOTE) + "</span></p>" : "") +
       '<div class="alphabet">' + cards + "</div></details>";
   }
   function openGuide() {
@@ -1882,9 +1892,17 @@
     d.scrollIntoView({ block: "start" });
     var sm = $("summary", d); if (sm) sm.focus({ preventScroll: true });
   }
+  var guideSig = "";
   function renderDict() {
     var gw = $("#dict-guide");
-    if (gw && !gw.childElementCount && COURSE.guide.length) gw.innerHTML = guideHTML();
+    // La guía se vuelve a armar si cambió qué audio se puede ofrecer (ajuste o audio que falló).
+    var sig = String(state.settings.synth !== false) + Object.keys(AU.failed).length;
+    if (gw && COURSE.guide.length && (!gw.childElementCount || sig !== guideSig)) {
+      var was = $("#guide", gw), open = !!(was && was.open);
+      gw.innerHTML = guideHTML();
+      if (open) $("#guide", gw).open = true;
+      guideSig = sig;
+    }
     if (!el.dictUnits.childElementCount) {
       el.dictUnits.innerHTML = '<button class="chip" type="button" id="dict-u-all" data-u="all" aria-pressed="true">Todas</button>' +
         COURSE.units.map(function (u) {
@@ -1989,11 +2007,14 @@
       '<div class="setting"><label class="setting-txt" for="goal">Meta diaria<small>XP que quieres ganar cada día</small></label><select id="goal">' +
       GOALS.map(function (g) { return '<option value="' + g + '"' + (g === state.goal ? " selected" : "") + ">" + g + " XP</option>"; }).join("") + "</select></div>" +
       '<label class="setting" for="sound"><span class="setting-txt">Sonido de aciertos<small>Tonos cortos y suaves</small></span><input class="switch" type="checkbox" role="switch" id="sound"' + (state.settings.sound ? " checked" : "") + "></label>" +
-      (hasAudio() ? '<label class="setting" for="au-auto"><span class="setting-txt">Reproducir al presentar palabras<small>Suena la pronunciación al aparecer cada palabra</small></span>' +
+      (AU.list.length ? '<label class="setting" for="au-auto"><span class="setting-txt">Reproducir al presentar palabras<small>Suena la pronunciación al aparecer cada palabra</small></span>' +
         '<input class="switch" type="checkbox" role="switch" id="au-auto"' + (state.settings.autoplay ? " checked" : "") + "></label>" +
         '<div class="setting"><label class="setting-txt" for="au-rate">Velocidad<small>De la pronunciación grabada</small></label><select id="au-rate">' +
-        '<option value="normal"' + (state.settings.rate !== "lenta" ? " selected" : "") + '>Normal</option><option value="lenta"' + (state.settings.rate === "lenta" ? " selected" : "") + ">Lenta</option></select></div>" : "") +
-      "</div>" + (audioFailed ? '<p class="storage-warn">El sonido no está disponible en este navegador.</p>' : "") +
+        '<option value="normal"' + (state.settings.rate !== "lenta" ? " selected" : "") + '>Normal</option><option value="lenta"' + (state.settings.rate === "lenta" ? " selected" : "") + ">Lenta</option></select></div>" +
+        (hasKind("sintetico") ? '<label class="setting" for="au-synth"><span class="setting-txt">Usar voz sintética<small>Para las palabras que aún no tienen voz nativa</small></span>' +
+          '<input class="switch" type="checkbox" role="switch" id="au-synth"' + (state.settings.synth !== false ? " checked" : "") + "></label>" : "") : "") +
+      "</div>" +
+      (hasKind("sintetico") ? '<p class="au-note synth-note">' + ICON.speaker.replace("<svg", '<svg class="ico"') + "<span>" + esc(SYNTH_NOTE) + "</span></p>" : "") + (audioFailed ? '<p class="storage-warn">El sonido no está disponible en este navegador.</p>' : "") +
       (storageOK ? "" : '<p class="storage-warn">Este navegador no permite guardar datos (modo privado o almacenamiento bloqueado). Tu avance se perderá al cerrar la página.</p>') + "</section>";
     if (COURSE.guide.length) h += '<section class="section" aria-labelledby="guide-title"><h2 id="guide-title">Guía de pronunciación</h2>' +
       '<p class="muted">Cómo se leen las ' + COURSE.guide.length + ' letras del alfabeto maya. Está en el Diccionario.</p>' +
@@ -2046,6 +2067,11 @@
       state.settings.sound = this.checked;
       if (this.checked) { audioFailed = false; tone("ok"); }
       save();
+    });
+    var as = $("#au-synth");
+    if (as) as.addEventListener("change", function () {
+      state.settings.synth = this.checked; save(); stopAudio();
+      toast(this.checked ? "Voz sintética activada" : "Voz sintética desactivada");
     });
     var aa = $("#au-auto");
     if (aa) aa.addEventListener("change", function () { state.settings.autoplay = this.checked; save(); });
@@ -2100,7 +2126,7 @@
     if (!AU.list.length) return "";
     var groups = {}, order = [];
     AU.list.forEach(function (a) {
-      var k = [a.author, a.license, a.licenseUrl].join("\n");
+      var k = (a.kind === "sintetico" ? "sintetico\n" : "") + [a.author, a.license, a.licenseUrl].join("\n");
       if (!groups[k]) { groups[k] = { a: a, items: [], kinds: {}, speakers: [], notes: [], sources: [] }; order.push(k); }
       var g = groups[k];
       g.items.push(a); g.kinds[a.kind] = 1;
@@ -2122,6 +2148,15 @@
       order.map(function (k) {
         var g = groups[k], a = g.a, one = g.sources.length === 1;
         var kinds = ["nativo", "sintetico", "fonema"].filter(function (x) { return g.kinds[x]; }).map(function (x) { return AU_KIND[x].label; }).join(" · ");
+        if (a.kind === "sintetico") {
+          // Cientos de audios de un mismo modelo: una sola entrada, sin lista de palabras.
+          var srcs = g.sources.filter(Boolean);
+          return '<div class="credit synth"><h3 class="src-unit">' + esc(a.author || "Voz sintética") + "</h3>" +
+            '<p class="cr-l">' + esc(AU_KIND.sintetico.label) + " · " + g.items.length + " " + plural(g.items.length, "audio", "audios") + "</p>" +
+            '<p class="cr-l">Licencia: ' + (a.licenseUrl ? link(a.licenseUrl, a.license || a.licenseUrl) : esc(a.license)) + "</p>" +
+            (srcs.length ? '<p class="cr-l">' + (srcs.length === 1 ? "Modelo: " + source(srcs[0]) : "Fuentes: " + srcs.slice(0, 3).map(function (x) { return source(x, true); }).join(", ") + (srcs.length > 3 ? "…" : "")) + "</p>" : "") +
+            g.notes.slice(0, 2).map(function (t) { return '<p class="cr-n">' + esc(t) + "</p>"; }).join("") + "</div>";
+        }
         return '<div class="credit"><h3 class="src-unit">' + esc(a.author || "Sin autor") + "</h3>" +
           '<p class="cr-l">' + esc(kinds) + (g.speakers.length ? " · " + esc(g.speakers.join("; ")) : "") + "</p>" +
           '<p class="cr-l">Licencia: ' + (a.licenseUrl ? link(a.licenseUrl, a.license || a.licenseUrl) : esc(a.license)) + "</p>" +
@@ -2268,11 +2303,13 @@
         plays: auStats.plays, started: auStats.started, ended: auStats.ended, errors: auStats.errors, blocked: auStats.blocked
       };
     },
+    audioEntries: function () { return AU.list.map(function (a) { return { key: a.key, kind: a.kind, text: a.text, vocab: a.vocab.slice(), letters: a.letters.slice() }; }); },
     audioFor: function (what, x) {
       var a = what === "letter" ? audioForLetter(x) : what === "text" ? audioForText(x) : audioForVocab(x);
       return a ? { key: a.key, kind: a.kind } : null;
     },
     stopAudio: stopAudio,
+    playKey: function (k) { return playAudio(AU.byKey[k]); },
     // Abre una práctica de un solo «Escucha y elige» (para pruebas y capturas).
     tryListen: function (vid) { var e = makeListen(COURSE.vocabById[vid]); if (e) openSession("practice", [{ t: "ex", ex: e }]); return !!e; }
   };

@@ -16,7 +16,7 @@
 import fs from "fs";
 import path from "path";
 import crypto from "crypto";
-import { assemble, BuildError, ROOT } from "./build-core.mjs";
+import { assemble, redundantSynth, BuildError, ROOT } from "./build-core.mjs";
 
 const argv = process.argv.slice(2);
 const SAMPLE = argv.includes("--sample");
@@ -182,9 +182,13 @@ function build() {
   }
 
   // Audio: lo que la página puede pedir (con ?v=<hash>, así una grabación nueva nunca sale de una caché vieja).
-  const audioFiles = audio.included.map((it) => ({ file: it.entry.file, abs: it.abs, bytes: it.bytes, url: it.entry.file + "?v=" + it.hash }));
+  // No se precargan los sintéticos que nunca sonarían (su palabra ya tiene voz nativa).
+  const redundant = redundantSynth(audio.included);
+  const audioFiles = audio.included.map((it) => ({ file: it.entry.file, abs: it.abs, bytes: it.bytes, url: it.entry.file + "?v=" + it.hash, skip: redundant.has(it.entry.key) }));
   const audioBytes = audioFiles.reduce((n, a) => n + a.bytes, 0);
-  const audioPrecache = audioBytes <= AUDIO_PRECACHE_MAX ? audioFiles.map((a) => a.url) : [];
+  const toPrecache = audioFiles.filter((a) => !a.skip);
+  const precacheBytes = toPrecache.reduce((n, a) => n + a.bytes, 0);
+  const audioPrecache = precacheBytes <= AUDIO_PRECACHE_MAX ? toPrecache.map((a) => a.url) : [];
 
   const swTemplate = fs.readFileSync(path.join(WEB, "sw.js"), "utf8");
   for (const mk of [VERSION_MARK, ...SW_MARKS]) {
@@ -260,7 +264,8 @@ function build() {
   console.log("  manifest.webmanifest, sw.js, .nojekyll, icons/ (" + icons.files.length + " archivos)" + (grabar ? ", grabar.html " + kb(grabar) : ""));
   if (audioFiles.length) {
     console.log("  audio/: " + audioFiles.length + " archivo(s), " + (audioBytes / 1024).toFixed(1) + " KB" + (SITE === ROOT ? " (ya están en la raíz)" : " copiados") +
-      " · " + (audioPrecache.length ? "se precargan al instalar" : "más de 8 MB: se guardan al escucharlos"));
+      " · " + (audioPrecache.length ? audioPrecache.length + " se precargan al instalar" : "más de 8 MB: se guardan al escucharlos") +
+      (redundant.size ? " · " + redundant.size + " sintético(s) con voz nativa (no se precargan)" : ""));
   } else console.log("  audio: el catálogo no tiene audios");
   console.log("  versión de caché: koox-maaya-" + version);
 }

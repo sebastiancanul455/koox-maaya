@@ -67,6 +67,33 @@ export function loadAudio(opts = {}) {
   return out;
 }
 
+// Texto maya normalizado como en la app (minúsculas, apóstrofo recto, sin signos).
+export function normText(s) {
+  return String(s == null ? "" : s).normalize("NFC").toLowerCase()
+    .replace(/[’‘ʼ´`′ʻ‛ʹ＇՚ˈ]/g, "'").replace(/[‐-―]/g, "-")
+    .replace(/[¿?¡!.,;:"“”«»()…]/g, " ").replace(/\s+/g, " ").trim();
+}
+
+/**
+ * Keys de los audios sintéticos que nunca sonarían porque su palabra o su texto ya tienen voz nativa
+ * (la app siempre prefiere la nativa). build.mjs los deja al final y build-web.mjs no los precarga.
+ */
+export function redundantSynth(items) {
+  const natVocab = new Set(), natText = new Set();
+  for (const it of items) if (it.entry.kind === "nativo") {
+    (Array.isArray(it.entry.vocab) ? it.entry.vocab : []).forEach((id) => natVocab.add(id));
+    natText.add(normText(it.entry.text));
+  }
+  const out = new Set();
+  for (const it of items) {
+    const e = it.entry;
+    if (e.kind !== "sintetico") continue;
+    const vocab = Array.isArray(e.vocab) ? e.vocab : [];
+    if (natText.has(normText(e.text)) && vocab.every((id) => natVocab.has(id))) out.add(e.key);
+  }
+  return out;
+}
+
 // Recursos para escuchar: un archivo JavaScript como las unidades (null si no existe).
 export function resourcesPart(opts = {}) {
   const root = opts.root || ROOT;

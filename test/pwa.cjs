@@ -105,7 +105,15 @@ function staticChecks() {
   const bytes = files.reduce((n, u) => n + (fs.existsSync(path.join(SITE, u.split("?")[0])) ? fs.statSync(path.join(SITE, u.split("?")[0])).size : 0), 0);
   if (files.length) {
     check("audio: cada archivo existe en el sitio y se pide con ?v=<hash>", files.every((u) => /^audio\/[a-z0-9-]+\.mp3\?v=[0-9a-f]{10}$/.test(u) && fs.existsSync(path.join(SITE, u.split("?")[0]))), files.length + " archivos");
-    check("audio: con 8 MB o menos se precarga todo", bytes > 8 * 1024 * 1024 ? audioPre.length === 0 : JSON.stringify(audioPre) === JSON.stringify(files), (bytes / 1024).toFixed(1) + " KB");
+    // Los sintéticos de palabras que ya tienen voz nativa nunca suenan: no se precargan.
+    const ca = JSON.parse((/window\.COURSE_AUDIO = (\{.*\});/.exec(index) || [])[1] || "{\"entries\":[]}");
+    const kindOf = {};
+    ca.entries.forEach((e) => { kindOf[e.file] = e.kind; });
+    const fuera = files.filter((u) => !audioPre.includes(u));
+    check("audio: con 8 MB o menos se precarga todo (salvo sintéticos que ya tienen voz nativa)", bytes > 8 * 1024 * 1024
+      ? audioPre.length === 0 || audioPre.every((u) => files.includes(u))
+      : audioPre.every((u) => files.includes(u)) && fuera.every((u) => kindOf[u.split("?")[0]] === "sintetico"),
+      (bytes / 1024).toFixed(1) + " KB · " + audioPre.length + " de " + files.length + " se precargan");
     check("audio: index.html los anuncia en COURSE_AUDIO", files.every((u) => index.includes('"file":"' + u.split("?")[0] + '"')));
   } else log("  · el sitio no tiene audio");
   const grabar = fs.existsSync(path.join(SITE, "grabar.html"));

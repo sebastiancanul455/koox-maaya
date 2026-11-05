@@ -44,15 +44,19 @@ self.addEventListener("install", (event) => {
       }
       await cache.put(url, res);
     }));
-    // Audio: lo que ya está guardado no se vuelve a bajar; un fallo no impide instalar la app.
+    // Audio (pueden ser cientos de archivos cortos): de 6 en 6; lo que ya está guardado no se vuelve
+    // a bajar y un fallo no impide instalar la app.
     const audio = await caches.open(AUDIO);
-    await Promise.all(AUDIO_PRECACHE.map(async (p) => {
-      const url = new URL(p, SCOPE).href;
-      try {
-        if (await audio.match(url)) return;
-        const res = await fetch(url);
-        if (res.ok && res.status === 200) await audio.put(url, res);
-      } catch (e) { /* se guardará al escucharlo */ }
+    let next = 0;
+    await Promise.all(Array.from({ length: Math.min(6, AUDIO_PRECACHE.length) }, async () => {
+      while (next < AUDIO_PRECACHE.length) {
+        const url = new URL(AUDIO_PRECACHE[next++], SCOPE).href;
+        try {
+          if (await audio.match(url)) continue;
+          const res = await fetch(url);
+          if (res.ok && res.status === 200) await audio.put(url, res);
+        } catch (e) { /* se guardará al escucharlo */ }
+      }
     }));
     await self.skipWaiting();
   })());

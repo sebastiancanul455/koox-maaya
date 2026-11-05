@@ -159,6 +159,11 @@ recorta silencios, normaliza el volumen, convierte al formato del contrato y act
 se importan con `node tools/import-recordings.mjs <archivo.zip>`). Después: `node test/validate.cjs`,
 `node build.mjs` y `node build-web.mjs --out .`.
 
+**Grabaciones de hablantes.** Un hablante puede grabar desde su celular la pronunciación de todo el
+curso en `grabar.html` y enviar un ZIP; las instrucciones para quien graba y para quien lo importa
+están en [`revision/README.md` → «Grabar la pronunciación»](revision/README.md#grabar-la-pronunciación)
+(se prueba con `node test/grabar.cjs`).
+
 **Dónde suena.** El motor busca el audio de una palabra por su id (`vocab`) o por su forma maya, el de
 una letra por `letters`, y el de cualquier texto maya por su forma normalizada (minúsculas, apóstrofo
 recto, sin signos). Para palabras prefiere la voz nativa; para letras, el sonido de referencia. Cada

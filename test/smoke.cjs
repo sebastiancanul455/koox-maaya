@@ -793,6 +793,57 @@ async function audioRun(browser, cfg) {
     }));
     check("[" + cfg.name + "] Perfil: «Reproducir al presentar palabras» (sí) y «Velocidad» (normal)", prof.auto === true && prof.rate === "normal", JSON.stringify({ auto: prof.auto, rate: prof.rate }));
     check("[" + cfg.name + "] Perfil: créditos de audio con licencia enlazada", prof.creditText.length > 0 && /Licencia:/.test(prof.creditText) && prof.credits.every((l) => l[0] === "_blank" && /noopener/.test(l[1]) && /^https:/.test(l[2])), prof.credits.length + " enlaces");
+    // Voz sintética: prioridad, etiqueta, nota, ajuste «Usar voz sintética» y créditos agrupados.
+    const syn = await page.evaluate(() => {
+      const K = window.__koox, E = K.audioEntries(), S = E.filter((e) => e.kind === "sintetico");
+      const nat = new Set();
+      E.filter((e) => e.kind === "nativo").forEach((e) => e.vocab.forEach((v) => nat.add(v)));
+      const both = [].concat(...S.map((e) => e.vocab)).filter((v) => nat.has(v));
+      const only = [].concat(...S.map((e) => e.vocab)).filter((v) => !nat.has(v) && (K.audioFor("vocab", v) || {}).kind === "sintetico");
+      const credit = [...document.querySelectorAll("#credits-box .credit.synth")];
+      return {
+        n: S.length, both, bothNative: both.every((v) => (K.audioFor("vocab", v) || {}).kind === "nativo"), only,
+        note: (document.querySelector("#v-profile .synth-note") || {}).textContent || "",
+        toggle: (document.querySelector("#au-synth") || {}).checked,
+        credit: credit.map((c) => ({ text: c.textContent, list: c.querySelectorAll(".cr-w, .cr-items, .m").length }))
+      };
+    });
+    if (syn.n) {
+      if (syn.both.length) check("[" + cfg.name + "] con voz nativa, nunca se ofrece la sintética de la misma palabra", syn.bothNative, syn.both.join(", "));
+      check("[" + cfg.name + "] Perfil explica la voz sintética (IA; tono, saltillo y glotalizadas; se reemplaza por voz nativa)", /inteligencia artificial/.test(syn.note) && /tono/.test(syn.note) && /saltillo/.test(syn.note) && /glotalizadas/.test(syn.note) && /voz nativa/.test(syn.note), syn.note.slice(0, 80));
+      check("[" + cfg.name + "] «Usar voz sintética» activo por omisión", syn.toggle === true);
+      check("[" + cfg.name + "] créditos: los sintéticos en una sola entrada (modelo, licencia y enlace)", syn.credit.length === 1 && /audios?/.test(syn.credit[0].text) && /Licencia:/.test(syn.credit[0].text) && syn.credit[0].list === 0, JSON.stringify(syn.credit).slice(0, 160));
+      if (syn.only.length) {
+        const vid = syn.only[0];
+        check("[" + cfg.name + "] «Escucha y elige» nunca usa la voz sintética", (await page.evaluate((id) => window.__koox.tryListen(id), vid)) === false);
+        await gotoTab(page, cfg, "diccionario");
+        const lab = await page.evaluate((id) => {
+          const k = window.__koox.audioFor("vocab", id).key, b = document.querySelector('#dict-list [data-au="' + k + '"]');
+          const e = b && b.closest(".entry");
+          return { cls: b ? b.className : "", tag: e ? (e.querySelector(".au-kind") || {}).textContent : "", guide: (document.querySelector("#guide .synth-note") || {}).textContent || "" };
+        }, vid);
+        check("[" + cfg.name + "] etiqueta «Voz sintética (aproximada)» junto al botón sintético", lab.tag === "Voz sintética (aproximada)" && /k-sintetico/.test(lab.cls), JSON.stringify(lab).slice(0, 120));
+        check("[" + cfg.name + "] la guía de sonidos explica la voz sintética", /inteligencia artificial/.test(lab.guide) && /saltillo/.test(lab.guide), lab.guide.slice(0, 60));
+        await gotoTab(page, cfg, "perfil");
+        await tap(page, cfg, "#au-synth");
+        await gotoTab(page, cfg, "diccionario");
+        const off = await page.evaluate((id) => ({
+          synth: window.__koox.state().settings.synth, ofrece: window.__koox.audioFor("vocab", id),
+          botones: document.querySelectorAll("[data-au].k-sintetico").length, nativos: document.querySelectorAll("#dict-list [data-au].k-nativo").length,
+          nota: !!document.querySelector("#guide .synth-note")
+        }), vid);
+        const before = await auState(page);
+        const tried = await page.evaluate((id) => {
+          const e = window.__koox.audioEntries().find((x) => x.kind === "sintetico" && x.vocab.includes(id));
+          return { porTexto: window.__koox.audioFor("text", e.text), suena: window.__koox.playKey(e.key) };
+        }, vid);
+        check("[" + cfg.name + "] sin «Usar voz sintética»: no se muestra ni se ofrece (la nativa sigue)", off.synth === false && off.ofrece === null && tried.porTexto === null && off.botones === 0 && off.nativos > 0 && !off.nota, JSON.stringify(off));
+        check("[" + cfg.name + "] sin «Usar voz sintética»: nada sintético suena", tried.suena === false && (await auState(page)).plays === before.plays, JSON.stringify(tried));
+        await gotoTab(page, cfg, "perfil");
+        await tap(page, cfg, "#au-synth");
+        check("[" + cfg.name + "] «Usar voz sintética» se vuelve a activar", (await page.evaluate(() => window.__koox.state().settings.synth)) === true);
+      }
+    }
     await tap(page, cfg, "#au-auto");
     await page.selectOption("#au-rate", "lenta");
     const set = await page.evaluate(() => window.__koox.state().settings);

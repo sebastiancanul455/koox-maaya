@@ -13,7 +13,7 @@
 // Solo usa módulos de Node (fs, path).
 import fs from "fs";
 import path from "path";
-import { assemble, loadAudio, BuildError, ROOT } from "./build-core.mjs";
+import { assemble, loadAudio, redundantSynth, BuildError, ROOT } from "./build-core.mjs";
 
 const args = process.argv.slice(2);
 const sample = args.includes("--sample");
@@ -30,13 +30,15 @@ function audioLimit() {
 }
 
 // Qué audios se incrustan: todos si caben; si no, por prioridad de tipo y en el orden del catálogo,
-// cada uno que todavía quepa.
+// cada uno que todavía quepa. Los sintéticos de palabras que ya tienen voz nativa van al final.
 const PRIORIDAD = { fonema: 0, nativo: 1, sintetico: 2 };
 function chooseAudio(items, limit) {
   const enc = items.map((it, i) => ({ it, i, uri: "data:audio/mpeg;base64," + it.buf.toString("base64") }));
   const total = enc.reduce((n, x) => n + x.uri.length, 0);
   if (total <= limit) return { chosen: enc, left: [], total, used: total };
-  const order = enc.slice().sort((a, b) => PRIORIDAD[a.it.entry.kind] - PRIORIDAD[b.it.entry.kind] || a.i - b.i);
+  const redundant = redundantSynth(items);
+  const tier = (x) => redundant.has(x.it.entry.key) ? 3 : PRIORIDAD[x.it.entry.kind];
+  const order = enc.slice().sort((a, b) => tier(a) - tier(b) || a.i - b.i);
   const chosen = [], left = [];
   let used = 0;
   for (const x of order) {

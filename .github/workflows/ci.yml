@@ -34,6 +34,11 @@ jobs:
           git diff --exit-code -- index.html sw.js grabar.html manifest.webmanifest dist
       - name: Prueba de humo (claude.ai)
         run: node test/smoke.cjs dist/koox-maaya-artifact.html
+      - name: Pruebas de los módulos (repaso, logros, lecturas)
+        run: |
+          node test/fsrs.cjs dist/koox-maaya-artifact.html
+          node test/logros.cjs dist/koox-maaya-artifact.html
+          node test/lecturas.cjs dist/koox-maaya-artifact.html
       - name: Prueba de la app instalable
         run: node test/pwa.cjs .
       - name: Prueba del estudio de grabación

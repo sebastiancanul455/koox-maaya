@@ -1,0 +1,12 @@
+/* Perfil → Voces: solo tokens del tema (claro y oscuro), nada de colores sueltos. Clases con prefijo vz-. */
+.vz-count { line-height: 1.2; }
+.vz-n { font-family: var(--display); font-size: var(--fs-2xl); font-weight: 800; color: var(--yaax-ink); }
+.vz-synth { color: var(--muted); font-size: var(--fs-sm); max-width: 36em; }
+.vz-sub { font-size: var(--fs-md); margin-top: 6px; }
+.vz-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.vz-list > li { display: flex; flex-direction: column; gap: 2px; min-width: 0; padding: 10px 14px; border-radius: var(--r-sm); border: 1px solid var(--line); background: var(--surface); }
+.vz-who { font-weight: 700; overflow-wrap: anywhere; }
+.vz-meta { font-size: var(--fs-sm); overflow-wrap: anywhere; }
+.vz-empty { padding: 12px 14px; border-radius: var(--r-sm); background: var(--bg-2); color: var(--fg); }
+.vz-help { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; max-width: 36em; }
+.vz-help .btn { align-self: stretch; }

@@ -15,6 +15,31 @@ de 2014. *Ko'ox* significa «¡vamos!».
 > **Uso no comercial.** La app incluye audios de voz sintética generados con un modelo de licencia
 > CC BY-NC 4.0, así que Ko'ox Maaya y esos audios son de uso no comercial (ver [Audio](#audio)).
 
+## Novedades de la v5.2
+
+- **Repaso inteligente (FSRS-6).** El repaso usa FSRS-6 (adaptado de [ts-fsrs](https://github.com/open-spaced-repetition/ts-fsrs), MIT)
+  con retención deseada del 90 %: cada palabra guarda su estabilidad y dificultad y vuelve justo antes de
+  olvidarse (máx. 365 días), sin aleatoriedad. Los niveles 1–5 se derivan de la estabilidad; las entradas
+  viejas (cajas de Leitner) se migran solas y la copia de seguridad conserva todo, con un historial de hasta
+  3000 repasos para optimizar los parámetros más adelante. En Perfil → «Repaso inteligente» se puede volver al
+  repaso clásico (cajas de 1, 3, 7, 16 y 35 días).
+- **Lecturas.** Inicio → Lecturas abre los diálogos del curso, y los cuentos de otras fuentes cuando un
+  hablante los revisa, para leer en maya con apoyo: toca una palabra para ver su significado y guardarla para
+  repasar, toca una línea para oírla, muestra la traducción o deja que «Escucha y sigue» lea la página en
+  orden; cada lectura dice qué porcentaje de sus palabras ya conoces (lo que el curso aún no enseña cuenta como
+  nuevo). Los textos de otras fuentes se agregan en `src/content/lecturas.js` con
+  `window.COURSE_READINGS.push({ id, title, source: { name, url, license, credit }, pages: [ { lines: [ { m, es, who?, name? } ] } ] })`;
+  nunca se inventa maya.
+- **Logros «Puedo…».** Al terminar las lecciones de una unidad y aprobar su «Repaso de la unidad» con 80 % o
+  más se abre una insignia y, en Perfil, «Lo que ya puedes decir» con tres enunciados verdaderos de la unidad
+  (`src/content/puedo.js`) y un ejemplo maya del curso; sin ligas, monedas ni textos de pérdida, y la
+  celebración se oculta en modo tranquilo.
+- **Voces** (Perfil) cuenta las palabras con voz nativa y las de voz sintética aproximada, acredita a quienes
+  grabaron e invita a grabar (enlace solo en el sitio web).
+- **Módulos.** Cada función nueva vive en `src/modules/<nombre>.js` (y `.css`), que se inyecta en `app.js`
+  en el marcador `/*@@MODULES@@*/` y se registra con `registerModule({...})`; su estado va en `state.x.<nombre>`.
+  Pruebas: `npm run test:modulos` (repaso, logros y lecturas).
+
 ## Novedades de la v5.1
 
 - **Racha amable y días con maya.** La racha avanza el día en que ganas XP al terminar una lección

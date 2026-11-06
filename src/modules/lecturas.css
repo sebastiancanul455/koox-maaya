@@ -1,0 +1,67 @@
+/* Módulo «Lecturas»: lista y lector a pantalla completa sobre el inicio, y la hoja de la palabra.
+   Solo usa los tokens de color de la app (claro y oscuro salen de ellos). Las clases empiezan con lec-. */
+body.lec-open .toast, body.lec-open .update-note { bottom: auto; top: calc(env(safe-area-inset-top, 0px) + 64px); }
+
+.lec {
+  position: fixed; inset: 0; z-index: 40; overflow-y: auto; overscroll-behavior: contain;
+  background: var(--bg); color: var(--fg);
+  padding-left: var(--gut-l); padding-right: var(--gut-r);
+}
+.lec-wrap { max-width: var(--col); margin: 0 auto; min-width: 0; display: flex; flex-direction: column; padding-bottom: calc(40px + env(safe-area-inset-bottom, 0px)); }
+.lec-top {
+  position: sticky; top: 0; z-index: 3; display: flex; align-items: center; gap: 4px; background: var(--bg);
+  padding-top: calc(8px + env(safe-area-inset-top, 0px)); padding-bottom: 8px;
+  margin-inline: calc(-1 * var(--gut-l)) calc(-1 * var(--gut-r)); padding-inline: calc(var(--gut-l) - 6px) var(--gut-r);
+}
+.lec-crumb { font-weight: 700; color: var(--muted); }
+.lec-main { display: flex; flex-direction: column; gap: 18px; min-width: 0; padding-top: 4px; }
+.lec-head { padding-top: 6px; gap: 6px; }
+.lec-count { font-size: var(--fs-sm); }
+
+/* Lista */
+.lec-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.lec-card { display: flex; flex-direction: column; align-items: stretch; gap: 6px; width: 100%; min-height: 64px; text-align: left; color: var(--fg); }
+.lec-card:hover { border-color: var(--line-strong); }
+.lec-card-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.lec-card-top .eyebrow { min-width: 0; overflow-wrap: anywhere; }
+.lec-card-t { font-family: var(--display); font-weight: 700; font-size: 1.12rem; line-height: 1.2; }
+.lec-card-meta { font-size: var(--fs-sm); color: var(--muted); }
+.lec-cov { font-size: var(--fs-sm); font-weight: 700; color: var(--yaax-ink); }
+.lec-card .bar { height: 8px; margin-top: 2px; }
+
+/* Lector */
+.lec-source { font-size: var(--fs-sm); color: var(--muted); overflow-wrap: anywhere; }
+.lec-hint { font-size: var(--fs-sm); }
+.lec-lines { gap: 14px; }
+.lec-row { animation: none; }
+.lec-row .bubble { gap: 4px; }
+.lec-row.p { align-items: center; }
+.lec-row.p .bubble { flex: 1 1 auto; max-width: 100%; border-radius: var(--r); }
+.lec-text { margin: 0; line-height: 1.55; overflow-wrap: anywhere; }
+.lec-tr { margin: 0; color: var(--muted); font-size: var(--fs-sm); }
+.lec-row.is-active .bubble { border-color: var(--yaax); box-shadow: 0 0 0 3px var(--yaax-soft); }
+.lec-row.is-active .au-btn { background: var(--yaax); color: var(--on-accent); }
+
+/* Cada palabra o frase es un botón dentro del texto: el área táctil mide 44 px o más sin cambiar el interlineado. */
+.lec-w {
+  display: inline-block; margin: -9px -1px; padding: 9px 3px; border: 0; border-radius: 6px;
+  background: no-repeat center / 100% 1.5em;   /* el fondo solo cubre la línea de texto, no el área táctil */
+  font: inherit; color: inherit; text-align: inherit; line-height: inherit; cursor: pointer;
+  text-decoration: underline dotted var(--yaax); text-decoration-thickness: 2px; text-underline-offset: 4px;
+}
+.lec-w.unk { background-image: linear-gradient(var(--kan-soft), var(--kan-soft)); }
+.lec-w.ng { text-decoration-style: dashed; text-decoration-color: var(--field-border); }
+.lec-w:active { background-image: linear-gradient(var(--yaax-soft), var(--yaax-soft)); }
+@media (hover: hover) { .lec-w:hover { background-image: linear-gradient(var(--yaax-soft), var(--yaax-soft)); } }   /* en pantallas táctiles el :hover se queda pegado */
+
+.lec-pager { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.lec-pg { font-weight: 700; color: var(--muted); text-align: center; }
+.lec-done { text-align: center; font-size: var(--fs-sm); }
+#lec-follow.is-on { background: var(--yaax); color: var(--on-accent); }
+
+/* Hoja de la palabra */
+.lec-sheet { z-index: 52; }
+.lec-sh-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-width: 0; }
+.lec-sh-head h2 { color: var(--yaax-ink); min-width: 0; overflow-wrap: anywhere; }
+.lec-gloss { font-size: var(--fs-lg); }
+.lec-where { font-size: var(--fs-sm); }

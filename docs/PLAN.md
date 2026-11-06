@@ -19,10 +19,11 @@ lo simple primero · sin cuentas, sin rastreo y sin servidor.
 ## Fase 1 · La voz de un hablante nativo
 - [ ] Voz nativa en las unidades 1 a 3 y pares mínimos (vocal larga, tono, saltillo, glotalizadas)
 - [ ] Validar las palabras «por confirmar» con hablantes y guardar las variantes por región
-- [ ] Página «Voces» y meta compartida («N palabras con voz nativa»)
-- [ ] Logros «Puedo…», uno por unidad
-- [ ] Biblioteca inicial de 3 cuentos y lector «escucha y sigue» (resalta cada oración)
-- [ ] Repaso con FSRS (guardar el historial de repasos desde ya)
+- [x] Sección «Voces» en Perfil con la meta compartida («N palabras con voz nativa»)
+- [x] Logros «Puedo…», uno por unidad
+- [x] Lecturas con glosas al tocar y «Escucha y sigue» (hoy con los diálogos del curso)
+- [ ] Biblioteca inicial de 3 cuentos de otras fuentes, revisados por un hablante
+- [x] Repaso con FSRS-6 y historial de repasos
 
 ## Fase 2 · Juego y lectura
 - [ ] Lotería exprés, «Escucha al abuelo» (un relato al terminar cada unidad), «Mi milpa», reto semanal

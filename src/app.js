@@ -366,7 +366,7 @@
   var storageOK = true;
   function freshState() {
     return { v: 2, xp: 0, xpByDay: {}, streak: { count: 0, best: 0, last: null, graceWeek: null }, daysTotal: 0, goal: 20, lessons: {}, srs: {}, x: {},
-      settings: { sound: true, autoplay: true, rate: "normal", synth: true, calm: false } };
+      settings: { sound: true, autoplay: true, rate: "normal", synth: true, calm: false, scheduler: "fsrs" } };
   }
   function isObj(x) { return !!x && typeof x === "object" && !Array.isArray(x); }
   function isWeek(k) { return typeof k === "string" && /^\d{4}-W\d{2}$/.test(k); }
@@ -393,7 +393,8 @@
     });
     if (isObj(o.srs)) Object.keys(o.srs).forEach(function (id) {
       var r = o.srs[id];
-      if (id !== "__proto__" && isObj(r)) s.srs[id] = { box: clamp(nonNeg(r.box), 0, 5), due: isDay(r.due) ? r.due : today(), right: nonNeg(r.right), wrong: nonNeg(r.wrong) };
+      if (id !== "__proto__" && isObj(r)) s.srs[id] = srsNormalize({ box: clamp(nonNeg(r.box), 0, 5), due: isDay(r.due) ? r.due : today(), right: nonNeg(r.right), wrong: nonNeg(r.wrong),
+        s: r.s, d: r.d, last: r.last, reps: r.reps, lapses: r.lapses });
     });
     if (isObj(o.settings)) {
       s.settings.sound = o.settings.sound !== false;
@@ -401,6 +402,7 @@
       s.settings.rate = o.settings.rate === "lenta" ? "lenta" : "normal";
       s.settings.synth = o.settings.synth !== false;
       s.settings.calm = o.settings.calm === true;
+      s.settings.scheduler = o.settings.scheduler === "leitner" ? "leitner" : "fsrs";
     }
     // Estado de los módulos (src/modules): state.x.<módulo>. El núcleo solo lo conserva como JSON seguro y
     // acotado; cada módulo sanea su parte al leerla.
@@ -479,7 +481,21 @@
   function xpToday() { return state.xpByDay[today()] || 0; }
   function currentStreak() { return streakView(state.streak, today()); }
 
-  /* ---------- Repetición espaciada (Leitner) ---------- */
+  /* ---------- Repetición espaciada: FSRS (src/modules/fsrs.js) o Leitner ---------- */
+  // Cada state.srs[id] es { box, due, right, wrong } más la memoria de FSRS: s (estabilidad en días), d (dificultad
+  // 1–10), last (día del último repaso), reps y lapses. box es el NIVEL (0–5) que muestra la interfaz: con FSRS se
+  // deriva de s (umbrales de INTERVALS); con el repaso clásico (settings.scheduler = "leitner") es la caja de Leitner.
+  // srsNormalize completa y acota esos campos; una entrada vieja (solo box y due) se migra sin avisar:
+  // s = intervalo de su caja (mínimo 1), d = 5, last = due - intervalo. Es idempotente.
+  function srsNormalize(r) {
+    var num = function (x) { return typeof x === "number" && isFinite(x); };
+    r.s = num(r.s) && r.s > 0 ? clamp(r.s, 0.001, 36500) : Math.max(1, INTERVALS[r.box] || 0);
+    r.d = num(r.d) ? clamp(r.d, 1, 10) : 5;
+    if (!isDay(r.last)) r.last = addDays(isDay(r.due) ? r.due : today(), -Math.max(1, Math.round(r.s)));
+    r.reps = clamp(nonNeg(r.reps) || Math.max(1, r.box || 0), 1, 1000000);
+    r.lapses = clamp(nonNeg(r.lapses), 0, 1000000);
+    return r;
+  }
   function srsEntries() {
     return Object.keys(state.srs).filter(function (id) { return COURSE.vocabById[id]; }).map(function (id) {
       return { v: COURSE.vocabById[id], r: state.srs[id] };
@@ -502,12 +518,25 @@
     if (ok) r.right++; else r.wrong++;
     return true;
   }
+  // Repaso de una palabra: acierto = «Bien» (3), error = «Otra vez» (1). La memoria de FSRS y el historial se
+  // actualizan siempre; el ajuste scheduler decide quién fija box y due: «fsrs» (por omisión) los deriva de la
+  // estabilidad; «leitner» conserva las cajas de siempre (1, 3, 7, 16 y 35 días). Devuelve cuántos niveles subió.
   function srsReview(vid, ok) {
     var r = state.srs[vid];
     if (!r) return 0;
-    var before = r.box;
-    if (ok) { r.box = Math.min(5, r.box + 1); r.right++; } else { r.box = 1; r.wrong++; }
-    r.due = addDays(today(), INTERVALS[r.box]);
+    var before = r.box, t = today(), g = ok ? 3 : 1;
+    srsNormalize(r);
+    var m = FSRS.next(r, Math.max(1, daysFrom(r.last, t)), g); // al menos un día entre repasos
+    r.s = m.s; r.d = m.d; r.last = t; r.reps++;
+    if (ok) r.right++; else { r.wrong++; r.lapses++; }
+    FSRS.record(vid, g);
+    if (state.settings.scheduler === "leitner") {
+      r.box = ok ? Math.min(5, r.box + 1) : 1;
+      r.due = addDays(t, INTERVALS[r.box]);
+    } else {
+      r.box = clamp(FSRS.level(r.s), 1, 5);
+      r.due = addDays(t, FSRS.interval(r.s));
+    }
     return r.box - before;
   }
 
@@ -1757,6 +1786,17 @@
   }
 
   /* ---------- Fin de sesión ---------- */
+  // Alta de una palabra en el repaso (la usan las lecciones y los módulos). Devuelve true si es nueva.
+  // La lección es la primera calificación de FSRS: «Otra vez» si hubo algún error con la palabra, si no «Bien».
+  // Siempre entra en nivel 1 y vence en la fecha dada (la lección pasa mañana).
+  function srsEnroll(id, due, p) {
+    if (state.srs[id]) return false;
+    p = p || {};
+    var g = p.wrong > 0 ? 1 : 3, m = FSRS.init(g);
+    state.srs[id] = { box: 1, due: due, right: nonNeg(p.right), wrong: nonNeg(p.wrong), s: m.s, d: m.d, last: today(), reps: 1, lapses: 0 };
+    FSRS.record(id, g);
+    return true;
+  }
   function finishSession() {
     var s = S;
     s.done = true;
@@ -1775,7 +1815,7 @@
       var tomorrow = addDays(today(), 1);
       l.vocab.forEach(function (v) {
         var p = s.pending[v.id] || { right: 0, wrong: 0 };
-        if (!state.srs[v.id]) { state.srs[v.id] = { box: 1, due: tomorrow, right: p.right, wrong: p.wrong }; newWords.push(v); }
+        if (!state.srs[v.id]) { srsEnroll(v.id, tomorrow, p); newWords.push(v); }
         else if (state.srs[v.id].box === 0) { state.srs[v.id].box = 1; state.srs[v.id].due = tomorrow; }
       });
     } else {
@@ -1961,7 +2001,9 @@
           '<span class="level-l">Nivel ' + (i + 1) + "<br>" + INTERVALS[i + 1] + " " + plural(INTERVALS[i + 1], "día", "días") + "</span></div>";
       }).join("") + "</div>" +
       '<p class="levels-foot">' + entries.length + " " + plural(entries.length, "palabra estudiada", "palabras estudiadas") + " de " + COURSE.vocab.length + " del curso.</p>" +
-      '<p class="how">Cada acierto sube la palabra un nivel y la aleja en el tiempo. Un error la regresa al nivel 1 para verla de nuevo mañana.</p></section>';
+      '<p class="how">' + (state.settings.scheduler === "leitner"
+        ? "Cada acierto sube la palabra un nivel y la aleja en el tiempo. Un error la regresa al nivel 1 para verla de nuevo mañana."
+        : "Cada acierto aleja la palabra en el tiempo y la sube de nivel. Un error la acerca: la verás de nuevo pronto.") + "</p></section>";
     var hard = entries.filter(function (e) { return e.r.wrong > 0; }).sort(function (a, b) { return b.r.wrong - a.r.wrong || (b.r.wrong - b.r.right) - (a.r.wrong - a.r.right); }).slice(0, 8);
     h += '<section class="section" aria-labelledby="hard-title"><h2 id="hard-title">Palabras difíciles</h2>';
     if (hard.length) {
@@ -2385,6 +2427,7 @@
       "</div>" +
       (hasKind("sintetico") ? '<p class="au-note synth-note">' + ICON.speaker.replace("<svg", '<svg class="ico"') + "<span>" + esc(SYNTH_NOTE) + "</span></p>" : "") + (audioFailed ? '<p class="storage-warn">El sonido no está disponible en este navegador.</p>' : "") +
       (storageOK ? "" : '<p class="storage-warn">Este navegador no permite guardar datos (modo privado o almacenamiento bloqueado). Tu avance se perderá al cerrar la página.</p>') + "</section>";
+    h += modHTML("profile");
     h += backupSectionHTML();
     if (COURSE.guide.length) h +='<section class="section" aria-labelledby="guide-title"><h2 id="guide-title">Guía de pronunciación</h2>' +
       '<p class="muted">Cómo se leen las ' + COURSE.guide.length + ' letras del alfabeto maya. Está en el Diccionario.</p>' +
@@ -2424,9 +2467,8 @@
       '<p class="muted">Borra tu XP, racha, días con maya, lecciones y repasos de este navegador; tus ajustes se conservan. No se puede deshacer: si quieres conservar tu avance, expórtalo antes.</p>' +
       '<div class="btn-row"><button class="btn ghost-danger" type="button" id="btn-reset">Borrar avance</button></div>' +
       '<p class="reset-msg" id="reset-msg" tabindex="-1" aria-live="polite"></p></section>';
-    h += '<p class="foot">Ko\'ox Maaya v5.1 · proyecto comunitario experimental.</p>';
+    h += '<p class="foot">Ko\'ox Maaya v5.2 · proyecto comunitario experimental.</p>';
     pendingImport = null;
-    h += modHTML("profile");
     v.innerHTML = h;
     modCall("bind", v, "profile");
     if (PWA && PWA.on) PWA.bindInstall();

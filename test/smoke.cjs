@@ -422,11 +422,16 @@ async function mobileFull(browser, cfg) {
   check("[" + cfg.name + "] sesión de repaso completa", fr.ok, fr.error);
   check("[" + cfg.name + "] el repaso tiene como máximo 15 preguntas", fr.ex <= 15 && fr.ex > 0, fr.ex);
   await shot(page, cfg, "review-results");
-  const st3 = await page.evaluate(() => window.__koox.state());
-  const promoted = Object.values(st3.srs).filter((r) => r.box === 2).length;
-  check("[" + cfg.name + "] Leitner: los aciertos suben a caja 2", promoted > 0 && promoted <= 15, promoted);
-  const tday = await page.evaluate(() => { const d = new Date(); d.setDate(d.getDate() + 3); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); });
-  check("[" + cfg.name + "] Leitner: caja 2 vence en 3 días", Object.values(st3.srs).filter((r) => r.box === 2).every((r) => r.due === tday), tday);
+  // Repaso inteligente (FSRS, por omisión): las palabras repasadas tienen reps >= 2 (la lección fue la primera calificación).
+  // El repaso clásico (Leitner) y el resto del módulo se prueban en test/fsrs.cjs.
+  const fsrsRev = await page.evaluate(() => {
+    const F = window.__koox.fsrs, st = window.__koox.state();
+    const dk = (n) => { const d = new Date(); d.setDate(d.getDate() + n); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); };
+    const rv = Object.values(st.srs).filter((r) => r.reps >= 2);
+    return { n: rv.length, up: rv.filter((r) => r.box > 1).length, ok: rv.every((r) => r.last === dk(0) && r.due === dk(F.interval(r.s)) && r.box === Math.max(1, F.level(r.s)) && r.due > dk(0)), sched: st.settings.scheduler };
+  });
+  check("[" + cfg.name + "] FSRS (por omisión): los aciertos suben de nivel", fsrsRev.sched === "fsrs" && fsrsRev.up > 0 && fsrsRev.n > 0 && fsrsRev.n <= 15, JSON.stringify(fsrsRev));
+  check("[" + cfg.name + "] FSRS: cada palabra repasada vence a los días de su estabilidad y su nivel sale de ella", fsrsRev.ok, JSON.stringify(fsrsRev));
   await tap(page, cfg, "#btn-results-home");
   await page.waitForFunction(() => window.__koox.screen() === "review");
   await checkOverflow(page, cfg, "repasar (con avance)");
@@ -861,7 +866,7 @@ async function gentleRun(browser, cfg) {
   check(tag + "aviso de confiabilidad: IA y fuentes públicas, ortografía por región, validar con hablantes, intérprete en situaciones importantes",
     /IA/.test(notes.trust) && /fuentes públicas/.test(notes.trust) && /varía/.test(notes.trust) && /región/.test(notes.trust) && /hablantes de maya/.test(notes.trust) && /situaciones importantes \(salud, trámites\) recurre a un intérprete/.test(notes.trust), notes.trust.slice(0, 80));
   check(tag + "sin menciones a pacientes ni a validación clínica", !/paciente|cl[ií]nic/i.test(notes.all), (notes.all.match(/.{0,30}(paciente|cl[ií]nic).{0,30}/i) || [""])[0]);
-  check(tag + "pie: «v5.1 · proyecto comunitario experimental»", /Ko'ox Maaya v5\.1 · proyecto comunitario experimental/.test(notes.foot), notes.foot);
+  check(tag + "pie: «v5.2 · proyecto comunitario experimental»", /Ko'ox Maaya v5\.2 · proyecto comunitario experimental/.test(notes.foot), notes.foot);
 
   // 5) Copia de seguridad: exportar → borrar → importar recupera exactamente el estado.
   await seedState(page, { v: 2, goal: 10 });

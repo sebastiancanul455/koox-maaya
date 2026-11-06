@@ -14,7 +14,7 @@ lo simple primero · sin cuentas, sin rastreo y sin servidor.
 - [x] Exportar e importar el progreso (sirve entre el sitio y claude.ai)
 - [x] Unidad 7 con tono de vida diaria
 - [x] Integración continua (`.github/workflows/ci.yml`)
-- [ ] Archivo LICENSE (decisión pendiente: código, texto del curso y audios)
+- [x] Archivo LICENSE: código MIT, texto del curso CC BY-SA 4.0 y audios con su licencia ([`docs/LICENCIAS.md`](LICENCIAS.md))
 
 ## Fase 1 · La voz de un hablante nativo
 - [ ] Voz nativa en las unidades 1 a 3 y pares mínimos (vocal larga, tono, saltillo, glotalizadas)

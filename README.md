@@ -15,6 +15,15 @@ de 2014. *Ko'ox* significa «¡vamos!».
 > **Uso no comercial.** La app incluye audios de voz sintética generados con un modelo de licencia
 > CC BY-NC 4.0, así que Ko'ox Maaya y esos audios son de uso no comercial (ver [Audio](#audio)).
 
+## Licencias
+
+- **Código:** [MIT](LICENSE).
+- **Texto del curso** (lecciones, ejercicios, diálogos, guías, glosario): [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.es).
+- **Audio:** la licencia de cada archivo ([`audio/CREDITOS.md`](audio/CREDITOS.md)); la voz sintética es
+  CC BY-NC 4.0 (uso no comercial) y cada hablante elige la suya.
+
+Detalles y excepciones en [`docs/LICENCIAS.md`](docs/LICENCIAS.md).
+
 ## Novedades de la v5.2
 
 - **Repaso inteligente (FSRS-6).** El repaso usa FSRS-6 (adaptado de [ts-fsrs](https://github.com/open-spaced-repetition/ts-fsrs), MIT)

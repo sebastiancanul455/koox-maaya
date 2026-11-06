@@ -1,13 +1,15 @@
 /* Ko'ox Maaya · Logros «Puedo…»: lo que ya puedes hacer al terminar cada unidad.
    La insignia de una unidad se abre cuando todas sus lecciones están completas y su «Repaso de la unidad»
    se aprueba con 80 % o más (la regla vive en src/modules/logros.js).
+   Las unidades nuevas pueden agregar el suyo al final de su propio archivo:
+   (window.COURSE_CANDO = window.COURSE_CANDO || {}).u10 = { can: [ {t:"Puedo …", ex:"<vocabId>"}, … ] };
    Cada enunciado tiene que ser verdadero respecto a lo que la unidad enseña de verdad (sus metas y su
    vocabulario): no prometas lo que no está. Si la unidad solo enseña a reconocer, di «reconocer».
      · t: el enunciado, en español claro. Aquí no se escribe maya nuevo.
      · ex (opcional): id de una palabra de ESA unidad, con confianza «alta». La app muestra su forma maya y su
        traducción tal como están en el curso, así que el maya nunca se copia a este archivo.
    test/logros.cjs comprueba que hay 3 enunciados por unidad, que cada ex existe y que nada contradice al curso. */
-window.COURSE_CANDO = {
+window.COURSE_CANDO = Object.assign(window.COURSE_CANDO || {}, {
   u1: {
     can: [
       { t: "Puedo reconocer las cinco formas de cada vocal y distinguir palabras que solo cambian en la vocal.", ex: "u1-chich" },
@@ -71,4 +73,4 @@ window.COURSE_CANDO = {
       { t: "Puedo reconocer palabras de los días de muertos, los relatos y la música, y despedir a una visita con las fórmulas tradicionales.", ex: "u9-janal-pixan" }
     ]
   }
-};
+});

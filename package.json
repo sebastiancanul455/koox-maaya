@@ -1,6 +1,7 @@
 {
   "name": "koox-maaya",
   "private": true,
+  "license": "MIT",
   "description": "App web para aprender maya yucateco desde el español",
   "engines": {
     "node": ">=18"

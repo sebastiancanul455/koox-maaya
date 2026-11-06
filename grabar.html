@@ -69,6 +69,7 @@ body {
   padding: 0 var(--gut-r) 32px var(--gut-l); -webkit-tap-highlight-color: transparent;
 }
 body.with-panel { padding-bottom: calc(var(--panel-h, 270px) + 20px); }
+body.with-sbar { padding-bottom: calc(var(--sbar-h, 250px) + 20px); }
 .app { max-width: var(--col); margin: 0 auto; min-width: 0; }
 h1, h2, h3 { font-family: var(--display); line-height: 1.12; margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
 h1 { font-size: var(--fs-2xl); font-weight: 800; }
@@ -161,6 +162,26 @@ legend { padding: 0; margin-bottom: 4px; font-weight: 700; }
 }
 .consent input { width: 28px; height: 28px; margin: 0; accent-color: var(--yaax); }
 .consent .t { font-weight: 700; }
+
+/* ---------- Modo acompañado (interruptor) y permisos por capas ---------- */
+.switch { position: relative; display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 14px; align-items: center; cursor: pointer; min-height: 56px; }
+.switch input { position: absolute; z-index: 1; left: 0; top: 50%; width: 56px; height: 32px; margin: -16px 0 0; opacity: 0; cursor: pointer; }
+.sw-track { position: relative; width: 56px; height: 32px; border-radius: 99px; background: var(--bg-2); border: 2px solid var(--field-border); transition: background-color .15s ease, border-color .15s ease; }
+.sw-track i { position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 50%; background: var(--field-border); transition: transform .15s ease, background-color .15s ease; }
+.switch input:checked + .sw-track { background: var(--yaax); border-color: var(--yaax); }
+.switch input:checked + .sw-track i { transform: translateX(24px); background: var(--on-accent); }
+.switch input:focus-visible + .sw-track { outline: 3px solid var(--focus); outline-offset: 2px; }
+.sw-txt { min-width: 0; }
+.sw-txt .t { display: block; font-weight: 700; font-size: var(--fs-md); }
+.sw-txt .d { display: block; font-size: var(--fs-sm); color: var(--muted); margin-top: 2px; }
+.layer { display: flex; flex-direction: column; gap: 10px; padding-top: 16px; margin-top: 4px; border-top: 1px solid var(--line); min-width: 0; }
+.layer-h { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 10px; }
+.layer-h .n { flex: none; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--yaax-soft); color: var(--yaax-ink); font-weight: 800; font-size: var(--fs-sm); }
+.pill { font-size: var(--fs-xs); font-weight: 700; padding: 1px 8px; border-radius: 99px; background: var(--bg-2); color: var(--muted); white-space: nowrap; }
+.pill.req { background: var(--kan-soft); color: var(--kan-ink); }
+.sum { display: flex; flex-direction: column; gap: 2px; padding: 12px 14px; border-radius: var(--r); background: var(--yaax-soft); font-size: var(--fs-sm); overflow-wrap: anywhere; }
+.sum b { color: var(--yaax-ink); }
+.who-btns { display: flex; flex-wrap: wrap; justify-content: flex-end; }
 
 /* ---------- Botones ---------- */
 .btn {
@@ -271,6 +292,39 @@ legend { padding: 0; margin-bottom: 4px; font-weight: 700; }
 .ctl.play[data-state="playing"] .disc { background: var(--yaax-soft); color: var(--yaax-ink); }
 .ctl.next .disc { background: var(--yaax-soft); color: var(--yaax-ink); }
 
+/* ---------- Modo acompañado: una palabra a la vez ---------- */
+.ses-card { background: var(--surface-hi); border: 2px solid var(--yaax); border-radius: var(--r-lg); padding: 20px 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.ses-es { font-family: var(--display); font-weight: 800; font-size: 2.1rem; line-height: 1.12; color: var(--yaax-ink); overflow-wrap: anywhere; text-wrap: balance; }
+.ses-es.long { font-size: 1.6rem; }
+.ses-ex { color: var(--fg); font-size: var(--fs-md); overflow-wrap: anywhere; }
+.reveal-box { padding: 12px 14px; border-radius: var(--r); background: var(--kan-soft); color: var(--kan-ink); display: flex; flex-direction: column; gap: 2px; }
+.ses-m { font-family: var(--display); font-weight: 800; font-size: 1.7rem; line-height: 1.15; overflow-wrap: anywhere; }
+.break { padding: 14px 16px; border-radius: var(--r-lg); border: 2px solid var(--kan); background: var(--kan-soft); color: var(--kan-ink); display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.break .t { font-family: var(--display); font-weight: 800; font-size: var(--fs-lg); }
+.sbar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 8; background: var(--surface); border-top: 1px solid var(--line);
+  border-radius: 22px 22px 0 0; box-shadow: var(--shadow-up);
+  padding: 10px var(--gut-r) calc(10px + env(safe-area-inset-bottom, 0px)) var(--gut-l);
+}
+.sbar-in { max-width: var(--col); margin: 0 auto; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.s-meter { display: flex; align-items: center; gap: 10px; min-height: 20px; }
+.sbtn {
+  width: 100%; min-height: 68px; padding: 10px 20px; border-radius: 999px; border: 2px solid transparent; background: var(--yaax); color: var(--on-accent);
+  display: flex; align-items: center; justify-content: center; gap: 12px; font-family: var(--display); font-weight: 800; font-size: 1.3rem; line-height: 1.1;
+  transition: transform .12s ease, background-color .15s ease;
+}
+.sbtn svg { width: 28px; height: 28px; }
+.sbtn:active:not(:disabled) { transform: translateY(1px) scale(.99); }
+.sbtn:disabled { background: var(--bg-2); color: var(--muted); border-color: var(--line); }
+.sbtn.rec[data-state="recording"] { background-color: var(--bad); background-image: linear-gradient(90deg, rgba(0, 0, 0, .22) calc(var(--p, 0) * 100%), transparent 0); }
+.sbtn.rec[data-state="busy"] { opacity: .7; }
+/* Un instante después de grabar, detener o pasar de elemento, los botones del lugar principal no reciben toques:
+   así un doble toque sin querer no empieza otra grabación ni salta lo que se acaba de grabar. */
+.sbar.settling #s-rec, .sbar.settling #s-next, .sbar.settling #s-skip { pointer-events: none; }
+.s-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.s-row .btn { min-height: 52px; padding-inline: 10px; }
+.s-row .full { grid-column: 1 / -1; }
+
 /* ---------- Enviar ---------- */
 .ready { display: flex; flex-direction: column; gap: 10px; }
 .file-line { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: var(--r); background: var(--ok-soft); color: var(--ok-ink); font-weight: 700; overflow-wrap: anywhere; min-width: 0; }
@@ -285,11 +339,18 @@ legend { padding: 0; margin-bottom: 4px; font-weight: 700; }
 .foot { font-size: var(--fs-xs); color: var(--muted); padding-top: 4px; }
 
 @media (max-width: 370px) {
+  .ses-es { font-size: 1.8rem; }
+  .ses-es.long { font-size: 1.4rem; }
+  .sbtn { font-size: 1.15rem; min-height: 62px; }
   .p-m { font-size: 1.55rem; }
   .p-m.long { font-size: 1.25rem; }
   .ctl .disc { width: 50px; height: 50px; }
   .ctl.rec .disc { width: 72px; height: 72px; }
   .step { font-size: 0.82rem; gap: 4px; }
+}
+@media (max-height: 520px) {
+  .sbar { position: static; margin: 12px var(--gut-r) 24px var(--gut-l); border: 1px solid var(--line); border-radius: var(--r-lg); box-shadow: none; }
+  body.with-sbar { padding-bottom: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
@@ -315,13 +376,32 @@ legend { padding: 0; margin-bottom: 4px; font-weight: 700; }
   </nav>
 
   <main id="main" hidden>
-    <!-- Paso 1: presentación, datos, licencia y consentimiento -->
+    <!-- Paso 1: presentación, permisos por capas y consentimiento -->
     <section class="view" id="v-intro" aria-labelledby="intro-title">
       <header class="head">
         <p class="eyebrow">Para hablantes de maya yucateco</p>
         <h1 id="intro-title" tabindex="-1">Graba cómo se dice</h1>
         <p class="lead">Con tu voz, quienes aprenden maya con Ko'ox Maaya podrán escuchar cómo se dicen las palabras y frases del curso. Aquí las grabas una por una, desde tu celular.</p>
       </header>
+
+      <div class="card">
+        <label class="switch" for="f-assist">
+          <input type="checkbox" role="switch" id="f-assist" aria-describedby="f-assist-d">
+          <span class="sw-track" aria-hidden="true"><i></i></span>
+          <span class="sw-txt"><span class="t">Alguien me ayuda (modo acompañado)</span><span class="d" id="f-assist-d">Actívalo si una persona va a hablar y otra maneja el celular. Quien ayuda ve el significado en español, y la palabra maya queda oculta hasta después de grabar.</span></span>
+        </label>
+        <p class="small"><a href="https://github.com/sebastiancanul455/koox-maaya/blob/main/docs/GRABAR.md" target="_blank" rel="noopener">Guía para grabar a una persona mayor con ayuda de un familiar</a></p>
+      </div>
+      <div class="card kan" id="assist-help" hidden>
+        <h2>Para quien acompaña</h2>
+        <ul class="tips">
+          <li>Tú manejas el celular; quien graba solo habla. <b>Lo que decida quien graba, manda.</b></li>
+          <li>Lean juntos, en voz alta, los permisos de abajo y marquen solo lo que decida quien graba.</li>
+          <li>Verás el significado en español de cada palabra. La palabra maya queda oculta: no se la enseñes antes de grabar.</li>
+          <li>Si dice otra forma, no la corrijas: anótala en «El hablante dijo otra forma».</li>
+          <li>Cada 10 minutos la página sugiere una pausa. Pueden parar cuando quieran.</li>
+        </ul>
+      </div>
 
       <div class="facts" aria-label="Cuánto toma">
         <p class="fact"><b id="f-total">0</b><span>palabras, frases y letras</span></p>
@@ -332,7 +412,7 @@ legend { padding: 0; margin-bottom: 4px; font-weight: 700; }
       <div class="card">
         <h2>Cómo funciona</h2>
         <ol class="howto">
-          <li>Escribe tus datos (si quieres), elige la licencia y acepta el consentimiento.</li>
+          <li>Decide tus permisos (qué se publica, con qué licencia y si sale tu nombre) y marca el permiso para publicar.</li>
           <li>Toca una palabra y graba. No hace falta grabarlas todas: <b>cada una ayuda</b>. Puedes parar y seguir otro día; se guarda en este teléfono.</li>
           <li>Cuando quieras, crea el archivo y envíalo por WhatsApp, correo o Drive a quien te invitó.</li>
         </ol>
@@ -355,48 +435,96 @@ legend { padding: 0; margin-bottom: 4px; font-weight: 700; }
       </div>
 
       <form class="card" id="profile-form" novalidate>
-        <h2>Tus datos <span class="muted small">(opcionales)</span></h2>
-        <div class="field">
-          <label for="f-speaker">Nombre o seudónimo para el crédito</label>
-          <input type="text" id="f-speaker" autocomplete="nickname" maxlength="80" aria-describedby="f-speaker-h">
-          <p class="hint" id="f-speaker-h">Así aparecerá en los créditos de la app. Si lo dejas vacío, saldrá «Hablante anónimo».</p>
+        <h2>Tus permisos</h2>
+        <p class="hint">Estas decisiones son de quien va a grabar. Si alguien te ayuda, léanlas juntos en voz alta y marquen solo lo que tú decidas. Puedes cambiarlas cuando quieras.</p>
+
+        <div class="layer" aria-labelledby="l1-t" role="group">
+          <div class="layer-h"><span class="n" aria-hidden="true">1</span><h3 id="l1-t">Publicar mis grabaciones</h3><span class="pill req">Necesario</span></div>
+          <label class="consent" for="f-consent">
+            <input type="checkbox" id="f-consent" aria-labelledby="consent-text" aria-describedby="f-consent-h">
+            <span>
+              <span class="t" id="consent-text">Acepto que mis grabaciones se publiquen en la app Ko'ox Maaya, con la licencia y el crédito que elijo en este formulario.</span>
+              <span class="hint" id="f-consent-h" style="display:block;margin-top:4px">Es lo único obligatorio. Mientras no envíes el archivo, nada sale de tu teléfono.</span>
+            </span>
+          </label>
         </div>
-        <div class="field">
-          <label for="f-region">Comunidad o municipio</label>
-          <input type="text" id="f-region" autocomplete="off" maxlength="80" aria-describedby="f-region-h">
-          <p class="hint" id="f-region-h">Ayuda a saber de qué región es la pronunciación. Por ejemplo: Peto, Valladolid, Hopelchén.</p>
+
+        <div class="layer" aria-labelledby="l2-t" role="group">
+          <div class="layer-h"><span class="n" aria-hidden="true">2</span><h3 id="l2-t">Licencia</h3></div>
+          <p class="hint">Dice qué pueden hacer otras personas con tus grabaciones. Con una licencia abierta (CC), cualquiera podrá usarlas, también para entrenar IA.</p>
+          <div id="f-license" role="radiogroup" aria-labelledby="l2-t" style="display:flex;flex-direction:column;gap:8px">
+            <label class="opt">
+              <input type="radio" name="license" value="Solo para Ko'ox Maaya" checked>
+              <span class="t">Solo para Ko'ox Maaya (no es licencia abierta)</span>
+              <span class="d">Tus grabaciones se usan solo dentro de Ko'ox Maaya, con tu crédito. Nadie más puede reutilizarlas sin pedirte permiso. <a href="https://github.com/sebastiancanul455/koox-maaya/blob/main/docs/PERMISO-VOCES.md" target="_blank" rel="noopener">Leer los términos</a></span>
+            </label>
+            <label class="opt">
+              <input type="radio" name="license" value="CC BY-SA 4.0">
+              <span class="t">CC BY-SA 4.0</span>
+              <span class="d">Cualquiera puede usarlas y compartirlas si te da crédito y comparte igual. <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es" target="_blank" rel="noopener">Leer la licencia</a></span>
+            </label>
+            <label class="opt">
+              <input type="radio" name="license" value="CC BY 4.0">
+              <span class="t">CC BY 4.0</span>
+              <span class="d">Cualquiera puede usarlas y compartirlas si te da crédito. <a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank" rel="noopener">Leer la licencia</a></span>
+            </label>
+            <label class="opt">
+              <input type="radio" name="license" value="CC0 1.0">
+              <span class="t">CC0 1.0 (dominio público)</span>
+              <span class="d">Las regalas: cualquiera puede usarlas para lo que sea, sin pedirte permiso ni darte crédito. <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.es" target="_blank" rel="noopener">Leer la licencia</a></span>
+            </label>
+          </div>
         </div>
 
-        <fieldset id="f-license">
-          <legend>Licencia de tus grabaciones</legend>
-          <p class="hint">Dice qué pueden hacer otras personas con tus grabaciones.</p>
+        <div class="layer" aria-labelledby="l3-t" role="group">
+          <div class="layer-h"><span class="n" aria-hidden="true">3</span><h3 id="l3-t">Inteligencia artificial</h3><span class="pill">Opcional</span></div>
           <label class="opt">
-            <input type="radio" name="license" value="CC BY-SA 4.0" checked>
-            <span class="t">CC BY-SA 4.0<small>Recomendada</small></span>
-            <span class="d">Cualquiera puede usarlas, compartirlas y adaptarlas, siempre que <b>te dé crédito</b> y comparta lo que haga <b>con esta misma licencia</b>. <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es" target="_blank" rel="noopener">Leer la licencia</a></span>
+            <input type="checkbox" id="f-ai">
+            <span class="t">Autorizo usar mis grabaciones para entrenar o evaluar modelos de IA del proyecto</span>
+            <span class="d">Empieza sin marcar. Si no la marcas, tus grabaciones no se usan para eso. Con una licencia CC, cualquiera podría usarlas para eso de todos modos.</span>
           </label>
-          <label class="opt">
-            <input type="radio" name="license" value="CC BY 4.0">
-            <span class="t">CC BY 4.0</span>
-            <span class="d">Cualquiera puede usarlas, compartirlas y adaptarlas, siempre que <b>te dé crédito</b>. <a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank" rel="noopener">Leer la licencia</a></span>
-          </label>
-          <label class="opt">
-            <input type="radio" name="license" value="CC0 1.0">
-            <span class="t">CC0 1.0 (dominio público)</span>
-            <span class="d">Las regalas a todos: cualquiera puede usarlas para lo que sea, <b>sin tener que darte crédito</b> (Ko'ox Maaya igual pondrá tu nombre si lo escribiste). <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.es" target="_blank" rel="noopener">Leer la licencia</a></span>
-          </label>
-        </fieldset>
+        </div>
 
-        <label class="consent" for="f-consent">
-          <input type="checkbox" id="f-consent" aria-labelledby="consent-text" aria-describedby="f-consent-h">
-          <span>
-            <span class="t" id="consent-text">Acepto que mis grabaciones se publiquen en la app Ko'ox Maaya con esta licencia y con el crédito indicado.</span>
-            <span class="hint" id="f-consent-h" style="display:block;margin-top:4px">Licencia elegida: <b id="consent-lic">CC BY-SA 4.0</b> · crédito: <b id="consent-credit">Hablante anónimo</b>. Mientras no envíes el archivo, nada sale de tu teléfono.</span>
-          </span>
-        </label>
+        <div class="layer" aria-labelledby="l4-t" role="group">
+          <div class="layer-h"><span class="n" aria-hidden="true">4</span><h3 id="l4-t">Cómo quiero aparecer</h3></div>
+          <div id="f-credit" role="radiogroup" aria-labelledby="l4-t" style="display:flex;flex-direction:column;gap:8px">
+            <label class="opt">
+              <input type="radio" name="credit" value="nombre">
+              <span class="t">Con mi nombre</span>
+              <span class="d">Mi nombre sale en los créditos de la app.</span>
+            </label>
+            <label class="opt">
+              <input type="radio" name="credit" value="seudónimo">
+              <span class="t">Con un seudónimo</span>
+              <span class="d">Sale el nombre inventado que escriba.</span>
+            </label>
+            <label class="opt">
+              <input type="radio" name="credit" value="anónimo" checked>
+              <span class="t">Sin nombre</span>
+              <span class="d">Sale «Hablante anónimo».</span>
+            </label>
+          </div>
+          <div class="field" id="f-name-field" hidden>
+            <label for="f-speaker" id="f-speaker-l">Mi nombre</label>
+            <input type="text" id="f-speaker" autocomplete="nickname" maxlength="80" aria-describedby="f-speaker-h">
+            <p class="hint" id="f-speaker-h">Así saldrá en los créditos de la app.</p>
+          </div>
+          <div class="field">
+            <label for="f-region">Comunidad o pueblo (opcional)</label>
+            <input type="text" id="f-region" autocomplete="off" maxlength="80" aria-describedby="f-region-h">
+            <p class="hint" id="f-region-h">Sirve para saber de qué región es esta forma de hablar. Por ejemplo: Peto, Valladolid, Hopelchén.</p>
+          </div>
+        </div>
 
+        <div class="layer" aria-labelledby="l5-t" role="group">
+          <div class="layer-h"><span class="n" aria-hidden="true">5</span><h3 id="l5-t">Retirar mi voz</h3></div>
+          <p><b>Puedo pedir que se retire mi voz cuando quiera.</b></p>
+          <p class="hint">Basta con avisar a quien me invitó a grabar o a quien mantiene Ko'ox Maaya. <a href="https://github.com/sebastiancanul455/koox-maaya/blob/main/docs/PERMISO-VOCES.md" target="_blank" rel="noopener">Ver los términos completos</a></p>
+        </div>
+
+        <div class="sum" id="perm-sum" role="group" aria-label="Resumen de tus decisiones"></div>
         <button class="btn primary wide" type="submit" id="btn-start" disabled>Empezar a grabar</button>
-        <p class="hint" id="start-hint" aria-live="polite">Para empezar, marca la casilla de consentimiento.</p>
+        <p class="hint" id="start-hint" aria-live="polite">Para empezar, marca el permiso para publicar (el número 1).</p>
       </form>
       <p class="foot">Ko'ox Maaya es una app experimental para aprender maya yucateco. Tus grabaciones ayudan a que se escuche la pronunciación real. ¡Dios bo'otik!</p>
     </section>
@@ -412,7 +540,7 @@ legend { padding: 0; margin-bottom: 4px; font-weight: 700; }
         <p><span class="big" id="prog-big">0 de 0</span> <span class="muted">grabadas</span></p>
         <div class="bar" aria-hidden="true"><i id="prog-bar"></i></div>
         <p class="small muted" id="prog-sub"></p>
-        <div class="who"><span id="who-line"></span><button class="btn text" type="button" id="btn-edit">Cambiar datos</button></div>
+        <div class="who"><span id="who-line"></span><span class="who-btns"><button class="btn text" type="button" id="btn-assist-on">Modo acompañado</button><button class="btn text" type="button" id="btn-edit">Cambiar datos</button></span></div>
       </div>
       <div class="chips" id="unit-chips" role="group" aria-label="Sección del curso"></div>
       <div class="seg" id="status-seg" role="group" aria-label="Mostrar">
@@ -425,6 +553,51 @@ legend { padding: 0; margin-bottom: 4px; font-weight: 700; }
       <div class="empty" id="list-empty" hidden>
         <p id="list-empty-text"></p>
         <button class="btn tonal" type="button" id="btn-empty-send">Enviar mis grabaciones</button>
+      </div>
+    </section>
+
+    <!-- Paso 2 (modo acompañado): una palabra a la vez -->
+    <section class="view" id="v-session" aria-labelledby="ses-title" hidden>
+      <header class="head">
+        <p class="eyebrow">Modo acompañado</p>
+        <h1 id="ses-title" tabindex="-1">Pregúntale cómo se dice</h1>
+      </header>
+      <div class="card progress">
+        <p><span class="big" id="ses-big">0 de 0</span> <span class="muted">grabadas</span></p>
+        <div class="bar" aria-hidden="true"><i id="ses-bar"></i></div>
+        <button class="btn tonal wide" type="button" id="ses-finish">Terminar y exportar</button>
+      </div>
+      <div class="break" id="ses-break" role="status" hidden>
+        <p class="t">¿Descansamos un momento?</p>
+        <p class="small">Ya llevan un buen rato. Tomen agua, platiquen y sigan cuando quieran.</p>
+        <button class="btn tonal" type="button" id="ses-break-ok">Seguir</button>
+      </div>
+      <article class="ses-card" id="ses-card" aria-labelledby="ses-es">
+        <p class="eyebrow" id="ses-kind">Palabra</p>
+        <p class="ses-es" id="ses-es" lang="es"></p>
+        <p class="ses-ex" id="ses-ex" lang="es" hidden></p>
+        <p class="small muted">Pídela con un objeto, una imagen o una situación, sin que la lea. Toca <b>Grabar</b> y, cuando diga «Grabando…», que la diga. No hables encima.</p>
+      </article>
+      <div class="card" id="ses-after" hidden>
+        <button class="btn tonal wide" type="button" id="ses-reveal" aria-expanded="false" aria-controls="ses-m-box">Ver cómo está en el curso</button>
+        <div class="reveal-box" id="ses-m-box" hidden>
+          <p class="small">Así está en el curso:</p>
+          <p class="ses-m" id="ses-m" lang="yua"></p>
+        </div>
+        <div class="field">
+          <label for="f-variant">El hablante dijo otra forma</label>
+          <input type="text" id="f-variant" maxlength="120" autocomplete="off" autocapitalize="none" spellcheck="false" enterkeyhint="done" aria-describedby="f-variant-h">
+          <p class="hint" id="f-variant-h">Solo si la dijo distinta de la del curso: escríbela como la oyes. Si es igual, déjalo vacío.</p>
+        </div>
+      </div>
+      <div class="card yaax" id="ses-end" hidden>
+        <h2>¡Terminamos por hoy!</h2>
+        <p id="ses-end-text"></p>
+        <button class="btn primary wide" type="button" id="ses-finish-2">Terminar y exportar</button>
+      </div>
+      <div class="btn-row">
+        <button class="btn text" type="button" id="btn-assist-off">Salir del modo acompañado</button>
+        <button class="btn text" type="button" id="ses-edit">Cambiar permisos</button>
       </div>
     </section>
 
@@ -499,6 +672,21 @@ legend { padding: 0; margin-bottom: 4px; font-weight: 700; }
       <button class="ctl play" type="button" id="btn-play" disabled><span class="disc"><svg class="ico fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg></span><span class="lbl">Escuchar</span></button>
       <button class="ctl rec" type="button" id="btn-rec" data-state="idle"><span class="disc"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg></span><span class="lbl">Grabar</span></button>
       <button class="ctl next" type="button" id="btn-next"><span class="disc"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5.5l6.5 6.5L9 18.5"/></svg></span><span class="lbl">Saltar</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- Controles del modo acompañado: fijos abajo, para usarse con una mano -->
+<div class="sbar" id="sbar" role="region" aria-label="Grabación" hidden>
+  <div class="sbar-in">
+    <div class="s-meter"><div class="meter" id="s-meter" aria-hidden="true"><i id="s-meter-i"></i></div><span class="p-time" id="s-time" aria-hidden="true"></span></div>
+    <p class="p-status" id="s-status" aria-live="polite"></p>
+    <button class="sbtn rec" type="button" id="s-rec" data-state="idle"><span class="slot" aria-hidden="true"></span><span class="lbl">Grabar</span></button>
+    <button class="sbtn" type="button" id="s-next" hidden><span class="lbl">Siguiente</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5.5l6.5 6.5L9 18.5"/></svg></button>
+    <div class="s-row" id="s-row">
+      <button class="btn tonal" type="button" id="s-play" hidden><svg class="ico fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg><span class="lbl">Escuchar</span></button>
+      <button class="btn ghost" type="button" id="s-redo" hidden><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 4v5h-5"/></svg><span class="lbl">Repetir toma</span></button>
+      <button class="btn ghost full" type="button" id="s-skip">Saltar</button>
     </div>
   </div>
 </div>
@@ -3365,7 +3553,7 @@ window.COURSE.guide = {
   id: "u7",
   n: 7,
   title: "Cuerpo y salud",
-  subtitle: "Partes del cuerpo, decir que estás enfermo o qué te duele, síntomas comunes y frases de cortesía para la clínica",
+  subtitle: "Partes del cuerpo, decir que estás enfermo o qué te duele, síntomas comunes y frases de cortesía con el médico",
   sources: [
     { title: "UADY – Diccionario maya, letra N (ni')", url: "https://www.mayas.uady.mx/diccionario/n_maya.html" },
     { title: "UADY – Diccionario maya, letra CH (chi', chi'ibal, chokwil)", url: "https://www.mayas.uady.mx/diccionario/ch_maya.html" },
@@ -3525,13 +3713,13 @@ window.COURSE.guide = {
     },
     {
       id: "u7l3",
-      title: "En la clínica: cortesía básica",
-      goal: "Al terminar podrás recibir a alguien con respeto en maya, pedirle que pase y se siente, y hacer preguntas sencillas, sabiendo hasta dónde llegan estas frases.",
+      title: "Con el médico: cortesía básica",
+      goal: "Al terminar podrás recibir a alguien con respeto en maya, pedirle que pase y se siente, y hacer preguntas sencillas sobre la comida y la medicina.",
       teach: [
         {
-          kind: "warn",
-          title: "No sustituyen a un intérprete",
-          html: "Estas frases sirven para saludar, recibir con respeto y acompañar. <b>No sustituyen a un intérprete ni a los materiales hechos para el personal de salud</b>, como el <i>Manual de frases médicas</i> (<span class=\"m\">U áanalte'il u tsikbalil ts'aak</span>), de Felipe de Jesús Castillo Tzec, que impulsaron el Indemaya y el Conalep Yucatán.<br>Para explicar un diagnóstico o un tratamiento, dar indicaciones o pedir un consentimiento, trabaja siempre con un intérprete. Este curso es experimental y no está validado para uso clínico."
+          kind: "tip",
+          title: "Para practicar con calma",
+          html: "Estas frases sirven para aprender y practicar con quien habla maya: saludar, recibir con respeto y mostrar interés. Si se trata de algo importante para tu salud, lo mejor es pedir ayuda a una persona intérprete.<br>Una fuente para curiosear: el <i>Manual de frases médicas</i> (<span class=\"m\">U áanalte'il u tsikbalil ts'aak</span>), de Felipe de Jesús Castillo Tzec, impulsado por el Indemaya y el Conalep Yucatán."
         },
         {
           kind: "text",
@@ -3546,7 +3734,7 @@ window.COURSE.guide = {
         {
           kind: "culture",
           title: "Escuchar es entender",
-          html: "El diccionario de la UADY traduce <span class=\"m\">u'ub</span> como «oír, escuchar, entender»: en una sola palabra, oír y comprender van juntos. Vale para cualquier consulta: escuchar con calma es la mejor manera de empezar."
+          html: "El diccionario de la UADY traduce <span class=\"m\">u'ub</span> como «oír, escuchar, entender»: en una sola palabra, oír y comprender van juntos. Vale para cualquier conversación: escuchar con calma es la mejor manera de empezar."
         }
       ],
       vocab: [
@@ -3560,7 +3748,7 @@ window.COURSE.guide = {
         { id: "u7-uub", m: "u'ub", es: "oír, escuchar; entender", pr: "u-ub", note: "Vocal rearticulada u'u.", conf: "alta" }
       ],
       dialogue: {
-        title: "En el consultorio (diálogo de práctica)",
+        title: "Una visita al médico (diálogo de práctica)",
         lines: [
           { who: "A", name: "Dra. Pat", m: "Bix a beel?", es: "¿Cómo está?" },
           { who: "B", name: "Don Felipe", m: "K'oja'anen.", es: "Estoy enfermo." },
@@ -3646,9 +3834,9 @@ window.COURSE.guide = {
           html: "Para preguntar, <span class=\"m\">wáaj</span> va después de la primera palabra, como en <span class=\"m\">K'oja'anech wáaj?</span>: <span class=\"m\">Yaj wáaj a pool?</span>, «¿te duele la cabeza?».<br><span class=\"m\">yaj</span> ya está confirmado en el diccionario de la UADY, y la construcción tiene apoyo en un artículo académico de la UADY. Pero las frases completas no las vimos escritas en una fuente académica: las de la cabeza y el estómago vienen de un material didáctico, y las demás las armamos con la regla. Por eso van «por confirmar»."
         },
         {
-          kind: "warn",
-          title: "Para acompañar, no para diagnosticar",
-          html: "Para el dolor de cabeza y el de muelas, los artículos de la UADY usan además <span class=\"m\">chi'ibal</span>: lo verás en la lección siguiente, junto con la fiebre, la tos y el vómito.<br>Estas frases sirven para mostrar interés y cercanía, <b>no para hacer un diagnóstico</b>: para preguntar síntomas con precisión, trabaja con un intérprete."
+          kind: "tip",
+          title: "Otra palabra para el dolor",
+          html: "Para el dolor de cabeza y el de muelas, los artículos de la UADY usan además <span class=\"m\">chi'ibal</span>: lo verás en la lección siguiente, junto con la fiebre, la tos y el vómito.<br>Estas frases sirven para mostrar interés y cercanía cuando alguien no se siente bien, y para practicar con quien habla maya. Y para algo importante de salud, es mejor pedir ayuda a una persona intérprete."
         },
         {
           kind: "culture",
@@ -3711,9 +3899,9 @@ window.COURSE.guide = {
           html: "<span class=\"m\">chi'ibal</span> y <span class=\"m\">k'i'inam</span> llevan vocal rearticulada (i'i). Wikcionario y Glosbe escriben <i>k'iinam</i>, sin el corte, pero el diccionario de la UADY escribe <span class=\"m\">k'i'inam</span>.<br>Para «salud», el mismo diccionario da <span class=\"m\">toj óolal</span>, emparentada con <span class=\"m\">toj óol</span>, «sano», y con <span class=\"m\">óol</span>, el ánimo. Va «por confirmar» porque otras fuentes escriben <i>tooj</i>, con vocal larga, en frases parecidas."
         },
         {
-          kind: "warn",
-          title: "Vocabulario, no diagnóstico",
-          html: "Estas palabras te sirven para entender y acompañar. <b>No sustituyen a un intérprete</b>: para preguntar síntomas, explicar un tratamiento o pedir un consentimiento, trabaja con un intérprete o con material validado por hablantes. Este curso es experimental y no está validado para uso clínico."
+          kind: "tip",
+          title: "Palabras para el día a día",
+          html: "Estas palabras sirven para entender cuando alguien cuenta cómo se siente y para charlar sobre eso con quien habla maya. Y si se trata de algo importante de salud, una persona intérprete es la mejor ayuda."
         }
       ],
       vocab: [
@@ -4766,7 +4954,10 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
    - Graba con MediaRecorder, recorta el silencio del inicio y del final con WebAudio y guarda WAV mono de
      16 bits a 44.1 kHz en IndexedDB. Nada sale del teléfono hasta que la persona exporta el ZIP.
    - Exporta un ZIP sin compresión: grabaciones.json, LEEME.txt y wav/<key>.wav. Lo importa
-     tools/import-recordings.mjs. */
+     tools/import-recordings.mjs.
+   - Permisos por capas (publicar, licencia, uso para IA del proyecto, crédito y comunidad) y modo acompañado:
+     una palabra a la vez para quien graba a una persona que no lee la pantalla (significado en español, palabra
+     maya oculta hasta después de grabar y, si hace falta, la variante que dijo el hablante). */
 (function () {
   "use strict";
   var COURSE = window.COURSE;
@@ -4778,12 +4969,18 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
   var MAX_MS = 6000;              // límite de cada grabación
   var MIC_IDLE_MS = 90000;        // el micrófono se apaga solo tras este tiempo sin grabar
   var ANON = "Hablante anónimo";
-  var CONSENT_TEXT = "Acepto que mis grabaciones se publiquen en la app Ko'ox Maaya con esta licencia y con el crédito indicado.";
+  var OWN = "Solo para Ko'ox Maaya";     // permiso propio (docs/PERMISO-VOCES.md): no es una licencia abierta
+  var CONSENT_V = 2;                     // versión de los permisos: si cambia, se pide aceptarlos otra vez
+  var CONSENT_TEXT = "Acepto que mis grabaciones se publiquen en la app Ko'ox Maaya, con la licencia y el crédito que elijo en este formulario.";
   var LICENSES = {
+    "Solo para Ko'ox Maaya": "https://github.com/sebastiancanul455/koox-maaya/blob/main/docs/PERMISO-VOCES.md",
     "CC BY-SA 4.0": "https://creativecommons.org/licenses/by-sa/4.0/deed.es",
     "CC BY 4.0": "https://creativecommons.org/licenses/by/4.0/deed.es",
     "CC0 1.0": "https://creativecommons.org/publicdomain/zero/1.0/deed.es"
   };
+  var CREDITS = ["nombre", "seudónimo", "anónimo"];
+  var WITHDRAW_TEXT = "Puede pedir que se retire su voz cuando quiera.";
+  var BREAK_MS = 10 * 60 * 1000;         // pausa amable en el modo acompañado (no bloquea nada)
   var TYPE_LABEL = { letter: "Letra", vocab: "Palabra", example: "Frase de ejemplo" };
 
   // ---------------------------------------------------------------- Utilidades de texto
@@ -4819,7 +5016,7 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
       units.push({ id: u.id, n: u.n, title: u.title });
       (u.lessons || []).forEach(function (l) {
         (l.vocab || []).forEach(function (v) {
-          items.push({ type: "vocab", id: v.id, text: v.m, es: v.es, unit: u.id });
+          items.push({ type: "vocab", id: v.id, text: v.m, es: v.es, unit: u.id, exEs: v.ex && v.ex.es ? v.ex.es : "" });
           if (v.ex && v.ex.m) items.push({ type: "example", id: v.id, text: v.ex.m, es: v.ex.es, unit: u.id, parent: v.m });
         });
       });
@@ -4837,7 +5034,14 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
       if (!(it.unit in g.pos)) g.pos[it.unit] = i;
       g.units[it.unit] = true;
     });
-    groups.forEach(function (g) { g.home = g.items[0].unit; g.long = g.text.length > 18; });
+    groups.forEach(function (g) {
+      g.home = g.items[0].unit; g.long = g.text.length > 18;
+      g.exEs = ""; g.items.forEach(function (it) { if (!g.exEs && it.exEs) g.exEs = it.exEs; });
+      // Orden del curso para el modo acompañado: unidad 1 en adelante (las letras sin unidad, al final).
+      var inUnits = g.items.filter(function (it) { return it.unit !== "L"; });
+      g.uhome = inUnits.length ? inUnits[0].unit : "L";
+      g.ord = inUnits.length ? Math.min.apply(null, inUnits.map(function (it) { return it.i; })) : 1e6 + g.i;
+    });
   }
 
   // Audio que ya tiene la app (window.COURSE_AUDIO). Como el motor, una palabra o frase tiene audio si alguna
@@ -4946,14 +5150,30 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
   }
 
   // ---------------------------------------------------------------- Estado
+  // Permisos y datos de quien graba. Por omisión lo más cuidadoso: solo para Ko'ox Maaya, sin IA y sin nombre.
+  function newProfile() {
+    return { speaker: "", region: "", license: OWN, aiUse: false, credit: "anónimo", assisted: false,
+      consent: false, consentAt: null, consentV: CONSENT_V, speakerId: null };
+  }
   var S = {
-    profile: { speaker: "", region: "", license: "CC BY-SA 4.0", consent: false, consentAt: null, speakerId: null },
-    recs: new Map(),          // gk → metadatos (sin el audio)
+    profile: newProfile(),
+    recs: new Map(),          // gk → metadatos (sin el audio); variant = lo que el hablante dijo distinto del curso
     view: "intro", unit: "all", status: "pend", cur: null,
-    listOrder: [], exportBlob: null, exportName: "", exportGks: []
+    listOrder: [], exportBlob: null, exportName: "", exportGks: [],
+    skipped: {}, reveal: null, varGk: null, breakDue: false     // modo acompañado
   };
   var isMine = function (g) { return S.recs.has(g.gk); };
   var isPending = function (g) { return !isMine(g) && !g.covered; };
+  var assisted = function () { return !!S.profile.assisted; };
+  // Cómo sale de verdad en los créditos: «nombre» o «seudónimo» sin nada escrito cuenta como anónimo.
+  function creditOf(p) {
+    var c = CREDITS.indexOf(p.credit) >= 0 ? p.credit : "anónimo";
+    return c !== "anónimo" && !(p.speaker || "").trim() ? "anónimo" : c;
+  }
+  var speakerOf = function (p) { return creditOf(p) === "anónimo" ? "" : (p.speaker || "").trim(); };
+  var creditName = function (p) { return speakerOf(p) || ANON; };
+  // Puede grabar: dio el permiso de publicar y, si quiere nombre o seudónimo, lo escribió.
+  var ready = function (p) { p = p || S.profile; return !!p.consent && (p.credit === "anónimo" || !!(p.speaker || "").trim()); };
 
   function randomId() {
     var a = new Uint8Array(6);
@@ -4975,29 +5195,39 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
 
   // ---------------------------------------------------------------- Vistas
   function setView(v, focus) {
-    if ((v === "rec" || v === "send") && !S.profile.consent) v = "intro";
-    if (S.view === "rec" && v !== "rec") {
+    if ((v === "rec" || v === "send") && !ready()) v = "intro";
+    var prev = S.view, as = assisted();
+    if (prev === "rec" && as) commitVariant();
+    if (prev === "rec" && v !== "rec") {
       stopPlayback();
       if (R.state === "recording") stopRecording();
       if (R.state === "opening") R.state = "idle";
       releaseMic();
     }
     S.view = v;
-    ["intro", "rec", "send"].forEach(function (n) { $("#v-" + n).hidden = n !== v; });
+    $("#v-intro").hidden = v !== "intro";
+    $("#v-send").hidden = v !== "send";
+    $("#v-rec").hidden = !(v === "rec" && !as);
+    $("#v-session").hidden = !(v === "rec" && as);
     $$(".step").forEach(function (b) {
       var bv = b.getAttribute("data-view");
       if (bv === v) b.setAttribute("aria-current", "step"); else b.removeAttribute("aria-current");
-      var locked = bv !== "intro" && !S.profile.consent;
+      var locked = bv !== "intro" && !ready();
       if (locked) b.setAttribute("aria-disabled", "true"); else b.removeAttribute("aria-disabled");
     });
-    $("#panel").hidden = v !== "rec";
-    document.body.classList.toggle("with-panel", v === "rec");
-    if (v === "rec") { renderProgress(); renderList(); renderPanel(); }
+    $("#panel").hidden = !(v === "rec" && !as);
+    $("#sbar").hidden = !(v === "rec" && as);
+    document.body.classList.toggle("with-panel", v === "rec" && !as);
+    document.body.classList.toggle("with-sbar", v === "rec" && as);
+    if (v === "rec") {
+      if (as) { if (prev !== "rec" || !S.cur) startSession(); else renderSession(); }
+      else { renderProgress(); renderList(); renderPanel(); }
+    }
     if (v === "send") renderSend();
     if (v === "intro") renderIntro();
     if (focus !== false) {
       window.scrollTo(0, 0);
-      var h = $("#v-" + v + " h1");
+      var h = $(v === "rec" ? (as ? "#v-session h1" : "#v-rec h1") : "#v-" + v + " h1");
       if (h && focus) h.focus({ preventScroll: true });
     }
   }
@@ -5005,35 +5235,53 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
   // ---------------------------------------------------------------- Paso 1
   function renderIntro() {
     var p = S.profile;
+    $("#f-assist").checked = !!p.assisted;
     $("#f-speaker").value = p.speaker || "";
     $("#f-region").value = p.region || "";
     $$("#f-license input").forEach(function (r) { r.checked = r.value === p.license; });
+    $$("#f-credit input").forEach(function (r) { r.checked = r.value === p.credit; });
+    $("#f-ai").checked = !!p.aiUse;
     $("#f-consent").checked = !!p.consent;
     updateConsentUI();
   }
   function updateConsentUI() {
-    var p = S.profile;
-    $("#consent-lic").textContent = p.license;
-    $("#consent-credit").textContent = (p.speaker || "").trim() || ANON;
-    $("#btn-start").disabled = !p.consent;
+    var p = S.profile, ok = ready(p), region = (p.region || "").trim();
+    $("#assist-help").hidden = !p.assisted;
+    $("#f-name-field").hidden = p.credit === "anónimo";
+    $("#f-speaker-l").textContent = p.credit === "seudónimo" ? "Mi seudónimo" : "Mi nombre";
+    $("#f-speaker-h").textContent = p.credit === "seudónimo" ? "El nombre inventado que saldrá en los créditos de la app." : "Así saldrá en los créditos de la app.";
+    $("#perm-sum").innerHTML =
+      "<span>Licencia: <b>" + esc(p.license) + "</b></span>" +
+      "<span>Uso para IA del proyecto: <b>" + (p.aiUse ? "sí" : "no") + "</b></span>" +
+      "<span>Crédito: <b>" + esc(creditName(p)) + "</b></span>" +
+      (region ? "<span>Comunidad: <b>" + esc(region) + "</b></span>" : "");
+    $("#btn-start").disabled = !ok;
     $("#btn-start").textContent = S.recs.size ? "Seguir grabando" : "Empezar a grabar";
-    $("#start-hint").textContent = p.consent ? "" : "Para empezar, marca la casilla de consentimiento.";
-    $("#start-hint").hidden = !!p.consent;
+    var hint = !p.consent ? "Para empezar, marca el permiso para publicar (el número 1)." :
+      !ok ? "Escribe el nombre o el seudónimo que quieres que salga, o elige «Sin nombre»." : "";
+    $("#start-hint").textContent = hint;
+    $("#start-hint").hidden = !hint;
     $$(".step").forEach(function (b) {
       if (b.getAttribute("data-view") !== "intro") {
-        if (p.consent) b.removeAttribute("aria-disabled"); else b.setAttribute("aria-disabled", "true");
+        if (ok) b.removeAttribute("aria-disabled"); else b.setAttribute("aria-disabled", "true");
       }
     });
   }
   function bindIntro() {
+    $("#f-assist").addEventListener("change", function () { S.profile.assisted = this.checked; updateConsentUI(); saveProfile(true); });
     $("#f-speaker").addEventListener("input", function () { S.profile.speaker = this.value; updateConsentUI(); saveProfile(); });
-    $("#f-region").addEventListener("input", function () { S.profile.region = this.value; saveProfile(); });
+    $("#f-region").addEventListener("input", function () { S.profile.region = this.value; updateConsentUI(); saveProfile(); });
+    $$("#f-credit input").forEach(function (r) {
+      r.addEventListener("change", function () { if (this.checked) { S.profile.credit = this.value; updateConsentUI(); saveProfile(true); } });
+    });
     $$("#f-license input").forEach(function (r) {
       r.addEventListener("change", function () { if (this.checked) { S.profile.license = this.value; updateConsentUI(); saveProfile(true); } });
     });
+    $("#f-ai").addEventListener("change", function () { S.profile.aiUse = this.checked; updateConsentUI(); saveProfile(true); });
     $("#f-consent").addEventListener("change", function () {
       S.profile.consent = this.checked;
       S.profile.consentAt = this.checked ? new Date().toISOString() : null;
+      S.profile.consentV = CONSENT_V;
       if (!S.profile.speakerId) S.profile.speakerId = randomId();
       updateConsentUI(); saveProfile(true);
       if (this.checked) requestPersist();
@@ -5041,6 +5289,7 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
     $("#profile-form").addEventListener("submit", function (e) {
       e.preventDefault();
       if (!S.profile.consent) { $("#f-consent").focus(); return; }
+      if (!ready()) { $("#f-speaker").focus(); return; }
       saveProfile(true);
       setView("rec", true);
     });
@@ -5148,7 +5397,7 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
       (cov ? " · " + fmtNum(cov) + (cov === 1 ? " ya tiene" : " ya tienen") + " audio de otra persona (puedes grabar tu versión)." : ".")
       : "¡Grabaste todo lo que faltaba! Gracias.";
     var p = S.profile;
-    $("#who-line").textContent = "Crédito: " + ((p.speaker || "").trim() || ANON) + ((p.region || "").trim() ? " · " + p.region.trim() : "") + " · " + p.license;
+    $("#who-line").textContent = "Crédito: " + creditName(p) + ((p.region || "").trim() ? " · " + p.region.trim() : "") + " · " + p.license;
     var n = S.recs.size, c = $("#send-count");
     c.hidden = !n; c.textContent = fmtNum(n);
     var sb = document.querySelector('.step[data-view="send"]');
@@ -5203,12 +5452,20 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
   var R = { state: "idle", stream: null, ctx: null, src: null, analyser: null, buf: null, rec: null, chunks: [], mime: "",
     t0: 0, timer: 0, raf: 0, idle: 0, target: null, audio: null, audioUrl: null };
 
+  // Elementos que usa la grabadora: los del panel (modo normal) o los de la barra del modo acompañado.
+  var XN = null, XA = null;
+  function X() {
+    if (assisted()) return XA || (XA = { status: $("#s-status"), rec: $("#s-rec"), meter: $("#s-meter"), meterI: $("#s-meter-i"), time: $("#s-time") });
+    return XN || (XN = { status: $("#p-status"), rec: $("#btn-rec"), meter: $("#meter"), meterI: $("#meter-i"), time: $("#p-time") });
+  }
+  function resetProgress() { [$("#btn-rec"), $("#s-rec")].forEach(function (b) { b.style.setProperty("--p", "0"); }); }
   function setStatus(msg, kind) {
-    var s = $("#p-status");
+    var s = X().status;
     s.textContent = msg || "";
     s.className = "p-status" + (kind ? " " + kind : "");
   }
   function renderPanel() {
+    if (assisted()) { renderSession(); return; }
     var g = S.cur ? byGk.get(S.cur) : null;
     var has = !!g;
     $("#p-m").textContent = has ? g.text : "Nada que grabar aquí";
@@ -5226,7 +5483,7 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
     var rec = has ? S.recs.get(g.gk) : null;
     $("#btn-del").hidden = !rec || R.state !== "idle";
     var rb = $("#btn-rec");
-    rb.disabled = !has || !S.profile.consent || R.state === "busy" || R.state === "opening";
+    rb.disabled = !has || !ready() || R.state === "busy" || R.state === "opening";
     rb.setAttribute("data-state", R.state === "recording" ? "recording" : (R.state === "idle" ? "idle" : "busy"));
     rb.querySelector(".lbl").textContent = R.state === "recording" ? "Detener" : R.state === "idle" ? (rec ? "Otra vez" : "Grabar") : "Espera…";
     rb.querySelector(".disc").innerHTML = R.state === "recording"
@@ -5254,8 +5511,8 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
     updatePanelHeight();
   }
   function updatePanelHeight() {
-    var p = $("#panel");
-    if (!p.hidden) document.documentElement.style.setProperty("--panel-h", p.offsetHeight + "px");
+    var p = assisted() ? $("#sbar") : $("#panel");
+    if (!p.hidden) document.documentElement.style.setProperty(assisted() ? "--sbar-h" : "--panel-h", p.offsetHeight + "px");
   }
 
   function micError(e) {
@@ -5305,7 +5562,7 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
     if (R.src) { try { R.src.disconnect(); } catch (e) { /* ya estaba */ } }
     if (R.stream) R.stream.getTracks().forEach(function (t) { t.stop(); });
     R.stream = null; R.src = null; R.analyser = null;
-    $("#meter-i").style.transform = "scaleX(0)";
+    $("#meter-i").style.transform = "scaleX(0)"; $("#s-meter-i").style.transform = "scaleX(0)";
   }
   function armIdle() {
     clearTimeout(R.idle);
@@ -5320,12 +5577,13 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
       for (var i = 0; i < R.buf.length; i++) { var v = R.buf[i]; s += v * v; if (v > pk) pk = v; else if (-v > pk) pk = -v; }
       var db = 20 * Math.log10(Math.sqrt(s / R.buf.length) + 1e-9);
       var x = Math.max(0, Math.min(1, (db + 60) / 54));
-      $("#meter-i").style.transform = "scaleX(" + x.toFixed(3) + ")";
-      $("#meter").classList.toggle("hot", pk > 0.97);
+      var ui = X();
+      ui.meterI.style.transform = "scaleX(" + x.toFixed(3) + ")";
+      ui.meter.classList.toggle("hot", pk > 0.97);
       if (R.state === "recording") {
         var el = performance.now() - R.t0;
-        $("#p-time").textContent = fmtS(Math.min(el, MAX_MS)) + " / 6 s";
-        $("#btn-rec").style.setProperty("--p", Math.min(1, el / MAX_MS).toFixed(3));
+        ui.time.textContent = fmtS(Math.min(el, MAX_MS)) + " / 6 s";
+        ui.rec.style.setProperty("--p", Math.min(1, el / MAX_MS).toFixed(3));
       }
       R.raf = requestAnimationFrame(tick);
     };
@@ -5334,7 +5592,7 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
 
   function startRecording() {
     var g = S.cur && byGk.get(S.cur);
-    if (!g || !S.profile.consent || R.state !== "idle") return;
+    if (!g || !ready() || R.state !== "idle") return;
     stopPlayback();
     R.state = "opening"; R.target = g.gk;
     setStatus("Abriendo el micrófono…", "");
@@ -5351,17 +5609,19 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
       rec.onerror = function (e) { failRecording(micError(e && e.error)); };
       rec.onstart = function () {
         R.state = "recording"; R.t0 = performance.now();
+        if (assisted()) settle();
         clearTimeout(R.idle);
         R.timer = setTimeout(stopRecording, MAX_MS);
         if (!R.analyser) R.raf = 0;
-        setStatus("Grabando… di «" + g.text + "» y toca Detener.", "");
+        // En el modo acompañado no se muestra la palabra maya antes de grabar.
+        setStatus(assisted() ? "Grabando… cuando termine de hablar, toca Detener." : "Grabando… di «" + g.text + "» y toca Detener.", "");
         renderPanel();
         if (!R.analyser) {
           var tick = function () {
             if (R.state !== "recording") return;
-            var el = performance.now() - R.t0;
-            $("#p-time").textContent = fmtS(Math.min(el, MAX_MS)) + " / 6 s";
-            $("#btn-rec").style.setProperty("--p", Math.min(1, el / MAX_MS).toFixed(3));
+            var el = performance.now() - R.t0, ui = X();
+            ui.time.textContent = fmtS(Math.min(el, MAX_MS)) + " / 6 s";
+            ui.rec.style.setProperty("--p", Math.min(1, el / MAX_MS).toFixed(3));
             requestAnimationFrame(tick);
           };
           requestAnimationFrame(tick);
@@ -5383,7 +5643,7 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
   function failRecording(msg) {
     clearTimeout(R.timer);
     R.state = "idle"; R.rec = null;
-    $("#btn-rec").style.setProperty("--p", "0");
+    resetProgress();
     setStatus(msg, "bad");
     renderPanel();
   }
@@ -5392,23 +5652,24 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
     var blob = new Blob(R.chunks, { type: type });
     var gk = R.target, rawMs = R.rawMs || 0;
     R.rec = null; R.chunks = [];
-    $("#btn-rec").style.setProperty("--p", "0");
+    resetProgress();
     processBlob(blob).then(function (res) {
       if (!res) { failRecording("No se oyó la voz. Acerca un poco el celular y vuelve a intentar."); return; }
-      var g = byGk.get(gk);
+      var g = byGk.get(gk), prevRec = S.recs.get(gk);
       var meta = {
         gk: gk, text: g.text, file: g.file, durationMs: res.durationMs, rawMs: Math.round(rawMs), peakDb: res.peakDb,
-        mime: type, createdAt: new Date().toISOString(), sentAt: null,
+        mime: type, createdAt: new Date().toISOString(), sentAt: null, variant: prevRec && prevRec.variant ? prevRec.variant : null,
         items: g.items.map(function (it) { return { type: it.type, id: it.id, letter: it.letter, text: it.text, es: it.es }; })
       };
       return saveRec(meta, res.wav).then(function () {
         S.recs.set(gk, meta);
         S.exportBlob = null;
         R.state = "idle";
-        var hint = res.peakDb > -0.3 ? " Se oye saturada: aleja un poco el celular y grábala otra vez." :
+        var hint = res.peakDb > -0.3 ? " Se oye saturada: aleja un poco el celular y " + (assisted() ? "toca «Repetir toma»." : "grábala otra vez.") :
           res.rmsDb < -42 ? " Se oye bajita: acerca un poco el celular." : "";
         setStatus("Guardada (" + fmtS(res.durationMs) + ")." + hint, hint ? "bad" : "ok");
         renderPanel(); updateRow(g); renderProgress();
+        if (assisted()) settle();
         armIdle();
       }, function (e) {
         storageFailed(e);
@@ -5532,7 +5793,7 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
         renderPanel(); updateRow(g); renderProgress();
       }, storageFailed);
     });
-    if (window.ResizeObserver) new ResizeObserver(updatePanelHeight).observe($("#panel"));
+    if (window.ResizeObserver) { var ro = new ResizeObserver(updatePanelHeight); ro.observe($("#panel")); ro.observe($("#sbar")); }
     window.addEventListener("resize", updatePanelHeight);
     // Al salir de la página (o pasar a otra app) se apaga el micrófono.
     document.addEventListener("visibilitychange", function () {
@@ -5542,6 +5803,176 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
       setTimeout(function () { if (R.state === "idle") releaseMic(); }, 0);
     });
     window.addEventListener("pagehide", function () { releaseMic(); });
+  }
+
+  // ---------------------------------------------------------------- Modo acompañado: una palabra a la vez
+  // Para grabar a una persona que no lee la pantalla (un abuelo con un familiar que maneja el celular): quien
+  // ayuda ve el significado en español y el ejemplo en español; la palabra maya queda oculta hasta después de
+  // grabar («Ver cómo está en el curso») y puede anotar lo que el hablante dijo distinto (variant). Va un
+  // elemento a la vez: primero lo pendiente, en el orden del curso (unidad 1 en adelante); lo que solo tiene voz
+  // sintética sigue pendiente. «Saltar» deja el elemento para el final de la sesión, sin marcarlo.
+  var breakTimer = 0, breakMs = BREAK_MS, varTimer = 0, settleTimer = 0;
+  function settle() {
+    var b = $("#sbar");
+    b.classList.add("settling");
+    clearTimeout(settleTimer);
+    settleTimer = setTimeout(function () { b.classList.remove("settling"); }, 450);
+  }
+  var ICON_MIC = '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg>';
+  var ICON_STOP = '<svg class="ico fill" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="2"/></svg>';
+  function pendingOrder() {
+    var pend = groups.filter(isPending).sort(function (a, b) { return a.ord - b.ord; });
+    return pend.filter(function (g) { return !S.skipped[g.gk]; }).concat(pend.filter(function (g) { return S.skipped[g.gk]; }));
+  }
+  function nextPending(except) {
+    var o = pendingOrder().filter(function (g) { return g.gk !== except; });
+    return o.length ? o[0].gk : null;
+  }
+  // «N de M»: lo que ya grabó de lo que le toca grabar (lo que ya tiene la voz de otro hablante no cuenta).
+  function sessionTotals() {
+    var mine = 0, pend = 0;
+    groups.forEach(function (g) { if (isMine(g)) mine++; else if (!g.covered) pend++; });
+    return { done: mine, total: mine + pend };
+  }
+  function cleanVariant(v) {
+    return String(v || "").replace(/[’‘ʼ´`′ʻ‛ʹ＇]/g, "'").replace(/\s+/g, " ").trim().slice(0, 120);
+  }
+  // Guarda la variante escrita en el elemento que se está mostrando. Si cambia, lo ya enviado vuelve a ser «nuevo».
+  function commitVariant() {
+    clearTimeout(varTimer);
+    var g = S.varGk && byGk.get(S.varGk), rec = g && S.recs.get(g.gk);
+    if (!rec) return Promise.resolve();
+    var v = cleanVariant($("#f-variant").value);
+    if (v === (rec.variant || "")) return Promise.resolve();
+    rec.variant = v || null; rec.sentAt = null; S.exportBlob = null;
+    return dbPut("recs", g.gk, rec).catch(storageFailed);
+  }
+  function armBreak() {
+    clearTimeout(breakTimer);
+    breakTimer = setTimeout(function () { S.breakDue = true; renderSession(); }, breakMs);
+  }
+  function dismissBreak() { S.breakDue = false; armBreak(); renderSession(); }
+  function startSession() {
+    S.reveal = null; S.varGk = null;
+    S.cur = nextPending(null);
+    if (!breakTimer) armBreak();
+    renderSession();
+  }
+  function renderSession() {
+    if (!assisted() || S.view !== "rec") return;
+    var g = S.cur ? byGk.get(S.cur) : null, rec = g ? S.recs.get(g.gk) : null;
+    var idle = R.state === "idle", recording = R.state === "recording", t = sessionTotals();
+    $("#ses-big").textContent = fmtNum(t.done) + " de " + fmtNum(t.total);
+    $("#ses-bar").style.width = (t.total ? 100 * t.done / t.total : 0).toFixed(1) + "%";
+    $("#ses-finish").disabled = !S.recs.size || !idle;
+    $("#ses-finish-2").disabled = !S.recs.size;
+    $("#ses-break").hidden = !S.breakDue;
+    $("#ses-card").hidden = !g;
+    $("#ses-after").hidden = !g || !rec;
+    $("#ses-end").hidden = !!g;
+    $("#sbar").hidden = !g;
+    document.body.classList.toggle("with-sbar", !!g);
+    renderProgress();
+    if (!g) {
+      $("#ses-end-text").textContent = S.recs.size ? "Ya grabaron todo lo que faltaba. ¡Muchas gracias!" : "No hay nada pendiente por grabar.";
+      return;
+    }
+    var hasV = g.items.some(function (it) { return it.type === "vocab"; }), hasE = g.items.some(function (it) { return it.type === "example"; });
+    $("#ses-kind").textContent = (hasV ? "Palabra" : hasE ? "Frase" : "Palabra de ejemplo de una letra") + " · " + unitLabel(g.uhome);
+    $("#ses-es").textContent = g.es || "";
+    $("#ses-es").classList.toggle("long", (g.es || "").length > 26);
+    $("#ses-ex").textContent = g.exEs ? "Ejemplo: «" + g.exEs + "»" : "";
+    $("#ses-ex").hidden = !g.exEs;
+    // La palabra maya del curso solo existe en la página mientras se muestra.
+    var shown = !!rec && S.reveal === g.gk;
+    $("#ses-reveal").textContent = shown ? "Ocultar" : "Ver cómo está en el curso";
+    $("#ses-reveal").setAttribute("aria-expanded", String(shown));
+    $("#ses-m-box").hidden = !shown;
+    $("#ses-m").textContent = shown ? g.text : "";
+    if (S.varGk !== g.gk) { S.varGk = g.gk; $("#f-variant").value = (rec && rec.variant) || ""; }
+    // Barra de abajo: sin toma, un botón grande para grabar; con toma, «Siguiente» es el botón grande.
+    var rb = $("#s-rec");
+    rb.hidden = idle && !!rec;
+    rb.disabled = !ready() || R.state === "busy" || R.state === "opening";
+    rb.setAttribute("data-state", recording ? "recording" : (idle ? "idle" : "busy"));
+    rb.querySelector(".lbl").textContent = recording ? "Detener" : idle ? "Grabar" : "Espera…";
+    rb.querySelector(".slot").innerHTML = recording ? ICON_STOP : ICON_MIC;
+    $("#s-next").hidden = !(idle && rec);
+    $("#s-row").hidden = !idle;
+    var pb = $("#s-play");
+    pb.hidden = !(idle && rec);
+    pb.setAttribute("data-state", R.audio ? "playing" : "idle");
+    pb.querySelector(".lbl").textContent = R.audio ? "Parar" : "Escuchar";
+    $("#s-redo").hidden = !(idle && rec);
+    $("#s-skip").hidden = !(idle && !rec);
+    if (idle) {
+      $("#s-time").textContent = rec ? fmtS(rec.durationMs) : "";
+      var st = $("#s-status");
+      if (!st.classList.contains("bad") && !st.classList.contains("ok")) {
+        setStatus(rec ? "Quedó guardada. Escúchala o pasa a la siguiente." : R.stream ? "Micrófono listo." : "", "");
+      }
+    }
+    updatePanelHeight();
+  }
+  // «Siguiente» (con toma) y «Saltar» (sin toma): lo saltado sigue pendiente y vuelve al final de la sesión.
+  function goNext(skip) {
+    if (R.state !== "idle") return;
+    var g = S.cur && byGk.get(S.cur);
+    stopPlayback();
+    commitVariant().then(function () {
+      var nx = nextPending(g ? g.gk : null);
+      if (skip && g && !S.recs.has(g.gk)) {
+        if (!nx) { setStatus("Es la única que queda: grábala o termina por hoy.", ""); renderSession(); return; }
+        S.skipped[g.gk] = true;
+      }
+      setStatus("", "");
+      S.cur = nx; S.reveal = null;
+      renderSession();
+      settle();
+      window.scrollTo(0, 0);
+      var rb = $("#s-rec");
+      if (!rb.hidden && !rb.disabled) rb.focus({ preventScroll: true });
+    });
+  }
+  function finishSession() {
+    if (R.state !== "idle") return;
+    stopPlayback();
+    commitVariant().then(function () { setView("send", true); });
+  }
+  function setAssisted(on) {
+    if (R.state !== "idle") return;
+    stopPlayback();
+    commitVariant();
+    S.profile.assisted = !!on;
+    saveProfile(true);
+    if (on) { S.cur = null; S.reveal = null; S.varGk = null; }
+    else { clearTimeout(breakTimer); breakTimer = 0; S.breakDue = false; }
+    setView("rec", true);
+  }
+  function bindSession() {
+    $("#s-rec").addEventListener("click", function () {
+      if (R.state === "recording") stopRecording();
+      else if (R.state === "idle") startRecording();
+    });
+    $("#s-redo").addEventListener("click", function () { if (R.state === "idle") startRecording(); });
+    $("#s-play").addEventListener("click", togglePlay);
+    $("#s-next").addEventListener("click", function () { goNext(false); });
+    $("#s-skip").addEventListener("click", function () { goNext(true); });
+    $("#ses-reveal").addEventListener("click", function () {
+      var g = S.cur && byGk.get(S.cur);
+      if (!g) return;
+      S.reveal = S.reveal === g.gk ? null : g.gk;
+      renderSession();
+    });
+    $("#f-variant").addEventListener("input", function () { clearTimeout(varTimer); varTimer = setTimeout(commitVariant, 400); });
+    $("#f-variant").addEventListener("blur", commitVariant);
+    $("#f-variant").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); this.blur(); } });
+    $("#ses-break-ok").addEventListener("click", dismissBreak);
+    $("#ses-finish").addEventListener("click", finishSession);
+    $("#ses-finish-2").addEventListener("click", finishSession);
+    $("#btn-assist-on").addEventListener("click", function () { setAssisted(true); });
+    $("#btn-assist-off").addEventListener("click", function () { setAssisted(false); });
+    $("#ses-edit").addEventListener("click", function () { commitVariant().then(function () { setView("intro", true); }); });
   }
 
   // ---------------------------------------------------------------- Paso 3: exportar
@@ -5602,9 +6033,10 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
         : "Tienes " + fmtNum(list.length) + (list.length === 1 ? " grabación" : " grabaciones")) +
       (list.length ? " (" + fmtMB(bytes + 4096) + ")" : "");
     var p = S.profile;
-    $("#send-who").textContent = all.length ? "Crédito: " + ((p.speaker || "").trim() || ANON) + ((p.region || "").trim() ? " · " + p.region.trim() : "") +
-      " · Licencia " + p.license + (bytes > 20 * 1048576 ? ". Pesa más de 20 MB: envíalo por WhatsApp o Drive." : "") : "Graba al menos una palabra para crear el archivo.";
-    $("#btn-export").disabled = !list.length || !S.profile.consent;
+    $("#send-who").textContent = all.length ? "Crédito: " + creditName(p) + ((p.region || "").trim() ? " · " + p.region.trim() : "") +
+      " · Licencia " + p.license + " · Uso para IA del proyecto: " + (p.aiUse ? "sí" : "no") +
+      (bytes > 20 * 1048576 ? ". Pesa más de 20 MB: envíalo por WhatsApp o Drive." : "") : "Graba al menos una palabra para crear el archivo.";
+    $("#btn-export").disabled = !list.length || !ready();
     $("#ready").hidden = !S.exportBlob;
     $("#wipe-confirm").hidden = true;
     $("#btn-wipe").hidden = false;
@@ -5615,7 +6047,7 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
     if (!list.length) return Promise.resolve(null);
     var now = new Date(), p = S.profile;
     return Promise.all(list.map(function (r) { return dbGet("wavs", r.gk); })).then(function (wavs) {
-      var files = [], outItems = [], seenFiles = {}, missing = 0;
+      var files = [], outItems = [], seenFiles = {}, missing = 0, nVariants = 0;
       list.forEach(function (r, k) {
         var wav = wavs[k];
         if (!wav) { missing++; return; }
@@ -5625,18 +6057,23 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
         seenFiles[file] = 1;
         files.push({ name: file, data: new Uint8Array(wav) });
         var its = g ? g.items : r.items;
+        // Lo que el hablante dijo distinto de la forma del curso (solo si de verdad es distinto).
+        var variant = r.variant && normText(r.variant) !== normText(g ? g.text : r.text) ? r.variant : null;
+        if (variant) nVariants++;
         its.forEach(function (it) {
           var o = { id: it.id, type: it.type, text: it.text, file: file };
           if (it.type === "letter") o.letter = it.letter;
           if (it.es) o.es = it.es;
+          if (variant) o.variant = variant;
           o.durationMs = r.durationMs; o.recordedAt = r.createdAt;
           outItems.push(o);
         });
       });
+      var credit = creditOf(p);
       var manifest = {
         app: "koox-maaya", version: 1, createdAt: now.toISOString(),
-        speaker: (p.speaker || "").trim() || null, region: (p.region || "").trim() || null,
-        license: p.license, licenseUrl: LICENSES[p.license], consent: true, consentText: CONSENT_TEXT,
+        speaker: speakerOf(p) || null, region: (p.region || "").trim() || null, credit: credit,
+        license: p.license, licenseUrl: LICENSES[p.license], aiUse: !!p.aiUse, consent: true, consentText: CONSENT_TEXT,
         consentAt: p.consentAt, speakerId: p.speakerId, format: "WAV PCM 16 bits, mono, 44100 Hz",
         items: outItems
       };
@@ -5645,14 +6082,18 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
         "Grabaciones para Ko'ox Maaya (curso de maya yucateco)",
         "",
         "Hablante: " + (manifest.speaker || ANON) + (manifest.region ? " · " + manifest.region : ""),
+        "Crédito elegido: " + credit,
         "Licencia: " + p.license + " (" + LICENSES[p.license] + ")",
+        "Uso para IA del proyecto: " + (p.aiUse ? "autorizado" : "no autorizado"),
         "Fecha: " + now.toLocaleString("es-MX"),
         files.length + " grabaciones en la carpeta wav/ (WAV mono, 16 bits, 44.1 kHz). La lista está en grabaciones.json.",
+        nVariants ? nVariants + (nVariants === 1 ? " grabación" : " grabaciones") + " con «variant»: lo que el hablante dijo distinto de la forma del curso." : null,
         "",
         "La persona que grabó aceptó: «" + CONSENT_TEXT + "»",
+        WITHDRAW_TEXT + " (docs/PERMISO-VOCES.md)",
         "",
         "Para importarlas (quien mantiene la app): node tools/import-recordings.mjs <este archivo>.zip"
-      ].join("\r\n") + "\r\n";
+      ].filter(function (l) { return l !== null; }).join("\r\n") + "\r\n";
       var zip = makeZip([
         { name: "grabaciones.json", data: enc.encode(JSON.stringify(manifest, null, 2) + "\n") },
         { name: "LEEME.txt", data: enc.encode(readme) }
@@ -5729,7 +6170,8 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
       stopPlayback(); releaseMic();
       wipeAll().then(function () {
         S.recs.clear(); S.exportBlob = null; S.cur = null;
-        S.profile = { speaker: "", region: "", license: "CC BY-SA 4.0", consent: false, consentAt: null, speakerId: null };
+        S.profile = newProfile(); S.skipped = {}; S.reveal = null; S.varGk = null; S.breakDue = false;
+        clearTimeout(breakTimer); breakTimer = 0;
         setView("intro", true);
         $("#start-hint").hidden = false;
         $("#start-hint").textContent = "Se borró todo de este teléfono.";
@@ -5744,9 +6186,10 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
       if (!b) return;
       if (b.getAttribute("aria-disabled") === "true") {
         setView("intro", false);
+        var noName = S.profile.consent && !ready();
         $("#start-hint").hidden = false;
-        $("#start-hint").textContent = "Primero marca la casilla de consentimiento.";
-        $("#f-consent").focus();
+        $("#start-hint").textContent = noName ? "Primero escribe el nombre o el seudónimo, o elige «Sin nombre»." : "Primero marca el permiso para publicar (el número 1).";
+        (noName ? $("#f-speaker") : $("#f-consent")).focus();
         return;
       }
       setView(b.getAttribute("data-view"), true);
@@ -5764,7 +6207,7 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
     var perUnit = units.map(function (u) { return groups.filter(function (g) { return g.units[u.id]; }).length; });
     var lo = Math.min.apply(null, perUnit), hi = Math.max.apply(null, perUnit);
     $("#f-unit").textContent = Math.max(1, Math.round(lo * 10 / 60)) + "–" + Math.max(2, Math.round(hi * 10 / 60));
-    bindIntro(); bindList(); bindPanel(); bindSend(); bindSteps();
+    bindIntro(); bindList(); bindPanel(); bindSession(); bindSend(); bindSteps();
     openDB().then(function (ok) {
       if (!ok) {
         var w = $("#storage-warn");
@@ -5774,12 +6217,22 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
       return Promise.all([dbGet("meta", "profile"), dbAll("recs")]).catch(function () { return [null, []]; });
     }).then(function (r) {
       var prof = r[0], recs = r[1] || [];
-      if (prof && typeof prof === "object") S.profile = Object.assign(S.profile, prof);
-      if (!LICENSES[S.profile.license]) S.profile.license = "CC BY-SA 4.0";
+      if (prof && typeof prof === "object") {
+        S.profile = Object.assign(newProfile(), prof);
+        // Datos de una versión anterior: el crédito sale del nombre que ya había y se piden aceptar los permisos otra vez.
+        if (prof.consentV !== CONSENT_V) {
+          S.profile.consent = false; S.profile.consentAt = null; S.profile.consentV = CONSENT_V;
+          if (!prof.credit) S.profile.credit = (prof.speaker || "").trim() ? "nombre" : "anónimo";
+        }
+      }
+      if (!LICENSES[S.profile.license]) S.profile.license = OWN;
+      if (CREDITS.indexOf(S.profile.credit) < 0) S.profile.credit = "anónimo";
+      S.profile.aiUse = S.profile.aiUse === true;
+      S.profile.assisted = S.profile.assisted === true;
       recs.forEach(function (m) { if (m && m.gk) S.recs.set(m.gk, m); });
       $("#main").hidden = false; $("#steps").hidden = false;
       renderIntro();
-      setView(S.profile.consent ? "rec" : "intro", false);
+      setView(ready() ? "rec" : "intro", false);
       window.__grabar.ready = true;
     });
   }
@@ -5791,7 +6244,7 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
     state: function () { return R.state; },
     current: function () { return S.cur; },
     total: function () { return groups.length; },
-    recorded: function () { return Array.from(S.recs.values()).map(function (r) { return { gk: r.gk, text: r.text, durationMs: r.durationMs, rawMs: r.rawMs, sentAt: r.sentAt }; }); },
+    recorded: function () { return Array.from(S.recs.values()).map(function (r) { return { gk: r.gk, text: r.text, durationMs: r.durationMs, rawMs: r.rawMs, sentAt: r.sentAt, variant: r.variant || null }; }); },
     storage: function () { return db ? "indexeddb" : "memoria"; },
     groupIndex: function (type, id) {
       for (var i = 0; i < groups.length; i++) {
@@ -5799,7 +6252,17 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
       }
       return -1;
     },
-    groupInfo: function (i) { var g = groups[i]; return g ? { gk: g.gk, text: g.text, home: g.home, covered: g.covered, synth: g.synth, items: g.items.map(function (it) { return { type: it.type, id: it.id, key: it.key }; }) } : null; }
+    groupInfo: function (i) { var g = groups[i]; return g ? { gk: g.gk, text: g.text, es: g.es, exEs: g.exEs, home: g.home, uhome: g.uhome, ord: g.ord, covered: g.covered, synth: g.synth, items: g.items.map(function (it) { return { type: it.type, id: it.id, key: it.key, letter: it.letter }; }) } : null; },
+    indexOf: function (gk) { var g = byGk.get(gk); return g ? g.i : -1; },
+    mode: function () { return assisted() ? "acompañado" : "normal"; },
+    profile: function () { return Object.assign({}, S.profile); },
+    session: function () {
+      var g = S.cur && byGk.get(S.cur), t = sessionTotals();
+      return { cur: S.cur, text: g ? g.text : null, es: g ? g.es : null, revealed: !!(g && S.reveal === g.gk), done: t.done, total: t.total,
+        queue: pendingOrder().map(function (x) { return x.gk; }), queueOrd: pendingOrder().map(function (x) { return x.ord; }),
+        skipped: Object.keys(S.skipped), breakDue: S.breakDue };
+    },
+    setBreakMs: function (ms) { breakMs = ms; armBreak(); }
   };
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot); else boot();

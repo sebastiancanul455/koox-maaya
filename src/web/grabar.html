@@ -318,6 +318,9 @@ legend { padding: 0; margin-bottom: 4px; font-weight: 700; }
 .sbtn:disabled { background: var(--bg-2); color: var(--muted); border-color: var(--line); }
 .sbtn.rec[data-state="recording"] { background-color: var(--bad); background-image: linear-gradient(90deg, rgba(0, 0, 0, .22) calc(var(--p, 0) * 100%), transparent 0); }
 .sbtn.rec[data-state="busy"] { opacity: .7; }
+/* Un instante después de grabar, detener o pasar de elemento, los botones del lugar principal no reciben toques:
+   así un doble toque sin querer no empieza otra grabación ni salta lo que se acaba de grabar. */
+.sbar.settling #s-rec, .sbar.settling #s-next, .sbar.settling #s-skip { pointer-events: none; }
 .s-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
 .s-row .btn { min-height: 52px; padding-inline: 10px; }
 .s-row .full { grid-column: 1 / -1; }
@@ -392,8 +395,8 @@ legend { padding: 0; margin-bottom: 4px; font-weight: 700; }
       <div class="card kan" id="assist-help" hidden>
         <h2>Para quien acompaña</h2>
         <ul class="tips">
-          <li>Tú manejas el celular; la persona que graba solo habla. <b>Lo que ella decida, manda.</b></li>
-          <li>Lean juntos, en voz alta, los permisos de abajo y marquen solo lo que ella decida.</li>
+          <li>Tú manejas el celular; quien graba solo habla. <b>Lo que decida quien graba, manda.</b></li>
+          <li>Lean juntos, en voz alta, los permisos de abajo y marquen solo lo que decida quien graba.</li>
           <li>Verás el significado en español de cada palabra. La palabra maya queda oculta: no se la enseñes antes de grabar.</li>
           <li>Si dice otra forma, no la corrijas: anótala en «El hablante dijo otra forma».</li>
           <li>Cada 10 minutos la página sugiere una pausa. Pueden parar cuando quieran.</li>
@@ -519,7 +522,7 @@ legend { padding: 0; margin-bottom: 4px; font-weight: 700; }
           <p class="hint">Basta con avisar a quien me invitó a grabar o a quien mantiene Ko'ox Maaya. <a href="https://github.com/sebastiancanul455/koox-maaya/blob/main/docs/PERMISO-VOCES.md" target="_blank" rel="noopener">Ver los términos completos</a></p>
         </div>
 
-        <div class="sum" id="perm-sum" aria-label="Resumen de tus decisiones"></div>
+        <div class="sum" id="perm-sum" role="group" aria-label="Resumen de tus decisiones"></div>
         <button class="btn primary wide" type="submit" id="btn-start" disabled>Empezar a grabar</button>
         <p class="hint" id="start-hint" aria-live="polite">Para empezar, marca el permiso para publicar (el número 1).</p>
       </form>
@@ -1354,6 +1357,7 @@ legend { padding: 0; margin-bottom: 4px; font-weight: 700; }
       rec.onerror = function (e) { failRecording(micError(e && e.error)); };
       rec.onstart = function () {
         R.state = "recording"; R.t0 = performance.now();
+        if (assisted()) settle();
         clearTimeout(R.idle);
         R.timer = setTimeout(stopRecording, MAX_MS);
         if (!R.analyser) R.raf = 0;
@@ -1413,6 +1417,7 @@ legend { padding: 0; margin-bottom: 4px; font-weight: 700; }
           res.rmsDb < -42 ? " Se oye bajita: acerca un poco el celular." : "";
         setStatus("Guardada (" + fmtS(res.durationMs) + ")." + hint, hint ? "bad" : "ok");
         renderPanel(); updateRow(g); renderProgress();
+        if (assisted()) settle();
         armIdle();
       }, function (e) {
         storageFailed(e);
@@ -1554,7 +1559,13 @@ legend { padding: 0; margin-bottom: 4px; font-weight: 700; }
   // grabar («Ver cómo está en el curso») y puede anotar lo que el hablante dijo distinto (variant). Va un
   // elemento a la vez: primero lo pendiente, en el orden del curso (unidad 1 en adelante); lo que solo tiene voz
   // sintética sigue pendiente. «Saltar» deja el elemento para el final de la sesión, sin marcarlo.
-  var breakTimer = 0, breakMs = BREAK_MS, varTimer = 0;
+  var breakTimer = 0, breakMs = BREAK_MS, varTimer = 0, settleTimer = 0;
+  function settle() {
+    var b = $("#sbar");
+    b.classList.add("settling");
+    clearTimeout(settleTimer);
+    settleTimer = setTimeout(function () { b.classList.remove("settling"); }, 450);
+  }
   var ICON_MIC = '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg>';
   var ICON_STOP = '<svg class="ico fill" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="2"/></svg>';
   function pendingOrder() {
@@ -1602,6 +1613,7 @@ legend { padding: 0; margin-bottom: 4px; font-weight: 700; }
     $("#ses-big").textContent = fmtNum(t.done) + " de " + fmtNum(t.total);
     $("#ses-bar").style.width = (t.total ? 100 * t.done / t.total : 0).toFixed(1) + "%";
     $("#ses-finish").disabled = !S.recs.size || !idle;
+    $("#ses-finish-2").disabled = !S.recs.size;
     $("#ses-break").hidden = !S.breakDue;
     $("#ses-card").hidden = !g;
     $("#ses-after").hidden = !g || !rec;
@@ -1664,6 +1676,7 @@ legend { padding: 0; margin-bottom: 4px; font-weight: 700; }
       setStatus("", "");
       S.cur = nx; S.reveal = null;
       renderSession();
+      settle();
       window.scrollTo(0, 0);
       var rb = $("#s-rec");
       if (!rb.hidden && !rb.disabled) rb.focus({ preventScroll: true });
@@ -1987,13 +2000,15 @@ legend { padding: 0; margin-bottom: 4px; font-weight: 700; }
       }
       return -1;
     },
-    groupInfo: function (i) { var g = groups[i]; return g ? { gk: g.gk, text: g.text, es: g.es, exEs: g.exEs, home: g.home, uhome: g.uhome, ord: g.ord, covered: g.covered, synth: g.synth, items: g.items.map(function (it) { return { type: it.type, id: it.id, key: it.key }; }) } : null; },
+    groupInfo: function (i) { var g = groups[i]; return g ? { gk: g.gk, text: g.text, es: g.es, exEs: g.exEs, home: g.home, uhome: g.uhome, ord: g.ord, covered: g.covered, synth: g.synth, items: g.items.map(function (it) { return { type: it.type, id: it.id, key: it.key, letter: it.letter }; }) } : null; },
+    indexOf: function (gk) { var g = byGk.get(gk); return g ? g.i : -1; },
     mode: function () { return assisted() ? "acompañado" : "normal"; },
     profile: function () { return Object.assign({}, S.profile); },
     session: function () {
       var g = S.cur && byGk.get(S.cur), t = sessionTotals();
       return { cur: S.cur, text: g ? g.text : null, es: g ? g.es : null, revealed: !!(g && S.reveal === g.gk), done: t.done, total: t.total,
-        queue: pendingOrder().map(function (x) { return x.gk; }), skipped: Object.keys(S.skipped), breakDue: S.breakDue };
+        queue: pendingOrder().map(function (x) { return x.gk; }), queueOrd: pendingOrder().map(function (x) { return x.ord; }),
+        skipped: Object.keys(S.skipped), breakDue: S.breakDue };
     },
     setBreakMs: function (ms) { breakMs = ms; armBreak(); }
   };

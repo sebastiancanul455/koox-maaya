@@ -124,20 +124,33 @@ quienes aprenden con la app escuchan una voz real en lugar de la voz sintética.
 nada a ningún servidor: las grabaciones se quedan en el teléfono hasta que la persona crea el
 archivo y decide a quién mandarlo.
 
+Para grabar a una persona mayor con ayuda de un familiar (equipo, sesión, permisos y qué hacer
+después) hay una guía aparte: [`docs/GRABAR.md`](../docs/GRABAR.md). Los términos del permiso
+«Solo para Ko'ox Maaya» están en [`docs/PERMISO-VOCES.md`](../docs/PERMISO-VOCES.md).
+
 ### Para la persona que graba
 
 1. Abra <https://sebastiancanul455.github.io/koox-maaya/grabar.html> en **Chrome** de Android.
-2. Lea la presentación. Si quiere, escriba su **nombre o seudónimo** (así aparecerá en los créditos;
-   si lo deja vacío saldrá «Hablante anónimo») y su **comunidad o municipio**.
-3. Elija la **licencia**: CC BY-SA 4.0 (la recomendada: cualquiera puede usar las grabaciones si le
-   da crédito y comparte con la misma licencia), CC BY 4.0 (solo pide crédito) o CC0 (dominio
-   público, sin necesidad de crédito).
-4. Marque la casilla **«Acepto que mis grabaciones se publiquen en la app Ko'ox Maaya con esta
-   licencia y con el crédito indicado»**. Sin ella no se puede grabar.
-5. Toque **Empezar a grabar**. La primera vez Chrome pregunta si la página puede usar el micrófono:
+2. Lea la presentación. Si una persona va a hablar y otra maneja el celular, active **«Alguien me ayuda
+   (modo acompañado)»** (más abajo).
+3. Decida sus **permisos**. Son de quien graba: si alguien ayuda, léanlos juntos y marquen solo lo que
+   decida quien graba.
+   1. **Publicar** (obligatorio): la casilla «Acepto que mis grabaciones se publiquen en la app Ko'ox
+      Maaya, con la licencia y el crédito que elijo en este formulario». Sin ella no se puede grabar.
+   2. **Licencia**: «Solo para Ko'ox Maaya (no es licencia abierta)» viene elegida; las grabaciones se
+      usan solo dentro de la app y de su repositorio, con el crédito elegido. Las otras son licencias
+      abiertas: CC BY-SA 4.0 (cualquiera puede usarlas si da crédito y comparte igual), CC BY 4.0 (si da
+      crédito) y CC0 1.0 (dominio público).
+   3. **IA** (opcional, empieza sin marcar): «Autorizo usar mis grabaciones para entrenar o evaluar
+      modelos de IA del proyecto».
+   4. **Cómo aparecer**: con su nombre, con un seudónimo o sin nombre («Hablante anónimo»), y su
+      **comunidad o pueblo** (opcional; sirve para etiquetar la variante regional). Con nombre o
+      seudónimo hay que escribirlo.
+   5. Puede **pedir que se retire su voz** cuando quiera.
+4. Toque **Empezar a grabar**. La primera vez Chrome pregunta si la página puede usar el micrófono:
    toque **Permitir**. Si lo negó por error: toque el candado junto a la dirección → Permisos →
    Micrófono → Permitir.
-6. Toque una palabra de la lista y luego **Grabar**. Espere un instante, diga la palabra **una sola
+5. Toque una palabra de la lista y luego **Grabar**. Espere un instante, diga la palabra **una sola
    vez**, con naturalidad, **como se dice en su comunidad**, y toque **Detener** (a los 6 segundos se
    detiene sola). Toque **Escuchar**; si no quedó bien, **Otra vez**. Luego **Siguiente**. Si no
    conoce una palabra, **Saltar**.
@@ -149,16 +162,28 @@ archivo y decide a quién mandarlo.
    - Cada palabra toma unos 10 segundos; una unidad, de 5 a 10 minutos. No hace falta grabar todo:
      puede parar y seguir otro día, lo grabado queda guardado **en ese teléfono y ese navegador**
      (no borre los datos del navegador mientras tanto; en una ventana de incógnito no se guarda).
-7. Para enviar, toque **3 · Enviar** → **Crear y descargar el archivo**. Se descarga un ZIP a la
+6. Para enviar, toque **3 · Enviar** → **Crear y descargar el archivo**. Se descarga un ZIP a la
    carpeta Descargas. Si aparece **Compartir**, puede mandarlo directo; si no, envíelo desde
    WhatsApp (clip → Documento → el archivo de Descargas), por correo (si pesa menos de 20 MB) o
    súbalo a Google Drive y comparta el enlace. La próxima vez marque «Solo las nuevas desde el
    último envío».
-8. Para borrar todo del teléfono: **Enviar** → **Borrar todo…** → **Sí, borrar todo**. Lo que ya
+7. Para borrar todo del teléfono: **Enviar** → **Borrar todo…** → **Sí, borrar todo**. Lo que ya
    envió no se borra.
 
-El ZIP trae `grabaciones.json` (sus datos, la licencia, el consentimiento y la lista de lo grabado),
-`LEEME.txt` y una carpeta `wav/` con los audios (WAV mono, 16 bits, 44.1 kHz, sin silencios largos).
+**Modo acompañado.** Pensado para una persona que no lee la pantalla (por ejemplo, un abuelo con un
+familiar que maneja el celular). Quien ayuda ve, de un elemento a la vez, el **significado en español**
+(y el ejemplo en español); la palabra maya del curso queda **oculta** hasta después de grabar
+(«Ver cómo está en el curso»). Va primero lo pendiente, en el orden del curso (unidad 1 en adelante; lo
+que solo tiene voz sintética sigue pendiente). Hay un botón grande de **Grabar / Detener**, y después
+**Escuchar**, **Repetir toma** y **Siguiente**; **Saltar** deja el elemento para el final. El campo
+**«El hablante dijo otra forma»** guarda lo que dijo distinto del curso (`variant`). Cada ~10 minutos
+aparece «¿Descansamos un momento?» (no bloquea). Arriba se ve el avance («12 de 80») y **Terminar y
+exportar** lleva al envío. Se puede salir del modo en cualquier momento.
+
+El ZIP trae `grabaciones.json` (los permisos: `license`, `aiUse`, `credit` —«nombre», «seudónimo» o
+«anónimo»—, `speaker` y `region`; el consentimiento; y la lista de lo grabado, con la `variant` de cada
+elemento si el hablante dijo otra forma), `LEEME.txt` y una carpeta `wav/` con los audios (WAV mono,
+16 bits, 44.1 kHz, sin silencios largos).
 
 ### Para quien mantiene la app: importar las grabaciones
 
@@ -174,11 +199,15 @@ El ZIP trae `grabaciones.json` (sus datos, la licencia, el consentimiento y la l
    node tools/import-recordings.mjs archivo.zip
    ```
    Necesita `ffmpeg` y `ffprobe`. El importador rechaza el ZIP si falta el consentimiento, si la
-   licencia no es CC BY-SA 4.0, CC BY 4.0 o CC0 1.0, o si trae rutas peligrosas. Cada elemento entra
+   licencia no es «Solo para Ko'ox Maaya», CC BY-SA 4.0, CC BY 4.0 o CC0 1.0, si `aiUse` no es
+   verdadero o falso, si `credit` no es válido o si trae rutas peligrosas. Cada elemento entra
    como `kind: "nativo"` con la key `v-<id>` (palabra, `vocab: [id]`), `ex-<id>` (frase de ejemplo; sin
    `vocab`, la app la encuentra por su texto) o `l-<letra>` (ejemplo de una letra, `letters: [letra]`;
-   «ch'» → `l-ch-saltillo`). El crédito es el nombre que dio la persona (o «Hablante anónimo»), la
-   fuente es «Grabación para Ko'ox Maaya, <fecha>» y se guardan su comunidad y su licencia. Cada audio
+   «ch'» → `l-ch-saltillo`). El crédito es el nombre o seudónimo que dio la persona (o «Hablante
+   anónimo»; con `credit: "anónimo"` no se usa ningún nombre), la fuente es «Grabación para Ko'ox Maaya,
+   <fecha>» y se guardan su comunidad y su licencia. El crédito elegido y el uso para IA quedan en
+   `notes` («Crédito elegido: seudónimo. Uso para IA del proyecto: no autorizado.»); si no marcó la
+   casilla de IA, las grabaciones no se usan para entrenar ni evaluar modelos. Cada audio
    se recorta, se normaliza (~-18 LUFS, pico -1.5 dB), lleva 60 ms de silencio a cada lado y se
    guarda como `audio/<key>.mp3` (MP3 mono, 44.1 kHz, 64 kbps).
    - Si ya hay una grabación nativa **de otra persona** en esa key, se omite: `--replace` la
@@ -188,15 +217,24 @@ El ZIP trae `grabaciones.json` (sus datos, la licencia, el consentimiento y la l
      grabación nativa se guarda al lado (`<key>-2`) y la app prefiere la voz nativa.
    - Si el curso cambió desde que se grabó (otra forma, otro ejemplo, id que ya no existe), el
      elemento se omite; `--force` lo importa igual.
+   - Si un elemento trae **`variant`** (el hablante dijo otra forma que la del curso), el audio se
+     importa como `<key>-var` (p. ej. `v-u1-kaan-var`), con `vocab` y `letters` vacíos, el texto de la
+     variante y notes «El hablante dijo «X» en lugar de «Y» (forma del curso). Pendiente de revisión.»:
+     así la app no reproduce un audio que no coincide con la forma del curso. El resumen cuenta y lista
+     las variantes (y avisa si una coincide con otra forma del curso); `node test/validate.cjs` avisa que
+     no sonarán, que es lo esperado. Revísalas con el hablante o con alguien de su comunidad antes de
+     usarlas (por ejemplo, para corregir el curso o para anotar la forma regional).
 4. **Escucha** algunos `audio/<key>.mp3` antes de publicar.
 5. **Valida y regenera**:
    ```bash
-   node test/validate.cjs && node build.mjs && node build-web.mjs --out .
+   node tools/creditos.mjs && node test/validate.cjs && node build.mjs && node build-web.mjs --out .
    ```
    y haz *commit* de `audio/` junto con los archivos regenerados (ver «Publicar» en el README
    principal).
-6. Si la persona pide retirar sus grabaciones, borra sus entradas de `audio/catalogo.json` (las de su
-   `author`) y sus MP3, y vuelve a generar.
+6. Si la persona pide retirar sus grabaciones (ver [`docs/PERMISO-VOCES.md`](../docs/PERMISO-VOCES.md)),
+   borra de `audio/catalogo.json` sus entradas (las que tengan su identificador en `notes`,
+   «hablante <id>»; si dio nombre, también las de su `author`) y sus MP3, vuelve a generar y publica. El
+   retiro vale desde que se pide: lo que alguien ya descargó antes no se puede recoger.
 
 Para archivos de otras fuentes (un audio suelto o una lista) está `node tools/audio-import.mjs`
 (`--help` explica las opciones). La página de grabación se prueba con `node test/grabar.cjs`

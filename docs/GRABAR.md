@@ -47,8 +47,9 @@ sobre todo lo demás: puede cambiar de opinión, parar o pedir que se retire su 
    seguido, apaguen un momento el modo acompañado y búsquenlo en la lista).
 4. **No lo hagan leer.** La pantalla le muestra a quien ayuda el significado en español y esconde la
    palabra maya. Pídanla con **objetos, imágenes o situaciones**: señalar el fuego, enseñar la foto de un
-   gato, «¿qué le dice a alguien que llega a su casa?». Toquen **Grabar**, déjenlo hablar y toquen
-   **Detener**.
+   gato, «¿qué le dice a alguien que llega a su casa?». Pregunten antes de tocar **Grabar**, esperen a
+   ver «Grabando…», háganle una seña y **no hablen encima** (se oiría en el audio). Toquen **Detener**
+   cuando termine.
 5. **2 o 3 tomas** si hace falta (ruido, tos, interrupción): **Escuchar** y **Repetir toma**. La nueva
    reemplaza a la anterior.
 6. **Dejen que lo diga a su manera.** Si dice otra forma que la del curso, **no la corrijan**: escríbanla

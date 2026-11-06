@@ -8,13 +8,31 @@ de 2014. *Ko'ox* significa «¡vamos!».
 **Abrir la app:** <https://sebastiancanul455.github.io/koox-maaya/>
 
 > **Aviso.** El contenido se preparó con ayuda de inteligencia artificial y se cotejó con
-> fuentes públicas, pero todavía no lo han revisado hablantes nativos. Úsalo para aprender y
-> valida con hablantes lo que vayas a usar. **No está validado para uso clínico**: no uses las
-> frases de salud con pacientes sin una validación formal; en la consulta recurre a un
-> intérprete o a material validado por hablantes.
+> fuentes públicas, pero todavía no lo han revisado hablantes nativos. Es un pasatiempo para
+> aprender: valida con hablantes lo que vayas a usar y, para situaciones importantes (salud,
+> trámites), recurre a una persona intérprete.
 >
 > **Uso no comercial.** La app incluye audios de voz sintética generados con un modelo de licencia
 > CC BY-NC 4.0, así que Ko'ox Maaya y esos audios son de uso no comercial (ver [Audio](#audio)).
+
+## Novedades de la v5.1
+
+- **Racha amable y días con maya.** La racha avanza el día en que ganas XP al terminar una lección
+  o un repaso (no hace falta llegar a la meta). Perdona un día sin práctica por semana ISO y, si se
+  corta, solo vuelve a empezar; «días con maya» suma tus días de práctica y nunca baja.
+- **Modo tranquilo** (Perfil): oculta XP, racha y metas.
+- **Copia de seguridad** (Perfil): exporta tu avance como `.json` (sitio instalable) o como código
+  `KOOX1.`/`KOOX0.` para copiar o compartir, e impórtalo con resumen y confirmación; sirve para pasarlo
+  entre el sitio y claude.ai.
+- **Modo acompañado y permisos por capas.** En `grabar.html`, «Alguien me ayuda (modo acompañado)»
+  muestra una palabra a la vez: el significado en español a la vista, la palabra maya oculta hasta
+  grabar, un campo para lo que el hablante dijo distinto y una pausa sugerida cada ~10 minutos. Quien
+  graba decide por capas (publicar, obligatorio; licencia, «Solo para Ko'ox Maaya» por omisión o CC; uso
+  para IA, sin marcar; crédito y comunidad) y puede pedir que se retire su voz; el importador lo anota
+  en `notes` y guarda las variantes aparte. Guías: [`docs/GRABAR.md`](docs/GRABAR.md) y
+  [`docs/PERMISO-VOCES.md`](docs/PERMISO-VOCES.md).
+- **Plan de mejora** con casillas por fase: [`docs/PLAN.md`](docs/PLAN.md).
+- **Integración continua**: `.github/workflows/ci.yml` valida, regenera, prueba y publica en `gh-pages`.
 
 ## Instalarla en Android
 
@@ -164,7 +182,7 @@ aparece ningún botón.
 | --- | --- | ---: | --- | --- |
 | `fonema` | «Sonido de referencia (AFI)» | 24 | Wikimedia Commons: sonidos del AFI de Peter Isotalo (19), Denelson83 (3) y TFighterPilot (2) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
 | `sintetico` | «Voz sintética (aproximada)» | 201 | Meta AI, modelo [MMS-TTS para maya yucateco](https://huggingface.co/facebook/mms-tts-yua) (`facebook/mms-tts-yua`), con `tools/tts-mms.py` | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) (no comercial) |
-| `nativo` | «Voz nativa» | 0 | hablantes que graban con `grabar.html`, o grabaciones de Commons | la que elija quien graba: CC BY-SA 4.0, CC BY 4.0 o CC0 |
+| `nativo` | «Voz nativa» | 0 | hablantes que graban con `grabar.html`, o grabaciones de Commons | la que elija quien graba: «Solo para Ko'ox Maaya» ([términos](docs/PERMISO-VOCES.md)), CC BY-SA 4.0, CC BY 4.0 o CC0 |
 
 La voz sintética cubre 154 de las 356 palabras (82 de las 265 palabras sueltas y 72 de las 91
 frases), 57 de las 59 líneas de diálogo y 34 de los 44 ejemplos. La guía tiene sonido de referencia

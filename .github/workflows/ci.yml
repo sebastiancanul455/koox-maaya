@@ -21,6 +21,8 @@ jobs:
           node-version: 22
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
+      - name: Instalar ffmpeg (conversión de audio en las pruebas)
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
       - name: Validar contenido y créditos
         run: |
           node test/validate.cjs

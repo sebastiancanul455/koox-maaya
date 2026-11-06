@@ -127,8 +127,17 @@ export function assemble(opts = {}) {
   const read = (p) => fs.readFileSync(path.join(root, p), "utf8");
 
   const shell = read("src/shell.html");
-  const css = read("src/app.css");
-  const js = read("src/app.js");
+  let css = read("src/app.css");
+  // Módulos de la app: cada src/modules/*.js (orden alfabético) se inyecta en el marcador de app.js y comparte
+  // su ámbito (state, esc, audio…). Así cada función nueva vive en su propio archivo.
+  let js = read("src/app.js");
+  const modDir = path.join(ROOT, "src", "modules");
+  const mods = fs.existsSync(modDir) ? fs.readdirSync(modDir).filter((f) => /^[a-z0-9-]+\.js$/.test(f)).sort() : [];
+  if (!js.includes("/*@@MODULES@@*/")) fail("src/app.js no tiene el marcador /*@@MODULES@@*/.");
+  js = js.replace("/*@@MODULES@@*/", () => mods.map((f) => "  /* ---- módulo " + f + " ---- */\n" + read("src/modules/" + f)).join("\n"));
+  // src/modules/*.css se agregan al final del CSS de la app (cada módulo trae sus estilos).
+  const modCss = fs.existsSync(modDir) ? fs.readdirSync(modDir).filter((f) => /^[a-z0-9-]+\.css$/.test(f)).sort() : [];
+  if (modCss.length) css += "\n" + modCss.map((f) => "/* ---- módulo " + f + " ---- */\n" + read("src/modules/" + f)).join("\n");
 
   // Contenido: cada archivo va en su propio <script> para que un error en una unidad no tumbe a las demás.
   let parts = [];
@@ -146,6 +155,11 @@ export function assemble(opts = {}) {
   const extra = [];
   const res = resourcesPart({ root, sample });
   if (res) extra.push(res);
+  // Contenido adicional de los módulos (si existe): lecturas y logros «Puedo…».
+  if (!sample) for (const f of ["puedo.js", "lecturas.js"]) {
+    const fp = path.join(root, "src/content", f);
+    if (fs.existsSync(fp)) extra.push({ name: "src/content/" + f, code: fs.readFileSync(fp, "utf8") });
+  }
   const audio = opts.audio || loadAudio({ root, sample });
   const mapFile = opts.audioFile || ((it) => it.entry.file);
   const included = [];

@@ -365,7 +365,7 @@
   var INTERVALS = [0, 1, 3, 7, 16, 35];
   var storageOK = true;
   function freshState() {
-    return { v: 2, xp: 0, xpByDay: {}, streak: { count: 0, best: 0, last: null, graceWeek: null }, daysTotal: 0, goal: 20, lessons: {}, srs: {},
+    return { v: 2, xp: 0, xpByDay: {}, streak: { count: 0, best: 0, last: null, graceWeek: null }, daysTotal: 0, goal: 20, lessons: {}, srs: {}, x: {},
       settings: { sound: true, autoplay: true, rate: "normal", synth: true, calm: false } };
   }
   function isObj(x) { return !!x && typeof x === "object" && !Array.isArray(x); }
@@ -401,6 +401,17 @@
       s.settings.rate = o.settings.rate === "lenta" ? "lenta" : "normal";
       s.settings.synth = o.settings.synth !== false;
       s.settings.calm = o.settings.calm === true;
+    }
+    // Estado de los módulos (src/modules): state.x.<módulo>. El núcleo solo lo conserva como JSON seguro y
+    // acotado; cada módulo sanea su parte al leerla.
+    if (isObj(o.x)) {
+      try {
+        var xj = JSON.stringify(o.x);
+        if (xj.length <= 1500000) {
+          var xp0 = JSON.parse(xj, function (k, v) { return k === "__proto__" || k === "constructor" || k === "prototype" ? undefined : v; });
+          Object.keys(xp0).forEach(function (k) { if (/^[a-z][a-z0-9-]{0,23}$/.test(k) && isObj(xp0[k])) s.x[k] = xp0[k]; });
+        }
+      } catch (e) { /* se descarta */ }
     }
     return s;
   }
@@ -911,6 +922,7 @@
     h += "</div>";
     if (COURSE.guide.length) h += '<button class="guide-link card" type="button" id="btn-home-guide">' + ICON.book +
       '<span class="gl-txt"><span class="gl-t">Guía de sonidos</span><span class="gl-s">Cómo se leen las ' + COURSE.guide.length + ' letras del alfabeto maya</span></span></button>';
+    h += modHTML("homeTop");
 
     COURSE.units.forEach(function (u) {
       var done = u.lessons.filter(lessonDone).length, total = u.lessons.length, complete = done === total;
@@ -919,7 +931,7 @@
         '<div class="unit-head"><p class="eyebrow">Unidad ' + u.n + "</p>" +
         '<h2 id="unit-title-' + esc(u.id) + '">' + esc(u.title) + "</h2>" +
         (u.subtitle ? '<p class="unit-sub">' + esc(u.subtitle) + "</p>" : "") +
-        '<div class="unit-meta"><div class="bar yaax" aria-hidden="true"><span style="width:' + Math.round(done / total * 100) + '%"></span></div>' +
+        modHTML("unit", u) + '<div class="unit-meta"><div class="bar yaax" aria-hidden="true"><span style="width:' + Math.round(done / total * 100) + '%"></span></div>' +
         (complete ? '<span class="unit-done-chip">' + ICON.check.replace("<svg", '<svg class="ico"') + "Completa</span>" : '<span class="num">' + done + " de " + total + "</span>") +
         "</div></div>";
       h += '<ol class="path">';
@@ -946,9 +958,11 @@
       if (unitStarted(u)) h += '<button class="btn tonal unit-review" type="button" data-unit-review="' + esc(u.id) + '">' + ICON.review + "Repaso de la unidad</button>";
       h += "</section>";
     });
+    h += modHTML("homeEnd");
     h += '<p class="foot">Ko\'ox Maaya es un curso experimental. Revisa el aviso de confiabilidad en Perfil.</p>';
     v.innerHTML = h;
     bindStatbar();
+    modCall("bind", v, "home");
     var r = $("#btn-resume");
     if (r) r.addEventListener("click", function () { if (nx) startLesson(nx); });
     var hr = $("#btn-home-review");
@@ -1770,6 +1784,8 @@
     addXP(xp);
     save();
     tone("done");
+    var info = { kind: s.kind, lesson: s.lesson || null, unit: s.unit || null, pct: pct, right: right, total: total, newWords: newWords };
+    modCall("session", info);
 
     var title, sub;
     if (s.kind === "lesson") {
@@ -1796,6 +1812,7 @@
         '<div class="word-chips">' + s.lesson.vocab.map(function (v) { return '<span class="word-chip m" lang="yua">' + esc(v.m) + "</span>"; }).join("") + "</div>" +
         (newWords.length ? '<p class="muted">Aparecerán en Repasar a partir de mañana.</p>' : "") + "</div>";
     }
+    h += modHTML("results", info);
     h += '<div class="results-actions">';
     if (s.kind === "lesson") {
       var after = COURSE.lessons[s.lesson.order + 1];
@@ -2409,7 +2426,9 @@
       '<p class="reset-msg" id="reset-msg" tabindex="-1" aria-live="polite"></p></section>';
     h += '<p class="foot">Ko\'ox Maaya v5.1 · proyecto comunitario experimental.</p>';
     pendingImport = null;
+    h += modHTML("profile");
     v.innerHTML = h;
+    modCall("bind", v, "profile");
     if (PWA && PWA.on) PWA.bindInstall();
     bindBackup();
     $("#goal").addEventListener("change", function () {
@@ -2834,6 +2853,23 @@
     if (document.visibilityState !== "visible") stopAudio();
     else if (!S) showTab(tab, { keepScroll: true });
   });
+  /* ================= Módulos: ganchos ================= */
+  // Cada módulo (src/modules/*.js) llama registerModule({...}) con los métodos que necesite:
+  //   homeTop(), unit(u), homeEnd(), profile(), results(info) → HTML (string);
+  //   bind(root, donde) tras pintar "home" o "profile"; session(info) al terminar una lección o un repaso.
+  // Su estado propio vive en state.x.<nombre> (se guarda y respalda con el resto).
+  var MODULES = [];
+  function registerModule(m) { MODULES.push(m); }
+  function modHTML(method, arg) {
+    var h = "";
+    (MODULES || []).forEach(function (m) { if (m[method]) { try { h += m[method](arg) || ""; } catch (e) { /* un módulo no tumba la app */ } } });
+    return h;
+  }
+  function modCall(method, a, b) {
+    (MODULES || []).forEach(function (m) { if (m[method]) { try { m[method](a, b); } catch (e) { /* sin efecto */ } } });
+  }
+  function xstate(name) { if (!isObj(state.x[name])) state.x[name] = {}; return state.x[name]; }
+  /*@@MODULES@@*/
   var initial = (location.hash || "").replace("#", "");
   showTab(TAB_VIEW[initial] ? initial : "aprender");
 })();

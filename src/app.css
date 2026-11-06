@@ -684,6 +684,7 @@ mark { background: var(--kan-soft); color: inherit; border-radius: 3px; padding:
 .stat .v { font-family: var(--display); font-size: var(--fs-2xl); font-weight: 800; line-height: 1.1; }
 .stat .l { font-size: var(--fs-sm); color: var(--muted); }
 .stat .s { font-size: var(--fs-xs); color: var(--muted); }
+.stat.wide { grid-column: 1 / -1; }
 .week { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
 .day { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: var(--fs-xs); color: var(--muted); font-weight: 700; }
 .day i { width: 100%; max-width: 40px; aspect-ratio: 1; border-radius: 10px; background: var(--bg-2); display: grid; place-items: center; font-style: normal; color: var(--fg); font-size: 0.72rem; }
@@ -726,6 +727,31 @@ ol.steps { margin: 0; padding-left: 22px; display: flex; flex-direction: column;
 .reset-msg { font-size: var(--fs-sm); color: var(--muted); }
 .storage-warn { font-size: var(--fs-sm); color: var(--bad-ink); }
 .foot { font-size: var(--fs-xs); color: var(--muted); padding-bottom: 8px; }
+
+/* ---------- Copia de seguridad (Perfil) ---------- */
+.backup-sub { font-size: var(--fs-md); margin-top: 6px; }
+.code-box {
+  width: 100%; min-height: 84px; padding: 12px 14px; border-radius: var(--r); border: 2px solid var(--field-border);
+  background: var(--surface-hi); color: var(--fg); resize: vertical;
+  font: 0.85rem/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; overflow-wrap: anywhere; word-break: break-all;
+}
+.code-box:focus { outline: none; border-color: var(--yaax); box-shadow: 0 0 0 3px var(--yaax-soft); }
+.file-pick { display: flex; }
+.file-pick .btn { cursor: pointer; flex: 1 1 150px; }
+.file-pick input:focus-visible + .btn { outline: 3px solid var(--focus); outline-offset: 2px; }
+/* Al aparecer, la confirmación, el código y los mensajes se desplazan a la vista sin quedar bajo la barra inferior. */
+.backup-confirm, .code-box, .backup-msg { scroll-margin: 16px 0 calc(var(--nav-h) + env(safe-area-inset-bottom, 0px) + 16px); }
+.backup-confirm { background: var(--yaax-soft); color: var(--fg); border-radius: var(--r-lg); padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
+.backup-confirm ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 2px; }
+.backup-msg { font-size: var(--fs-sm); color: var(--muted); }
+.backup-msg.err { color: var(--bad-ink); }
+
+/* ---------- Modo tranquilo ---------- */
+/* Con el ajuste «Modo tranquilo» la clase calm va en el elemento body y se oculta todo lo marcado con .gami (píldora de
+   racha, meta de hoy, XP, días con maya, avisos de meta y de día de gracia). Los repasos pendientes se quedan. */
+body.calm .gami { display: none !important; }
+body.calm .res-stats { display: flex; justify-content: center; }
+body.calm .res-stat { flex: 1 1 0; max-width: 200px; }
 
 /* ---------- Audio de pronunciación ---------- */
 /* Botón redondo de escuchar. md = 44 px (listas, diálogo, guía); lg = tarjeta de palabra; xl =

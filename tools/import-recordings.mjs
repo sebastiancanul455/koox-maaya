@@ -6,6 +6,11 @@
 // o "l-<letra>" (ejemplo de una letra de la guía; «ch'» → l-ch-saltillo). vocab = [id] solo en las palabras
 // (los ejemplos se encuentran por texto); letters = [letra] en las letras. Nunca toca las entradas sintéticas
 // ni los fonemas: si ocupan la key, la grabación nativa se guarda al lado (<key>-2).
+// Permisos del hablante (grabaciones.json): license (una de RECORDING_LICENSES, incluida «Solo para Ko'ox Maaya»),
+// aiUse (bool), credit ("nombre" | "seudónimo" | "anónimo"), speaker y region. El crédito elegido y el uso para IA
+// se anotan en notes de cada entrada. Si un elemento trae `variant` (el hablante dijo otra forma), el audio se
+// importa con key "<key>-var", vocab y letters vacíos y text = la variante, para que la app no lo reproduzca
+// en lugar de la forma del curso; queda «pendiente de revisión» y el resumen lista las variantes.
 // Solo usa módulos de Node (fs, path, zlib) y ffmpeg/ffprobe (a través de audio-lib.mjs).
 import fs from "fs";
 import path from "path";
@@ -22,6 +27,10 @@ const MAX_ZIP_BYTES = 1024 * 1024 * 1024;     // 1 GB
 const MAX_ENTRY_BYTES = 64 * 1024 * 1024;     // 64 MB por archivo descomprimido
 const MAX_TOTAL_BYTES = 1536 * 1024 * 1024;   // 1.5 GB entre todos
 const ITEM_TYPES = ["vocab", "letter", "example"];
+export const CREDITS = ["nombre", "seudónimo", "anónimo"];
+// Apóstrofos tipográficos que test/validate.cjs rechaza en los textos mayas; en maya va el recto '.
+const APOS_RE = /[’‘ʼ´`′ʻ‛ʹ＇]/g;
+const credToken = (x) => String(x).normalize("NFD").replace(/\p{M}/gu, "").toLowerCase().trim();
 
 const HELP = `Importa las grabaciones de un hablante (el ZIP de grabar.html) al catálogo de audio.
 
@@ -34,13 +43,21 @@ Opciones:
                 se omiten)
   --alternate   si ya existe una grabación nativa de otro autor, guarda esta como versión
                 adicional (<key>-2, <key>-3, …) en lugar de omitirla
+  --force       importa también los elementos que ya no coinciden con el curso actual
+  --root <dir>  raíz del repositorio donde escribir (por omisión, la de este script)
+  -h, --help    muestra esta ayuda
 
 Las voces sintéticas y los fonemas del catálogo nunca se borran ni se reemplazan: si la key
 derivada ya la ocupa una de ellas, la grabación nativa se guarda al lado (<key>-2) y la app la
 prefiere. Las frases de ejemplo se guardan sin vocab: la app las encuentra por su texto.
-  --force       importa también los elementos que ya no coinciden con el curso actual
-  --root <dir>  raíz del repositorio donde escribir (por omisión, la de este script)
-  -h, --help    muestra esta ayuda
+
+Permisos: el ZIP debe traer el consentimiento y una licencia permitida («Solo para Ko'ox Maaya»,
+CC BY-SA 4.0, CC BY 4.0 o CC0 1.0). El crédito elegido (nombre, seudónimo o anónimo) y si autorizó
+el uso para IA del proyecto (aiUse) se anotan en notes de cada entrada.
+
+Variantes: si el hablante dijo otra forma que la del curso (variant), el audio se guarda como
+<key>-var, sin vocab ni letters y con la variante como texto, «pendiente de revisión»: la app no
+lo reproduce en lugar de la forma del curso. El resumen cuenta y lista las variantes.
 
 Después: node test/validate.cjs && node build.mjs && node build-web.mjs --out .
 `;
@@ -174,6 +191,23 @@ export function validateManifest(j, zipNames) {
   if (!license || !RECORDING_LICENSES.includes(license)) {
     throw new AudioError("licencia no permitida: " + JSON.stringify(j.license) + " (se aceptan " + RECORDING_LICENSES.join(", ") + ").", "LICENCIA");
   }
+  // Uso para IA: solo si el hablante lo autorizó (true). Un ZIP anterior que no lo dice cuenta como no autorizado.
+  if (j.aiUse !== undefined && typeof j.aiUse !== "boolean") throw new AudioError("aiUse debe ser true o false (es " + JSON.stringify(j.aiUse) + ").", "MANIFIESTO");
+  // Cómo quiso aparecer. Un ZIP anterior sin credit: con nombre si lo dio, anónimo si no.
+  const warnings = [];
+  let credit = null, speaker = cleanStr(j.speaker);
+  if (j.credit !== undefined && j.credit !== null) {
+    credit = CREDITS.find((c) => credToken(c) === credToken(j.credit)) || null;
+    if (!credit) throw new AudioError("credit no válido: " + JSON.stringify(j.credit) + " (se acepta " + CREDITS.join(", ") + ").", "MANIFIESTO");
+  }
+  if (credit === null) credit = speaker ? "nombre" : "anónimo";
+  if (credit === "anónimo") {
+    if (speaker) warnings.push("el ZIP pide crédito anónimo pero trae un nombre (" + speaker + "): se ignora el nombre.");
+    speaker = null;
+  } else if (!speaker) {
+    warnings.push("el ZIP pide crédito con " + (credit === "nombre" ? "nombre" : "seudónimo") + " pero no trae speaker: se usa «" + ANON + "».");
+    credit = "anónimo";
+  }
   const created = new Date(j.createdAt);
   if (!j.createdAt || isNaN(created.getTime())) throw new AudioError("createdAt no es una fecha válida.", "MANIFIESTO");
   if (!Array.isArray(j.items) || !j.items.length) throw new AudioError("grabaciones.json no trae elementos (items).", "MANIFIESTO");
@@ -186,14 +220,21 @@ export function validateManifest(j, zipNames) {
     if (typeof it.file !== "string" || !/^wav\/[a-z0-9-]+\.wav$/.test(it.file) || !safeZipName(it.file)) throw new AudioError(where + ": file no válido " + JSON.stringify(it.file) + ".", "RUTA");
     if (!zipNames.has(it.file)) throw new AudioError(where + ": el ZIP no trae " + it.file + ".", "MANIFIESTO");
     if (it.letter !== undefined && (typeof it.letter !== "string" || !it.letter.trim() || it.letter.length > 20)) throw new AudioError(where + ": letter no válida.", "MANIFIESTO");
+    // variant: lo que el hablante dijo en lugar de la forma del curso (texto libre de quien lo acompañó).
+    let variant = null;
+    if (it.variant !== undefined && it.variant !== null) {
+      if (typeof it.variant !== "string" || it.variant.length > 300) throw new AudioError(where + ": variant debe ser un texto de hasta 300 caracteres.", "MANIFIESTO");
+      variant = it.variant.trim().replace(/\s+/g, " ").replace(APOS_RE, "'") || null;
+    }
     return {
-      type: it.type, id: it.id, text: it.text.trim().replace(/[’‘ʼ]/g, "'"), file: it.file,
-      letter: it.type === "letter" ? (it.letter ? it.letter.trim().replace(/[’‘ʼ]/g, "'") : null) : null
+      type: it.type, id: it.id, text: it.text.trim().replace(APOS_RE, "'"), file: it.file,
+      letter: it.type === "letter" ? (it.letter ? it.letter.trim().replace(APOS_RE, "'") : null) : null,
+      variant
     };
   });
   return {
     meta: {
-      speaker: cleanStr(j.speaker), region: cleanStr(j.region), license,
+      speaker, region: cleanStr(j.region), license, credit, aiUse: j.aiUse === true, warnings,
       speakerId: typeof j.speakerId === "string" && /^[a-z0-9]{6,32}$/.test(j.speakerId) ? j.speakerId : null,
       createdAt: created, date: created.toISOString().slice(0, 10)
     },
@@ -269,12 +310,24 @@ async function main() {
   const { meta, items, byName } = manifest;
   const author = meta.speaker || ANON;
   const source = "Grabación para Ko'ox Maaya, " + meta.date;
-  const notes = "Grabado en el navegador con grabar.html" + (meta.speakerId ? " (hablante " + meta.speakerId + ")" : "") + ".";
+  const ia = meta.aiUse ? "autorizado" : "no autorizado";
+  const notes = "Grabado en el navegador con grabar.html" + (meta.speakerId ? " (hablante " + meta.speakerId + ")" : "") +
+    ". Crédito elegido: " + meta.credit + ". Uso para IA del proyecto: " + ia + ".";
   console.log("Grabaciones de: " + author + (meta.region ? " · " + meta.region : "") + " · " + meta.license + " · " + meta.date);
+  console.log("Crédito elegido: " + meta.credit + " · Uso para IA del proyecto: " + ia);
+  meta.warnings.forEach((w) => console.log("AVISO: " + w));
   console.log((o.dryRun ? "Simulación (no se escribe nada) en " : "Importando en ") + root + "\n");
 
   const course = loadCourse(root);
   if (!course) console.log("AVISO: no se encontró el curso en src/content/; no se comprueban ids ni textos.\n");
+  // Formas del curso (palabras, ejemplos y ejemplos de letras): si una variante coincide con una de ellas, la app
+  // usaría su audio para esa forma, así que se avisa.
+  const courseForms = new Set();
+  if (course) {
+    for (const v of course.vocab.values()) { courseForms.add(normText(v.m)); if (v.ex) courseForms.add(normText(v.ex)); }
+    for (const l of course.letters.values()) courseForms.add(normText(l.ex));
+  }
+  const variants = new Map();   // por archivo de audio: una variante es una grabación, aunque dé varias entradas
   const cat = readCatalog(root);
   const results = { nueva: 0, actualizada: 0, omitida: 0, error: 0 };
   const tmp = o.dryRun ? null : tempDir("koox-grab-");
@@ -282,8 +335,17 @@ async function main() {
   const usedKeys = new Set();
   try {
     for (const it of items) {
-      const baseKey = deriveKey(it);
-      const show = (sym, msg) => console.log("  " + sym + " " + baseKey.padEnd(22) + " «" + it.text + "»: " + msg);
+      // Una variante distinta de la forma del curso se guarda aparte (<key>-var) y sin vocab ni letters.
+      const isVar = !!it.variant && normText(it.variant) !== normText(it.text);
+      const baseKey = deriveKey(it) + (isVar ? "-var" : "");
+      if (isVar && !variants.has(it.file)) {
+        variants.set(it.file, { from: it.text, to: it.variant, keys: [], status: new Set(), coincide: courseForms.has(normText(it.variant)) });
+      }
+      const rep = isVar ? variants.get(it.file) : null;
+      if (rep) rep.keys.push(baseKey);
+      const end = (status) => { if (rep) rep.status.add(status); };
+      const show = (sym, msg) => console.log("  " + sym + " " + baseKey.padEnd(22) + " «" + (isVar ? it.variant : it.text) + "»" +
+        (isVar ? " (variante de «" + it.text + "»)" : "") + ": " + msg);
       // Comprobación contra el curso actual.
       let vocab = [], letters = [];
       let mismatch = null;
@@ -303,13 +365,15 @@ async function main() {
         // el id, la palabra podría sonar con la frase completa.
         vocab = it.type === "vocab" ? [it.id] : [];
       }
-      if (mismatch && !o.force) { show("↷", "se omite: " + mismatch + " (con --force se importa igual)"); results.omitida++; continue; }
+      if (mismatch && !o.force) { show("↷", "se omite: " + mismatch + " (con --force se importa igual)"); results.omitida++; end("omitida"); continue; }
 
-      // Conflictos con el catálogo.
+      // Conflictos con el catálogo. Una variante lleva su propio texto y no se asocia a ninguna palabra ni letra
+      // (vocab y letters vacíos): así la app no reproduce un audio que no coincide con la forma del curso.
       const spec = {
-        key: baseKey, kind: "nativo", text: it.text, lang: "yua", vocab, letters,
+        key: baseKey, kind: "nativo", text: isVar ? it.variant : it.text, lang: "yua", vocab: isVar ? [] : vocab, letters: isVar ? [] : letters,
         speaker: meta.speaker || undefined, region: meta.region || undefined, author,
-        license: meta.license, source, notes, root, replace: o.replace, sameAuthor, dryRun: o.dryRun
+        license: meta.license, source, root, replace: o.replace, sameAuthor, dryRun: o.dryRun,
+        notes: isVar ? notes + " El hablante dijo «" + it.variant + "» en lugar de «" + it.text + "» (forma del curso). Pendiente de revisión." : notes
       };
       // Una key sirve si está libre o es una grabación «nativo» del mismo autor (reimportar la actualiza).
       // Las entradas de otro tipo (voz sintética, fonema) nunca se tocan, ni con --replace: la grabación
@@ -327,9 +391,9 @@ async function main() {
         if (prev.kind !== "nativo") { spec.key = nextFree(); spec.replace = false; note = " (convive con la voz «" + prev.kind + "» de " + baseKey + ")"; }
         else if (o.replace) note = " (reemplaza la de «" + prev.author + "»)";
         else if (o.alternate) { spec.key = nextFree(); spec.replace = false; }
-        else { show("↷", "se omite: ya hay audio de «" + prev.author + "» (usa --replace o --alternate)"); results.omitida++; continue; }
+        else { show("↷", "se omite: ya hay audio de «" + prev.author + "» (usa --replace o --alternate)"); results.omitida++; end("omitida"); continue; }
       }
-      if (usedKeys.has(spec.key)) { show("✗", "key repetida en el ZIP"); results.error++; continue; }
+      if (usedKeys.has(spec.key)) { show("✗", "key repetida en el ZIP"); results.error++; end("con error"); continue; }
       usedKeys.add(spec.key);
 
       try {
@@ -354,10 +418,12 @@ async function main() {
           cat.entries = fresh.entries;
         }
         results[r.action.replace("simulada-", "")]++;
+        end(o.dryRun ? (r.action === "simulada-actualizada" ? "se actualizaría" : "se agregaría") : r.action);
       } catch (e) {
         if (!(e instanceof AudioError)) throw e;
         show("✗", e.message);
         results.error++;
+        end("con error");
       }
     }
   } finally {
@@ -366,6 +432,11 @@ async function main() {
 
   console.log("\nResumen: " + results.nueva + " nueva(s), " + results.actualizada + " actualizada(s), " +
     results.omitida + " omitida(s), " + results.error + " con error" + (o.dryRun ? " (simulación: no se escribió nada)." : "."));
+  console.log("Variantes reportadas por el hablante: " + variants.size + (variants.size ? " (otra forma que la del curso; quedan pendientes de revisión)" : "") + ".");
+  for (const v of variants.values()) {
+    console.log("  · dijo «" + v.to + "» en lugar de «" + v.from + "»: " + v.keys.join(", ") + " (" + [...v.status].join(", ") + ")" +
+      (v.coincide ? " · AVISO: coincide con otra forma del curso y la app usaría este audio para ella; escúchalo antes de publicar" : ""));
+  }
   if (!o.dryRun && results.nueva + results.actualizada > 0) {
     console.log("Siguiente paso: node test/validate.cjs && node build.mjs && node build-web.mjs --out .");
   }

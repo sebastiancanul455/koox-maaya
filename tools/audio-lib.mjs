@@ -27,10 +27,17 @@ export const LANGS = ["yua", "und"];
  * reconoce test/validate.cjs) y la página de la licencia (licenseUrl por omisión).
  */
 const CC = "https://creativecommons.org/";
+/**
+ * Permiso propio de Ko'ox Maaya para las voces de hablantes: publicar dentro de la app y del repositorio con el
+ * crédito elegido, y nada más sin otro permiso. NO es una licencia abierta (términos en docs/PERMISO-VOCES.md).
+ */
+export const OWN_LICENSE = "Solo para Ko'ox Maaya";
+export const OWN_LICENSE_URL = "https://github.com/sebastiancanul455/koox-maaya/blob/main/docs/PERMISO-VOCES.md";
 export const LICENSES = {
   "CC BY-SA 4.0": { url: CC + "licenses/by-sa/4.0/deed.es" },
   "CC BY 4.0": { url: CC + "licenses/by/4.0/deed.es" },
   "CC0 1.0": { url: CC + "publicdomain/zero/1.0/deed.es" },
+  [OWN_LICENSE]: { url: OWN_LICENSE_URL },
   "Dominio público": { url: CC + "publicdomain/mark/1.0/deed.es" },
   "CC BY-SA 3.0": { url: CC + "licenses/by-sa/3.0/deed.es" },
   "CC BY 3.0": { url: CC + "licenses/by/3.0/deed.es" },
@@ -41,8 +48,8 @@ export const LICENSES = {
   // Solo para la voz sintética MMS-TTS (modelo de Meta con licencia no comercial).
   "CC BY-NC 4.0": { url: CC + "licenses/by-nc/4.0/deed.es" }
 };
-/** Las tres licencias que ofrece la página de grabación (grabar.html). */
-export const RECORDING_LICENSES = ["CC BY-SA 4.0", "CC BY 4.0", "CC0 1.0"];
+/** Las licencias que ofrece la página de grabación (grabar.html); la primera es la que trae elegida. */
+export const RECORDING_LICENSES = [OWN_LICENSE, "CC BY-SA 4.0", "CC BY 4.0", "CC0 1.0"];
 
 export const TARGET_LUFS = -18;
 export const TARGET_TP_DB = -1.5;
@@ -59,10 +66,12 @@ export class AudioError extends Error {
 }
 const fail = (msg, code) => { throw new AudioError(msg, code); };
 
-const licToken = (x) => String(x).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase().replace(/[\s_.\-]+/g, "");
+const licToken = (x) => String(x).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase().replace(/[\s_.\-'’‘ʼ´`()]+/g, "");
 const LIC_ALIASES = new Map(Object.keys(LICENSES).map((k) => [licToken(k), k]));
 [["CC0", "CC0 1.0"], ["PD", "Dominio público"], ["PDM", "Dominio público"], ["PDM10", "Dominio público"],
-  ["PUBLICDOMAIN", "Dominio público"]].forEach(([a, b]) => LIC_ALIASES.set(a, b));
+  ["PUBLICDOMAIN", "Dominio público"],
+  // La etiqueta completa que ve quien graba en grabar.html.
+  [licToken(OWN_LICENSE + " (no es licencia abierta)"), OWN_LICENSE]].forEach(([a, b]) => LIC_ALIASES.set(a, b));
 
 /**
  * Normaliza una licencia a su nombre del catálogo: "CC-BY-SA-4.0" (SPDX), "cc by-sa 4.0" → "CC BY-SA 4.0";

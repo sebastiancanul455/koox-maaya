@@ -8,7 +8,7 @@
   id: "u7",
   n: 7,
   title: "Cuerpo y salud",
-  subtitle: "Partes del cuerpo, decir que estás enfermo o qué te duele, síntomas comunes y frases de cortesía para la clínica",
+  subtitle: "Partes del cuerpo, decir que estás enfermo o qué te duele, síntomas comunes y frases de cortesía con el médico",
   sources: [
     { title: "UADY – Diccionario maya, letra N (ni')", url: "https://www.mayas.uady.mx/diccionario/n_maya.html" },
     { title: "UADY – Diccionario maya, letra CH (chi', chi'ibal, chokwil)", url: "https://www.mayas.uady.mx/diccionario/ch_maya.html" },
@@ -168,13 +168,13 @@
     },
     {
       id: "u7l3",
-      title: "En la clínica: cortesía básica",
-      goal: "Al terminar podrás recibir a alguien con respeto en maya, pedirle que pase y se siente, y hacer preguntas sencillas, sabiendo hasta dónde llegan estas frases.",
+      title: "Con el médico: cortesía básica",
+      goal: "Al terminar podrás recibir a alguien con respeto en maya, pedirle que pase y se siente, y hacer preguntas sencillas sobre la comida y la medicina.",
       teach: [
         {
-          kind: "warn",
-          title: "No sustituyen a un intérprete",
-          html: "Estas frases sirven para saludar, recibir con respeto y acompañar. <b>No sustituyen a un intérprete ni a los materiales hechos para el personal de salud</b>, como el <i>Manual de frases médicas</i> (<span class=\"m\">U áanalte'il u tsikbalil ts'aak</span>), de Felipe de Jesús Castillo Tzec, que impulsaron el Indemaya y el Conalep Yucatán.<br>Para explicar un diagnóstico o un tratamiento, dar indicaciones o pedir un consentimiento, trabaja siempre con un intérprete. Este curso es experimental y no está validado para uso clínico."
+          kind: "tip",
+          title: "Para practicar con calma",
+          html: "Estas frases sirven para aprender y practicar con quien habla maya: saludar, recibir con respeto y mostrar interés. Si se trata de algo importante para tu salud, lo mejor es pedir ayuda a una persona intérprete.<br>Una fuente para curiosear: el <i>Manual de frases médicas</i> (<span class=\"m\">U áanalte'il u tsikbalil ts'aak</span>), de Felipe de Jesús Castillo Tzec, impulsado por el Indemaya y el Conalep Yucatán."
         },
         {
           kind: "text",
@@ -189,7 +189,7 @@
         {
           kind: "culture",
           title: "Escuchar es entender",
-          html: "El diccionario de la UADY traduce <span class=\"m\">u'ub</span> como «oír, escuchar, entender»: en una sola palabra, oír y comprender van juntos. Vale para cualquier consulta: escuchar con calma es la mejor manera de empezar."
+          html: "El diccionario de la UADY traduce <span class=\"m\">u'ub</span> como «oír, escuchar, entender»: en una sola palabra, oír y comprender van juntos. Vale para cualquier conversación: escuchar con calma es la mejor manera de empezar."
         }
       ],
       vocab: [
@@ -203,7 +203,7 @@
         { id: "u7-uub", m: "u'ub", es: "oír, escuchar; entender", pr: "u-ub", note: "Vocal rearticulada u'u.", conf: "alta" }
       ],
       dialogue: {
-        title: "En el consultorio (diálogo de práctica)",
+        title: "Una visita al médico (diálogo de práctica)",
         lines: [
           { who: "A", name: "Dra. Pat", m: "Bix a beel?", es: "¿Cómo está?" },
           { who: "B", name: "Don Felipe", m: "K'oja'anen.", es: "Estoy enfermo." },
@@ -289,9 +289,9 @@
           html: "Para preguntar, <span class=\"m\">wáaj</span> va después de la primera palabra, como en <span class=\"m\">K'oja'anech wáaj?</span>: <span class=\"m\">Yaj wáaj a pool?</span>, «¿te duele la cabeza?».<br><span class=\"m\">yaj</span> ya está confirmado en el diccionario de la UADY, y la construcción tiene apoyo en un artículo académico de la UADY. Pero las frases completas no las vimos escritas en una fuente académica: las de la cabeza y el estómago vienen de un material didáctico, y las demás las armamos con la regla. Por eso van «por confirmar»."
         },
         {
-          kind: "warn",
-          title: "Para acompañar, no para diagnosticar",
-          html: "Para el dolor de cabeza y el de muelas, los artículos de la UADY usan además <span class=\"m\">chi'ibal</span>: lo verás en la lección siguiente, junto con la fiebre, la tos y el vómito.<br>Estas frases sirven para mostrar interés y cercanía, <b>no para hacer un diagnóstico</b>: para preguntar síntomas con precisión, trabaja con un intérprete."
+          kind: "tip",
+          title: "Otra palabra para el dolor",
+          html: "Para el dolor de cabeza y el de muelas, los artículos de la UADY usan además <span class=\"m\">chi'ibal</span>: lo verás en la lección siguiente, junto con la fiebre, la tos y el vómito.<br>Estas frases sirven para mostrar interés y cercanía cuando alguien no se siente bien, y para practicar con quien habla maya. Y para algo importante de salud, es mejor pedir ayuda a una persona intérprete."
         },
         {
           kind: "culture",
@@ -354,9 +354,9 @@
           html: "<span class=\"m\">chi'ibal</span> y <span class=\"m\">k'i'inam</span> llevan vocal rearticulada (i'i). Wikcionario y Glosbe escriben <i>k'iinam</i>, sin el corte, pero el diccionario de la UADY escribe <span class=\"m\">k'i'inam</span>.<br>Para «salud», el mismo diccionario da <span class=\"m\">toj óolal</span>, emparentada con <span class=\"m\">toj óol</span>, «sano», y con <span class=\"m\">óol</span>, el ánimo. Va «por confirmar» porque otras fuentes escriben <i>tooj</i>, con vocal larga, en frases parecidas."
         },
         {
-          kind: "warn",
-          title: "Vocabulario, no diagnóstico",
-          html: "Estas palabras te sirven para entender y acompañar. <b>No sustituyen a un intérprete</b>: para preguntar síntomas, explicar un tratamiento o pedir un consentimiento, trabaja con un intérprete o con material validado por hablantes. Este curso es experimental y no está validado para uso clínico."
+          kind: "tip",
+          title: "Palabras para el día a día",
+          html: "Estas palabras sirven para entender cuando alguien cuenta cómo se siente y para charlar sobre eso con quien habla maya. Y si se trata de algo importante de salud, una persona intérprete es la mejor ayuda."
         }
       ],
       vocab: [

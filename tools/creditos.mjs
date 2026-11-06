@@ -8,7 +8,7 @@
 // tools/commons/fetch-pendientes.py); test/validate.cjs avisa si quedó desactualizado.
 import fs from "fs";
 import path from "path";
-import { readCatalog, ROOT as LIB_ROOT, LICENSES, TARGET_LUFS, TARGET_TP_DB, PAD_MS } from "./audio-lib.mjs";
+import { readCatalog, ROOT as LIB_ROOT, LICENSES, OWN_LICENSE, OWN_LICENSE_URL, TARGET_LUFS, TARGET_TP_DB, PAD_MS } from "./audio-lib.mjs";
 
 const args = process.argv.slice(2);
 const ri = args.indexOf("--root");
@@ -71,6 +71,13 @@ export function creditsMarkdown(cat) {
     L.push("Todavía no hay grabaciones de hablantes. Se agregan con `grabar.html` y `tools/import-recordings.mjs`, o con");
     L.push("`tools/commons/fetch-pendientes.py` (cuatro grabaciones de Wikimedia Commons pendientes de descargar).");
   } else {
+    if (by("nativo").some((e) => e.license === OWN_LICENSE)) {
+      L.push("Los audios con el permiso **«" + OWN_LICENSE + "»** **no tienen una licencia abierta** (no es Creative Commons): la persona que habló");
+      L.push("dio permiso de publicarlos dentro de la app y de este repositorio, con el crédito indicado, y de nada más sin otro permiso. Los");
+      L.push("términos están en " + link("docs/PERMISO-VOCES.md", OWN_LICENSE_URL) + ". El crédito que eligió y si autorizó o no usarlos para entrenar o evaluar");
+      L.push("modelos de IA del proyecto están anotados en `notes` de cada entrada de `audio/catalogo.json`.");
+      L.push("");
+    }
     L.push("| Archivo | Se oye | Hablante | Autor | Licencia | Fuente | Cambios |");
     L.push("| --- | --- | --- | --- | --- | --- | --- |");
     for (const e of by("nativo")) {

@@ -6,6 +6,9 @@
 // Capturas en test/shots, o en la carpeta de la variable de entorno KOOX_SHOTS.
 // Si la página trae audio (window.COURSE_AUDIO) o recursos (window.COURSE_RESOURCES), prueba sus
 // botones, «Escucha y elige», «Para escuchar más» y los créditos; si no, que no aparezca nada de eso.
+// Incluye la ejecución «racha amable, modo tranquilo y copia de seguridad» (racha con día de gracia, píldora,
+// modo tranquilo, exportar/importar, avisos, compartir y almacenamiento persistente). Con la variable de entorno
+// KOOX_ONLY=<regex> solo corren las ejecuciones cuyo nombre la cumpla (p. ej. KOOX_ONLY=amable).
 // Sale con código 1 si algo falla.
 "use strict";
 const fs = require("fs");
@@ -29,6 +32,8 @@ function check(name, pass, detail) {
   return !!pass;
 }
 const log = (s) => console.log(s);
+// KOOX_ONLY=<regex> corre solo las ejecuciones cuyo nombre la cumpla (p. ej. KOOX_ONLY=amable): para iterar rápido.
+const ONLY = process.env.KOOX_ONLY ? new RegExp(process.env.KOOX_ONLY, "i") : null;
 
 // ---------- Vista previa con el esqueleto que agrega la plataforma ----------
 const html = fs.readFileSync(SRC, "utf8");
@@ -646,6 +651,427 @@ async function robustness(browser, cfg) {
   await ctx.close();
 }
 
+// ---------- Racha amable, modo tranquilo y copia de seguridad ----------
+const assert = require("assert");
+const zlib = require("zlib");
+const STATE_KEY = "koox-maaya-v2";
+const same = (a, b) => { try { assert.deepStrictEqual(a, b); return true; } catch (e) { return false; } };
+// Escribe un estado en localStorage y recarga la página. En el objeto, los textos "@N" (valores y claves)
+// significan «hace N días» en la fecha local de la página.
+async function seedState(page, spec) {
+  await page.evaluate(([key, sp]) => {
+    const dk = (n) => { const d = new Date(); d.setDate(d.getDate() - n); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); };
+    const sub = (v) => (typeof v === "string" && /^@\d+$/.test(v) ? dk(Number(v.slice(1))) : v);
+    const walk = (o) => (Array.isArray(o) ? o.map(walk) : o && typeof o === "object" ? Object.fromEntries(Object.entries(o).map(([k, v]) => [sub(k), walk(v)])) : sub(o));
+    localStorage.setItem(key, JSON.stringify(walk(sp)));
+  }, [STATE_KEY, spec]);
+  await load(page);
+}
+// true / false si el elemento se ve; null si no existe.
+const visible = (page, sel) => page.evaluate((s) => {
+  const e = document.querySelector(s);
+  if (!e) return null;
+  const r = e.getBoundingClientRect(), cs = getComputedStyle(e);
+  return cs.display !== "none" && cs.visibility !== "hidden" && r.width > 0 && r.height > 0;
+}, sel);
+const stateOf = (page) => page.evaluate(() => window.__koox.state());
+const dayAgo = (page, n) => page.evaluate((k) => { const d = new Date(); d.setDate(d.getDate() - k); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }, n);
+const pill = (page) => page.evaluate(() => {
+  const b = document.querySelector("#pill-streak");
+  return b ? { n: b.querySelector(".num").textContent, l: b.querySelector(".sp-l").textContent, aria: b.getAttribute("aria-label"), off: b.classList.contains("off") } : null;
+});
+// Completa la lección `id` desde el inicio y deja la pantalla de resultados.
+async function doLesson(page, cfg, id) {
+  await gotoTab(page, cfg, "aprender");
+  await openLesson(page, cfg, id);
+  return page.evaluate(fastRunInPage);
+}
+const toHomeFromResults = async (page) => { await page.evaluate(() => document.querySelector("#btn-results-home").click()); await page.waitForFunction(() => ["home", "review"].includes(window.__koox.screen())); };
+// Texto del código «KOOX1.» (base64url de gzip) o «KOOX0.» (base64url del JSON) decodificado en Node, sin usar la app.
+function decodeCode(code) {
+  const m = /^KOOX([01])\.([A-Za-z0-9_-]+)$/.exec(code || "");
+  if (!m) return null;
+  const buf = Buffer.from(m[2], "base64url");
+  return JSON.parse((m[1] === "1" ? zlib.gunzipSync(buf) : buf).toString("utf8"));
+}
+const withoutMeta = (o) => { const c = Object.assign({}, o); delete c.app; delete c.exported; return c; };
+
+async function gentleRun(browser, cfg) {
+  const tag = "[" + cfg.name + "] ";
+  let { ctx, page } = await newPage(browser, cfg);
+  await load(page);
+
+  // 1) Funciones puras de la racha (fechas fijas: no dependen del día en que se corra la prueba).
+  const P = await page.evaluate(() => {
+    const K = window.__koox, S = (count, best, last, graceWeek) => ({ count, best, last, graceWeek }), V = (st, d) => K.streakView(st, d);
+    const inp = S(3, 3, "2026-11-03", null), snap = JSON.stringify(inp), r = {};
+    r.weeks = ["2026-11-02", "2026-11-08", "2026-11-09", "2027-01-01", "2026-01-01", "2025-12-29"].map((d) => K.isoWeek(d));
+    r.next = K.streakStep(inp, "2026-11-04");
+    r.pure = JSON.stringify(inp) === snap;
+    r.sameDay = K.streakStep(S(4, 4, "2026-11-04", null), "2026-11-04");
+    r.grace = K.streakStep(S(4, 4, "2026-11-03", null), "2026-11-05");
+    r.two = K.streakStep(S(5, 5, "2026-11-02", null), "2026-11-05");
+    r.again = K.streakStep(r.grace, "2026-11-07");
+    r.newWeek = K.streakStep(S(6, 6, "2026-11-08", "2026-W45"), "2026-11-10");
+    r.edgeUsed = K.streakStep(S(6, 6, "2026-11-07", "2026-W45"), "2026-11-09");
+    r.edgeFree = K.streakStep(S(6, 6, "2026-11-07", "2026-W44"), "2026-11-09");
+    r.year = K.streakStep(S(2, 2, "2026-12-31", null), "2027-01-02");
+    r.first = K.streakStep(S(0, 0, null, null), "2026-11-05");
+    r.back = K.streakStep(S(4, 4, "2026-11-08", null), "2026-11-06");
+    r.view = {
+      today: V(S(4, 6, "2026-11-06", null), "2026-11-06"), yesterday: V(S(4, 6, "2026-11-05", null), "2026-11-06"),
+      graceFree: V(S(4, 6, "2026-11-04", null), "2026-11-06"), graceUsed: V(S(4, 6, "2026-11-04", "2026-W45"), "2026-11-06"),
+      three: V(S(4, 6, "2026-11-03", null), "2026-11-06"), none: V(S(0, 0, null, null), "2026-11-06"), back: V(S(4, 6, "2026-11-08", null), "2026-11-06"),
+      edgeUsed: V(S(4, 6, "2026-11-07", "2026-W45"), "2026-11-09"), edgeFree: V(S(4, 6, "2026-11-07", "2026-W44"), "2026-11-09"),
+      noField: V({ count: 4, best: 4, last: "2026-11-04" }, "2026-11-06")
+    };
+    return r;
+  });
+  check(tag + "semana ISO: lunes y domingo de la misma semana, cambio de semana y de año", same(P.weeks, ["2026-W45", "2026-W45", "2026-W46", "2026-W53", "2026-W01", "2026-W01"]), JSON.stringify(P.weeks));
+  check(tag + "racha seguida: un día después suma 1; el mismo día no cambia nada; la función no modifica lo que recibe",
+    P.next.count === 4 && P.next.best === 4 && P.next.last === "2026-11-04" && !P.next.graced && P.sameDay.count === 4 && P.sameDay.last === "2026-11-04" && P.pure, JSON.stringify([P.next, P.sameDay]));
+  check(tag + "un día perdido con gracia: la racha sigue (+1) y se gasta la gracia de esa semana", P.grace.count === 5 && P.grace.graced === true && P.grace.graceWeek === "2026-W45" && P.grace.last === "2026-11-05", JSON.stringify(P.grace));
+  check(tag + "dos días perdidos: la racha vuelve a 1, la mejor se conserva y la gracia no se gasta", P.two.count === 1 && P.two.best === 5 && P.two.graceWeek === null && !P.two.graced, JSON.stringify(P.two));
+  check(tag + "segunda falta la misma semana: sin gracia, la racha vuelve a 1", P.again.count === 1 && P.again.best === 5 && !P.again.graced && P.again.graceWeek === "2026-W45", JSON.stringify(P.again));
+  check(tag + "cambio de semana: la gracia vuelve a estar disponible", P.newWeek.count === 7 && P.newWeek.graced === true && P.newWeek.graceWeek === "2026-W46", JSON.stringify(P.newWeek));
+  check(tag + "la gracia es de la semana del día perdonado, no de la de hoy", P.edgeUsed.count === 1 && !P.edgeUsed.graced && P.edgeFree.count === 7 && P.edgeFree.graceWeek === "2026-W45", JSON.stringify([P.edgeUsed, P.edgeFree]));
+  check(tag + "la gracia cruza el cambio de año (semana 53 de 2026)", P.year.count === 3 && P.year.graced === true && P.year.graceWeek === "2026-W53", JSON.stringify(P.year));
+  check(tag + "primera práctica: racha 1; con el reloj atrasado la racha no se rompe", P.first.count === 1 && P.first.last === "2026-11-05" && P.back.count === 4 && P.back.last === "2026-11-08", JSON.stringify([P.first, P.back]));
+  const V = P.view;
+  check(tag + "streakView: vigente hoy, ayer y antier con gracia libre; si no, 0",
+    V.today === 4 && V.yesterday === 4 && V.graceFree === 4 && V.graceUsed === 0 && V.three === 0 && V.none === 0 && V.back === 4 && V.edgeUsed === 0 && V.edgeFree === 4 && V.noField === 4, JSON.stringify(V));
+
+  // 2) Píldora, días con maya y avance de la racha con la app (estados guardados + lección real).
+  await seedState(page, { v: 2 });
+  const p0 = await pill(page);
+  check(tag + "usuario nuevo: la píldora dice «0 días de racha»", p0 && p0.n === "0" && p0.l === "días de racha" && /Racha: 0 días/.test(p0.aria) && p0.off, JSON.stringify(p0));
+  const lessons = await page.evaluate(() => window.__koox.lessons());
+  const L1 = lessons[0];
+
+  // Antier fue la última práctica, hay gracia libre: la racha sigue vigente y, al terminar una lección, la gracia se usa.
+  await seedState(page, { v: 2, xp: 120, xpByDay: { "@2": 25, "@3": 25, "@4": 25, "@5": 25, "@6": 20 }, streak: { count: 4, best: 6, last: "@2" }, daysTotal: 9, goal: 50 });
+  const p1 = await pill(page);
+  check(tag + "con la gracia libre, la racha de antier sigue vigente: «4 días de racha»", p1 && p1.n === "4" && p1.l === "días de racha" && /Racha: 4 días/.test(p1.aria) && !p1.off, JSON.stringify(p1));
+  let fr = await doLesson(page, cfg, L1);
+  check(tag + "lección completa (racha con gracia)", fr.ok, fr.error);
+  const grace = await page.evaluate(() => { const e = document.querySelector(".grace-note"); return e ? { text: e.textContent.trim(), shown: e.offsetParent !== null } : null; });
+  check(tag + "al usar la gracia: aviso breve «Usaste tu día de gracia de esta semana»", grace && grace.shown && /^Usaste tu día de gracia de esta semana$/.test(grace.text), JSON.stringify(grace));
+  check(tag + "los resultados no usan textos de pérdida o urgencia", !/perd|se acab|pierdes|no rompas|última oportunidad/i.test(await page.textContent("#v-session")), "");
+  let st = await stateOf(page);
+  const yesterdayWeek = await page.evaluate((d) => window.__koox.isoWeek(d), await dayAgo(page, 1));
+  const todayKey = await dayAgo(page, 0);
+  check(tag + "la racha avanza (+1) aunque no se llegue a la meta diaria, y la gracia queda en la semana del día perdonado",
+    st.streak.count === 5 && st.streak.best === 6 && st.streak.last === todayKey && st.streak.graceWeek === yesterdayWeek && st.xpByDay[todayKey] > 0 && st.xpByDay[todayKey] < st.goal, JSON.stringify({ streak: st.streak, xp: st.xpByDay[todayKey], goal: st.goal }));
+  check(tag + "días con maya +1 el primer día con XP", st.daysTotal === 10, st.daysTotal);
+  // Otra sesión el mismo día: ni la racha ni los días con maya suben otra vez.
+  await page.evaluate(() => document.querySelector("#btn-results-repeat").click());
+  await page.waitForFunction(() => ["teach", "vocab", "dialogue", "exercise"].includes(window.__koox.screen()));
+  fr = await page.evaluate(fastRunInPage);
+  const st1b = await stateOf(page);
+  check(tag + "una segunda sesión el mismo día no vuelve a sumar racha ni días con maya", fr.ok && st1b.streak.count === 5 && st1b.daysTotal === 10 && st1b.xp > st.xp, JSON.stringify({ streak: st1b.streak, daysTotal: st1b.daysTotal }));
+  check(tag + "con la gracia ya usada no hay aviso en la segunda sesión", (await visible(page, ".grace-note")) === null);
+
+  // Hace tres días: la racha no está vigente. La píldora cuenta «días con maya», sin «0 días de racha».
+  await seedState(page, { v: 2, xp: 100, xpByDay: { "@3": 50, "@4": 50 }, streak: { count: 2, best: 6, last: "@3", graceWeek: null }, daysTotal: 9 });
+  const p2 = await pill(page);
+  check(tag + "racha sin vigencia: la píldora dice «9 días con maya» (no «0 días de racha»)", p2 && p2.n === "9" && p2.l === "días con maya" && p2.aria === "9 días con maya" && !p2.off && !/0 d[ií]as de racha/.test(JSON.stringify(p2)), JSON.stringify(p2));
+  await gotoTab(page, cfg, "perfil");
+  const prof = await page.evaluate(() => {
+    const t = (id) => { const e = document.querySelector(id); return e ? e.textContent : null; };
+    return { days: t("#stat-days"), streak: t("#stat-streak") };
+  });
+  check(tag + "Perfil: días con maya, racha actual y mejor racha", /9\s*Días con maya/.test(prof.days) && /^0\s*Racha actual.*Mejor racha: 6 días/.test(prof.streak), JSON.stringify(prof));
+  fr = await doLesson(page, cfg, L1);
+  st = await stateOf(page);
+  check(tag + "tras 3 días sin practicar la racha reinicia en 1 sin aviso de pérdida; la mejor racha y los días con maya se conservan",
+    fr.ok && st.streak.count === 1 && st.streak.best === 6 && st.daysTotal === 10 && (await visible(page, ".grace-note")) === null, JSON.stringify({ streak: st.streak, daysTotal: st.daysTotal }));
+  await toHomeFromResults(page);
+  const p3 = await pill(page);
+  check(tag + "tras practicar, la píldora vuelve a «1 día de racha» (singular)", p3 && p3.n === "1" && p3.l === "día de racha", JSON.stringify(p3));
+  await seedState(page, { v: 2, xp: 10, xpByDay: { "@5": 10 }, streak: { count: 1, best: 1, last: "@5" } });
+  const p4 = await pill(page);
+  check(tag + "un solo día con maya, en singular", p4 && p4.n === "1" && p4.l === "día con maya", JSON.stringify(p4));
+
+  // Migración y saneo de ajustes: un estado de una versión anterior (sin daysTotal, graceWeek ni calm).
+  await seedState(page, { v: 2, xp: 50, xpByDay: { "@1": 20, "@2": 30, "@3": 0 }, streak: { count: 2, best: 3, last: "@1" }, goal: 20, lessons: {}, srs: {}, settings: { sound: true, autoplay: true, rate: "normal", synth: true } });
+  st = await stateOf(page);
+  check(tag + "estado anterior: daysTotal = días con XP del historial; sin gracia usada; modo tranquilo apagado", st.daysTotal === 2 && st.streak.graceWeek === null && st.settings.calm === false, JSON.stringify({ d: st.daysTotal, s: st.streak, c: st.settings.calm }));
+  await seedState(page, { v: 2, settings: { calm: "sí" }, streak: { count: 2, best: 1, last: "@1", graceWeek: "cualquier cosa" }, daysTotal: -4 });
+  st = await stateOf(page);
+  check(tag + "saneo: calm solo vale true; mejor racha ≥ racha; graceWeek inválida → null; daysTotal negativo → 0", st.settings.calm === false && st.streak.best === 2 && st.streak.graceWeek === null && st.daysTotal === 0, JSON.stringify(st.streak) + " " + st.daysTotal);
+  check(tag + "sin errores de JavaScript (racha)", page.errors.length === 0, page.errors.slice(0, 3).join(" | "));
+  await ctx.close();
+
+  // 3) Modo tranquilo.
+  ({ ctx, page } = await newPage(browser, cfg));
+  await load(page);
+  await seedState(page, { v: 2, goal: 10 });
+  check(tag + "sin modo tranquilo: píldora de racha y meta de hoy visibles", (await visible(page, "#pill-streak")) === true && (await visible(page, ".today-goal")) === true && (await visible(page, "#pill-due")) === true);
+  await gotoTab(page, cfg, "perfil");
+  const vis0 = await page.evaluate(() => ["#stat-xp", "#stat-days", "#stat-streak", "#week-title", "#goal", "#calm"].map((s) => { const e = document.querySelector(s); return e && e.getBoundingClientRect().height > 0; }));
+  check(tag + "Perfil sin modo tranquilo: XP, días con maya, racha, últimos 7 días, meta diaria y el interruptor", vis0.every((x) => x === true), JSON.stringify(vis0));
+  check(tag + "el interruptor dice «Modo tranquilo» y explica que oculta XP, racha y metas", /Modo tranquilo/.test(await page.textContent('label[for="calm"]')) && /oculta XP, racha y metas/i.test(await page.textContent('label[for="calm"]')));
+  fr = await doLesson(page, cfg, L1);
+  check(tag + "lección completa (sin modo tranquilo)", fr.ok, fr.error);
+  check(tag + "resultados: XP y aviso de meta cumplida visibles", (await visible(page, ".res-stat.xp")) === true && (await visible(page, ".goal-banner")) === true);
+  await toHomeFromResults(page);
+
+  await seedState(page, { v: 2, goal: 10 });
+  await gotoTab(page, cfg, "perfil");
+  await tap(page, cfg, "#calm");
+  st = await stateOf(page);
+  check(tag + "el interruptor activa el modo tranquilo (ajuste y clase en <body>)", st.settings.calm === true && (await page.evaluate(() => document.body.classList.contains("calm"))) === true);
+  const vis1 = await page.evaluate(() => ["#stat-xp", "#stat-days", "#stat-streak", "#week-title", "#goal"].map((s) => { const e = document.querySelector(s); return !!e && getComputedStyle(e).display !== "none" && e.getBoundingClientRect().height > 0; }));
+  const stats = await page.$$eval(".stats-grid .stat", (n) => n.filter((e) => getComputedStyle(e).display !== "none").map((e) => e.querySelector(".l").textContent));
+  check(tag + "Perfil en modo tranquilo: sin XP, días con maya, racha, últimos 7 días ni meta diaria; quedan palabras y lecciones", vis1.every((x) => x === false) && same(stats, ["Palabras aprendidas", "Lecciones completadas"]) && (await visible(page, "#calm")) === true, JSON.stringify({ vis1, stats }));
+  await checkOverflow(page, cfg, "perfil en modo tranquilo");
+  await gotoTab(page, cfg, "aprender");
+  check(tag + "inicio en modo tranquilo: sin píldora de racha ni meta de hoy; los repasos pendientes se quedan",
+    (await visible(page, "#pill-streak")) === false && (await visible(page, ".today-goal")) === false && (await visible(page, "#pill-due")) === true && (await visible(page, "#statbar")) === true);
+  fr = await doLesson(page, cfg, L1);
+  check(tag + "lección completa (modo tranquilo)", fr.ok, fr.error);
+  check(tag + "resultados en modo tranquilo: sin XP ni aviso de meta (el resto sí se ve)",
+    (await visible(page, ".res-stat.xp")) === false && (await visible(page, ".goal-banner")) === false && (await visible(page, "#score-val")) !== null && (await page.$$eval(".res-stat", (n) => n.filter((e) => getComputedStyle(e).display !== "none").length)) === 2);
+  await checkOverflow(page, cfg, "resultados en modo tranquilo");
+  st = await stateOf(page);
+  check(tag + "el modo tranquilo solo oculta: el XP, la racha y los días con maya se siguen contando", st.xp > 0 && st.streak.count === 1 && st.daysTotal === 1, JSON.stringify({ xp: st.xp, streak: st.streak.count, d: st.daysTotal }));
+  await toHomeFromResults(page);
+  await gotoTab(page, cfg, "repasar");
+  await tap(page, cfg, "#btn-start-review");
+  fr = await page.evaluate(fastRunInPage);
+  const shownStats = await page.$$eval(".res-stat .l", (n) => n.filter((e) => getComputedStyle(e.parentNode).display !== "none").map((e) => e.textContent));
+  check(tag + "resultados de un repaso en modo tranquilo: solo «Aciertos»", fr.ok && same(shownStats, ["Aciertos"]), JSON.stringify(shownStats));
+  await toHomeFromResults(page);
+  await load(page);
+  check(tag + "el modo tranquilo se recuerda al recargar", (await page.evaluate(() => document.body.classList.contains("calm"))) === true && (await visible(page, "#pill-streak")) === false);
+  await gotoTab(page, cfg, "perfil");
+  check(tag + "«Borrar avance» conserva el modo tranquilo", await (async () => { await tap(page, cfg, "#btn-reset"); await tap(page, cfg, "#btn-reset"); const s = await stateOf(page); return s.settings.calm === true && s.daysTotal === 0 && s.xp === 0; })());
+  await tap(page, cfg, "#calm");
+  check(tag + "al apagarlo todo vuelve a verse", (await stateOf(page)).settings.calm === false && (await visible(page, "#stat-xp")) === true && (await visible(page, "#goal")) === true);
+  await gotoTab(page, cfg, "aprender");
+  check(tag + "…también en el inicio", (await visible(page, "#pill-streak")) === true && (await visible(page, ".today-goal")) === true);
+  check(tag + "sin errores de JavaScript (modo tranquilo)", page.errors.length === 0, page.errors.slice(0, 3).join(" | "));
+  await ctx.close();
+
+  // 4) Avisos del Perfil y pie.
+  ({ ctx, page } = await newPage(browser, cfg));
+  await load(page);
+  await gotoTab(page, cfg, "perfil");
+  const notes = await page.evaluate(() => ({ trust: document.querySelector("#trust-title").parentNode.textContent, foot: document.querySelector("#v-profile .foot").textContent, all: document.querySelector("#v-profile").textContent }));
+  check(tag + "aviso de confiabilidad: IA y fuentes públicas, ortografía por región, validar con hablantes, intérprete en situaciones importantes",
+    /IA/.test(notes.trust) && /fuentes públicas/.test(notes.trust) && /varía/.test(notes.trust) && /región/.test(notes.trust) && /hablantes de maya/.test(notes.trust) && /situaciones importantes \(salud, trámites\) recurre a un intérprete/.test(notes.trust), notes.trust.slice(0, 80));
+  check(tag + "sin menciones a pacientes ni a validación clínica", !/paciente|cl[ií]nic/i.test(notes.all), (notes.all.match(/.{0,30}(paciente|cl[ií]nic).{0,30}/i) || [""])[0]);
+  check(tag + "pie: «v5.1 · proyecto comunitario experimental»", /Ko'ox Maaya v5\.1 · proyecto comunitario experimental/.test(notes.foot), notes.foot);
+
+  // 5) Copia de seguridad: exportar → borrar → importar recupera exactamente el estado.
+  await seedState(page, { v: 2, goal: 10 });
+  fr = await doLesson(page, cfg, L1);
+  check(tag + "lección completa (para la copia)", fr.ok, fr.error);
+  await toHomeFromResults(page);
+  await gotoTab(page, cfg, "repasar");
+  await tap(page, cfg, "#btn-start-review");
+  fr = await page.evaluate(fastRunInPage);
+  await toHomeFromResults(page);
+  await gotoTab(page, cfg, "perfil");
+  const stA = await stateOf(page);
+  check(tag + "hay avance que copiar", stA.xp > 0 && Object.keys(stA.srs).length > 0 && Object.values(stA.lessons).some((l) => l.done) && stA.daysTotal === 1, JSON.stringify({ xp: stA.xp, srs: Object.keys(stA.srs).length }));
+  const bk = await page.evaluate(() => ({
+    title: (document.querySelector("#backup-title") || {}).textContent,
+    text: document.querySelector("#backup-title") ? document.querySelector("#backup-title").parentNode.textContent : "",
+    btns: ["#btn-export", "#btn-copy", "#btn-share", "#btn-import"].map((s) => { const e = document.querySelector(s); return e ? e.textContent : null; }),
+    file: (document.querySelector("#backup-file") || {}).accept, paste: !!document.querySelector("#backup-paste"), share: typeof navigator.share === "function"
+  }));
+  check(tag + "Perfil → «Copia de seguridad»: texto, Exportar, Copiar código, Importar (archivo .json y texto)", bk.title === "Copia de seguridad" && /vive solo en este navegador/.test(bk.text) && /claude\.ai/.test(bk.text) && bk.btns[0] === "Exportar" && bk.btns[1] === "Copiar código" && bk.btns[3] === "Importar" && /\.json/.test(bk.file || "") && bk.paste, JSON.stringify(bk));
+  check(tag + "«Compartir» solo aparece si el navegador sabe compartir", (bk.btns[2] === "Compartir") === bk.share, JSON.stringify([bk.btns[2], bk.share]));
+  await checkOverflow(page, cfg, "perfil con copia de seguridad");
+
+  // Copiar código con el portapapeles: «KOOX1.» + base64url(gzip(JSON)).
+  await page.evaluate(() => { Object.defineProperty(navigator, "clipboard", { configurable: true, value: { writeText(t) { window.__clip = t; return Promise.resolve(); } } }); });
+  await tap(page, cfg, "#btn-copy");
+  await page.waitForFunction(() => !!window.__clip);
+  const code1 = await page.evaluate(() => window.__clip);
+  const dec1 = decodeCode(code1);
+  check(tag + "Copiar código: «KOOX1.» + base64url(gzip(JSON)) con el estado completo", /^KOOX1\./.test(code1) && dec1 && dec1.app === "koox-maaya" && same(withoutMeta(dec1), stA), code1.slice(0, 30) + "… (" + code1.length + " caracteres)");
+  check(tag + "Copiar código: avisa que se copió", /Código copiado/.test(await page.textContent("#backup-msg")) && (await visible(page, "#backup-out")) === false, await page.textContent("#backup-msg"));
+  // Sin portapapeles: el código queda visible y seleccionado.
+  await page.evaluate(() => { window.__clip = null; Object.defineProperty(navigator, "clipboard", { configurable: true, value: { writeText() { return Promise.reject(new Error("bloqueado")); } } }); });
+  await tap(page, cfg, "#btn-copy");
+  await page.waitForFunction(() => !document.querySelector("#backup-out").hidden);
+  const fb = await page.evaluate(() => { const b = document.querySelector("#backup-out"); return { v: b.value, sel: b.selectionEnd - b.selectionStart, len: b.value.length }; });
+  check(tag + "Copiar código sin portapapeles: el código queda visible y seleccionado", /^KOOX1\./.test(fb.v) && fb.sel === fb.len && same(withoutMeta(decodeCode(fb.v)), stA), JSON.stringify({ sel: fb.sel, len: fb.len }));
+  await checkOverflow(page, cfg, "perfil con el código a la vista");
+  // Navegador sin CompressionStream: «KOOX0.» + base64url(JSON).
+  await page.evaluate(() => { window.__cs = window.CompressionStream; window.CompressionStream = undefined; window.__clip = null; Object.defineProperty(navigator, "clipboard", { configurable: true, value: { writeText(t) { window.__clip = t; return Promise.resolve(); } } }); });
+  await tap(page, cfg, "#btn-copy");
+  await page.waitForFunction(() => !!window.__clip);
+  const code0 = await page.evaluate(() => window.__clip);
+  const dec0 = decodeCode(code0);
+  check(tag + "sin CompressionStream: «KOOX0.» + base64url(JSON en UTF-8)", /^KOOX0\./.test(code0) && dec0 && same(withoutMeta(dec0), stA), code0.slice(0, 30) + "…");
+  await page.evaluate(() => { window.CompressionStream = window.__cs; });
+
+  // Exportar: archivo en el sitio instalable; solo el código en claude.ai.
+  const standalone = await page.evaluate(() => window.KOOX_STANDALONE === true);
+  let exported = null;
+  if (standalone) {
+    const [dl] = await Promise.all([page.waitForEvent("download", { timeout: 5000 }), tap(page, cfg, "#btn-export")]);
+    const f = await dl.path();
+    exported = fs.readFileSync(f, "utf8");
+    check(tag + "Exportar (sitio): descarga koox-maaya-progreso-AAAA-MM-DD.json con el estado", /^koox-maaya-progreso-\d{4}-\d{2}-\d{2}\.json$/.test(dl.suggestedFilename()) && same(withoutMeta(JSON.parse(exported)), stA), dl.suggestedFilename());
+  } else {
+    let downloaded = false;
+    const onDl = () => { downloaded = true; };
+    page.on("download", onDl);
+    await page.evaluate(() => { document.querySelector("#backup-out").value = ""; document.querySelector("#backup-out").hidden = true; });
+    await tap(page, cfg, "#btn-export");
+    await page.waitForFunction(() => !document.querySelector("#backup-out").hidden);
+    await page.waitForTimeout(300);
+    page.off("download", onDl);
+    const shown = await page.evaluate(() => document.querySelector("#backup-out").value);
+    check(tag + "Exportar (Artifact): solo muestra el código, sin descargar nada", !downloaded && /^KOOX1\./.test(shown) && same(withoutMeta(decodeCode(shown)), stA), shown.slice(0, 20));
+    exported = JSON.stringify(Object.assign({ app: "koox-maaya", exported: "2026-11-06" }, stA));
+  }
+
+  // Borrar avance y recuperarlo pegando el código: pide confirmación y no cambia nada antes.
+  await tap(page, cfg, "#btn-reset");
+  await tap(page, cfg, "#btn-reset");
+  const zero = await stateOf(page);
+  check(tag + "borrado: el avance quedó en cero (días con maya incluidos)", zero.xp === 0 && zero.daysTotal === 0 && !Object.keys(zero.lessons).length && !Object.keys(zero.srs).length);
+  await page.fill("#backup-paste", "  " + code1.slice(0, 40) + "\n" + code1.slice(40) + "  ");
+  await tap(page, cfg, "#btn-import");
+  await page.waitForSelector("#backup-confirm:not([hidden]) #btn-import-ok");
+  const conf = await page.evaluate(() => ({ text: document.querySelector("#backup-confirm").textContent, ok: document.querySelector("#btn-import-ok").textContent, no: document.querySelector("#btn-import-cancel").textContent }));
+  const doneN = Object.values(stA.lessons).filter((l) => l.done).length, nLessons = await page.evaluate(() => window.__koox.lessons().length);
+  check(tag + "importar pide confirmación dentro de la página con un resumen", conf.ok === "Reemplazar mi avance" && conf.no === "Cancelar" &&
+    new RegExp("Lecciones completadas: " + doneN + " de " + nLessons).test(conf.text) && new RegExp("Palabras en repaso: " + Object.keys(stA.srs).length + "(?!\\d)").test(conf.text) && /Días con maya: 1(?!\d)/.test(conf.text), conf.text.replace(/\s+/g, " ").slice(0, 200));
+  check(tag + "antes de confirmar el avance actual no se toca", same(await stateOf(page), zero));
+  await checkOverflow(page, cfg, "perfil con la confirmación de importar");
+  await tap(page, cfg, "#btn-import-cancel");
+  check(tag + "«Cancelar» no importa nada y cierra la confirmación", same(await stateOf(page), zero) && (await visible(page, "#backup-confirm")) === false && /cancelada/i.test(await page.textContent("#backup-msg")));
+  await page.fill("#backup-paste", code1);
+  await tap(page, cfg, "#btn-import");
+  await page.waitForSelector("#backup-confirm:not([hidden]) #btn-import-ok");
+  await tap(page, cfg, "#btn-import-ok");
+  await page.waitForFunction(() => /se reemplazó/.test(document.querySelector("#backup-msg").textContent));
+  const back1 = await stateOf(page);
+  check(tag + "exportar → borrar → importar recupera exactamente el estado", same(back1, stA), same(back1, stA) ? "" : JSON.stringify(back1).slice(0, 120));
+  check(tag + "tras importar se ve el avance (lecciones y repasos pendientes al día)", (await page.textContent("#stat-days")).startsWith("1") && (await visible(page, "#backup-confirm")) === false);
+
+  // Importar el archivo .json (con la entrada de archivo) y el código sin comprimir.
+  await tap(page, cfg, "#sound"); // un cambio de ajustes que la importación debe revertir
+  await page.setInputFiles("#backup-file", { name: "copia.json", mimeType: "application/json", buffer: Buffer.from(exported) });
+  await page.waitForSelector("#backup-confirm:not([hidden]) #btn-import-ok");
+  check(tag + "importar desde archivo .json: pide confirmación y no cambia nada antes", (await stateOf(page)).settings.sound === false);
+  await tap(page, cfg, "#btn-import-ok");
+  await page.waitForFunction(() => /se reemplazó/.test(document.querySelector("#backup-msg").textContent));
+  check(tag + "importar desde archivo .json recupera exactamente el estado (ajustes incluidos)", same(await stateOf(page), stA));
+  await tap(page, cfg, "#sound");
+  await page.fill("#backup-paste", code0);
+  await tap(page, cfg, "#btn-import");
+  await page.waitForSelector("#backup-confirm:not([hidden]) #btn-import-ok");
+  await tap(page, cfg, "#btn-import-ok");
+  await page.waitForFunction(() => /se reemplazó/.test(document.querySelector("#backup-msg").textContent));
+  check(tag + "importar un código «KOOX0.» recupera exactamente el estado", same(await stateOf(page), stA));
+
+  // Importar con saneo: los datos fuera de rango se corrigen igual que al cargar.
+  const messy = '{"app":"koox-maaya","v":2,"xp":-5,"goal":7,"lessons":{"x1":{"best":9999,"done":1,"times":"2"},"__proto__":{"best":1,"done":true}},' +
+    '"srs":{"y1":{"box":99,"due":"mañana","right":-1}},"streak":{"count":3,"best":1,"last":"2026-11-05","graceWeek":"x"},' +
+    '"settings":{"calm":"sí","rate":"veloz","sound":false},"xpByDay":{"2026-11-05":12,"hoy":5}}';
+  await page.fill("#backup-paste", messy);
+  await tap(page, cfg, "#btn-import");
+  await page.waitForSelector("#backup-confirm:not([hidden]) #btn-import-ok");
+  await tap(page, cfg, "#btn-import-ok");
+  await page.waitForFunction(() => /se reemplazó/.test(document.querySelector("#backup-msg").textContent));
+  const clean = await stateOf(page);
+  const todayK = await dayAgo(page, 0);
+  check(tag + "importar usa el mismo saneo que al cargar", clean.xp === 0 && clean.goal === 20 && clean.lessons.x1.best === 100 && clean.lessons.x1.done === true && clean.lessons.x1.times === 2 && clean.srs.y1.box === 5 && clean.srs.y1.due === todayK && clean.srs.y1.right === 0 &&
+    clean.streak.best === 3 && clean.streak.graceWeek === null && clean.settings.calm === false && clean.settings.rate === "normal" && clean.settings.sound === false && same(clean.xpByDay, { "2026-11-05": 12 }) && clean.daysTotal === 1 && !Object.prototype.hasOwnProperty.call(clean.lessons, "__proto__"), JSON.stringify(clean).slice(0, 200));
+  // Se vuelve al avance de antes para seguir.
+  await page.fill("#backup-paste", code1);
+  await tap(page, cfg, "#btn-import");
+  await page.waitForSelector("#backup-confirm:not([hidden]) #btn-import-ok");
+  await tap(page, cfg, "#btn-import-ok");
+  await page.waitForFunction(() => /se reemplazó/.test(document.querySelector("#backup-msg").textContent));
+
+  // Códigos y archivos inválidos: mensaje claro, sin confirmación y sin tocar el avance.
+  const big = zlib.gzipSync(Buffer.from(" ".repeat(5 * 1024 * 1024))).toString("base64url");
+  const bad = [
+    ["", /Elige el archivo de tu copia o pega aquí el código/],
+    ["hola, esto no es un código", /no parece una copia de Ko'ox Maaya/],
+    ["KOOX1.@@@@", /incompleto o dañado/],
+    ["KOOX1.AAAABBBBCCCC", /incompleto o dañado/],
+    ["KOOX1." + code1.slice(6, Math.floor(code1.length / 2)), /incompleto o dañado/],
+    ["KOOX0." + Buffer.from("esto no es json").toString("base64url"), /incompleto o dañado/],
+    ["KOOX0." + Buffer.from([0xff, 0xfe, 0xfd]).toString("base64url"), /incompleto o dañado/],
+    ["KOOX1." + big, /demasiado grande/],
+    ["[]", /no parece una copia de Ko'ox Maaya/],
+    ['{"a":1}', /no parece una copia de Ko'ox Maaya/],
+    ['{"v":2,"lessons":[],"srs":{}}', /no parece una copia de Ko'ox Maaya/],
+    ['{"app":"otra","v":2,"lessons":{},"srs":{}}', /otra aplicación/],
+    ['{"v":3,"lessons":{},"srs":{}}', /versión más nueva/],
+    ['{"v":2,"lessons":{', /no se puede leer|no es una copia completa/],
+    ["KOOX0." + Buffer.from('{"v":2,"lessons":{},"srs":{}').toString("base64url"), /incompleto o dañado/]
+  ];
+  const stNow = await stateOf(page);
+  const badFails = [];
+  for (const [text, re] of bad) {
+    await page.fill("#backup-paste", text);
+    await tap(page, cfg, "#btn-import");
+    await page.waitForFunction(() => document.querySelector("#backup-msg").textContent.length > 0 || !document.querySelector("#backup-confirm").hidden, null, { timeout: 4000 }).catch(() => {});
+    const r = await page.evaluate(() => ({ msg: document.querySelector("#backup-msg").textContent, err: document.querySelector("#backup-msg").classList.contains("err"), confirm: !document.querySelector("#backup-confirm").hidden }));
+    if (r.confirm || !r.err || !re.test(r.msg) || !same(await stateOf(page), stNow)) badFails.push(text.slice(0, 24) + " → " + JSON.stringify(r).slice(0, 120));
+  }
+  check(tag + "códigos y datos inválidos se rechazan con un mensaje claro, sin confirmar ni tocar el avance (" + bad.length + " casos)", !badFails.length, badFails.join(" | "));
+  await page.setInputFiles("#backup-file", { name: "foto.json", mimeType: "application/json", buffer: Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]) });
+  await page.waitForFunction(() => /no parece una copia/.test(document.querySelector("#backup-msg").textContent));
+  check(tag + "un archivo que no es una copia se rechaza", (await visible(page, "#backup-confirm")) === false && same(await stateOf(page), stNow));
+  await checkOverflow(page, cfg, "perfil con un error de importación");
+  check(tag + "sin errores de JavaScript (copia de seguridad)", page.errors.length === 0, page.errors.slice(0, 3).join(" | "));
+  await ctx.close();
+
+  // 6) «Compartir» (navigator.share con archivo si se puede) y almacenamiento persistente.
+  ({ ctx, page } = await newPage(browser, cfg));
+  await page.addInitScript(() => {
+    navigator.canShare = () => true;
+    navigator.share = (d) => { window.__shared = { title: d.title || null, text: d.text || null, files: (d.files || []).map((f) => ({ name: f.name, type: f.type, size: f.size })) }; return window.__shareFail ? Promise.reject(Object.assign(new Error("x"), { name: window.__shareFail })) : Promise.resolve(); };
+    const calls = { persist: 0 };
+    window.__persist = calls;
+    Object.defineProperty(navigator, "storage", { configurable: true, value: { persist() { calls.persist++; return Promise.reject(new Error("no")); }, persisted() { return Promise.resolve(false); } } });
+  });
+  await load(page);
+  check(tag + "al arrancar pide almacenamiento persistente (y si lo rechaza no hay ruido)", (await page.evaluate(() => window.__persist.persist)) === 1 && page.errors.length === 0, page.errors.slice(0, 2).join(" | "));
+  await seedState(page, { v: 2, xp: 30, xpByDay: { "@0": 30 }, streak: { count: 1, best: 1, last: "@0" }, lessons: { [L1]: { best: 100, done: true, times: 1 } } });
+  await gotoTab(page, cfg, "perfil");
+  check(tag + "«Compartir» aparece cuando el navegador sabe compartir", (await page.textContent("#btn-share")) === "Compartir");
+  await tap(page, cfg, "#btn-share");
+  await page.waitForFunction(() => !!window.__shared);
+  const sh1 = await page.evaluate(() => window.__shared);
+  check(tag + "Compartir envía el archivo .json cuando canShare lo permite", sh1.files.length === 1 && /^koox-maaya-progreso-\d{4}-\d{2}-\d{2}\.json$/.test(sh1.files[0].name) && sh1.files[0].type === "application/json" && sh1.files[0].size > 100, JSON.stringify(sh1));
+  await page.evaluate(() => { window.__shared = null; navigator.canShare = () => false; });
+  await tap(page, cfg, "#btn-share");
+  await page.waitForFunction(() => !!window.__shared);
+  const sh2 = await page.evaluate(() => window.__shared);
+  check(tag + "Compartir sin archivos envía el código como texto", sh2.files.length === 0 && /^KOOX1\./.test(sh2.text || ""), JSON.stringify(sh2).slice(0, 100));
+  await page.evaluate(() => { window.__shared = null; window.__shareFail = "AbortError"; });
+  await tap(page, cfg, "#btn-share");
+  await page.waitForFunction(() => !!window.__shared);
+  await page.waitForTimeout(150);
+  check(tag + "cancelar el diálogo de compartir no muestra errores", (await page.textContent("#backup-msg")) === "");
+  await page.evaluate(() => { window.__shared = null; window.__shareFail = "NotAllowedError"; });
+  await tap(page, cfg, "#btn-share");
+  await page.waitForFunction(() => /No se pudo compartir/.test(document.querySelector("#backup-msg").textContent));
+  check(tag + "si no se puede compartir, lo dice y remite a «Copiar código»", /Copiar código/.test(await page.textContent("#backup-msg")));
+  check(tag + "sin errores de JavaScript (compartir)", page.errors.length === 0, page.errors.slice(0, 3).join(" | "));
+  await ctx.close();
+
+  // Navegador sin API de almacenamiento: arranca igual.
+  ({ ctx, page } = await newPage(browser, cfg));
+  await page.addInitScript(() => { Object.defineProperty(navigator, "storage", { configurable: true, value: undefined }); });
+  await load(page);
+  check(tag + "sin navigator.storage: carga el inicio sin errores", (await scr(page)) === "home" && page.errors.length === 0, page.errors.slice(0, 2).join(" | "));
+  await ctx.close();
+}
+
+
 // ---------- Audio de pronunciación y recursos para escuchar ----------
 const AU_LABELS = ["Voz nativa", "Voz sintética", "Sonido de referencia (AFI)"];
 const auState = (page) => page.evaluate(() => window.__koox.audioState());
@@ -1104,8 +1530,9 @@ async function desktop(browser, cfg) {
     ["escritorio oscuro", desktop, { name: "1280-oscuro", viewport: DESK, scheme: "dark" }],
     ["audio y recursos (claro)", audioRun, { name: "audio-claro", viewport: MOBILE, mobile: true, scheme: "light", shots: true }],
     ["audio y recursos (oscuro)", audioRun, { name: "audio-oscuro", viewport: MOBILE, mobile: true, scheme: "dark", shots: true }],
-    ["robustez (sin curso, contenido degradado, sin almacenamiento)", robustness, { name: "robustez", viewport: { width: 360, height: 740 }, mobile: true, scheme: "light" }]
-  ];
+    ["robustez (sin curso, contenido degradado, sin almacenamiento)", robustness, { name: "robustez", viewport: { width: 360, height: 740 }, mobile: true, scheme: "light" }],
+    ["racha amable, modo tranquilo y copia de seguridad", gentleRun, { name: "amable", viewport: MOBILE, mobile: true, scheme: "light" }]
+  ].filter((r) => !ONLY || ONLY.test(r[0]));
   for (const [label, fn, cfg] of runs) {
     const t = Date.now();
     log("\n▸ " + label);

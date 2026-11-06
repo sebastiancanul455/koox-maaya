@@ -335,7 +335,9 @@ if (hasU1) {
 /* ---------------- Audio (catálogo) ---------------- */
 const AUDIO_KINDS = ["nativo", "fonema", "sintetico"];
 const AUDIO_FIELDS = ["key", "file", "kind", "text", "lang", "ipa", "vocab", "letters", "speaker", "region", "author", "license", "licenseUrl", "source", "title", "durationMs", "notes"];
-const LICENCIAS = ["CC BY-SA 4.0", "CC BY 4.0", "CC0 1.0", "Dominio público", "CC BY-NC 4.0", "CC BY-NC-SA 4.0", "CC BY-SA 3.0", "CC BY 3.0", "CC BY-SA 2.5", "CC BY 2.5", "CC BY-SA 2.0", "CC BY 2.0"];
+// «Solo para Ko'ox Maaya»: permiso propio para las voces de hablantes (no es licencia abierta; docs/PERMISO-VOCES.md).
+const LICENCIA_PROPIA = "Solo para Ko'ox Maaya";
+const LICENCIAS = ["CC BY-SA 4.0", "CC BY 4.0", "CC0 1.0", LICENCIA_PROPIA, "Dominio público", "CC BY-NC 4.0", "CC BY-NC-SA 4.0", "CC BY-SA 3.0", "CC BY 3.0", "CC BY-SA 2.5", "CC BY 2.5", "CC BY-SA 2.0", "CC BY 2.0"];
 // Primer encabezado de cuadro MPEG de un archivo (saltando la etiqueta ID3v2): capa, frecuencia, canales, kbps.
 function mp3Info(buf) {
   let i = 0;
@@ -417,6 +419,10 @@ function validateAudio(catalog) {
     ["author", "license", "source"].forEach((k) => { if (!isStr(e[k])) E("falta " + k + " (los créditos son obligatorios)"); });
     if (isStr(e.license) && !LICENCIAS.includes(e.license)) W("licencia «" + e.license + "» poco común; revisa que permita publicar el audio");
     if (e.licenseUrl !== undefined && !/^https:\/\/\S+$/.test(String(e.licenseUrl))) E("licenseUrl, si existe, debe empezar con https://");
+    if (e.license === LICENCIA_PROPIA) {
+      if (e.kind !== "nativo") E("la licencia «" + LICENCIA_PROPIA + "» es solo para voces de hablantes (kind \"nativo\")");
+      if (!(isStr(e.notes) && /Uso para IA del proyecto:/.test(e.notes))) W("con la licencia «" + LICENCIA_PROPIA + "», anota en notes si el hablante autorizó el uso para IA del proyecto (p. ej. \"Uso para IA del proyecto: no autorizado.\")");
+    }
     if (isStr(e.source) && /^[a-z]+:/i.test(e.source) && !/^https:\/\/\S+$/.test(e.source)) E("source: un enlace debe empezar con https://");
     if (isStr(e.source) && COPIAS.test(e.source)) E("source: no enlazar copias no autorizadas");
     ["speaker", "region", "title", "notes"].forEach((k) => { if (e[k] !== undefined && !isStr(e[k])) E(k + ", si existe, debe ser texto no vacío"); });

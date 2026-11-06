@@ -140,6 +140,11 @@
   function addDays(k, n) { var d = parseDay(k); d.setDate(d.getDate() + n); return dayKey(d); }
   function isDay(k) { return typeof k === "string" && /^\d{4}-\d{2}-\d{2}$/.test(k); }
   function daysFrom(a, b) { return Math.round((parseDay(b) - parseDay(a)) / 86400000); }
+  // Semana ISO ("2026-W45") de un día "AAAA-MM-DD": la semana (lunes a domingo) la fija su jueves.
+  function isoWeek(k) {
+    var thu = addDays(k, 3 - (parseDay(k).getDay() + 6) % 7), y = thu.slice(0, 4);
+    return y + "-W" + pad2(Math.ceil((daysFrom(y + "-01-01", thu) + 1) / 7));
+  }
 
   /* ================= Curso ================= */
   var RAW = window.COURSE;
@@ -360,68 +365,108 @@
   var INTERVALS = [0, 1, 3, 7, 16, 35];
   var storageOK = true;
   function freshState() {
-    return { v: 2, xp: 0, xpByDay: {}, streak: { count: 0, best: 0, last: null }, goal: 20, lessons: {}, srs: {}, settings: { sound: true, autoplay: true, rate: "normal", synth: true } };
+    return { v: 2, xp: 0, xpByDay: {}, streak: { count: 0, best: 0, last: null, graceWeek: null }, daysTotal: 0, goal: 20, lessons: {}, srs: {},
+      settings: { sound: true, autoplay: true, rate: "normal", synth: true, calm: false } };
+  }
+  function isObj(x) { return !!x && typeof x === "object" && !Array.isArray(x); }
+  function isWeek(k) { return typeof k === "string" && /^\d{4}-W\d{2}$/.test(k); }
+  // Saneo del estado: de cualquier valor sale un estado válido (lo que falta o no sirve toma su valor por
+  // omisión). Lo comparten loadState (lo guardado en este navegador) y la importación de copias de seguridad.
+  function sanitizeState(o) {
+    var s = freshState();
+    if (!isObj(o)) return s;
+    s.xp = nonNeg(o.xp);
+    if (isObj(o.xpByDay)) Object.keys(o.xpByDay).forEach(function (k) { if (isDay(k)) s.xpByDay[k] = nonNeg(o.xpByDay[k]); });
+    if (isObj(o.streak)) {
+      s.streak.count = nonNeg(o.streak.count);
+      s.streak.best = Math.max(nonNeg(o.streak.best), s.streak.count);
+      s.streak.last = isDay(o.streak.last) ? o.streak.last : null;
+      s.streak.graceWeek = isWeek(o.streak.graceWeek) ? o.streak.graceWeek : null;
+    }
+    // «Días con maya»: nunca baja. Si el estado es de una versión anterior (no lo trae), son los días con XP del historial.
+    var withXp = Object.keys(s.xpByDay).filter(function (k) { return s.xpByDay[k] > 0; }).length;
+    s.daysTotal = Math.max(nonNeg(o.daysTotal), withXp);
+    if (GOALS.indexOf(o.goal) >= 0) s.goal = o.goal;
+    if (isObj(o.lessons)) Object.keys(o.lessons).forEach(function (id) {
+      var l = o.lessons[id];
+      if (id !== "__proto__" && isObj(l)) s.lessons[id] = { best: clamp(nonNeg(l.best), 0, 100), done: !!l.done, times: nonNeg(l.times) };
+    });
+    if (isObj(o.srs)) Object.keys(o.srs).forEach(function (id) {
+      var r = o.srs[id];
+      if (id !== "__proto__" && isObj(r)) s.srs[id] = { box: clamp(nonNeg(r.box), 0, 5), due: isDay(r.due) ? r.due : today(), right: nonNeg(r.right), wrong: nonNeg(r.wrong) };
+    });
+    if (isObj(o.settings)) {
+      s.settings.sound = o.settings.sound !== false;
+      s.settings.autoplay = o.settings.autoplay !== false;
+      s.settings.rate = o.settings.rate === "lenta" ? "lenta" : "normal";
+      s.settings.synth = o.settings.synth !== false;
+      s.settings.calm = o.settings.calm === true;
+    }
+    return s;
   }
   function loadState() {
-    var s = freshState(), raw = null;
+    var raw = null;
     try { raw = window.localStorage.getItem(KEY); } catch (e) { storageOK = false; }
-    if (!raw) return s;
-    try {
-      var o = JSON.parse(raw);
-      if (!o || typeof o !== "object") return s;
-      s.xp = nonNeg(o.xp);
-      if (o.xpByDay && typeof o.xpByDay === "object") Object.keys(o.xpByDay).forEach(function (k) { if (isDay(k)) s.xpByDay[k] = nonNeg(o.xpByDay[k]); });
-      if (o.streak && typeof o.streak === "object") {
-        s.streak.count = nonNeg(o.streak.count); s.streak.best = nonNeg(o.streak.best);
-        s.streak.last = isDay(o.streak.last) ? o.streak.last : null;
-      }
-      if (GOALS.indexOf(o.goal) >= 0) s.goal = o.goal;
-      if (o.lessons && typeof o.lessons === "object") Object.keys(o.lessons).forEach(function (id) {
-        var l = o.lessons[id];
-        if (l && typeof l === "object") s.lessons[id] = { best: clamp(nonNeg(l.best), 0, 100), done: !!l.done, times: nonNeg(l.times) };
-      });
-      if (o.srs && typeof o.srs === "object") Object.keys(o.srs).forEach(function (id) {
-        var r = o.srs[id];
-        if (r && typeof r === "object") s.srs[id] = { box: clamp(nonNeg(r.box), 0, 5), due: isDay(r.due) ? r.due : today(), right: nonNeg(r.right), wrong: nonNeg(r.wrong) };
-      });
-      if (o.settings && typeof o.settings === "object") {
-        s.settings.sound = o.settings.sound !== false;
-        s.settings.autoplay = o.settings.autoplay !== false;
-        s.settings.rate = o.settings.rate === "lenta" ? "lenta" : "normal";
-        s.settings.synth = o.settings.synth !== false;
-      }
-    } catch (e) { /* estado dañado: se empieza de cero */ }
-    return s;
+    if (!raw) return freshState();
+    try { return sanitizeState(JSON.parse(raw)); }
+    catch (e) { return freshState(); /* estado dañado: se empieza de cero */ }
   }
   function save() {
     try { window.localStorage.setItem(KEY, JSON.stringify(state)); storageOK = true; }
     catch (e) { storageOK = false; }
   }
   var state = loadState();
+  // Modo tranquilo: la clase «calm» en el elemento body hace que el CSS oculte todo lo marcado con .gami
+  // (píldora de racha, meta de hoy, XP, días con maya, aviso de meta). Los repasos pendientes se quedan.
+  function applyCalm() {
+    try { document.body.classList.toggle("calm", state.settings.calm === true); } catch (e) { /* sin efecto */ }
+  }
 
-  var goalJustMet = false;
+  /* ---------- Racha amable ---------- */
+  // La racha avanza el día en que se gana XP (al terminar una lección o un repaso); no hace falta llegar a
+  // la meta diaria. Una vez por semana ISO se perdona UN día sin práctica (día de gracia, automático).
+  // Con L = último día con práctica, d = hoy y gap = días entre ambos:
+  //   gap 0 (o menos, si el reloj del equipo retrocedió): nada · gap 1: racha + 1 ·
+  //   gap 2 con la gracia libre en la semana del día perdonado: racha + 1 y se gasta la gracia (graceWeek) ·
+  //   en cualquier otro caso la racha vuelve a 1, sin mensajes de pérdida.
+  // streakStep y streakView son puras (no modifican lo que reciben) y se prueban en test/smoke.cjs.
+  function graceFree(streak, forgiven) { return streak.graceWeek !== isoWeek(forgiven); }
+  function streakStep(streak, d) {
+    var s = { count: nonNeg(streak.count), best: nonNeg(streak.best), last: isDay(streak.last) ? streak.last : null,
+      graceWeek: isWeek(streak.graceWeek) ? streak.graceWeek : null, graced: false };
+    var gap = s.last ? daysFrom(s.last, d) : null;
+    if (gap !== null && gap <= 0) return s;
+    if (gap === 1) s.count++;
+    else if (gap === 2 && graceFree(s, addDays(s.last, 1))) { s.count++; s.graceWeek = isoWeek(addDays(s.last, 1)); s.graced = true; }
+    else s.count = 1;
+    s.last = d;
+    s.best = Math.max(s.best, s.count);
+    return s;
+  }
+  // La racha que se muestra el día d: vigente si la última práctica fue hoy o ayer, o antier con la gracia libre.
+  function streakView(streak, d) {
+    if (!isDay(streak.last)) return 0;
+    var gap = daysFrom(streak.last, d);
+    return gap <= 1 || (gap === 2 && graceFree(streak, addDays(streak.last, 1))) ? nonNeg(streak.count) : 0;
+  }
+
+  var goalJustMet = false, graceJustUsed = false;
   function addXP(n) {
     if (!(n > 0)) return;
     var d = today(), before = state.xpByDay[d] || 0;
     state.xp += n;
     state.xpByDay[d] = before + n;
-    var s = state.streak;
-    if (s.last !== d) {
-      s.count = s.last && addDays(s.last, 1) === d ? s.count + 1 : 1;
-      s.last = d;
-      s.best = Math.max(s.best, s.count);
-    }
+    if (!before) state.daysTotal++; // el primer XP de un día suma un «día con maya»; este total nunca baja
+    var r = streakStep(state.streak, d);
+    state.streak = { count: r.count, best: r.best, last: r.last, graceWeek: r.graceWeek };
+    if (r.graced) graceJustUsed = true;
     if (before < state.goal && before + n >= state.goal) goalJustMet = true;
     // Conserva solo los últimos 120 días del historial.
     var keys = Object.keys(state.xpByDay).sort();
     while (keys.length > 120) delete state.xpByDay[keys.shift()];
   }
   function xpToday() { return state.xpByDay[today()] || 0; }
-  function currentStreak() {
-    var s = state.streak, t = today();
-    if (!s.last) return 0;
-    return s.last === t || addDays(s.last, 1) === t ? s.count : 0;
-  }
+  function currentStreak() { return streakView(state.streak, today()); }
 
   /* ---------- Repetición espaciada (Leitner) ---------- */
   function srsEntries() {
@@ -816,13 +861,21 @@
     for (var i = 0; i < COURSE.lessons.length; i++) if (!lessonDone(COURSE.lessons[i])) return COURSE.lessons[i];
     return null;
   }
+  // Píldora de la racha. Sin racha vigente pero con práctica anterior no dice «0 días de racha» sino los
+  // «días con maya» acumulados (que nunca bajan). Es parte de la gamificación (.gami): el modo tranquilo la oculta.
+  function streakPillHTML() {
+    var st = currentStreak(), dt = state.daysTotal, n = st, label, aria, off = false;
+    if (st > 0) { label = plural(st, "día de racha", "días de racha"); aria = "Racha: " + st + " " + plural(st, "día", "días"); }
+    else if (dt > 0) { n = dt; label = plural(dt, "día con maya", "días con maya"); aria = dt + " " + label; }
+    else { label = "días de racha"; aria = "Racha: 0 días"; off = true; }
+    return '<button class="stat-pill sun gami' + (off ? " off" : "") + '" type="button" id="pill-streak" aria-label="' + aria + '">' + ICON.sun +
+      '<span class="sp-txt" aria-hidden="true"><span class="num">' + n + '</span><span class="sp-l">' + label + "</span></span></button>";
+  }
   function statbarHTML() {
-    var st = currentStreak(), due = dueList().length;
+    var due = dueList().length;
     return '<div class="statbar" id="statbar">' +
       '<div class="brand">' + ICON.mark + '<span class="brand-name">Ko\'ox Maaya</span></div>' +
-      '<div class="stats-mini">' +
-      '<button class="stat-pill sun' + (st ? "" : " off") + '" type="button" id="pill-streak" aria-label="Racha: ' + st + " " + plural(st, "día", "días") + '">' + ICON.sun +
-      '<span class="sp-txt" aria-hidden="true"><span class="num">' + st + '</span><span class="sp-l">' + plural(st, "día de racha", "días de racha") + "</span></span></button>" +
+      '<div class="stats-mini">' + streakPillHTML() +
       '<button class="stat-pill due" type="button" id="pill-due" aria-label="Repasos pendientes: ' + due + '">' + ICON.review +
       '<span class="sp-txt" aria-hidden="true"><span class="num">' + due + '</span><span class="sp-l">' + plural(due, "repaso", "repasos") + "</span></span></button>" +
       "</div></div>";
@@ -850,7 +903,7 @@
       h += '<div class="resume-top"><p class="eyebrow">Curso completo</p><h2>Terminaste todas las lecciones</h2>' +
         '<p class="resume-goal">Sigue repasando para que las palabras se queden contigo.</p></div>';
     }
-    h += '<div class="today-goal"><div class="goal-row"><span>Meta de hoy</span><span class="num">' + xp + " / " + goal + " XP</span></div>" +
+    h += '<div class="today-goal gami"><div class="goal-row"><span>Meta de hoy</span><span class="num">' + xp + " / " + goal + " XP</span></div>" +
       '<div class="bar" role="progressbar" aria-label="Meta de hoy" aria-valuemin="0" aria-valuemax="' + goal + '" aria-valuenow="' + Math.min(xp, goal) + '"><span style="width:' + Math.round(clamp(xp / goal, 0, 1) * 100) + '%"></span></div></div>';
     if (nx) h += '<button class="btn primary wide" type="button" id="btn-resume">' + (anyDone ? "Continuar" : "Empezar") + "</button>";
     if (due) h += '<button class="btn tonal wide" type="button" id="btn-home-review">' + ICON.review + "Repasar " + due + " " + plural(due, "palabra", "palabras") + "</button>";
@@ -1698,7 +1751,7 @@
     var total = s.firstTotal, right = s.firstRight;
     var pct = total ? Math.round(right / total * 100) : 100;
     var xp = 0, newWords = [], h = "";
-    goalJustMet = false;
+    goalJustMet = false; graceJustUsed = false;
     if (s.kind === "lesson") {
       var l = s.lesson;
       xp = 10 + right + (total && pct === 100 ? 5 : 0);
@@ -1732,11 +1785,12 @@
       '<div class="score-ring" role="img" aria-label="' + pct + ' por ciento de aciertos"><svg viewBox="0 0 120 120" aria-hidden="true"><circle class="track" cx="60" cy="60" r="' + r + '"/>' +
       '<circle class="val" id="score-val" cx="60" cy="60" r="' + r + '" stroke-dasharray="' + c.toFixed(1) + '" stroke-dashoffset="' + c.toFixed(1) + '"/></svg>' +
       '<div class="center"><span class="pct num">' + pct + '<small>%</small></span><span class="pct-label">aciertos</span></div></div>' +
-      '<div class="res-stats"><div class="res-stat xp"><span class="v num">+' + xp + '</span><span class="l">XP</span></div>' +
+      '<div class="res-stats"><div class="res-stat xp gami"><span class="v num">+' + xp + '</span><span class="l">XP</span></div>' +
       '<div class="res-stat"><span class="v num">' + right + "/" + total + '</span><span class="l">Aciertos</span></div>' +
       (s.kind === "lesson" ? '<div class="res-stat"><span class="v num">' + newWords.length + '</span><span class="l">' + plural(newWords.length, "Palabra nueva", "Nuevas") + "</span></div>"
-        : '<div class="res-stat"><span class="v num">' + currentStreak() + '</span><span class="l">Racha</span></div>') + "</div>";
-    if (goalJustMet) h += '<p class="goal-banner">' + ICON.sun + "Cumpliste tu meta de hoy: " + state.goal + " XP</p>";
+        : '<div class="res-stat gami"><span class="v num">' + currentStreak() + '</span><span class="l">Racha</span></div>') + "</div>";
+    if (goalJustMet) h += '<p class="goal-banner gami">' + ICON.sun + "Cumpliste tu meta de hoy: " + state.goal + " XP</p>";
+    if (graceJustUsed) h += '<p class="goal-banner grace-note gami">' + ICON.sun + "Usaste tu día de gracia de esta semana</p>";
     if (s.kind === "lesson" && s.lesson.vocab.length) {
       h += '<div class="section"><h2>' + (newWords.length ? "Palabras que aprendiste" : "Palabras que repasaste") + "</h2>" +
         '<div class="word-chips">' + s.lesson.vocab.map(function (v) { return '<span class="word-chip m" lang="yua">' + esc(v.m) + "</span>"; }).join("") + "</div>" +
@@ -2045,6 +2099,242 @@
   });
   $("#dict-form").addEventListener("submit", function (e) { e.preventDefault(); el.dictQ.blur(); });
 
+  /* ================= Copia de seguridad ================= */
+  // El avance vive solo en este navegador (localStorage). La copia es el estado completo, como archivo .json
+  // (solo en el sitio instalable: claude.ai bloquea las descargas) o como «código» de texto para pegar:
+  //   KOOX1.<base64url(gzip(JSON))>     si el navegador tiene CompressionStream
+  //   KOOX0.<base64url(JSON en UTF-8)>  si no
+  // Al importar, el JSON se valida y se sanea con sanitizeState (el mismo saneo que loadState), se muestra
+  // un resumen y se pide confirmar dentro de la página; hasta entonces el avance actual no se toca.
+  var BACKUP_MAX = 4 * 1024 * 1024; // tope del JSON que se acepta al importar (ya descomprimido)
+  var CODE_BAD = "El código está incompleto o dañado. Cópialo otra vez completo: empieza con KOOX1. o KOOX0.";
+  var NOT_BACKUP = "Eso no parece una copia de Ko'ox Maaya. El código empieza con KOOX1. o KOOX0., y el archivo es un .json exportado desde Perfil.";
+  var TOO_BIG = "Eso es demasiado grande para ser una copia de Ko'ox Maaya.";
+  var pendingImport = null;
+  function bad(msg) { return Promise.reject({ backupMsg: msg }); }
+  function backupJSON() {
+    var o = { app: "koox-maaya", exported: today() }, s = JSON.parse(JSON.stringify(state));
+    Object.keys(s).forEach(function (k) { o[k] = s[k]; });
+    return JSON.stringify(o);
+  }
+  function toB64u(bytes) {
+    var bin = "";
+    for (var i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+    return btoa(bin).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+  }
+  function fromB64u(s) {
+    if (!/^[A-Za-z0-9_-]+$/.test(s)) throw new Error("base64");
+    var bin = atob(s.replace(/-/g, "+").replace(/_/g, "/") + "===".slice((s.length + 3) % 4)), out = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+    return out;
+  }
+  function fromUtf8(bytes) { return new TextDecoder("utf-8", { fatal: true }).decode(bytes); }
+  // Pasa bytes por un CompressionStream o DecompressionStream y junta lo que sale (con tope de tamaño).
+  function pipeBytes(bytes, transform, max) {
+    var w = transform.writable.getWriter(), r = transform.readable.getReader(), parts = [], total = 0;
+    w.write(bytes).catch(function () {});
+    w.close().catch(function () {});
+    function pump() {
+      return r.read().then(function (x) {
+        if (x.done) {
+          var out = new Uint8Array(total), at = 0;
+          parts.forEach(function (p) { out.set(p, at); at += p.length; });
+          return out;
+        }
+        total += x.value.length;
+        if (max && total > max) { r.cancel().catch(function () {}); throw new Error("grande"); }
+        parts.push(x.value);
+        return pump();
+      });
+    }
+    return pump();
+  }
+  // El código de la copia (promesa de texto). Si gzip falla en este navegador, usa KOOX0.
+  function makeCode() {
+    var bytes = new TextEncoder().encode(backupJSON());
+    var plain = function () { return "KOOX0." + toB64u(bytes); };
+    if (typeof CompressionStream !== "function") return Promise.resolve(plain());
+    try { return pipeBytes(bytes, new CompressionStream("gzip")).then(function (z) { return "KOOX1." + toB64u(z); }, plain); }
+    catch (e) { return Promise.resolve(plain()); }
+  }
+  function backupProblem(o) {
+    if (!isObj(o)) return NOT_BACKUP;
+    if (o.app != null && o.app !== "koox-maaya") return "Esa copia es de otra aplicación, no de Ko'ox Maaya.";
+    if (typeof o.v === "number" && o.v > 2) return "Esa copia es de una versión más nueva de Ko'ox Maaya. Actualiza la app y vuelve a intentarlo.";
+    if (o.v !== 2 || !isObj(o.lessons) || !isObj(o.srs)) return NOT_BACKUP;
+    return "";
+  }
+  // Lee un código KOOX1./KOOX0. o el JSON de un archivo. Devuelve (promesa) { state, exported } con el estado
+  // ya saneado; si algo está mal la promesa se rechaza con { backupMsg } (un mensaje claro para la persona).
+  function readBackup(text) {
+    var raw = String(text == null ? "" : text).trim(), code = raw.replace(/\s+/g, ""), m = /^KOOX([01])\./i.exec(code), json;
+    if (!raw) return bad("Elige el archivo de tu copia o pega aquí el código.");
+    if (raw.length > BACKUP_MAX * 2) return bad(TOO_BIG);
+    if (m) {
+      var bytes;
+      try { bytes = fromB64u(code.slice(6)); } catch (e) { return bad(CODE_BAD); }
+      if (m[1] === "0") {
+        try { json = Promise.resolve(fromUtf8(bytes)); } catch (e) { return bad(CODE_BAD); }
+      } else {
+        if (typeof DecompressionStream !== "function") return bad("Este navegador no puede leer códigos KOOX1 (comprimidos). Usa el archivo .json, o genera el código desde un navegador más reciente.");
+        try {
+          json = pipeBytes(bytes, new DecompressionStream("gzip"), BACKUP_MAX).then(fromUtf8).catch(function (e) {
+            throw { backupMsg: e && e.message === "grande" ? TOO_BIG : CODE_BAD };
+          });
+        } catch (e) { return bad(CODE_BAD); }
+      }
+    } else if (raw.charAt(0) === "{") json = Promise.resolve(raw);
+    else return bad(NOT_BACKUP);
+    return json.then(function (t) {
+      var o;
+      try { o = JSON.parse(t); } catch (e) { throw { backupMsg: m ? CODE_BAD : "Ese archivo no se puede leer: no es una copia completa de Ko'ox Maaya." }; }
+      var why = backupProblem(o);
+      if (why) throw { backupMsg: why };
+      return { state: sanitizeState(o), exported: isDay(o.exported) ? o.exported : null };
+    });
+  }
+  function backupSummary(st) {
+    return {
+      lessons: COURSE.lessons.filter(function (l) { return st.lessons[l.id] && st.lessons[l.id].done; }).length, total: COURSE.lessons.length,
+      words: Object.keys(st.srs).filter(function (id) { return COURSE.vocabById[id]; }).length, days: st.daysTotal
+    };
+  }
+  function downloadText(name, text) {
+    var url = URL.createObjectURL(new Blob([text], { type: "application/json" }));
+    var a = document.createElement("a");
+    a.href = url; a.download = name; a.rel = "noopener"; a.hidden = true;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function () { if (a.parentNode) a.parentNode.removeChild(a); URL.revokeObjectURL(url); }, 1500);
+  }
+  function backupSectionHTML() {
+    var share = typeof navigator.share === "function";
+    return '<section class="section" aria-labelledby="backup-title"><h2 id="backup-title">Copia de seguridad</h2>' +
+      '<p class="muted">Tu avance vive solo en este navegador. Exporta una copia de vez en cuando: te sirve para no perderlo y para pasarlo entre el sitio y claude.ai.</p>' +
+      '<div class="btn-row"><button class="btn tonal" type="button" id="btn-export">Exportar</button>' +
+      '<button class="btn tonal" type="button" id="btn-copy">Copiar código</button>' +
+      (share ? '<button class="btn tonal" type="button" id="btn-share">Compartir</button>' : "") + "</div>" +
+      '<textarea class="code-box" id="backup-out" rows="4" readonly hidden spellcheck="false" aria-label="Código de tu copia de seguridad"></textarea>' +
+      '<h3 class="backup-sub">Importar</h3>' +
+      '<p class="muted">Elige el archivo .json de una copia o pega su código. Antes de reemplazar tu avance verás un resumen y tendrás que confirmar.</p>' +
+      '<div class="file-pick"><input class="sr-only" type="file" id="backup-file" accept=".json,application/json"><label class="btn ghost" for="backup-file">Elegir archivo .json</label></div>' +
+      '<label class="sr-only" for="backup-paste">Código de la copia de seguridad</label>' +
+      '<textarea class="code-box" id="backup-paste" rows="3" placeholder="Pega aquí el código (empieza con KOOX1.)" spellcheck="false" autocomplete="off" autocapitalize="off" autocorrect="off"></textarea>' +
+      '<div class="btn-row"><button class="btn tonal" type="button" id="btn-import">Importar</button></div>' +
+      '<div class="backup-confirm" id="backup-confirm" tabindex="-1" hidden></div>' +
+      '<p class="backup-msg" id="backup-msg" tabindex="-1" role="status" aria-live="polite"></p></section>';
+  }
+  function backupSay(msg, isErr) {
+    var p = $("#backup-msg");
+    if (!p) return;
+    p.textContent = msg;
+    p.classList.toggle("err", !!isErr);
+  }
+  function showCode(code) {
+    var box = $("#backup-out");
+    if (!box) return;
+    box.value = code; box.hidden = false;
+    try { box.focus(); box.select(); box.setSelectionRange(0, box.value.length); } catch (e) { /* sin efecto */ }
+  }
+  function bindBackup() {
+    var COPIED = "Código copiado. Guárdalo donde quieras (por ejemplo, en tus notas) y pégalo en «Importar» cuando lo necesites.";
+    $("#btn-export").addEventListener("click", function () {
+      if (window.KOOX_STANDALONE === true) {
+        var name = "koox-maaya-progreso-" + today() + ".json";
+        try { downloadText(name, backupJSON()); backupSay("Se guardó «" + name + "» en tus descargas. Guárdalo en un lugar seguro."); }
+        catch (e) { backupSay("No se pudo guardar el archivo. Prueba con «Copiar código».", true); }
+        return;
+      }
+      // En claude.ai las descargas están bloqueadas: la copia es solo el código.
+      makeCode().then(function (code) {
+        showCode(code);
+        backupSay("Este es el código de tu avance. Cópialo y guárdalo; pégalo en «Importar» donde quieras recuperarlo.");
+      }, function () { backupSay("No se pudo preparar la copia.", true); });
+    });
+    $("#btn-copy").addEventListener("click", function () {
+      makeCode().then(function (code) {
+        var done = function (copied) {
+          if (copied) { backupSay(COPIED); return; }
+          showCode(code); // respaldo: el código queda visible y seleccionado
+          var legacy = false;
+          try { legacy = document.execCommand("copy"); } catch (e) { legacy = false; }
+          backupSay(legacy ? COPIED : "No se pudo copiar solo. El código quedó seleccionado: cópialo con el menú de tu teclado o del navegador.");
+        };
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(code).then(function () { done(true); }, function () { done(false); });
+          else done(false);
+        } catch (e) { done(false); }
+      }, function () { backupSay("No se pudo preparar la copia.", true); });
+    });
+    var sh = $("#btn-share");
+    if (sh) sh.addEventListener("click", function () {
+      backupSay("");
+      var file = null;
+      try { file = new File([backupJSON()], "koox-maaya-progreso-" + today() + ".json", { type: "application/json" }); } catch (e) { file = null; }
+      var fail = function (e) { if (!(e && e.name === "AbortError")) backupSay("No se pudo compartir desde aquí. Usa «Copiar código».", true); };
+      var send = function (data) {
+        try { navigator.share(data).then(function () { backupSay("Listo, compartido."); }, fail); } catch (e) { fail(e); }
+      };
+      var withFile = false;
+      try { withFile = !!(file && navigator.canShare && navigator.canShare({ files: [file] })); } catch (e) { withFile = false; }
+      if (withFile) send({ title: "Mi avance en Ko'ox Maaya", text: "Copia de seguridad de mi avance en Ko'ox Maaya.", files: [file] });
+      else makeCode().then(function (code) { send({ title: "Mi avance en Ko'ox Maaya", text: code }); }, fail);
+    });
+
+    // Importar: archivo .json o código pegado. Nada cambia hasta que la persona confirma.
+    var paste = $("#backup-paste"), box = $("#backup-confirm");
+    function closeConfirm() { pendingImport = null; box.hidden = true; box.innerHTML = ""; }
+    function askReplace(res) {
+      pendingImport = res.state;
+      var sm = backupSummary(res.state), empty = !sm.lessons && !sm.words && !sm.days && !res.state.xp;
+      box.innerHTML = "<p><strong>Encontramos esta copia" + (res.exported ? " (del " + esc(res.exported) + ")" : "") + ":</strong></p>" +
+        "<ul><li>Lecciones completadas: " + sm.lessons + " de " + sm.total + "</li>" +
+        "<li>Palabras en repaso: " + sm.words + "</li>" +
+        "<li>Días con maya: " + sm.days + "</li></ul>" +
+        "<p>" + (empty ? "La copia está vacía: si continúas, tu avance quedará en blanco." : "Si continúas, esta copia reemplaza el avance que tienes ahora en este navegador.") + " No se puede deshacer.</p>" +
+        '<div class="btn-row"><button class="btn primary" type="button" id="btn-import-ok">Reemplazar mi avance</button>' +
+        '<button class="btn ghost" type="button" id="btn-import-cancel">Cancelar</button></div>';
+      box.hidden = false;
+      backupSay("");
+      $("#btn-import-ok").addEventListener("click", function () {
+        if (!pendingImport) return;
+        state = pendingImport;
+        pendingImport = null;
+        save(); applyCalm(); updateBadge();
+        renderProfile();
+        backupSay("Listo: tu avance se reemplazó con la copia.");
+        var msg = $("#backup-msg"); if (msg) msg.focus({ preventScroll: true });
+        toast("Avance importado");
+      });
+      $("#btn-import-cancel").addEventListener("click", function () {
+        closeConfirm();
+        paste.value = "";
+        backupSay("Importación cancelada. Tu avance no cambió.");
+        var msg = $("#backup-msg"); if (msg) msg.focus({ preventScroll: true });
+      });
+      try { box.focus({ preventScroll: true }); box.scrollIntoView({ block: "nearest" }); } catch (e) { /* sin efecto */ }
+    }
+    function review(text) {
+      closeConfirm();
+      backupSay("");
+      readBackup(text).then(askReplace, function (e) {
+        backupSay((e && e.backupMsg) || "No se pudo leer la copia.", true);
+      });
+    }
+    $("#btn-import").addEventListener("click", function () { review(paste.value); });
+    paste.addEventListener("input", function () { if (!box.hidden) closeConfirm(); });
+    var fileIn = $("#backup-file");
+    fileIn.addEventListener("change", function () {
+      var f = fileIn.files && fileIn.files[0];
+      if (!f) return;
+      if (f.size > BACKUP_MAX * 2) { fileIn.value = ""; closeConfirm(); backupSay(TOO_BIG, true); return; }
+      var rd = new FileReader();
+      rd.onload = function () { fileIn.value = ""; review(String(rd.result)); };
+      rd.onerror = function () { fileIn.value = ""; backupSay("No se pudo leer el archivo.", true); };
+      rd.readAsText(f);
+    });
+  }
+
   /* ================= Perfil ================= */
   var DOW = ["D", "L", "M", "M", "J", "V", "S"];
   function renderProfile() {
@@ -2053,8 +2343,9 @@
     var strong = entries.filter(function (e) { return e.r.box >= 4; }).length;
     var h = '<header class="page-head"><p class="eyebrow">Tu avance</p><h1 id="profile-title">Perfil</h1></header>';
     h += '<div class="stats-grid">' +
-      '<div class="stat"><span class="v num">' + state.xp + '</span><span class="l">XP total</span></div>' +
-      '<div class="stat"><span class="v num">' + currentStreak() + '</span><span class="l">Racha actual</span><span class="s">Mejor racha: ' + state.streak.best + " " + plural(state.streak.best, "día", "días") + "</span></div>" +
+      '<div class="stat wide gami" id="stat-days"><span class="v num">' + state.daysTotal + '</span><span class="l">Días con maya</span><span class="s">Cada día que practicas suma, y este total nunca baja.</span></div>' +
+      '<div class="stat gami" id="stat-streak"><span class="v num">' + currentStreak() + '</span><span class="l">Racha actual</span><span class="s">Mejor racha: ' + state.streak.best + " " + plural(state.streak.best, "día", "días") + "</span></div>" +
+      '<div class="stat gami" id="stat-xp"><span class="v num">' + state.xp + '</span><span class="l">XP total</span></div>' +
       '<div class="stat"><span class="v num">' + entries.length + '</span><span class="l">Palabras aprendidas</span><span class="s">' + strong + " en nivel 4 o más</span></div>" +
       '<div class="stat"><span class="v num">' + doneN + '<small class="muted"> / ' + COURSE.lessons.length + '</small></span><span class="l">Lecciones completadas</span></div></div>';
     var t = today(), days = "";
@@ -2062,10 +2353,11 @@
       var k = addDays(t, -i), x = state.xpByDay[k] || 0, d = parseDay(k);
       days += '<div class="day' + (x >= state.goal ? " met" : x > 0 ? " some" : "") + (i === 0 ? " today" : "") + '"><i class="num">' + (x || "") + "</i>" + DOW[d.getDay()] + "</div>";
     }
-    h += '<section class="section" aria-labelledby="week-title"><h2 id="week-title">Últimos 7 días</h2><div class="week" role="img" aria-label="XP de los últimos siete días">' + days + "</div></section>";
+    h += '<section class="section gami" aria-labelledby="week-title"><h2 id="week-title">Últimos 7 días</h2><div class="week" role="img" aria-label="XP de los últimos siete días">' + days + "</div></section>";
     h += '<section class="section" aria-labelledby="settings-title"><h2 id="settings-title">Ajustes</h2><div class="settings">' +
-      '<div class="setting"><label class="setting-txt" for="goal">Meta diaria<small>XP que quieres ganar cada día</small></label><select id="goal">' +
+      '<div class="setting gami"><label class="setting-txt" for="goal">Meta diaria<small>XP que quieres ganar cada día</small></label><select id="goal">' +
       GOALS.map(function (g) { return '<option value="' + g + '"' + (g === state.goal ? " selected" : "") + ">" + g + " XP</option>"; }).join("") + "</select></div>" +
+      '<label class="setting" for="calm"><span class="setting-txt">Modo tranquilo<small>Oculta XP, racha y metas</small></span><input class="switch" type="checkbox" role="switch" id="calm"' + (state.settings.calm ? " checked" : "") + "></label>" +
       '<label class="setting" for="sound"><span class="setting-txt">Sonido de aciertos<small>Tonos cortos y suaves</small></span><input class="switch" type="checkbox" role="switch" id="sound"' + (state.settings.sound ? " checked" : "") + "></label>" +
       (AU.list.length ? '<label class="setting" for="au-auto"><span class="setting-txt">Reproducir al presentar palabras<small>Suena la pronunciación al aparecer cada palabra</small></span>' +
         '<input class="switch" type="checkbox" role="switch" id="au-auto"' + (state.settings.autoplay ? " checked" : "") + "></label>" +
@@ -2076,7 +2368,8 @@
       "</div>" +
       (hasKind("sintetico") ? '<p class="au-note synth-note">' + ICON.speaker.replace("<svg", '<svg class="ico"') + "<span>" + esc(SYNTH_NOTE) + "</span></p>" : "") + (audioFailed ? '<p class="storage-warn">El sonido no está disponible en este navegador.</p>' : "") +
       (storageOK ? "" : '<p class="storage-warn">Este navegador no permite guardar datos (modo privado o almacenamiento bloqueado). Tu avance se perderá al cerrar la página.</p>') + "</section>";
-    if (COURSE.guide.length) h += '<section class="section" aria-labelledby="guide-title"><h2 id="guide-title">Guía de pronunciación</h2>' +
+    h += backupSectionHTML();
+    if (COURSE.guide.length) h +='<section class="section" aria-labelledby="guide-title"><h2 id="guide-title">Guía de pronunciación</h2>' +
       '<p class="muted">Cómo se leen las ' + COURSE.guide.length + ' letras del alfabeto maya. Está en el Diccionario.</p>' +
       '<div class="btn-row"><button class="btn tonal" type="button" id="btn-profile-guide">' + ICON.book + "Abrir la guía</button></div></section>";
     h += listenSectionHTML();
@@ -2092,10 +2385,10 @@
       "<li>Elige «Agregar a la pantalla principal» o «Instalar app».</li><li>Abre Ko'ox Maaya desde el ícono, como cualquier app.</li></ol>" +
       '<p class="muted">Necesita conexión a internet para abrirse. Tu avance se guarda solo en este teléfono y en este navegador.</p></section>';
     h += '<section class="notice" aria-labelledby="trust-title"><h2 id="trust-title">Qué tan confiable es</h2><ul>' +
-      "<li>El contenido se preparó con ayuda de IA y se cotejó con las fuentes públicas que aparecen abajo.</li>" +
-      "<li>La ortografía del maya varía entre regiones y autores. Las palabras marcadas «por confirmar» son formas probables que aún no se confirmaron en una fuente: la app te las muestra para reconocerlas, pero no te pide escribirlas.</li>" +
+      "<li>Ko'ox Maaya es un pasatiempo para aprender. El contenido se preparó con ayuda de IA y se cotejó con las fuentes públicas que aparecen abajo; aun así, puede tener errores.</li>" +
+      "<li>La ortografía del maya varía según la región y el autor. Las palabras marcadas «por confirmar» son formas probables que aún no se confirmaron en una fuente: la app te las muestra para reconocerlas, pero no te pide escribirlas.</li>" +
       "<li>Valida lo que aprendas con hablantes de maya.</li>" +
-      "<li>No uses estas frases con pacientes sin una validación formal. En la consulta, recurre a un intérprete o a material validado por hablantes.</li></ul></section>";
+      "<li>Para situaciones importantes (salud, trámites) recurre a un intérprete.</li></ul></section>";
     h += '<section class="section" aria-labelledby="src-title"><h2 id="src-title">Fuentes</h2>';
     if (COURSE.sources.length) {
       h += '<details class="src-box"><summary>Ver las ' + COURSE.sources.length + " fuentes, por unidad</summary>" +
@@ -2111,12 +2404,14 @@
     h += "</section>";
     h += creditsHTML();
     h += '<section class="section" aria-labelledby="reset-title"><h2 id="reset-title">Borrar avance</h2>' +
-      '<p class="muted">Borra tu XP, racha, lecciones y repasos de este navegador; tus ajustes se conservan. No se puede deshacer.</p>' +
+      '<p class="muted">Borra tu XP, racha, días con maya, lecciones y repasos de este navegador; tus ajustes se conservan. No se puede deshacer: si quieres conservar tu avance, expórtalo antes.</p>' +
       '<div class="btn-row"><button class="btn ghost-danger" type="button" id="btn-reset">Borrar avance</button></div>' +
       '<p class="reset-msg" id="reset-msg" tabindex="-1" aria-live="polite"></p></section>';
-    h += '<p class="foot">Ko\'ox Maaya v5 · experimental, sin validación clínica.</p>';
+    h += '<p class="foot">Ko\'ox Maaya v5.1 · proyecto comunitario experimental.</p>';
+    pendingImport = null;
     v.innerHTML = h;
     if (PWA && PWA.on) PWA.bindInstall();
+    bindBackup();
     $("#goal").addEventListener("change", function () {
       var g = Number(this.value);
       if (GOALS.indexOf(g) >= 0) { state.goal = g; save(); toast("Meta diaria: " + g + " XP"); }
@@ -2127,6 +2422,10 @@
       state.settings.sound = this.checked;
       if (this.checked) { audioFailed = false; tone("ok"); }
       save();
+    });
+    $("#calm").addEventListener("change", function () {
+      state.settings.calm = this.checked; save(); applyCalm();
+      toast(this.checked ? "Modo tranquilo activado" : "Modo tranquilo desactivado");
     });
     var as = $("#au-synth");
     if (as) as.addEventListener("change", function () {
@@ -2326,6 +2625,10 @@
     lessons: function () { return COURSE.lessons.map(function (l) { return l.id; }); },
     vocabCount: function () { return COURSE.vocab.length; },
     state: function () { return JSON.parse(JSON.stringify(state)); },
+    // Racha amable (funciones puras, para pruebas): ver «Racha amable» arriba.
+    streakStep: streakStep,
+    streakView: streakView,
+    isoWeek: isoWeek,
     normalize: normalize,
     grade: grade,
     searchKey: searchKey,
@@ -2482,6 +2785,14 @@
 
   /* ================= Arranque ================= */
   try { if (!document.documentElement.lang) document.documentElement.lang = "es"; } catch (e) { /* sin efecto */ }
+  applyCalm();
+  // Pide al navegador que no borre el avance cuando falte espacio. Si no existe o falla, no pasa nada.
+  try {
+    if (navigator.storage && typeof navigator.storage.persist === "function") {
+      var persistAsk = navigator.storage.persist();
+      if (persistAsk && typeof persistAsk.catch === "function") persistAsk.catch(function () { /* sin efecto */ });
+    }
+  } catch (e) { /* sin efecto */ }
   (function fontsOn() {
     var gf = document.getElementById("gfonts");
     if (!gf || gf.media === "all") return;

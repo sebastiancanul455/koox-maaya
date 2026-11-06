@@ -1,0 +1,49 @@
+name: CI
+
+# Valida el contenido, comprueba que lo generado esté al día, corre las pruebas con Playwright
+# y, en main, publica el sitio en la rama gh-pages (GitHub Pages).
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Validar contenido y créditos
+        run: |
+          node test/validate.cjs
+          node tools/creditos.mjs --check
+      - name: Regenerar y comprobar que no hay diferencias
+        run: |
+          node build.mjs
+          node build-web.mjs --out .
+          git diff --exit-code -- index.html sw.js grabar.html manifest.webmanifest dist
+      - name: Prueba de humo (claude.ai)
+        run: node test/smoke.cjs dist/koox-maaya-artifact.html
+      - name: Prueba de la app instalable
+        run: node test/pwa.cjs .
+      - name: Prueba del estudio de grabación
+        run: node test/grabar.cjs
+
+  publicar:
+    needs: pruebas
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publicar main en gh-pages
+        run: git push --force origin HEAD:gh-pages

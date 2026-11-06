@@ -358,6 +358,11 @@ async function mainFlow(browser, srv, info) {
   check("el botón «Instalar app» espera a beforeinstallprompt", ins.btn && ins.hidden === true);
   const rec = await page.evaluate(() => { const a = document.querySelector("#btn-grabar"); return a ? a.getAttribute("href") : null; });
   check(info.grabar ? "Perfil invita a grabar (enlace a grabar.html)" : "sin grabar.html, Perfil no invita a grabar", info.grabar ? rec === "grabar.html" : rec === null, String(rec));
+  // Copia de seguridad: en el sitio instalable «Exportar» descarga el .json (en claude.ai solo muestra el código).
+  const [dl] = await Promise.all([page.waitForEvent("download", { timeout: 5000 }).catch(() => null), tap(page, "#btn-export")]);
+  let dlJson = null;
+  try { dlJson = dl ? JSON.parse(fs.readFileSync(await dl.path(), "utf8")) : null; } catch (e) { dlJson = null; }
+  check("Perfil → «Exportar» descarga koox-maaya-progreso-AAAA-MM-DD.json con el avance", !!dl && /^koox-maaya-progreso-\d{4}-\d{2}-\d{2}\.json$/.test(dl.suggestedFilename()) && !!dlJson && dlJson.app === "koox-maaya" && dlJson.v === 2, dl ? dl.suggestedFilename() : "sin descarga");
   await page.evaluate(() => {
     const e = new Event("beforeinstallprompt", { cancelable: true });
     e.prompt = () => { window.__installPrompted = (window.__installPrompted || 0) + 1; return Promise.resolve(); };

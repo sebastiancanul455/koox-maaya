@@ -1,0 +1,771 @@
+{
+  "unit": "u11",
+  "searchesUsed": 33,
+  "date": "2026-11-06",
+  "method": "33 llamadas a WebSearch, hechas antes de que el tope bajara a 25; después no se hizo ninguna más. Gran parte con allowed_domains (mayas.uady.mx y christianlehmann.eu). WebFetch no resuelve mayas.uady.mx (ENOTFOUND) y curl da 403, así que toda la evidencia viene de los extractos del buscador. Andrade, Blair y Vermont-Salas (B&VS) y Junp'iit Maaya se leyeron por extractos del sitio de Lehmann. Normalización a 2014: j por h, vocal larga y tono de la UADY, -i' de la negación; las formas armadas por regla y por sustitución de objeto van como «probable».",
+  "items": [
+    {
+      "contentId": "u11-kaat",
+      "variants": [],
+      "correction": "",
+      "notes": "En el curso solo se enseña «querer»: la conjugación de «pedir» (kin k'áatik) sale únicamente de la tabla de Wiktionary y no se enseña.",
+      "m": "k'áat",
+      "es": "querer, desear; también pedir, preguntar",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "UADY – Diccionario maya-español, letra K' (K'ÁAT, K'A'ANAN, K'ABÉET)",
+          "url": "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+        },
+        {
+          "title": "UADY – Diccionario español-maya, letra P (PEDIR: k'áat; PONER: ts'aa)",
+          "url": "https://www.mayas.uady.mx/diccionario/p_esp.html"
+        },
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        },
+        {
+          "title": "Wiktionary – k'áat (maya yucateco)",
+          "url": "https://en.wiktionary.org/wiki/k%E2%80%99aat"
+        }
+      ],
+      "evidence": "UADY, letra K': «K'ÁAT: Querer, desear, pretender» y, como segunda acepción, «K'ÁAT: Pregunta, petición; preguntar, pedir». UADY español-maya: «PEDIR: k'áat». Andrade (edición de Lehmann): in k'at, «quiero (quise, querré) algo», verbo defectivo sin sufijo verbal; el sentido «pedir» sería un verbo regular aparte. Wiktionary: k'áat, verbo transitivo, «to ask, to ask for, to request», cita a Gómez Navarrete (2009) y a Yoshida (2009). Vocal larga y tono alto tal como los escribe la UADY."
+    },
+    {
+      "contentId": "u11-in-kaat",
+      "variants": [],
+      "correction": "",
+      "notes": "a k'áat (quieres) y u k'áat (quiere) aparecen en la tabla del curso; sin formas de plural.",
+      "m": "In k'áat",
+      "es": "quiero",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        },
+        {
+          "title": "Junp'iit Maaya (Mújica 1995), edición en el sitio de Christian Lehmann",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        },
+        {
+          "title": "parryc – Yucatec Maya (in k'áat janal, K'a'abet in janal)",
+          "url": "https://parryc.com/language/yucatec-maya"
+        },
+        {
+          "title": "Diccionario de uso del maya yucateco (u k'áat)",
+          "url": "https://www.academia.edu/142986420/Diccionario_de_uso_del_maya_yucateco"
+        }
+      ],
+      "evidence": "Andrade: «in k'at», 'I want (wanted, will want) it'; verbo defectivo que no toma el sufijo verbal. Junp'iit Maaya: «In k'at bin Uxmal» = 'I want to go to Uxmal'. Parry (cita a Briceño Chel): «in k'áat janal» = 'I want to eat'. Diccionario de uso: «bíin u k'áat u beet» (u k'áat, tercera persona). B&VS: «ba'x a k'at ka in maneh?» (a k'at, segunda persona). Sin k- delante."
+    },
+    {
+      "contentId": "u11-baax-a-kaat",
+      "variants": [],
+      "correction": "",
+      "notes": "Frase armada; no vista aislada.",
+      "m": "Ba'ax a k'áat?",
+      "es": "¿Qué quieres?",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (texto glosado en el sitio de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+        },
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        }
+      ],
+      "evidence": "B&VS: «ba'x a k'at ka in maneh?» = 'What do you want me to buy?'. La pregunta corta sale de quitar la subordinada ka in maneh; ba'ax + cláusula es el patrón de la unidad 5."
+    },
+    {
+      "contentId": "u11-kaat-bin-uxmal",
+      "variants": [],
+      "correction": "",
+      "notes": "El patrón k'áat + verbo sin objeto (bin) lo confirma también Parry con janal.",
+      "m": "In k'áat bin Uxmal.",
+      "es": "Quiero ir a Uxmal.",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "Junp'iit Maaya (Mújica 1995), edición en el sitio de Christian Lehmann",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        },
+        {
+          "title": "UADY – Diccionario maya-español, letra K' (K'ÁAT, K'A'ANAN, K'ABÉET)",
+          "url": "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+        }
+      ],
+      "evidence": "Junp'iit Maaya (sitio de Lehmann), lista de frases: «In k'at bin Uxmal.» = 'I want to go to Uxmal.' Solo se ajusta k'at → k'áat (vocal larga y tono de la UADY). Uxmal se deja como nombre de lugar."
+    },
+    {
+      "contentId": "u11-kaat-janal",
+      "variants": [],
+      "correction": "",
+      "notes": "Sube a verificado si se ve en otra fuente.",
+      "m": "In k'áat janal.",
+      "es": "Quiero comer.",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        {
+          "title": "parryc – Yucatec Maya (in k'áat janal, K'a'abet in janal)",
+          "url": "https://parryc.com/language/yucatec-maya"
+        },
+        {
+          "title": "Junp'iit Maaya (Mújica 1995), edición en el sitio de Christian Lehmann",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        }
+      ],
+      "evidence": "Parry (guía de estudio que dice tomar los ejemplos de Briceño Chel): «in k'áat janal» = 'I want to eat'; no hay infinitivo y los verbos seriados simplemente se siguen. Una sola fuente no académica para la frase exacta; el patrón k'áat + bin está en Junp'iit."
+    },
+    {
+      "contentId": "u11-kaat-man-baalob",
+      "variants": [],
+      "correction": "",
+      "notes": "Con verbo transitivo, el verbo trae su propio in.",
+      "m": "In k'áat in man ba'alo'ob.",
+      "es": "Quiero comprar cosas.",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Junp'iit Maaya (Mújica 1995), edición en el sitio de Christian Lehmann",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        },
+        {
+          "title": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (texto glosado en el sitio de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+        }
+      ],
+      "evidence": "Junp'iit Maaya: «In k'at in man ts'e'ets'ek ba'alo'ob.» = 'I want to buy some things.' B&VS: «ma' in k'at in man le ba'alo'obo'» (no quiero comprar esas cosas). Se omite ts'e'ets'ek, palabra de cantidad que no se pudo confirmar."
+    },
+    {
+      "contentId": "u11-ma-in-kaati",
+      "variants": [
+        "Ma' in k'áat."
+      ],
+      "correction": "",
+      "notes": "«ma' tin k'áat» (sugerida en el encargo) NO está atestiguada: tin es el progresivo (táan in); las fuentes usan in.",
+      "m": "Ma' in k'áati'.",
+      "es": "No quiero.",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        },
+        {
+          "title": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (texto glosado en el sitio de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+        }
+      ],
+      "evidence": "Andrade: «ma' in k'ati», 'I don't want it' / 'I don't want to'; plantilla ma(') PA k'at, y ma' u k'at para tercera persona. B&VS: «ma' in k'at in man le ba'alo'obo'». Se ajusta k'at → k'áat y se escribe la colita -i' (regla ma' … -i' de Lehmann, ya usada en la unidad 5)."
+    },
+    {
+      "contentId": "u11-uts-tin-wich",
+      "variants": [],
+      "correction": "",
+      "notes": "Literalmente «es bueno a mi ojo».",
+      "m": "Uts tin wich.",
+      "es": "Me gusta (lo que veo).",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (texto glosado en el sitio de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+        },
+        {
+          "title": "Junp'iit Maaya (Mújica 1995), edición en el sitio de Christian Lehmann",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        },
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        }
+      ],
+      "evidence": "B&VS: «hats'uts, uts t-in w-ich tulakal» = 'it's beautiful, I like it all' (glosa uts 'good', t-in 'my', w-ich 'eye'). Junp'iit Maaya: «Bixma'il, seen uts tin wich.» = 'Of course, I like it very much.' Andrade: uts t-a w-ich, 'you like (what you see)'. Tres fuentes académicas independientes."
+    },
+    {
+      "contentId": "u11-uts-tin-chi",
+      "variants": [],
+      "correction": "",
+      "notes": "No se vio en una frase completa de un texto; sí como idiom glosado en una gramática.",
+      "m": "Uts tin chi'.",
+      "es": "Me gusta (lo que como).",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        }
+      ],
+      "evidence": "Andrade, sección de 'uts t-in …': «uts t-in chi'», 'I like (what I eat)', literalmente 'good to my mouth'. Una fuente académica; la estructura es la misma de uts tin wich (3 fuentes)."
+    },
+    {
+      "contentId": "u11-uts-ta-wich",
+      "variants": [],
+      "correction": "",
+      "notes": "Como pregunta basta la entonación o wáaj.",
+      "m": "Uts ta wich.",
+      "es": "Te gusta (lo que ves).",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        }
+      ],
+      "evidence": "Andrade: «uts t-a w-ich», 'you like (what you see)'."
+    },
+    {
+      "contentId": "u11-uts-tin-xikin",
+      "variants": [],
+      "correction": "",
+      "notes": "Marcada «por confirmar».",
+      "m": "Uts tin xikin.",
+      "es": "Me gusta (lo que oigo).",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (texto glosado en el sitio de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+        },
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        }
+      ],
+      "evidence": "B&VS contiene «uts t-in xikin …» ('because I like this Indian tongue'; xikin = oreja) dentro de una frase más larga. Andrade describe la serie uts t-in + parte del cuerpo según lo visto, comido u oído. La lectura aislada «lo que oigo» sale del patrón."
+    },
+    {
+      "contentId": "u11-jach-uts-tin-wich",
+      "variants": [],
+      "correction": "",
+      "notes": "jach + uts no se vio escrito tal cual.",
+      "m": "Jach uts tin wich.",
+      "es": "Me gusta mucho.",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Junp'iit Maaya (Mújica 1995), edición en el sitio de Christian Lehmann",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        },
+        {
+          "title": "UADY – Diccionario maya-español, letra K' (K'ÁAT, K'A'ANAN, K'ABÉET)",
+          "url": "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+        }
+      ],
+      "evidence": "Junp'iit trae «seen uts tin wich» (muchísimo). Aquí se usa jach (muy; unidad 2, Jach ma'alob) en lugar de seen, cuya grafía normativa no se pudo confirmar. Combinación armada."
+    },
+    {
+      "contentId": "u11-uts-waaj-ta-wich",
+      "variants": [],
+      "correction": "",
+      "notes": "Armada por regla.",
+      "m": "Uts wáaj ta wich?",
+      "es": "¿Te gusta?",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        }
+      ],
+      "evidence": "Uts ta wich (Andrade) + regla de wáaj en segundo lugar (unidad 5, AnderBois). No se vio la pregunta escrita tal cual."
+    },
+    {
+      "contentId": "u11-jatsuts-uts-tin-wich",
+      "variants": [],
+      "correction": "",
+      "notes": "Frase completa atestiguada, con normalización ortográfica.",
+      "m": "Jats'uts, uts tin wich tuláakal.",
+      "es": "Es hermoso, me gusta todo.",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (texto glosado en el sitio de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+        },
+        {
+          "title": "UADY – Diccionario maya-español, letra T (TULÁAKAL)",
+          "url": "https://www.mayas.uady.mx/diccionario/t_maya.html"
+        }
+      ],
+      "evidence": "B&VS: «seen hats'uts, uts tin wich tulakal» = 'it's very beautiful, I like it all'. Normalización: h → j (norma 2014) y tuláakal como lo escribe la UADY («TULÁAKAL: Todo, todos»); se omite seen."
+    },
+    {
+      "contentId": "u11-tulaakal",
+      "variants": [],
+      "correction": "",
+      "notes": "",
+      "m": "tuláakal",
+      "es": "todo, todos",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "UADY – Diccionario maya-español, letra T (TULÁAKAL)",
+          "url": "https://www.mayas.uady.mx/diccionario/t_maya.html"
+        },
+        {
+          "title": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (texto glosado en el sitio de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+        }
+      ],
+      "evidence": "UADY, letra T: «TULÁAKAL: Todo, todos.» B&VS: tulakal en 'I like it all'."
+    },
+    {
+      "contentId": "u11-kabeet",
+      "variants": [
+        "k'a'abéet",
+        "k'abet",
+        "k'a'abet",
+        "kabet"
+      ],
+      "correction": "",
+      "notes": "Se enseña la grafía de la UADY (sin saltillo interno); las demás se aceptan al escribir. Conviene que un hablante diga cuál prefiere hoy (k'abéet o k'a'abéet). La entrada anterior de kb/gramatica (k'a'abéet) quedó «probable» por esa duda.",
+      "m": "k'abéet",
+      "es": "es necesario; hace falta",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "UADY – Diccionario maya-español, letra K' (K'ÁAT, K'A'ANAN, K'ABÉET)",
+          "url": "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+        },
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        },
+        {
+          "title": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (texto glosado en el sitio de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+        },
+        {
+          "title": "La Lengua Maya de Yucatán – Frases básicas (K'a'abéet in bin)",
+          "url": "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+        },
+        {
+          "title": "parryc – Yucatec Maya (in k'áat janal, K'a'abet in janal)",
+          "url": "https://parryc.com/language/yucatec-maya"
+        }
+      ],
+      "evidence": "UADY, letra K': «K'ABÉET: Cosa necesaria, útil.» Andrade: k'abet 'it is necessary', forma invariable; ma k'abeti 'no es necesario'. B&VS: k'abet glosado 'necessary'. La Lengua Maya de Yucatán: «K'a'abéet in bin». Parry: «K'a'abet in janal». Significado seguro en 5 fuentes; la grafía varía."
+    },
+    {
+      "contentId": "u11-kabeet-teen",
+      "variants": [],
+      "correction": "",
+      "notes": "",
+      "m": "K'abéet teen ja'.",
+      "es": "Necesito agua.",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (texto glosado en el sitio de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+        }
+      ],
+      "evidence": "B&VS: «k'abet ten suum» ('I need rope too'): k'abet + teen + objeto. Aquí el objeto es ja' (agua, unidad 1). Patrón atestiguado, frase armada."
+    },
+    {
+      "contentId": "u11-kabeet-teech",
+      "variants": [],
+      "correction": "",
+      "notes": "",
+      "m": "K'abéet teech ja'?",
+      "es": "¿Necesitas agua?",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (texto glosado en el sitio de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+        }
+      ],
+      "evidence": "B&VS: «k'abet teech kaab wah chukwa'?» = 'Do you need honey or chocolate?'. Aquí el objeto es ja'."
+    },
+    {
+      "contentId": "u11-kabeet-in-bin",
+      "variants": [],
+      "correction": "",
+      "notes": "Equivale a Yaan in bin (unidad 9).",
+      "m": "K'abéet in bin.",
+      "es": "Tengo que irme.",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        {
+          "title": "La Lengua Maya de Yucatán – Frases básicas (K'a'abéet in bin)",
+          "url": "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+        },
+        {
+          "title": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (texto glosado en el sitio de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+        },
+        {
+          "title": "parryc – Yucatec Maya (in k'áat janal, K'a'abet in janal)",
+          "url": "https://parryc.com/language/yucatec-maya"
+        }
+      ],
+      "evidence": "La Lengua Maya de Yucatán: «K'a'abéet in bin» = tengo que irme (fuente no académica). Patrón k'abet + in + verbo: B&VS «k'abet in tuxtik jun-p'el kaartah» ('I need to send a letter'); Parry «K'a'abet in janal» ('I must eat')."
+    },
+    {
+      "contentId": "u11-ma-kabeeti",
+      "variants": [
+        "Ma' k'a'abéeti'"
+      ],
+      "correction": "",
+      "notes": "Grafía exacta por confirmar.",
+      "m": "Ma' k'abéeti'.",
+      "es": "No hace falta.",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        }
+      ],
+      "evidence": "Andrade: «ma k'abeti», 'it is not necessary', 'there is no need of it'. Se adapta a la grafía y a la colita -i' de la unidad 5."
+    },
+    {
+      "contentId": "u11-kaanan",
+      "variants": [],
+      "correction": "",
+      "notes": "Adjetivo; no es el verbo «necesitar».",
+      "m": "k'a'anan",
+      "es": "necesario, valioso, importante",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "UADY – Diccionario maya-español, letra K' (K'ÁAT, K'A'ANAN, K'ABÉET)",
+          "url": "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+        }
+      ],
+      "evidence": "UADY, letra K': «K'A'ANAN: Necesario, valioso, importante.»"
+    },
+    {
+      "contentId": "u11-tsaa",
+      "variants": [
+        "ts'a'"
+      ],
+      "correction": "",
+      "notes": "Raíz escrita ts'aa (UADY) o ts'a' (B&VS). Solapa con u12-tsaa (como orden).",
+      "m": "ts'aa",
+      "es": "dar, entregar; poner",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "UADY – Diccionario maya-español, letra TS' (TS'AA)",
+          "url": "https://www.mayas.uady.mx/diccionario/ts_glotal_maya.html"
+        },
+        {
+          "title": "UADY – Diccionario español-maya, letra P (PEDIR: k'áat; PONER: ts'aa)",
+          "url": "https://www.mayas.uady.mx/diccionario/p_esp.html"
+        },
+        {
+          "title": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (texto glosado en el sitio de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+        },
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        }
+      ],
+      "evidence": "UADY: «TS'AA: Dar, entregar, poner en algún lugar»; español-maya: «PONER: ts'aa». B&VS glosa ts'a'-ik 'give' (a ts'a'ik teen). Andrade: ts'a teeni, 'give it to me'."
+    },
+    {
+      "contentId": "u11-cha",
+      "variants": [],
+      "correction": "",
+      "notes": "El sentido «recibir» no se confirmó y no se enseña.",
+      "m": "ch'a'",
+      "es": "agarrar",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        {
+          "title": "UADY – Diccionario español-maya, letra A (AGARRAR: ch'a', maach, cháach; AMOR; APRECIAR)",
+          "url": "https://www.mayas.uady.mx/diccionario/a_esp.html"
+        }
+      ],
+      "evidence": "UADY español-maya, letra A: «AGARRAR: ch'a', maach, cháach»; «APROPIAR: tia'alint, ch'a'»."
+    },
+    {
+      "contentId": "u11-beet-uts-tsaik-teen",
+      "variants": [],
+      "correction": "",
+      "notes": "beet uts ≈ Meent uts (unidad 2); ambas dicen «por favor».",
+      "m": "Beet uts a ts'a'ik teen ja'.",
+      "es": "Por favor, dame agua.",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (texto glosado en el sitio de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+        }
+      ],
+      "evidence": "B&VS, lección 11.01.07 (en el sitio de Lehmann): «beet uts a ts'a'-ik teen hun-p'el tiimbreh» ('please give me a stamp'; glosa do good SBJ.2 give-INCMPL me one-CL stamp). Se cambia el objeto por ja'. La línea superficial de la lección es a ts'ik ten (contracción hablada)."
+    },
+    {
+      "contentId": "u11-kaat-jaa",
+      "variants": [],
+      "correction": "",
+      "notes": "",
+      "m": "In k'áat ja'.",
+      "es": "Quiero agua.",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        },
+        {
+          "title": "Junp'iit Maaya (Mújica 1995), edición en el sitio de Christian Lehmann",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        }
+      ],
+      "evidence": "Patrón in k'áat + objeto (Andrade: in k'at 'lo quiero'; uTalk: «In k'áat jump'éel káafe», 'I'd like a coffee'). Frase armada con ja' (unidad 1)."
+    },
+    {
+      "contentId": "u11-kaat-waaj",
+      "variants": [],
+      "correction": "",
+      "notes": "",
+      "m": "In k'áat waaj.",
+      "es": "Quiero tortilla.",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        },
+        {
+          "title": "Junp'iit Maaya (Mújica 1995), edición en el sitio de Christian Lehmann",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        }
+      ],
+      "evidence": "Igual que In k'áat ja'; waaj (unidad 6)."
+    },
+    {
+      "contentId": "u11-kaat-kaapeel-oon",
+      "variants": [],
+      "correction": "",
+      "notes": "",
+      "m": "In k'áat ka'ap'éel oon.",
+      "es": "Quiero dos aguacates.",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        },
+        {
+          "title": "Junp'iit Maaya (Mújica 1995), edición en el sitio de Christian Lehmann",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        }
+      ],
+      "evidence": "Patrón in k'áat + objeto con numeral y clasificador (uTalk: «In k'áat jump'éel …»); ka'ap'éel oon sale del diálogo del mercado de la unidad 6."
+    },
+    {
+      "contentId": "",
+      "variants": [],
+      "correction": "No se enseña como orden. Se enseña la petición atestiguada Beet uts a ts'a'ik teen …",
+      "notes": "",
+      "m": "Ts'aa teen.",
+      "es": "Dame.",
+      "status": "dudoso",
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        },
+        {
+          "title": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (texto glosado en el sitio de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+        }
+      ],
+      "evidence": "Andrade da ts'a teeni ('give it to me', grafía antigua). B&VS da el plural ts'a'-e'x ti' teen y la forma de futuro ken a ts'a' teen. La orden singular en grafía 2014 no se vio. «Ts'a' ten», la forma del encargo, no apareció."
+    },
+    {
+      "contentId": "",
+      "variants": [],
+      "correction": "Usar Ma' in k'áati'.",
+      "notes": "",
+      "m": "Ma' tin k'áat",
+      "es": "no quiero (forma propuesta con tin)",
+      "status": "dudoso",
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        }
+      ],
+      "evidence": "Andrade da ma' in k'ati. tin es táan in (progresivo) y k'áat no se usa con k- ni con táan en las fuentes."
+    },
+    {
+      "contentId": "",
+      "variants": [],
+      "correction": "No se enseña «no me gusta».",
+      "notes": "",
+      "m": "Ma' uts tin wich",
+      "es": "No me gusta",
+      "status": "dudoso",
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (texto glosado en el sitio de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+        },
+        {
+          "title": "Junp'iit Maaya (Mújica 1995), edición en el sitio de Christian Lehmann",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        },
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        }
+      ],
+      "evidence": "Ninguna de tres fuentes académicas trae la negación de uts tin wich. Un comentario de lector en Yucatan Living da «Ma' uts tin taan» (no fiable). La regla ma' … -i' daría Ma' uts tin wichi', pero no está escrita."
+    },
+    {
+      "contentId": "",
+      "variants": [],
+      "correction": "No se enseña.",
+      "notes": "",
+      "m": "yaabilaj",
+      "es": "amor (forma propuesta)",
+      "status": "dudoso",
+      "conf": "media",
+      "sources": [
+        {
+          "title": "UADY – Diccionario español-maya, letra A (AGARRAR: ch'a', maach, cháach; AMOR; APRECIAR)",
+          "url": "https://www.mayas.uady.mx/diccionario/a_esp.html"
+        }
+      ],
+      "evidence": "UADY español-maya: «AMOR: yaaj»; «APRECIAR: yaakun, yaabil»; «AMADO: yaakuna'an, óota'an». Ninguna entrada yaabilaj. Sitios periodísticos dan «in yaabilmech» ('te adoro')."
+    },
+    {
+      "contentId": "",
+      "variants": [],
+      "correction": "No se enseña.",
+      "notes": "",
+      "m": "In k'áatech.",
+      "es": "Te quiero (forma de sitios divulgativos)",
+      "status": "dudoso",
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Por Esto – cómo se decía «te amo» en maya (in yaakumech)",
+          "url": "https://www.poresto.com/yucatan/2023/8/1/como-se-dice-te-amo-en-maya.html"
+        },
+        {
+          "title": "UnoTV – Frases básicas para hablar maya (in yaakumech)",
+          "url": "https://www.unotv.com/estados/yucatan/lengua-maya-frases-basicas-para-hablarla/"
+        }
+      ],
+      "evidence": "Solo sitios divulgativos dan «in k'aatech»/«ink'áatech» para «te quiero». k'áat es «querer, desear», así que la lectura afectiva no está respaldada por una fuente académica."
+    },
+    {
+      "contentId": "",
+      "variants": [],
+      "correction": "No se enseña.",
+      "notes": "",
+      "m": "In yaakumech.",
+      "es": "Te amo",
+      "status": "dudoso",
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Por Esto – cómo se decía «te amo» en maya (in yaakumech)",
+          "url": "https://www.poresto.com/yucatan/2023/8/1/como-se-dice-te-amo-en-maya.html"
+        },
+        {
+          "title": "UnoTV – Frases básicas para hablar maya (in yaakumech)",
+          "url": "https://www.unotv.com/estados/yucatan/lengua-maya-frases-basicas-para-hablarla/"
+        }
+      ],
+      "evidence": "Por Esto y UnoTV (divulgativos, mismas fuentes entre sí). La UADY da yaakun como 'apreciar', pero la forma con -umech no se vio en una fuente académica."
+    },
+    {
+      "contentId": "",
+      "variants": [],
+      "correction": "No se enseña; en el curso «pedir» se hace con in k'áat … («quiero …»).",
+      "notes": "",
+      "m": "kin k'áatik",
+      "es": "pido (verbo pedir, regular)",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Wiktionary – k'áat (maya yucateco)",
+          "url": "https://en.wiktionary.org/wiki/k%E2%80%99aat"
+        },
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        }
+      ],
+      "evidence": "Solo la tabla de conjugación de Wiktionary (k'áat transitivo) y la nota de Andrade de que el sentido «pedir» es un verbo regular aparte. Sin ejemplos escritos."
+    },
+    {
+      "contentId": "",
+      "variants": [],
+      "correction": "No se enseña.",
+      "notes": "",
+      "m": "Uts tu t'aan",
+      "es": "me gusta (otro tipo de gusto)",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        }
+      ],
+      "evidence": "Andrade menciona uts t-u t'an para 'to like' fuera de lo visto, oído o comido. Solo glosa, sin ejemplo."
+    },
+    {
+      "contentId": "",
+      "variants": [],
+      "correction": "No se enseña; solo apoya el patrón in k'áat + objeto.",
+      "notes": "",
+      "m": "In k'áat jump'éel káafe.",
+      "es": "Quiero un café",
+      "status": "dudoso",
+      "conf": "media",
+      "sources": [
+        {
+          "title": "uTalk – Learn Yucatec Maya (curso comercial; In k'áat jump'éel káafe)",
+          "url": "https://utalk.com/store/yucatec-mayan"
+        }
+      ],
+      "evidence": "uTalk (curso comercial): 'I'd like a coffee, please'. Préstamo con grafía propia (káafe) no confirmada."
+    }
+  ]
+}

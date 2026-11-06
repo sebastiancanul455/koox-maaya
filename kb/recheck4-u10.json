@@ -1,0 +1,599 @@
+{
+  "unit": "u10",
+  "searchesUsed": 35,
+  "date": "2026-11-06",
+  "method": "35 llamadas a WebSearch, todas hechas antes de que el coordinador bajara el tope a 25; después de ese aviso no se hizo ninguna más. WebFetch no existe y curl da 403 (proxy), así que toda la evidencia es lo que mostraban los resúmenes del buscador, no las páginas abiertas. La mayoría de las consultas se restringieron a mayas.uady.mx (Diccionario básico español-maya-español, Bastarrachea, Yah Pech y Briceño Chel: las páginas *_esp.html son español-maya y *_maya.html maya-español). Gramáticas: Bolles y Bolles (FAMSI), Andrade y Lehmann (sitio de Lehmann), Bohnemeyer. «verificado» = forma y significado vistos en una fuente académica o institucional (o en dos independientes); «probable» = frase armada con piezas verificadas y un patrón verificado, o una sola fuente débil o vista solo en un resumen; «dudoso» = no se enseña. Normalización a 2014: apóstrofo recto; las gramáticas de Bolles usan grafía sin vocal larga ni tono (tan, pach, yanal), que aquí se normaliza con las formas de la UADY (táan, paach, yáanal). Búsquedas: 1 UADY A (aquí, allí); 2 UADY A (abajo, adentro, atrás); 3 UADY derecha/izquierda (sin D ni I); 4 web izquierda/derecha; 5 Le Guen (nada útil); 6 UADY D (delante, derecho); 7 UADY I (iglesia); 8 web «izquierda» (nada); 9 web ampliada izquierda/derecha; 10 Wikivoyage direcciones; 11 UADY E (escuela, enfrente); 12 UADY C (cerca, caminar); 13 UADY L (lado); 14 UADY P (pozo, plaza); 15 UADY N (sin naats'); 16 web nombres relacionales; 17 Bolles y preposiciones; 18 tabla de Lehmann; 19 Blair y Vermont-Salas (sin locativos); 20 Junp'iit; 21 te'ela'/te'elo'; 22 UADY I maya (ich, ichil, iknal); 23 web frases «dónde está» (nada); 24 yaanen (nada); 25 UADY J (je'ela', nada); 26 web je'ela' (solo habla infantil); 27 xno'oj/xts'íik (nada); 28 Wikivoyage baño; 29 UADY K' (k'uchul); 30 web kúuchil (nada); 31 web iglesia (nada); 32 UADY CH (centro); 33 web ejemplos tu paach; 34 Bohnemeyer yaan locativo; 35 UADY izquierdo (nada).",
+  "notaIntegrador": "Efectos sobre la base: (1) u1-taan-frente (táan, «frente; delante», conf media) puede subir a alta: la UADY da DELANTE: táan, táanil, aktáan y ENFRENTE: aktáan, táan (búsquedas 6 y 11). Eso corrige lo que dijo kb/recheck3-resto.json («no hay entradas ADELANTE ni ENFRENTE»): sí las hay, y respalda la glosa «adelante» de u8-taanil. (2) La preposición general ti' (kb: probable, conf media) queda verificada: Lehmann la da como la preposición genérica y los ejemplos de Bohnemeyer muestran tu como ti' + u. (3) u5 usa ich como «en» (ich maaya): la UADY da ICH: en, entre, dentro. (4) No se enseñan «izquierda» ni «derecha»: no se halló ninguna forma para izquierda y la única para derecha (no'oj) no se confirma.",
+  "items": [
+    {
+      "m": "te'ela'",
+      "es": "aquí",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        { "title": "UADY, Diccionario español-maya, letra A", "url": "https://www.mayas.uady.mx/diccionario/a_esp.html" },
+        { "title": "Bolles y Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), pronombres locativos", "url": "https://www.famsi.org/reports/96072/grammar/section06.htm" }
+      ],
+      "evidence": "Búsqueda 1 (UADY, A): «AQUÍ: te'ela', waye', weye'»; «ACÁ: waye', weye'». Búsqueda 21: Bolles y Bolles, pronombres locativos: te- + demostrativo da tela «here» y telo «there», con tolo como alternativa.",
+      "notes": "Se enseña en u10l1 junto a waye' (u8). Bolles escribe tela, sin saltillo; la forma actual es te'ela'. La UADY no marca diferencia clara con waye'."
+    },
+    {
+      "m": "te'elo'",
+      "es": "allí, ahí",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        { "title": "UADY, Diccionario español-maya, letra A", "url": "https://www.mayas.uady.mx/diccionario/a_esp.html" },
+        { "title": "Bolles y Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), pronombres locativos", "url": "https://www.famsi.org/reports/96072/grammar/section06.htm" }
+      ],
+      "evidence": "Búsqueda 1 (UADY, A): «AHÍ: te'elo'»; «ALLÍ: ti'i, te'elo', tolo'»; «ALLÁ: tolo', te'elo', ti'i». Búsqueda 21: Bolles telo «there»; un artículo de 2024 (Signos Lingüísticos, UAM) cita te'elo' en un ejemplo literario (visto solo en el resumen del buscador).",
+      "notes": "La UADY lo da bajo ahí, allí y allá, sin distinguirlos. Espinosa Ochoa (2021, habla infantil) escribe te'lo'; se menciona en una tarjeta, no se pone como variante."
+    },
+    {
+      "m": "tolo'",
+      "es": "allí, allá",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        { "title": "UADY, Diccionario español-maya, letra A", "url": "https://www.mayas.uady.mx/diccionario/a_esp.html" },
+        { "title": "Bolles y Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), pronombres locativos", "url": "https://www.famsi.org/reports/96072/grammar/section06.htm" }
+      ],
+      "evidence": "Búsqueda 1 (UADY, A): aparece bajo ALLÍ y ALLÁ junto a te'elo' y ti'i. Búsqueda 21: Bolles da tolo como alternativa de «there».",
+      "notes": "Dos fuentes independientes. No hay regla que lo distinga de te'elo'. Se enseña solo para reconocerlo; el ejercicio de escribir acepta te'elo'."
+    },
+    {
+      "m": "naats'",
+      "es": "cerca",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        { "title": "UADY, Diccionario español-maya, letra C", "url": "https://www.mayas.uady.mx/diccionario/c_esp.html" }
+      ],
+      "evidence": "Búsqueda 12 (UADY, C): «CERCA adv: Naats'». Aparte, «CERCA f: Suup'» (sustantivo).",
+      "notes": "Opuesto de náach (u8, UADY N). Una sola fuente, pero institucional. En la búsqueda 15 no salió la entrada maya-español."
+    },
+    {
+      "m": "ichil",
+      "es": "dentro de; entre",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        { "title": "UADY, Diccionario maya-español, letra I", "url": "https://www.mayas.uady.mx/diccionario/i_maya.html" },
+        { "title": "UADY, Diccionario español-maya, letra A", "url": "https://www.mayas.uady.mx/diccionario/a_esp.html" },
+        { "title": "Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)", "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php" }
+      ],
+      "evidence": "Búsqueda 22 (UADY, I maya): «ICHIL: dentro, entre». Búsqueda 2: «ADENTRO: ich, ichil». Búsqueda 18: Andrade lista ichil «in, within» entre las preposiciones formadas con -(a)l.",
+      "notes": "Se usa como preposición: ichil + lo que contiene."
+    },
+    {
+      "m": "ich",
+      "es": "en, dentro de (además de «ojo, cara»)",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        { "title": "UADY, Diccionario maya-español, letra I", "url": "https://www.mayas.uady.mx/diccionario/i_maya.html" },
+        { "title": "Lehmann, Yucatec Maya spatial prepositions", "url": "https://www.christianlehmann.eu/presentations/understand/yuc_local_rel_1.html" }
+      ],
+      "evidence": "Búsqueda 22 (UADY, I maya): «ICH: en, entre, dentro, de aquí a». Búsqueda 18: Lehmann da ich como la preposición de interior.",
+      "notes": "El curso ya tiene ich como «ojo; cara» (u7-ich) y lo usa como «en» en u5 (ich maaya). No se agrega como entrada nueva; se explica en una tarjeta de u10l2."
+    },
+    {
+      "m": "yáanal",
+      "es": "debajo de; abajo",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        { "title": "UADY, Diccionario español-maya, letra A", "url": "https://www.mayas.uady.mx/diccionario/a_esp.html" },
+        { "title": "Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)", "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php" },
+        { "title": "Bolles y Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), preposiciones comunes", "url": "https://www.famsi.org/reports/96072/grammar/section04.htm" }
+      ],
+      "evidence": "Búsqueda 2 (UADY, A): «ABAJO: kaabal, kaabaj, yáanal, yáanaj, yaalan». Búsqueda 17: Bolles «yanal, yanil: under, beneath». Búsqueda 18: Andrade «yanal: under».",
+      "notes": "Bolles y Andrade escriben yanal (sin vocal larga ni tono). Cuidado con yaan, «hay». Andrade sugiere que yanal podría ser un desarrollo del maya moderno."
+    },
+    {
+      "m": "tu paach",
+      "es": "detrás de",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        { "title": "Bolles y Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), preposiciones comunes", "url": "https://www.famsi.org/reports/96072/grammar/section04.htm" },
+        { "title": "UADY, Diccionario español-maya, letra A", "url": "https://www.mayas.uady.mx/diccionario/a_esp.html" },
+        { "title": "Bohnemeyer (Universidad de Buffalo), trabajos sobre el espacio en maya yucateco (visto en un resumen del buscador)" }
+      ],
+      "evidence": "Búsqueda 17: Bolles «pachil, tu pach: behind, in back of». Búsqueda 33: un resumen de trabajos de Bohnemeyer, Lehmann y Andrade (no dice cuál) cita «xen tu pach» ('ve detrás de él, síguelo') y explica que los merónimos son sustantivos relacionales poseídos, como tu-táan y tu-yóok'ol. UADY: paach «espalda» (u7) y ATRÁS: paachil.",
+      "notes": "tu = ti' + u. Bolles escribe pach; la forma actual es paach. El patrón tu + parte del cuerpo está bien atestiguado."
+    },
+    {
+      "m": "tu táan",
+      "es": "delante de; frente a",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        { "title": "Bolles y Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), preposiciones comunes", "url": "https://www.famsi.org/reports/96072/grammar/section04.htm" },
+        { "title": "UADY, Diccionario español-maya, letra D", "url": "https://www.mayas.uady.mx/diccionario/d_esp.html" },
+        { "title": "UADY, Diccionario español-maya, letra E", "url": "https://www.mayas.uady.mx/diccionario/e_esp.html" }
+      ],
+      "evidence": "Búsqueda 17: Bolles «actan, tu tan, tanil: in front of». Búsquedas 6 y 11 (UADY): «DELANTE: táan, táanil, aktáan»; «ENFRENTE adv: aktáan, táan». Búsqueda 18: Lehmann da táan(il) para 'frente'.",
+      "notes": "Bolles escribe tan; la forma actual es táan. aktáan (UADY) no se enseña."
+    },
+    {
+      "m": "táan",
+      "es": "delante; enfrente",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        { "title": "UADY, Diccionario español-maya, letra D", "url": "https://www.mayas.uady.mx/diccionario/d_esp.html" },
+        { "title": "UADY, Diccionario español-maya, letra E", "url": "https://www.mayas.uady.mx/diccionario/e_esp.html" }
+      ],
+      "evidence": "Búsquedas 6 y 11 (UADY): «DELANTE: táan, táanil, aktáan»; «ENFRENTE adv: aktáan, táan».",
+      "notes": "Sube u1-taan-frente (media) a alta y respalda la glosa «adelante» de u8-taanil. Corrige a kb/recheck3-resto.json, que no halló ADELANTE ni ENFRENTE."
+    },
+    {
+      "m": "paachil",
+      "es": "atrás, detrás",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        { "title": "UADY, Diccionario español-maya, letra A", "url": "https://www.mayas.uady.mx/diccionario/a_esp.html" },
+        { "title": "Lehmann, Yucatec Maya spatial prepositions", "url": "https://www.christianlehmann.eu/presentations/understand/yuc_local_rel_1.html" }
+      ],
+      "evidence": "Búsqueda 2 (UADY, A): «ATRÁS: paachil, paachij»; «AFUERA: táankab, paachil». Búsqueda 18: Lehmann da paach(il) para 'atrás'.",
+      "notes": "No se enseña como entrada aparte (se enseña tu paach). La UADY lo da también bajo «afuera»; por eso no se arma nada con él."
+    },
+    {
+      "m": "iknal",
+      "es": "junto a; en compañía de; con",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        { "title": "UADY, Diccionario maya-español, letra I", "url": "https://www.mayas.uady.mx/diccionario/i_maya.html" },
+        { "title": "Lehmann, Yucatec Maya spatial prepositions", "url": "https://www.christianlehmann.eu/presentations/understand/yuc_local_rel_1.html" }
+      ],
+      "evidence": "Búsqueda 22 (UADY, I maya): «IKNAL: en compañía de, junto de o a, con». Búsqueda 18: Lehmann lo da como la preposición de cercanía y contacto.",
+      "notes": "Se enseña solo para reconocerlo: no se vieron frases con pronombre (p. ej. con persona), así que no se arman."
+    },
+    {
+      "m": "tséel",
+      "es": "lado",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        { "title": "UADY, Diccionario español-maya, letra L", "url": "https://www.mayas.uady.mx/diccionario/l_esp.html" }
+      ],
+      "evidence": "Búsqueda 13 (UADY, L): «LADO: tséel, xáax, jáal». Un artículo de la UADY sobre partería usa tséel u nak' para 'la barriga está de lado'.",
+      "notes": "Se enseña solo la palabra «lado»; tu tséel (al lado de) va aparte como probable."
+    },
+    {
+      "m": "chúumuk",
+      "es": "centro; medio",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        { "title": "UADY, Diccionario español-maya, letra C", "url": "https://www.mayas.uady.mx/diccionario/c_esp.html" },
+        { "title": "Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)", "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php" }
+      ],
+      "evidence": "Búsqueda 32 (UADY, C): «CENTRO: chúumuk, táan chumuk, ts'u'»; también chúumuk ka'an, chúumuk k'iin para «cénit». Búsqueda 17: Andrade «tan chumuk: in the midst of».",
+      "notes": "tu chúumuk no se halló (las fuentes dan táan chúumuk); no se enseña ninguna de las dos construcciones."
+    },
+    {
+      "m": "chúumuk kaaj",
+      "es": "centro del pueblo; plaza",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        { "title": "UADY, Diccionario español-maya, letra P", "url": "https://www.mayas.uady.mx/diccionario/p_esp.html" }
+      ],
+      "evidence": "Búsqueda 14 (UADY, P): «PLAZA f: k'íiwik, chúumuk kaaj». Ya estaba en kb/recheck-numeros-mercado.json.",
+      "notes": "u6 lo menciona en una tarjeta; aquí se agrega como entrada."
+    },
+    {
+      "m": "najil xook",
+      "es": "escuela",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        { "title": "UADY, Diccionario español-maya, letra E", "url": "https://www.mayas.uady.mx/diccionario/e_esp.html" }
+      ],
+      "evidence": "Búsqueda 11 (UADY, E): «ESCUELA f: najil xook, kúuchil kaansaj». Búsqueda 15 (UADY, maya-español): xook = «clase».",
+      "notes": "naj (casa, u3) + xook (leer, estudiar, u5). Dos palabras separadas."
+    },
+    {
+      "m": "kúuchil kaansaj",
+      "es": "escuela (otra forma)",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        { "title": "UADY, Diccionario español-maya, letra E", "url": "https://www.mayas.uady.mx/diccionario/e_esp.html" }
+      ],
+      "evidence": "Búsqueda 11 (UADY, E): segunda forma de ESCUELA.",
+      "notes": "Solo se menciona en una tarjeta. No se verificó kúuchil aislado (búsquedas 12, 29 y 30), así que no se traduce por partes."
+    },
+    {
+      "m": "ch'e'en",
+      "es": "pozo",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        { "title": "UADY, Diccionario español-maya, letra P", "url": "https://www.mayas.uady.mx/diccionario/p_esp.html" },
+        { "title": "UADY, artículo sobre Champotón (visto en un resumen; nombra un pozo local, Ch'e'en Peek')" }
+      ],
+      "evidence": "Búsqueda 14 (UADY, P): «POZO m: ch'e'en». El mismo resultado trae un artículo de la UADY sobre Champotón con un pozo llamado Ch'e'en Peek'.",
+      "notes": "Vocal rearticulada (e'e). No se afirma que también signifique 'cueva'."
+    },
+    {
+      "m": "jool naj",
+      "es": "puerta (de la casa)",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        { "title": "UADY, Diccionario español-maya, letra P", "url": "https://www.mayas.uady.mx/diccionario/p_esp.html" },
+        { "title": "kb/recheck-naturaleza-cultura.json (misma entrada, verificada en la pasada anterior)" }
+      ],
+      "evidence": "Heredada de kb/recheck-naturaleza-cultura.json: «PUERTA f: joonaj, jool naj» (UADY, P). En la búsqueda 14 de esta pasada la entrada PUERTA no apareció, así que no se re-vio.",
+      "notes": "Dos formas de la UADY: jool naj y la contraída joonaj (se pone como alt). jool = agujero, hueco."
+    },
+    {
+      "m": "k'uchul",
+      "es": "llegar",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        { "title": "UADY, Diccionario maya-español, letra K'", "url": "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html" }
+      ],
+      "evidence": "Búsqueda 29 (UADY, K'): «K'UCHUL: llegar, arribar». En kb/gramatica.verified.json estaba como media.",
+      "notes": "Sube de media a alta. Wikivoyage lo usa en bix je'el in k'uchul («cómo llego»), no se enseña."
+    },
+    {
+      "m": "xíimbal",
+      "es": "caminar",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        { "title": "UADY, Diccionario español-maya, letra C", "url": "https://www.mayas.uady.mx/diccionario/c_esp.html" }
+      ],
+      "evidence": "Búsqueda 12 (UADY, C): «CAMINAR v: xíimbal, xíinbaj». Ya estaba en kb/gramatica.verified.json como «caminar; pasear; visitar» (conf alta).",
+      "notes": "El sentido «visitar» ya está en u9 (a xíimbal to'on)."
+    },
+    {
+      "m": "máan táanil",
+      "es": "avanzar; pasar adelante",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        { "title": "UADY, Diccionario español-maya, letra A", "url": "https://www.mayas.uady.mx/diccionario/a_esp.html" },
+        { "title": "kb/recheck3-resto.json (entrada táanil)" }
+      ],
+      "evidence": "Heredada de kb/recheck3-resto.json: «AVANZAR v: táanichajal, máan táanil» (UADY, A). No se re-vio.",
+      "notes": "Ojo con el tono: máan (pasar, alto) frente a maan (comprar, bajo; u6)."
+    },
+    {
+      "m": "ti'",
+      "es": "a, en, para (preposición general)",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        { "title": "Lehmann, Yucatec Maya spatial prepositions", "url": "https://www.christianlehmann.eu/presentations/understand/yuc_local_rel_1.html" },
+        { "title": "Bohnemeyer y Brown (2007), Standing divided: Dispositional verbs and locative predications in two Mayan languages, Linguistics 45", "url": "https://forms.mpi.nl/node/48858" },
+        { "title": "INALI, Prontuario Maayat'aan", "url": "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html" }
+      ],
+      "evidence": "Búsqueda 18: Lehmann da ti' como la preposición genérica. Búsqueda 34: Bohnemeyer da el ejemplo ti'=yàan le=pàal t-u=bak'=o' («allí estaba el muchacho en [la cornamenta]»), donde t-u=bak' muestra la preposición con el posesivo de 3.ª persona. INALI: Tak ti' uláak' k'iin.",
+      "notes": "Sube la entrada ti' de kb/gramatica.verified.json (media) a verificada. No se enseña como entrada: solo se explica que tu = ti' + u."
+    },
+    {
+      "m": "yaan (estar en un lugar)",
+      "es": "hay; está (en un lugar)",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        { "title": "Yoshida, Guía gramatical de la lengua maya yucateca para hispanohablantes" },
+        { "title": "Bohnemeyer y Brown (2007), Standing divided: Dispositional verbs and locative predications in two Mayan languages, Linguistics 45", "url": "https://forms.mpi.nl/node/48858" },
+        { "title": "Junp'iit Maaya (Mújica 1995), sitio de Lehmann", "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html" }
+      ],
+      "evidence": "kb/gramatica.verified.json: Yoshida, el maya no distingue haber y estar para la existencia. Búsqueda 34: Bohnemeyer, el núcleo por defecto de las descripciones locativas es el predicador locativo-existencial-posesivo yàan. Búsqueda 20: «Tu'ux yaan junp'el restaurant?» = «¿dónde hay/está un restaurante?».",
+      "notes": "Respalda el molde Tu'ux yaan …? y las respuestas con yaan y mina'an."
+    },
+    {
+      "m": "ka'anal",
+      "es": "arriba",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        { "title": "UADY, Diccionario español-maya, letra A", "url": "https://www.mayas.uady.mx/diccionario/a_esp.html" },
+        { "title": "Bolles y Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), pronombres locativos", "url": "https://www.famsi.org/reports/96072/grammar/section06.htm" }
+      ],
+      "evidence": "kb/recheck3-resto.json: «ARRIBA: ka'anal, yóok'ol» (UADY, A). Bolles da te caanalo, 'allá arriba'.",
+      "notes": "No se enseña (la unidad ya lleva yóok'ol y yáanal)."
+    },
+    {
+      "m": "aktáan",
+      "es": "delante; enfrente",
+      "status": "verificado",
+      "conf": "alta",
+      "sources": [
+        { "title": "UADY, Diccionario español-maya, letra D", "url": "https://www.mayas.uady.mx/diccionario/d_esp.html" },
+        { "title": "UADY, Diccionario español-maya, letra E", "url": "https://www.mayas.uady.mx/diccionario/e_esp.html" }
+      ],
+      "evidence": "Búsquedas 6 y 11 (UADY): aparece bajo DELANTE y ENFRENTE.",
+      "notes": "No se enseña: tu táan ya cubre «delante de»."
+    },
+    {
+      "m": "kaabal",
+      "es": "abajo",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        { "title": "UADY, Diccionario español-maya, letra A", "url": "https://www.mayas.uady.mx/diccionario/a_esp.html" }
+      ],
+      "evidence": "Búsqueda 2 (UADY, A): «ABAJO: kaabal, kaabaj, yáanal, yáanaj, yaalan», pero el resumen del buscador estaba parcialmente desordenado y la vocal larga no es segura.",
+      "notes": "No se enseña."
+    },
+    {
+      "m": "Tu'ux yaan …?",
+      "es": "¿Dónde hay …? / ¿Dónde está …?",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        { "title": "Junp'iit Maaya (Mújica 1995), sitio de Lehmann", "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html" },
+        { "title": "Wikivoyage, Yucatec Maya phrasebook", "url": "https://en.wikivoyage.org/wiki/Yucatec_Maya_phrasebook" },
+        { "title": "Bohnemeyer y Brown (2007), Standing divided: Dispositional verbs and locative predications in two Mayan languages, Linguistics 45", "url": "https://forms.mpi.nl/node/48858" }
+      ],
+      "evidence": "Búsqueda 20: Junp'iit Maaya, expresiones útiles: «Tu'ux yaan junp'el restaurant?» = 'Where is a restaurant?'. Búsquedas 10 y 28: Wikivoyage «Tu'ux yaan le inodoro?» ('Where is the toilet?') y «tu'ux yaan le tren/autobús ku bin ___?».",
+      "notes": "El molde está atestiguado en un curso y en una guía de frases; con los nombres de esta unidad es una frase nueva, de ahí la confianza media."
+    },
+    {
+      "m": "Tu'ux yaan junp'éel k'íiwik?",
+      "es": "¿Dónde hay una plaza?",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        { "title": "Junp'iit Maaya (Mújica 1995), sitio de Lehmann", "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html" }
+      ],
+      "evidence": "Armada con el molde de Junp'iit (Tu'ux yaan junp'el restaurant?) y k'íiwik (UADY, P). La n de junp'éel sigue la grafía del curso (u4).",
+      "notes": "Ejemplo de u10-tuux-yaan y frase de un ejercicio de rellenar."
+    },
+    {
+      "m": "Tu'ux yaan junp'éel ch'e'en?",
+      "es": "¿Dónde hay un pozo?",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        { "title": "Junp'iit Maaya (Mújica 1995), sitio de Lehmann", "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html" }
+      ],
+      "evidence": "Misma construcción, con ch'e'en (UADY, P).",
+      "notes": "Solo aparece en un ejercicio de rellenar."
+    },
+    {
+      "m": "Yaan te'elo'.",
+      "es": "Allí hay. / Allí está.",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        { "title": "Bohnemeyer y Brown (2007), Standing divided: Dispositional verbs and locative predications in two Mayan languages, Linguistics 45", "url": "https://forms.mpi.nl/node/48858" },
+        { "title": "UADY, Diccionario español-maya, letra A", "url": "https://www.mayas.uady.mx/diccionario/a_esp.html" }
+      ],
+      "evidence": "Frase armada: yaan como predicador locativo (Bohnemeyer; Yoshida) + te'elo' (UADY, A). No se vio escrita tal cual.",
+      "notes": "El orden (yaan + lugar o lugar + yaan) puede variar; se enseña uno."
+    },
+    {
+      "m": "Mina'an waye'.",
+      "es": "Aquí no hay. / Aquí no está.",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        { "title": "UADY, Diccionario maya-español, letra M (mina'an)", "url": "https://www.mayas.uady.mx/diccionario/m_maya.html" },
+        { "title": "UADY, Diccionario español-maya, letra A", "url": "https://www.mayas.uady.mx/diccionario/a_esp.html" }
+      ],
+      "evidence": "Frase armada: mina'an («no hay, falta», UADY M, kb/gramatica.verified.json; Top Yucatán «Mina'an taak'in») + waye' (UADY, A). No se vio escrita tal cual.",
+      "notes": "Misma regla que Mina'an ts'aak de u7."
+    },
+    {
+      "m": "Yaan tu paach le najo'.",
+      "es": "Está detrás de la casa.",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        { "title": "Bolles y Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), preposiciones comunes", "url": "https://www.famsi.org/reports/96072/grammar/section04.htm" },
+        { "title": "Trabajos sobre el espacio en maya yucateco, le=nah=o' «la casa» (visto en un resumen del buscador; no dice el autor)" }
+      ],
+      "evidence": "Frase armada: yaan + tu paach (Bolles) + le najo' (le=nah=o', 'la casa', en un trabajo sobre el espacio; naj 'casa' en la UADY). No se vio escrita tal cual.",
+      "notes": "Se escribe najo' (naj + o'): el enclítico se pega a la última palabra del grupo."
+    },
+    {
+      "m": "Tu'ux yaan le najil xooko'?",
+      "es": "¿Dónde está la escuela?",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        { "title": "Junp'iit Maaya (Mújica 1995), sitio de Lehmann", "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html" },
+        { "title": "Wikivoyage, Yucatec Maya phrasebook", "url": "https://en.wikivoyage.org/wiki/Yucatec_Maya_phrasebook" }
+      ],
+      "evidence": "Molde Tu'ux yaan + le … o' (definido) + najil xook (UADY, E). Wikivoyage usa le sin enclítico («le inodoro»); Bohnemeyer escribe le=nah=o'.",
+      "notes": "Conviene que un hablante confirme si en la calle se dice le najil xooko' o solo le najil xook."
+    },
+    {
+      "m": "le … a' / le … o'",
+      "es": "este, esta / ese, esa; el, la (ya conocido)",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        { "title": "Bolles y Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), pronombres locativos", "url": "https://www.famsi.org/reports/96072/grammar/section06.htm" },
+        { "title": "Haviland, «Na'at le ba'ala' paalen» (fuente de u3)" }
+      ],
+      "evidence": "Bolles: le telo 'that one there'. Haviland: le ba'ala' 'esta cosa'. Bohnemeyer: le=nah=o' 'la casa'. No se buscó una descripción gramatical explícita de la oposición cercano/lejano.",
+      "notes": "Se explica en una tarjeta de u10l3 con lenguaje cauto."
+    },
+    {
+      "m": "ich kool",
+      "es": "en la milpa",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        { "title": "UADY, multimedia «U meeyjil ich kool / El trabajo de la milpa»", "url": "https://www.mayas.uady.mx/multimedia/trabajo.html" },
+        { "title": "UADY, Diccionario maya-español, letra I", "url": "https://www.mayas.uady.mx/diccionario/i_maya.html" }
+      ],
+      "evidence": "kb/recheck-naturaleza-cultura.json: título UADY «U meeyjil ich kool» = «El trabajo de la milpa». ich = en, dentro (UADY, I) y kool = milpa (UADY, K).",
+      "notes": "Frase armada con piezas verificadas, vista en un título pero no como oración."
+    },
+    {
+      "m": "tu yóok'ol",
+      "es": "encima de; sobre",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        { "title": "Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)", "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php" },
+        { "title": "Bohnemeyer (Universidad de Buffalo), trabajos sobre el espacio en maya yucateco (visto en un resumen del buscador)" }
+      ],
+      "evidence": "yóok'ol 'arriba, encima' (UADY, A; u8). Andrade: yok'ol 'on'. Un resumen de Bohnemeyer cita óok'ol 'top' como sustantivo relacional con ti'. La forma tu yóok'ol no se vio escrita literalmente.",
+      "notes": "Regla verificada de tu + sustantivo relacional (tu paach, tu táan) aplicada a yóok'ol."
+    },
+    {
+      "m": "tu tséel",
+      "es": "al lado de",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        { "title": "UADY, Diccionario español-maya, letra L", "url": "https://www.mayas.uady.mx/diccionario/l_esp.html" },
+        { "title": "Bolles y Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), preposiciones comunes", "url": "https://www.famsi.org/reports/96072/grammar/section04.htm" }
+      ],
+      "evidence": "tséel 'lado' (UADY, L) con la regla tu + sustantivo relacional (Bolles: tu pach, tu tan). La forma tu tséel no apareció en las búsquedas 16, 17, 18 ni 33.",
+      "notes": "Conviene que un hablante la confirme."
+    },
+    {
+      "m": "naj k'uj",
+      "es": "iglesia",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        { "title": "UADY, Diccionario español-maya, letra I", "url": "https://www.mayas.uady.mx/diccionario/i_esp.html" }
+      ],
+      "evidence": "Búsqueda 7 (UADY, I): «IGLESIA f: U yotoch ki'ichkelem yuum, naj k'uj». Visto una sola vez, en un resumen del buscador. La búsqueda 31 (web) no halló ninguna palabra maya para iglesia.",
+      "notes": "Se enseña marcada «por confirmar» y sin ejercicio de escribirla. Es una de las cosas que más conviene que revise un hablante."
+    },
+    {
+      "m": "toj",
+      "es": "derecho, recto",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        { "title": "UADY, Diccionario español-maya, letra D", "url": "https://www.mayas.uady.mx/diccionario/d_esp.html" },
+        { "title": "Wikivoyage, Yucatec Maya phrasebook", "url": "https://en.wikivoyage.org/wiki/Yucatec_Maya_phrasebook" }
+      ],
+      "evidence": "Búsqueda 6 (UADY, D): «DERECHO: no'oj, toj, táats'». Búsqueda 10: Wikivoyage «straight ahead: toj táanil».",
+      "notes": "La entrada DERECHO de la UADY mezcla 'recto' y 'derecha'; se enseña solo el sentido «recto, derecho (en línea)»."
+    },
+    {
+      "m": "toj táanil",
+      "es": "todo derecho; hacia adelante",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        { "title": "Wikivoyage, Yucatec Maya phrasebook", "url": "https://en.wikivoyage.org/wiki/Yucatec_Maya_phrasebook" },
+        { "title": "UADY, Diccionario español-maya, letra D", "url": "https://www.mayas.uady.mx/diccionario/d_esp.html" }
+      ],
+      "evidence": "Búsqueda 10: Wikivoyage «straight ahead: toj táanil». Piezas: toj (UADY, D) y táanil (UADY, D y A).",
+      "notes": "Una sola fuente para la frase completa, y no académica."
+    },
+    {
+      "m": "no'oj",
+      "es": "derecha (lado derecho)",
+      "status": "dudoso",
+      "conf": "media",
+      "sources": [
+        { "title": "UADY, Diccionario español-maya, letra D", "url": "https://www.mayas.uady.mx/diccionario/d_esp.html" },
+        { "title": "Wikivoyage, Yucatec Maya phrasebook", "url": "https://en.wikivoyage.org/wiki/Yucatec_Maya_phrasebook" }
+      ],
+      "evidence": "Búsqueda 6 (UADY, D): «DERECHO: no'oj, toj, táats'». Búsquedas 9 y 10: Wikivoyage «right: x-no'oj», «sut x-no'oj» ('gira a la derecha'). Puede que Wikivoyage copie al diccionario, así que no son dos fuentes independientes. Stuart y el Lingtyp relacionan nohol 'sur' con 'derecha' (noh), sin el saltillo.",
+      "notes": "NO se enseña. No se sabe si el saltillo es real ni qué hace el prefijo x-. Pendiente de un hablante."
+    },
+    {
+      "m": "tsíik / ts'íik / xk'ab (izquierda)",
+      "es": "izquierda (formas que se probaron de memoria)",
+      "status": "dudoso",
+      "conf": "media",
+      "sources": [
+        { "title": "UADY, Diccionario español-maya, letras D e I (sin entrada hallada)", "url": "https://www.mayas.uady.mx/diccionario/i_esp.html" },
+        { "title": "Wikivoyage, Yucatec Maya phrasebook", "url": "https://en.wikivoyage.org/wiki/Yucatec_Maya_phrasebook" }
+      ],
+      "evidence": "Búsquedas 3, 4, 5, 8, 9, 27 y 35: ninguna fuente da una palabra yucateca para «izquierda». Wikivoyage la deja en español («sut izquierda»). Stuart solo da la reconstrucción protocholana *tz'eh, de otra rama. Las tres formas del título eran conjeturas de memoria y no tienen respaldo.",
+      "notes": "NO se enseña ninguna. Pendiente de un hablante o del Diccionario Maya Cordemex."
+    },
+    {
+      "m": "kúuchil",
+      "es": "lugar, sitio",
+      "status": "dudoso",
+      "conf": "media",
+      "sources": [
+        { "title": "UADY, Diccionario español-maya, letra E", "url": "https://www.mayas.uady.mx/diccionario/e_esp.html" }
+      ],
+      "evidence": "Solo aparece dentro de kúuchil kaansaj (ESCUELA, UADY, E). Búsquedas 13, 29 y 30: ninguna gloss directa de kúuchil.",
+      "notes": "NO se enseña como palabra suelta."
+    },
+    {
+      "m": "je'ela' / je'elo'",
+      "es": "aquí está / allí está (ostensivo)",
+      "status": "dudoso",
+      "conf": "media",
+      "sources": [
+        { "title": "Espinosa Ochoa, Germination, early development and creativity in the acquisition of the Yucatec Maya deictic system, Journal of Child Language (2021)", "url": "https://cambridge.org/core/journals/journal-of-child-language/article/germination-early-development-and-creativity-in-the-acquisition-of-the-yucatec-maya-deictic-system/9A25220796689BF3363DC1C25D80ECA5" }
+      ],
+      "evidence": "Búsquedas 25 y 26: existe el evidencial ostensivo je' (y je'ele' en un niño), pero no se vieron las formas je'ela' ni je'elo' con glosa en fuentes de adultos. Bolles menciona el prefijo he- 'enfático' sin las formas completas.",
+      "notes": "NO se enseñan."
+    },
+    {
+      "m": "te'lo'",
+      "es": "allí (variante de te'elo')",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        { "title": "Espinosa Ochoa, Germination, early development and creativity in the acquisition of the Yucatec Maya deictic system, Journal of Child Language (2021)", "url": "https://cambridge.org/core/journals/journal-of-child-language/article/germination-early-development-and-creativity-in-the-acquisition-of-the-yucatec-maya-deictic-system/9A25220796689BF3363DC1C25D80ECA5" }
+      ],
+      "evidence": "Búsqueda 21: el artículo usa te'lo' como distal «allí» (visto en un resumen).",
+      "notes": "Solo se menciona en una tarjeta de u10l1; no es alt."
+    },
+    {
+      "m": "tu yáanal",
+      "es": "debajo de",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        { "title": "Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)", "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php" }
+      ],
+      "evidence": "Bolles no lista tu yanal con tu (búsqueda 17); yáanal 'under' sí está (UADY, Andrade, Bolles).",
+      "notes": "No se enseña: se enseña yáanal solo, que sí está atestiguada."
+    },
+    {
+      "m": "tu chúumuk / táan chúumuk",
+      "es": "en medio de; en el centro de",
+      "status": "dudoso",
+      "conf": "media",
+      "sources": [
+        { "title": "UADY, Diccionario español-maya, letra C", "url": "https://www.mayas.uady.mx/diccionario/c_esp.html" },
+        { "title": "Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)", "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php" }
+      ],
+      "evidence": "Búsquedas 17 y 32: la UADY y Andrade dan táan chumuk / tan chumuk 'en medio de'; tu chumuk no aparece. El acento de chúumuk dentro del compuesto no es seguro.",
+      "notes": "NO se enseñan. Solo se enseña chúumuk («centro»)."
+    },
+    {
+      "m": "Máanen te'elo'.",
+      "es": "Pase por allá.",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        { "title": "INALI, Prontuario Maayat'aan", "url": "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html" }
+      ],
+      "evidence": "Sustitución de waye' por te'elo' en Máanen waye' (INALI). No se vio escrita.",
+      "notes": "Se descartó por ser solo una analogía; no se enseña."
+    },
+    {
+      "m": "u yotoch ki'ichkelem yuum",
+      "es": "iglesia (expresión descriptiva)",
+      "status": "probable",
+      "conf": "media",
+      "sources": [
+        { "title": "UADY, Diccionario español-maya, letra I", "url": "https://www.mayas.uady.mx/diccionario/i_esp.html" }
+      ],
+      "evidence": "Búsqueda 7 (UADY, I): primera forma de IGLESIA, antes de naj k'uj. Visto una sola vez, en un resumen.",
+      "notes": "No se enseña."
+    }
+  ]
+}

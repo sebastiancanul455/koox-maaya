@@ -258,6 +258,17 @@
         { id: "u4-yaan-yaab-maak", m: "Yaan ya'ab máak.", es: "Hay mucha gente.", pr: "yaan ya-ab máak", note: "yaan (hay) + ya'ab (mucho) + máak (gente). Las fuentes registran el pasado: Yanchaj ya'ab máak, «hubo mucha gente».", conf: "media" },
         { id: "u4-jumpiit", m: "junp'íit", es: "un poco, un poquito", pr: "junp'íit (suena «jump'íit»)", alt: ["jump'íit"], note: "jun + p'íit, con el tono alto que da la UADY para p'íit. Con n, como en el título del manual Junp'iit Maaya, «un poquito de maya» (Mújica 1995); otras fuentes escriben jump'íit.", ex: { m: "Chéen junp'íit.", es: "Solo un poco." }, conf: "alta" }
       ],
+      dialogue: {
+        title: "¿Cuántos perros? (diálogo de práctica)",
+        lines: [
+          { who: "A", name: "Ana", m: "Yaan teen peek'.", es: "Tengo perros." },
+          { who: "B", name: "Pedro", m: "Jaytúul?", es: "¿Cuántos?" },
+          { who: "A", name: "Ana", m: "Ka'atúul peek'.", es: "Dos perros." },
+          { who: "B", name: "Pedro", m: "Tu ka'atéen.", es: "Otra vez." },
+          { who: "A", name: "Ana", m: "Ka'atúul peek'. Kux teech?", es: "Dos perros. ¿Y tú?" },
+          { who: "B", name: "Pedro", m: "Juntúul miis.", es: "Un gato." }
+        ]
+      },
       exercises: [
         { type: "choice", q: "¿Cómo preguntas cuántas personas hay?", prompt: "¿Cuántos? (personas)", promptLang: "es", answer: "Jaytúul?", options: ["Jaytúul?", "Bix?", "Ka'atúul?"] },
         { type: "fill", es: "¿Cuántos perros?", before: "", after: "peek'?", answer: "Jaytúul", options: ["Jaytúul", "Juntúul", "Ka'atúul"] },

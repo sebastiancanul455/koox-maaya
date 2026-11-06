@@ -1,15 +1,14 @@
 /* Ko'ox Maaya · Logros «Puedo…»: lo que ya puedes hacer al terminar cada unidad.
    La insignia de una unidad se abre cuando todas sus lecciones están completas y su «Repaso de la unidad»
    se aprueba con 80 % o más (la regla vive en src/modules/logros.js).
-   Las unidades nuevas pueden agregar el suyo al final de su propio archivo:
-   (window.COURSE_CANDO = window.COURSE_CANDO || {}).u10 = { can: [ {t:"Puedo …", ex:"<vocabId>"}, … ] };
+   Las unidades nuevas agregan aquí su entrada (uN: { can: [ {t:"Puedo …", ex:"<vocabId>"}, … ] }).
    Cada enunciado tiene que ser verdadero respecto a lo que la unidad enseña de verdad (sus metas y su
    vocabulario): no prometas lo que no está. Si la unidad solo enseña a reconocer, di «reconocer».
      · t: el enunciado, en español claro. Aquí no se escribe maya nuevo.
      · ex (opcional): id de una palabra de ESA unidad, con confianza «alta». La app muestra su forma maya y su
        traducción tal como están en el curso, así que el maya nunca se copia a este archivo.
    test/logros.cjs comprueba que hay 3 enunciados por unidad, que cada ex existe y que nada contradice al curso. */
-window.COURSE_CANDO = Object.assign(window.COURSE_CANDO || {}, {
+window.COURSE_CANDO = {
   u1: {
     can: [
       { t: "Puedo reconocer las cinco formas de cada vocal y distinguir palabras que solo cambian en la vocal.", ex: "u1-chich" },
@@ -72,5 +71,26 @@ window.COURSE_CANDO = Object.assign(window.COURSE_CANDO || {}, {
       { t: "Puedo reconocer cómo se dice que algo ya pasó, que acabo de hacerlo, que tengo que hacerlo o que lo haré.", ex: "u9-binen" },
       { t: "Puedo reconocer palabras de los días de muertos, los relatos y la música, y despedir a una visita con las fórmulas tradicionales.", ex: "u9-janal-pixan" }
     ]
+  },
+  u10: {
+    can: [
+      { t: "Puedo decir aquí, allí, cerca y lejos, y preguntar dónde hay algo.", ex: "u10-teelo" },
+      { t: "Puedo decir si algo está dentro, delante, detrás, encima o debajo de otra cosa.", ex: "u10-tu-paach" },
+      { t: "Puedo nombrar lugares del pueblo, como la escuela, el pozo y la puerta, y entender indicaciones sencillas como seguir derecho.", ex: "u10-najil-xook" }
+    ]
+  },
+  u12: {
+    can: [
+      { t: "Puedo dar órdenes sencillas a una persona o a varias, como ve, ven a comer, ponte de pie o duerme.", ex: "u12-xeen" },
+      { t: "Puedo invitar a jugar y a hacer algo juntos, y distinguir una invitación de una orden.", ex: "u12-kooneex-baaxal" },
+      { t: "Puedo pedir que me den algo, decir cómelo y no lo comas, y reconocer órdenes de verbos de actividad como trabajar o leer.", ex: "u12-ma-a-jaantik" }
+    ]
+  },
+  u11: {
+    can: [
+      { t: "Puedo decir qué quiero, como ir a un lugar, comer o comprar cosas, y decir que no lo quiero.", ex: "u11-kaat-bin-uxmal" },
+      { t: "Puedo decir que algo me gusta, según lo vea o lo coma, y preguntar si a otra persona le gusta.", ex: "u11-uts-tin-chi" },
+      { t: "Puedo decir que necesito algo o que tengo que irme, y pedir con cortesía que me den algo.", ex: "u11-kabeet" }
+    ]
   }
-});
+};

@@ -1,0 +1,800 @@
+{
+  "unit": "u12",
+  "searchesUsed": 32,
+  "date": "2026-11-06",
+  "method": "32 llamadas a WebSearch. Después de gastarlas, el coordinador bajó el tope a 25; no se hizo ninguna búsqueda más. curl y WebFetch no funcionan, así que toda la evidencia son fragmentos que devolvió el buscador (Bolles/FAMSI, Andrade y Blair-Vermont-Salas en el sitio de Lehmann, Wikcionario y Wiktionary, UADY, SEP, un artículo de Pfeiler en core.ac.uk, La Lengua Maya de Yucatán, parryc). Los fragmentos son resúmenes: las citas literales pueden estar abreviadas. Las formas armadas por regla no pasan de probable.",
+  "items": [
+    {
+      "m": "V-en / V-en-e'ex (orden a una persona / a varias)",
+      "es": "orden de un verbo intransitivo",
+      "status": "verificado",
+      "conf": "alta",
+      "contentId": null,
+      "sources": [
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        },
+        {
+          "title": "Blair y Vermont-Salas, Spoken Yucatec Maya (transcripción glosada en el sitio de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+        },
+        {
+          "title": "David Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), sección 22: Imperative and exclamatory sentences",
+          "url": "https://www.famsi.org/research/bolles/grammar/section22.htm"
+        },
+        {
+          "title": "Barbara Pfeiler, estudio de caso sobre la adquisición temprana del verbo en maya yucateco (niña de Yalcobá; el fragmento del buscador no mostró el título exacto)",
+          "url": "https://core.ac.uk/download/19210193.pdf"
+        },
+        {
+          "title": "Wiktionary (en), kutal",
+          "url": "https://en.wiktionary.org/wiki/kutal"
+        }
+      ],
+      "evidence": "Andrade (fragmentos del buscador): el imperativo intransitivo de 2.ª persona es V-en y el plural V-en-e'x (ejemplo emene'x, 'come down'). Blair y Vermont-Salas: «kul-en» glosado sit-IMP, '¡Siéntate!', y «ko'ten-e'x», '¡Vengan mañana por la tarde!'. Bolles §22: Hanen! Ualen! Xen! Coten! Pfeiler: ween-en, wa'al-en. Wiktionary: kulen / kulene'ex.",
+      "notes": "Regla central de L1. La terminación -e'ex coincide con la de «ustedes» del curso (ka bine'ex)."
+    },
+    {
+      "m": "V-nen / V-nen-e'ex (verbos de actividad)",
+      "es": "orden de verbos de actividad",
+      "status": "verificado",
+      "conf": "alta",
+      "contentId": null,
+      "sources": [
+        {
+          "title": "Barbara Pfeiler, estudio de caso sobre la adquisición temprana del verbo en maya yucateco (niña de Yalcobá; el fragmento del buscador no mostró el título exacto)",
+          "url": "https://core.ac.uk/download/19210193.pdf"
+        },
+        {
+          "title": "UNAM, Facultad de Filosofía y Letras – temario de Maya IV (imperativo en oraciones intransitivas -en, -nen, -len; imperativo transitivo)",
+          "url": "https://servicios-galileo.filos.unam.mx/uploads/temarios/20252131146100021/Maya4EliCasanova20252.pdf"
+        },
+        {
+          "title": "Wiktionary (en), xook",
+          "url": "https://en.wiktionary.org/wiki/xook"
+        },
+        {
+          "title": "Wiktionary (en), meyaj",
+          "url": "https://en.wiktionary.org/wiki/meyaj"
+        },
+        {
+          "title": "Wiktionary (en), xíimbal",
+          "url": "https://en.wiktionary.org/wiki/xiimbal"
+        }
+      ],
+      "evidence": "Pfeiler (fragmento del buscador): el imperativo de un intransitivo inactivo es -en (ween-en) y el de uno de actividad es -nen (ts'aak-nen). El temario de Maya IV de la UNAM lista -en, -nen y -len para el imperativo intransitivo. Wiktionary: xooknen, meyajnen, xíimbalnen (y ookolnen, ok'olnen).",
+      "notes": "El patrón está en fuente académica; qué verbo concreto lo usa se sabe verbo por verbo (por eso las formas individuales son 'probable'). El curso dice 'suelen'. Aparente correlación con el pasado en -naj (meyajnajen / meyajnen; ok'olnajen / ok'olnen), que no se presenta como regla."
+    },
+    {
+      "m": "orden transitiva: raíz sola al inicio de la frase / raíz + -ej (-e) cuando va sola",
+      "es": "orden de un verbo con objeto",
+      "status": "verificado",
+      "conf": "alta",
+      "contentId": null,
+      "sources": [
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        },
+        {
+          "title": "David Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), sección 22: Imperative and exclamatory sentences",
+          "url": "https://www.famsi.org/research/bolles/grammar/section22.htm"
+        },
+        {
+          "title": "Barbara Pfeiler, estudio de caso sobre la adquisición temprana del verbo en maya yucateco (niña de Yalcobá; el fragmento del buscador no mostró el título exacto)",
+          "url": "https://core.ac.uk/download/19210193.pdf"
+        },
+        {
+          "title": "Wiktionary (en), jaant",
+          "url": "https://en.wiktionary.org/wiki/jaant"
+        }
+      ],
+      "evidence": "Andrade (fragmento): las formas transitivas V-(null) y V-e se usan como imperativo, respectivamente como primer componente y como único componente de la frase: «ts'a ti'», 'Give it to him!'; «hanˈte», 'Eat it!'; plural V-e'x (chae'x). Bolles §22: Taze! 'Bring it!', Bize! 'Take it!', Cħaeex! (plural), «Taz ten in hanal!» 'Bring me my food!'; el imperativo transitivo parece derivar del subjuntivo transitivo. Pfeiler: -eh es el sufijo de subjuntivo/imperativo de los verbos transitivos. Wiktionary: jaantej, ilej, k'ayej.",
+      "notes": "Ortografía actual: -ej (como Bíin in jaantej, u9). Andrade y Bolles no escriben la h/j final. Taze, Bize y Cħaeex no se enseñan porque su ortografía actual no está establecida."
+    },
+    {
+      "m": "ma' (a) + verbo en su forma de presente (prohibición)",
+      "es": "no lo hagas",
+      "status": "verificado",
+      "conf": "alta",
+      "contentId": null,
+      "sources": [
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        },
+        {
+          "title": "David Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), sección 22: Imperative and exclamatory sentences",
+          "url": "https://www.famsi.org/research/bolles/grammar/section22.htm"
+        },
+        {
+          "title": "La Lengua Maya de Yucatán – Frases básicas",
+          "url": "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+        }
+      ],
+      "evidence": "Andrade (dos fragmentos): la construcción habitual del imperativo negativo es la negación ma + una construcción IKAL (forma de presente): «ma hanˈtik», 'Don't eat it!', fórmula «ma (a) han-t-ik»; la misma construcción puede ser una negación declarativa simple (el contexto decide). Bolles: «Ma ta cimzic le chupul kekena», 'Don't kill this sow' (con ta). La Lengua Maya de Yucatán: «Ma' tu'ubsik» ('No lo olvides'), «Ma' ts'u'uts'» ('No fumar').",
+      "notes": "No se encontró un manual moderno que dé la regla con ejemplos de verbos intransitivos; ma' a wenel / ma' a bin / ma' a kutal son aplicaciones de la regla (media)."
+    },
+    {
+      "m": "ko'ox / ko'one'ex + verbo en su forma de presente (invitación)",
+      "es": "vamos a …",
+      "status": "verificado",
+      "conf": "alta",
+      "contentId": null,
+      "sources": [
+        {
+          "title": "Heraldo de México – Ko'ox kanik maaya t'aan",
+          "url": "https://yucatan.heraldodemexico.com.mx/tendencias/2025/8/27/koox-kanik-maaya-taan-asi-seran-los-cursos-para-preservar-la-lengua-maya-en-yucatan-1949.html"
+        },
+        {
+          "title": "Nueva Escuela Mexicana Digital (SEP), «Ko'one'ex baaxal ¡Vamos a jugar!»",
+          "url": "https://nuevaescuelamexicana.sep.gob.mx/contenido/coleccion/kooneex-baaxal-vamos-a-jugar/"
+        },
+        {
+          "title": "Base del curso (kb/*.verified.json y src/content/u1..u9.js)"
+        }
+      ],
+      "evidence": "Programa del Gobierno de Yucatán «Ko'ox kanik maaya t'aan» (Heraldo de México); ficha de la SEP «Ko'one'ex baaxal ¡Vamos a jugar!». En ambos el verbo va en su forma de presente (kanik, báaxal), sin persona.",
+      "notes": "La diferencia de uso entre ko'ox y ko'one'ex no está explicada en ninguna fuente vista."
+    },
+    {
+      "m": "orden doble: ko'oten / xeen + verbo en su forma de presente",
+      "es": "ven a comer",
+      "status": "verificado",
+      "conf": "alta",
+      "contentId": null,
+      "sources": [
+        {
+          "title": "David Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), sección 22: Imperative and exclamatory sentences",
+          "url": "https://www.famsi.org/research/bolles/grammar/section22.htm"
+        }
+      ],
+      "evidence": "Bolles §22: los verbos intransitivos xen ('ve') y coten ('ven') se usan con la primera forma de otros verbos para formar imperativos complejos: «Coten hanal!» (intransitivo, sin a) y «Xen a chha ten in hanal!» (transitivo, con a).",
+      "notes": "Solo se enseña el caso intransitivo (Ko'oten janal)."
+    },
+    {
+      "m": "xeen",
+      "es": "¡ve!",
+      "status": "verificado",
+      "conf": "alta",
+      "contentId": "u12-xeen",
+      "sources": [
+        {
+          "title": "David Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), sección 22: Imperative and exclamatory sentences",
+          "url": "https://www.famsi.org/research/bolles/grammar/section22.htm"
+        },
+        {
+          "title": "parryc – Yucatec Maya (notas que siguen el libro de Briceño Chel sobre los verbos)",
+          "url": "https://parryc.com/language/yucatec-maya"
+        },
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        }
+      ],
+      "evidence": "Bolles §22 (fragmento): «Xen! 'Go!'»; xen y coten forman órdenes complejas. Parry (notas basadas en el libro de Briceño Chel): algunos verbos frecuentes cambian de raíz en la orden; ir usa la raíz xe (xeen) y venir ko'ot (ko'oten); ejemplo «Xeen bin a wil a na'». Andrade (según recheck3): bin y taal no tienen imperativo propio.",
+      "notes": "Bolles no marca la longitud (xen); la vocal doble sale de Parry. No se vio el plural: no se enseña. Que un hablante confirme xeen."
+    },
+    {
+      "m": "wa'alen",
+      "es": "¡ponte de pie!, ¡levántate!",
+      "status": "verificado",
+      "conf": "alta",
+      "contentId": "u12-waalen",
+      "sources": [
+        {
+          "title": "Barbara Pfeiler, estudio de caso sobre la adquisición temprana del verbo en maya yucateco (niña de Yalcobá; el fragmento del buscador no mostró el título exacto)",
+          "url": "https://core.ac.uk/download/19210193.pdf"
+        },
+        {
+          "title": "David Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), sección 22: Imperative and exclamatory sentences",
+          "url": "https://www.famsi.org/research/bolles/grammar/section22.htm"
+        }
+      ],
+      "evidence": "Pfeiler (fragmento): «[*wa'al-eh] = wa'al-en 'stand up'». Bolles §22: «Ualen! 'Stand up!'». Coinciden forma y sentido.",
+      "notes": "No se vio el plural ni el verbo base en estas fuentes. La rearticulación (wa'a) viene de Pfeiler; Bolles no escribe el saltillo."
+    },
+    {
+      "m": "weenen",
+      "es": "¡duerme!",
+      "status": "verificado",
+      "conf": "alta",
+      "contentId": "u12-weenen",
+      "sources": [
+        {
+          "title": "Barbara Pfeiler, estudio de caso sobre la adquisición temprana del verbo en maya yucateco (niña de Yalcobá; el fragmento del buscador no mostró el título exacto)",
+          "url": "https://core.ac.uk/download/19210193.pdf"
+        },
+        {
+          "title": "Wikcionario (es), wenel (conjugación)",
+          "url": "https://es.wiktionary.org/wiki/wenel"
+        },
+        {
+          "title": "Base del curso (kb/*.verified.json y src/content/u1..u9.js)"
+        }
+      ],
+      "evidence": "Pfeiler: «Imperative form: ween-en» (intransitivo inactivo con raíz ween). Wikcionario (es), wenel: imperativo 2.ª sg. weenen, 2.ª pl. weenene'ex. wenel = dormir, ya verificado en la base (UADY, Montgomery).",
+      "notes": "La e se alarga respecto de wenel; dos fuentes independientes coinciden."
+    },
+    {
+      "m": "Ko'oten janal.",
+      "es": "¡Ven a comer!",
+      "status": "verificado",
+      "conf": "alta",
+      "contentId": "u12-kooten-janal",
+      "sources": [
+        {
+          "title": "David Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), sección 22: Imperative and exclamatory sentences",
+          "url": "https://www.famsi.org/research/bolles/grammar/section22.htm"
+        },
+        {
+          "title": "Christian Lehmann, Junp'iit Maaya – A little bit of Maya",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+        },
+        {
+          "title": "Blair y Vermont-Salas, Spoken Yucatec Maya (transcripción glosada en el sitio de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+        },
+        {
+          "title": "kb/recheck3-salud-cuerpo.json (evidencia previa de kulen, ko'oten, máanen)"
+        }
+      ],
+      "evidence": "Bolles §22: «Coten hanal!» como ejemplo de orden compleja. ko'oten verificado (Lehmann, Blair y Vermont-Salas, Andrade; recheck3-salud-cuerpo) y janal verificado. Solo se modernizó la ortografía (c→k, h→j, coten→ko'oten).",
+      "notes": "Frase atestiguada en ortografía antigua."
+    },
+    {
+      "m": "ko'otene'ex",
+      "es": "¡vengan!",
+      "status": "verificado",
+      "conf": "alta",
+      "contentId": "u12-kootenee-ex",
+      "sources": [
+        {
+          "title": "Blair y Vermont-Salas, Spoken Yucatec Maya (transcripción glosada en el sitio de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+        },
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        },
+        {
+          "title": "Wiktionary (en), taal",
+          "url": "https://en.wiktionary.org/wiki/taal"
+        },
+        {
+          "title": "kb/recheck3-salud-cuerpo.json (evidencia previa de kulen, ko'oten, máanen)"
+        }
+      ],
+      "evidence": "Blair y Vermont-Salas: «ko'ten-e'x ook-a'n k'iin samal», '¡Vengan mañana por la tarde!'. Andrade: koten / kotene'x. Wiktionary taal: ko'oten / ko'otene'ex.",
+      "notes": "Tres fuentes; las dos primeras son académicas."
+    },
+    {
+      "m": "kulene'ex",
+      "es": "¡siéntense!",
+      "status": "probable",
+      "conf": "media",
+      "contentId": "u12-kulenee-ex",
+      "sources": [
+        {
+          "title": "Wiktionary (en), kutal",
+          "url": "https://en.wiktionary.org/wiki/kutal"
+        },
+        {
+          "title": "Blair y Vermont-Salas, Spoken Yucatec Maya (transcripción glosada en el sitio de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+        },
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        }
+      ],
+      "evidence": "Wiktionary kutal: imperativo kulen, plural kulene'ex. La regla V-en-e'x es de Andrade y de Blair y Vermont-Salas, pero esta forma concreta solo se vio en Wiktionary.",
+      "notes": "Probable: forma de una fuente más regla verificada."
+    },
+    {
+      "m": "máanene'ex",
+      "es": "¡pasen!",
+      "status": "probable",
+      "conf": "media",
+      "contentId": "u12-maanenee-ex",
+      "sources": [
+        {
+          "title": "Wikcionario (es), máan (conjugación)",
+          "url": "https://es.wiktionary.org/wiki/m%C3%A1an"
+        },
+        {
+          "title": "INALI – Prontuario de frases de cortesía en maya",
+          "url": "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+        },
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        }
+      ],
+      "evidence": "Wikcionario (es), máan: 2.ª pl. máanene'ex (recheck3-salud-cuerpo). máanen verificado (INALI «Máanen waye'»). Regla V-en-e'x (Andrade).",
+      "notes": "Probable."
+    },
+    {
+      "m": "ko'one'ex",
+      "es": "¡vamos! (a un grupo)",
+      "status": "probable",
+      "conf": "media",
+      "contentId": "u12-kooneex",
+      "sources": [
+        {
+          "title": "Nueva Escuela Mexicana Digital (SEP), «Ko'one'ex baaxal ¡Vamos a jugar!»",
+          "url": "https://nuevaescuelamexicana.sep.gob.mx/contenido/coleccion/kooneex-baaxal-vamos-a-jugar/"
+        }
+      ],
+      "evidence": "SEP, Nueva Escuela Mexicana Digital: ficha titulada «Ko'one'ex baaxal ¡Vamos a jugar!» (título literal en los resultados del buscador). Se segmenta ko'one'ex + baaxal (jugar, UADY).",
+      "notes": "Se enseña con reserva como «vamos» a un grupo: -e'ex es la terminación de «ustedes», pero el valor exacto no está descrito. La frase completa sí es alta."
+    },
+    {
+      "m": "báaxal",
+      "es": "jugar; juego; juguete",
+      "status": "verificado",
+      "conf": "alta",
+      "contentId": "u12-baaxal",
+      "sources": [
+        {
+          "title": "UADY – Diccionario maya-español, letra B (báaxal)",
+          "url": "https://www.mayas.uady.mx/diccionario/b_maya.html"
+        },
+        {
+          "title": "Wiktionary (en), báaxal",
+          "url": "https://en.wiktionary.org/wiki/b%C3%A1axal"
+        },
+        {
+          "title": "Nueva Escuela Mexicana Digital (SEP), «Ko'one'ex baaxal ¡Vamos a jugar!»",
+          "url": "https://nuevaescuelamexicana.sep.gob.mx/contenido/coleccion/kooneex-baaxal-vamos-a-jugar/"
+        }
+      ],
+      "evidence": "UADY, letra B: «BÁAXAL: Juguete, juego, jugar, divertirse, bromear». Wiktionary tiene la entrada báaxal. La SEP escribe baaxal (sin tono) en el título de la ficha.",
+      "notes": "Tono alto según UADY y Wiktionary; se acepta baaxal como variante."
+    },
+    {
+      "m": "Ko'one'ex báaxal.",
+      "es": "¡Vamos a jugar!",
+      "status": "verificado",
+      "conf": "alta",
+      "contentId": "u12-kooneex-baaxal",
+      "sources": [
+        {
+          "title": "Nueva Escuela Mexicana Digital (SEP), «Ko'one'ex baaxal ¡Vamos a jugar!»",
+          "url": "https://nuevaescuelamexicana.sep.gob.mx/contenido/coleccion/kooneex-baaxal-vamos-a-jugar/"
+        },
+        {
+          "title": "UADY – Diccionario maya-español, letra B (báaxal)",
+          "url": "https://www.mayas.uady.mx/diccionario/b_maya.html"
+        }
+      ],
+      "evidence": "SEP: título literal «Ko'one'ex baaxal ¡Vamos a jugar!» (portal Nueva Escuela Mexicana Digital, colección y ficha). Fuente institucional. La descripción de la ficha dice que la clase trata de escribir en equipo las instrucciones de un juego tradicional (resumen del buscador; no se abrió la ficha).",
+      "notes": "En la SEP aparece sin tono (baaxal) y con apóstrofos tipográficos en el título; se normalizó."
+    },
+    {
+      "m": "Ko'ox xíimbal.",
+      "es": "Vamos a pasear. / Vamos a caminar.",
+      "status": "probable",
+      "conf": "media",
+      "contentId": "u12-koox-ximbal",
+      "sources": [
+        {
+          "title": "Heraldo de México – Ko'ox kanik maaya t'aan",
+          "url": "https://yucatan.heraldodemexico.com.mx/tendencias/2025/8/27/koox-kanik-maaya-taan-asi-seran-los-cursos-para-preservar-la-lengua-maya-en-yucatan-1949.html"
+        },
+        {
+          "title": "Nueva Escuela Mexicana Digital (SEP), «Ko'one'ex baaxal ¡Vamos a jugar!»",
+          "url": "https://nuevaescuelamexicana.sep.gob.mx/contenido/coleccion/kooneex-baaxal-vamos-a-jugar/"
+        },
+        {
+          "title": "INALI – Prontuario de frases de cortesía en maya",
+          "url": "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+        }
+      ],
+      "evidence": "Armada con la regla ko'ox + verbo en su forma de presente (Ko'ox kanik maaya t'aan; Ko'one'ex baaxal). xíimbal verificado (INALI, Bolles). La frase no se vio escrita.",
+      "notes": "Probable."
+    },
+    {
+      "m": "Ko'ox k'aay.",
+      "es": "Vamos a cantar.",
+      "status": "probable",
+      "conf": "media",
+      "contentId": "u12-koox-kaay",
+      "sources": [
+        {
+          "title": "Heraldo de México – Ko'ox kanik maaya t'aan",
+          "url": "https://yucatan.heraldodemexico.com.mx/tendencias/2025/8/27/koox-kanik-maaya-taan-asi-seran-los-cursos-para-preservar-la-lengua-maya-en-yucatan-1949.html"
+        },
+        {
+          "title": "Nueva Escuela Mexicana Digital (SEP), «Ko'one'ex baaxal ¡Vamos a jugar!»",
+          "url": "https://nuevaescuelamexicana.sep.gob.mx/contenido/coleccion/kooneex-baaxal-vamos-a-jugar/"
+        },
+        {
+          "title": "Base del curso (kb/*.verified.json y src/content/u1..u9.js)"
+        }
+      ],
+      "evidence": "Armada con la regla ko'ox + verbo. k'aay = cantar verificado en la base (Wiktionary, Aprendiendo Maya). La frase no se vio escrita.",
+      "notes": "Probable."
+    },
+    {
+      "m": "xooknen",
+      "es": "¡lee!, ¡estudia!",
+      "status": "probable",
+      "conf": "media",
+      "contentId": "u12-xooknen",
+      "sources": [
+        {
+          "title": "Wiktionary (en), xook",
+          "url": "https://en.wiktionary.org/wiki/xook"
+        },
+        {
+          "title": "Barbara Pfeiler, estudio de caso sobre la adquisición temprana del verbo en maya yucateco (niña de Yalcobá; el fragmento del buscador no mostró el título exacto)",
+          "url": "https://core.ac.uk/download/19210193.pdf"
+        },
+        {
+          "title": "UNAM, Facultad de Filosofía y Letras – temario de Maya IV (imperativo en oraciones intransitivas -en, -nen, -len; imperativo transitivo)",
+          "url": "https://servicios-galileo.filos.unam.mx/uploads/temarios/20252131146100021/Maya4EliCasanova20252.pdf"
+        }
+      ],
+      "evidence": "Wiktionary xook (intransitivo, 'to read'): imperativo xooknen, plural xooknene'ex. El patrón -nen para verbos de actividad está en Pfeiler (ts'aak-nen) y en el temario de la UNAM.",
+      "notes": "Una fuente para la forma exacta; la regla sí es académica."
+    },
+    {
+      "m": "meyajnen",
+      "es": "¡trabaja!",
+      "status": "probable",
+      "conf": "media",
+      "contentId": "u12-meyajnen",
+      "sources": [
+        {
+          "title": "Wiktionary (en), meyaj",
+          "url": "https://en.wiktionary.org/wiki/meyaj"
+        },
+        {
+          "title": "Barbara Pfeiler, estudio de caso sobre la adquisición temprana del verbo en maya yucateco (niña de Yalcobá; el fragmento del buscador no mostró el título exacto)",
+          "url": "https://core.ac.uk/download/19210193.pdf"
+        },
+        {
+          "title": "UNAM, Facultad de Filosofía y Letras – temario de Maya IV (imperativo en oraciones intransitivas -en, -nen, -len; imperativo transitivo)",
+          "url": "https://servicios-galileo.filos.unam.mx/uploads/temarios/20252131146100021/Maya4EliCasanova20252.pdf"
+        }
+      ],
+      "evidence": "Wiktionary meyaj ('to work'): imperativo meyajnen, plural meyajnene'ex; pasado meyajnajen (también en u9).",
+      "notes": "Una fuente para la forma exacta."
+    },
+    {
+      "m": "xíimbalnen",
+      "es": "¡camina!, ¡pasea!",
+      "status": "probable",
+      "conf": "media",
+      "contentId": "u12-ximbalnen",
+      "sources": [
+        {
+          "title": "Wiktionary (en), xíimbal",
+          "url": "https://en.wiktionary.org/wiki/xiimbal"
+        },
+        {
+          "title": "Barbara Pfeiler, estudio de caso sobre la adquisición temprana del verbo en maya yucateco (niña de Yalcobá; el fragmento del buscador no mostró el título exacto)",
+          "url": "https://core.ac.uk/download/19210193.pdf"
+        },
+        {
+          "title": "UNAM, Facultad de Filosofía y Letras – temario de Maya IV (imperativo en oraciones intransitivas -en, -nen, -len; imperativo transitivo)",
+          "url": "https://servicios-galileo.filos.unam.mx/uploads/temarios/20252131146100021/Maya4EliCasanova20252.pdf"
+        }
+      ],
+      "evidence": "Wiktionary xíimbal ('to walk, stroll, visit'): imperativo xíimbalnen, plural xíimbalnene'ex.",
+      "notes": "Una fuente para la forma exacta."
+    },
+    {
+      "m": "jaantej",
+      "es": "¡cómelo!",
+      "status": "verificado",
+      "conf": "alta",
+      "contentId": "u12-jaantej",
+      "sources": [
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        },
+        {
+          "title": "Wiktionary (en), jaant",
+          "url": "https://en.wiktionary.org/wiki/jaant"
+        },
+        {
+          "title": "Barbara Pfeiler, estudio de caso sobre la adquisición temprana del verbo en maya yucateco (niña de Yalcobá; el fragmento del buscador no mostró el título exacto)",
+          "url": "https://core.ac.uk/download/19210193.pdf"
+        },
+        {
+          "title": "Base del curso (kb/*.verified.json y src/content/u1..u9.js)"
+        }
+      ],
+      "evidence": "Andrade: «hanˈte», 'Eat it!' (imperativo transitivo V-e como único componente). Wiktionary jaant: imperativo jaantej, plural jaante'ex. -ej es la terminación del subjuntivo/imperativo transitivo (Pfeiler) y ya está en el curso (Bíin in jaantej, u9; UADY lección 4: «hàanteh»).",
+      "notes": "Andrade no escribe la j final; conviene que un hablante confirme si se oye -ej o -e'."
+    },
+    {
+      "m": "ts'aa",
+      "es": "¡da!, ¡dale!",
+      "status": "verificado",
+      "conf": "alta",
+      "contentId": "u12-tsaa",
+      "sources": [
+        {
+          "title": "UADY – Diccionario español-maya, letra D (dar: ts'aa)",
+          "url": "https://www.mayas.uady.mx/diccionario/d_esp.html"
+        },
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        }
+      ],
+      "evidence": "UADY, letra D: «DAR v: Ts'aa» (también DEPOSITAR v: Ts'aa, k'uub y DONAR v: Síi, ts'aa). Andrade: el imperativo transitivo es la raíz sola al inicio de la frase, «ts'a ti'», 'Give it to him!'.",
+      "notes": "La UADY escribe ts'aa (vocal larga); Andrade, ts'a. La forma con teen es aparte (media)."
+    },
+    {
+      "m": "Ts'aa teen waaj.",
+      "es": "Dame tortilla. / Dame pan.",
+      "status": "probable",
+      "conf": "media",
+      "contentId": "u12-tsaa-teen-waaj",
+      "sources": [
+        {
+          "title": "UADY – Diccionario español-maya, letra D (dar: ts'aa)",
+          "url": "https://www.mayas.uady.mx/diccionario/d_esp.html"
+        },
+        {
+          "title": "David Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), sección 22: Imperative and exclamatory sentences",
+          "url": "https://www.famsi.org/research/bolles/grammar/section22.htm"
+        },
+        {
+          "title": "Base del curso (kb/*.verified.json y src/content/u1..u9.js)"
+        }
+      ],
+      "evidence": "Armada: ts'aa (UADY) + teen (a mí; pronombre verificado, u3) + waaj (u6) con el molde de Bolles «Taz ten in hanal!», 'Bring me my food!'. No se vio escrita.",
+      "notes": "Probable."
+    },
+    {
+      "m": "ilej",
+      "es": "¡míralo!, ¡velo!",
+      "status": "probable",
+      "conf": "media",
+      "contentId": "u12-ilej",
+      "sources": [
+        {
+          "title": "Wiktionary (en), il",
+          "url": "https://en.wiktionary.org/wiki/il"
+        },
+        {
+          "title": "UADY – Diccionario español-maya, letra M (mirar: il)",
+          "url": "https://www.mayas.uady.mx/diccionario/m_esp.html"
+        },
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        }
+      ],
+      "evidence": "Wiktionary il: imperativo ilej, plural ile'ex (fragmento del buscador). UADY: «MIRAR v: Il, paakat, cha'an». Regla del imperativo transitivo (Andrade, Bolles, Pfeiler).",
+      "notes": "El fragmento de Wiktionary glosaba il de forma poco clara ('to visit'); el sentido 'mirar' sale de la UADY. Una fuente para la forma."
+    },
+    {
+      "m": "Ma' a jaantik.",
+      "es": "No lo comas.",
+      "status": "verificado",
+      "conf": "alta",
+      "contentId": "u12-ma-a-jaantik",
+      "sources": [
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        },
+        {
+          "title": "David Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), sección 22: Imperative and exclamatory sentences",
+          "url": "https://www.famsi.org/research/bolles/grammar/section22.htm"
+        }
+      ],
+      "evidence": "Andrade (dos fragmentos): «ma hanˈtik», 'Don't eat it!', con la fórmula «ma (a) han-t-ik». Bolles: «Ma ta cimzic …», 'Don't kill this sow'. jaantik verificado (UADY lección 4).",
+      "notes": "Alta porque la frase está atestiguada, pero la a es opcional en Andrade y Bolles usa ta. Es el punto que más conviene confirmar con un hablante."
+    },
+    {
+      "m": "Ma' tu'ubsik.",
+      "es": "No lo olvides.",
+      "status": "probable",
+      "conf": "media",
+      "contentId": "u12-ma-tuubsik",
+      "sources": [
+        {
+          "title": "La Lengua Maya de Yucatán – Frases básicas",
+          "url": "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+        }
+      ],
+      "evidence": "La Lengua Maya de Yucatán, Frases básicas (fragmento del buscador): «Ma' tu'ubsik» = 'No lo olvides'. Consistente con ma' + forma de presente (Andrade).",
+      "notes": "Una sola fuente, no académica. tu'ubsik no estaba en la base."
+    },
+    {
+      "m": "Ma' a wenel.",
+      "es": "No duermas.",
+      "status": "probable",
+      "conf": "media",
+      "contentId": "u12-ma-a-wenel",
+      "sources": [
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        },
+        {
+          "title": "Wikcionario (es), wenel (conjugación)",
+          "url": "https://es.wiktionary.org/wiki/wenel"
+        }
+      ],
+      "evidence": "Regla ma' a + verbo en su forma de presente (Andrade) aplicada a wenel (UADY, Montgomery; táan u wenel). No se vio escrita.",
+      "notes": "Probable. Falta confirmar que la regla vale igual con intransitivos."
+    },
+    {
+      "m": "Ma' a bin.",
+      "es": "No vayas.",
+      "status": "probable",
+      "conf": "media",
+      "contentId": "u12-ma-a-bin",
+      "sources": [
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        },
+        {
+          "title": "INALI – Prontuario de frases de cortesía en maya",
+          "url": "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+        }
+      ],
+      "evidence": "Regla ma' a + verbo en su forma de presente aplicada a bin (Tu'ux ka bin, INALI/Mérida). No se vio escrita.",
+      "notes": "Probable. Falta confirmar que la regla vale igual con intransitivos."
+    },
+    {
+      "m": "Ma' a kutal.",
+      "es": "No te sientes.",
+      "status": "probable",
+      "conf": "media",
+      "contentId": "u12-ma-a-kutal",
+      "sources": [
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        },
+        {
+          "title": "Wiktionary (en), kutal",
+          "url": "https://en.wiktionary.org/wiki/kutal"
+        }
+      ],
+      "evidence": "Regla ma' a + verbo en su forma de presente aplicada a kutal (Wiktionary: kin kutal, ka kutal, ku kutal). No se vio escrita.",
+      "notes": "Probable. Falta confirmar que la regla vale igual con intransitivos."
+    }
+  ],
+  "discarded": [
+    {
+      "m": "janen / jaanen (¡come!)",
+      "es": "orden de janal",
+      "status": "dudoso",
+      "reason": "Bolles trae «Hanen! Eat!» sin marcar longitud y Wikcionario (es) da janen, janalnen y jaanen como variantes en dos tablas. La vocal (¿janen o jaanen?) no se resolvió, y en u9 janen ya significa «comí». Se usó Ko'oten janal en su lugar.",
+      "sources": [
+        {
+          "title": "David Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), sección 22: Imperative and exclamatory sentences",
+          "url": "https://www.famsi.org/research/bolles/grammar/section22.htm"
+        },
+        {
+          "title": "Wikcionario (es), janal (conjugación)",
+          "url": "https://es.wiktionary.org/wiki/janal"
+        }
+      ]
+    },
+    {
+      "m": "oken / ooken (¡entra!)",
+      "es": "orden del verbo de entrar",
+      "status": "dudoso",
+      "reason": "Pfeiler da «ok-en 'enter'» (o corta), La Lengua Maya de Yucatán da «Ooken» (o larga) y la UADY da «OKOL: entrada, entrar» (o corta); la analogía wenel → weenen sugiere que la orden alarga la vocal. Longitud sin resolver.",
+      "sources": [
+        {
+          "title": "Barbara Pfeiler, estudio de caso sobre la adquisición temprana del verbo en maya yucateco (niña de Yalcobá; el fragmento del buscador no mostró el título exacto)",
+          "url": "https://core.ac.uk/download/19210193.pdf"
+        },
+        {
+          "title": "La Lengua Maya de Yucatán – Frases básicas",
+          "url": "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+        },
+        {
+          "title": "UADY – Diccionario maya-español, letra O (okol, ookol)",
+          "url": "https://www.mayas.uady.mx/diccionario/o_maya.html"
+        }
+      ]
+    },
+    {
+      "m": "je'elen (¡para!), suutnen (gira), pakteni' (¡mírame!), péeksaba (¡muévete!), mak a chi' (¡cállate!)",
+      "es": "órdenes de la lista de frases básicas",
+      "status": "probable",
+      "reason": "Una sola fuente no académica (La Lengua Maya de Yucatán). je'elen y suutnen encajan en el patrón -en / -nen, pero no se enseñan por falta de segunda fuente; péeksaba y mak a chi' llevan segmentación o registro dudosos.",
+      "sources": [
+        {
+          "title": "La Lengua Maya de Yucatán – Frases básicas",
+          "url": "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+        }
+      ]
+    },
+    {
+      "m": "bino'on",
+      "es": "(el encargo lo daba como irregular)",
+      "status": "dudoso",
+      "reason": "No apareció como imperativo en ninguna fuente. El imperativo verificado de bin es xeen (Bolles, Parry); Andrade dice que bin no tiene imperativo propio.",
+      "sources": [
+        {
+          "title": "David Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), sección 22: Imperative and exclamatory sentences",
+          "url": "https://www.famsi.org/research/bolles/grammar/section22.htm"
+        },
+        {
+          "title": "parryc – Yucatec Maya (notas que siguen el libro de Briceño Chel sobre los verbos)",
+          "url": "https://parryc.com/language/yucatec-maya"
+        },
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        }
+      ]
+    },
+    {
+      "m": "Taze / Bize / Cħaeex (Bolles)",
+      "es": "tráelo / llévalo / tómalo (plural)",
+      "status": "dudoso",
+      "reason": "Atestiguadas en ortografía colonial, pero su ortografía actual (longitud, saltillo, -ej) no se pudo establecer.",
+      "sources": [
+        {
+          "title": "David Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), sección 22: Imperative and exclamatory sentences",
+          "url": "https://www.famsi.org/research/bolles/grammar/section22.htm"
+        }
+      ]
+    },
+    {
+      "m": "u'uy / u'ub (escuchar), uk'ul (beber), k'aay (cantar), jóok'ol (salir): sus órdenes",
+      "es": "órdenes del encargo",
+      "status": "dudoso",
+      "reason": "No se encontró ninguna forma de imperativo en las fuentes vistas. Wiktionary trae k'ay (transitivo) con k'ayej, que no es el k'aay intransitivo del curso.",
+      "sources": [
+        {
+          "title": "Wiktionary (en), xook",
+          "url": "https://en.wiktionary.org/wiki/xook"
+        }
+      ]
+    },
+    {
+      "m": "plural de xeen y de wa'alen",
+      "es": "ve / ponte de pie (a varias personas)",
+      "status": "dudoso",
+      "reason": "No se vieron escritos; solo se aplicaría la regla V-en-e'ex.",
+      "sources": [
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        }
+      ]
+    },
+    {
+      "m": "bik + verbo (negación de advertencia)",
+      "es": "¡no te vayas a caer!",
+      "status": "probable",
+      "reason": "Andrade describe bik (variante mik) para prohibiciones de advertencia, con un ejemplo en plural; una sola fuente y uso poco frecuente en A1. No se enseña.",
+      "sources": [
+        {
+          "title": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+          "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+        }
+      ]
+    }
+  ],
+  "speakerReview": [
+    "xeen (vocal doble) y si suena natural como «ve»; qué plural se usa.",
+    "Para «¡come!»: ¿janen o jaanen? (no se enseña; se usó Ko'oten janal).",
+    "Prohibiciones: ¿ma' a + verbo o ma' ta + verbo? ¿Es natural con intransitivos (ma' a wenel, ma' a bin, ma' a kutal)? ¿La a es opcional?",
+    "jaantej e ilej: ¿final -ej o -e'? ¿Se dicen así de manera independiente?",
+    "Verbos de actividad: xooknen, meyajnen, xíimbalnen.",
+    "Ts'aa teen waaj: ¿ts'aa o ts'a'? ¿Se dice así para «dame tortilla»?",
+    "Ko'ox frente a ko'one'ex: diferencia de uso; y si Ko'ox xíimbal / Ko'ox k'aay se dicen.",
+    "wa'alen, weenen y la longitud de la vocal en la orden (¿ooken u oken para «entra»?).",
+    "Lectura recomendada para el revisor: Hofling y Ojeda (1994), «Yucatec Maya imperatives and other manipulative language», IJAL; Ayres y Pfeiler (1996), Los verbos mayas (solo se vieron sus citas)."
+  ]
+}

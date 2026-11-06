@@ -83,10 +83,10 @@ navegador, se borra tu avance.
 
 ## Qué contiene
 
-- **9 unidades**: sonidos del maya, saludos, personas y familia, números, día a día, comida y
-  mercado, cuerpo y salud, naturaleza y colores, tiempo y cultura. Al momento de escribir esto
-  suman 37 lecciones, 356 palabras y frases (65 «por confirmar»), 9 diálogos y 296 ejercicios
-  (`node test/validate.cjs` da los números actuales).
+- **12 unidades**: sonidos del maya, saludos, personas y familia, números, día a día, comida y
+  mercado, cuerpo y salud, naturaleza y colores, tiempo y cultura, ¿dónde está?, quiero y me gusta, y
+  «haz esto» (el imperativo). Al momento de escribir esto suman 49 lecciones, 436 palabras y frases
+  (105 «por confirmar»), 17 diálogos y 390 ejercicios (`node test/validate.cjs` da los números actuales).
 - **Lecciones** cortas: tarjetas de explicación (con notas de cultura y avisos), vocabulario
   con pronunciación aproximada y ejemplos, un diálogo y ejercicios.
 - **Cuatro tipos de ejercicio**: elegir la opción correcta (de maya a español y al revés),
@@ -96,8 +96,8 @@ navegador, se borra tu avance.
   y práctica de las palabras más difíciles.
 - **Diccionario** maya ↔ español con búsqueda y filtro por unidad, y una **guía de
   pronunciación** con las 27 letras del alfabeto.
-- **Audio** (v5): 225 audios. 24 sonidos de referencia del Alfabeto Fonético Internacional
-  (AFI) en la guía de pronunciación y 201 de **voz sintética aproximada** para palabras, ejemplos
+- **Audio** (v5): 302 audios. 24 sonidos de referencia del Alfabeto Fonético Internacional
+  (AFI) en la guía de pronunciación y 278 de **voz sintética aproximada** para palabras, ejemplos
   y diálogos; todavía **0 voces nativas**. Cada botón dice qué tipo de audio es (ver [Audio](#audio)).
 - **Para escuchar más**: 36 enlaces verificados a videos, pódcast, radio y sitios en maya, por
   lección y en Perfil → «Escucha maya».
@@ -210,16 +210,15 @@ La app reproduce la pronunciación de palabras, ejemplos, líneas de diálogo y 
 propone el ejercicio **«Escucha y elige»** cuando hay voz nativa. Sin audio todo funciona igual: no
 aparece ningún botón.
 
-**Qué hay (v5).** 225 audios, 2.0 MB en total:
+**Qué hay (v5).** 302 audios, 2.7 MB en total:
 
 | Tipo (`kind`) | Etiqueta en la app | Audios | De dónde viene | Licencia |
 | --- | --- | ---: | --- | --- |
 | `fonema` | «Sonido de referencia (AFI)» | 24 | Wikimedia Commons: sonidos del AFI de Peter Isotalo (19), Denelson83 (3) y TFighterPilot (2) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
-| `sintetico` | «Voz sintética (aproximada)» | 201 | Meta AI, modelo [MMS-TTS para maya yucateco](https://huggingface.co/facebook/mms-tts-yua) (`facebook/mms-tts-yua`), con `tools/tts-mms.py` | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) (no comercial) |
+| `sintetico` | «Voz sintética (aproximada)» | 278 | Meta AI, modelo [MMS-TTS para maya yucateco](https://huggingface.co/facebook/mms-tts-yua) (`facebook/mms-tts-yua`), con `tools/tts-mms.py` | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) (no comercial) |
 | `nativo` | «Voz nativa» | 0 | hablantes que graban con `grabar.html`, o grabaciones de Commons | la que elija quien graba: «Solo para Ko'ox Maaya» ([términos](docs/PERMISO-VOCES.md)), CC BY-SA 4.0, CC BY 4.0 o CC0 |
 
-La voz sintética cubre 154 de las 356 palabras (82 de las 265 palabras sueltas y 72 de las 91
-frases), 57 de las 59 líneas de diálogo y 34 de los 44 ejemplos. La guía tiene sonido de referencia
+La voz sintética cubre las palabras, ejemplos y líneas de diálogo que pasan el control de calidad (la sección «Voces» del Perfil muestra el total actual). La guía tiene sonido de referencia
 en 20 de sus 27 tarjetas (la de las vocales, con un botón por vocal); no lo tienen las vocales largas,
 con tono, glotalizadas y rearticuladas (aa, áa, a', a'a: el AFI no las graba aisladas), ch' y ts'
 (pendientes de Commons, ver abajo) ni «c q v z». La atribución completa de cada audio (título, autor,
@@ -260,7 +259,7 @@ transformers):
    error por carácter) contra el texto del curso, sin puntuación, espacios ni acentos de tono, pero
    contando el saltillo.
 5. Se queda con la mejor toma y la acepta solo si **CER ≤ 0.25** y, en palabras de hasta 4 letras,
-   **CER = 0** (ahí una letra mal suele dar otra palabra). Pasaron 201 de los 411 textos; los demás
+   **CER = 0** (ahí una letra mal suele dar otra palabra). Pasaron 278 de los 517 textos del curso; los demás
    (sobre todo palabras sueltas cortas y con glotalizadas) no tienen audio. Cada entrada guarda su CER
    en `notes`.
 
@@ -332,7 +331,7 @@ revisa que las keys no se repitan, que cada archivo exista y sea un MP3 mono de 
 
 **Límites del Artifact.** La página de claude.ai no puede pedir archivos a otro sitio, así que
 `node build.mjs` incrusta cada audio como `data:audio/mpeg;base64` hasta **6 MB** (lo que el audio agrega
-a la página; se cambia con `--audio-limit <MB>`, máximo 15). Hoy cabe todo: los 225 audios ocupan
+a la página; se cambia con `--audio-limit <MB>`, máximo 15). Hoy cabe todo: los 302 audios ocupan
 2.64 MB incrustados. Si no cupiera, entran primero los sonidos de referencia, luego las voces nativas y
 al final las sintéticas (las de palabras que ya tienen voz nativa, al último), y la consola dice cuáles
 quedaron fuera (siguen en el sitio web). En el sitio, el service worker guarda cada audio al escucharlo

@@ -866,7 +866,7 @@ async function gentleRun(browser, cfg) {
   check(tag + "aviso de confiabilidad: IA y fuentes públicas, ortografía por región, validar con hablantes, intérprete en situaciones importantes",
     /IA/.test(notes.trust) && /fuentes públicas/.test(notes.trust) && /varía/.test(notes.trust) && /región/.test(notes.trust) && /hablantes de maya/.test(notes.trust) && /situaciones importantes \(salud, trámites\) recurre a un intérprete/.test(notes.trust), notes.trust.slice(0, 80));
   check(tag + "sin menciones a pacientes ni a validación clínica", !/paciente|cl[ií]nic/i.test(notes.all), (notes.all.match(/.{0,30}(paciente|cl[ií]nic).{0,30}/i) || [""])[0]);
-  check(tag + "pie: «v5.2 · proyecto comunitario experimental»", /Ko'ox Maaya v5\.2 · proyecto comunitario experimental/.test(notes.foot), notes.foot);
+  check(tag + "pie: «v5.3 · proyecto comunitario experimental»", /Ko'ox Maaya v5\.3 · proyecto comunitario experimental/.test(notes.foot), notes.foot);
 
   // 5) Copia de seguridad: exportar → borrar → importar recupera exactamente el estado.
   await seedState(page, { v: 2, goal: 10 });

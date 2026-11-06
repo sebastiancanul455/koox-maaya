@@ -458,6 +458,186 @@
       "notes": "Sonido aislado del Alfabeto Fonético Internacional; no es una grabación de un hablante de maya. Se oye la vibrante simple alveolar [ɾ] (la r de «pera»). Commons no da el autor en forma legible por máquina; la descripción del archivo dice «Recorded by Peter Isotalo». Licencia CC BY-SA 3.0: el audio procesado (recortado, normalizado y convertido a MP3) se publica con la misma licencia CC BY-SA 3.0 y con la atribución al autor y el enlace a la página de Commons."
     },
     {
+      "key": "s-dlg-u10l4-2",
+      "file": "audio/s-dlg-u10l4-2.mp3",
+      "kind": "sintetico",
+      "text": "Yaan te'elo', tu táan le k'íiwiko'.",
+      "lang": "yua",
+      "vocab": [],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 2299,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.04"
+    },
+    {
+      "key": "s-dlg-u10l4-3",
+      "file": "audio/s-dlg-u10l4-3.mp3",
+      "kind": "sintetico",
+      "text": "Náach wáaj?",
+      "lang": "yua",
+      "vocab": [],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 888,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.11"
+    },
+    {
+      "key": "s-dlg-u10l4-4",
+      "file": "audio/s-dlg-u10l4-4.mp3",
+      "kind": "sintetico",
+      "text": "Ma', naats'. Toj táanil.",
+      "lang": "yua",
+      "vocab": [],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 1358,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
+    },
+    {
+      "key": "s-dlg-u11l4-3",
+      "file": "audio/s-dlg-u11l4-3.mp3",
+      "kind": "sintetico",
+      "text": "Yaan waaj yéetel bu'ul.",
+      "lang": "yua",
+      "vocab": [],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 1776,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.11"
+    },
+    {
+      "key": "s-dlg-u11l4-4",
+      "file": "audio/s-dlg-u11l4-4.mp3",
+      "kind": "sintetico",
+      "text": "Beet uts a ts'a'ik teen waaj.",
+      "lang": "yua",
+      "vocab": [],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 1541,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.09"
+    },
+    {
+      "key": "s-dlg-u11l4-5",
+      "file": "audio/s-dlg-u11l4-5.mp3",
+      "kind": "sintetico",
+      "text": "Ma'alob. K'abéet teech ja'?",
+      "lang": "yua",
+      "vocab": [],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 1541,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
+    },
+    {
+      "key": "s-dlg-u11l4-6",
+      "file": "audio/s-dlg-u11l4-6.mp3",
+      "kind": "sintetico",
+      "text": "Beey. In k'áat ja'. Dios bo'otik.",
+      "lang": "yua",
+      "vocab": [],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 2194,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.16"
+    },
+    {
+      "key": "s-dlg-u12l2-5",
+      "file": "audio/s-dlg-u12l2-5.mp3",
+      "kind": "sintetico",
+      "text": "Wa'alen! Kulen!",
+      "lang": "yua",
+      "vocab": [],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 810,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
+    },
+    {
+      "key": "s-dlg-u12l4-1",
+      "file": "audio/s-dlg-u12l4-1.mp3",
+      "kind": "sintetico",
+      "text": "Pedro! Ko'oten janal.",
+      "lang": "yua",
+      "vocab": [],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 1202,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.24"
+    },
+    {
+      "key": "s-dlg-u12l4-2",
+      "file": "audio/s-dlg-u12l4-2.mp3",
+      "kind": "sintetico",
+      "text": "Ts'aa teen waaj, meent uts.",
+      "lang": "yua",
+      "vocab": [],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 1411,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.10"
+    },
+    {
+      "key": "s-dlg-u12l4-3",
+      "file": "audio/s-dlg-u12l4-3.mp3",
+      "kind": "sintetico",
+      "text": "Waaj. Chokoj. Ma' a jaantik!",
+      "lang": "yua",
+      "vocab": [],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 1515,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.14"
+    },
+    {
+      "key": "s-dlg-u12l4-4",
+      "file": "audio/s-dlg-u12l4-4.mp3",
+      "kind": "sintetico",
+      "text": "Ma'alob. Chaambéel.",
+      "lang": "yua",
+      "vocab": [],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 1149,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.06"
+    },
+    {
       "key": "s-dlg-u2l1-2",
       "file": "audio/s-dlg-u2l1-2.mp3",
       "kind": "sintetico",
@@ -516,6 +696,126 @@
       "source": "https://huggingface.co/facebook/mms-tts-yua",
       "durationMs": 1228,
       "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.15"
+    },
+    {
+      "key": "s-dlg-u3l4-1",
+      "file": "audio/s-dlg-u3l4-1.mp3",
+      "kind": "sintetico",
+      "text": "Bix u k'aaba'?",
+      "lang": "yua",
+      "vocab": [],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 993,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.09"
+    },
+    {
+      "key": "s-dlg-u3l4-2",
+      "file": "audio/s-dlg-u3l4-2.mp3",
+      "kind": "sintetico",
+      "text": "Rosa u k'aaba'. In na'.",
+      "lang": "yua",
+      "vocab": [],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 1776,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
+    },
+    {
+      "key": "s-dlg-u3l4-3",
+      "file": "audio/s-dlg-u3l4-3.mp3",
+      "kind": "sintetico",
+      "text": "Kux leti'?",
+      "lang": "yua",
+      "vocab": [],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 784,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
+    },
+    {
+      "key": "s-dlg-u3l4-4",
+      "file": "audio/s-dlg-u3l4-4.mp3",
+      "kind": "sintetico",
+      "text": "Pedro u k'aaba'. In suku'un.",
+      "lang": "yua",
+      "vocab": [],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 2142,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.09"
+    },
+    {
+      "key": "s-dlg-u3l4-6",
+      "file": "audio/s-dlg-u3l4-6.mp3",
+      "kind": "sintetico",
+      "text": "María u k'aaba'. In kiik.",
+      "lang": "yua",
+      "vocab": [],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 1698,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.11"
+    },
+    {
+      "key": "s-dlg-u4l4-1",
+      "file": "audio/s-dlg-u4l4-1.mp3",
+      "kind": "sintetico",
+      "text": "Yaan teen peek'.",
+      "lang": "yua",
+      "vocab": [],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 967,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.23"
+    },
+    {
+      "key": "s-dlg-u4l4-5",
+      "file": "audio/s-dlg-u4l4-5.mp3",
+      "kind": "sintetico",
+      "text": "Ka'atúul peek'. Kux teech?",
+      "lang": "yua",
+      "vocab": [],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 1672,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.10"
+    },
+    {
+      "key": "s-dlg-u4l4-6",
+      "file": "audio/s-dlg-u4l4-6.mp3",
+      "kind": "sintetico",
+      "text": "Juntúul miis.",
+      "lang": "yua",
+      "vocab": [],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 1149,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.18"
     },
     {
       "key": "s-dlg-u5l3-2",
@@ -758,6 +1058,96 @@
       "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
     },
     {
+      "key": "s-dlg-u8l5-1",
+      "file": "audio/s-dlg-u8l5-1.mp3",
+      "kind": "sintetico",
+      "text": "Yaan wáaj báalam waye'?",
+      "lang": "yua",
+      "vocab": [],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 1515,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.21"
+    },
+    {
+      "key": "s-dlg-u8l5-2",
+      "file": "audio/s-dlg-u8l5-2.mp3",
+      "kind": "sintetico",
+      "text": "Ma'. Mina'an báalam waye'. Yaan kéej, kitam yéetel baats'.",
+      "lang": "yua",
+      "vocab": [],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 4127,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.15"
+    },
+    {
+      "key": "s-dlg-u8l5-3",
+      "file": "audio/s-dlg-u8l5-3.mp3",
+      "kind": "sintetico",
+      "text": "Yaan wáaj ts'ono'ot waye'?",
+      "lang": "yua",
+      "vocab": [],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 1985,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.14"
+    },
+    {
+      "key": "s-dlg-u8l5-4",
+      "file": "audio/s-dlg-u8l5-4.mp3",
+      "kind": "sintetico",
+      "text": "Jaaj, yaan ts'ono'ot yéetel ya'axche'.",
+      "lang": "yua",
+      "vocab": [],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 2743,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
+    },
+    {
+      "key": "s-dlg-u8l5-5",
+      "file": "audio/s-dlg-u8l5-5.mp3",
+      "kind": "sintetico",
+      "text": "Jach ma'alob! Dios bo'otik.",
+      "lang": "yua",
+      "vocab": [],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 1959,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.23"
+    },
+    {
+      "key": "s-dlg-u8l5-6",
+      "file": "audio/s-dlg-u8l5-6.mp3",
+      "kind": "sintetico",
+      "text": "Mixba'al. Ko'ox!",
+      "lang": "yua",
+      "vocab": [],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 1123,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
+    },
+    {
       "key": "s-dlg-u9l3-1",
       "file": "audio/s-dlg-u9l3-1.mp3",
       "kind": "sintetico",
@@ -786,6 +1176,21 @@
       "source": "https://huggingface.co/facebook/mms-tts-yua",
       "durationMs": 1959,
       "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.09"
+    },
+    {
+      "key": "s-ex-u10-tuux-yaan",
+      "file": "audio/s-ex-u10-tuux-yaan.mp3",
+      "kind": "sintetico",
+      "text": "Tu'ux yaan junp'éel k'íiwik?",
+      "lang": "yua",
+      "vocab": [],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 1567,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
     },
     {
       "key": "s-ex-u2-dios-bootik",
@@ -1296,6 +1701,856 @@
       "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
       "source": "https://huggingface.co/facebook/mms-tts-yua",
       "durationMs": 758,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
+    },
+    {
+      "key": "s-u10-chuumuk-kaaj",
+      "file": "audio/s-u10-chuumuk-kaaj.mp3",
+      "kind": "sintetico",
+      "text": "chúumuk kaaj",
+      "lang": "yua",
+      "vocab": [
+        "u10-chuumuk-kaaj"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 940,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.18"
+    },
+    {
+      "key": "s-u10-ich-kool",
+      "file": "audio/s-u10-ich-kool.mp3",
+      "kind": "sintetico",
+      "text": "ich kool",
+      "lang": "yua",
+      "vocab": [
+        "u10-ich-kool"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 784,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
+    },
+    {
+      "key": "s-u10-ichil",
+      "file": "audio/s-u10-ichil.mp3",
+      "kind": "sintetico",
+      "text": "ichil",
+      "lang": "yua",
+      "vocab": [
+        "u10-ichil"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 653,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
+    },
+    {
+      "key": "s-u10-minaan-waye",
+      "file": "audio/s-u10-minaan-waye.mp3",
+      "kind": "sintetico",
+      "text": "Mina'an waye'.",
+      "lang": "yua",
+      "vocab": [
+        "u10-minaan-waye"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 862,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.08"
+    },
+    {
+      "key": "s-u10-naats",
+      "file": "audio/s-u10-naats.mp3",
+      "kind": "sintetico",
+      "text": "naats'",
+      "lang": "yua",
+      "vocab": [
+        "u10-naats"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 679,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.17"
+    },
+    {
+      "key": "s-u10-najil-xook",
+      "file": "audio/s-u10-najil-xook.mp3",
+      "kind": "sintetico",
+      "text": "najil xook",
+      "lang": "yua",
+      "vocab": [
+        "u10-najil-xook"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 888,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.11"
+    },
+    {
+      "key": "s-u10-teelo",
+      "file": "audio/s-u10-teelo.mp3",
+      "kind": "sintetico",
+      "text": "te'elo'",
+      "lang": "yua",
+      "vocab": [
+        "u10-teelo"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 549,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.14"
+    },
+    {
+      "key": "s-u10-toj-taanil",
+      "file": "audio/s-u10-toj-taanil.mp3",
+      "kind": "sintetico",
+      "text": "toj táanil",
+      "lang": "yua",
+      "vocab": [
+        "u10-toj-taanil"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 784,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
+    },
+    {
+      "key": "s-u10-tu-paach",
+      "file": "audio/s-u10-tu-paach.mp3",
+      "kind": "sintetico",
+      "text": "tu paach",
+      "lang": "yua",
+      "vocab": [
+        "u10-tu-paach"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 862,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
+    },
+    {
+      "key": "s-u10-tu-taan",
+      "file": "audio/s-u10-tu-taan.mp3",
+      "kind": "sintetico",
+      "text": "tu táan",
+      "lang": "yua",
+      "vocab": [
+        "u10-tu-taan"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 705,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
+    },
+    {
+      "key": "s-u10-tu-yookol",
+      "file": "audio/s-u10-tu-yookol.mp3",
+      "kind": "sintetico",
+      "text": "tu yóok'ol",
+      "lang": "yua",
+      "vocab": [
+        "u10-tu-yookol"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 836,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
+    },
+    {
+      "key": "s-u10-tuux-yaan",
+      "file": "audio/s-u10-tuux-yaan.mp3",
+      "kind": "sintetico",
+      "text": "Tu'ux yaan …?",
+      "lang": "yua",
+      "vocab": [
+        "u10-tuux-yaan"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 888,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
+    },
+    {
+      "key": "s-u10-tuux-yaan-xook",
+      "file": "audio/s-u10-tuux-yaan-xook.mp3",
+      "kind": "sintetico",
+      "text": "Tu'ux yaan le najil xooko'?",
+      "lang": "yua",
+      "vocab": [
+        "u10-tuux-yaan-xook"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 1620,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
+    },
+    {
+      "key": "s-u10-xiimbal",
+      "file": "audio/s-u10-xiimbal.mp3",
+      "kind": "sintetico",
+      "text": "xíimbal",
+      "lang": "yua",
+      "vocab": [
+        "u10-xiimbal"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 784,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
+    },
+    {
+      "key": "s-u10-yaan-teelo",
+      "file": "audio/s-u10-yaan-teelo.mp3",
+      "kind": "sintetico",
+      "text": "Yaan te'elo'.",
+      "lang": "yua",
+      "vocab": [
+        "u10-yaan-teelo"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 862,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
+    },
+    {
+      "key": "s-u10-yaan-tu-paach",
+      "file": "audio/s-u10-yaan-tu-paach.mp3",
+      "kind": "sintetico",
+      "text": "Yaan tu paach le najo'.",
+      "lang": "yua",
+      "vocab": [
+        "u10-yaan-tu-paach"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 1489,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
+    },
+    {
+      "key": "s-u10-yaanal",
+      "file": "audio/s-u10-yaanal.mp3",
+      "kind": "sintetico",
+      "text": "yáanal",
+      "lang": "yua",
+      "vocab": [
+        "u10-yaanal"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 758,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
+    },
+    {
+      "key": "s-u11-beet-uts-tsaik-teen",
+      "file": "audio/s-u11-beet-uts-tsaik-teen.mp3",
+      "kind": "sintetico",
+      "text": "Beet uts a ts'a'ik teen ja'.",
+      "lang": "yua",
+      "vocab": [
+        "u11-beet-uts-tsaik-teen"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 1437,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.09"
+    },
+    {
+      "key": "s-u11-in-kaat",
+      "file": "audio/s-u11-in-kaat.mp3",
+      "kind": "sintetico",
+      "text": "In k'áat",
+      "lang": "yua",
+      "vocab": [
+        "u11-in-kaat"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 679,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.14"
+    },
+    {
+      "key": "s-u11-jach-uts-tin-wich",
+      "file": "audio/s-u11-jach-uts-tin-wich.mp3",
+      "kind": "sintetico",
+      "text": "Jach uts tin wich.",
+      "lang": "yua",
+      "vocab": [
+        "u11-jach-uts-tin-wich"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 1071,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.07"
+    },
+    {
+      "key": "s-u11-jatsuts-uts-tin-wich",
+      "file": "audio/s-u11-jatsuts-uts-tin-wich.mp3",
+      "kind": "sintetico",
+      "text": "Jats'uts, uts tin wich tuláakal.",
+      "lang": "yua",
+      "vocab": [
+        "u11-jatsuts-uts-tin-wich"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 1985,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.12"
+    },
+    {
+      "key": "s-u11-kaat-bin-uxmal",
+      "file": "audio/s-u11-kaat-bin-uxmal.mp3",
+      "kind": "sintetico",
+      "text": "In k'áat bin Uxmal.",
+      "lang": "yua",
+      "vocab": [
+        "u11-kaat-bin-uxmal"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 1254,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.07"
+    },
+    {
+      "key": "s-u11-kaat-jaa",
+      "file": "audio/s-u11-kaat-jaa.mp3",
+      "kind": "sintetico",
+      "text": "In k'áat ja'.",
+      "lang": "yua",
+      "vocab": [
+        "u11-kaat-jaa"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 810,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.20"
+    },
+    {
+      "key": "s-u11-kaat-janal",
+      "file": "audio/s-u11-kaat-janal.mp3",
+      "kind": "sintetico",
+      "text": "In k'áat janal.",
+      "lang": "yua",
+      "vocab": [
+        "u11-kaat-janal"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 1019,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.17"
+    },
+    {
+      "key": "s-u11-kaat-kaapeel-oon",
+      "file": "audio/s-u11-kaat-kaapeel-oon.mp3",
+      "kind": "sintetico",
+      "text": "In k'áat ka'ap'éel oon.",
+      "lang": "yua",
+      "vocab": [
+        "u11-kaat-kaapeel-oon"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 1437,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
+    },
+    {
+      "key": "s-u11-kaat-man-baalob",
+      "file": "audio/s-u11-kaat-man-baalob.mp3",
+      "kind": "sintetico",
+      "text": "In k'áat in man ba'alo'ob.",
+      "lang": "yua",
+      "vocab": [
+        "u11-kaat-man-baalob"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 1437,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
+    },
+    {
+      "key": "s-u11-kaat-waaj",
+      "file": "audio/s-u11-kaat-waaj.mp3",
+      "kind": "sintetico",
+      "text": "In k'áat waaj.",
+      "lang": "yua",
+      "vocab": [
+        "u11-kaat-waaj"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 1045,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
+    },
+    {
+      "key": "s-u11-kabeet-in-bin",
+      "file": "audio/s-u11-kabeet-in-bin.mp3",
+      "kind": "sintetico",
+      "text": "K'abéet in bin.",
+      "lang": "yua",
+      "vocab": [
+        "u11-kabeet-in-bin"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 914,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.08"
+    },
+    {
+      "key": "s-u11-kabeet-teech",
+      "file": "audio/s-u11-kabeet-teech.mp3",
+      "kind": "sintetico",
+      "text": "K'abéet teech ja'?",
+      "lang": "yua",
+      "vocab": [
+        "u11-kabeet-teech"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 993,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.07"
+    },
+    {
+      "key": "s-u11-kabeet-teen",
+      "file": "audio/s-u11-kabeet-teen.mp3",
+      "kind": "sintetico",
+      "text": "K'abéet teen ja'.",
+      "lang": "yua",
+      "vocab": [
+        "u11-kabeet-teen"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 1097,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
+    },
+    {
+      "key": "s-u11-ma-in-kaati",
+      "file": "audio/s-u11-ma-in-kaati.mp3",
+      "kind": "sintetico",
+      "text": "Ma' in k'áati'.",
+      "lang": "yua",
+      "vocab": [
+        "u11-ma-in-kaati"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 993,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.08"
+    },
+    {
+      "key": "s-u11-ma-kabeeti",
+      "file": "audio/s-u11-ma-kabeeti.mp3",
+      "kind": "sintetico",
+      "text": "Ma' k'abéeti'.",
+      "lang": "yua",
+      "vocab": [
+        "u11-ma-kabeeti"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 914,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
+    },
+    {
+      "key": "s-u11-tulaakal",
+      "file": "audio/s-u11-tulaakal.mp3",
+      "kind": "sintetico",
+      "text": "tuláakal",
+      "lang": "yua",
+      "vocab": [
+        "u11-tulaakal"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 679,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.12"
+    },
+    {
+      "key": "s-u11-uts-ta-wich",
+      "file": "audio/s-u11-uts-ta-wich.mp3",
+      "kind": "sintetico",
+      "text": "Uts ta wich.",
+      "lang": "yua",
+      "vocab": [
+        "u11-uts-ta-wich"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 810,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.22"
+    },
+    {
+      "key": "s-u11-uts-tin-wich",
+      "file": "audio/s-u11-uts-tin-wich.mp3",
+      "kind": "sintetico",
+      "text": "Uts tin wich.",
+      "lang": "yua",
+      "vocab": [
+        "u11-uts-tin-wich"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 836,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.20"
+    },
+    {
+      "key": "s-u11-uts-waaj-ta-wich",
+      "file": "audio/s-u11-uts-waaj-ta-wich.mp3",
+      "kind": "sintetico",
+      "text": "Uts wáaj ta wich?",
+      "lang": "yua",
+      "vocab": [
+        "u11-uts-waaj-ta-wich"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 1097,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.08"
+    },
+    {
+      "key": "s-u12-baaxal",
+      "file": "audio/s-u12-baaxal.mp3",
+      "kind": "sintetico",
+      "text": "báaxal",
+      "lang": "yua",
+      "vocab": [
+        "u12-baaxal"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 810,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.17"
+    },
+    {
+      "key": "s-u12-kooten-janal",
+      "file": "audio/s-u12-kooten-janal.mp3",
+      "kind": "sintetico",
+      "text": "Ko'oten janal.",
+      "lang": "yua",
+      "vocab": [
+        "u12-kooten-janal"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 862,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
+    },
+    {
+      "key": "s-u12-kootenee-ex",
+      "file": "audio/s-u12-kootenee-ex.mp3",
+      "kind": "sintetico",
+      "text": "ko'otene'ex",
+      "lang": "yua",
+      "vocab": [
+        "u12-kootenee-ex"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 967,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.09"
+    },
+    {
+      "key": "s-u12-koox-ximbal",
+      "file": "audio/s-u12-koox-ximbal.mp3",
+      "kind": "sintetico",
+      "text": "Ko'ox xíimbal.",
+      "lang": "yua",
+      "vocab": [
+        "u12-koox-ximbal"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 993,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.25"
+    },
+    {
+      "key": "s-u12-kulenee-ex",
+      "file": "audio/s-u12-kulenee-ex.mp3",
+      "kind": "sintetico",
+      "text": "kulene'ex",
+      "lang": "yua",
+      "vocab": [
+        "u12-kulenee-ex"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 862,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
+    },
+    {
+      "key": "s-u12-ma-a-bin",
+      "file": "audio/s-u12-ma-a-bin.mp3",
+      "kind": "sintetico",
+      "text": "Ma' a bin.",
+      "lang": "yua",
+      "vocab": [
+        "u12-ma-a-bin"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 731,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
+    },
+    {
+      "key": "s-u12-ma-a-jaantik",
+      "file": "audio/s-u12-ma-a-jaantik.mp3",
+      "kind": "sintetico",
+      "text": "Ma' a jaantik.",
+      "lang": "yua",
+      "vocab": [
+        "u12-ma-a-jaantik"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 888,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.18"
+    },
+    {
+      "key": "s-u12-ma-a-kutal",
+      "file": "audio/s-u12-ma-a-kutal.mp3",
+      "kind": "sintetico",
+      "text": "Ma' a kutal.",
+      "lang": "yua",
+      "vocab": [
+        "u12-ma-a-kutal"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 862,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.11"
+    },
+    {
+      "key": "s-u12-ma-a-wenel",
+      "file": "audio/s-u12-ma-a-wenel.mp3",
+      "kind": "sintetico",
+      "text": "Ma' a wenel.",
+      "lang": "yua",
+      "vocab": [
+        "u12-ma-a-wenel"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 810,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.11"
+    },
+    {
+      "key": "s-u12-ma-tuubsik",
+      "file": "audio/s-u12-ma-tuubsik.mp3",
+      "kind": "sintetico",
+      "text": "Ma' tu'ubsik.",
+      "lang": "yua",
+      "vocab": [
+        "u12-ma-tuubsik"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 862,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.09"
+    },
+    {
+      "key": "s-u12-maanenee-ex",
+      "file": "audio/s-u12-maanenee-ex.mp3",
+      "kind": "sintetico",
+      "text": "máanene'ex",
+      "lang": "yua",
+      "vocab": [
+        "u12-maanenee-ex"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 679,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.20"
+    },
+    {
+      "key": "s-u12-meyajnen",
+      "file": "audio/s-u12-meyajnen.mp3",
+      "kind": "sintetico",
+      "text": "meyajnen",
+      "lang": "yua",
+      "vocab": [
+        "u12-meyajnen"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 784,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.12"
+    },
+    {
+      "key": "s-u12-tsaa-teen-waaj",
+      "file": "audio/s-u12-tsaa-teen-waaj.mp3",
+      "kind": "sintetico",
+      "text": "Ts'aa teen waaj.",
+      "lang": "yua",
+      "vocab": [
+        "u12-tsaa-teen-waaj"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 967,
+      "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.15"
+    },
+    {
+      "key": "s-u12-ximbalnen",
+      "file": "audio/s-u12-ximbalnen.mp3",
+      "kind": "sintetico",
+      "text": "xíimbalnen",
+      "lang": "yua",
+      "vocab": [
+        "u12-ximbalnen"
+      ],
+      "letters": [],
+      "author": "Meta AI (MMS-TTS)",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "source": "https://huggingface.co/facebook/mms-tts-yua",
+      "durationMs": 993,
       "notes": "Voz sintética generada con MMS-TTS (yua); aproximada: puede equivocarse en tono, saltillo y glotalizadas. CER de control: 0.00"
     },
     {

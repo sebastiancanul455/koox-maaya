@@ -43,7 +43,8 @@ const CONTENT = path.join(ROOT, "src/content");
 const unitFiles = fs.readdirSync(CONTENT).filter((f) => /^u\d+\.js$/.test(f)).sort((a, b) => parseInt(a.slice(1), 10) - parseInt(b.slice(1), 10)).map((f) => path.join(CONTENT, f));
 const UNITS = loadWindow(unitFiles).COURSE.units;
 const PUEDO = path.join(CONTENT, "puedo.js");
-const CANDO = loadWindow([PUEDO]).COURSE_CANDO;
+// Los enunciados de las unidades nuevas viven al final de su propio archivo; puedo.js trae los de las primeras.
+const CANDO = loadWindow(unitFiles.concat([PUEDO])).COURSE_CANDO;
 const EMOJI = /\p{Extended_Pictographic}/u;
 // Todo el material que enseña una unidad (metas, títulos, traducciones, tarjetas y diálogos), sin acentos.
 function corpus(u) {
@@ -60,8 +61,8 @@ function contenido() {
   log("\n▸ contenido de src/content/puedo.js y estilos de los módulos");
   const ids = UNITS.map((u) => u.id);
   check("[contenido] puedo.js define window.COURSE_CANDO como objeto", CANDO && typeof CANDO === "object" && !Array.isArray(CANDO));
-  check("[contenido] el curso tiene 9 unidades y COURSE_CANDO tiene exactamente esas (contenido ↔ unidades reales)",
-    ids.length === 9 && same(Object.keys(CANDO || {}).sort(), ids.slice().sort()), Object.keys(CANDO || {}).join(",") + " vs " + ids.join(","));
+  check("[contenido] COURSE_CANDO tiene exactamente las unidades del curso (contenido ↔ unidades reales)",
+    ids.length >= 9 && same(Object.keys(CANDO || {}).sort(), ids.slice().sort()), Object.keys(CANDO || {}).join(",") + " vs " + ids.join(","));
   const vocabOf = {};
   UNITS.forEach((u) => { vocabOf[u.id] = {}; u.lessons.forEach((l) => (l.vocab || []).forEach((v) => { vocabOf[u.id][v.id] = v; })); });
   const seen = new Set();
@@ -292,7 +293,7 @@ async function main() {
     check("[A] leer el estado no crea state.x.logros (solo se escribe cuando hay algo que guardar)", (await raw(page)).x.logros === undefined, JSON.stringify((await raw(page)).x));
     await tab(page, cfg, "perfil");
     const sec = await page.evaluate(() => { const s = document.querySelector("#cando"); return s ? { text: s.textContent, on: s.querySelectorAll(".cd-unit.on").length, off: s.querySelectorAll(".cd-unit.off").length, h2: (s.querySelector("h2") || {}).textContent } : null; });
-    check("[A] Perfil → «Lo que ya puedes decir» con las 9 unidades bloqueadas", sec && sec.h2 === "Lo que ya puedes decir" && sec.off === nUnits && sec.on === 0 && /0 de 9 unidades/.test(sec.text), sec && sec.off + " bloqueadas / " + sec.on);
+    check("[A] Perfil → «Lo que ya puedes decir» con todas las unidades bloqueadas", sec && sec.h2 === "Lo que ya puedes decir" && sec.off === nUnits && sec.on === 0 && new RegExp("0 de " + nUnits + " unidades").test(sec.text), sec && sec.off + " bloqueadas / " + sec.on);
     check("[A] cada unidad bloqueada dice «Termina la unidad y aprueba su repaso (80 %)»", sec && (sec.text.match(/Termina la unidad y aprueba su repaso \(80 %\)/g) || []).length === nUnits);
     check("[A] las bloqueadas muestran el avance de lecciones y que aún no hay repaso", sec && /0 de 3 lecciones · Todavía sin repaso de la unidad/.test(sec.text));
     check("[A] las bloqueadas no revelan los enunciados", sec && !/Puedo /.test(sec.text.replace(/«Puedo»/g, "")));
@@ -374,7 +375,7 @@ async function main() {
       return e && { on: e.classList.contains("on"), items: e.querySelectorAll(".cd-list > li").length, state: (e.querySelector(".cd-state") || {}).textContent, ex: [...e.querySelectorAll(".cd-ex .m")].every((x) => x.getAttribute("lang") === "yua"), exN: e.querySelectorAll(".cd-ex .m").length, off: document.querySelectorAll("#cando .cd-unit.off").length, count: (document.querySelector(".cd-count") || {}).textContent };
     });
     check("[B] Perfil: la unidad 1 aparece desbloqueada con sus 3 enunciados, su fecha y su ejemplo maya", prof && prof.on && prof.items === 3 && prof.exN === 3 && prof.ex && /Desbloqueado el \d{1,2} [a-z]{3} \d{4}/.test(prof.state), prof && JSON.stringify(prof));
-    check("[B] Perfil: las otras unidades siguen bloqueadas y el contador dice «1 de 9 unidades»", prof && prof.off === nUnits - 1 && /^1 de 9 unidades/.test(prof.count), prof && prof.count);
+    check("[B] Perfil: las otras unidades siguen bloqueadas y el contador dice «1 de N unidades»", prof && prof.off === nUnits - 1 && new RegExp("^1 de " + nUnits + " unidades").test(prof.count), prof && prof.count);
     await noOverflow(page, "Perfil con una unidad abierta", cfg);
     if (SHOTS) {
       await page.evaluate(() => document.querySelector("#cando").scrollIntoView());
@@ -446,7 +447,7 @@ async function main() {
     check("[C] valores inválidos se descartan o se acotan (best 0–100, fechas AAAA-MM-DD, ids seguros)",
       same(Object.keys(v.units).sort(), ["u1", "u2"]) && v.units.u1.best === 0 && v.units.u1.at === "" && v.units.u2.best === 100 && same(v.cando, { u2: "2026-11-03" }), JSON.stringify(v));
     await tab(page, cfg, "perfil");
-    check("[C] con un estado a medias el Perfil sigue pintando las 9 unidades", await page.evaluate(() => document.querySelectorAll("#cando .cd-unit").length) === nUnits && !page.errors.length, page.errors.join(" | "));
+    check("[C] con un estado a medias el Perfil sigue pintando todas las unidades", await page.evaluate(() => document.querySelectorAll("#cando .cd-unit").length) === nUnits && !page.errors.length, page.errors.join(" | "));
     await ctx.close();
   }
 

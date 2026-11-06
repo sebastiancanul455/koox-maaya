@@ -293,6 +293,17 @@
         { id: "u8-uurich", m: "úurich", es: "caracol", pr: "úurich", note: "Tono alto. Una de las pocas palabras con r.", conf: "alta" },
         { id: "u8-chik", m: "ch'ik", es: "pulga", pr: "ch'ik", note: "ch' glotalizada.", conf: "alta" }
       ],
+      dialogue: {
+        title: "Un paseo por el monte (diálogo de práctica)",
+        lines: [
+          { who: "A", name: "Sofía", m: "Yaan wáaj báalam waye'?", es: "¿Hay jaguares por aquí?" },
+          { who: "B", name: "Don Felipe", m: "Ma'. Mina'an báalam waye'. Yaan kéej, kitam yéetel baats'.", es: "No. Aquí no hay jaguares. Hay venados, jabalíes y saraguatos." },
+          { who: "A", name: "Sofía", m: "Yaan wáaj ts'ono'ot waye'?", es: "¿Hay un cenote por aquí?" },
+          { who: "B", name: "Don Felipe", m: "Jaaj, yaan ts'ono'ot yéetel ya'axche'.", es: "Sí, hay. Hay un cenote y una ceiba." },
+          { who: "A", name: "Sofía", m: "Jach ma'alob! Dios bo'otik.", es: "¡Qué bien! Gracias." },
+          { who: "B", name: "Don Felipe", m: "Mixba'al. Ko'ox!", es: "De nada. ¡Vamos!" }
+        ]
+      },
       exercises: [
         { type: "choice", q: "¿Qué significa?", prompt: "kitam", promptLang: "m", answer: "jabalí", options: ["jabalí", "saraguato, mono aullador", "búho"] },
         { type: "choice", q: "¿Cómo se dice «hormiga»?", prompt: "hormiga", promptLang: "es", answer: "síinik", options: ["síinik", "ch'ik", "am"] },

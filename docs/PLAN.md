@@ -28,8 +28,11 @@ lo simple primero · sin cuentas, sin rastreo y sin servidor.
 ## Fase 2 · Juego y lectura
 - [ ] Lotería exprés, «Escucha al abuelo» (un relato al terminar cada unidad), «Mi milpa», reto semanal
 - [ ] Glosas al tocar, lecturas por nivel («conoces el 92 % de esta historia») y personajes recurrentes
-- [ ] Historias de «elige qué decir» y un diálogo en cada unidad
-- [ ] Unidades 10 a 13 para completar A1: ubicación, querer y gustar, imperativo, hora y fechas
+- [ ] Historias de «elige qué decir»
+- [x] Diálogos en las unidades nuevas y en las unidades 3, 4 y 8 (la 1, de sonidos sueltos, no lleva)
+- [x] Unidades 10 a 12: ubicación, querer y gustar, imperativo
+- [ ] Unidad 13 (hora, días y fechas): poco atestiguada en las fuentes; falta verificarla con hablantes
+- [ ] Izquierda y derecha: ninguna forma verificada todavía
 - [ ] Ruta para quienes ya entienden maya (prueba de ubicación por escucha)
 - [ ] Publicar en Google Play (app web empaquetada)
 

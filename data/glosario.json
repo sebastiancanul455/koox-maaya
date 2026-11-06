@@ -414,6 +414,14 @@
     "confianza": "media",
     "fuentes": [
       {
+        "titulo": "UADY, Diccionario español-maya, letra D",
+        "url": "https://www.mayas.uady.mx/diccionario/d_esp.html"
+      },
+      {
+        "titulo": "UADY, Diccionario español-maya, letra E",
+        "url": "https://www.mayas.uady.mx/diccionario/e_esp.html"
+      },
+      {
         "titulo": "Wikipedia – Yucatec Maya language",
         "url": "https://en.wikipedia.org/wiki/Yucatec_Maya_language"
       },
@@ -7661,6 +7669,14 @@
     "confianza": "alta",
     "fuentes": [
       {
+        "titulo": "UADY, Diccionario maya-español, letra I",
+        "url": "https://www.mayas.uady.mx/diccionario/i_maya.html"
+      },
+      {
+        "titulo": "Lehmann, Yucatec Maya spatial prepositions",
+        "url": "https://www.christianlehmann.eu/presentations/understand/yuc_local_rel_1.html"
+      },
+      {
         "titulo": "Christian Lehmann, «Partes del cuerpo» (maya yucateco)",
         "url": "https://christianlehmann.eu/ling/sprachen/maya/gramatica/onomas/posesion/partes_cuerpo.html"
       },
@@ -10582,6 +10598,2040 @@
       {
         "titulo": "INALI – Prontuario de frases de cortesía Maayat'aan (página)",
         "url": "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+      }
+    ]
+  },
+  {
+    "id": "u10-teela",
+    "unidad": "u10",
+    "unidadTitulo": "¿Dónde está?",
+    "leccion": "u10l1",
+    "leccionTitulo": "Aquí, allí, cerca y lejos",
+    "maya": "te'ela'",
+    "espanol": "aquí",
+    "variantes": [],
+    "pronunciacion": "te-ela-",
+    "nota": "La UADY la da junto a waye' para «aquí». Bolles y Bolles la escriben tela.",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "UADY, Diccionario español-maya, letra A",
+        "url": "https://www.mayas.uady.mx/diccionario/a_esp.html"
+      },
+      {
+        "titulo": "Bolles y Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), pronombres locativos",
+        "url": "https://www.famsi.org/reports/96072/grammar/section06.htm"
+      }
+    ]
+  },
+  {
+    "id": "u10-teelo",
+    "unidad": "u10",
+    "unidadTitulo": "¿Dónde está?",
+    "leccion": "u10l1",
+    "leccionTitulo": "Aquí, allí, cerca y lejos",
+    "maya": "te'elo'",
+    "espanol": "allí, ahí",
+    "variantes": [],
+    "pronunciacion": "te-elo-",
+    "nota": "La UADY lo da bajo «ahí», «allí» y «allá». Es el opuesto de te'ela'.",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "UADY, Diccionario español-maya, letra A",
+        "url": "https://www.mayas.uady.mx/diccionario/a_esp.html"
+      },
+      {
+        "titulo": "Bolles y Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), pronombres locativos",
+        "url": "https://www.famsi.org/reports/96072/grammar/section06.htm"
+      }
+    ]
+  },
+  {
+    "id": "u10-tolo",
+    "unidad": "u10",
+    "unidadTitulo": "¿Dónde está?",
+    "leccion": "u10l1",
+    "leccionTitulo": "Aquí, allí, cerca y lejos",
+    "maya": "tolo'",
+    "espanol": "allí, allá",
+    "variantes": [],
+    "pronunciacion": "tolo-",
+    "nota": "La UADY lo da junto a te'elo', y Bolles y Bolles como otra forma de «allí». No hallamos una regla que los distinga.",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "UADY, Diccionario español-maya, letra A",
+        "url": "https://www.mayas.uady.mx/diccionario/a_esp.html"
+      },
+      {
+        "titulo": "Bolles y Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), pronombres locativos",
+        "url": "https://www.famsi.org/reports/96072/grammar/section06.htm"
+      }
+    ]
+  },
+  {
+    "id": "u10-naats",
+    "unidad": "u10",
+    "unidadTitulo": "¿Dónde está?",
+    "leccion": "u10l1",
+    "leccionTitulo": "Aquí, allí, cerca y lejos",
+    "maya": "naats'",
+    "espanol": "cerca",
+    "variantes": [],
+    "pronunciacion": "naats' (ts con golpe de garganta)",
+    "nota": "Es lo contrario de náach, «lejos» (unidad 8).",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "UADY, Diccionario español-maya, letra C",
+        "url": "https://www.mayas.uady.mx/diccionario/c_esp.html"
+      }
+    ]
+  },
+  {
+    "id": "u10-tuux-yaan",
+    "unidad": "u10",
+    "unidadTitulo": "¿Dónde está?",
+    "leccion": "u10l1",
+    "leccionTitulo": "Aquí, allí, cerca y lejos",
+    "maya": "Tu'ux yaan …?",
+    "espanol": "¿Dónde hay …? / ¿Dónde está …?",
+    "variantes": [],
+    "pronunciacion": "tu-ush yaan",
+    "nota": "El molde sale de Tu'ux yaan junp'el restaurant?, «¿dónde hay un restaurante?», del curso Junp'iit Maaya, y de una guía de frases. Con otros nombres es una frase nueva, por eso va por confirmar.",
+    "ejemplo": {
+      "maya": "Tu'ux yaan junp'éel k'íiwik?",
+      "espanol": "¿Dónde hay una plaza?"
+    },
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Junp'iit Maaya (Mújica 1995), sitio de Lehmann",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      },
+      {
+        "titulo": "Wikivoyage, Yucatec Maya phrasebook",
+        "url": "https://en.wikivoyage.org/wiki/Yucatec_Maya_phrasebook"
+      },
+      {
+        "titulo": "Bohnemeyer y Brown (2007), Standing divided: Dispositional verbs and locative predications in two Mayan languages, Linguistics 45",
+        "url": "https://forms.mpi.nl/node/48858"
+      }
+    ]
+  },
+  {
+    "id": "u10-yaan-teelo",
+    "unidad": "u10",
+    "unidadTitulo": "¿Dónde está?",
+    "leccion": "u10l1",
+    "leccionTitulo": "Aquí, allí, cerca y lejos",
+    "maya": "Yaan te'elo'.",
+    "espanol": "Allí hay. / Allí está.",
+    "variantes": [],
+    "pronunciacion": "yaan te-elo-",
+    "nota": "yaan (hay, está) + el lugar. Armada con piezas confirmadas; no la vimos escrita tal cual.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Bohnemeyer y Brown (2007), Standing divided: Dispositional verbs and locative predications in two Mayan languages, Linguistics 45",
+        "url": "https://forms.mpi.nl/node/48858"
+      },
+      {
+        "titulo": "UADY, Diccionario español-maya, letra A",
+        "url": "https://www.mayas.uady.mx/diccionario/a_esp.html"
+      }
+    ]
+  },
+  {
+    "id": "u10-minaan-waye",
+    "unidad": "u10",
+    "unidadTitulo": "¿Dónde está?",
+    "leccion": "u10l1",
+    "leccionTitulo": "Aquí, allí, cerca y lejos",
+    "maya": "Mina'an waye'.",
+    "espanol": "Aquí no hay. / Aquí no está.",
+    "variantes": [],
+    "pronunciacion": "mina-an waye-",
+    "nota": "mina'an es el negativo de yaan. Armada con piezas confirmadas; no la vimos escrita tal cual.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "UADY, Diccionario maya-español, letra M (mina'an)",
+        "url": "https://www.mayas.uady.mx/diccionario/m_maya.html"
+      },
+      {
+        "titulo": "UADY, Diccionario español-maya, letra A",
+        "url": "https://www.mayas.uady.mx/diccionario/a_esp.html"
+      }
+    ]
+  },
+  {
+    "id": "u10-ichil",
+    "unidad": "u10",
+    "unidadTitulo": "¿Dónde está?",
+    "leccion": "u10l2",
+    "leccionTitulo": "Dentro, delante, detrás, encima y debajo",
+    "maya": "ichil",
+    "espanol": "dentro de, entre",
+    "variantes": [],
+    "pronunciacion": "ichil",
+    "nota": "La UADY la da como «dentro, entre»; la gramática de Andrade la lista como preposición («in, within»).",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "UADY, Diccionario maya-español, letra I",
+        "url": "https://www.mayas.uady.mx/diccionario/i_maya.html"
+      },
+      {
+        "titulo": "UADY, Diccionario español-maya, letra A",
+        "url": "https://www.mayas.uady.mx/diccionario/a_esp.html"
+      },
+      {
+        "titulo": "Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      }
+    ]
+  },
+  {
+    "id": "u10-ich-kool",
+    "unidad": "u10",
+    "unidadTitulo": "¿Dónde está?",
+    "leccion": "u10l2",
+    "leccionTitulo": "Dentro, delante, detrás, encima y debajo",
+    "maya": "ich kool",
+    "espanol": "en la milpa",
+    "variantes": [],
+    "pronunciacion": "ich kool",
+    "nota": "ich (ojo, cara) también es «en, dentro de». Armada con piezas confirmadas; la vimos como parte de un título de la UADY, no como oración.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "UADY, multimedia «U meeyjil ich kool / El trabajo de la milpa»",
+        "url": "https://www.mayas.uady.mx/multimedia/trabajo.html"
+      },
+      {
+        "titulo": "UADY, Diccionario maya-español, letra I",
+        "url": "https://www.mayas.uady.mx/diccionario/i_maya.html"
+      }
+    ]
+  },
+  {
+    "id": "u10-tu-paach",
+    "unidad": "u10",
+    "unidadTitulo": "¿Dónde está?",
+    "leccion": "u10l2",
+    "leccionTitulo": "Dentro, delante, detrás, encima y debajo",
+    "maya": "tu paach",
+    "espanol": "detrás de",
+    "variantes": [],
+    "pronunciacion": "tu paach (aa larga)",
+    "nota": "Las gramáticas antiguas la escriben tu pach. Después va lo que sirve de referencia.",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "Bolles y Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), preposiciones comunes",
+        "url": "https://www.famsi.org/reports/96072/grammar/section04.htm"
+      },
+      {
+        "titulo": "UADY, Diccionario español-maya, letra A",
+        "url": "https://www.mayas.uady.mx/diccionario/a_esp.html"
+      },
+      {
+        "titulo": "Bohnemeyer (Universidad de Buffalo), trabajos sobre el espacio en maya yucateco (visto en un resumen del buscador)"
+      }
+    ]
+  },
+  {
+    "id": "u10-tu-taan",
+    "unidad": "u10",
+    "unidadTitulo": "¿Dónde está?",
+    "leccion": "u10l2",
+    "leccionTitulo": "Dentro, delante, detrás, encima y debajo",
+    "maya": "tu táan",
+    "espanol": "delante de, frente a",
+    "variantes": [],
+    "pronunciacion": "tu táan (aa larga, tono alto)",
+    "nota": "Las gramáticas antiguas la escriben tu tan. La UADY da táan para «delante» y «enfrente».",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "Bolles y Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), preposiciones comunes",
+        "url": "https://www.famsi.org/reports/96072/grammar/section04.htm"
+      },
+      {
+        "titulo": "UADY, Diccionario español-maya, letra D",
+        "url": "https://www.mayas.uady.mx/diccionario/d_esp.html"
+      },
+      {
+        "titulo": "UADY, Diccionario español-maya, letra E",
+        "url": "https://www.mayas.uady.mx/diccionario/e_esp.html"
+      }
+    ]
+  },
+  {
+    "id": "u10-tu-yookol",
+    "unidad": "u10",
+    "unidadTitulo": "¿Dónde está?",
+    "leccion": "u10l2",
+    "leccionTitulo": "Dentro, delante, detrás, encima y debajo",
+    "maya": "tu yóok'ol",
+    "espanol": "encima de, sobre",
+    "variantes": [],
+    "pronunciacion": "tu yóok'ol",
+    "nota": "yóok'ol (unidad 8) con tu, como tu paach. No la vimos escrita tal cual en las fuentes que revisamos.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      },
+      {
+        "titulo": "Bohnemeyer (Universidad de Buffalo), trabajos sobre el espacio en maya yucateco (visto en un resumen del buscador)"
+      }
+    ]
+  },
+  {
+    "id": "u10-yaanal",
+    "unidad": "u10",
+    "unidadTitulo": "¿Dónde está?",
+    "leccion": "u10l2",
+    "leccionTitulo": "Dentro, delante, detrás, encima y debajo",
+    "maya": "yáanal",
+    "espanol": "debajo de; abajo",
+    "variantes": [],
+    "pronunciacion": "yáanal (aa larga, tono alto)",
+    "nota": "La UADY la da para «abajo»; Bolles y Andrade la escriben yanal y la glosan «under». No la confundas con yaan, «hay».",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "UADY, Diccionario español-maya, letra A",
+        "url": "https://www.mayas.uady.mx/diccionario/a_esp.html"
+      },
+      {
+        "titulo": "Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      },
+      {
+        "titulo": "Bolles y Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), preposiciones comunes",
+        "url": "https://www.famsi.org/reports/96072/grammar/section04.htm"
+      }
+    ]
+  },
+  {
+    "id": "u10-tseel",
+    "unidad": "u10",
+    "unidadTitulo": "¿Dónde está?",
+    "leccion": "u10l2",
+    "leccionTitulo": "Dentro, delante, detrás, encima y debajo",
+    "maya": "tséel",
+    "espanol": "lado",
+    "variantes": [],
+    "pronunciacion": "tséel (ee larga, tono alto)",
+    "nota": "La UADY la da para «lado».",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "UADY, Diccionario español-maya, letra L",
+        "url": "https://www.mayas.uady.mx/diccionario/l_esp.html"
+      }
+    ]
+  },
+  {
+    "id": "u10-tu-tseel",
+    "unidad": "u10",
+    "unidadTitulo": "¿Dónde está?",
+    "leccion": "u10l2",
+    "leccionTitulo": "Dentro, delante, detrás, encima y debajo",
+    "maya": "tu tséel",
+    "espanol": "al lado de",
+    "variantes": [],
+    "pronunciacion": "tu tséel",
+    "nota": "tu + tséel, igual que tu paach. No la vimos escrita tal cual; conviene que un hablante la confirme.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "UADY, Diccionario español-maya, letra L",
+        "url": "https://www.mayas.uady.mx/diccionario/l_esp.html"
+      },
+      {
+        "titulo": "Bolles y Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), preposiciones comunes",
+        "url": "https://www.famsi.org/reports/96072/grammar/section04.htm"
+      }
+    ]
+  },
+  {
+    "id": "u10-iknal",
+    "unidad": "u10",
+    "unidadTitulo": "¿Dónde está?",
+    "leccion": "u10l2",
+    "leccionTitulo": "Dentro, delante, detrás, encima y debajo",
+    "maya": "iknal",
+    "espanol": "junto a; en compañía de",
+    "variantes": [],
+    "pronunciacion": "iknal",
+    "nota": "La UADY la define «en compañía de, junto de o a, con». Lehmann la da como la preposición de cercanía y contacto. Por ahora solo la reconocemos.",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "UADY, Diccionario maya-español, letra I",
+        "url": "https://www.mayas.uady.mx/diccionario/i_maya.html"
+      },
+      {
+        "titulo": "Lehmann, Yucatec Maya spatial prepositions",
+        "url": "https://www.christianlehmann.eu/presentations/understand/yuc_local_rel_1.html"
+      }
+    ]
+  },
+  {
+    "id": "u10-yaan-tu-paach",
+    "unidad": "u10",
+    "unidadTitulo": "¿Dónde está?",
+    "leccion": "u10l2",
+    "leccionTitulo": "Dentro, delante, detrás, encima y debajo",
+    "maya": "Yaan tu paach le najo'.",
+    "espanol": "Está detrás de la casa.",
+    "variantes": [],
+    "pronunciacion": "yaan tu paach le najo-",
+    "nota": "yaan (está) + tu paach (detrás de) + le najo' (esa casa). Armada con piezas confirmadas; no la vimos escrita tal cual.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Bolles y Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), preposiciones comunes",
+        "url": "https://www.famsi.org/reports/96072/grammar/section04.htm"
+      },
+      {
+        "titulo": "Trabajos sobre el espacio en maya yucateco, le=nah=o' «la casa» (visto en un resumen del buscador; no dice el autor)"
+      }
+    ]
+  },
+  {
+    "id": "u10-najil-xook",
+    "unidad": "u10",
+    "unidadTitulo": "¿Dónde está?",
+    "leccion": "u10l3",
+    "leccionTitulo": "Lugares del pueblo",
+    "maya": "najil xook",
+    "espanol": "escuela",
+    "variantes": [],
+    "pronunciacion": "najil shook",
+    "nota": "naj (casa) + xook (leer, estudiar): algo así como «casa de estudio». La UADY da también kúuchil kaansaj.",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "UADY, Diccionario español-maya, letra E",
+        "url": "https://www.mayas.uady.mx/diccionario/e_esp.html"
+      }
+    ]
+  },
+  {
+    "id": "u10-cheen",
+    "unidad": "u10",
+    "unidadTitulo": "¿Dónde está?",
+    "leccion": "u10l3",
+    "leccionTitulo": "Lugares del pueblo",
+    "maya": "ch'e'en",
+    "espanol": "pozo",
+    "variantes": [],
+    "pronunciacion": "ch'e-en (ch con golpe de garganta; e rearticulada)",
+    "nota": "La UADY la da para «pozo».",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "UADY, Diccionario español-maya, letra P",
+        "url": "https://www.mayas.uady.mx/diccionario/p_esp.html"
+      },
+      {
+        "titulo": "UADY, artículo sobre Champotón (visto en un resumen; nombra un pozo local, Ch'e'en Peek')"
+      }
+    ]
+  },
+  {
+    "id": "u10-jool-naj",
+    "unidad": "u10",
+    "unidadTitulo": "¿Dónde está?",
+    "leccion": "u10l3",
+    "leccionTitulo": "Lugares del pueblo",
+    "maya": "jool naj",
+    "espanol": "puerta (de la casa)",
+    "variantes": [
+      "joonaj"
+    ],
+    "pronunciacion": "jool naj (j suave, oo larga)",
+    "nota": "La UADY da dos formas: jool naj y la contraída joonaj. jool es «agujero, hueco» y naj, «casa».",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "UADY, Diccionario español-maya, letra P",
+        "url": "https://www.mayas.uady.mx/diccionario/p_esp.html"
+      },
+      {
+        "titulo": "kb/recheck-naturaleza-cultura.json (misma entrada, verificada en la pasada anterior)"
+      },
+      {
+        "titulo": "Aprendiendo Maya, «Alfabeto maya» (registro previo de la base)",
+        "url": "https://www.aprendiendomaya.com/escritura/alfabeto-maya"
+      }
+    ]
+  },
+  {
+    "id": "u10-chuumuk",
+    "unidad": "u10",
+    "unidadTitulo": "¿Dónde está?",
+    "leccion": "u10l3",
+    "leccionTitulo": "Lugares del pueblo",
+    "maya": "chúumuk",
+    "espanol": "centro, medio",
+    "variantes": [],
+    "pronunciacion": "chúumuk (uu larga, tono alto)",
+    "nota": "La UADY la da para «centro».",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "UADY, Diccionario español-maya, letra C",
+        "url": "https://www.mayas.uady.mx/diccionario/c_esp.html"
+      },
+      {
+        "titulo": "Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      },
+      {
+        "titulo": "UADY – Diccionario español-maya, letra P (pozo: ch'e'en; plaza: chúumuk kaaj; puerta: jool naj)",
+        "url": "https://www.mayas.uady.mx/diccionario/p_esp.html"
+      }
+    ]
+  },
+  {
+    "id": "u10-chuumuk-kaaj",
+    "unidad": "u10",
+    "unidadTitulo": "¿Dónde está?",
+    "leccion": "u10l3",
+    "leccionTitulo": "Lugares del pueblo",
+    "maya": "chúumuk kaaj",
+    "espanol": "centro del pueblo; plaza",
+    "variantes": [],
+    "pronunciacion": "chúumuk kaaj",
+    "nota": "La UADY lo da bajo «plaza», junto a k'íiwik (unidad 6).",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "UADY, Diccionario español-maya, letra P",
+        "url": "https://www.mayas.uady.mx/diccionario/p_esp.html"
+      }
+    ]
+  },
+  {
+    "id": "u10-naj-kuj",
+    "unidad": "u10",
+    "unidadTitulo": "¿Dónde está?",
+    "leccion": "u10l3",
+    "leccionTitulo": "Lugares del pueblo",
+    "maya": "naj k'uj",
+    "espanol": "iglesia",
+    "variantes": [],
+    "pronunciacion": "naj k'uj",
+    "nota": "Así lo da el diccionario de la UADY; no lo encontramos en una segunda fuente.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "UADY, Diccionario español-maya, letra I",
+        "url": "https://www.mayas.uady.mx/diccionario/i_esp.html"
+      }
+    ]
+  },
+  {
+    "id": "u10-tuux-yaan-xook",
+    "unidad": "u10",
+    "unidadTitulo": "¿Dónde está?",
+    "leccion": "u10l3",
+    "leccionTitulo": "Lugares del pueblo",
+    "maya": "Tu'ux yaan le najil xooko'?",
+    "espanol": "¿Dónde está la escuela?",
+    "variantes": [],
+    "pronunciacion": "tu-ush yaan le najil shooko-",
+    "nota": "Molde Tu'ux yaan … con le … o' («la escuela, esa escuela»). Armada con piezas confirmadas; no la vimos escrita tal cual.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Junp'iit Maaya (Mújica 1995), sitio de Lehmann",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      },
+      {
+        "titulo": "Wikivoyage, Yucatec Maya phrasebook",
+        "url": "https://en.wikivoyage.org/wiki/Yucatec_Maya_phrasebook"
+      }
+    ]
+  },
+  {
+    "id": "u10-xiimbal",
+    "unidad": "u10",
+    "unidadTitulo": "¿Dónde está?",
+    "leccion": "u10l4",
+    "leccionTitulo": "Ir y llegar",
+    "maya": "xíimbal",
+    "espanol": "caminar",
+    "variantes": [],
+    "pronunciacion": "shíimbal (ii larga, tono alto)",
+    "nota": "La UADY la da para «caminar». También se usa para «visitar»: a xíimbal to'on, «visitarnos» (unidad 9).",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "UADY, Diccionario español-maya, letra C",
+        "url": "https://www.mayas.uady.mx/diccionario/c_esp.html"
+      },
+      {
+        "titulo": "INALI – Prontuario de frases de cortesía Maayat'aan",
+        "url": "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+      },
+      {
+        "titulo": "Bolles y Bolles, A Grammar of the Yucatecan Mayan Language – verbos intransitivos (FAMSI, sección 12)",
+        "url": "https://www.famsi.org/reports/96072/grammar/section12.htm"
+      }
+    ]
+  },
+  {
+    "id": "u10-kuchul",
+    "unidad": "u10",
+    "unidadTitulo": "¿Dónde está?",
+    "leccion": "u10l4",
+    "leccionTitulo": "Ir y llegar",
+    "maya": "k'uchul",
+    "espanol": "llegar",
+    "variantes": [],
+    "pronunciacion": "k'uchul (k' con golpe de garganta)",
+    "nota": "La UADY la da como «llegar, arribar».",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "UADY, Diccionario maya-español, letra K'",
+        "url": "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+      },
+      {
+        "titulo": "Spoken Yucatec Maya (Universidad de Chicago) – Intransitive Forms",
+        "url": "https://lucy.lib.uchicago.edu/?section=4&uuid=770214c7-0111-4081-a7bf-c2fa91a835ab"
+      }
+    ]
+  },
+  {
+    "id": "u10-maan-taanil",
+    "unidad": "u10",
+    "unidadTitulo": "¿Dónde está?",
+    "leccion": "u10l4",
+    "leccionTitulo": "Ir y llegar",
+    "maya": "máan táanil",
+    "espanol": "avanzar, pasar adelante",
+    "variantes": [],
+    "pronunciacion": "máan táanil",
+    "nota": "La UADY la da para «avanzar». Ojo con el tono: máan, «pasar» (como en Máanen waye'), no es maan, «comprar» (unidad 6).",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "UADY, Diccionario español-maya, letra A",
+        "url": "https://www.mayas.uady.mx/diccionario/a_esp.html"
+      },
+      {
+        "titulo": "kb/recheck3-resto.json (entrada táanil)"
+      }
+    ]
+  },
+  {
+    "id": "u10-toj",
+    "unidad": "u10",
+    "unidadTitulo": "¿Dónde está?",
+    "leccion": "u10l4",
+    "leccionTitulo": "Ir y llegar",
+    "maya": "toj",
+    "espanol": "derecho, recto",
+    "variantes": [],
+    "pronunciacion": "toj (j suave)",
+    "nota": "La UADY lo da bajo «derecho», junto a otras formas que no pudimos confirmar. Aquí solo enseñamos el sentido «recto».",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "UADY, Diccionario español-maya, letra D",
+        "url": "https://www.mayas.uady.mx/diccionario/d_esp.html"
+      },
+      {
+        "titulo": "Wikivoyage, Yucatec Maya phrasebook",
+        "url": "https://en.wikivoyage.org/wiki/Yucatec_Maya_phrasebook"
+      }
+    ]
+  },
+  {
+    "id": "u10-toj-taanil",
+    "unidad": "u10",
+    "unidadTitulo": "¿Dónde está?",
+    "leccion": "u10l4",
+    "leccionTitulo": "Ir y llegar",
+    "maya": "toj táanil",
+    "espanol": "todo derecho, hacia adelante",
+    "variantes": [],
+    "pronunciacion": "toj táanil",
+    "nota": "Una guía de frases lo da para «seguir derecho»; toj y táanil sí están en la UADY, pero falta una segunda fuente para la frase completa.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Wikivoyage, Yucatec Maya phrasebook",
+        "url": "https://en.wikivoyage.org/wiki/Yucatec_Maya_phrasebook"
+      },
+      {
+        "titulo": "UADY, Diccionario español-maya, letra D",
+        "url": "https://www.mayas.uady.mx/diccionario/d_esp.html"
+      }
+    ]
+  },
+  {
+    "id": "u11-kaat",
+    "unidad": "u11",
+    "unidadTitulo": "Quiero y me gusta",
+    "leccion": "u11l1",
+    "leccionTitulo": "Quiero…",
+    "maya": "k'áat",
+    "espanol": "querer, desear; también pedir, preguntar",
+    "variantes": [],
+    "pronunciacion": "k'áat (áa larga con tono alto)",
+    "nota": "La UADY da los dos usos: «querer, desear, pretender» y «pedir, preguntar». Para «quiero» no lleva k-: in k'áat.",
+    "ejemplo": {
+      "maya": "In k'áat bin Uxmal.",
+      "espanol": "Quiero ir a Uxmal."
+    },
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "UADY – Diccionario maya-español, letra K' (K'ÁAT, K'A'ANAN, K'ABÉET)",
+        "url": "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+      },
+      {
+        "titulo": "UADY – Diccionario español-maya, letra P (PEDIR: k'áat; PONER: ts'aa)",
+        "url": "https://www.mayas.uady.mx/diccionario/p_esp.html"
+      },
+      {
+        "titulo": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      },
+      {
+        "titulo": "Wiktionary – k'áat (maya yucateco)",
+        "url": "https://en.wiktionary.org/wiki/k%E2%80%99aat"
+      },
+      {
+        "titulo": "parryc – Yucatec Maya (in k'áat janal, K'a'abet in janal)",
+        "url": "https://parryc.com/language/yucatec-maya"
+      },
+      {
+        "titulo": "Diccionario de uso del maya yucateco (u k'áat)",
+        "url": "https://www.academia.edu/142986420/Diccionario_de_uso_del_maya_yucateco"
+      }
+    ]
+  },
+  {
+    "id": "u11-in-kaat",
+    "unidad": "u11",
+    "unidadTitulo": "Quiero y me gusta",
+    "leccion": "u11l1",
+    "leccionTitulo": "Quiero…",
+    "maya": "In k'áat",
+    "espanol": "quiero",
+    "variantes": [],
+    "pronunciacion": "in k'áat",
+    "nota": "a k'áat, «quieres»; u k'áat, «quiere». Sin k- y sin la terminación -ik.",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      },
+      {
+        "titulo": "Junp'iit Maaya (Mújica 1995), edición en el sitio de Christian Lehmann",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      },
+      {
+        "titulo": "parryc – Yucatec Maya (in k'áat janal, K'a'abet in janal)",
+        "url": "https://parryc.com/language/yucatec-maya"
+      },
+      {
+        "titulo": "Diccionario de uso del maya yucateco (u k'áat)",
+        "url": "https://www.academia.edu/142986420/Diccionario_de_uso_del_maya_yucateco"
+      }
+    ]
+  },
+  {
+    "id": "u11-baax-a-kaat",
+    "unidad": "u11",
+    "unidadTitulo": "Quiero y me gusta",
+    "leccion": "u11l1",
+    "leccionTitulo": "Quiero…",
+    "maya": "Ba'ax a k'áat?",
+    "espanol": "¿Qué quieres?",
+    "variantes": [],
+    "pronunciacion": "ba-ash a k'áat",
+    "nota": "Armada a partir de una frase de Blair y Vermont-Salas: ba'x a k'at ka in maneh?, «¿qué quieres que compre?».",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (texto glosado en el sitio de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+      },
+      {
+        "titulo": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      }
+    ]
+  },
+  {
+    "id": "u11-kaat-bin-uxmal",
+    "unidad": "u11",
+    "unidadTitulo": "Quiero y me gusta",
+    "leccion": "u11l1",
+    "leccionTitulo": "Quiero…",
+    "maya": "In k'áat bin Uxmal.",
+    "espanol": "Quiero ir a Uxmal.",
+    "variantes": [],
+    "pronunciacion": "in k'áat bin ush-mal",
+    "nota": "Frase de Junp'iit Maaya (In k'at bin Uxmal), con la vocal larga y el tono que da la UADY para k'áat.",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "Junp'iit Maaya (Mújica 1995), edición en el sitio de Christian Lehmann",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      },
+      {
+        "titulo": "UADY – Diccionario maya-español, letra K' (K'ÁAT, K'A'ANAN, K'ABÉET)",
+        "url": "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+      }
+    ]
+  },
+  {
+    "id": "u11-kaat-janal",
+    "unidad": "u11",
+    "unidadTitulo": "Quiero y me gusta",
+    "leccion": "u11l1",
+    "leccionTitulo": "Quiero…",
+    "maya": "In k'áat janal.",
+    "espanol": "Quiero comer.",
+    "variantes": [],
+    "pronunciacion": "in k'áat janal",
+    "nota": "Con un verbo sin objeto, k'áat va seguido del verbo solo. El ejemplo viene de una guía de estudio que cita a Briceño Chel.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "parryc – Yucatec Maya (in k'áat janal, K'a'abet in janal)",
+        "url": "https://parryc.com/language/yucatec-maya"
+      },
+      {
+        "titulo": "Junp'iit Maaya (Mújica 1995), edición en el sitio de Christian Lehmann",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      }
+    ]
+  },
+  {
+    "id": "u11-kaat-man-baalob",
+    "unidad": "u11",
+    "unidadTitulo": "Quiero y me gusta",
+    "leccion": "u11l1",
+    "leccionTitulo": "Quiero…",
+    "maya": "In k'áat in man ba'alo'ob.",
+    "espanol": "Quiero comprar cosas.",
+    "variantes": [],
+    "pronunciacion": "in k'áat in man ba-alo-ob",
+    "nota": "Junp'iit Maaya trae In k'at in man ts'e'ets'ek ba'alo'ob; quitamos una palabra de cantidad que no pudimos confirmar.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Junp'iit Maaya (Mújica 1995), edición en el sitio de Christian Lehmann",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      },
+      {
+        "titulo": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (texto glosado en el sitio de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+      }
+    ]
+  },
+  {
+    "id": "u11-ma-in-kaati",
+    "unidad": "u11",
+    "unidadTitulo": "Quiero y me gusta",
+    "leccion": "u11l1",
+    "leccionTitulo": "Quiero…",
+    "maya": "Ma' in k'áati'.",
+    "espanol": "No quiero.",
+    "variantes": [
+      "Ma' in k'áat."
+    ],
+    "pronunciacion": "ma- in k'áati-",
+    "nota": "Andrade da ma' in k'ati, «no lo quiero; no quiero (hacerlo)». La colita -i' va al final de la frase, como en Ma' in wojeli' (unidad 5).",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      },
+      {
+        "titulo": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (texto glosado en el sitio de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+      }
+    ]
+  },
+  {
+    "id": "u11-uts-tin-wich",
+    "unidad": "u11",
+    "unidadTitulo": "Quiero y me gusta",
+    "leccion": "u11l2",
+    "leccionTitulo": "Me gusta",
+    "maya": "Uts tin wich.",
+    "espanol": "Me gusta (lo que veo).",
+    "variantes": [],
+    "pronunciacion": "uts tin wich",
+    "nota": "Literalmente «es bueno a mi ojo». Aparece en Blair y Vermont-Salas, en Junp'iit Maaya y en la gramática de Andrade.",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (texto glosado en el sitio de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+      },
+      {
+        "titulo": "Junp'iit Maaya (Mújica 1995), edición en el sitio de Christian Lehmann",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      },
+      {
+        "titulo": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      }
+    ]
+  },
+  {
+    "id": "u11-uts-tin-chi",
+    "unidad": "u11",
+    "unidadTitulo": "Quiero y me gusta",
+    "leccion": "u11l2",
+    "leccionTitulo": "Me gusta",
+    "maya": "Uts tin chi'.",
+    "espanol": "Me gusta (lo que como).",
+    "variantes": [],
+    "pronunciacion": "uts tin chi-",
+    "nota": "Literalmente «es bueno a mi boca». Andrade: «me gusta (lo que como)».",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      }
+    ]
+  },
+  {
+    "id": "u11-uts-ta-wich",
+    "unidad": "u11",
+    "unidadTitulo": "Quiero y me gusta",
+    "leccion": "u11l2",
+    "leccionTitulo": "Me gusta",
+    "maya": "Uts ta wich.",
+    "espanol": "Te gusta (lo que ves).",
+    "variantes": [],
+    "pronunciacion": "uts ta wich",
+    "nota": "ta = a tu. Andrade da uts t-a w-ich, «te gusta (lo que ves)».",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      }
+    ]
+  },
+  {
+    "id": "u11-uts-tin-xikin",
+    "unidad": "u11",
+    "unidadTitulo": "Quiero y me gusta",
+    "leccion": "u11l2",
+    "leccionTitulo": "Me gusta",
+    "maya": "Uts tin xikin.",
+    "espanol": "Me gusta (lo que oigo).",
+    "variantes": [],
+    "pronunciacion": "uts tin shikin",
+    "nota": "Literalmente «es bueno a mi oído». Se ve en Blair y Vermont-Salas dentro de una frase más larga; la lectura «lo que oigo» sale del patrón de Andrade.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (texto glosado en el sitio de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+      },
+      {
+        "titulo": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      }
+    ]
+  },
+  {
+    "id": "u11-jach-uts-tin-wich",
+    "unidad": "u11",
+    "unidadTitulo": "Quiero y me gusta",
+    "leccion": "u11l2",
+    "leccionTitulo": "Me gusta",
+    "maya": "Jach uts tin wich.",
+    "espanol": "Me gusta mucho.",
+    "variantes": [],
+    "pronunciacion": "jach uts tin wich",
+    "nota": "jach = muy (unidad 2). Junp'iit Maaya trae seen uts tin wich para lo mismo; aquí usamos jach, que ya conoces.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Junp'iit Maaya (Mújica 1995), edición en el sitio de Christian Lehmann",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      },
+      {
+        "titulo": "UADY – Diccionario maya-español, letra K' (K'ÁAT, K'A'ANAN, K'ABÉET)",
+        "url": "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+      }
+    ]
+  },
+  {
+    "id": "u11-uts-waaj-ta-wich",
+    "unidad": "u11",
+    "unidadTitulo": "Quiero y me gusta",
+    "leccion": "u11l2",
+    "leccionTitulo": "Me gusta",
+    "maya": "Uts wáaj ta wich?",
+    "espanol": "¿Te gusta?",
+    "variantes": [],
+    "pronunciacion": "uts wáaj ta wich",
+    "nota": "wáaj va en segundo lugar, como en la unidad 5.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      }
+    ]
+  },
+  {
+    "id": "u11-jatsuts-uts-tin-wich",
+    "unidad": "u11",
+    "unidadTitulo": "Quiero y me gusta",
+    "leccion": "u11l2",
+    "leccionTitulo": "Me gusta",
+    "maya": "Jats'uts, uts tin wich tuláakal.",
+    "espanol": "Es hermoso, me gusta todo.",
+    "variantes": [],
+    "pronunciacion": "jats'uts, uts tin wich tuláakal",
+    "nota": "Frase de Blair y Vermont-Salas (hats'uts, uts tin wich tulakal), con la j de las normas de 2014.",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (texto glosado en el sitio de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+      },
+      {
+        "titulo": "UADY – Diccionario maya-español, letra T (TULÁAKAL)",
+        "url": "https://www.mayas.uady.mx/diccionario/t_maya.html"
+      }
+    ]
+  },
+  {
+    "id": "u11-tulaakal",
+    "unidad": "u11",
+    "unidadTitulo": "Quiero y me gusta",
+    "leccion": "u11l2",
+    "leccionTitulo": "Me gusta",
+    "maya": "tuláakal",
+    "espanol": "todo, todos",
+    "variantes": [],
+    "pronunciacion": "tuláakal (áa larga con tono alto)",
+    "nota": "Así la escribe la UADY.",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "UADY – Diccionario maya-español, letra T (TULÁAKAL)",
+        "url": "https://www.mayas.uady.mx/diccionario/t_maya.html"
+      },
+      {
+        "titulo": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (texto glosado en el sitio de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+      }
+    ]
+  },
+  {
+    "id": "u11-kabeet",
+    "unidad": "u11",
+    "unidadTitulo": "Quiero y me gusta",
+    "leccion": "u11l3",
+    "leccionTitulo": "Necesito",
+    "maya": "k'abéet",
+    "espanol": "es necesario; hace falta",
+    "variantes": [
+      "k'a'abéet",
+      "k'abet",
+      "k'a'abet"
+    ],
+    "pronunciacion": "k'abéet (ée larga con tono alto)",
+    "nota": "La UADY lo anota como «cosa necesaria, útil». No se conjuga: las personas van después (teen, teech) o con el verbo (in bin).",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "UADY – Diccionario maya-español, letra K' (K'ÁAT, K'A'ANAN, K'ABÉET)",
+        "url": "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+      },
+      {
+        "titulo": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      },
+      {
+        "titulo": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (texto glosado en el sitio de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+      },
+      {
+        "titulo": "La Lengua Maya de Yucatán – Frases básicas (K'a'abéet in bin)",
+        "url": "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+      },
+      {
+        "titulo": "parryc – Yucatec Maya (in k'áat janal, K'a'abet in janal)",
+        "url": "https://parryc.com/language/yucatec-maya"
+      }
+    ]
+  },
+  {
+    "id": "u11-kabeet-teen",
+    "unidad": "u11",
+    "unidadTitulo": "Quiero y me gusta",
+    "leccion": "u11l3",
+    "leccionTitulo": "Necesito",
+    "maya": "K'abéet teen ja'.",
+    "espanol": "Necesito agua.",
+    "variantes": [
+      "K'a'abéet teen ja'."
+    ],
+    "pronunciacion": "k'abéet teen ja'",
+    "nota": "Blair y Vermont-Salas: k'abet ten suum, «necesito una soga». Cambiamos el objeto por ja' (unidad 1).",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (texto glosado en el sitio de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+      }
+    ]
+  },
+  {
+    "id": "u11-kabeet-teech",
+    "unidad": "u11",
+    "unidadTitulo": "Quiero y me gusta",
+    "leccion": "u11l3",
+    "leccionTitulo": "Necesito",
+    "maya": "K'abéet teech ja'?",
+    "espanol": "¿Necesitas agua?",
+    "variantes": [
+      "K'a'abéet teech ja'?"
+    ],
+    "pronunciacion": "k'abéet teech ja'",
+    "nota": "Blair y Vermont-Salas: k'abet teech kaab wah chukwa'?, «¿necesitas miel o chocolate?». La pregunta se marca con la entonación.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (texto glosado en el sitio de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+      }
+    ]
+  },
+  {
+    "id": "u11-kabeet-in-bin",
+    "unidad": "u11",
+    "unidadTitulo": "Quiero y me gusta",
+    "leccion": "u11l3",
+    "leccionTitulo": "Necesito",
+    "maya": "K'abéet in bin.",
+    "espanol": "Tengo que irme.",
+    "variantes": [
+      "K'a'abéet in bin."
+    ],
+    "pronunciacion": "k'abéet in bin",
+    "nota": "La Lengua Maya de Yucatán da K'a'abéet in bin. El patrón k'abéet + in + verbo también está en Blair y Vermont-Salas (k'abet in tuxtik jun-p'éel kaartah, «necesito enviar una carta»).",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "La Lengua Maya de Yucatán – Frases básicas (K'a'abéet in bin)",
+        "url": "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+      },
+      {
+        "titulo": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (texto glosado en el sitio de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+      },
+      {
+        "titulo": "parryc – Yucatec Maya (in k'áat janal, K'a'abet in janal)",
+        "url": "https://parryc.com/language/yucatec-maya"
+      }
+    ]
+  },
+  {
+    "id": "u11-ma-kabeeti",
+    "unidad": "u11",
+    "unidadTitulo": "Quiero y me gusta",
+    "leccion": "u11l3",
+    "leccionTitulo": "Necesito",
+    "maya": "Ma' k'abéeti'.",
+    "espanol": "No hace falta.",
+    "variantes": [
+      "Ma' k'a'abéeti'"
+    ],
+    "pronunciacion": "ma- k'abéeti-",
+    "nota": "Andrade da ma k'abeti, «no es necesario; no hay necesidad de ello».",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      }
+    ]
+  },
+  {
+    "id": "u11-kaanan",
+    "unidad": "u11",
+    "unidadTitulo": "Quiero y me gusta",
+    "leccion": "u11l3",
+    "leccionTitulo": "Necesito",
+    "maya": "k'a'anan",
+    "espanol": "necesario, valioso, importante",
+    "variantes": [],
+    "pronunciacion": "k'a-anan",
+    "nota": "Así lo anota la UADY. Es un adjetivo («importante»); para «necesitar» se usa k'abéet.",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "UADY – Diccionario maya-español, letra K' (K'ÁAT, K'A'ANAN, K'ABÉET)",
+        "url": "https://www.mayas.uady.mx/diccionario/k_glotal_maya.html"
+      }
+    ]
+  },
+  {
+    "id": "u11-tsaa",
+    "unidad": "u11",
+    "unidadTitulo": "Quiero y me gusta",
+    "leccion": "u11l4",
+    "leccionTitulo": "Pedir y dar",
+    "maya": "ts'aa",
+    "espanol": "dar, entregar; poner",
+    "variantes": [
+      "ts'a'",
+      "ts'a"
+    ],
+    "pronunciacion": "ts'aa (ts' glotalizada, aa larga)",
+    "nota": "La UADY: «dar, entregar, poner en algún lugar». Con una persona: a ts'a'ik teen, «tú me das».",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "UADY – Diccionario maya-español, letra TS' (TS'AA)",
+        "url": "https://www.mayas.uady.mx/diccionario/ts_glotal_maya.html"
+      },
+      {
+        "titulo": "UADY – Diccionario español-maya, letra P (PEDIR: k'áat; PONER: ts'aa)",
+        "url": "https://www.mayas.uady.mx/diccionario/p_esp.html"
+      },
+      {
+        "titulo": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (texto glosado en el sitio de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+      },
+      {
+        "titulo": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      }
+    ]
+  },
+  {
+    "id": "u11-cha",
+    "unidad": "u11",
+    "unidadTitulo": "Quiero y me gusta",
+    "leccion": "u11l4",
+    "leccionTitulo": "Pedir y dar",
+    "maya": "ch'a'",
+    "espanol": "agarrar",
+    "variantes": [],
+    "pronunciacion": "ch'a-",
+    "nota": "La UADY lo da para «agarrar», junto con maach y cháach.",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "UADY – Diccionario español-maya, letra A (AGARRAR: ch'a', maach, cháach; AMOR; APRECIAR)",
+        "url": "https://www.mayas.uady.mx/diccionario/a_esp.html"
+      }
+    ]
+  },
+  {
+    "id": "u11-beet-uts-tsaik-teen",
+    "unidad": "u11",
+    "unidadTitulo": "Quiero y me gusta",
+    "leccion": "u11l4",
+    "leccionTitulo": "Pedir y dar",
+    "maya": "Beet uts a ts'a'ik teen ja'.",
+    "espanol": "Por favor, dame agua.",
+    "variantes": [],
+    "pronunciacion": "beet uts a ts'a-ik teen ja'",
+    "nota": "Calcada de Blair y Vermont-Salas: Beet uts a ts'a'ik teen jump'éel tiimbre, «por favor, dame una estampilla». Cambiamos el objeto por ja'.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Blair y Vermont-Salas, Spoken Yucatec Maya, lecciones 1-18 (texto glosado en el sitio de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+      }
+    ]
+  },
+  {
+    "id": "u11-kaat-jaa",
+    "unidad": "u11",
+    "unidadTitulo": "Quiero y me gusta",
+    "leccion": "u11l4",
+    "leccionTitulo": "Pedir y dar",
+    "maya": "In k'áat ja'.",
+    "espanol": "Quiero agua.",
+    "variantes": [],
+    "pronunciacion": "in k'áat ja'",
+    "nota": "in k'áat + lo que quieres, como en In k'áat bin Uxmal.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      },
+      {
+        "titulo": "Junp'iit Maaya (Mújica 1995), edición en el sitio de Christian Lehmann",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      }
+    ]
+  },
+  {
+    "id": "u11-kaat-waaj",
+    "unidad": "u11",
+    "unidadTitulo": "Quiero y me gusta",
+    "leccion": "u11l4",
+    "leccionTitulo": "Pedir y dar",
+    "maya": "In k'áat waaj.",
+    "espanol": "Quiero tortilla.",
+    "variantes": [],
+    "pronunciacion": "in k'áat waaj",
+    "nota": "Sirve tanto para una tortilla como para varias.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      },
+      {
+        "titulo": "Junp'iit Maaya (Mújica 1995), edición en el sitio de Christian Lehmann",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      }
+    ]
+  },
+  {
+    "id": "u11-kaat-kaapeel-oon",
+    "unidad": "u11",
+    "unidadTitulo": "Quiero y me gusta",
+    "leccion": "u11l4",
+    "leccionTitulo": "Pedir y dar",
+    "maya": "In k'áat ka'ap'éel oon.",
+    "espanol": "Quiero dos aguacates.",
+    "variantes": [],
+    "pronunciacion": "in k'áat ka-ap'éel oon",
+    "nota": "ka'ap'éel oon, «dos aguacates», viene del diálogo del mercado de la unidad 6.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      },
+      {
+        "titulo": "Junp'iit Maaya (Mújica 1995), edición en el sitio de Christian Lehmann",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      }
+    ]
+  },
+  {
+    "id": "u12-xeen",
+    "unidad": "u12",
+    "unidadTitulo": "Haz esto",
+    "leccion": "u12l1",
+    "leccionTitulo": "Ve, ven, levántate",
+    "maya": "xeen",
+    "espanol": "¡ve!",
+    "variantes": [],
+    "pronunciacion": "sheen",
+    "nota": "Orden de bin (ir). No sale de la raíz bin. Bolles lo escribe xen; la vocal doble viene de xe + -en.",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "David Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), sección 22: Imperative and exclamatory sentences",
+        "url": "https://www.famsi.org/research/bolles/grammar/section22.htm"
+      },
+      {
+        "titulo": "parryc – Yucatec Maya (notas que siguen el libro de Briceño Chel sobre los verbos)",
+        "url": "https://parryc.com/language/yucatec-maya"
+      },
+      {
+        "titulo": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      }
+    ]
+  },
+  {
+    "id": "u12-waalen",
+    "unidad": "u12",
+    "unidadTitulo": "Haz esto",
+    "leccion": "u12l1",
+    "leccionTitulo": "Ve, ven, levántate",
+    "maya": "wa'alen",
+    "espanol": "¡ponte de pie!, ¡levántate!",
+    "variantes": [],
+    "pronunciacion": "wa-alen",
+    "nota": "Vocal rearticulada a'a. Pfeiler la da como wa'al-en y Bolles como Ualen.",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "Barbara Pfeiler, estudio de caso sobre la adquisición temprana del verbo en maya yucateco (niña de Yalcobá; el fragmento del buscador no mostró el título exacto)",
+        "url": "https://core.ac.uk/download/19210193.pdf"
+      },
+      {
+        "titulo": "David Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), sección 22: Imperative and exclamatory sentences",
+        "url": "https://www.famsi.org/research/bolles/grammar/section22.htm"
+      }
+    ]
+  },
+  {
+    "id": "u12-weenen",
+    "unidad": "u12",
+    "unidadTitulo": "Haz esto",
+    "leccion": "u12l1",
+    "leccionTitulo": "Ve, ven, levántate",
+    "maya": "weenen",
+    "espanol": "¡duerme!",
+    "variantes": [],
+    "pronunciacion": "weenen",
+    "nota": "Orden de wenel (dormir). En la orden la e se escribe doble: ween-en.",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "Barbara Pfeiler, estudio de caso sobre la adquisición temprana del verbo en maya yucateco (niña de Yalcobá; el fragmento del buscador no mostró el título exacto)",
+        "url": "https://core.ac.uk/download/19210193.pdf"
+      },
+      {
+        "titulo": "Wikcionario (es), wenel (conjugación)",
+        "url": "https://es.wiktionary.org/wiki/wenel"
+      },
+      {
+        "titulo": "Base del curso (kb/*.verified.json y src/content/u1..u9.js)"
+      }
+    ]
+  },
+  {
+    "id": "u12-kooten-janal",
+    "unidad": "u12",
+    "unidadTitulo": "Haz esto",
+    "leccion": "u12l1",
+    "leccionTitulo": "Ve, ven, levántate",
+    "maya": "Ko'oten janal.",
+    "espanol": "¡Ven a comer!",
+    "variantes": [],
+    "pronunciacion": "ko-oten janal",
+    "nota": "Orden doble: ko'oten + janal (sin -en). Bolles: Coten hanal.",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "David Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), sección 22: Imperative and exclamatory sentences",
+        "url": "https://www.famsi.org/research/bolles/grammar/section22.htm"
+      },
+      {
+        "titulo": "Christian Lehmann, Junp'iit Maaya – A little bit of Maya",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/hunp'iit_maaya.html"
+      },
+      {
+        "titulo": "Blair y Vermont-Salas, Spoken Yucatec Maya (transcripción glosada en el sitio de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+      },
+      {
+        "titulo": "kb/recheck3-salud-cuerpo.json (evidencia previa de kulen, ko'oten, máanen)"
+      }
+    ]
+  },
+  {
+    "id": "u12-kootenee-ex",
+    "unidad": "u12",
+    "unidadTitulo": "Haz esto",
+    "leccion": "u12l1",
+    "leccionTitulo": "Ve, ven, levántate",
+    "maya": "ko'otene'ex",
+    "espanol": "¡vengan!",
+    "variantes": [],
+    "pronunciacion": "ko-otene-esh",
+    "nota": "Plural de ko'oten. Blair y Vermont-Salas lo escriben ko'tene'x.",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "Blair y Vermont-Salas, Spoken Yucatec Maya (transcripción glosada en el sitio de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+      },
+      {
+        "titulo": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      },
+      {
+        "titulo": "Wiktionary (en), taal",
+        "url": "https://en.wiktionary.org/wiki/taal"
+      },
+      {
+        "titulo": "kb/recheck3-salud-cuerpo.json (evidencia previa de kulen, ko'oten, máanen)"
+      }
+    ]
+  },
+  {
+    "id": "u12-kulenee-ex",
+    "unidad": "u12",
+    "unidadTitulo": "Haz esto",
+    "leccion": "u12l1",
+    "leccionTitulo": "Ve, ven, levántate",
+    "maya": "kulene'ex",
+    "espanol": "¡siéntense!",
+    "variantes": [],
+    "pronunciacion": "kulene-esh",
+    "nota": "Plural de kulen, con -e'ex. Lo trae Wiktionary; no lo vimos en un texto.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Wiktionary (en), kutal",
+        "url": "https://en.wiktionary.org/wiki/kutal"
+      },
+      {
+        "titulo": "Blair y Vermont-Salas, Spoken Yucatec Maya (transcripción glosada en el sitio de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/textos/bvs_1-18.html"
+      },
+      {
+        "titulo": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      }
+    ]
+  },
+  {
+    "id": "u12-maanenee-ex",
+    "unidad": "u12",
+    "unidadTitulo": "Haz esto",
+    "leccion": "u12l1",
+    "leccionTitulo": "Ve, ven, levántate",
+    "maya": "máanene'ex",
+    "espanol": "¡pasen!",
+    "variantes": [],
+    "pronunciacion": "máanene-esh",
+    "nota": "Plural de máanen, con -e'ex. Lo trae Wikcionario; no lo vimos en un texto.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Wikcionario (es), máan (conjugación)",
+        "url": "https://es.wiktionary.org/wiki/m%C3%A1an"
+      },
+      {
+        "titulo": "INALI – Prontuario de frases de cortesía en maya",
+        "url": "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+      },
+      {
+        "titulo": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      }
+    ]
+  },
+  {
+    "id": "u12-kooneex",
+    "unidad": "u12",
+    "unidadTitulo": "Haz esto",
+    "leccion": "u12l2",
+    "leccionTitulo": "Vamos a jugar",
+    "maya": "ko'one'ex",
+    "espanol": "¡vamos! (a un grupo)",
+    "variantes": [],
+    "pronunciacion": "ko-one-esh",
+    "nota": "Se vio en el título de una ficha de la SEP: Ko'one'ex baaxal. Termina en -e'ex, la terminación de «ustedes». La diferencia exacta con ko'ox no está explicada en las fuentes que vimos.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Nueva Escuela Mexicana Digital (SEP), «Ko'one'ex baaxal ¡Vamos a jugar!»",
+        "url": "https://nuevaescuelamexicana.sep.gob.mx/contenido/coleccion/kooneex-baaxal-vamos-a-jugar/"
+      }
+    ]
+  },
+  {
+    "id": "u12-baaxal",
+    "unidad": "u12",
+    "unidadTitulo": "Haz esto",
+    "leccion": "u12l2",
+    "leccionTitulo": "Vamos a jugar",
+    "maya": "báaxal",
+    "espanol": "jugar; juego; juguete",
+    "variantes": [
+      "baaxal"
+    ],
+    "pronunciacion": "báashal",
+    "nota": "La UADY la escribe con tono alto (báaxal); la SEP, sin acento (baaxal). La x suena «sh».",
+    "ejemplo": {
+      "maya": "Ko'one'ex báaxal.",
+      "espanol": "Vamos a jugar."
+    },
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "UADY – Diccionario maya-español, letra B (báaxal)",
+        "url": "https://www.mayas.uady.mx/diccionario/b_maya.html"
+      },
+      {
+        "titulo": "Wiktionary (en), báaxal",
+        "url": "https://en.wiktionary.org/wiki/b%C3%A1axal"
+      },
+      {
+        "titulo": "Nueva Escuela Mexicana Digital (SEP), «Ko'one'ex baaxal ¡Vamos a jugar!»",
+        "url": "https://nuevaescuelamexicana.sep.gob.mx/contenido/coleccion/kooneex-baaxal-vamos-a-jugar/"
+      }
+    ]
+  },
+  {
+    "id": "u12-kooneex-baaxal",
+    "unidad": "u12",
+    "unidadTitulo": "Haz esto",
+    "leccion": "u12l2",
+    "leccionTitulo": "Vamos a jugar",
+    "maya": "Ko'one'ex báaxal.",
+    "espanol": "¡Vamos a jugar!",
+    "variantes": [
+      "Ko'one'ex baaxal."
+    ],
+    "pronunciacion": "ko-one-esh báashal",
+    "nota": "Título de una ficha de clase de la SEP (Nueva Escuela Mexicana Digital).",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "Nueva Escuela Mexicana Digital (SEP), «Ko'one'ex baaxal ¡Vamos a jugar!»",
+        "url": "https://nuevaescuelamexicana.sep.gob.mx/contenido/coleccion/kooneex-baaxal-vamos-a-jugar/"
+      },
+      {
+        "titulo": "UADY – Diccionario maya-español, letra B (báaxal)",
+        "url": "https://www.mayas.uady.mx/diccionario/b_maya.html"
+      }
+    ]
+  },
+  {
+    "id": "u12-koox-ximbal",
+    "unidad": "u12",
+    "unidadTitulo": "Haz esto",
+    "leccion": "u12l2",
+    "leccionTitulo": "Vamos a jugar",
+    "maya": "Ko'ox xíimbal.",
+    "espanol": "Vamos a pasear. / Vamos a caminar.",
+    "variantes": [],
+    "pronunciacion": "ko-osh shíimbal",
+    "nota": "Armada con la regla ko'ox + verbo. xíimbal = caminar, pasear (unidad 9). No la vimos escrita tal cual.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Heraldo de México – Ko'ox kanik maaya t'aan",
+        "url": "https://yucatan.heraldodemexico.com.mx/tendencias/2025/8/27/koox-kanik-maaya-taan-asi-seran-los-cursos-para-preservar-la-lengua-maya-en-yucatan-1949.html"
+      },
+      {
+        "titulo": "Nueva Escuela Mexicana Digital (SEP), «Ko'one'ex baaxal ¡Vamos a jugar!»",
+        "url": "https://nuevaescuelamexicana.sep.gob.mx/contenido/coleccion/kooneex-baaxal-vamos-a-jugar/"
+      },
+      {
+        "titulo": "INALI – Prontuario de frases de cortesía en maya",
+        "url": "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+      }
+    ]
+  },
+  {
+    "id": "u12-koox-kaay",
+    "unidad": "u12",
+    "unidadTitulo": "Haz esto",
+    "leccion": "u12l2",
+    "leccionTitulo": "Vamos a jugar",
+    "maya": "Ko'ox k'aay.",
+    "espanol": "Vamos a cantar.",
+    "variantes": [],
+    "pronunciacion": "ko-osh k'aay",
+    "nota": "Armada con la regla ko'ox + verbo. k'aay = cantar (unidad 5). No la vimos escrita tal cual.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Heraldo de México – Ko'ox kanik maaya t'aan",
+        "url": "https://yucatan.heraldodemexico.com.mx/tendencias/2025/8/27/koox-kanik-maaya-taan-asi-seran-los-cursos-para-preservar-la-lengua-maya-en-yucatan-1949.html"
+      },
+      {
+        "titulo": "Nueva Escuela Mexicana Digital (SEP), «Ko'one'ex baaxal ¡Vamos a jugar!»",
+        "url": "https://nuevaescuelamexicana.sep.gob.mx/contenido/coleccion/kooneex-baaxal-vamos-a-jugar/"
+      },
+      {
+        "titulo": "Base del curso (kb/*.verified.json y src/content/u1..u9.js)"
+      }
+    ]
+  },
+  {
+    "id": "u12-xooknen",
+    "unidad": "u12",
+    "unidadTitulo": "Haz esto",
+    "leccion": "u12l3",
+    "leccionTitulo": "En la clase y en la cocina",
+    "maya": "xooknen",
+    "espanol": "¡lee!, ¡estudia!",
+    "variantes": [],
+    "pronunciacion": "shooknen",
+    "nota": "Orden de xook. Así la dan las tablas de Wiktionary; Pfeiler muestra el mismo patrón -nen con otro verbo.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Wiktionary (en), xook",
+        "url": "https://en.wiktionary.org/wiki/xook"
+      },
+      {
+        "titulo": "Barbara Pfeiler, estudio de caso sobre la adquisición temprana del verbo en maya yucateco (niña de Yalcobá; el fragmento del buscador no mostró el título exacto)",
+        "url": "https://core.ac.uk/download/19210193.pdf"
+      },
+      {
+        "titulo": "UNAM, Facultad de Filosofía y Letras – temario de Maya IV (imperativo en oraciones intransitivas -en, -nen, -len; imperativo transitivo)",
+        "url": "https://servicios-galileo.filos.unam.mx/uploads/temarios/20252131146100021/Maya4EliCasanova20252.pdf"
+      }
+    ]
+  },
+  {
+    "id": "u12-meyajnen",
+    "unidad": "u12",
+    "unidadTitulo": "Haz esto",
+    "leccion": "u12l3",
+    "leccionTitulo": "En la clase y en la cocina",
+    "maya": "meyajnen",
+    "espanol": "¡trabaja!",
+    "variantes": [],
+    "pronunciacion": "meyajnen",
+    "nota": "Orden de meyaj (trabajar). Compárala con meyajnajen, «trabajé».",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Wiktionary (en), meyaj",
+        "url": "https://en.wiktionary.org/wiki/meyaj"
+      },
+      {
+        "titulo": "Barbara Pfeiler, estudio de caso sobre la adquisición temprana del verbo en maya yucateco (niña de Yalcobá; el fragmento del buscador no mostró el título exacto)",
+        "url": "https://core.ac.uk/download/19210193.pdf"
+      },
+      {
+        "titulo": "UNAM, Facultad de Filosofía y Letras – temario de Maya IV (imperativo en oraciones intransitivas -en, -nen, -len; imperativo transitivo)",
+        "url": "https://servicios-galileo.filos.unam.mx/uploads/temarios/20252131146100021/Maya4EliCasanova20252.pdf"
+      }
+    ]
+  },
+  {
+    "id": "u12-ximbalnen",
+    "unidad": "u12",
+    "unidadTitulo": "Haz esto",
+    "leccion": "u12l3",
+    "leccionTitulo": "En la clase y en la cocina",
+    "maya": "xíimbalnen",
+    "espanol": "¡camina!, ¡pasea!",
+    "variantes": [],
+    "pronunciacion": "shíimbalnen",
+    "nota": "Orden de xíimbal. Así la dan las tablas de Wiktionary.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Wiktionary (en), xíimbal",
+        "url": "https://en.wiktionary.org/wiki/xiimbal"
+      },
+      {
+        "titulo": "Barbara Pfeiler, estudio de caso sobre la adquisición temprana del verbo en maya yucateco (niña de Yalcobá; el fragmento del buscador no mostró el título exacto)",
+        "url": "https://core.ac.uk/download/19210193.pdf"
+      },
+      {
+        "titulo": "UNAM, Facultad de Filosofía y Letras – temario de Maya IV (imperativo en oraciones intransitivas -en, -nen, -len; imperativo transitivo)",
+        "url": "https://servicios-galileo.filos.unam.mx/uploads/temarios/20252131146100021/Maya4EliCasanova20252.pdf"
+      }
+    ]
+  },
+  {
+    "id": "u12-jaantej",
+    "unidad": "u12",
+    "unidadTitulo": "Haz esto",
+    "leccion": "u12l3",
+    "leccionTitulo": "En la clase y en la cocina",
+    "maya": "jaantej",
+    "espanol": "¡cómelo!",
+    "variantes": [],
+    "pronunciacion": "jaantej",
+    "nota": "Orden de jaantik (comer algo). La j final se pronuncia suave. Misma terminación que Bíin in jaantej.",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      },
+      {
+        "titulo": "Wiktionary (en), jaant",
+        "url": "https://en.wiktionary.org/wiki/jaant"
+      },
+      {
+        "titulo": "Barbara Pfeiler, estudio de caso sobre la adquisición temprana del verbo en maya yucateco (niña de Yalcobá; el fragmento del buscador no mostró el título exacto)",
+        "url": "https://core.ac.uk/download/19210193.pdf"
+      },
+      {
+        "titulo": "Base del curso (kb/*.verified.json y src/content/u1..u9.js)"
+      }
+    ]
+  },
+  {
+    "id": "u12-tsaa",
+    "unidad": "u12",
+    "unidadTitulo": "Haz esto",
+    "leccion": "u12l3",
+    "leccionTitulo": "En la clase y en la cocina",
+    "maya": "ts'aa",
+    "espanol": "¡da!, ¡dale!",
+    "variantes": [],
+    "pronunciacion": "ts'aa",
+    "nota": "DAR en el diccionario de la UADY. Como orden va sola, al inicio de la frase (Andrade: ts'a ti').",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "UADY – Diccionario español-maya, letra D (dar: ts'aa)",
+        "url": "https://www.mayas.uady.mx/diccionario/d_esp.html"
+      },
+      {
+        "titulo": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      }
+    ]
+  },
+  {
+    "id": "u12-tsaa-teen-waaj",
+    "unidad": "u12",
+    "unidadTitulo": "Haz esto",
+    "leccion": "u12l3",
+    "leccionTitulo": "En la clase y en la cocina",
+    "maya": "Ts'aa teen waaj.",
+    "espanol": "Dame tortilla. / Dame pan.",
+    "variantes": [],
+    "pronunciacion": "ts'aa teen waaj",
+    "nota": "Armada con ts'aa + teen (a mí) + waaj (unidad 6), siguiendo el molde de Bolles. No la vimos escrita tal cual.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "UADY – Diccionario español-maya, letra D (dar: ts'aa)",
+        "url": "https://www.mayas.uady.mx/diccionario/d_esp.html"
+      },
+      {
+        "titulo": "David Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), sección 22: Imperative and exclamatory sentences",
+        "url": "https://www.famsi.org/research/bolles/grammar/section22.htm"
+      },
+      {
+        "titulo": "Base del curso (kb/*.verified.json y src/content/u1..u9.js)"
+      }
+    ]
+  },
+  {
+    "id": "u12-ilej",
+    "unidad": "u12",
+    "unidadTitulo": "Haz esto",
+    "leccion": "u12l3",
+    "leccionTitulo": "En la clase y en la cocina",
+    "maya": "ilej",
+    "espanol": "¡míralo!, ¡velo!",
+    "variantes": [],
+    "pronunciacion": "ilej",
+    "nota": "Orden de ilik (ver algo). Solo la vimos en las tablas de Wiktionary.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Wiktionary (en), il",
+        "url": "https://en.wiktionary.org/wiki/il"
+      },
+      {
+        "titulo": "UADY – Diccionario español-maya, letra M (mirar: il)",
+        "url": "https://www.mayas.uady.mx/diccionario/m_esp.html"
+      },
+      {
+        "titulo": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      }
+    ]
+  },
+  {
+    "id": "u12-ma-a-jaantik",
+    "unidad": "u12",
+    "unidadTitulo": "Haz esto",
+    "leccion": "u12l4",
+    "leccionTitulo": "No lo hagas",
+    "maya": "Ma' a jaantik.",
+    "espanol": "No lo comas.",
+    "variantes": [
+      "Ma' jaantik."
+    ],
+    "pronunciacion": "ma- a jaantik",
+    "nota": "Ejemplo de Andrade (ma (a) hantik, «¡no lo comas!») con la ortografía actual. La a (tú) puede faltar.",
+    "ejemplo": null,
+    "confianza": "alta",
+    "fuentes": [
+      {
+        "titulo": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      },
+      {
+        "titulo": "David Bolles, A Grammar of the Yucatecan Mayan Language (FAMSI), sección 22: Imperative and exclamatory sentences",
+        "url": "https://www.famsi.org/research/bolles/grammar/section22.htm"
+      }
+    ]
+  },
+  {
+    "id": "u12-ma-tuubsik",
+    "unidad": "u12",
+    "unidadTitulo": "Haz esto",
+    "leccion": "u12l4",
+    "leccionTitulo": "No lo hagas",
+    "maya": "Ma' tu'ubsik.",
+    "espanol": "No lo olvides.",
+    "variantes": [],
+    "pronunciacion": "ma- tu-ubsik",
+    "nota": "Frase de La Lengua Maya de Yucatán, sin a. Una sola fuente, no académica.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "La Lengua Maya de Yucatán – Frases básicas",
+        "url": "https://sites.google.com/site/lalenguamayadeyucatan/frases-basicas"
+      }
+    ]
+  },
+  {
+    "id": "u12-ma-a-wenel",
+    "unidad": "u12",
+    "unidadTitulo": "Haz esto",
+    "leccion": "u12l4",
+    "leccionTitulo": "No lo hagas",
+    "maya": "Ma' a wenel.",
+    "espanol": "No duermas.",
+    "variantes": [],
+    "pronunciacion": "ma- a wenel",
+    "nota": "Armada con la regla ma' a + el verbo de siempre (wenel, dormir). No la vimos escrita tal cual.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      },
+      {
+        "titulo": "Wikcionario (es), wenel (conjugación)",
+        "url": "https://es.wiktionary.org/wiki/wenel"
+      }
+    ]
+  },
+  {
+    "id": "u12-ma-a-bin",
+    "unidad": "u12",
+    "unidadTitulo": "Haz esto",
+    "leccion": "u12l4",
+    "leccionTitulo": "No lo hagas",
+    "maya": "Ma' a bin.",
+    "espanol": "No vayas.",
+    "variantes": [],
+    "pronunciacion": "ma- a bin",
+    "nota": "Armada con la regla. Fíjate en que se usa bin, no xeen. No la vimos escrita tal cual.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      },
+      {
+        "titulo": "INALI – Prontuario de frases de cortesía en maya",
+        "url": "https://site.inali.gob.mx/Micrositios/Prontuarios/maya.html"
+      }
+    ]
+  },
+  {
+    "id": "u12-ma-a-kutal",
+    "unidad": "u12",
+    "unidadTitulo": "Haz esto",
+    "leccion": "u12l4",
+    "leccionTitulo": "No lo hagas",
+    "maya": "Ma' a kutal.",
+    "espanol": "No te sientes.",
+    "variantes": [],
+    "pronunciacion": "ma- a kutal",
+    "nota": "Armada con la regla; kutal es el verbo de siempre de «sentarse» (kin kutal, ku kutal). No la vimos escrita tal cual.",
+    "ejemplo": null,
+    "confianza": "media",
+    "fuentes": [
+      {
+        "titulo": "Manuel Andrade, A grammar of modern Yucatec Maya (edición de Lehmann)",
+        "url": "https://www.christianlehmann.eu/ling/sprachen/maya/andrade/andrade_edit.php"
+      },
+      {
+        "titulo": "Wiktionary (en), kutal",
+        "url": "https://en.wiktionary.org/wiki/kutal"
       }
     ]
   }

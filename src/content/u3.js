@@ -661,6 +661,17 @@
           conf: "alta"
         }
       ],
+      dialogue: {
+        title: "Una foto de familia (diálogo de práctica)",
+        lines: [
+          { who: "A", name: "Luis", m: "Bix u k'aaba'?", es: "¿Cómo se llama? (señalando una foto)" },
+          { who: "B", name: "Ana", m: "Rosa u k'aaba'. In na'.", es: "Se llama Rosa. Es mi mamá." },
+          { who: "A", name: "Luis", m: "Kux leti'?", es: "¿Y él?" },
+          { who: "B", name: "Ana", m: "Pedro u k'aaba'. In suku'un.", es: "Se llama Pedro. Es mi hermano mayor." },
+          { who: "A", name: "Luis", m: "Kux leti'?", es: "¿Y ella?" },
+          { who: "B", name: "Ana", m: "María u k'aaba'. In kiik.", es: "Se llama María. Es mi hermana mayor." }
+        ]
+      },
       exercises: [
         {
           type: "fill",

@@ -3,7 +3,7 @@
 Atribución de cada audio de Ko'ox Maaya. Este archivo lo genera `node tools/creditos.mjs` a partir de
 `audio/catalogo.json`: no se edita a mano.
 
-En total hay **225** audios: 24 sonidos de referencia (AFI), 0 de voces nativas y 201 de voz sintética (aproximada).
+En total hay **302** audios: 24 sonidos de referencia (AFI), 0 de voces nativas y 278 de voz sintética (aproximada).
 
 **Cambios hechos a todos los audios.** `tools/audio-import.mjs` recorta el silencio del inicio y del final,
 normaliza el volumen (unos -18 LUFS, pico de -1.5 dB, como ganancia lineal), agrega 60 ms de silencio a
@@ -50,7 +50,7 @@ Todavía no hay grabaciones de hablantes. Se agregan con `grabar.html` y `tools/
 
 ## Voz sintética (aproximada)
 
-- **Meta AI (MMS-TTS)**: 201 audios (`audio/s-*.mp3`), generados con el modelo [facebook/mms-tts-yua](https://huggingface.co/facebook/mms-tts-yua) del proyecto Massively Multilingual Speech (Pratap et al., 2023, «Scaling Speech Technology to 1,000+ Languages»).
+- **Meta AI (MMS-TTS)**: 278 audios (`audio/s-*.mp3`), generados con el modelo [facebook/mms-tts-yua](https://huggingface.co/facebook/mms-tts-yua) del proyecto Massively Multilingual Speech (Pratap et al., 2023, «Scaling Speech Technology to 1,000+ Languages»).
   Licencia: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/): solo uso no comercial. Por eso estos audios, y la app que los incluye, son de uso
   no comercial.
   Se generaron con `tools/tts-mms.py` y se aceptó cada uno solo si el reconocedor MMS-1B-all (adaptador yua) lo

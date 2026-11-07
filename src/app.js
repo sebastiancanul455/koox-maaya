@@ -1105,6 +1105,8 @@
       answer: answer, options: [answer].concat(picks)
     };
   }
+  // Parte máxima de «elegir opción» en una lección (lo demás: escribir, armar, emparejar, escuchar).
+  var PICK_MAX = 0.4;
   function canType(v) { return v.conf === "alta" && v.nw >= 1 && v.nw <= 3 && !/[…\/]|\.\.\./.test(v.m); }
   // Otra palabra del curso que cubre todo el significado pedido («gracias» lo cubre
   // «muchas gracias; gracias») también es una respuesta válida al escribir.
@@ -1119,6 +1121,28 @@
     var alt = v.alt.slice();
     same.forEach(function (x) { alt.push(x.m); alt = alt.concat(x.alt); });
     return { type: "type", auto: true, vocab: v, q: "Escribe en maya", prompt: v.es, answer: v.m, alt: alt };
+  }
+  // «Arma la frase» automático con una expresión confirmada de 2 a 6 palabras: fichas de la forma maya
+  // y 1 o 2 fichas de otras formas confirmadas como distractores.
+  function canBuild(v) { return v.conf === "alta" && v.nw >= 2 && v.nw <= 6 && !/[…\/]|\.\.\./.test(v.m); }
+  function makeBuild(v) {
+    if (!canBuild(v)) return null;
+    var ws = words(v.m).map(tileText).filter(Boolean);
+    if (ws.length < 2) return null;
+    var inM = {}; ws.forEach(function (w) { inM[normalize(w)] = 1; });
+    var ds = [];
+    candidatesFor(v, [v.lesson.vocab, v.unit.vocab, COURSE.vocab]).some(function (x) {
+      if (x.conf !== "alta") return false;
+      words(x.m).map(tileText).forEach(function (t) { if (t && ds.length < 2 && !inM[normalize(t)]) { inM[normalize(t)] = 1; ds.push(t); } });
+      return ds.length >= 2;
+    });
+    return { type: "build", auto: true, vocab: v, conf: "alta", es: v.es, m: v.m, words: ws, distractors: ds };
+  }
+  // Ejercicio de producción para una palabra confirmada: escribir o, en frases, armar (alternando).
+  var buildTurn = Math.random() < 0.5;
+  function makeProduce(v) {
+    if (canBuild(v) && (!canType(v) || (buildTurn = !buildTurn))) return makeBuild(v);
+    return canType(v) ? makeType(v) : null;
   }
   // «Escucha y elige»: solo palabras con voz nativa. Alterna entre elegir la forma escrita (solo si está
   // confirmada: elegir la forma maya ya es producir) y elegir el significado.
@@ -1150,52 +1174,113 @@
     if (picks.length < 4) return null;
     return { type: "pairs", auto: true, items: picks };
   }
+  // Un «¿cómo se dice en maya?» escrito a mano (pide el significado de una palabra confirmada que ya se
+  // enseñó en esta lección o antes) se presenta como «Escribe en maya»: producir en vez de elegir. Las
+  // preguntas de forma (tono, ortografía, respuestas en diálogo) se quedan como elección.
+  function handToType(e, lesson) {
+    var v = e.vocab;
+    if (e.type !== "choice" || e.promptLang !== "es" || !v || !canType(v) || v.lesson.order > lesson.order) return null;
+    if (normalize(e.answer) !== normalize(v.m)) return null;
+    var pk = searchKey(String(e.prompt).replace(/\([^)]*\)/g, " "));
+    var parts = v.parts || (v.parts = meaningParts(v.es));
+    if (!(pk && (pk === searchKey(String(v.es).replace(/\([^)]*\)/g, " ")) || parts.indexOf(pk) >= 0 || meaningParts(e.prompt).every(function (p) { return parts.indexOf(p) >= 0; })))) return null;
+    var t = makeType(v);
+    t.auto = false; t.hand = true; t.fromChoice = true; t.prompt = e.prompt; t.conf = e.conf;
+    return t;
+  }
+  // «Completa la frase» (escrito a mano, confirmado) como «Arma la frase»: la frase entera en fichas y las
+  // opciones incorrectas como distractores. Solo frases cortas con traducción.
+  function fillToBuild(e) {
+    var full = exTarget(e), ws = words(full).map(tileText).filter(Boolean);
+    if (!e.es || e.conf !== "alta" || ws.length < 2 || ws.length > 7) return null;
+    var inM = {}; ws.forEach(function (w) { inM[normalize(w)] = 1; });
+    var ds = arr(e.options).map(tileText).filter(function (d) { return d && !inM[normalize(d)] && (inM[normalize(d)] = 1); });
+    return { type: "build", hand: true, fromFill: true, es: e.es, m: full, words: ws, distractors: ds, vocab: e.vocab, conf: e.conf };
+  }
   // Ejercicios de la lección. «pre» son las comprobaciones rápidas ya intercaladas entre las
   // palabras nuevas: cuentan dentro del total y no se repiten aquí.
   function lessonExercises(lesson, pre) {
     pre = pre || [];
-    var hand = lesson.exercises.slice(0, 15).map(function (e) { var c = Object.assign({}, e); c.hand = true; return c; });
+    var hand = lesson.exercises.slice(0, 15).map(function (e) { var c = Object.assign({}, e); c.hand = true; return handToType(c, lesson) || c; });
     var V = lesson.vocab;
     var earlier = lesson.unit.lessons.slice(0, lesson.index).reduce(function (a, l) { return a.concat(l.vocab); }, []);
     var earlierCourse = COURSE.lessons.slice(0, lesson.order).reduce(function (a, l) { return a.concat(l.vocab); }, []);
-    var pairs = V.length ? makePairs(V, [earlier, earlierCourse]) : null;
-    var inPairs = {};
-    if (pairs) pairs.items.forEach(function (x) { inPairs[x.id] = 1; });
-    var recogA = shuffle(V.filter(function (v) { return !inPairs[v.id]; })).map(function (v) { return makeChoice(v, "m2es"); }).filter(Boolean);
-    var typeTurn = Math.random() < 0.5;
-    var recall = shuffle(V.slice()).map(function (v) {
-      if (canType(v)) { typeTurn = !typeTurn; if (typeTurn) return makeType(v); }
-      return makeChoice(v, "es2m") || (canType(v) ? makeType(v) : null);
-    }).filter(Boolean);
-    var recogB = shuffle(V.filter(function (v) { return inPairs[v.id]; })).map(function (v) { return makeChoice(v, "m2es"); }).filter(Boolean);
-    // 1 o 2 de «Escucha y elige» cuando hay voces nativas de las palabras de la lección.
-    var listen = shuffle(V.filter(function (v) { return nativeFor(v); })).slice(0, 2).map(makeListen).filter(Boolean);
+    // Si ya hubo parejas como comprobación rápida, no se repiten aquí.
+    var quickPairs = pre.some(function (e) { return e.type === "pairs"; });
+    var pairs = V.length && !quickPairs ? makePairs(V, [earlier, earlierCourse]) : null;
     // No repite lo que ya pregunta un ejercicio escrito a mano o una comprobación intercalada.
     function autoKey(e) {
       if (e.type === "choice") return (e.promptLang === "m" ? "m2es:" + normalize(e.prompt) : "es2m:" + normalize(e.answer));
       if (e.type === "type") return "type:" + normalize(e.answer);
+      if (e.type === "build") return "build:" + normalize(e.m);
       return "";
     }
-    var handKeys = {};
-    hand.concat(pre).forEach(function (e) { var k = autoKey(e); if (k) handKeys[k] = 1; });
+    var handKeys = {}, handVocab = {};
+    hand.concat(pre).forEach(function (e) {
+      var k = autoKey(e); if (k) handKeys[k] = 1;
+      if (e.vocab && (e.hand || e.type !== "choice")) handVocab[e.vocab.id] = 1;
+    });
+    // Primero reconocer, luego producir: cada palabra ya se vio en su tarjeta (y quizá en una comprobación
+    // rápida), así que lo confirmado se escribe o se arma; lo «por confirmar» solo se reconoce.
+    // Primero las palabras que no pregunta ya un ejercicio escrito a mano.
+    var order = shuffle(V.slice()).sort(function (a, b) { return (handVocab[a.id] ? 1 : 0) - (handVocab[b.id] ? 1 : 0); });
+    var main = order.map(function (v) {
+      var e = makeProduce(v);
+      if (e && !handKeys[autoKey(e)]) return e;
+      var alt = e && e.type === "build" && canType(v) ? makeType(v) : e && e.type === "type" && canBuild(v) ? makeBuild(v) : null;
+      if (alt && !handKeys[autoKey(alt)]) return alt;
+      return makeChoice(v, "m2es") || makeChoice(v, "es2m");
+    }).filter(function (e) { return e && !handKeys[autoKey(e)]; });
+    // Segunda vuelta (lecciones con pocas palabras): la otra forma de producir y luego reconocer.
+    var extra = order.map(function (v) { return canType(v) && canBuild(v) ? makeBuild(v) : null; })
+      .concat(order.map(function (v) { return canType(v) && canBuild(v) ? makeType(v) : null; }), order.map(function (v) { return makeChoice(v, "m2es"); }))
+      .filter(function (e) { return e && !handKeys[autoKey(e)]; });
+    // 1 o 2 de «Escucha y elige» cuando hay voces nativas de las palabras de la lección.
+    var listen = shuffle(V.filter(function (v) { return nativeFor(v); })).slice(0, 2).map(makeListen).filter(Boolean);
     var target = clamp(hand.length + V.length + 3, 10, 15);
     var need = Math.max(0, target - hand.length - pre.length - listen.length);
-    var queue = (pairs ? [pairs] : []).concat(recogA, recall, recogB).filter(function (e) { return !handKeys[autoKey(e)]; });
-    var auto = queue.slice(0, need);
-    // Al menos 3 ejercicios de escribir cuando hay palabras confirmadas que se pueden escribir.
-    var typed = {};
-    hand.concat(auto).forEach(function (e) { if (e.type === "type") typed[normalize(e.answer)] = 1; });
-    var minType = Math.min(3, V.filter(canType).length);
-    var nType = Object.keys(typed).length;
-    // Primero se cambian elecciones español→maya; si no alcanza, también maya→español.
-    ["es", "m"].forEach(function (lang) {
-      for (var i = 0; i < auto.length && nType < minType; i++) {
-        var e = auto[i];
-        if (e.type === "choice" && e.promptLang === lang && e.vocab && canType(e.vocab) && !typed[normalize(e.vocab.m)]) {
-          auto[i] = makeType(e.vocab); typed[normalize(e.vocab.m)] = 1; nType++;
-        }
-      }
+    var queue = (pairs ? [pairs] : []).concat(main, extra);
+    var seenKey = {};
+    var auto = queue.filter(function (e) { var k = autoKey(e); if (k && seenKey[k]) return false; if (k) seenKey[k] = 1; return true; }).slice(0, need);
+    // Repaso breve dentro de la lección: producir palabras confirmadas de lecciones anteriores (primero de
+    // la unidad) cuando las de esta lección ya se producen en otro ejercicio o no alcanzan.
+    var back = shuffle(earlier.slice()).concat(shuffle(earlierCourse.slice(-40))).filter(function (x) { return canType(x) || canBuild(x); });
+    function fresh(nx) { return nx && !handKeys[autoKey(nx)] && !seenKey[autoKey(nx)] ? nx : null; }
+    function produceFresh(v) {
+      var nx = makeProduce(v);
+      return fresh(nx) || (canType(v) && canBuild(v) ? fresh(nx && nx.type === "type" ? makeBuild(v) : makeType(v)) : null);
+    }
+    function produceBack() { var nx = null; while (!nx && back.length) nx = produceFresh(back.shift()); return nx; }
+    while (auto.length < need) {
+      var nb = produceBack();
+      if (!nb) break;
+      seenKey[autoKey(nb)] = 1; auto.push(nb);
+    }
+    // Elegir opción (elecciones y completar con opciones) es como mucho el 40 % de la lección: si se pasa,
+    // se cambian por producción, primero las elecciones automáticas de palabras confirmadas y las de
+    // palabras «por confirmar» que ya se reconocen en otro ejercicio; luego los «completa la frase»
+    // escritos a mano (pasan a «arma la frase» con las opciones como distractores).
+    // Las elecciones escritas a mano y la única comprobación de lo «por confirmar» se quedan: puede quedar por encima.
+    function isPick(e) { return e.type === "choice" || e.type === "fill"; }
+    var total = hand.length + pre.length + auto.length + listen.length;
+    var picks = hand.concat(pre, auto).filter(isPick).length;
+    var recog = {};
+    hand.concat(pre).forEach(function (e) {
+      if (e.type === "choice" && e.vocab) recog[e.vocab.id] = 1;
+      if (e.type === "pairs") e.items.forEach(function (x) { recog[x.id] = 1; });
     });
+    function swap(arrX, mk) {
+      for (var i = 0; i < arrX.length && picks > PICK_MAX * total; i++) {
+        var nx = isPick(arrX[i]) ? mk(arrX[i]) : null;
+        if (nx && !handKeys[autoKey(nx)] && !seenKey[autoKey(nx)]) { seenKey[autoKey(nx)] = 1; arrX[i] = nx; picks--; }
+      }
+    }
+    swap(auto, function (e) {
+      if (e.type !== "choice" || !e.vocab || e.vocab.conf !== "alta") return null;
+      return produceFresh(e.vocab) || produceBack();
+    });
+    swap(auto, function (e) { return e.type === "choice" && e.vocab && recog[e.vocab.id] ? produceBack() : null; });
+    swap(hand, function (e) { return e.type === "fill" ? fillToBuild(e) : null; });
     // Fases: reconocer -> relacionar -> producir.
     var all = hand.concat(auto, listen);
     function phase(e) {
@@ -1208,12 +1293,13 @@
     return shuffle(buckets[0]).concat(shuffle(buckets[1]), shuffle(buckets[2]));
   }
   function wordExercises(list, max, withPairs, pairPool) {
-    var out = [], n = 0;
+    // Nivel 2 o más: la palabra ya se reconoce, así que se produce (escribir o armar). En nivel 0–1, una
+    // de cada cuatro se reconoce y las demás se producen. Lo «por confirmar» solo se reconoce (makeChoice y makeProduce lo cuidan).
+    var out = [], low = 0;
     list.slice(0, max).forEach(function (v) {
-      var r = n++ % 3, e = null;
-      if (r === 1 && canType(v)) e = makeType(v);
-      else if (r === 2) e = makeChoice(v, "es2m");
-      if (!e) e = makeChoice(v, "m2es") || makeChoice(v, "es2m") || (canType(v) ? makeType(v) : null);
+      var r = state.srs[v.id], e = null;
+      if (!r || r.box < 2) e = low++ % 4 === 0 ? makeChoice(v, "m2es") : null;
+      if (!e) e = makeProduce(v) || makeChoice(v, "m2es") || makeChoice(v, "es2m");
       if (e) out.push(e);
     });
     // En los repasos también: hasta 2 de «Escucha y elige» con las palabras que tienen voz nativa.
@@ -1259,9 +1345,16 @@
     l.teach.forEach(function (c) { steps.push({ t: "teach", card: c }); });
     var handPrompts = {};
     l.exercises.forEach(function (e) { if (e.type === "choice" && e.promptLang === "m") handPrompts[normalize(e.prompt)] = 1; });
-    var i = 0;
-    vocabChunks(l.vocab).forEach(function (chunk) {
+    var i = 0, shown = [];
+    vocabChunks(l.vocab).forEach(function (chunk, ci) {
       chunk.forEach(function (v) { steps.push({ t: "vocab", v: v, i: i++, n: l.vocab.length }); });
+      // Tras el primer grupo, la comprobación es emparejar el grupo nuevo con lo ya visto en la lección
+      // (al menos 2 palabras del grupo y solo formas confirmadas); si no alcanza, una elección.
+      var qp = ci > 0 ? makePairs(chunk, [shown]) : null;
+      shown = shown.concat(chunk);
+      if (qp && qp.items.filter(function (x) { return chunk.indexOf(x) >= 0; }).length >= 2) {
+        qp.quick = true; pre.push(qp); steps.push({ t: "ex", ex: qp }); return;
+      }
       var cands = shuffle(chunk.filter(function (v) { return !handPrompts[normalize(v.m)]; }));
       for (var c = 0; c < cands.length; c++) {
         var e = makeChoice(cands[c], "m2es");
@@ -1272,24 +1365,32 @@
     lessonExercises(l, pre).forEach(function (e) { steps.push({ t: "ex", ex: e }); });
     return steps;
   }
-  function startReview() {
+  // Ejercicios del repaso general: vencidas o, si nada vence, práctica libre con las más débiles.
+  function reviewExercises() {
     var due = dueList(), kind = "review", list;
     if (due.length) list = due.slice(0, 15).map(function (e) { return e.v; });
     else { kind = "practice"; list = weakList().slice(0, 12).map(function (e) { return e.v; }); }
-    if (!list.length) { toast("Completa una lección para empezar a repasar."); return; }
-    var exs = wordExercises(shuffle(list), 15, false);
-    if (!exs.length) { toast("Aún no hay suficientes palabras para repasar."); return; }
-    openSession(kind, exs.map(function (e) { return { t: "ex", ex: e }; }));
+    return { kind: kind, words: list.length, exs: list.length ? wordExercises(shuffle(list), 15, false) : [] };
+  }
+  function startReview() {
+    var r = reviewExercises();
+    if (!r.words) { toast("Completa una lección para empezar a repasar."); return; }
+    if (!r.exs.length) { toast("Aún no hay suficientes palabras para repasar."); return; }
+    openSession(r.kind, r.exs.map(function (e) { return { t: "ex", ex: e }; }));
   }
   function unitStarted(u) { return u.lessons.some(lessonDone); }
-  function startUnitReview(u) {
-    // Solo palabras que ya se estudiaron: nunca se repasa lo que no se ha enseñado.
+  // Solo palabras que ya se estudiaron: nunca se repasa lo que no se ha enseñado.
+  function unitReviewExercises(u) {
     var studied = u.vocab.filter(function (v) { return state.srs[v.id]; });
-    if (!studied.length) { toast("Completa una lección de esta unidad para repasarla."); return; }
+    if (!studied.length) return { words: 0, exs: [] };
     var list = shuffle(studied.slice()).sort(function (a, b) { return state.srs[a.id].box - state.srs[b.id].box; }).slice(0, 12);
-    var exs = wordExercises(shuffle(list), 12, true, srsEntries().map(function (e) { return e.v; }));
-    if (!exs.length) { toast("Esta unidad aún no tiene palabras para repasar."); return; }
-    openSession("unit", exs.map(function (e) { return { t: "ex", ex: e }; }), { unit: u });
+    return { words: list.length, exs: wordExercises(shuffle(list), 12, true, srsEntries().map(function (e) { return e.v; })) };
+  }
+  function startUnitReview(u) {
+    var r = unitReviewExercises(u);
+    if (!r.words) { toast("Completa una lección de esta unidad para repasarla."); return; }
+    if (!r.exs.length) { toast("Esta unidad aún no tiene palabras para repasar."); return; }
+    openSession("unit", r.exs.map(function (e) { return { t: "ex", ex: e }; }), { unit: u });
   }
 
   function exStepsBefore(i) { var n = 0; for (var k = 0; k < i; k++) if (S.steps[k].t === "ex") n++; return n; }
@@ -2678,6 +2779,11 @@
     }
     return false;
   }
+  // Descripción compacta de un ejercicio (para pruebas): «ex:tipo[-dir]:origen:conf».
+  function describeEx(e) {
+    return "ex:" + e.type + (e.type === "choice" ? (e.promptLang === "m" ? "-m2es" : "-es2m") : e.type === "listen" ? "-" + e.optLang : "") + (e.hand ? ":hand" : e.quick ? ":quick" : ":auto") +
+      ":" + (e.type === "pairs" ? e.items.map(function (x) { return x.conf; }).join("") : (e.vocab ? e.vocab.conf : e.conf || "?"));
+  }
   window.__koox = {
     screen: function () { return screen; },
     solve: solve,
@@ -2707,12 +2813,14 @@
     tryType: function (vid) { var v = COURSE.vocabById[vid]; if (v && canType(v)) openSession("practice", [{ t: "ex", ex: makeType(v) }]); return !!v; },
     plan: function (lid) {
       var l = COURSE.lessonById[lid];
-      return l ? lessonSteps(l).map(function (st) {
-        if (st.t !== "ex") return st.t;
-        var e = st.ex;
-        return "ex:" + e.type + (e.type === "choice" ? (e.promptLang === "m" ? "-m2es" : "-es2m") : e.type === "listen" ? "-" + e.optLang : "") + (e.hand ? ":hand" : e.quick ? ":quick" : ":auto") +
-          ":" + (e.type === "pairs" ? e.items.map(function (x) { return x.conf; }).join("") : (e.vocab ? e.vocab.conf : e.conf || "?"));
-      }) : null;
+      return l ? lessonSteps(l).map(function (st) { return st.t === "ex" ? describeEx(st.ex) : st.t; }) : null;
+    },
+    // Plan del repaso general (sin uid) o del repaso de una unidad, con el estado actual; no abre la sesión.
+    reviewPlan: function (uid) {
+      var u = uid ? COURSE.units.filter(function (x) { return x.id === uid; })[0] : null;
+      if (uid && !u) return null;
+      var r = u ? unitReviewExercises(u) : reviewExercises();
+      return { kind: u ? "unit" : r.kind, steps: r.exs.map(describeEx) };
     },
     storageOK: function () { return storageOK; },
     // Audio: qué hay, qué suena y qué audio corresponde a una palabra, letra o texto.

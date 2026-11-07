@@ -1,0 +1,85 @@
+/* Módulo «Mi milpa»: tarjeta en Inicio, sección en Perfil y vista completa sobre la pestaña.
+   Solo tokens del tema (claro y oscuro salen de ellos), nada de colores sueltos. Clases con prefijo ml-. */
+body.ml-open .toast, body.ml-open .update-note { bottom: auto; top: calc(env(safe-area-inset-top, 0px) + 64px); }
+
+/* Dibujo de las plantas (SVG generado por código) */
+.ml-p { display: inline-grid; place-items: center; flex: none; }
+.ml-svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.ml-soil { fill: none; stroke: var(--line-strong); stroke-width: 2; stroke-linecap: round; }
+.ml-seed { fill: var(--kan-ink); }
+.ml-stem { fill: none; stroke: var(--ok-ink); stroke-width: 2.2; stroke-linecap: round; }
+.ml-leaf, .ml-leaf-l { fill: var(--ok); }
+.ml-leaf-l { stroke: var(--ok); stroke-width: 0.8; stroke-linejoin: round; }
+.ml-flower { fill: var(--kan-hi); stroke: var(--kan); stroke-width: 0.8; }
+.ml-flower-s { fill: none; stroke: var(--kan); stroke-width: 1.8; stroke-linecap: round; }
+.ml-fruit { fill: var(--kan); stroke: var(--kan-ink); stroke-width: 0.8; }
+.ml-rib { fill: none; stroke: var(--kan-ink); stroke-width: 0.9; stroke-linecap: round; }
+.ml-pod { fill: none; stroke: var(--yaax); stroke-width: 3; stroke-linecap: round; }
+.ml-mark { fill: var(--kan-hi); stroke: var(--kan-ink); stroke-width: 1.2; }
+
+/* Tarjeta de Inicio */
+.ml-card .gl-txt { flex: 1 1 auto; gap: 2px; }
+.ml-mini { display: flex; gap: 2px; margin-top: 6px; min-width: 0; overflow: hidden; }
+.ml-mini .ml-p { width: 24px; height: 29px; }
+
+/* Leyenda por etapa (vista completa y Perfil) */
+.ml-stages { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
+.ml-stages > li { display: flex; flex-direction: column; align-items: center; gap: 2px; min-width: 0; text-align: center; }
+.ml-stages .ml-p { width: 30px; height: 36px; }
+.ml-st-n { font-weight: 700; font-size: var(--fs-md); }
+.ml-st-t { font-size: var(--fs-xs); color: var(--muted); line-height: 1.2; overflow-wrap: anywhere; }
+.ml-prof .ml-stages { margin-block: 4px 10px; }
+
+/* Vista completa */
+.ml {
+  position: fixed; inset: 0; z-index: 40; overflow-y: auto; overscroll-behavior: contain;
+  background: var(--bg); color: var(--fg);
+  padding-left: var(--gut-l); padding-right: var(--gut-r);
+}
+.ml-wrap { max-width: var(--col); margin: 0 auto; min-width: 0; display: flex; flex-direction: column; padding-bottom: calc(40px + env(safe-area-inset-bottom, 0px)); }
+.ml-top {
+  position: sticky; top: 0; z-index: 3; display: flex; align-items: center; gap: 4px; background: var(--bg);
+  padding-top: calc(8px + env(safe-area-inset-top, 0px)); padding-bottom: 8px;
+  margin-inline: calc(-1 * var(--gut-l)) calc(-1 * var(--gut-r)); padding-inline: calc(var(--gut-l) - 6px) var(--gut-r);
+}
+.ml-crumb { font-weight: 700; color: var(--muted); }
+.ml-main { display: flex; flex-direction: column; gap: 18px; min-width: 0; padding-top: 4px; }
+.ml-head { display: flex; flex-direction: column; gap: 6px; }
+.ml-head h1 { margin: 0; }
+.ml-head .eyebrow .m { color: var(--yaax-ink); }
+.ml-sum { margin: 0; font-weight: 700; }
+.ml-intro, .ml-note { margin: 0; font-size: var(--fs-sm); }
+.ml-act { display: flex; flex-direction: column; gap: 8px; }
+.ml-legend { padding: 12px; border-radius: var(--r); background: var(--surface); border: 1px solid var(--line); }
+.ml-empty { display: flex; align-items: center; gap: 14px; }
+.ml-empty .ml-p { width: 48px; height: 58px; }
+.ml-empty p { margin: 0; }
+
+.ml-unit { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.ml-ut { margin: 0; display: flex; align-items: baseline; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-size: var(--fs-md); }
+.ml-uc { font-size: var(--fs-sm); color: var(--muted); font-weight: 400; }
+.ml-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(48px, 1fr)); gap: 6px; }
+.ml-grid > li { min-width: 0; display: flex; }
+.ml-plant {
+  width: 100%; min-width: 44px; height: 56px; padding: 4px 3px 2px; border-radius: var(--r-sm); cursor: pointer;
+  background: var(--surface); border: 1px solid var(--line); color: inherit; font: inherit;
+}
+.ml-plant:hover { border-color: var(--line-strong); }
+.ml-plant:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.ml-plant.ml-ready { background: var(--kan-soft); border: 2px solid var(--kan); }
+
+/* Hoja de la planta */
+.ml-sheet { z-index: 52; }
+.ml-sh-head { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.ml-big { width: 64px; height: 76px; padding: 4px; border-radius: var(--r); background: var(--bg-2); }
+.ml-big.ml-ready { background: var(--kan-soft); }
+.ml-sh-txt { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.ml-sh-txt h2 { margin: 0; color: var(--yaax-ink); }
+.ml-gloss { margin: 0; font-size: var(--fs-lg); }
+.ml-lvl, .ml-when { margin: 0; }
+
+/* Un brillo suave en la marca dorada, solo si no se pidió reducir el movimiento */
+@media (prefers-reduced-motion: no-preference) {
+  .ml-ready .ml-mark { animation: ml-glow 2.4s ease-in-out infinite alternate; }
+  @keyframes ml-glow { from { opacity: 1; } to { opacity: 0.55; } }
+}

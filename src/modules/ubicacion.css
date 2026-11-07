@@ -1,0 +1,48 @@
+/* Módulo «Ya sé algo de maya» (prueba de ubicación): tarjeta en Inicio, sección en Perfil y vista completa.
+   Solo tokens del tema (claro y oscuro salen de ellos), nada de colores sueltos. Clases con prefijo ub-. */
+body.ub-open .toast, body.ub-open .update-note { bottom: auto; top: calc(env(safe-area-inset-top, 0px) + 64px); }
+
+/* Tarjeta de Inicio */
+.ub-card { display: flex; flex-direction: column; gap: 12px; border-color: var(--yaax-soft); }
+.ub-card-txt { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.ub-card-t { margin: 0; font-size: var(--fs-md); }
+.ub-card p, .ub-prof p { margin: 0; overflow-wrap: anywhere; }
+.ub-card .btn-row > .btn { flex: 1 1 140px; }
+
+/* Vista completa */
+.ub {
+  position: fixed; inset: 0; z-index: 40; overflow-y: auto; overscroll-behavior: contain;
+  background: var(--bg); color: var(--fg);
+  padding-left: var(--gut-l); padding-right: var(--gut-r);
+}
+.ub-wrap { max-width: var(--col); margin: 0 auto; min-width: 0; display: flex; flex-direction: column; padding-bottom: calc(40px + env(safe-area-inset-bottom, 0px)); }
+.ub-top {
+  position: sticky; top: 0; z-index: 3; display: flex; align-items: center; gap: 4px; background: var(--bg);
+  padding-top: calc(8px + env(safe-area-inset-top, 0px)); padding-bottom: 8px;
+  margin-inline: calc(-1 * var(--gut-l)) calc(-1 * var(--gut-r)); padding-inline: calc(var(--gut-l) - 6px) var(--gut-r);
+}
+.ub-crumb { font-weight: 700; color: var(--muted); min-width: 0; overflow-wrap: anywhere; }
+.ub-main { display: flex; flex-direction: column; gap: 16px; min-width: 0; padding-top: 4px; }
+.ub-head { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.ub-head h1 { margin: 0; overflow-wrap: anywhere; }
+.ub-head .eyebrow { overflow-wrap: anywhere; }
+.ub-box, .ub-confirm { display: flex; flex-direction: column; gap: 10px; }
+.ub-box p, .ub-confirm p { margin: 0; overflow-wrap: anywhere; }
+.ub-confirm { border-color: var(--yaax); background: var(--yaax-soft); }
+.ub-list { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 6px; }
+.ub-note { font-size: var(--fs-sm); }
+.ub-act { display: flex; flex-direction: column; gap: 8px; }
+.ub-units { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.ub-units > li { display: flex; justify-content: space-between; gap: 10px; min-width: 0; padding-block: 4px; border-bottom: 1px solid var(--line); }
+.ub-units > li > span:first-child { min-width: 0; overflow-wrap: anywhere; }
+.ub-pct { color: var(--ok-ink); font-weight: 700; flex: none; }
+
+/* Pregunta */
+.ub-q { display: flex; flex-direction: column; gap: 14px; }
+.ub-ask { margin: 0; color: var(--muted); font-size: var(--fs-sm); }
+.ub-word { margin: 0; font-size: var(--fs-xl); font-weight: 700; line-height: 1.25; overflow-wrap: anywhere; }
+.ub-word .m { color: var(--yaax-ink); }
+.ub-listen { display: flex; justify-content: center; }
+.ub-opts .opt { min-height: 48px; }
+.ub-opts .opt-txt { overflow-wrap: anywhere; }
+.ub [tabindex="-1"]:focus { outline: none; }

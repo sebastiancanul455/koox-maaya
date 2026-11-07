@@ -156,7 +156,7 @@ export function assemble(opts = {}) {
   const res = resourcesPart({ root, sample });
   if (res) extra.push(res);
   // Contenido adicional de los módulos (si existe): lecturas y logros «Puedo…».
-  if (!sample) for (const f of ["puedo.js", "lecturas.js"]) {
+  if (!sample) for (const f of ["puedo.js", "lecturas.js", "historias.js"]) {
     const fp = path.join(root, "src/content", f);
     if (fs.existsSync(fp)) extra.push({ name: "src/content/" + f, code: fs.readFileSync(fp, "utf8") });
   }

@@ -40,6 +40,8 @@ jobs:
           node test/logros.cjs dist/koox-maaya-artifact.html
           node test/lecturas.cjs dist/koox-maaya-artifact.html
           node test/milpa.cjs dist/koox-maaya-artifact.html
+          node test/historias.cjs dist/koox-maaya-artifact.html
+          node test/ubicacion.cjs dist/koox-maaya-artifact.html
       - name: Prueba de la app instalable
         run: node test/pwa.cjs .
       - name: Prueba del estudio de grabación

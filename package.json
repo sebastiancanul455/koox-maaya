@@ -15,7 +15,7 @@
     "test:pwa": "node test/pwa.cjs .",
     "test:sample": "node test/validate.cjs --sample && node build.mjs --sample && node test/smoke.cjs test/sample-build.html",
     "test:pwa:sample": "node build.mjs --sample && node build-web.mjs --sample && node test/pwa.cjs site-sample --artifact test/sample-build.html",
-    "test:modulos": "node test/fsrs.cjs dist/koox-maaya-artifact.html && node test/logros.cjs dist/koox-maaya-artifact.html && node test/lecturas.cjs dist/koox-maaya-artifact.html && node test/milpa.cjs dist/koox-maaya-artifact.html"
+    "test:modulos": "node test/fsrs.cjs dist/koox-maaya-artifact.html && node test/logros.cjs dist/koox-maaya-artifact.html && node test/lecturas.cjs dist/koox-maaya-artifact.html && node test/milpa.cjs dist/koox-maaya-artifact.html && node test/historias.cjs dist/koox-maaya-artifact.html && node test/ubicacion.cjs dist/koox-maaya-artifact.html"
   },
   "devDependencies": {
     "playwright": "1.63.0"

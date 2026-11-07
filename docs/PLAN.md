@@ -30,13 +30,13 @@ lo simple primero · sin cuentas, sin rastreo y sin servidor.
 - [x] Menos ejercicios de elegir opción (≤ 40 % donde hay formas confirmadas)
 - [ ] Lotería exprés, «Escucha al abuelo» (un relato al terminar cada unidad), reto semanal
 - [ ] Glosas al tocar, lecturas por nivel («conoces el 92 % de esta historia») y personajes recurrentes
-- [ ] Historias de «elige qué decir»
+- [x] Historias de «elige qué decir»
 - [x] Diálogos en las unidades nuevas y en las unidades 3, 4 y 8 (la 1, de sonidos sueltos, no lleva)
 - [x] Unidades 10 a 12: ubicación, querer y gustar, imperativo
 - [ ] Unidad 13 (hora, días y fechas): poco atestiguada en las fuentes; falta verificarla con hablantes
 - [ ] Izquierda y derecha: ninguna forma verificada todavía
-- [ ] Ruta para quienes ya entienden maya (prueba de ubicación por escucha)
-- [ ] Publicar en Google Play (app web empaquetada)
+- [x] Prueba de ubicación «Ya sé algo de maya» (por escucha cuando haya voz nativa)
+- [ ] Publicar en Google Play (guía lista en `docs/GOOGLE-PLAY.md`; falta la cuenta de desarrollador)
 
 ## Fase 3 · A2 y creatividad
 - [ ] Unidades A2: pasado, progresivo, perfecto, futuro, rutina, visitas, planes, narración

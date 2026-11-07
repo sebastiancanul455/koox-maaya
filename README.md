@@ -24,6 +24,17 @@ de 2014. *Ko'ox* significa «¡vamos!».
 
 Detalles y excepciones en [`docs/LICENCIAS.md`](docs/LICENCIAS.md).
 
+## Novedades de la v5.5
+
+- **Historias** (Inicio → Historias): tres conversaciones cortas de «elige qué decir» para practicar por
+  gusto. Si una opción no encaja, te dice por qué con amabilidad y eliges otra. Todas las líneas en maya son
+  frases que ya están en el curso (`test/historias.cjs` lo comprueba); tócalas para ver su traducción, sus
+  palabras y oír su audio.
+- **«Ya sé algo de maya».** Una prueba de ubicación breve (4–5 palabras por unidad) propone en qué unidad
+  empezar; con tu confirmación marca como vistas las unidades que ya conoces y manda su vocabulario al
+  repaso (repartido en 7 días), sin XP. Se puede deshacer desde Perfil.
+- **Guías:** [publicar en Google Play](docs/GOOGLE-PLAY.md) y [aviso de privacidad](docs/PRIVACIDAD.md).
+
 ## Novedades de la v5.4
 
 - **Mi milpa (kool).** Cada palabra que repasas es una planta de maíz, frijol o calabaza que crece con su

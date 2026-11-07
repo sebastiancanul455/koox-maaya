@@ -2581,7 +2581,7 @@
       '<p class="muted">Borra tu XP, racha, días con maya, lecciones y repasos de este navegador; tus ajustes se conservan. No se puede deshacer: si quieres conservar tu avance, expórtalo antes.</p>' +
       '<div class="btn-row"><button class="btn ghost-danger" type="button" id="btn-reset">Borrar avance</button></div>' +
       '<p class="reset-msg" id="reset-msg" tabindex="-1" aria-live="polite"></p></section>';
-    h += '<p class="foot">Ko\'ox Maaya v5.4 · proyecto comunitario experimental.</p>';
+    h += '<p class="foot">Ko\'ox Maaya v5.5 · proyecto comunitario experimental.</p>';
     pendingImport = null;
     v.innerHTML = h;
     modCall("bind", v, "profile");

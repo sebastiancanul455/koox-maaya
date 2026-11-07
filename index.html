@@ -1018,6 +1018,93 @@ body.lec-open .toast, body.lec-open .update-note { bottom: auto; top: calc(env(s
 .cd-state { font-size: var(--fs-sm); font-weight: 700; color: var(--yaax-ink); }
 .cd-meta { font-size: var(--fs-sm); }
 
+/* ---- módulo milpa.css ---- */
+/* Módulo «Mi milpa»: tarjeta en Inicio, sección en Perfil y vista completa sobre la pestaña.
+   Solo tokens del tema (claro y oscuro salen de ellos), nada de colores sueltos. Clases con prefijo ml-. */
+body.ml-open .toast, body.ml-open .update-note { bottom: auto; top: calc(env(safe-area-inset-top, 0px) + 64px); }
+
+/* Dibujo de las plantas (SVG generado por código) */
+.ml-p { display: inline-grid; place-items: center; flex: none; }
+.ml-svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.ml-soil { fill: none; stroke: var(--line-strong); stroke-width: 2; stroke-linecap: round; }
+.ml-seed { fill: var(--kan-ink); }
+.ml-stem { fill: none; stroke: var(--ok-ink); stroke-width: 2.2; stroke-linecap: round; }
+.ml-leaf, .ml-leaf-l { fill: var(--ok); }
+.ml-leaf-l { stroke: var(--ok); stroke-width: 0.8; stroke-linejoin: round; }
+.ml-flower { fill: var(--kan-hi); stroke: var(--kan); stroke-width: 0.8; }
+.ml-flower-s { fill: none; stroke: var(--kan); stroke-width: 1.8; stroke-linecap: round; }
+.ml-fruit { fill: var(--kan); stroke: var(--kan-ink); stroke-width: 0.8; }
+.ml-rib { fill: none; stroke: var(--kan-ink); stroke-width: 0.9; stroke-linecap: round; }
+.ml-pod { fill: none; stroke: var(--yaax); stroke-width: 3; stroke-linecap: round; }
+.ml-mark { fill: var(--kan-hi); stroke: var(--kan-ink); stroke-width: 1.2; }
+
+/* Tarjeta de Inicio */
+.ml-card .gl-txt { flex: 1 1 auto; gap: 2px; }
+.ml-mini { display: flex; gap: 2px; margin-top: 6px; min-width: 0; overflow: hidden; }
+.ml-mini .ml-p { width: 24px; height: 29px; }
+
+/* Leyenda por etapa (vista completa y Perfil) */
+.ml-stages { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
+.ml-stages > li { display: flex; flex-direction: column; align-items: center; gap: 2px; min-width: 0; text-align: center; }
+.ml-stages .ml-p { width: 30px; height: 36px; }
+.ml-st-n { font-weight: 700; font-size: var(--fs-md); }
+.ml-st-t { font-size: var(--fs-xs); color: var(--muted); line-height: 1.2; overflow-wrap: anywhere; }
+.ml-prof .ml-stages { margin-block: 4px 10px; }
+
+/* Vista completa */
+.ml {
+  position: fixed; inset: 0; z-index: 40; overflow-y: auto; overscroll-behavior: contain;
+  background: var(--bg); color: var(--fg);
+  padding-left: var(--gut-l); padding-right: var(--gut-r);
+}
+.ml-wrap { max-width: var(--col); margin: 0 auto; min-width: 0; display: flex; flex-direction: column; padding-bottom: calc(40px + env(safe-area-inset-bottom, 0px)); }
+.ml-top {
+  position: sticky; top: 0; z-index: 3; display: flex; align-items: center; gap: 4px; background: var(--bg);
+  padding-top: calc(8px + env(safe-area-inset-top, 0px)); padding-bottom: 8px;
+  margin-inline: calc(-1 * var(--gut-l)) calc(-1 * var(--gut-r)); padding-inline: calc(var(--gut-l) - 6px) var(--gut-r);
+}
+.ml-crumb { font-weight: 700; color: var(--muted); }
+.ml-main { display: flex; flex-direction: column; gap: 18px; min-width: 0; padding-top: 4px; }
+.ml-head { display: flex; flex-direction: column; gap: 6px; }
+.ml-head h1 { margin: 0; }
+.ml-head .eyebrow .m { color: var(--yaax-ink); }
+.ml-sum { margin: 0; font-weight: 700; }
+.ml-intro, .ml-note { margin: 0; font-size: var(--fs-sm); }
+.ml-act { display: flex; flex-direction: column; gap: 8px; }
+.ml-legend { padding: 12px; border-radius: var(--r); background: var(--surface); border: 1px solid var(--line); }
+.ml-empty { display: flex; align-items: center; gap: 14px; }
+.ml-empty .ml-p { width: 48px; height: 58px; }
+.ml-empty p { margin: 0; }
+
+.ml-unit { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.ml-ut { margin: 0; display: flex; align-items: baseline; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-size: var(--fs-md); }
+.ml-uc { font-size: var(--fs-sm); color: var(--muted); font-weight: 400; }
+.ml-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(48px, 1fr)); gap: 6px; }
+.ml-grid > li { min-width: 0; display: flex; }
+.ml-plant {
+  width: 100%; min-width: 44px; height: 56px; padding: 4px 3px 2px; border-radius: var(--r-sm); cursor: pointer;
+  background: var(--surface); border: 1px solid var(--line); color: inherit; font: inherit;
+}
+.ml-plant:hover { border-color: var(--line-strong); }
+.ml-plant:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.ml-plant.ml-ready { background: var(--kan-soft); border: 2px solid var(--kan); }
+
+/* Hoja de la planta */
+.ml-sheet { z-index: 52; }
+.ml-sh-head { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.ml-big { width: 64px; height: 76px; padding: 4px; border-radius: var(--r); background: var(--bg-2); }
+.ml-big.ml-ready { background: var(--kan-soft); }
+.ml-sh-txt { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.ml-sh-txt h2 { margin: 0; color: var(--yaax-ink); }
+.ml-gloss { margin: 0; font-size: var(--fs-lg); }
+.ml-lvl, .ml-when { margin: 0; }
+
+/* Un brillo suave en la marca dorada, solo si no se pidió reducir el movimiento */
+@media (prefers-reduced-motion: no-preference) {
+  .ml-ready .ml-mark { animation: ml-glow 2.4s ease-in-out infinite alternate; }
+  @keyframes ml-glow { from { opacity: 1; } to { opacity: 0.55; } }
+}
+
 /* ---- módulo voces.css ---- */
 /* Perfil → Voces: solo tokens del tema (claro y oscuro), nada de colores sueltos. Clases con prefijo vz-. */
 .vz-count { line-height: 1.2; }
@@ -1033,7 +1120,7 @@ body.lec-open .toast, body.lec-open .update-note { bottom: auto; top: calc(env(s
 .vz-help .btn { align-self: stretch; }
 
 </style>
-<script>window.KOOX_STANDALONE = true; window.KOOX_BUILD = "4f5377351191"; window.KOOX_GRABAR = true;</script>
+<script>window.KOOX_STANDALONE = true; window.KOOX_BUILD = "4575bc0ab9e1"; window.KOOX_GRABAR = true;</script>
 </head>
 <body>
 <div class="app" id="app" lang="es">
@@ -7381,6 +7468,8 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
       answer: answer, options: [answer].concat(picks)
     };
   }
+  // Parte máxima de «elegir opción» en una lección (lo demás: escribir, armar, emparejar, escuchar).
+  var PICK_MAX = 0.4;
   function canType(v) { return v.conf === "alta" && v.nw >= 1 && v.nw <= 3 && !/[…\/]|\.\.\./.test(v.m); }
   // Otra palabra del curso que cubre todo el significado pedido («gracias» lo cubre
   // «muchas gracias; gracias») también es una respuesta válida al escribir.
@@ -7395,6 +7484,28 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
     var alt = v.alt.slice();
     same.forEach(function (x) { alt.push(x.m); alt = alt.concat(x.alt); });
     return { type: "type", auto: true, vocab: v, q: "Escribe en maya", prompt: v.es, answer: v.m, alt: alt };
+  }
+  // «Arma la frase» automático con una expresión confirmada de 2 a 6 palabras: fichas de la forma maya
+  // y 1 o 2 fichas de otras formas confirmadas como distractores.
+  function canBuild(v) { return v.conf === "alta" && v.nw >= 2 && v.nw <= 6 && !/[…\/]|\.\.\./.test(v.m); }
+  function makeBuild(v) {
+    if (!canBuild(v)) return null;
+    var ws = words(v.m).map(tileText).filter(Boolean);
+    if (ws.length < 2) return null;
+    var inM = {}; ws.forEach(function (w) { inM[normalize(w)] = 1; });
+    var ds = [];
+    candidatesFor(v, [v.lesson.vocab, v.unit.vocab, COURSE.vocab]).some(function (x) {
+      if (x.conf !== "alta") return false;
+      words(x.m).map(tileText).forEach(function (t) { if (t && ds.length < 2 && !inM[normalize(t)]) { inM[normalize(t)] = 1; ds.push(t); } });
+      return ds.length >= 2;
+    });
+    return { type: "build", auto: true, vocab: v, conf: "alta", es: v.es, m: v.m, words: ws, distractors: ds };
+  }
+  // Ejercicio de producción para una palabra confirmada: escribir o, en frases, armar (alternando).
+  var buildTurn = Math.random() < 0.5;
+  function makeProduce(v) {
+    if (canBuild(v) && (!canType(v) || (buildTurn = !buildTurn))) return makeBuild(v);
+    return canType(v) ? makeType(v) : null;
   }
   // «Escucha y elige»: solo palabras con voz nativa. Alterna entre elegir la forma escrita (solo si está
   // confirmada: elegir la forma maya ya es producir) y elegir el significado.
@@ -7426,52 +7537,125 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
     if (picks.length < 4) return null;
     return { type: "pairs", auto: true, items: picks };
   }
+  // Un «¿cómo se dice en maya?» escrito a mano (pide el significado de una palabra confirmada que ya se
+  // enseñó en esta lección o antes) se presenta como «Escribe en maya»: producir en vez de elegir. Las
+  // preguntas de forma (tono, ortografía, respuestas en diálogo) se quedan como elección.
+  function handToType(e, lesson) {
+    var v = e.vocab;
+    if (e.type !== "choice" || e.promptLang !== "es" || !v || !canType(v) || v.lesson.order > lesson.order) return null;
+    if (normalize(e.answer) !== normalize(v.m)) return null;
+    var pk = searchKey(String(e.prompt).replace(/\([^)]*\)/g, " "));
+    var parts = v.parts || (v.parts = meaningParts(v.es));
+    if (!(pk && (pk === searchKey(String(v.es).replace(/\([^)]*\)/g, " ")) || parts.indexOf(pk) >= 0 || meaningParts(e.prompt).every(function (p) { return parts.indexOf(p) >= 0; })))) return null;
+    var t = makeType(v);
+    t.auto = false; t.hand = true; t.fromChoice = true; t.prompt = e.prompt; t.conf = e.conf;
+    return t;
+  }
+  // «Completa la frase» (escrito a mano, confirmado) como «Arma la frase»: la frase entera en fichas y las
+  // opciones incorrectas como distractores. Solo frases cortas con traducción.
+  function fillToBuild(e) {
+    var full = exTarget(e), ws = words(full).map(tileText).filter(Boolean);
+    if (!e.es || e.conf !== "alta" || ws.length < 2 || ws.length > 7) return null;
+    var inM = {}; ws.forEach(function (w) { inM[normalize(w)] = 1; });
+    var ds = arr(e.options).map(tileText).filter(function (d) { return d && !inM[normalize(d)] && (inM[normalize(d)] = 1); });
+    return { type: "build", hand: true, fromFill: true, es: e.es, m: full, words: ws, distractors: ds, vocab: e.vocab, conf: e.conf };
+  }
   // Ejercicios de la lección. «pre» son las comprobaciones rápidas ya intercaladas entre las
   // palabras nuevas: cuentan dentro del total y no se repiten aquí.
   function lessonExercises(lesson, pre) {
     pre = pre || [];
-    var hand = lesson.exercises.slice(0, 15).map(function (e) { var c = Object.assign({}, e); c.hand = true; return c; });
+    var hand = lesson.exercises.slice(0, 15).map(function (e) { var c = Object.assign({}, e); c.hand = true; return handToType(c, lesson) || c; });
     var V = lesson.vocab;
     var earlier = lesson.unit.lessons.slice(0, lesson.index).reduce(function (a, l) { return a.concat(l.vocab); }, []);
     var earlierCourse = COURSE.lessons.slice(0, lesson.order).reduce(function (a, l) { return a.concat(l.vocab); }, []);
-    var pairs = V.length ? makePairs(V, [earlier, earlierCourse]) : null;
-    var inPairs = {};
-    if (pairs) pairs.items.forEach(function (x) { inPairs[x.id] = 1; });
-    var recogA = shuffle(V.filter(function (v) { return !inPairs[v.id]; })).map(function (v) { return makeChoice(v, "m2es"); }).filter(Boolean);
-    var typeTurn = Math.random() < 0.5;
-    var recall = shuffle(V.slice()).map(function (v) {
-      if (canType(v)) { typeTurn = !typeTurn; if (typeTurn) return makeType(v); }
-      return makeChoice(v, "es2m") || (canType(v) ? makeType(v) : null);
-    }).filter(Boolean);
-    var recogB = shuffle(V.filter(function (v) { return inPairs[v.id]; })).map(function (v) { return makeChoice(v, "m2es"); }).filter(Boolean);
-    // 1 o 2 de «Escucha y elige» cuando hay voces nativas de las palabras de la lección.
-    var listen = shuffle(V.filter(function (v) { return nativeFor(v); })).slice(0, 2).map(makeListen).filter(Boolean);
+    // Si ya hubo parejas como comprobación rápida, no se repiten aquí.
+    var quickPairs = pre.some(function (e) { return e.type === "pairs"; });
+    var pairs = V.length && !quickPairs ? makePairs(V, [earlier, earlierCourse]) : null;
     // No repite lo que ya pregunta un ejercicio escrito a mano o una comprobación intercalada.
     function autoKey(e) {
       if (e.type === "choice") return (e.promptLang === "m" ? "m2es:" + normalize(e.prompt) : "es2m:" + normalize(e.answer));
       if (e.type === "type") return "type:" + normalize(e.answer);
+      if (e.type === "build") return "build:" + normalize(e.m);
       return "";
     }
-    var handKeys = {};
-    hand.concat(pre).forEach(function (e) { var k = autoKey(e); if (k) handKeys[k] = 1; });
+    var handKeys = {}, handVocab = {};
+    hand.concat(pre).forEach(function (e) {
+      var k = autoKey(e); if (k) handKeys[k] = 1;
+      if (e.vocab && (e.hand || e.type !== "choice")) handVocab[e.vocab.id] = 1;
+    });
+    // Primero reconocer, luego producir: cada palabra ya se vio en su tarjeta (y quizá en una comprobación
+    // rápida), así que lo confirmado se escribe o se arma; lo «por confirmar» solo se reconoce.
+    // Primero las palabras que no pregunta ya un ejercicio escrito a mano.
+    var order = shuffle(V.slice()).sort(function (a, b) { return (handVocab[a.id] ? 1 : 0) - (handVocab[b.id] ? 1 : 0); });
+    var main = order.map(function (v) {
+      var e = makeProduce(v);
+      if (e && !handKeys[autoKey(e)]) return e;
+      var alt = e && e.type === "build" && canType(v) ? makeType(v) : e && e.type === "type" && canBuild(v) ? makeBuild(v) : null;
+      if (alt && !handKeys[autoKey(alt)]) return alt;
+      return makeChoice(v, "m2es") || makeChoice(v, "es2m");
+    }).filter(function (e) { return e && !handKeys[autoKey(e)]; });
+    // Segunda vuelta (lecciones con pocas palabras): la otra forma de producir y luego reconocer.
+    var extra = order.map(function (v) { return canType(v) && canBuild(v) ? makeBuild(v) : null; })
+      .concat(order.map(function (v) { return canType(v) && canBuild(v) ? makeType(v) : null; }), order.map(function (v) { return makeChoice(v, "m2es"); }))
+      .filter(function (e) { return e && !handKeys[autoKey(e)]; });
+    // 1 o 2 de «Escucha y elige» cuando hay voces nativas de las palabras de la lección.
+    var listen = shuffle(V.filter(function (v) { return nativeFor(v); })).slice(0, 2).map(makeListen).filter(Boolean);
     var target = clamp(hand.length + V.length + 3, 10, 15);
     var need = Math.max(0, target - hand.length - pre.length - listen.length);
-    var queue = (pairs ? [pairs] : []).concat(recogA, recall, recogB).filter(function (e) { return !handKeys[autoKey(e)]; });
-    var auto = queue.slice(0, need);
-    // Al menos 3 ejercicios de escribir cuando hay palabras confirmadas que se pueden escribir.
-    var typed = {};
-    hand.concat(auto).forEach(function (e) { if (e.type === "type") typed[normalize(e.answer)] = 1; });
-    var minType = Math.min(3, V.filter(canType).length);
-    var nType = Object.keys(typed).length;
-    // Primero se cambian elecciones español→maya; si no alcanza, también maya→español.
-    ["es", "m"].forEach(function (lang) {
-      for (var i = 0; i < auto.length && nType < minType; i++) {
-        var e = auto[i];
-        if (e.type === "choice" && e.promptLang === lang && e.vocab && canType(e.vocab) && !typed[normalize(e.vocab.m)]) {
-          auto[i] = makeType(e.vocab); typed[normalize(e.vocab.m)] = 1; nType++;
-        }
-      }
+    var queue = (pairs ? [pairs] : []).concat(main, extra);
+    // Sin alargar la lección: como mucho tantos ejercicios automáticos como permiten sus palabras (una
+    // elección de reconocer y una de producir por palabra que no pregunte ya otro ejercicio, más parejas).
+    var room = (V.length ? 1 : 0) - pre.filter(function (e) { return e.type === "pairs"; }).length;
+    V.forEach(function (v) {
+      var n = normalize(v.m);
+      if (!handKeys["m2es:" + n] && makeChoice(v, "m2es")) room++;
+      var es2m = !handKeys["es2m:" + n] && makeChoice(v, "es2m");
+      // Antes se escribía la mitad de las palabras escribibles y la otra mitad se elegía en maya.
+      if (canType(v) ? !handKeys["type:" + n] : es2m) room++;
+      else if (canType(v) && es2m) room += 0.5;
     });
+    need = Math.min(need, Math.max(0, Math.round(room)));
+    var seenKey = {};
+    var auto = queue.filter(function (e) { var k = autoKey(e); if (k && seenKey[k]) return false; if (k) seenKey[k] = 1; return true; }).slice(0, need);
+    // Repaso breve dentro de la lección: producir palabras confirmadas de lecciones anteriores (primero de
+    // la unidad) cuando las de esta lección ya se producen en otro ejercicio o no alcanzan.
+    var back = shuffle(earlier.slice()).concat(shuffle(earlierCourse.slice(-40))).filter(function (x) { return canType(x) || canBuild(x); });
+    function fresh(nx) { return nx && !handKeys[autoKey(nx)] && !seenKey[autoKey(nx)] ? nx : null; }
+    function produceFresh(v) {
+      var nx = makeProduce(v);
+      return fresh(nx) || (canType(v) && canBuild(v) ? fresh(nx && nx.type === "type" ? makeBuild(v) : makeType(v)) : null);
+    }
+    function produceBack() { var nx = null; while (!nx && back.length) nx = produceFresh(back.shift()); return nx; }
+    while (auto.length < need) {
+      var nb = produceBack();
+      if (!nb) break;
+      seenKey[autoKey(nb)] = 1; auto.push(nb);
+    }
+    // Elegir opción (elecciones y completar con opciones) es como mucho el 40 % de la lección: si se pasa,
+    // se cambian por producción, primero las elecciones automáticas de palabras confirmadas y las de
+    // palabras «por confirmar» que ya se reconocen en otro ejercicio; luego los «completa la frase»
+    // escritos a mano (pasan a «arma la frase» con las opciones como distractores).
+    // Las elecciones escritas a mano y la única comprobación de lo «por confirmar» se quedan: puede quedar por encima.
+    function isPick(e) { return e.type === "choice" || e.type === "fill"; }
+    var total = hand.length + pre.length + auto.length + listen.length;
+    var picks = hand.concat(pre, auto).filter(isPick).length;
+    var recog = {};
+    hand.concat(pre).forEach(function (e) {
+      if (e.type === "choice" && e.vocab) recog[e.vocab.id] = 1;
+      if (e.type === "pairs") e.items.forEach(function (x) { recog[x.id] = 1; });
+    });
+    function swap(arrX, mk) {
+      for (var i = 0; i < arrX.length && picks > PICK_MAX * total; i++) {
+        var nx = isPick(arrX[i]) ? mk(arrX[i]) : null;
+        if (nx && !handKeys[autoKey(nx)] && !seenKey[autoKey(nx)]) { seenKey[autoKey(nx)] = 1; arrX[i] = nx; picks--; }
+      }
+    }
+    swap(auto, function (e) {
+      if (e.type !== "choice" || !e.vocab || e.vocab.conf !== "alta") return null;
+      return produceFresh(e.vocab) || produceBack();
+    });
+    swap(auto, function (e) { return e.type === "choice" && e.vocab && recog[e.vocab.id] ? produceBack() : null; });
+    swap(hand, function (e) { return e.type === "fill" ? fillToBuild(e) : null; });
     // Fases: reconocer -> relacionar -> producir.
     var all = hand.concat(auto, listen);
     function phase(e) {
@@ -7484,13 +7668,15 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
     return shuffle(buckets[0]).concat(shuffle(buckets[1]), shuffle(buckets[2]));
   }
   function wordExercises(list, max, withPairs, pairPool) {
-    var out = [], n = 0;
+    // Nivel 2 o más: la palabra ya se reconoce, así que se produce (escribir o armar). En nivel 0–1 se
+    // reconoce mientras las elecciones no pasen del 30 % de lo armado hasta ahí (las de palabras «por
+    // confirmar», que solo se reconocen, también cuentan); lo demás se produce.
+    var out = [], picks = 0;
     list.slice(0, max).forEach(function (v) {
-      var r = n++ % 3, e = null;
-      if (r === 1 && canType(v)) e = makeType(v);
-      else if (r === 2) e = makeChoice(v, "es2m");
-      if (!e) e = makeChoice(v, "m2es") || makeChoice(v, "es2m") || (canType(v) ? makeType(v) : null);
-      if (e) out.push(e);
+      var r = state.srs[v.id], e = null;
+      if ((!r || r.box < 2) && picks < Math.floor(0.3 * (out.length + 1))) e = makeChoice(v, "m2es");
+      if (!e) e = makeProduce(v) || makeChoice(v, "m2es") || makeChoice(v, "es2m");
+      if (e) { out.push(e); if (e.type === "choice") picks++; }
     });
     // En los repasos también: hasta 2 de «Escucha y elige» con las palabras que tienen voz nativa.
     for (var i = 0, nl = 0; i < out.length && nl < 2; i++) {
@@ -7535,9 +7721,16 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
     l.teach.forEach(function (c) { steps.push({ t: "teach", card: c }); });
     var handPrompts = {};
     l.exercises.forEach(function (e) { if (e.type === "choice" && e.promptLang === "m") handPrompts[normalize(e.prompt)] = 1; });
-    var i = 0;
-    vocabChunks(l.vocab).forEach(function (chunk) {
+    var i = 0, shown = [];
+    vocabChunks(l.vocab).forEach(function (chunk, ci) {
       chunk.forEach(function (v) { steps.push({ t: "vocab", v: v, i: i++, n: l.vocab.length }); });
+      // Tras el primer grupo, la comprobación es emparejar el grupo nuevo con lo ya visto en la lección
+      // (al menos 2 palabras del grupo y solo formas confirmadas); si no alcanza, una elección.
+      var qp = ci > 0 ? makePairs(chunk, [shown]) : null;
+      shown = shown.concat(chunk);
+      if (qp && qp.items.filter(function (x) { return chunk.indexOf(x) >= 0; }).length >= 2) {
+        qp.quick = true; pre.push(qp); steps.push({ t: "ex", ex: qp }); return;
+      }
       var cands = shuffle(chunk.filter(function (v) { return !handPrompts[normalize(v.m)]; }));
       for (var c = 0; c < cands.length; c++) {
         var e = makeChoice(cands[c], "m2es");
@@ -7548,24 +7741,32 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
     lessonExercises(l, pre).forEach(function (e) { steps.push({ t: "ex", ex: e }); });
     return steps;
   }
-  function startReview() {
+  // Ejercicios del repaso general: vencidas o, si nada vence, práctica libre con las más débiles.
+  function reviewExercises() {
     var due = dueList(), kind = "review", list;
     if (due.length) list = due.slice(0, 15).map(function (e) { return e.v; });
     else { kind = "practice"; list = weakList().slice(0, 12).map(function (e) { return e.v; }); }
-    if (!list.length) { toast("Completa una lección para empezar a repasar."); return; }
-    var exs = wordExercises(shuffle(list), 15, false);
-    if (!exs.length) { toast("Aún no hay suficientes palabras para repasar."); return; }
-    openSession(kind, exs.map(function (e) { return { t: "ex", ex: e }; }));
+    return { kind: kind, words: list.length, exs: list.length ? wordExercises(shuffle(list), 15, false) : [] };
+  }
+  function startReview() {
+    var r = reviewExercises();
+    if (!r.words) { toast("Completa una lección para empezar a repasar."); return; }
+    if (!r.exs.length) { toast("Aún no hay suficientes palabras para repasar."); return; }
+    openSession(r.kind, r.exs.map(function (e) { return { t: "ex", ex: e }; }));
   }
   function unitStarted(u) { return u.lessons.some(lessonDone); }
-  function startUnitReview(u) {
-    // Solo palabras que ya se estudiaron: nunca se repasa lo que no se ha enseñado.
+  // Solo palabras que ya se estudiaron: nunca se repasa lo que no se ha enseñado.
+  function unitReviewExercises(u) {
     var studied = u.vocab.filter(function (v) { return state.srs[v.id]; });
-    if (!studied.length) { toast("Completa una lección de esta unidad para repasarla."); return; }
+    if (!studied.length) return { words: 0, exs: [] };
     var list = shuffle(studied.slice()).sort(function (a, b) { return state.srs[a.id].box - state.srs[b.id].box; }).slice(0, 12);
-    var exs = wordExercises(shuffle(list), 12, true, srsEntries().map(function (e) { return e.v; }));
-    if (!exs.length) { toast("Esta unidad aún no tiene palabras para repasar."); return; }
-    openSession("unit", exs.map(function (e) { return { t: "ex", ex: e }; }), { unit: u });
+    return { words: list.length, exs: wordExercises(shuffle(list), 12, true, srsEntries().map(function (e) { return e.v; })) };
+  }
+  function startUnitReview(u) {
+    var r = unitReviewExercises(u);
+    if (!r.words) { toast("Completa una lección de esta unidad para repasarla."); return; }
+    if (!r.exs.length) { toast("Esta unidad aún no tiene palabras para repasar."); return; }
+    openSession("unit", r.exs.map(function (e) { return { t: "ex", ex: e }; }), { unit: u });
   }
 
   function exStepsBefore(i) { var n = 0; for (var k = 0; k < i; k++) if (S.steps[k].t === "ex") n++; return n; }
@@ -8743,7 +8944,7 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
       '<p class="muted">Borra tu XP, racha, días con maya, lecciones y repasos de este navegador; tus ajustes se conservan. No se puede deshacer: si quieres conservar tu avance, expórtalo antes.</p>' +
       '<div class="btn-row"><button class="btn ghost-danger" type="button" id="btn-reset">Borrar avance</button></div>' +
       '<p class="reset-msg" id="reset-msg" tabindex="-1" aria-live="polite"></p></section>';
-    h += '<p class="foot">Ko\'ox Maaya v5.3 · proyecto comunitario experimental.</p>';
+    h += '<p class="foot">Ko\'ox Maaya v5.4 · proyecto comunitario experimental.</p>';
     pendingImport = null;
     v.innerHTML = h;
     modCall("bind", v, "profile");
@@ -8954,6 +9155,11 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
     }
     return false;
   }
+  // Descripción compacta de un ejercicio (para pruebas): «ex:tipo[-dir]:origen:conf».
+  function describeEx(e) {
+    return "ex:" + e.type + (e.type === "choice" ? (e.promptLang === "m" ? "-m2es" : "-es2m") : e.type === "listen" ? "-" + e.optLang : "") + (e.hand ? ":hand" : e.quick ? ":quick" : ":auto") +
+      ":" + (e.type === "pairs" ? e.items.map(function (x) { return x.conf; }).join("") : (e.vocab ? e.vocab.conf : e.conf || "?"));
+  }
   window.__koox = {
     screen: function () { return screen; },
     solve: solve,
@@ -8983,12 +9189,14 @@ window.COURSE_AUDIO = {"version":1,"entries":[{"key":"afi-a","file":"audio/afi-a
     tryType: function (vid) { var v = COURSE.vocabById[vid]; if (v && canType(v)) openSession("practice", [{ t: "ex", ex: makeType(v) }]); return !!v; },
     plan: function (lid) {
       var l = COURSE.lessonById[lid];
-      return l ? lessonSteps(l).map(function (st) {
-        if (st.t !== "ex") return st.t;
-        var e = st.ex;
-        return "ex:" + e.type + (e.type === "choice" ? (e.promptLang === "m" ? "-m2es" : "-es2m") : e.type === "listen" ? "-" + e.optLang : "") + (e.hand ? ":hand" : e.quick ? ":quick" : ":auto") +
-          ":" + (e.type === "pairs" ? e.items.map(function (x) { return x.conf; }).join("") : (e.vocab ? e.vocab.conf : e.conf || "?"));
-      }) : null;
+      return l ? lessonSteps(l).map(function (st) { return st.t === "ex" ? describeEx(st.ex) : st.t; }) : null;
+    },
+    // Plan del repaso general (sin uid) o del repaso de una unidad, con el estado actual; no abre la sesión.
+    reviewPlan: function (uid) {
+      var u = uid ? COURSE.units.filter(function (x) { return x.id === uid; })[0] : null;
+      if (uid && !u) return null;
+      var r = u ? unitReviewExercises(u) : reviewExercises();
+      return { kind: u ? "unit" : r.kind, steps: r.exs.map(describeEx) };
     },
     storageOK: function () { return storageOK; },
     // Audio: qué hay, qué suena y qué audio corresponde a una palabra, letra o texto.
@@ -10071,6 +10279,264 @@ registerModule({
       }
     };
   } catch (e) { /* un módulo no tumba la app */ }
+})();
+
+  /* ---- módulo milpa.js ---- */
+/* ================= Mi milpa (kool) ================= */
+// Una metáfora amable del repaso: cada palabra de state.srs es una planta de la milpa tradicional (maíz, frijol o
+// calabaza, elegida por su id de forma determinista). Su etapa sale del nivel (box 1–5): semilla, brote, mata,
+// en flor, con fruto. Las palabras que tocan hoy (o antes) están «listas para cosechar», con una marca dorada.
+// Nada se marchita ni se pierde: una palabra que baja de nivel solo vuelve a una etapa anterior.
+// Sin monedas, sin metas y sin comparaciones. No guarda estado propio: todo se deriva de state.srs.
+// Pantallas: tarjeta en Inicio (homeTop, marcada .gami: el modo tranquilo la oculta) y sección en Perfil (sin .gami:
+// en modo tranquilo la vista completa sigue a mano desde ahí). La vista completa va a pantalla completa sobre la
+// pestaña, con una entrada de historial: Atrás de Android cierra primero la hoja de la planta y luego la vista.
+// Usa del núcleo: state, esc, $, $$, COURSE, srsEntries, today, daysFrom, clamp, plural, histPush, histState,
+// trapFocus, startReview, screen y S (sesión activa).
+(function () {
+  var KINDS = [
+    { k: "maiz", name: "maíz" },
+    { k: "frijol", name: "frijol" },
+    { k: "calabaza", name: "calabaza" }
+  ];
+  var STAGES = ["semilla", "brote", "mata", "en flor", "con fruto"];
+  var MINI = 10; // plantas en la fila de la tarjeta de Inicio
+  var BACK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>';
+
+  /* ---------- Datos derivados ---------- */
+  // Tipo de planta por id: un hash sencillo y estable (el mismo id da siempre la misma planta).
+  function kindOf(id) {
+    var h = 0, s = String(id);
+    for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+    return KINDS[h % 3];
+  }
+  function stageOf(r) { return clamp(Math.round(Number(r && r.box) || 0), 1, 5); } // nivel 0 (recién sembrada) = semilla
+  function plants() {
+    var t = today(), order = {};
+    COURSE.vocab.forEach(function (v, i) { order[v.id] = i; });
+    return srsEntries().map(function (e) {
+      return { v: e.v, r: e.r, kind: kindOf(e.v.id), stage: stageOf(e.r), ready: !e.r.due || e.r.due <= t };
+    }).sort(function (a, b) { return order[a.v.id] - order[b.v.id]; });
+  }
+  function summary(ps) {
+    var by = [0, 0, 0, 0, 0], ready = 0;
+    ps.forEach(function (p) { by[p.stage - 1]++; if (p.ready) ready++; });
+    return { total: ps.length, ready: ready, byStage: by };
+  }
+  function countText(s) {
+    return s.total + " " + plural(s.total, "planta", "plantas") + " · " + s.ready + " " + plural(s.ready, "lista", "listas") + " para cosechar";
+  }
+  function koolWord() {
+    var v = COURSE.vocab.filter(function (x) { return x.m === "kool"; })[0];
+    return v ? '<span class="m" lang="yua">' + esc(v.m) + "</span>" : "";
+  }
+
+  /* ---------- Dibujo (SVG por código; los colores salen del CSS con tokens del tema) ---------- */
+  var ART = {
+    maiz: [
+      '<ellipse class="ml-seed" cx="20" cy="41" rx="3.6" ry="2.6"/>',
+      '<path class="ml-stem" d="M20 44V33"/><path class="ml-leaf-l" d="M20 39q-6-1-8-6q5 0 8 4"/><path class="ml-leaf-l" d="M20 36q6-1 8-6q-5 0-8 4"/>',
+      '<path class="ml-stem" d="M20 44V18"/><path class="ml-leaf-l" d="M20 40q-9 0-13-8q7 1 13 6"/><path class="ml-leaf-l" d="M20 33q9 0 13-8q-7 1-13 6"/><path class="ml-leaf-l" d="M20 26q-7 0-10-7q6 1 10 5"/>',
+      '<path class="ml-flower-s" d="M20 18V10M20 18l-4-6M20 18l4-6"/>',
+      '<path class="ml-fruit" d="M22 34c1-6 4-9 6-9c1 3-1 8-6 9z"/><path class="ml-leaf-l" d="M21 35q1-6 4-8q-1 5-4 8"/>'
+    ],
+    frijol: [
+      '<ellipse class="ml-seed" cx="20" cy="41" rx="4" ry="2.4"/>',
+      '<path class="ml-stem" d="M20 44V36"/><circle class="ml-leaf" cx="16.5" cy="35" r="3.2"/><circle class="ml-leaf" cx="23.5" cy="35" r="3.2"/>',
+      '<path class="ml-stem" d="M20 44C17 37 23 30 20 20"/><ellipse class="ml-leaf" cx="14" cy="34" rx="4.5" ry="3"/><ellipse class="ml-leaf" cx="26" cy="30" rx="4.5" ry="3"/><ellipse class="ml-leaf" cx="15" cy="24" rx="4" ry="2.8"/><ellipse class="ml-leaf" cx="21" cy="18" rx="3.4" ry="3"/>',
+      '<circle class="ml-flower" cx="25" cy="22" r="2.2"/><circle class="ml-flower" cx="12" cy="29" r="2.2"/>',
+      '<path class="ml-pod" d="M27 26q2 6-1 11"/><path class="ml-pod" d="M13 30q-2 5 0 9"/>'
+    ],
+    calabaza: [
+      '<ellipse class="ml-seed" cx="20" cy="41" rx="3.2" ry="2.2"/>',
+      '<path class="ml-stem" d="M20 44V37"/><ellipse class="ml-leaf" cx="16" cy="36" rx="4" ry="2.6"/><ellipse class="ml-leaf" cx="24" cy="36" rx="4" ry="2.6"/>',
+      '<path class="ml-stem" d="M5 42Q20 34 35 42"/><circle class="ml-leaf" cx="10" cy="34" r="5"/><circle class="ml-leaf" cx="21" cy="30" r="6"/><circle class="ml-leaf" cx="31" cy="34" r="5"/>',
+      '<path class="ml-flower" d="M27 22l2 3.5 4-.5-2.5 3 2 3.5-4-1-2.5 3-.5-4-4-1.5 3.5-2z"/>',
+      '<ellipse class="ml-fruit" cx="21" cy="39" rx="8" ry="5"/><path class="ml-rib" d="M21 34.5v9M16.5 35.5q-1 3.5 0 7M25.5 35.5q1 3.5 0 7"/>'
+    ]
+  };
+  function plantSVG(p) {
+    var parts = ART[p.kind.k], h = '<path class="ml-soil" d="M4 44.5h32"/>';
+    if (p.stage === 1) h += parts[0];
+    else for (var i = 1; i < p.stage; i++) h += parts[i];
+    if (p.ready) h += '<circle class="ml-mark" cx="34" cy="7" r="4.5"/>';
+    return '<svg class="ml-svg" viewBox="0 0 40 48" aria-hidden="true" focusable="false">' + h + "</svg>";
+  }
+  function plantLabel(p) {
+    return p.v.m + ", " + p.v.es + ": " + p.kind.name + ", " + STAGES[p.stage - 1] + ", nivel " + p.stage + " de 5" + (p.ready ? ", lista para cosechar" : "");
+  }
+  function miniRow(ps) {
+    // Primero las listas para cosechar; luego las más crecidas. Solo adorno: el conteo va en el aria-label.
+    var pick = ps.slice().sort(function (a, b) { return (b.ready - a.ready) || (b.stage - a.stage); }).slice(0, MINI);
+    return '<span class="ml-mini" aria-hidden="true">' + pick.map(function (p) {
+      return '<span class="ml-p ml-' + p.kind.k + " st-" + p.stage + (p.ready ? " ml-ready" : "") + '">' + plantSVG(p) + "</span>";
+    }).join("") + "</span>";
+  }
+  function stageList(s) {
+    return '<ul class="ml-stages">' + STAGES.map(function (n, i) {
+      var demo = { kind: KINDS[1], stage: i + 1, ready: false };
+      return '<li><span class="ml-p ml-frijol st-' + (i + 1) + '" aria-hidden="true">' + plantSVG(demo) + '</span><span class="ml-st-n num">' + s.byStage[i] +
+        '</span><span class="ml-st-t">' + n + "</span></li>";
+    }).join("") + "</ul>";
+  }
+
+  /* ---------- Pantalla completa ---------- */
+  var M = { open: false, root: null, sheetEl: null, sheet: null, prev: "home", opener: null, list: [] };
+
+  function ensureRoot() {
+    if (M.root) return;
+    var host = $("#app") || document.body, r = document.createElement("div");
+    r.className = "ml"; r.id = "ml-root"; r.hidden = true;
+    r.setAttribute("role", "dialog"); r.setAttribute("aria-modal", "true"); r.setAttribute("aria-labelledby", "ml-h");
+    r.addEventListener("click", onClick);
+    host.appendChild(r);
+    var s = document.createElement("div");
+    s.className = "overlay bottom-sheet ml-sheet"; s.id = "ml-sheet"; s.hidden = true;
+    s.innerHTML = '<div class="scrim" data-act="sheet-close"></div><div class="modal bottom" role="dialog" aria-modal="true" aria-labelledby="ml-w-title" id="ml-modal"></div>';
+    s.addEventListener("click", onClick);
+    host.appendChild(s);
+    M.root = r; M.sheetEl = s;
+  }
+  function viewHTML() {
+    var ps = plants(), s = summary(ps), kool = koolWord();
+    M.list = ps;
+    var h = '<div class="ml-wrap"><div class="ml-top"><button class="icon-btn" type="button" data-act="back" aria-label="Volver">' + BACK + "</button>" +
+      '<span class="ml-crumb">Mi milpa</span></div><div class="ml-main">' +
+      '<header class="ml-head"><p class="eyebrow">' + (kool ? kool + " · " : "") + "la milpa</p>" +
+      '<h1 id="ml-h">Mi milpa</h1>';
+    if (!s.total) {
+      return h + "</header>" + '<div class="ml-empty card">' + '<span class="ml-p ml-maiz st-1" aria-hidden="true">' + plantSVG({ kind: KINDS[0], stage: 1, ready: false }) + "</span>" +
+        "<p><strong>Siembra tu milpa:</strong> termina una lección y aparecerá tu primera planta.</p></div></div></div>";
+    }
+    h += '<p class="ml-sum" id="ml-sum" aria-label="' + esc(countText(s)) + '">' + esc(countText(s)) + "</p>" +
+      '<p class="muted ml-intro">Cada palabra que repasas es una planta de maíz, frijol o calabaza. Crece con cada nivel y nunca se marchita; ' +
+      "las que tienen la marca dorada están listas para cosechar hoy.</p></header>" +
+      '<div class="ml-act"><button class="btn primary wide" type="button" id="ml-harvest" data-act="harvest">' +
+      (s.ready ? "Cosechar (repasar " + s.ready + ")" : "Practicar un rato") + "</button>" +
+      (s.ready ? "" : '<p class="muted ml-note">Hoy no hay nada listo para cosechar. Tus plantas siguen creciendo.</p>') + "</div>" +
+      '<section class="ml-legend" aria-label="Plantas por etapa">' + stageList(s) + "</section>";
+    COURSE.units.forEach(function (u) {
+      var mine = ps.filter(function (p) { return p.v.unit === u; });
+      if (!mine.length) return;
+      var rd = mine.filter(function (p) { return p.ready; }).length, hid = "ml-u-" + esc(u.id);
+      h += '<section class="ml-unit" aria-labelledby="' + hid + '"><h2 class="ml-ut" id="' + hid + '"><span class="eyebrow">Unidad ' + u.n + "</span>" +
+        '<span class="ml-uc">' + mine.length + " " + plural(mine.length, "planta", "plantas") + (rd ? " · " + rd + " " + plural(rd, "lista", "listas") : "") + "</span></h2>" +
+        '<ul class="ml-grid">' + mine.map(function (p) {
+          return '<li><button class="ml-p ml-plant ml-' + p.kind.k + " st-" + p.stage + (p.ready ? " ml-ready" : "") + '" type="button" data-act="plant" data-id="' + esc(p.v.id) +
+            '" aria-label="' + esc(plantLabel(p)) + '">' + plantSVG(p) + "</button></li>";
+        }).join("") + "</ul></section>";
+    });
+    return h + "</div></div>";
+  }
+  function render() { M.root.innerHTML = viewHTML(); }
+  function openView(opener) {
+    if (M.open) return;
+    ensureRoot();
+    M.open = true; M.prev = screen; M.opener = opener || null;
+    render();
+    M.root.hidden = false; M.root.scrollTop = 0;
+    document.body.classList.add("locked", "ml-open");
+    screen = "milpa";
+    histPush("milpa");
+    var b = $("[data-act=back]", M.root);
+    if (b) b.focus({ preventScroll: true });
+  }
+  // keepHist: la entrada de historial se queda para la sesión que se abre enseguida (openSession la reemplaza).
+  function closeView(fromPop, keepHist) {
+    if (!M.open) return;
+    closeSheet(true);
+    M.open = false;
+    M.root.hidden = true; M.root.innerHTML = "";
+    document.body.classList.remove("locked", "ml-open");
+    screen = M.prev || "home";
+    if (!fromPop && !keepHist && histState() === "milpa") { try { history.back(); } catch (e) { /* marco sin historial */ } }
+    var op = M.opener;
+    M.opener = null;
+    if (!keepHist && op && document.contains(op)) op.focus({ preventScroll: true });
+  }
+  function harvest() {
+    closeView(false, true);
+    startReview();
+    if (!S && histState() === "milpa") { try { history.back(); } catch (e) { /* marco sin historial */ } }
+  }
+  function sheetHTML(p) {
+    var t = today(), d = p.r.due ? daysFrom(t, p.r.due) : 0;
+    var when = p.ready ? "Lista para cosechar hoy." : "Estará lista para cosechar " + (d === 1 ? "mañana." : "en " + d + " días.");
+    return '<p class="eyebrow">' + esc(p.kind.name.charAt(0).toUpperCase() + p.kind.name.slice(1)) + " · " + STAGES[p.stage - 1] + "</p>" +
+      '<div class="ml-sh-head"><span class="ml-p ml-big ml-' + p.kind.k + " st-" + p.stage + (p.ready ? " ml-ready" : "") + '" aria-hidden="true">' + plantSVG(p) + "</span>" +
+      '<div class="ml-sh-txt"><h2 id="ml-w-title" class="m" lang="yua">' + esc(p.v.m) + "</h2>" + '<p class="ml-gloss">' + esc(p.v.es) + "</p></div></div>" +
+      '<p class="ml-lvl">Nivel <span class="num">' + p.stage + "</span> de 5 · " + STAGES[p.stage - 1] + "</p>" +
+      '<p class="muted ml-when">' + when + " Unidad " + p.v.unit.n + ".</p>" +
+      '<div class="modal-actions"><button class="btn text" type="button" id="ml-close" data-act="sheet-close">Cerrar</button></div>';
+  }
+  function openSheet(id, opener) {
+    var p = M.list.filter(function (x) { return x.v.id === id; })[0];
+    if (!p) return;
+    M.sheet = { id: id, opener: opener || null };
+    $("#ml-modal", M.sheetEl).innerHTML = sheetHTML(p);
+    M.sheetEl.hidden = false;
+    var f = $("#ml-close", M.sheetEl);
+    if (f) f.focus({ preventScroll: true });
+  }
+  function closeSheet(quiet) {
+    if (!M.sheet) return;
+    var op = M.sheet.opener;
+    M.sheet = null; M.sheetEl.hidden = true;
+    if (!quiet && op && document.contains(op)) op.focus({ preventScroll: true });
+  }
+  function goBack() { if (M.sheet) closeSheet(); else closeView(false); }
+  function onClick(e) {
+    var t = e.target.closest("[data-act]");
+    if (!t) return;
+    var a = t.getAttribute("data-act");
+    if (a === "back") goBack();
+    else if (a === "sheet-close") closeSheet();
+    else if (a === "harvest") harvest();
+    else if (a === "plant") openSheet(t.getAttribute("data-id"), t);
+  }
+  window.addEventListener("popstate", function () {
+    if (!M.open) return;
+    if (M.sheet) { closeSheet(); histPush("milpa"); return; }
+    closeView(true);
+  });
+  document.addEventListener("visibilitychange", function () {
+    // El núcleo repinta la pestaña al volver (otro día puede haber más listas): la vista sigue encima, al día.
+    if (M.open && document.visibilityState === "visible") { screen = "milpa"; if (!M.sheet) render(); }
+  });
+  document.addEventListener("keydown", function (e) {
+    if (!M.open || e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey) return;
+    if (e.key === "Escape") { e.preventDefault(); goBack(); }
+    else if (e.key === "Tab") trapFocus(e, M.sheet ? M.sheetEl : M.root);
+  });
+
+  /* ---------- Ganchos del núcleo ---------- */
+  registerModule({
+    homeTop: function () {
+      var ps = plants(), s = summary(ps);
+      var sub = s.total ? esc(countText(s)) : "Siembra tu milpa: termina una lección y aparecerá tu primera planta";
+      var label = s.total ? "Mi milpa: " + countText(s) + ". Abrir la vista completa" : "Mi milpa: todavía sin plantas. Abrir";
+      return '<button class="guide-link card ml-card gami" type="button" id="btn-home-milpa" aria-label="' + esc(label) + '">' +
+        '<span class="gl-txt"><span class="gl-t">Mi milpa</span><span class="gl-s">' + sub + "</span>" + (s.total ? miniRow(ps) : "") + "</span></button>";
+    },
+    profile: function () {
+      var s = summary(plants());
+      var h = '<section class="section ml-prof" id="milpa" aria-labelledby="milpa-title"><h2 id="milpa-title">Mi milpa</h2>';
+      if (!s.total) h += '<p class="muted">Siembra tu milpa: termina una lección y aparecerá tu primera planta.</p>';
+      else h += '<p class="ml-sum">' + esc(countText(s)) + "</p>" + stageList(s);
+      return h + '<div class="btn-row"><button class="btn tonal" type="button" id="btn-profile-milpa">Ver mi milpa</button></div></section>';
+    },
+    bind: function (root, where) {
+      var b = $(where === "home" ? "#btn-home-milpa" : "#btn-profile-milpa", root);
+      if (b) b.addEventListener("click", function () { openView(b); });
+    }
+  });
+
+  // Para las pruebas (test/milpa.cjs): lo que se dibuja, sin tocar el estado.
+  if (window.__koox) window.__koox.milpa = {
+    plants: function () { return plants().map(function (p) { return { id: p.v.id, kind: p.kind.k, stage: p.stage, ready: p.ready }; }); },
+    summary: function () { return summary(plants()); },
+    view: function () { return { open: M.open, sheet: M.sheet ? M.sheet.id : null }; }
+  };
 })();
 
   /* ---- módulo voces.js ---- */

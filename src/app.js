@@ -1240,6 +1240,18 @@
     var target = clamp(hand.length + V.length + 3, 10, 15);
     var need = Math.max(0, target - hand.length - pre.length - listen.length);
     var queue = (pairs ? [pairs] : []).concat(main, extra);
+    // Sin alargar la lección: como mucho tantos ejercicios automáticos como permiten sus palabras (una
+    // elección de reconocer y una de producir por palabra que no pregunte ya otro ejercicio, más parejas).
+    var room = (V.length ? 1 : 0) - pre.filter(function (e) { return e.type === "pairs"; }).length;
+    V.forEach(function (v) {
+      var n = normalize(v.m);
+      if (!handKeys["m2es:" + n] && makeChoice(v, "m2es")) room++;
+      var es2m = !handKeys["es2m:" + n] && makeChoice(v, "es2m");
+      // Antes se escribía la mitad de las palabras escribibles y la otra mitad se elegía en maya.
+      if (canType(v) ? !handKeys["type:" + n] : es2m) room++;
+      else if (canType(v) && es2m) room += 0.5;
+    });
+    need = Math.min(need, Math.max(0, Math.round(room)));
     var seenKey = {};
     var auto = queue.filter(function (e) { var k = autoKey(e); if (k && seenKey[k]) return false; if (k) seenKey[k] = 1; return true; }).slice(0, need);
     // Repaso breve dentro de la lección: producir palabras confirmadas de lecciones anteriores (primero de
@@ -1293,14 +1305,15 @@
     return shuffle(buckets[0]).concat(shuffle(buckets[1]), shuffle(buckets[2]));
   }
   function wordExercises(list, max, withPairs, pairPool) {
-    // Nivel 2 o más: la palabra ya se reconoce, así que se produce (escribir o armar). En nivel 0–1, una
-    // de cada cuatro se reconoce y las demás se producen. Lo «por confirmar» solo se reconoce (makeChoice y makeProduce lo cuidan).
-    var out = [], low = 0;
+    // Nivel 2 o más: la palabra ya se reconoce, así que se produce (escribir o armar). En nivel 0–1 se
+    // reconoce mientras las elecciones no pasen del 30 % de lo armado hasta ahí (las de palabras «por
+    // confirmar», que solo se reconocen, también cuentan); lo demás se produce.
+    var out = [], picks = 0;
     list.slice(0, max).forEach(function (v) {
       var r = state.srs[v.id], e = null;
-      if (!r || r.box < 2) e = low++ % 4 === 0 ? makeChoice(v, "m2es") : null;
+      if ((!r || r.box < 2) && picks < Math.floor(0.3 * (out.length + 1))) e = makeChoice(v, "m2es");
       if (!e) e = makeProduce(v) || makeChoice(v, "m2es") || makeChoice(v, "es2m");
-      if (e) out.push(e);
+      if (e) { out.push(e); if (e.type === "choice") picks++; }
     });
     // En los repasos también: hasta 2 de «Escucha y elige» con las palabras que tienen voz nativa.
     for (var i = 0, nl = 0; i < out.length && nl < 2; i++) {
@@ -2568,7 +2581,7 @@
       '<p class="muted">Borra tu XP, racha, días con maya, lecciones y repasos de este navegador; tus ajustes se conservan. No se puede deshacer: si quieres conservar tu avance, expórtalo antes.</p>' +
       '<div class="btn-row"><button class="btn ghost-danger" type="button" id="btn-reset">Borrar avance</button></div>' +
       '<p class="reset-msg" id="reset-msg" tabindex="-1" aria-live="polite"></p></section>';
-    h += '<p class="foot">Ko\'ox Maaya v5.3 · proyecto comunitario experimental.</p>';
+    h += '<p class="foot">Ko\'ox Maaya v5.4 · proyecto comunitario experimental.</p>';
     pendingImport = null;
     v.innerHTML = h;
     modCall("bind", v, "profile");

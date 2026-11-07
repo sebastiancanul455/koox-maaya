@@ -322,6 +322,25 @@ async function mobileFull(browser, cfg) {
   check("[" + cfg.name + "] ninguna lección pide producir formas por confirmar", !prodMedia.length, prodMedia.map((x) => x.id).join(", "));
   const pairsMedia = plans.filter((x) => x.p.some((st) => /^ex:pairs:/.test(st) && /m/.test(st.split(":")[3])));
   check("[" + cfg.name + "] las parejas solo usan formas confirmadas", !pairsMedia.length, pairsMedia.map((x) => x.id).join(", "));
+  // Mezcla de ejercicios: «elegir opción» (elecciones y completar con opciones) ≤ 40 % en las lecciones con
+  // suficientes formas confirmadas (≥ 70 % del vocabulario), en 5 planes por lección (hay azar).
+  const mix = await page.evaluate(() => {
+    const K = window.__koox, out = { picks: 0, total: 0, lessons: 0, bad: [] };
+    K.course.units.forEach((u) => u.lessons.forEach((l) => {
+      const V = l.vocab || [], rich = V.length && V.filter((v) => v.conf === "alta").length / V.length >= 0.7;
+      for (let k = 0; k < 5; k++) {
+        const ex = K.plan(l.id).filter((st) => st.startsWith("ex:"));
+        ex.forEach((st) => { if (/^ex:(type|build|fill|choice-es2m|listen-m):/.test(st) && /:(media|\?)$/.test(st)) out.bad.push(l.id + " " + st); });
+        if (!rich) continue;
+        out.total += ex.length; out.picks += ex.filter((st) => /^ex:(choice|fill)/.test(st)).length;
+      }
+      if (rich) out.lessons++;
+    }));
+    return out;
+  });
+  check("[" + cfg.name + "] lecciones: «elegir opción» ≤ 40 % donde hay formas confirmadas", !mix.total || mix.picks <= 0.4 * mix.total,
+    (mix.total ? (100 * mix.picks / mix.total).toFixed(1) + " %" : "sin lecciones") + " en " + mix.lessons + " lecciones");
+  check("[" + cfg.name + "] ninguna lección (5 planes) pide producir formas por confirmar", !mix.bad.length, mix.bad.slice(0, 3).join(", "));
   const lateEx = plans.filter((x) => x.p.findIndex((st) => st.startsWith("ex")) > 8);
   check("[" + cfg.name + "] el primer ejercicio llega en 8 pantallas o menos", !lateEx.length, lateEx.map((x) => x.id).join(", "));
   await tabsCheck(page, cfg, false, " (sin avance)");
@@ -411,6 +430,20 @@ async function mobileFull(browser, cfg) {
     localStorage.setItem(k, JSON.stringify(s));
   });
   await load(page);
+  // Repasos con el estado real tras las lecciones: nunca producir lo «por confirmar» y «elegir opción» ≤ 40 %.
+  const rmix = await page.evaluate(() => {
+    const K = window.__koox, out = { picks: 0, total: 0, bad: [], kinds: {} };
+    const add = (r) => { if (!r) return; out.kinds[r.kind] = 1; r.steps.forEach((st) => {
+      out.total++; if (/^ex:(choice|fill)/.test(st)) out.picks++;
+      if (/^ex:(type|build|fill|choice-es2m|listen-m):/.test(st) && /:(media|\?)$/.test(st)) out.bad.push(r.kind + " " + st);
+      if (/^ex:pairs:/.test(st) && /m/.test(st.split(":")[3])) out.bad.push(r.kind + " " + st);
+    }); };
+    for (let k = 0; k < 20; k++) add(K.reviewPlan());
+    K.course.units.forEach((u) => { for (let k = 0; k < 3; k++) add(K.reviewPlan(u.id)); });
+    return out;
+  });
+  check("[" + cfg.name + "] repasos: ninguno pide producir formas por confirmar", rmix.total > 0 && !rmix.bad.length && rmix.kinds.review && rmix.kinds.unit, rmix.bad.slice(0, 3).join(", ") || Object.keys(rmix.kinds).join(","));
+  check("[" + cfg.name + "] repasos: «elegir opción» ≤ 40 %", rmix.picks <= 0.4 * rmix.total, (100 * rmix.picks / Math.max(1, rmix.total)).toFixed(1) + " % de " + rmix.total);
   const badge = await page.evaluate(() => { const b = document.querySelector("#nav-badge"); return b.hidden ? 0 : parseInt(b.textContent, 10); });
   check("[" + cfg.name + "] la insignia muestra repasos pendientes", badge === Math.min(99, nVocab) || badge > 0, badge);
   await gotoTab(page, cfg, "repasar");
@@ -866,7 +899,7 @@ async function gentleRun(browser, cfg) {
   check(tag + "aviso de confiabilidad: IA y fuentes públicas, ortografía por región, validar con hablantes, intérprete en situaciones importantes",
     /IA/.test(notes.trust) && /fuentes públicas/.test(notes.trust) && /varía/.test(notes.trust) && /región/.test(notes.trust) && /hablantes de maya/.test(notes.trust) && /situaciones importantes \(salud, trámites\) recurre a un intérprete/.test(notes.trust), notes.trust.slice(0, 80));
   check(tag + "sin menciones a pacientes ni a validación clínica", !/paciente|cl[ií]nic/i.test(notes.all), (notes.all.match(/.{0,30}(paciente|cl[ií]nic).{0,30}/i) || [""])[0]);
-  check(tag + "pie: «v5.3 · proyecto comunitario experimental»", /Ko'ox Maaya v5\.3 · proyecto comunitario experimental/.test(notes.foot), notes.foot);
+  check(tag + "pie: «v5.4 · proyecto comunitario experimental»", /Ko'ox Maaya v5\.4 · proyecto comunitario experimental/.test(notes.foot), notes.foot);
 
   // 5) Copia de seguridad: exportar → borrar → importar recupera exactamente el estado.
   await seedState(page, { v: 2, goal: 10 });

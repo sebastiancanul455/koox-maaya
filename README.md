@@ -24,6 +24,14 @@ de 2014. *Ko'ox* significa «¡vamos!».
 
 Detalles y excepciones en [`docs/LICENCIAS.md`](docs/LICENCIAS.md).
 
+## Novedades de la v5.4
+
+- **Mi milpa (kool).** Cada palabra que repasas es una planta de maíz, frijol o calabaza que crece con su
+  nivel (semilla, brote, mata, en flor, con fruto) y nunca se marchita; las que tocan hoy están listas para
+  cosechar. Tarjeta en Inicio (el modo tranquilo la oculta) y sección en Perfil; «Cosechar» abre el repaso.
+- **Más producción.** Las lecciones y repasos priorizan producir (escribir, armar, emparejar): «elegir
+  opción» queda ≤ 40 % donde hay formas confirmadas (antes ~68 %), y solo se pide producir lo confirmado.
+
 ## Novedades de la v5.2
 
 - **Repaso inteligente (FSRS-6).** El repaso usa FSRS-6 (adaptado de [ts-fsrs](https://github.com/open-spaced-repetition/ts-fsrs), MIT)

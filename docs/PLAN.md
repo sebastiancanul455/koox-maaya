@@ -26,7 +26,9 @@ lo simple primero · sin cuentas, sin rastreo y sin servidor.
 - [x] Repaso con FSRS-6 y historial de repasos
 
 ## Fase 2 · Juego y lectura
-- [ ] Lotería exprés, «Escucha al abuelo» (un relato al terminar cada unidad), «Mi milpa», reto semanal
+- [x] «Mi milpa»
+- [x] Menos ejercicios de elegir opción (≤ 40 % donde hay formas confirmadas)
+- [ ] Lotería exprés, «Escucha al abuelo» (un relato al terminar cada unidad), reto semanal
 - [ ] Glosas al tocar, lecturas por nivel («conoces el 92 % de esta historia») y personajes recurrentes
 - [ ] Historias de «elige qué decir»
 - [x] Diálogos en las unidades nuevas y en las unidades 3, 4 y 8 (la 1, de sonidos sueltos, no lleva)

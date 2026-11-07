@@ -8,7 +8,7 @@
 //    (4/4 o 4/5). La prueba se detiene en la primera unidad bajo 80 %, al terminar todas, al llegar a MAX_Q
 //    preguntas o con «Terminar aquí» (la unidad a medias no cuenta como aprobada).
 //  · Al aplicar (con confirmación dentro de la página): las lecciones de las unidades aprobadas quedan como
-//    completadas (sin pisar las que ya lo estaban) y su vocabulario entra al repaso con srsEnroll(id, today()),
+//    completadas (sin pisar las que ya lo estaban) y su vocabulario entra al repaso con srsEnroll(id, …) repartido en 7 días,
 //    para que FSRS confirme con el tiempo lo que ya sabe. No da XP ni toca la racha.
 //  · Deshacer la última ubicación: se revierten las lecciones que se marcaron (si no se han vuelto a hacer) y se
 //    quitan del repaso las palabras que se sembraron (si aún no se han repasado), con su alta en el historial FSRS.
@@ -130,7 +130,8 @@
           last.lessons[l.id] = prev ? { best: prev.best, done: !!prev.done, times: prev.times } : null;
           state.lessons[l.id] = prev ? { best: Math.max(prev.best || 0, p.pct), done: true, times: prev.times || 0 } : { best: p.pct, done: true, times: 0 };
         }
-        l.vocab.forEach(function (v) { if (srsEnroll(v.id, t)) last.srs.push(v.id); });
+        // Se reparten en 7 días (unas 15 por día) para no dejar cientos de repasos pendientes el mismo día.
+        l.vocab.forEach(function (v) { if (srsEnroll(v.id, addDays(t, Math.floor(last.srs.length / 15) % 7))) last.srs.push(v.id); });
       });
     });
     x.last = last;
@@ -173,7 +174,7 @@
   }
 
   /* ---------- Pantalla completa ---------- */
-  var U = { open: false, root: null, prev: "home", opener: null, dirty: false, goUnit: null, undone: null };
+  var U = { open: false, root: null, prev: "home", opener: null, dirty: false, goUnit: null, undone: null, afterPop: null };
 
   function ensureRoot() {
     if (U.root) return;
@@ -305,14 +306,22 @@
     U.root.hidden = true; U.root.innerHTML = "";
     document.body.classList.remove("locked", "ub-open");
     screen = U.prev || "home";
-    if (!fromPop && histState() === "ubicacion") { try { history.back(); } catch (e) { /* marco sin historial */ } }
+    var popping = !fromPop && histState() === "ubicacion";
+    if (popping) { try { history.back(); } catch (e) { popping = false; } }
     var op = U.opener, go = U.goUnit;
     U.opener = null; U.goUnit = null;
     if (U.dirty) {
       U.dirty = false;
       showTab(go ? "aprender" : tab, { keepScroll: !go });
-      var target = go && $("#unit-" + go);
-      if (target) { target.scrollIntoView({ block: "start" }); var b = $("button", target); if (b) b.focus({ preventScroll: true }); }
+      if (go) {
+        // Al volver en el historial el navegador restaura el desplazamiento: se va a la unidad después del popstate.
+        var goTo = function () {
+          U.afterPop = null;
+          var target = $("#unit-" + go);
+          if (target) { target.scrollIntoView({ block: "start" }); var b = $("button", target); if (b) b.focus({ preventScroll: true }); }
+        };
+        if (popping) { U.afterPop = goTo; setTimeout(function () { if (U.afterPop === goTo) goTo(); }, 400); } else goTo();
+      }
       return;
     }
     if (op && document.contains(op)) op.focus({ preventScroll: true });
@@ -332,7 +341,10 @@
     else if (a === "undo-ask") { U.mode = "undo"; render("#ub-undo-yes"); }
     else if (a === "undo") { U.undone = undo(); render("#ub-close"); }
   }
-  window.addEventListener("popstate", function () { if (U.open) closeView(true); });
+  window.addEventListener("popstate", function () {
+    if (U.open) closeView(true);
+    else if (U.afterPop) { var f = U.afterPop; setTimeout(function () { if (U.afterPop === f) f(); }, 0); }
+  });
   document.addEventListener("visibilitychange", function () {
     if (U.open && document.visibilityState === "visible") screen = "ubicacion";
   });
